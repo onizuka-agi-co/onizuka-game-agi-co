@@ -1,0 +1,26 @@
+{
+  "name": "memory",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Memory for onizuka-game-agi-co",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev memory/docs",
+    "docs:build": "vitepress build memory/docs",
+    "docs:preview": "vitepress preview memory/docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onizuka-agi-co/onizuka-game-agi-co.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onizuka-agi-co/onizuka-game-agi-co/issues"
+  },
+  "homepage": "https://github.com/onizuka-agi-co/onizuka-game-agi-co#readme",
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}

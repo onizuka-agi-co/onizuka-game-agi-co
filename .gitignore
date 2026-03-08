@@ -1,0 +1,17 @@
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# Secrets - never commit these
+*-tokens.json
+*-credentials.json
+*-secrets.json
+.env
+.env.*
+*.env
+*_token*
+*_secret*
+*_apikey*
+*_password*
+credentials*.json
+secrets*.json
