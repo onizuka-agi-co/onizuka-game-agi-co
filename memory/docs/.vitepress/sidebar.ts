@@ -26,6 +26,32 @@ export const sidebar2026: DefaultTheme.SidebarItem[] = [
   }
 ]
 
+export const sidebarMeetings: DefaultTheme.SidebarItem[] = [
+  {
+    text: 'Meetings',
+    link: '/meetings/',
+  },
+  {
+    text: '2026',
+    collapsed: false,
+    items: [
+      {
+        text: 'March',
+        items: [
+          { text: '2026-03-08 ミッション策定', link: '/meetings/2026-03-08-mission' }
+        ]
+      }
+    ]
+  }
+]
+
+export const sidebarHistory: DefaultTheme.SidebarItem[] = [
+  {
+    text: 'Changelog',
+    link: '/history/',
+  }
+]
+
 export const sidebarAbout: DefaultTheme.SidebarItem[] = [
   {
     text: 'About',
@@ -35,5 +61,7 @@ export const sidebarAbout: DefaultTheme.SidebarItem[] = [
 
 export const sidebar: DefaultTheme.Sidebar = {
   '/2026/': [{ text: '2026', items: sidebar2026 }],
-  '/about/': [{ text: 'About', items: sidebarAbout }]
+  '/about/': [{ text: 'About', items: sidebarAbout }],
+  '/meetings/': [{ text: '会議記録', items: sidebarMeetings }],
+  '/history/': [{ text: '履歴', items: sidebarHistory }]
 }
