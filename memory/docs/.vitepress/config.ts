@@ -9,6 +9,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'About', link: '/about/' },
       { text: '2026', link: '/2026/' }
     ],
     

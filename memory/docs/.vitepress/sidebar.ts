@@ -26,6 +26,14 @@ export const sidebar2026: DefaultTheme.SidebarItem[] = [
   }
 ]
 
+export const sidebarAbout: DefaultTheme.SidebarItem[] = [
+  {
+    text: 'About',
+    link: '/about/',
+  }
+]
+
 export const sidebar: DefaultTheme.Sidebar = {
-  '/2026/': [{ text: '2026', items: sidebar2026 }]
+  '/2026/': [{ text: '2026', items: sidebar2026 }],
+  '/about/': [{ text: 'About', items: sidebarAbout }]
 }
