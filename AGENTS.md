@@ -36,7 +36,7 @@
 ├── ROADMAP.md         # 将来計画
 ├── POLICIES.md        # 会社の方針・ルール
 ├── TOOLS.md           # 使用ツール・サービス
-├── memory/            # 日々の記録（VitePress）
+├── memory/            # 日々の記録
 └── games/             # ゲームソースコード
 ```
 
