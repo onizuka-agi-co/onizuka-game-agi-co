@@ -39,11 +39,14 @@
 ├── TOOLS.md           # 使用ツール・サービス
 ├── memory/            # 日々の記録
 │   └── docs/
-│       ├── 2026/      # 日報
-│       ├── meetings/  # 会議記録
-│       ├── history/   # 変更履歴
-│       ├── archive/   # アーカイブ
-│       └── about/     # 会社概要
+│       ├── 2026/MM/DD/  # 日報 + 会議記録
+│       │   ├── index.md           # 日報
+│       │   ├── meeting-001-*.md   # 会議（複数可）
+│       │   └── topic-*.md         # トピック
+│       ├── projects/    # プロジェクト別記録
+│       ├── history/     # 変更履歴
+│       ├── archive/     # アーカイブ
+│       └── about/       # 会社概要
 └── games/             # ゲームソースコード
 ```
 
@@ -64,7 +67,8 @@
 **すべての履歴を残す:**
 
 - 📅 **日報** → `memory/docs/2026/MM/DD/index.md`
-- 🤝 **会議** → `memory/docs/meetings/YYYY-MM-DD-topic.md`
+- 🤝 **会議** → `memory/docs/2026/MM/DD/meeting-XXX-topic.md`（同じ日付フォルダ内）
+- 📂 **プロジェクト** → `memory/docs/projects/game-name/`
 - 📝 **決定** → `DECISIONS.md` + 詳細は会議記録へ
 - 🔄 **変更** → `memory/docs/history/index.md`
 - 📦 **完了プロジェクト** → `memory/docs/archive/`
@@ -72,25 +76,30 @@
 **会議記録テンプレート:**
 
 ```markdown
-# 会議: タイトル
+# Meeting XXX: タイトル
 
 - **日時:** YYYY-MM-DD HH:MM (JST)
 - **参加者:** 
 - **場所:** 
-- **議題:** 
+
+## 議題
 
 ## 議論内容
-（詳細）
 
 ## 決定事項
-- 
 
 ## アクションアイテム
-| タスク | 担当 | ステータス |
-|--------|------|-----------|
+| タスク | 担当 | 状態 |
+|--------|------|------|
 
-## 次回の予定
+## 次回
 ```
+
+**プロジェクト作成時:**
+
+1. `memory/docs/projects/game-name/` フォルダ作成
+2. `_template.md` をコピーして `index.md` に
+3. `projects/index.md` にリンク追加
 
 ## 優先順位
 
