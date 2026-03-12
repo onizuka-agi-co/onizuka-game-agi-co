@@ -98,6 +98,15 @@
 すべてを毎回深く読む必要はありません。
 直近の playable 状態、未解決のブロッカー、前回からの変更が把握できれば十分です。
 
+## Automation Runtime Assumptions
+
+- This automation may run under a Codex-managed Windows user such as `Aslan\CodexSandboxOffline`, not the interactive `Aslan\Aslan` user.
+- Do not assume keyring-based `gh auth login` state from the human user's shell is available to the automation run.
+- Assume the repo root is the working directory and `.env` is present at `D:\Prj\onizuka-game-agi-co\.env`.
+- Treat `ONIZUKA_GITHUB_PAT` in `.env` as the canonical auth source for `gh` during this meeting flow.
+- The historical `.git/index.lock` permission issue was resolved on 2026-03-13 and is not an active known blocker anymore.
+- If `.git/index.lock` permission errors recur, treat them as an unexpected environment regression, log them clearly, and do not describe them as a standing known issue.
+
 ## Standard Flow
 
 1. 現在の playable 状態を確認する
@@ -196,6 +205,7 @@
 - Do not leave meeting decisions only in markdown if the same task is tracked on Project #2.
 - If `gh` is blocked by auth/config/permission issues, do one quick retry, log the blocker, and continue the run with implementation-first updates.
 - When Project #2 sync is blocked, still complete meeting-scope file updates and leave one explicit "Project sync pending" note in the daily log.
+- If `gh` works through `ONIZUKA_GITHUB_PAT`, prefer that path immediately instead of retrying keyring-based auth.
 
 CEO automation によって `PLANNING_MEETING.md` または `CEO_REVIEW.md` が更新された場合は、その変更を都度コミットして push してください。
 現場会議側も、これらのファイルに変更が入っていることを見つけたら、未コミットのまま放置しないで記録を残してください。
