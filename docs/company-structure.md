@@ -19,6 +19,24 @@ The diagram organizes the company into three layers:
 - [Editable draw.io source](./onizuka-game-agi-company-structure.drawio)
 - [Exported PNG](./onizuka-game-agi-company-structure.drawio.png)
 
+## CEO / CTO Layer Variant
+
+This variant emphasizes the operating relationship between strategy and execution:
+
+- CEO layer: reviews the company direction and gives feedback
+- CTO layer: runs the meeting loop and turns feedback into execution
+- Execution / memory layer: accumulates project work, meeting outputs, and company records
+
+### SVG Diagram
+
+![ONIZUKA Game AGI CEO CTO layered structure](./onizuka-game-agi-company-layers.drawio.svg)
+
+### Layer Variant Source Files
+
+- [Editable draw.io source](./onizuka-game-agi-company-layers.drawio)
+- [Exported SVG](./onizuka-game-agi-company-layers.drawio.svg)
+- [Exported PNG](./onizuka-game-agi-company-layers.drawio.png)
+
 ## Reading Guide
 
 - The top shows the parent company and the mission of ONIZUKA Game AGI Co.

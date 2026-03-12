@@ -34,6 +34,8 @@ The current company structure is documented as a visual diagram here:
 
 - [docs/company-structure.md](/D:/Prj/onizuka-game-agi-co/docs/company-structure.md)
 - [docs/onizuka-game-agi-company-structure.drawio](/D:/Prj/onizuka-game-agi-co/docs/onizuka-game-agi-company-structure.drawio)
+- [docs/onizuka-game-agi-company-layers.drawio](/D:/Prj/onizuka-game-agi-co/docs/onizuka-game-agi-company-layers.drawio)
+- [docs/onizuka-game-agi-company-layers.drawio.svg](/D:/Prj/onizuka-game-agi-co/docs/onizuka-game-agi-company-layers.drawio.svg)
 
 ![ONIZUKA Game AGI company structure](docs/onizuka-game-agi-company-structure.drawio.png)
 
