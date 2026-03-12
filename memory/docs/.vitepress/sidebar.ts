@@ -1,96 +1,194 @@
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import type { DefaultTheme } from 'vitepress'
 
-export const sidebar2026: DefaultTheme.SidebarItem[] = [
-  {
-    text: 'Overview',
-    link: '/2026/',
-  },
-  {
-    text: 'March',
-    collapsed: false,
-    items: [
-      {
-        text: '2026-03-08',
-        collapsed: true,
-        items: [
-          { text: 'Daily Report', link: '/2026/03/08/' },
-          { text: 'Meeting 001: Mission', link: '/2026/03/08/meeting-001-mission' },
-          { text: 'Meeting 002: Structure', link: '/2026/03/08/meeting-002-structure' },
-          { text: 'Meeting 003: Planning', link: '/2026/03/08/meeting-003-planning' },
-          { text: 'Meeting 004: Planning', link: '/2026/03/08/meeting-004-planning' },
-        ],
-      },
-      {
-        text: '2026-03-09',
-        collapsed: true,
-        items: [
-          { text: 'Daily Report', link: '/2026/03/09/' },
-          { text: 'Meeting 001: Morning Standup', link: '/2026/03/09/meeting-001-morning-standup' },
-        ],
-      },
-      {
-        text: '2026-03-10',
-        collapsed: true,
-        items: [
-          { text: 'Daily Report', link: '/2026/03/10/' },
-          { text: 'Meeting 001: Morning Standup', link: '/2026/03/10/meeting-001-morning-standup' },
-        ],
-      },
-      {
-        text: '2026-03-11',
-        collapsed: true,
-        items: [
-          { text: 'Daily Report', link: '/2026/03/11/' },
-          { text: 'Meeting 001: Morning Standup', link: '/2026/03/11/meeting-001-morning-standup' },
-          { text: 'Meeting 002: Planning', link: '/2026/03/11/meeting-002-planning' },
-          { text: 'Meeting 003: Planning', link: '/2026/03/11/meeting-003-planning' },
-          { text: 'Meeting 004: Planning', link: '/2026/03/11/meeting-004-planning' },
-        ],
-      },
-      {
-        text: '2026-03-12',
-        collapsed: true,
-        items: [
-          { text: 'Daily Report', link: '/2026/03/12/' },
-          { text: 'Meeting 001: Light Game', link: '/2026/03/12/meeting-001-light-game' },
-        ],
-      },
-    ],
-  },
+const docsRoot = fileURLToPath(new URL('..', import.meta.url))
+
+const monthLabels = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ]
 
-export const sidebarProjects: DefaultTheme.SidebarItem[] = [
-  {
-    text: 'Projects',
-    items: [
-      { text: 'Overview', link: '/projects/' },
-      { text: 'Grid Tactics', link: '/projects/grid-tactics/' },
-    ],
-  },
-]
+function readMarkdownTitle(filePath: string, fallback: string): string {
+  if (!fs.existsSync(filePath)) {
+    return fallback
+  }
 
-export const sidebarHistory: DefaultTheme.SidebarItem[] = [
-  {
-    text: 'History',
-    items: [
-      { text: 'Changelog', link: '/history/' },
-    ],
-  },
-]
+  const content = fs.readFileSync(filePath, 'utf8')
+  const headingMatch = content.match(/^#\s+(.+)$/m)
 
-export const sidebarAbout: DefaultTheme.SidebarItem[] = [
-  {
-    text: 'About',
-    items: [
-      { text: 'Overview', link: '/about/' },
-      { text: 'Company Structure', link: '/about/company-structure' },
-    ],
-  },
-]
+  if (headingMatch?.[1]) {
+    return headingMatch[1].trim()
+  }
+
+  const frontmatterTitleMatch = content.match(/^title:\s*["']?(.+?)["']?\s*$/m)
+  if (frontmatterTitleMatch?.[1]) {
+    return frontmatterTitleMatch[1].trim()
+  }
+
+  return fallback
+}
+
+function humanizeSlug(slug: string): string {
+  return slug
+    .replace(/\.md$/i, '')
+    .split('-')
+    .filter(Boolean)
+    .map((part) => {
+      if (/^\d+$/.test(part)) {
+        return part
+      }
+      return part.charAt(0).toUpperCase() + part.slice(1)
+    })
+    .join(' ')
+}
+
+function monthLabel(month: string): string {
+  const monthNumber = Number(month)
+  if (monthNumber >= 1 && monthNumber <= 12) {
+    return monthLabels[monthNumber - 1]
+  }
+  return month
+}
+
+function listDirectories(dirPath: string): string[] {
+  if (!fs.existsSync(dirPath)) {
+    return []
+  }
+
+  return fs
+    .readdirSync(dirPath, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort((a, b) => a.localeCompare(b))
+}
+
+function listMarkdownFiles(dirPath: string): string[] {
+  if (!fs.existsSync(dirPath)) {
+    return []
+  }
+
+  return fs
+    .readdirSync(dirPath, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.md'))
+    .map((entry) => entry.name)
+    .sort((a, b) => a.localeCompare(b))
+}
+
+function buildFlatSectionSidebar(sectionPath: string, routePrefix: string): DefaultTheme.SidebarItem[] {
+  const absoluteSectionPath = path.join(docsRoot, sectionPath)
+  const items: DefaultTheme.SidebarItem[] = [{ text: 'Overview', link: `${routePrefix}/` }]
+
+  for (const fileName of listMarkdownFiles(absoluteSectionPath)) {
+    if (fileName === 'index.md' || fileName.startsWith('_')) {
+      continue
+    }
+
+    const filePath = path.join(absoluteSectionPath, fileName)
+    const slug = fileName.replace(/\.md$/i, '')
+
+    items.push({
+      text: readMarkdownTitle(filePath, humanizeSlug(slug)),
+      link: `${routePrefix}/${slug}`,
+    })
+  }
+
+  for (const directoryName of listDirectories(absoluteSectionPath)) {
+    if (directoryName.startsWith('_')) {
+      continue
+    }
+
+    const indexPath = path.join(absoluteSectionPath, directoryName, 'index.md')
+    if (!fs.existsSync(indexPath)) {
+      continue
+    }
+
+    items.push({
+      text: readMarkdownTitle(indexPath, humanizeSlug(directoryName)),
+      link: `${routePrefix}/${directoryName}/`,
+    })
+  }
+
+  return items
+}
+
+function buildYearSidebar(year: string): DefaultTheme.SidebarItem[] {
+  const yearPath = path.join(docsRoot, year)
+  const items: DefaultTheme.SidebarItem[] = [{ text: 'Overview', link: `/${year}/` }]
+
+  for (const month of listDirectories(yearPath)) {
+    const monthPath = path.join(yearPath, month)
+    const monthItems: DefaultTheme.SidebarItem[] = []
+    const monthIndexPath = path.join(monthPath, 'index.md')
+
+    if (fs.existsSync(monthIndexPath)) {
+      monthItems.push({
+        text: 'Overview',
+        link: `/${year}/${month}/`,
+      })
+    }
+
+    for (const day of listDirectories(monthPath)) {
+      const dayPath = path.join(monthPath, day)
+      const dayIndexPath = path.join(dayPath, 'index.md')
+
+      if (!fs.existsSync(dayIndexPath)) {
+        continue
+      }
+
+      const dayItems: DefaultTheme.SidebarItem[] = [
+        {
+          text: 'Daily Report',
+          link: `/${year}/${month}/${day}/`,
+        },
+      ]
+
+      for (const fileName of listMarkdownFiles(dayPath)) {
+        if (fileName === 'index.md' || fileName.startsWith('_')) {
+          continue
+        }
+
+        const filePath = path.join(dayPath, fileName)
+        const slug = fileName.replace(/\.md$/i, '')
+
+        dayItems.push({
+          text: readMarkdownTitle(filePath, humanizeSlug(slug)),
+          link: `/${year}/${month}/${day}/${slug}`,
+        })
+      }
+
+      monthItems.push({
+        text: `${year}-${month}-${day}`,
+        collapsed: false,
+        items: dayItems,
+      })
+    }
+
+    items.push({
+      text: monthLabel(month),
+      collapsed: false,
+      items: monthItems,
+    })
+  }
+
+  return items
+}
 
 export const sidebar: DefaultTheme.Sidebar = {
-  '/2026/': [{ text: '2026', items: sidebar2026 }],
-  '/about/': [{ text: 'About', items: sidebarAbout }],
-  '/projects/': sidebarProjects,
-  '/history/': sidebarHistory,
+  '/2026/': buildYearSidebar('2026'),
+  '/about/': buildFlatSectionSidebar('about', '/about'),
+  '/projects/': buildFlatSectionSidebar('projects', '/projects'),
+  '/history/': buildFlatSectionSidebar('history', '/history'),
+  '/archive/': buildFlatSectionSidebar('archive', '/archive'),
 }
