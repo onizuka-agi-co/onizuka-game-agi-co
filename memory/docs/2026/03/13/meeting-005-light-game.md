@@ -52,3 +52,8 @@ Company: ONIZUKA Game AGI Co.
 - `Get-Content -Raw -Encoding utf8 DECISIONS.md`
 - `. .\scripts\load-onizuka-gh-token.ps1; gh auth status`
 - `.env` 直読み込みで `GH_TOKEN` / `GITHUB_TOKEN` をセットし `gh auth status`
+
+## 最終化ブロッカー
+- meeting-scope 変更は commit 済み（`ecba03d`）だが、`git push origin main` がネットワーク到達不可で失敗。
+- エラー: `Failed to connect to github.com port 443`
+- 影響: Meeting Output Finalization Rule の「origin/main 反映完了」は未達。

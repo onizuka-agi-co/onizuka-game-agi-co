@@ -95,3 +95,8 @@
 
 ## 会議ログ
 - [meeting-005-light-game](./meeting-005-light-game.md) - PAT無効継続を記録し、次の1手を維持
+
+## Finalize pending (Meeting 005)
+- meeting-scope commit `ecba03d` は作成済み
+- `git push origin main` は `github.com:443` 接続失敗で未完
+- ネットワーク到達性回復後に push を再実施する
