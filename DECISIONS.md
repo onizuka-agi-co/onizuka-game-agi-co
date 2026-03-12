@@ -203,6 +203,13 @@
 
 _更新日: 2026-03-13_
 
+### 2026-03-13: Meeting 004で次タスク維持、Project #2 同期をPAT無効ブロッカーとして継続記録
+- **決定:** `onigame-quickshot` の次タスクは変更せず、`games/onigame-quickshot` の最小プロトタイプ実装を継続する。
+- **理由:** 企画再検討より実装着手を優先するほうが、現行方針に沿って playable へ最短で近づけるため。
+- **副作用:** `.env` の `ONIZUKA_GITHUB_PAT` を使った `gh auth status` を 2 回試行してもトークン無効で、GitHub Project #2 更新は未反映。
+- **決定者:** エージェント（現場定例）
+- **影響先:** 次回 run で認証復旧後に、Meeting 004 の項目を Project #2 へ同期する。
+
 ### 2026-03-13: Meeting 002で次の1タスクを維持し、Project #2 認証障害をブロッカー化
 - **決定:** onigame-quickshot の次タスクは変更せず、games/onigame-quickshot の最小プロトタイプ実装を継続する。
 - **理由:** 会社方針（軽量・短セッション・GitHub Pages完全静的）と整合し、最短で playable に近づくため。

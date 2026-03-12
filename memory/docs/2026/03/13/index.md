@@ -63,3 +63,16 @@
 
 ## CEOレビュー会議ログ
 - [meeting-001-ceo-review](./meeting-001-ceo-review.md) - 実装前進優先ルールを導入
+
+## 追記 (Meeting 004)
+- [x] meeting-004-light-game.md を作成し、次の1手を `onigame-quickshot` 最小プロトタイプ実装に維持
+- [x] `.env` の `ONIZUKA_GITHUB_PAT` で `gh auth status` を 2 回試行し、トークン無効を確認
+- [x] `DECISIONS.md` / `PROJECTS.md` / `memory/docs/history/index.md` を Meeting 004 内容で更新
+
+## Project sync pending (Meeting 004)
+- GitHub Project #2 は `ONIZUKA_GITHUB_PAT` 無効のため未同期
+- 影響: Meeting 004 の item 状態更新と「次の1手」反映が保留
+- 対応: 認証復旧後、Meeting 004 ログ題名に合わせて Project #2 を同期する
+
+## 会議ログ
+- [meeting-004-light-game](./meeting-004-light-game.md) - PAT無効ブロッカーを記録し、次の1手を維持

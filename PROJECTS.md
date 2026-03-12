@@ -103,3 +103,8 @@ _更新日: 2026-03-13_
 - 状態判断: `onigame-quickshot` は planning 維持（repo / prototype 未作成）。
 - 運用変更: GitHub Project #2 同期失敗時でも、現場定例は同一 run で実装前進を優先して止めない。
 - 直近フォーカス: `games/onigame-quickshot` の新規作成と最小プロトタイプ実装を最優先で着手。
+
+## 2026-03-13 Meeting 004 追記
+- onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。
+- Blocker: `.env` の `ONIZUKA_GITHUB_PAT` が無効で、GitHub Project #2 更新が未反映。
+- 対応方針: 認証復旧後に Meeting 004 ログ題名と揃えた item 更新を Project #2 へ同期する。

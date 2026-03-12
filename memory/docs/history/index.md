@@ -133,3 +133,10 @@ _更新日: 2026-03-13_
 - 運用ルール更新: PLANNING_MEETING.md（Project同期失敗時でも実装前進を止めない方針を追加）
 - 意思決定追記: DECISIONS.md（停滞防止のCEO判断を記録）
 - プロジェクト追記: PROJECTS.md（CEOレビュー後の運用変更を追記）
+
+### 追加更新 (2026-03-13 Meeting 004)
+- 会議ログ追加: memory/docs/2026/03/13/meeting-004-light-game.md
+- 日報追記: memory/docs/2026/03/13/index.md（Project sync pending を明記）
+- 意思決定追記: DECISIONS.md（PAT無効による Project #2 未同期を記録）
+- プロジェクト追記: PROJECTS.md（Meeting 004 のブロッカーと対応方針を追記）
+- 未反映事項: GitHub Project #2 更新は `ONIZUKA_GITHUB_PAT` 無効のため保留
