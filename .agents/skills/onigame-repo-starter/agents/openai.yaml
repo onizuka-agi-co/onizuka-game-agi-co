@@ -1,0 +1,4 @@
+interface:
+  display_name: "Onigame Repo Starter"
+  short_description: "Start ONIGAME repos with static Pages scaffolding and publish flow"
+  default_prompt: "Use $onigame-repo-starter to create a new ONIZUKA Game AGI Co. game repo under games/, scaffold a static starter, and publish it to the onizuka-agi-co org."
