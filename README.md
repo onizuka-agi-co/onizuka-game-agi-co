@@ -125,10 +125,11 @@ All meeting outputs and logs should include:
 If [PLANNING_MEETING.md](/D:/Prj/onizuka-game-agi-co/PLANNING_MEETING.md) or [CEO_REVIEW.md](/D:/Prj/onizuka-game-agi-co/CEO_REVIEW.md) is updated, the change must be committed and pushed immediately.
 This keeps the next automation run aligned with the latest company policy.
 
-## Current Project
+## Current Project Status
 
-- Grid Tactics
-  Current tactical prototype under fit review. If it cannot stay fully static, browser-local, and lightweight enough for vibe-coding-scale progress, the CEO automation should pivot the company toward a lighter browser game direction.
+- No active game project right now.
+- Grid Tactics was closed on 2026-03-12 because it did not fit the company's lightweight, GitHub-Pages-first constraints well enough.
+- The next game should be selected from lighter directions such as simple action, puzzle, or shooting concepts that stay browser-local and static.
 
 ## Repository Structure
 

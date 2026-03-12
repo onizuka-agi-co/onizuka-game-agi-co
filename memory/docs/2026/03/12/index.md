@@ -8,11 +8,10 @@
 - [x] AGIカンパニー構成図を `draw.io` で可視化
 - [x] 新規リポジトリ命名規約として `onigame-` プレフィックスを採用
 - [x] GitHub Pages完全静的 / 外部API不要 / vibe coding規模を非交渉条件として文書化
+- [x] `Grid Tactics` をクローズし、現行主力プロジェクトから外した
 
 ## 進行中
-- [ ] AGI Easy 強度調整（目標勝率 30-40%）
-- [ ] Phaser + React + TypeScript の描画統合（7x7 グリッド表示）
-- [ ] プレイヤー入力改善（選択移動・操作・UI 表示）
+- [ ] 次の主力ゲーム候補を軽量アクション / パズル / シューティングから再選定する
 
 ## 会議
 - [meeting-001-light-game](./meeting-001-light-game.md) - 現場運営会議（追加実装と検証）
@@ -23,6 +22,7 @@
 - 会社構成図を整備したことで、次セッションで会社の運営構造を参照しやすくなった。
 - `onigame-` に揃えることで、会社制作のリポジトリだと短く認識しやすくなる。
 - GitHub Pages前提の会社では、バックエンドや外部APIを必要とする重いゲーム案は企画段階で落とすべき。
+- `Grid Tactics` は「改善して続ける」より「早く閉じて軽い案に切り替える」ほうが会社方針に合う。
 
 ## タイムライン
 
@@ -37,3 +37,4 @@
 | 21:44 | AGIカンパニー構成図を `docs/onizuka-game-agi-company-structure.drawio` と PNG で可視化 |
 | 21:49 | `onigame-` 命名規約を README と運用ガイドへ反映 |
 | 21:53 | GitHub Pages完全静的・外部API不要・vibe coding規模の制約を README / 運用ガイド / 決定ログへ追記 |
+| 21:59 | `Grid Tactics` を closed 扱いに変更し、次の軽量ゲーム再選定へ切り替え |

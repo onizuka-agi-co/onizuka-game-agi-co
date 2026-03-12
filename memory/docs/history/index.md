@@ -21,6 +21,7 @@ ONIZUKA Game AGI Co. の主要な更新履歴を記録する。
 - `memory/docs/projects/grid-tactics/index.md` に当日の進捗を追記
 - `README.md`, `PLANNING_MEETING.md`, `CEO_REVIEW.md` に `onigame-` 命名規約を追加
 - `README.md`, `PLANNING_MEETING.md`, `CEO_REVIEW.md`, `PROJECTS.md` に GitHub Pages完全静的 / 外部API不要 / vibe coding 規模の制約を明文化
+- `README.md`, `PROJECTS.md`, `DECISIONS.md`, `memory/docs/projects/grid-tactics/index.md` に Grid Tactics クローズを反映
 
 ---
 
