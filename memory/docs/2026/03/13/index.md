@@ -14,6 +14,7 @@
 - [meeting-002-light-game](./meeting-002-light-game.md) - Project #2 連携の復旧と会議結果同期
 - [meeting-003-light-game](./meeting-003-light-game.md) - `gh` 設定アクセス拒否をブロッカー化し次タスク維持
 - [meeting-001-ceo-review](./meeting-001-ceo-review.md) - CEOレビュー（停滞防止ルールを更新）
+- [meeting-005-light-game](./meeting-005-light-game.md) - PAT無効の継続を記録し、次の1手を維持
 
 ## 気づき
 - 候補が 1 本に絞れていても、repo と prototype がない段階では `active` に上げないほうが記録と実態が揃う。
@@ -81,3 +82,16 @@
 
 ## 会議ログ
 - [meeting-004-light-game](./meeting-004-light-game.md) - PAT無効ブロッカーを記録し、次の1手を維持
+
+## 追記 (Meeting 005)
+- [x] meeting-005-light-game.md を作成し、次の1手を `onigame-quickshot` 最小プロトタイプ実装で維持
+- [x] `gh auth status` を 2 回試行（token loader 実行不可 → `.env` 直読み込み）し、`ONIZUKA_GITHUB_PAT` 無効を確認
+- [x] `DECISIONS.md` / `PROJECTS.md` / `memory/docs/history/index.md` を Meeting 005 内容で更新
+
+## Project sync pending (Meeting 005)
+- GitHub Project #2 は `ONIZUKA_GITHUB_PAT` 無効のため未同期
+- 影響: Meeting 005 の item 状態更新と「次の1手」反映が保留
+- 対応: 認証復旧後、Meeting 005 ログ題名に合わせて Project #2 を同期する
+
+## 会議ログ
+- [meeting-005-light-game](./meeting-005-light-game.md) - PAT無効継続を記録し、次の1手を維持

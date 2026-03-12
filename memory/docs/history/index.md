@@ -141,3 +141,10 @@ _更新日: 2026-03-13_
 - プロジェクト追記: PROJECTS.md（Meeting 004 のブロッカーと対応方針を追記）
 - 未反映事項: GitHub Project #2 更新は `ONIZUKA_GITHUB_PAT` 無効のため保留
 - 最終化未完: meeting-scope commit `d29129b` は作成済みだが、`git push origin main` が `github.com:443` 接続失敗で未完
+
+### 追加更新 (2026-03-13 Meeting 005)
+- 会議ログ追加: memory/docs/2026/03/13/meeting-005-light-game.md
+- 日報追記: memory/docs/2026/03/13/index.md（Project sync pending を更新）
+- 意思決定追記: DECISIONS.md（PAT無効継続による Project #2 未同期を記録）
+- プロジェクト追記: PROJECTS.md（Meeting 005 のブロッカーと対応方針を追記）
+- 未反映事項: GitHub Project #2 更新は `ONIZUKA_GITHUB_PAT` 無効のため保留

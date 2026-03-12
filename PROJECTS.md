@@ -108,3 +108,8 @@ _更新日: 2026-03-13_
 - onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。
 - Blocker: `.env` の `ONIZUKA_GITHUB_PAT` が無効で、GitHub Project #2 更新が未反映。
 - 対応方針: 認証復旧後に Meeting 004 ログ題名と揃えた item 更新を Project #2 へ同期する。
+
+## 2026-03-13 Meeting 005 追記
+- onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。
+- Blocker: `ONIZUKA_GITHUB_PAT` を `.env` から読み込んでも `gh auth status` が token invalid で失敗し、GitHub Project #2 更新が未反映。
+- 対応方針: 認証復旧後に Meeting 005 ログ題名と揃えた item 更新（status/次の1手）を Project #2 へ同期する。
