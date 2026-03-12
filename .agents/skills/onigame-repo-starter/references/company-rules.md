@@ -25,6 +25,7 @@ Use this reference when starting a new ONIZUKA Game AGI Co. game repo.
 - prefer public repos for Pages-ready launches
 - use the `onigame-` prefix
 - set the homepage to the expected Pages URL when the repo is ready
+- make the repo page feel intentional: strong README, coherent metadata, and a small reusable visual asset
 
 ## Workspace expectations
 

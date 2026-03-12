@@ -1,6 +1,6 @@
 <div align="center">
   <h1>onigame-template</h1>
-  <p>Small static starter for GitHub Pages-first ONIGAME projects.</p>
+  <p>GitHub Pages 前提の ONIGAME 用静的スターター。</p>
   <img src="./assets/repo-mark.svg" alt="onigame template mark" width="220">
   <p>
     <img src="https://img.shields.io/badge/Type-Static%20Web%20App-C85C38" alt="Static Web App">
@@ -17,16 +17,16 @@
   </p>
 </div>
 
-## Overview
+## 概要
 
-Use this starter when a new ONIGAME repo needs:
+新しい ONIGAME repo を始めるときに、最初から次を揃えるためのスターターです。
 
-- a fully static GitHub Pages-friendly app
-- a public-facing README from day one
-- a lightweight reusable SVG mark
-- a tiny file set that can move fast
+- GitHub Pages でそのまま動く静的アプリ
+- 最初から公開向けに読める README
+- 軽い再利用 SVG マーク
+- すぐ触れる最小ファイル構成
 
-## Structure
+## 構成
 
 ```text
 onigame-template/
@@ -39,7 +39,7 @@ onigame-template/
 `- README.ja.md
 ```
 
-## Usage
+## 使い方
 
-Replace the page title, content, README copy, and app logic with the actual game idea.
-Keep the first version static, simple, and shareable.
+ページタイトル、README 文面、アプリの中身を実際のゲーム案に置き換えて使います。
+最初の版は、静的で小さく、すぐ公開できる状態を保ちます。

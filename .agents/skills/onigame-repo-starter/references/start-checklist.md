@@ -6,7 +6,9 @@ Use this checklist before declaring a new ONIGAME repo ready.
 
 - repo folder exists under `games/onigame-<slug>/`
 - `git status --short` is clean
-- `README.md` explains the app and Pages usage
+- `README.md` has a clear hero, badges, and practical usage sections
+- `README.ja.md` exists when the repo is aimed at ONIZUKA's normal Japanese-speaking audience
+- at least one reusable SVG mark exists under `assets/`
 - static entry files exist and work together
 
 ## Remote repo
@@ -15,6 +17,8 @@ Use this checklist before declaring a new ONIGAME repo ready.
 - `origin` is configured
 - `main` is pushed
 - repo description is set
+- repo homepage is set
+- repo topics are set
 
 ## Pages readiness
 

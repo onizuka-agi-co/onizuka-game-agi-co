@@ -49,13 +49,35 @@ Default to a minimal static app:
 - `styles.css`
 - `app.js`
 - `README.md`
+- `README.ja.md`
+- `assets/<repo-mark>.svg`
 - `.gitignore`
 
 Reuse [assets/static-pages-template](./assets/static-pages-template) unless the user already gave a more specific starter direction.
 
 Prefer plain static files unless there is a clear reason to introduce a build tool. The first version should be Pages-friendly without extra deployment machinery.
 
-### 4. Initialize Git and make the first commit
+Do not stop at a functional scaffold only. The starter should also include a reusable visual identity seed and a public-facing README shape that is good enough to publish.
+
+### 4. Polish the public-facing repo basics before pushing
+
+Before the first push, make the repo presentation coherent:
+
+- add a centered README hero
+- include a small reusable SVG mark stored in `assets/`
+- add badge rows for stack and deployment
+- include a visible live URL section or placeholder
+- explain local usage and Pages deployment
+- add `README.ja.md` when the repo is meant for the ONIZUKA audience
+
+Use a right-sized version of the `repository-polish` mindset:
+
+- do not create docs sites unless the user asks
+- do create a README that looks intentional and shareable
+- do create at least one reusable SVG asset when no visual identity exists yet
+- do make the repo page feel like a real shipped mini product, not just a file dump
+
+### 5. Initialize Git and make the first commit
 
 Inside the child repo:
 
@@ -65,7 +87,7 @@ Inside the child repo:
 
 Keep the repo self-contained and ready to push before creating the remote.
 
-### 5. Create the GitHub repository under the org
+### 6. Create the GitHub repository under the org
 
 Use `gh` from inside the child repo when auth is available.
 
@@ -79,9 +101,10 @@ After creation:
 
 - verify `origin` is set correctly
 - set the homepage to the expected Pages URL when appropriate
+- add repository topics that match the app type and stack
 - prefer the public repo path because GitHub Pages is part of the intended finish line
 
-### 6. Make the Pages finish line real
+### 7. Make the Pages finish line real
 
 For simple static repos, the natural finish line is:
 
@@ -96,7 +119,7 @@ If a Pages API call returns `404` immediately after repo creation, treat it as a
 2. retry after a short wait
 3. if still blocked, report the exact response and leave the repo otherwise ready
 
-### 7. Update the company workspace only as needed
+### 8. Update the company workspace only as needed
 
 When the company repo should reflect the new child repo:
 
@@ -104,7 +127,7 @@ When the company repo should reflect the new child repo:
 - update company logs or decisions only when the task is part of company operations
 - do not move child repo source into the company repo history
 
-### 8. Verify the result
+### 9. Verify the result
 
 Before finishing, check:
 
@@ -112,7 +135,11 @@ Before finishing, check:
 - the child repo has `origin`
 - the remote repo URL is correct
 - the app is still static and self-contained
-- the README explains Pages usage
+- the README is public-facing rather than minimal
+- the README explains Pages usage and local usage
+- `README.ja.md` exists when the repo targets the company's normal audience
+- at least one reusable SVG asset exists under `assets/`
+- repo description, homepage, and topics are set coherently
 - the company repo did not accidentally absorb child repo contents
 
 Use [references/start-checklist.md](./references/start-checklist.md) as the closeout checklist.
