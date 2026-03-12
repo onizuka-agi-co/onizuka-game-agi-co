@@ -50,6 +50,7 @@
 - 1 回の会議で 1 テーマだけを前進させる
 - Grid Tactics が重すぎる場合は、より軽いゲーム案へのピボットをためらわない
 - GitHub Pages 完全静的と vibe coding 規模に収まるかを毎回確認する
+- 外部ツールが一時的に詰まっても、実装前進を止めずに同一 run で具体物を残す
 
 ### Avoid For Now
 
@@ -189,6 +190,8 @@
   - Update or create one item for "次の 1 手"
   - Keep item title aligned with meeting log title
 - Do not leave meeting decisions only in markdown if the same task is tracked on Project #2.
+- If `gh` is blocked by auth/config/permission issues, do one quick retry, log the blocker, and continue the run with implementation-first updates.
+- When Project #2 sync is blocked, still complete meeting-scope file updates and leave one explicit "Project sync pending" note in the daily log.
 
 CEO automation によって `PLANNING_MEETING.md` または `CEO_REVIEW.md` が更新された場合は、その変更を都度コミットして push してください。
 現場会議側も、これらのファイルに変更が入っていることを見つけたら、未コミットのまま放置しないで記録を残してください。

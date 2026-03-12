@@ -13,6 +13,7 @@
 - [meeting-001-light-game](./meeting-001-light-game.md) - 現場定例（`onigame-quickshot` の次作業を固定）
 - [meeting-002-light-game](./meeting-002-light-game.md) - Project #2 連携の復旧と会議結果同期
 - [meeting-003-light-game](./meeting-003-light-game.md) - `gh` 設定アクセス拒否をブロッカー化し次タスク維持
+- [meeting-001-ceo-review](./meeting-001-ceo-review.md) - CEOレビュー（停滞防止ルールを更新）
 
 ## 気づき
 - 候補が 1 本に絞れていても、repo と prototype がない段階では `active` に上げないほうが記録と実態が揃う。
@@ -53,3 +54,12 @@
 - GitHub Project #2 更新に必要な `gh` が設定ファイルアクセス拒否で起動不可
 - 影響: Meeting 003 の board 反映（Status 更新 / 次の1手 item 更新）が未実施
 - commit 最終化で `.git/index.lock` 作成が Permission denied となり、meeting-scope 更新の push まで到達不可
+
+## 追記 (CEO Review 001)
+- [x] `CEO_REVIEW.md` 指示に従い、Required Inputs と直近会議ログを再確認
+- [x] 3 run 連続で次タスクが反復し、実装前進が止まっていた点を経営課題として記録
+- [x] `PLANNING_MEETING.md` の CEO Managed Priorities / GitHub Project Operation を更新し、Project同期失敗時の実装優先ルールを追加
+- [x] `DECISIONS.md` / `PROJECTS.md` / `memory/docs/history/index.md` に CEO判断を追記
+
+## CEOレビュー会議ログ
+- [meeting-001-ceo-review](./meeting-001-ceo-review.md) - 実装前進優先ルールを導入
