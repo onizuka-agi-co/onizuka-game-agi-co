@@ -183,6 +183,7 @@
 
 - This meeting must use GitHub Project #2:
   - https://github.com/orgs/onizuka-agi-co/projects/2
+- Use [$github-project](D:\\Prj\\github-project-skill\\SKILL.md) for Project #2 operations.
 - Every run should reflect the meeting result in Project #2:
   - Move current work item status (`Todo` / `In Progress` / `Done`)
   - Update or create one item for "次の 1 手"
