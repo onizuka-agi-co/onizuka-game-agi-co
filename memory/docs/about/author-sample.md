@@ -4,13 +4,13 @@ title: Author Icon Sample
 
 # Author Icon Sample
 
-`cat.png` を使って、VitePress 上で「このページの作成者」を見せるサンプルです。
+`cat2.png` を使って、VitePress 上で「このページの作成者」を見せるサンプルです。
 
 ## Preview
 
 <div class="author-demo">
   <div class="author-demo-card">
-    <img class="author-demo-avatar" src="./cat.png" alt="Cat author avatar">
+    <img class="author-demo-avatar" src="./cat2.png" alt="Cat author avatar">
     <div>
       <p class="author-demo-name">Captain Cat</p>
       <p class="author-demo-role">Documentation Author</p>
@@ -24,7 +24,7 @@ title: Author Icon Sample
 
 ```html
 <div class="author-demo-card">
-  <img class="author-demo-avatar" src="./cat.png" alt="Cat author avatar">
+  <img class="author-demo-avatar" src="./cat2.png" alt="Cat author avatar">
   <div>
     <p class="author-demo-name">Captain Cat</p>
     <p class="author-demo-role">Documentation Author</p>
@@ -35,6 +35,6 @@ title: Author Icon Sample
 
 ## Notes
 
-- 画像はページと同じ階層に `cat.png` を置いて `./cat.png` と書くと、そのままサンプルとして扱えます。
+- 画像はページと同じ階層に `cat2.png` を置いて `./cat2.png` と書くと、そのままサンプルとして扱えます。
 - いまはサンプルページ内で使っていますが、同じクラスを使えば各ドキュメント末尾に著者カードを置けます。
 - 自動化したい場合は、次に frontmatter の `author` / `avatar` を読んで表示するテーマ拡張にできます。
