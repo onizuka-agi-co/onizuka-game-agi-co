@@ -24,11 +24,20 @@
 
 - 完全静的構成を前提にする
 - バックエンド、外部 API、重い運用は前提にしない
+- サーバー処理、認証基盤、秘密情報管理、リアルタイム通信が必要な案は不採用か即ピボット対象とする
 - 1 セッションは数分で終わる規模を優先する
 - ルールはすぐ理解できるものを優先する
 - 操作はクリック、タップ、キー入力などの単純なものに寄せる
+- 敵や対戦相手はブラウザ内の軽量ロジックで成立させる
 - 複雑な AGI や大きなシステム設計を前提にしない
+- vibe coding で短時間に前進しにくい案は避ける
 - GitHub Pages に載せづらい重い構成は避ける
+
+## Repository Naming Rule
+
+- Create new repositories with the `onigame-` prefix.
+- Use the format `onigame-<repo-name>` unless there is a strong reason to do otherwise.
+- If a task includes creating or proposing a repository name, prefer `onigame-` automatically.
 
 ## CEO Managed Priorities
 
@@ -40,11 +49,14 @@
 - 最小の playable を早く積み上げる
 - 1 回の会議で 1 テーマだけを前進させる
 - Grid Tactics が重すぎる場合は、より軽いゲーム案へのピボットをためらわない
+- GitHub Pages 完全静的と vibe coding 規模に収まるかを毎回確認する
 
 ### Avoid For Now
 
 - 重い基盤整備
 - 複雑な AGI 設計
+- バックエンド前提のゲーム案
+- 外部 API 前提のゲーム案
 - 将来のためだけの抽象化
 - GitHub Pages に不向きな構成
 
@@ -100,6 +112,7 @@
 - まず playable に近づく仕事を優先する
 - 次に、遊びやすさと分かりやすさを上げる仕事を優先する
 - その次に、品質や保守性を上げる仕事を選ぶ
+- GitHub Pages 完全静的、外部 API 不要、vibe coding で前進可能の 3 条件を満たさない案は着手前に落とす
 - 実装が難しすぎる場合は、次の実装が楽になる具体的な調査結果を残す
 - 現在のゲーム案がミッションに合わない場合は、その違和感をログに残す
 
@@ -119,6 +132,8 @@
 - 過剰な役割分担ごっこ
 - 長いだけで前進しない議論
 - 複雑な AGI を前提にした設計
+- API を呼ばないと成立しない企画
+- 秘密鍵やサーバー運用が必要になる実装前提
 - 将来のためだけの重い基盤づくり
 - 1 回の会議で 3 つ以上の大きなテーマを追うこと
 - 実装可能性の低い大きな理想像を先に固めすぎること

@@ -84,6 +84,20 @@ Recommended cadence:
 - avoid complex AGI-first design if a lighter mechanic works better
 - optimize for playable progress over long discussion
 
+## Non-Negotiable Constraints
+
+- every shipping game concept must work as a fully static GitHub Pages deployment
+- if a concept needs a backend, server-side auth, secret management, realtime infra, or external API to feel complete, reject it or pivot it immediately
+- opponent behavior must stay browser-local and lightweight; "AGI" is not a delivery requirement for this company
+- first releases should be small enough for vibe coding speed: simple rules, short sessions, and implementation slices that can move forward in hours, not weeks
+- if a concept becomes too heavy to explain, implement, or deploy within those constraints, choose a lighter genre instead
+
+## Repository Naming Rule
+
+- New repositories created by ONIZUKA Game AGI Co. should use the `onigame-` prefix.
+- Recommended format: `onigame-<repo-name>`
+- Examples: `onigame-grid-tactics`, `onigame-memory-site`
+
 ## Logs And Memory
 
 The company record system lives under [memory/docs](/D:/Prj/onizuka-game-agi-co/memory/docs).
@@ -114,7 +128,7 @@ This keeps the next automation run aligned with the latest company policy.
 ## Current Project
 
 - Grid Tactics
-  Current tactical prototype. If it becomes too heavy for the mission, the CEO automation is allowed to pivot the company toward a lighter browser game direction.
+  Current tactical prototype under fit review. If it cannot stay fully static, browser-local, and lightweight enough for vibe-coding-scale progress, the CEO automation should pivot the company toward a lighter browser game direction.
 
 ## Repository Structure
 

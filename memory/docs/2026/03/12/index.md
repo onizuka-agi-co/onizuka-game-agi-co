@@ -36,4 +36,4 @@
 | 13:22 | 会議記録・意思決定ログ・変更履歴を更新 |
 | 21:44 | AGIカンパニー構成図を `docs/onizuka-game-agi-company-structure.drawio` と PNG で可視化 |
 | 21:49 | `onigame-` 命名規約を README と運用ガイドへ反映 |
-| 22:0x | GitHub Pages完全静的・外部API不要・vibe coding規模の制約を README / 運用ガイド / 決定ログへ追記 |
+| 21:53 | GitHub Pages完全静的・外部API不要・vibe coding規模の制約を README / 運用ガイド / 決定ログへ追記 |
