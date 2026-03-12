@@ -117,3 +117,19 @@
 - Local commit `feda681` was created for meeting-scope updates.
 - `git push origin main` failed due to `github.com:443` connection error.
 - Next run must retry push and verify `HEAD == origin/main`.
+
+## 進捗 (Meeting 007)
+- [x] `PLANNING_MEETING.md` を最初に確認して required inputs を再点検。
+- [x] `.env` から `ONIZUKA_GITHUB_PAT` を読み込み、`gh auth status` を 2 回再試行。
+- [x] token invalid 継続を確認し、meeting-scope 更新（会議ログ/決定/プロジェクト/履歴）を実施。
+
+## Project sync pending (Meeting 007)
+- GitHub Project #2 は `ONIZUKA_GITHUB_PAT` が無効のため未同期。
+- 次回は token 復旧後に Meeting 007 の status 更新と「次の1手」item 同期を実施する。
+
+## 会議ログ
+- [meeting-007-light-game](./meeting-007-light-game.md) - Project #2 認証ブロッカー継続と次の1手維持
+
+## 補足ブロッカー (Meeting 007)
+- `git config --global --add safe.directory ...` は `C:/Users/Aslan/.gitconfig` 書き込み拒否で失敗。
+- 本runでは `git -c safe.directory=D:/Prj/onizuka-game-agi-co ...` を使って最終化を継続する。

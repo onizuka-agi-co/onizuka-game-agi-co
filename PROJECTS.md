@@ -119,3 +119,9 @@ _更新日: 2026-03-13_
 - Prototype folder `games/onigame-quickshot` is still missing.
 - Next action stays fixed: bootstrap minimum one-screen playable prototype.
 - Project #2 sync is pending due to invalid token (`ONIZUKA_GITHUB_PAT`).
+
+## 2026-03-13 Meeting 007 update
+- `onigame-quickshot` remains **planning**.
+- Next action stays fixed: bootstrap minimum one-screen playable prototype in `games/onigame-quickshot`.
+- Blocker: `.env` token path (`ONIZUKA_GITHUB_PAT`) is still invalid on `gh auth status` retry.
+- Project #2 sync remains pending until token recovery; meeting log title-aligned item update is deferred.

@@ -157,3 +157,11 @@ _更新日: 2026-03-13_
 - 更新: `PROJECTS.md` (Meeting 006 status)
 - 更新: `memory/docs/history/index.md` (this entry)
 - Finalization pending: local commit `feda681` exists but push failed (`github.com:443` connection error).
+
+### 変更履歴更新 (2026-03-13 Meeting 007)
+- 追加: `memory/docs/2026/03/13/meeting-007-light-game.md`
+- 更新: `memory/docs/2026/03/13/index.md`
+- 更新: `DECISIONS.md` (Meeting 007 decision + Project #2 auth blocker continuation)
+- 更新: `PROJECTS.md` (Meeting 007 status)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Project sync pending: `ONIZUKA_GITHUB_PAT` invalid (`gh auth status` retry x2 failed).
