@@ -37,6 +37,47 @@ CEO review の最初に、必要な範囲で次を確認すること。
 毎回すべてを深掘りする必要はありません。
 重要なのは、今の会社の動きがミッション、進捗、軽量性、Pages適性に合っているかです。
 
+## Log Locations
+
+CEO automation が主に見るべきログと管理ファイルは以下です。
+
+- 会社全体の決定ログ: `D:\Prj\onizuka-game-agi-co\DECISIONS.md`
+- 進行中プロジェクト一覧: `D:\Prj\onizuka-game-agi-co\PROJECTS.md`
+- 会社ロードマップ: `D:\Prj\onizuka-game-agi-co\ROADMAP.md`
+- 現場会議ルール: `D:\Prj\onizuka-game-agi-co\PLANNING_MEETING.md`
+- 会社の記録トップ: `D:\Prj\onizuka-game-agi-co\memory\docs\index.md`
+- 月次ログ索引: `D:\Prj\onizuka-game-agi-co\memory\docs\2026\03\index.md`
+- 日次ログ索引: `D:\Prj\onizuka-game-agi-co\memory\docs\2026\03\12\index.md`
+- 直近の現場会議ログ例: `D:\Prj\onizuka-game-agi-co\memory\docs\2026\03\12\meeting-001-light-game.md`
+- 過去の朝会ログ例:
+  - `D:\Prj\onizuka-game-agi-co\memory\docs\2026\03\09\meeting-001-morning-standup.md`
+  - `D:\Prj\onizuka-game-agi-co\memory\docs\2026\03\10\meeting-001-morning-standup.md`
+  - `D:\Prj\onizuka-game-agi-co\memory\docs\2026\03\11\meeting-001-morning-standup.md`
+- プロジェクト別ログ索引: `D:\Prj\onizuka-game-agi-co\memory\docs\projects\index.md`
+- Grid Tactics のプロジェクトログ: `D:\Prj\onizuka-game-agi-co\memory\docs\projects\grid-tactics\index.md`
+- 履歴索引: `D:\Prj\onizuka-game-agi-co\memory\docs\history\index.md`
+
+## Recommended Read Order
+
+CEO automation は、まず次の順で読むとスムーズです。
+
+1. `DECISIONS.md`
+2. `PROJECTS.md`
+3. `ROADMAP.md`
+4. `PLANNING_MEETING.md`
+5. 直近の日次 index
+6. 直近の現場会議ログ
+7. 対象プロジェクトの project log
+8. 必要なら履歴 index と過去会議ログ
+
+## Log Pattern Notes
+
+- 日次ログは `memory/docs/YYYY/MM/DD/` 配下にある
+- 現場会議ログは `meeting-XXX-light-game.md` 形式で増える
+- CEO review ログは `meeting-XXX-ceo-review.md` 形式で保存する
+- 日報や索引は `index.md` に集約される
+- プロジェクト別の継続記録は `memory/docs/projects/<project>/index.md` にまとまる
+
 ## Primary Questions
 
 毎回、最低限次を評価すること。
@@ -118,12 +159,16 @@ CEO review の出力は、最低限次を含めること。
 
 - `Company: ONIZUKA Game AGI Co.`
 
+`PLANNING_MEETING.md` または `CEO_REVIEW.md` を更新した場合は、その変更を都度コミットして push してください。
+方針更新をローカル未反映のまま残さず、次の automation が必ず最新のルールを読める状態にしてください。
+
 ## Good CEO Behavior
 
 - 抽象論ではなく、現場の行動を変える
 - 方針変更の理由が明確
 - 軽量化と playable 化を加速する
 - 人間が不在でも迷いにくいルールへ寄せる
+- ルール更新後はコミットと push まで完了させる
 
 ## Automation Prompt Contract
 

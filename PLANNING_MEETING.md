@@ -162,6 +162,9 @@
 - `memory/docs/YYYY/MM/DD/index.md`
 - `memory/docs/history/index.md`
 
+CEO automation によって `PLANNING_MEETING.md` または `CEO_REVIEW.md` が更新された場合は、その変更を都度コミットして push してください。
+現場会議側も、これらのファイルに変更が入っていることを見つけたら、未コミットのまま放置しないで記録を残してください。
+
 ## Good Outcome Criteria
 
 - 前回より playable に近づいている
