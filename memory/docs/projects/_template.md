@@ -1,56 +1,59 @@
-# プロジェクトテンプレート
+# Project Template
 
-これはプロジェクト作成時のテンプレートです。コピーして使ってください。
+Use this template when creating a new project page.
 
 ---
 
-# プロジェクト名
+# Project Name
 
-## 概要
+## Overview
 
-（何を作るか、一言で）
+Write a short one-paragraph explanation of the project.
 
-## ステータス
+## Status
 
-- **開始日:** YYYY-MM-DD
-- **現在:** planning / active / on-hold / completed
-- **担当:** 
+- Start date: YYYY-MM-DD
+- State: planning / active / on-hold / closed / completed
+- Roles involved:
 
-## 目標
+## Scope
 
-（このプロジェクトで達成したいこと）
+Describe what this project is supposed to deliver.
 
-## 仕様
+## Product Notes
 
-### ゲーム概要
-- プラットフォーム: 
-- プレイ時間: 
-- ターゲット: 
+### Game summary
 
-### 操作
+- Platform:
+- Session length:
+- Target:
+
+### Mechanics
+
 - 
 
-### 画面
+### Visuals
+
 - 
 
-## 進捗
+## Progress Log
 
-| 日付 | 内容 | ログ |
+| Date | Summary | Link |
 |------|------|------|
-| YYYY-MM-DD | 開始 | [日報](/2026/MM/DD/) |
+| YYYY-MM-DD | Milestone reached | `Add a valid page link here` |
 
-## 技術スタック
+## Tech Stack
 
-- エンジン: 
-- 言語: 
-- その他: 
+- Engine:
+- Language:
+- Other:
 
-## 関連リンク
+## Related Links
 
-- [仕様書](./spec.md)
-- [デザイン](./design.md)
-- [GitHub](https://github.com/...)
+- `Add spec link if it exists`
+- `Add design link if it exists`
+- `Add GitHub or repository link if needed`
 
-## 備考
+## Notes
 
-（特記事項）
+- Add decisions, risks, and follow-up items here.

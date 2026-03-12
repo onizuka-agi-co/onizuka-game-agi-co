@@ -3,12 +3,15 @@ layout: home
 
 hero:
   name: "Memory"
-  text: "Daily Reports & Memory"
-  tagline: ONIZUKA Game AGI - Game AI Development
+  text: "Daily Reports & Company Memory"
+  tagline: ONIZUKA Game AGI Co. operating records and shared context
   actions:
     - theme: brand
-      text: 2026年の記録
+      text: 2026 Records
       link: /2026/
+    - theme: alt
+      text: Company Structure
+      link: /about/company-structure
     - theme: alt
       text: GitHub
       link: https://github.com/onizuka-agi-co/onizuka-game-agi-co
@@ -16,73 +19,26 @@ hero:
 
 ## About
 
-日々の記録・気づき・進捗をまとめたリポジトリ。
+This site is the long-running memory for ONIZUKA Game AGI Co.
 
-**ONIZUKA Game AGI** の活動を記録し、知見を蓄積・共有する。
+It collects:
 
----
+- daily reports
+- meeting notes
+- project records
+- company-level decisions and history
 
-## Features
+## Company Structure
 
-### 📝 人間が読みやすい
-VitePressで美しいドキュメントサイトを生成。検索機能、サイドバー、ダークモード対応。
+The current operating model is also documented visually.
 
-### 🤖 AIが読み書きしやすい
-Markdownベース。AIが直接読み込み・編集・要約可能。
+[Open the company structure page](/about/company-structure)
 
-### 🔍 検索可能
-全文検索で過去の記録をすぐに見つけられる。
-
-### 🔒 セキュア
-pre-commitフックで機密情報の漏洩を防止。
-
----
-
-## Structure
-
-```
-docs/
-├── 2026/                    # 年単位
-│   ├── 03/                  # 月単位
-│   │   ├── 08/              # 日単位
-│   │   │   ├── index.md     # 概要
-│   │   │   └── topic-a.md   # トピック別詳細
-│   │   └── index.md
-│   └── index.md
-└── index.md
-```
-
----
+![ONIZUKA Game AGI company structure](https://raw.githubusercontent.com/onizuka-agi-co/onizuka-game-agi-co/main/docs/onizuka-game-agi-company-structure.drawio.png)
 
 ## Quick Links
 
-| リンク | 説明 |
-|--------|------|
-| [2026年3月](/2026/03/) | 最新の記録 |
-| [GitHub](https://github.com/onizuka-agi-co/onizuka-game-agi-co) | リポジトリ |
-
----
-
-## How to Use
-
-### 新しい日の記録を追加
-
-1. `docs/2026/MM/DD/` フォルダを作成
-2. `index.md` に概要を記載
-3. トピック別に `.md` ファイルを作成
-4. `sidebar.ts` のサイドバーを更新
-5. commit & push
-
-### ローカルで確認
-
-```bash
-cd memory
-npm run docs:dev
-# http://localhost:5173/onizuka-game-agi-co/memory/
-```
-
-### ビルド
-
-```bash
-npm run docs:build
-```
+- [About](/about/)
+- [Projects](/projects/)
+- [2026 records](/2026/)
+- [History](/history/)

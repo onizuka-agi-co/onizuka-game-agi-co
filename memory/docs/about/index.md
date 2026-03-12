@@ -1,28 +1,31 @@
 # About ONIZUKA Game AGI Co.
 
-## 🎯 Mission
+## Mission
 
 **日常のスキマを、わくわくで埋める。**
 
----
-
 ## What We Do
 
-隙間時間にサクッと遊べるゲームを作る。
+ONIZUKA Game AGI Co. builds lightweight browser games designed for short play sessions.
 
-- 🕐 **5分で遊べる** - 待ち時間、休憩時間、移動時間
-- 🎮 **手軽に楽しい** - 複雑な操作不要、直感的なゲームプレイ
-- 🤖 **AI活用** - AGI技術で新しいゲーム体験を創造
+- Short-session games that can be understood quickly
+- GitHub-Pages-first delivery with fully static deployment
+- AI-assisted development only when it helps the player experience
 
----
+## Operating Model
+
+The company is run as an autonomous operating system with two main loops:
+
+- the field meeting automation moves the current work forward
+- the CEO review automation checks whether the company is still aligned with the mission
+
+See the visual structure here:
+
+- [Company Structure](/about/company-structure)
 
 ## Origin
 
-ONIZUKA Game AGI Co. は **ONIZUKA AGI Co.** のゲーム開発部門として発足。
-
-「ONUZUKA」ワークスペースから始まったAGIカンパニーの一員として、エンターテインメントの領域でAGIの可能性を探る。
-
----
+ONIZUKA Game AGI Co. is operated as a game-focused subsidiary of **ONIZUKA AGI Co.**
 
 ## Links
 

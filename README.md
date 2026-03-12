@@ -28,6 +28,15 @@ The main idea is:
 2. The CEO automation reviews company progress and updates the operating plan when needed.
 3. Important direction changes are recorded and pushed so the next automation reads the latest rules.
 
+## Company Structure
+
+The current company structure is documented as a visual diagram here:
+
+- [docs/company-structure.md](/D:/Prj/onizuka-game-agi-co/docs/company-structure.md)
+- [docs/onizuka-game-agi-company-structure.drawio](/D:/Prj/onizuka-game-agi-co/docs/onizuka-game-agi-company-structure.drawio)
+
+![ONIZUKA Game AGI company structure](docs/onizuka-game-agi-company-structure.drawio.png)
+
 ## Core Automation Roles
 
 ### 1. ONIZUKA Game AGI Co. 現場定例

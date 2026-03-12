@@ -1,66 +1,71 @@
 # Grid Tactics
 
-## 概要
-7x7グリッドのターン制タクティカルゲームMVP（プレイヤー vs AGI）として開始したが、2026-03-12 にクローズ。
+## Overview
 
-## ステータス
+Grid Tactics was a 7x7 turn-based tactical browser game MVP.
+The project was closed on 2026-03-12 after review because it was too heavy for the company's lightweight, GitHub-Pages-first direction.
 
-- **開始日:** 2026-03-08
-- **終了日:** 2026-03-12
-- **現在:** closed
-- **担当:** エージェントチーム（Product Owner, Tech Lead, Designer, QA）
+## Status
 
-## 当初目標
-5-10分で1試合完走できる最小プロトタイプを早期に提供する。
+- Start date: 2026-03-08
+- Closed date: 2026-03-12
+- State: closed
+- Roles involved: Product Owner, Tech Lead, Designer, QA
 
-## クローズ理由
+## Intended Scope
 
-- ターン制タクティカルとしての説明負荷と実装負荷が高く、会社の「軽量ブラウザゲーム」「GitHub Pages完全静的」「vibe codingで短時間に前進」の方針とズレた
-- AGI対戦を前面に出すほど設計と調整が重くなり、1本目のゲームとしては不適合と判断した
-- より軽いアクション / パズル / シューティングへ切り替えたほうが会社コンセプトに合う
+The original goal was a playable tactical prototype that could be understood in a few minutes and shipped as a fully static browser game.
 
-## 仕様メモ
+## Why It Was Closed
 
-### ゲーム概要
-- プラットフォーム: Web（GitHub Pages）
-- プレイ時間: 5-10分
-- ターゲット: 隙間時間で短く遊びたいプレイヤー
+- The tactical structure added too much rules overhead and implementation weight for the company's current goals.
+- The company direction shifted toward lighter action, puzzle, and shooting concepts.
+- Keeping this project active would have slowed down selection of a better-fit main title.
 
-### 操作
-- クリック/タップでユニット選択
-- 移動先指定
-- 攻撃対象指定
+## Product Notes
 
-### 画面
-- 7x7グリッド
-- ユニット表示（HP）
-- ターン/フェーズ表示
+### Game summary
 
-## 進捗
+- Platform: Web and GitHub Pages
+- Session length: 5-10 minutes
+- Target: players who want a quick lightweight strategy experience
 
-| 日付 | 内容 | ログ |
+### Mechanics
+
+- Turn-based tactical play
+- Movement and attack choices
+- Win / loss resolution
+
+### Visuals
+
+- 7x7 grid
+- Unit display
+- Turn and phase UI
+
+## Progress Log
+
+| Date | Summary | Link |
 |------|------|------|
-| 2026-03-08 | 企画・MVP範囲・技術方針を決定 | [日報](/memory/docs/2026/03/08/) |
-| 2026-03-09 | ルール仕様v0.1を作成し実装ブロッカーを解消 | [日報](/memory/docs/2026/03/09/) |
-| 2026-03-10 | コアロジック実装 + スモークテスト追加（12試合完走） | [日報](/memory/docs/2026/03/10/) |
-| 2026-03-11 | 朝会で不変条件チェック追加、品質ゲートを強化 | [日報](/memory/docs/2026/03/11/) |
-| 2026-03-12 | 先手後手バイアス検証スクリプト追加（game:balance） | [日報](/memory/docs/2026/03/12/) |
-| 2026-03-12 | 会社方針との不一致によりプロジェクトをクローズ | [日報](/memory/docs/2026/03/12/) |
+| 2026-03-08 | Project start, MVP direction, and technical stack defined | [Daily Report](/2026/03/08/) |
+| 2026-03-09 | Rules draft v0.1 created and prototype direction clarified | [Daily Report](/2026/03/09/) |
+| 2026-03-10 | Core logic and smoke test flow added | [Daily Report](/2026/03/10/) |
+| 2026-03-11 | Smoke-test checks expanded and validation tightened | [Daily Report](/2026/03/11/) |
+| 2026-03-12 | Balance validation added and project closure recorded | [Daily Report](/2026/03/12/) |
 
-## 技術スタック
+## Tech Stack
 
-- エンジン: Phaser 3
-- 言語: TypeScript
+- Engine: Phaser 3
+- Language: TypeScript
 - UI: React
-- ホスティング: GitHub Pages（完全静的）
+- Hosting: GitHub Pages
 
-## 関連リンク
+## Related Links
 
-- [ルール仕様 v0.1](../../../docs/game-rules-v0.1.md)
-- [決定ログ](../../../DECISIONS.md)
-- [プロジェクト一覧](../../../PROJECTS.md)
+- [Game rules v0.1](https://github.com/onizuka-agi-co/onizuka-game-agi-co/blob/main/docs/game-rules-v0.1.md)
+- [Decision log](https://github.com/onizuka-agi-co/onizuka-game-agi-co/blob/main/DECISIONS.md)
+- [Project list](https://github.com/onizuka-agi-co/onizuka-game-agi-co/blob/main/PROJECTS.md)
 
-## 備考
+## Notes
 
-- コアロジックと不変条件付きスモークは導入済みだったが、主力プロジェクトとしては終了。
-- 次の主力候補は、より軽量なアクション / パズル / シューティングから選び直す。
+- The core logic and smoke test work were still useful learning outputs.
+- The next main project should stay closer to lightweight action, puzzle, or shooting concepts.
