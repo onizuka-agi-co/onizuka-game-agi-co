@@ -92,64 +92,67 @@
         <mxCell id="arrow-company-ceo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#991b1b;endArrow=block;endFill=1;" edge="1" parent="1" source="company-card" target="ceo-role">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="arrow-ceo-cto" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#dc2626;endArrow=block;endFill=1;" edge="1" parent="1" source="ceo-output" target="cto-role">
+        <mxCell id="arrow-ceo-cto" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#dc2626;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ceo-output" target="cto-role">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1100" y="470"/>
-              <mxPoint x="1100" y="620"/>
+              <mxPoint x="1095" y="510"/>
+              <mxPoint x="455" y="510"/>
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="arrow-cto-ceo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#2563eb;endArrow=block;endFill=1;" edge="1" parent="1" source="cto-role" target="ceo-focus">
+        <mxCell id="arrow-cto-ceo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#2563eb;endArrow=block;endFill=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="cto-role" target="ceo-focus">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="790" y="620"/>
-              <mxPoint x="790" y="380"/>
+              <mxPoint x="265" y="470"/>
+              <mxPoint x="730" y="470"/>
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="arrow-cto-projects" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#1d4ed8;endArrow=block;endFill=1;" edge="1" parent="1" source="cto-output" target="project-box">
+        <mxCell id="arrow-cto-projects" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#1d4ed8;endArrow=block;endFill=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cto-output" target="project-box">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1140" y="740"/>
-              <mxPoint x="300" y="740"/>
-              <mxPoint x="300" y="900"/>
+              <mxPoint x="1060" y="705"/>
+              <mxPoint x="315" y="705"/>
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="arrow-cto-meetings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#1d4ed8;endArrow=block;endFill=1;" edge="1" parent="1" source="cto-output" target="meeting-box">
+        <mxCell id="arrow-cto-meetings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#1d4ed8;endArrow=block;endFill=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cto-output" target="meeting-box">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1140" y="740"/>
-              <mxPoint x="660" y="740"/>
-              <mxPoint x="660" y="900"/>
+              <mxPoint x="1220" y="760"/>
+              <mxPoint x="660" y="760"/>
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="arrow-project-memory" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#16a34a;endArrow=block;endFill=1;" edge="1" parent="1" source="project-box" target="memory-box">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="arrow-project-memory" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#16a34a;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.2;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="project-box" target="memory-box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="315" y="970"/>
+              <mxPoint x="920" y="970"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="arrow-meeting-memory" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#16a34a;endArrow=block;endFill=1;" edge="1" parent="1" source="meeting-box" target="memory-box">
+        <mxCell id="arrow-meeting-memory" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#16a34a;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="meeting-box" target="memory-box">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
         <mxCell id="arrow-memory-decisions" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#16a34a;endArrow=block;endFill=1;" edge="1" parent="1" source="memory-box" target="decision-box">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="arrow-memory-ceo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#15803d;endArrow=block;endFill=1;" edge="1" parent="1" source="memory-box" target="ceo-role">
+        <mxCell id="arrow-memory-ceo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#15803d;endArrow=block;endFill=1;exitX=0.85;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="memory-box" target="ceo-role">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="80" y="900"/>
-              <mxPoint x="80" y="385"/>
-              <mxPoint x="170" y="385"/>
+              <mxPoint x="1115" y="990"/>
+              <mxPoint x="40" y="990"/>
+              <mxPoint x="40" y="380"/>
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="arrow-memory-cto" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#15803d;endArrow=block;endFill=1;" edge="1" parent="1" source="memory-box" target="cto-meeting">
+        <mxCell id="arrow-memory-cto" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#15803d;endArrow=block;endFill=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="memory-box" target="cto-meeting">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1330" y="720"/>
-              <mxPoint x="1330" y="680"/>
-              <mxPoint x="930" y="680"/>
+              <mxPoint x="1340" y="845"/>
+              <mxPoint x="1340" y="530"/>
+              <mxPoint x="765" y="530"/>
             </Array>
           </mxGeometry>
         </mxCell>
