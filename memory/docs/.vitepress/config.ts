@@ -1,5 +1,10 @@
 import { defineConfig } from 'vitepress'
-import { sidebar } from './sidebar'
+import { sidebar, yearDirectories } from './sidebar'
+
+const yearNav = yearDirectories.map((year) => ({
+  text: year,
+  link: `/${year}/`,
+}))
 
 export default defineConfig({
   title: "Memory",
@@ -11,7 +16,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
       { text: 'Projects', link: '/projects/' },
-      { text: '2026', link: '/2026/' }
+      ...yearNav,
     ],
     
     sidebar,

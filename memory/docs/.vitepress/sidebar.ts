@@ -74,6 +74,10 @@ function listDirectories(dirPath: string): string[] {
     .sort((a, b) => a.localeCompare(b))
 }
 
+function listYearDirectories(): string[] {
+  return listDirectories(docsRoot).filter((name) => /^\d{4}$/.test(name))
+}
+
 function listMarkdownFiles(dirPath: string): string[] {
   if (!fs.existsSync(dirPath)) {
     return []
@@ -185,10 +189,17 @@ function buildYearSidebar(year: string): DefaultTheme.SidebarItem[] {
   return items
 }
 
-export const sidebar: DefaultTheme.Sidebar = {
-  '/2026/': buildYearSidebar('2026'),
-  '/about/': buildFlatSectionSidebar('about', '/about'),
-  '/projects/': buildFlatSectionSidebar('projects', '/projects'),
-  '/history/': buildFlatSectionSidebar('history', '/history'),
-  '/archive/': buildFlatSectionSidebar('archive', '/archive'),
-}
+export const yearDirectories = listYearDirectories()
+
+export const sidebar: DefaultTheme.Sidebar = yearDirectories.reduce<DefaultTheme.Sidebar>(
+  (acc, year) => {
+    acc[`/${year}/`] = buildYearSidebar(year)
+    return acc
+  },
+  {
+    '/about/': buildFlatSectionSidebar('about', '/about'),
+    '/projects/': buildFlatSectionSidebar('projects', '/projects'),
+    '/history/': buildFlatSectionSidebar('history', '/history'),
+    '/archive/': buildFlatSectionSidebar('archive', '/archive'),
+  }
+)
