@@ -100,3 +100,15 @@
 - meeting-scope commit `7966b17` は作成済み
 - `git push origin main` は 2 回とも `github.com:443` 接続失敗で未完
 - ネットワーク到達性回復後に push を再実施する
+
+## 進捗 (Meeting 006)
+- [x] `meeting-006-light-game.md` を作成し、次の1手を再固定。
+- [x] `.env` 直読みで `gh auth status` を再試行し、token invalid を再確認。
+- [x] `DECISIONS.md` / `PROJECTS.md` / `memory/docs/history/index.md` を Meeting 006 内容で更新。
+
+## Project sync pending (Meeting 006)
+- GitHub Project #2 は `ONIZUKA_GITHUB_PAT` token invalid のため未同期。
+- 次回は token 復旧後に Meeting 006 の status 更新と「次の1手」item 反映を実施する。
+
+## 記録ログ
+- [meeting-006-light-game](./meeting-006-light-game.md) - Project #2 認証ブロッカー再確認と次の1手固定

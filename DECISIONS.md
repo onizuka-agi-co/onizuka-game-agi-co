@@ -223,3 +223,10 @@ _更新日: 2026-03-13_
 - **副作用:** GitHub Project #2 の item 更新は gh auth 無効で未反映。運用ログで追跡が一時的にMarkdown側へ偏る。
 - **決定者:** エージェント（現場定例）
 - **影響先:** 次回 run で認証復旧後に Project #2 へ同内容を同期する。
+
+### 2026-03-13: Meeting 006 kept next step fixed and logged Project #2 auth blocker
+- **Decision:** Keep `onigame-quickshot` as the single next work item and keep the next implementation step unchanged: create minimum prototype in `games/onigame-quickshot`.
+- **Reason:** Current mission priority is playable progress with smallest scope. Re-planning without prototype progress would not improve delivery speed.
+- **Blocker:** `gh auth status` failed again with invalid token from `.env` (`ONIZUKA_GITHUB_PAT`), so GitHub Project #2 sync could not be executed in this run.
+- **Decision Owner:** Agent (Field Meeting)
+- **Impact:** Continue implementation-first flow in meeting logs and keep explicit `Project sync pending` notes until token recovery.
