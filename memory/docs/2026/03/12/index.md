@@ -10,12 +10,15 @@
 - [x] GitHub Pages完全静的 / 外部API不要 / vibe coding規模を非交渉条件として文書化
 - [x] `Grid Tactics` をクローズし、現行主力プロジェクトから外した
 - [x] `games/onigame-omikuji` を独立Gitリポジトリとして作成し、静的なおみくじサンプルを実装
+- [x] 次の主力候補を `onigame-quickshot` に決定し、v0.1 企画仕様を作成
+- [x] `memory/docs/projects/onigame-quickshot/` を作成してプロジェクト記録を開始
 
 ## 進行中
-- [ ] 次の主力ゲーム候補を軽量アクション / パズル / シューティングから再選定する
+- [ ] `games/onigame-quickshot` の最小プロトタイプ（移動 / 回避 / 60秒 / スコア表示）を実装する
 
 ## 会議
 - [meeting-001-light-game](./meeting-001-light-game.md) - 現場運営会議（追加実装と検証）
+- [meeting-002-light-game](./meeting-002-light-game.md) - 現場運営会議（次期主力候補選定）
 
 ## 気づき
 - 勝率の偏りは「AGI が弱い」というより、現行実装のバイアスが強い状態だった。
@@ -25,6 +28,7 @@
 - GitHub Pages前提の会社では、バックエンドや外部APIを必要とする重いゲーム案は企画段階で落とすべき。
 - `Grid Tactics` は「改善して続ける」より「早く閉じて軽い案に切り替える」ほうが会社方針に合う。
 - `games/` を独立repoの置き場にすると、ローカルではまとまりつつ、GitHub Pages はアプリごとに分けやすい。
+- 企画再選定は、候補を広げるより「1本に決めて最小仕様を固定」したほうが次セッションの実装速度が上がる。
 
 ## タイムライン
 
@@ -41,3 +45,4 @@
 | 21:53 | GitHub Pages完全静的・外部API不要・vibe coding規模の制約を README / 運用ガイド / 決定ログへ追記 |
 | 21:59 | `Grid Tactics` を closed 扱いに変更し、次の軽量ゲーム再選定へ切り替え |
 | 22:14 | `games/onigame-omikuji` を独立repoとして初期化し、おみくじサンプルを作成 |
+| 22:30 | 現場定例で `onigame-quickshot` を次期主力候補に決定し、v0.1 企画仕様とプロジェクト記録を追加 |

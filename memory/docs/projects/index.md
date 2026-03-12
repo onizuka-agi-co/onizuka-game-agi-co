@@ -13,6 +13,7 @@ ONIZUKA Game AGI Co. のプロジェクト管理。
 ## Planning
 
 - 次の主力ゲーム候補を再選定中
+- [onigame-quickshot](./onigame-quickshot/) - 1画面回避アクション案。2026-03-12 に planning 開始
 
 ---
 

@@ -8,10 +8,13 @@ ONIZUKA Game AGI Co. の主要な更新履歴を記録する。
 
 ### 追加
 - 現場運営会議記録: `memory/docs/2026/03/12/meeting-001-light-game.md`
+- 現場運営会議記録: `memory/docs/2026/03/12/meeting-002-light-game.md`
 - 当日日報: `memory/docs/2026/03/12/index.md`
 - バランス確認スクリプト: `games/grid-tactics/core/balance-test.js`
 - 会社構成図: `docs/onizuka-game-agi-company-structure.drawio`
 - 構成図 PNG: `docs/onizuka-game-agi-company-structure.drawio.png`
+- 次期主力候補の仕様メモ: `docs/game-concept-onigame-quickshot-v0.1.md`
+- プロジェクト記録: `memory/docs/projects/onigame-quickshot/index.md`
 
 ### 変更
 - `package.json` に `game:balance` スクリプトを追加
@@ -24,6 +27,7 @@ ONIZUKA Game AGI Co. の主要な更新履歴を記録する。
 - `README.md`, `PROJECTS.md`, `DECISIONS.md`, `memory/docs/projects/grid-tactics/index.md` に Grid Tactics クローズを反映
 - `.gitignore` と `games/README.md` を更新し、`games/onigame-*` を独立repoとして置く運用を反映
 - `games/onigame-omikuji` に静的なおみくじサンプルアプリを追加
+- `PROJECTS.md` / `DECISIONS.md` / `memory/docs/projects/index.md` を更新し、`onigame-quickshot` を planning として追加
 
 ---
 

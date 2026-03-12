@@ -6,6 +6,12 @@
 
 ## 2026-03
 
+### 2026-03-12: 次の主力候補を `onigame-quickshot` に決定
+- **決定:** 次に着手する主力候補を `onigame-quickshot`（1画面・短時間回避アクション）とし、v0.1 仕様を基準にプロトタイプへ進む
+- **理由:** 「GitHub Pages完全静的」「外部API不要」「vibe codingで短時間に前進」という現方針と最も整合し、セッション時間も 1〜3 分で設計しやすいため
+- **決定者:** エージェント（現場定例）
+- **影響:** `PROJECTS.md` は planning 候補を `onigame-quickshot` 中心に更新。次セッションの実装対象は `games/onigame-quickshot` の最小プロトタイプになる
+
 ### 2026-03-12: `games/onigame-*` を独立Gitリポジトリ置き場として使う
 - **決定:** 会社 repo 配下の `games/` は、各ゲームの独立Gitリポジトリをローカルに並べる作業場所として扱う。各ゲームは 1 repo / 1 GitHub Pages を前提にする
 - **理由:** 1ゲームごとに Pages デプロイ、Issue、README、公開管理を分けたほうが運用しやすく、会社 repo も運営記録に集中できるため
