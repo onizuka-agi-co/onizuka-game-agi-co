@@ -7,7 +7,9 @@
   "scripts": {
     "docs:dev": "vitepress dev memory/docs",
     "docs:build": "vitepress build memory/docs",
-    "docs:preview": "vitepress preview memory/docs"
+    "docs:preview": "vitepress preview memory/docs",
+    "game:smoke": "node games/grid-tactics/core/smoke-test.js",
+    "game:balance": "node games/grid-tactics/core/balance-test.js"
   },
   "repository": {
     "type": "git",
