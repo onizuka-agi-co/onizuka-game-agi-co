@@ -156,3 +156,4 @@ _更新日: 2026-03-13_
 - 更新: `DECISIONS.md` (Meeting 006 decision + Project #2 auth blocker)
 - 更新: `PROJECTS.md` (Meeting 006 status)
 - 更新: `memory/docs/history/index.md` (this entry)
+- Finalization pending: local commit `feda681` exists but push failed (`github.com:443` connection error).
