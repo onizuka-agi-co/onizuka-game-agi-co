@@ -1,6 +1,8 @@
 node_modules/
 docs/.vitepress/dist/
 docs/.vitepress/cache/
+memory/docs/.vitepress/dist/
+memory/docs/.vitepress/cache/
 games/onigame-*/
 !games/README.md
 
