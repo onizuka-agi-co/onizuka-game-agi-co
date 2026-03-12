@@ -93,3 +93,8 @@ _更新日: 2026-03-13_
 - onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。
 - Blocker: GitHub CLI 認証切れにより GitHub Project #2 の item 状態更新が未反映。
 - 対応方針: 次回 run 冒頭で gh auth を復旧し、Meeting 002 内容を Project #2 に同期する。
+
+## 2026-03-13 Meeting 003 追記
+- onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。
+- Blocker: `gh` が `C:\Users\Aslan\AppData\Roaming\GitHub CLI\config.yml` へのアクセス拒否で起動できず、GitHub Project #2 更新が未反映。
+- 対応方針: gh 設定アクセスを復旧後、Meeting 003 の board 更新（Meeting 002 状態見直し + Meeting 003 の次の1手 item 同期）を実施する。

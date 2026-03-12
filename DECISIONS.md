@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-13: Meeting 003で次タスク維持、Project #2 連携を環境ブロッカーとして記録
+- **決定:** `onigame-quickshot` の次作業は変更せず、`games/onigame-quickshot` の最小プロトタイプ着手を最優先に維持する。
+- **理由:** playable へ最短で進む判断としては引き続き妥当で、企画再検討より実装着手点の固定が有効なため。
+- **副作用:** `gh` が `C:\Users\Aslan\AppData\Roaming\GitHub CLI\config.yml` へのアクセス拒否で起動できず、GitHub Project #2 更新は未反映。
+- **決定者:** エージェント（現場定例）
+- **影響:** Meeting 003 の board 反映は復旧後に同期。会議ログと履歴で未反映状態を明示して追跡する。
+
 ### 2026-03-13: `onigame-quickshot` の次作業を最小プロトタイプ着手に固定
 - **決定:** `onigame-quickshot` を次の主力候補として維持し、次セッションの作業を `games/onigame-quickshot` の新規作成と 1 画面プロトタイプ実装に固定する。repo / prototype 未着手のためステータスは `planning` のまま据え置く
 - **理由:** 候補の再検討を続けるより、実装着手点を 1 つに固定したほうが現在の会社方針に沿って早く playable に近づけるため

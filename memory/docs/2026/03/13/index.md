@@ -11,6 +11,8 @@
 
 ## 会議
 - [meeting-001-light-game](./meeting-001-light-game.md) - 現場定例（`onigame-quickshot` の次作業を固定）
+- [meeting-002-light-game](./meeting-002-light-game.md) - Project #2 連携の復旧と会議結果同期
+- [meeting-003-light-game](./meeting-003-light-game.md) - `gh` 設定アクセス拒否をブロッカー化し次タスク維持
 
 ## 気づき
 - 候補が 1 本に絞れていても、repo と prototype がない段階では `active` に上げないほうが記録と実態が揃う。
@@ -41,3 +43,13 @@
 - GitHub CLI 認証切れにより Project #2 の item 更新が未反映
 - .git/index.lock 作成権限エラーで会議スコープ変更の commit/push が停止
 - ブロッカー解消: GitHub Project #2 同期（Meeting001=Done, Meeting002=Ready/P0/S）を実施
+
+## 追記 (Meeting 003)
+- [x] meeting-003-light-game.md を作成し、`onigame-quickshot` の次タスク維持を確認
+- [x] `gh` 操作を再試行し、`C:\Users\Aslan\AppData\Roaming\GitHub CLI\config.yml` へのアクセス拒否を新規ブロッカーとして記録
+- [x] `DECISIONS.md` / `PROJECTS.md` / `memory/docs/history/index.md` を Meeting 003 内容で更新
+
+## 追加ブロッカー (Meeting 003)
+- GitHub Project #2 更新に必要な `gh` が設定ファイルアクセス拒否で起動不可
+- 影響: Meeting 003 の board 反映（Status 更新 / 次の1手 item 更新）が未実施
+- commit 最終化で `.git/index.lock` 作成が Permission denied となり、meeting-scope 更新の push まで到達不可
