@@ -218,3 +218,12 @@ CEO automation によって `PLANNING_MEETING.md` または `CEO_REVIEW.md` が�
   - memory/docs/YYYY/MM/index.md (only when needed)
 - Do not modify files outside meeting scope during this automation run.
 - If unrelated changes exist, keep them untouched and continue the meeting output/update flow.
+
+## Meeting Output Finalization Rule (2026-03-13)
+
+- A planning meeting run is not complete until its meeting-scope outputs are committed and pushed.
+- Even when unrelated working tree changes exist, stage and commit only the meeting-scope files from this run.
+- Do not leave meeting logs, daily notes, `DECISIONS.md`, `PROJECTS.md`, monthly index updates, or history updates only in the local working tree.
+- If `PLANNING_MEETING.md` is updated in the same run, include it in the same commit or commit and push it immediately as required by repo policy.
+- Before finishing the run, verify that the meeting-scope commit reached `origin/main`.
+- If commit or push fails, record the blocker in the meeting log and automation memory before ending the run.
