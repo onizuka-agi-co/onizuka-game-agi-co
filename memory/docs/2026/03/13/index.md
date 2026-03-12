@@ -27,3 +27,17 @@
 | 01:22 | GitHub Project #2 の schema と items を確認 |
 | 01:24 | 次タスク用 draft item を Project #2 に追加し、Status `Ready` に設定 |
 | 01:27 | 会議記録、日報、意思決定、変更履歴を更新 |
+
+---
+
+## 追記 (Meeting 002)
+- [x] meeting-002-light-game.md を作成し、次の1タスクを再確認
+- [x] GitHub Project #2 連携を試行し、gh auth 無効をブロッカーとして記録
+
+## 会議ログ
+- [meeting-002-light-game](./meeting-002-light-game.md) - Project #2 認証ブロッカーを記録し、次の1タスクを維持
+
+## ブロッカー
+- GitHub CLI 認証切れにより Project #2 の item 更新が未反映
+- .git/index.lock 作成権限エラーで会議スコープ変更の commit/push が停止
+- ブロッカー解消: GitHub Project #2 同期（Meeting001=Done, Meeting002=Ready/P0/S）を実施

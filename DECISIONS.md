@@ -189,3 +189,10 @@
 ---
 
 _更新日: 2026-03-13_
+
+### 2026-03-13: Meeting 002で次の1タスクを維持し、Project #2 認証障害をブロッカー化
+- **決定:** onigame-quickshot の次タスクは変更せず、games/onigame-quickshot の最小プロトタイプ実装を継続する。
+- **理由:** 会社方針（軽量・短セッション・GitHub Pages完全静的）と整合し、最短で playable に近づくため。
+- **副作用:** GitHub Project #2 の item 更新は gh auth 無効で未反映。運用ログで追跡が一時的にMarkdown側へ偏る。
+- **決定者:** エージェント（現場定例）
+- **影響先:** 次回 run で認証復旧後に Project #2 へ同内容を同期する。
