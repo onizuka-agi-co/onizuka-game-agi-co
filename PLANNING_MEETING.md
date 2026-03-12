@@ -185,6 +185,10 @@
 - This meeting must use GitHub Project #2:
   - https://github.com/orgs/onizuka-agi-co/projects/2
 - Use [$github-project](D:\\Prj\\github-project-skill\\SKILL.md) for Project #2 operations.
+- Before any `gh` command in this repo, load `ONIZUKA_GITHUB_PAT` from `.env` into the current shell:
+  - `. .\scripts\load-onizuka-gh-token.ps1`
+  - or run the equivalent inline export if the script is unavailable
+- Treat `ONIZUKA_GITHUB_PAT` in `.env` as the default auth source for Project #2 operations.
 - Every run should reflect the meeting result in Project #2:
   - Move current work item status (`Todo` / `In Progress` / `Done`)
   - Update or create one item for "次の 1 手"
