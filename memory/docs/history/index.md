@@ -140,3 +140,4 @@ _更新日: 2026-03-13_
 - 意思決定追記: DECISIONS.md（PAT無効による Project #2 未同期を記録）
 - プロジェクト追記: PROJECTS.md（Meeting 004 のブロッカーと対応方針を追記）
 - 未反映事項: GitHub Project #2 更新は `ONIZUKA_GITHUB_PAT` 無効のため保留
+- 最終化未完: meeting-scope commit `d29129b` は作成済みだが、`git push origin main` が `github.com:443` 接続失敗で未完

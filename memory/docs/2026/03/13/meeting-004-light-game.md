@@ -50,3 +50,8 @@ Company: ONIZUKA Game AGI Co.
 - `Get-Content -Raw -Encoding UTF8 ROADMAP.md`
 - `Get-Content -Raw -Encoding UTF8 DECISIONS.md`
 - `gh auth status`（`.env` 由来 `ONIZUKA_GITHUB_PAT` で 2 回試行）
+
+## 最終化ブロッカー
+- meeting-scope 変更は commit 済み（`d29129b`）だが、`git push origin main` がネットワーク到達不可で失敗。
+- エラー: `Failed to connect to github.com port 443`
+- 影響: Meeting Output Finalization Rule の「origin/main 反映完了」は未達。

@@ -74,5 +74,10 @@
 - 影響: Meeting 004 の item 状態更新と「次の1手」反映が保留
 - 対応: 認証復旧後、Meeting 004 ログ題名に合わせて Project #2 を同期する
 
+## Finalize pending (Meeting 004)
+- meeting-scope 変更の commit（`d29129b`）は作成済み
+- `git push origin main` は `github.com:443` 接続失敗で未完
+- 認証復旧とネットワーク到達後に push を再実施する
+
 ## 会議ログ
 - [meeting-004-light-game](./meeting-004-light-game.md) - PAT無効ブロッカーを記録し、次の1手を維持
