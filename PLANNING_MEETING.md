@@ -222,6 +222,13 @@ CEO automation によって `PLANNING_MEETING.md` または `CEO_REVIEW.md` が�
 - Do not modify files outside meeting scope during this automation run.
 - If unrelated changes exist, keep them untouched and continue the meeting output/update flow.
 
+## Workspace Progress Rule (2026-03-13)
+
+- In this workspace, do not pause a run only because other files changed outside meeting scope.
+- Continue by staging and committing only this run's intended files.
+- Escalate only when there is a direct conflict on files this run must edit.
+- Treat unrelated modified/untracked files as background state and leave them untouched.
+
 ## Meeting Output Finalization Rule (2026-03-13)
 
 - A planning meeting run is not complete until its meeting-scope outputs are committed and pushed.

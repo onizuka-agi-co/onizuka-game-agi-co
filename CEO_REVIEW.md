@@ -127,6 +127,13 @@ CEO automation は主に次を更新してよいです。
 
 頻繁に全面書き換えするのではなく、重点、回避事項、次の賭け筋、playable 基準の更新を優先してください。
 
+## Workspace Progress Rule (2026-03-13)
+
+- In this workspace, do not stop a CEO review run only because unrelated git changes exist.
+- Continue by staging and committing only CEO-review-scope files from the current run.
+- Escalate only when a direct conflict blocks edits on required files.
+- Keep unrelated modified/untracked files untouched.
+
 ## Escalation Rules
 
 次の条件なら、より強い修正を行ってよいです。
