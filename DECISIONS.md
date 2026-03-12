@@ -6,6 +6,12 @@
 
 ## 2026-03
 
+### 2026-03-13: `onigame-quickshot` の次作業を最小プロトタイプ着手に固定
+- **決定:** `onigame-quickshot` を次の主力候補として維持し、次セッションの作業を `games/onigame-quickshot` の新規作成と 1 画面プロトタイプ実装に固定する。repo / prototype 未着手のためステータスは `planning` のまま据え置く
+- **理由:** 候補の再検討を続けるより、実装着手点を 1 つに固定したほうが現在の会社方針に沿って早く playable に近づけるため
+- **決定者:** エージェント（現場定例）
+- **影響:** `PROJECTS.md` と GitHub Project #2 は `onigame-quickshot` prototype bootstrap を次の 1 手として扱う
+
 ### 2026-03-12: 次の主力候補を `onigame-quickshot` に決定
 - **決定:** 次に着手する主力候補を `onigame-quickshot`（1画面・短時間回避アクション）とし、v0.1 仕様を基準にプロトタイプへ進む
 - **理由:** 「GitHub Pages完全静的」「外部API不要」「vibe codingで短時間に前進」という現方針と最も整合し、セッション時間も 1〜3 分で設計しやすいため
@@ -182,4 +188,4 @@
 
 ---
 
-_更新日: 2026-03-12_
+_更新日: 2026-03-13_

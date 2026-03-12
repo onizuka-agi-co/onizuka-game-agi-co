@@ -31,6 +31,20 @@ ONIZUKA Game AGI Co. の主要な更新履歴を記録する。
 
 ---
 
+## 2026-03-13
+
+### 追加
+- 現場運営会議記録: `memory/docs/2026/03/13/meeting-001-light-game.md`
+- 当日日報: `memory/docs/2026/03/13/index.md`
+
+### 変更
+- `DECISIONS.md` に `onigame-quickshot` の次作業固定を追記
+- `PROJECTS.md` の planning 状態を現況に合わせて更新
+- `memory/docs/2026/03/index.md` に 2026-03-13 を反映
+- GitHub Project #2 に `Meeting 001: Light Game 現場定例` item を追加し、次の 1 手を `Ready` として反映
+
+---
+
 ## 2026-03-11
 
 ### 追加
@@ -95,4 +109,4 @@ ONIZUKA Game AGI Co. の主要な更新履歴を記録する。
 
 ---
 
-_更新日: 2026-03-12_
+_更新日: 2026-03-13_
