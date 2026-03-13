@@ -173,3 +173,15 @@
 - Local commit `5cfe047` is created but not pushed.
 - `git push origin main` failed with `github.com:443` connection error.
 - Next run must retry push and verify remote sync.
+
+## 実施 (Meeting 010)
+- [x] `PLANNING_MEETING.md` を起点に required inputs を再確認。
+- [x] `.env` の `ONIZUKA_GITHUB_PAT` を読み込み `gh auth status` を2回再試行。
+- [x] token invalid を記録し、meeting-scope ファイルを更新。
+
+## Project sync pending (Meeting 010)
+- GitHub Project #2 は `ONIZUKA_GITHUB_PAT` invalid のため未同期。
+- 次runで token 復旧後、Meeting 010 の status 更新と「次の1手」item同期を実施。
+
+## 会議ログ
+- [meeting-010-light-game](./meeting-010-light-game.md) - token invalid ブロッカーを記録し、次の1手を固定。
