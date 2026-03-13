@@ -205,3 +205,8 @@
 
 ## 会議ログ
 - [meeting-011-light-game](./meeting-011-light-game.md) - 実行ポリシー制約と token invalid を記録し、次の1手を固定
+
+## Finalize pending (Meeting 011)
+- Local commit e5832c was created for meeting-scope updates.
+- git -c safe.directory=D:/Prj/onizuka-game-agi-co push origin main failed with github.com:443 connection error.
+- Next run must retry push and verify HEAD == origin/main.
