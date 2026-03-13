@@ -190,3 +190,18 @@
 - Local commit `d305f28` was created for meeting-scope updates.
 - `git -c safe.directory=D:/Prj/onizuka-game-agi-co push origin main` failed with `github.com:443` connection error.
 - Next run must retry push and verify `HEAD == origin/main`.
+
+## 実施 (Meeting 011)
+- [x] PLANNING_MEETING.md を起点に required inputs を確認
+- [x] games/onigame-quickshot 未作成を再確認
+- [x] scripts/load-onizuka-gh-token.ps1 実行を試行（execution policy で失敗）
+- [x] .env から ONIZUKA_GITHUB_PAT を直接読込して gh auth status を1回再試行（invalid）
+- [x] DECISIONS.md / PROJECTS.md / memory/docs/history/index.md を Meeting 011 で更新
+
+## Project sync pending (Meeting 011)
+- GitHub Project #2 は ONIZUKA_GITHUB_PAT invalid のため未同期
+- scripts/load-onizuka-gh-token.ps1 は実行ポリシーでブロック
+- 次回 run で token 復旧後に Meeting 011 の status と「次の1手」item を反映
+
+## 会議ログ
+- [meeting-011-light-game](./meeting-011-light-game.md) - 実行ポリシー制約と token invalid を記録し、次の1手を固定
