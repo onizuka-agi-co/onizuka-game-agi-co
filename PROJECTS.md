@@ -174,3 +174,8 @@ _更新日: 2026-03-13_
 - Project #2 sync completed in this run:
   - Meeting 013 item moved to Done.
   - Meeting 014 item created and set to Ready / P0 / S.
+
+## 2026-03-13 CEO Review 002 update
+- 状態判断: `onigame-quickshot` は planning 維持（`games/onigame-quickshot` 未作成）。
+- 運用変更: 2 run 連続で実装差分 0 の場合、次runで `Execution debt` を明記し、開始5分タスクまで固定する。
+- 実行順序変更: `onigame-quickshot` 未着手時は Project #2 同期より先に最小実装差分を作る。

@@ -6,6 +6,12 @@
 
 ## 2026-03
 
+### 2026-03-13: CEOレビューで「2 run 連続停滞時の実装ゲート」を追加
+- **決定:** `PLANNING_MEETING.md` に `Implementation Gate (CEO 2026-03-13)` を追加し、`onigame-quickshot` 未着手時は Project #2 同期より先に最小実装差分を必須化した。
+- **理由:** Meeting 012-014 で Project #2 同期は回復した一方、`games/onigame-quickshot` は未作成のまま連続停滞していたため。
+- **決定者:** エージェント（CEOレビュー）
+- **影響:** 現場定例は「会議更新だけで終了」を許容せず、最小ファイル追加または最小挙動追加を先に行う。
+
 ### 2026-03-13: Meeting 005で次タスク維持、Project #2 同期をPAT無効ブロッカーとして継続記録
 - **決定:** `onigame-quickshot` の次タスクは変更せず、`games/onigame-quickshot` の最小プロトタイプ実装を継続する。
 - **理由:** 企画の再検討より実装着手点の固定を優先したほうが、playable に最短で近づけるため。

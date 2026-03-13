@@ -75,6 +75,16 @@
 - 画面遷移や説明が少ない
 - GitHub Pages でそのまま試せる
 
+### Implementation Gate (CEO 2026-03-13)
+
+- `onigame-quickshot` が `planning` かつ `games/onigame-quickshot` 未作成の間は、Project #2 同期より先に最小実装差分を 1 つ作る。
+- 最小実装差分の例:
+  - `games/onigame-quickshot/index.html` の追加
+  - `games/onigame-quickshot/main.js` の追加
+  - プレイヤー移動または 60 秒タイマーのどちらか 1 つの動作確認
+- 同一テーマで 2 run 連続で実装差分が 0 の場合、3 run 目は会議ログ内に `Execution debt` セクションを作成し、未実装理由と次runの開始5分タスクを固定する。
+- 実装差分がない run では、`次の 1 手` は「同じ文言の再掲」ではなく開始条件（作るファイル名または最初の関数名）まで具体化する。
+
 ## Meeting Style
 
 - 会議は短く、実務寄りに進める
