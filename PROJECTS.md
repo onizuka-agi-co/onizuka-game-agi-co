@@ -158,3 +158,11 @@ _更新日: 2026-03-13_
 - Project #2 sync resumed in this run:
   - Meeting 004 item moved to Done.
   - Meeting 012 item created and set to Ready / P0 / S.
+
+## 2026-03-13 Meeting 013 update
+- onigame-quickshot remains **planning**.
+- Prototype folder `games/onigame-quickshot` is still missing.
+- Next action remains fixed: bootstrap minimum one-screen playable prototype in `games/onigame-quickshot`.
+- Project #2 sync completed in this run:
+  - Meeting 012 item moved to Done.
+  - Meeting 013 item created and set to Ready / P0 / S.
