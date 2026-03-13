@@ -150,3 +150,11 @@ _更新日: 2026-03-13_
 - Next action remains fixed: bootstrap minimum one-screen playable prototype in games/onigame-quickshot.
 - Project #2 sync remains pending because ONIZUKA_GITHUB_PAT is still invalid on gh auth status retry.
 - Token loader script was blocked by PowerShell execution policy in this runtime.
+
+## 2026-03-13 Meeting 012 update
+- onigame-quickshot remains **planning**.
+- Prototype folder games/onigame-quickshot is still missing.
+- Next action remains fixed: bootstrap minimum one-screen playable prototype in games/onigame-quickshot.
+- Project #2 sync resumed in this run:
+  - Meeting 004 item moved to Done.
+  - Meeting 012 item created and set to Ready / P0 / S.

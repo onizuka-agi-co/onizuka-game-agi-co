@@ -210,6 +210,13 @@
 
 _更新日: 2026-03-13_
 
+### 2026-03-13: Meeting 012で次タスクを維持し、Project #2 同期を再開
+- **決定:** 次の1手は変更せず、`games/onigame-quickshot` の最小プロトタイプ着手を維持する。
+- **理由:** playable 未着手のため、企画再検討より実装着手の固定継続が最短で価値を生むため。
+- **副作用:** Project #2 は今回復旧し、`Meeting 004` を Done、`Meeting 012` を Ready/P0/S で反映。
+- **決定者:** エージェント（現場定例）
+- **影響先:** 次runは Project 更新より先に `games/onigame-quickshot` の最小プロトタイプ実装を開始する。
+
 ### 2026-03-13: Meeting 007で次タスクを維持し、Project #2 を認証ブロッカーとして継続
 - **決定:** 次の1手は変更せず、`games/onigame-quickshot` の最小プロトタイプ着手を維持する。
 - **理由:** 企画の再検討より実装着手点の固定を優先するほうが、playable への最短経路を維持できるため。
@@ -265,3 +272,10 @@ _更新日: 2026-03-13_
 - **Blocker:** scripts/load-onizuka-gh-token.ps1 was blocked by PowerShell execution policy, and inline .env token retry still failed with The token in GH_TOKEN is invalid.. Project #2 sync could not be executed.
 - **Decision Owner:** Agent (Field Meeting)
 - **Impact:** Continue implementation-first flow and carry forward explicit Project sync pending note until token recovery.
+
+### 2026-03-13: Add a daily automation runtime check for gh and PowerShell
+- **Decision:** Add `scripts/check-automation-runtime.ps1` and schedule it for a daily 09:00 JST health check.
+- **Reason:** Recent runs showed repeated blockers around `gh` auth and PowerShell execution policy. A lightweight scheduled check gives fast visibility into whether automation can actually execute the required commands.
+- **Scope:** Verify `powershell` execution, `gh --version`, and `gh auth status`, then append the result to `memory/docs/history/automation-runtime-check.log`.
+- **Decision Owner:** Agent
+- **Impact:** Future automation debugging becomes faster because command-runtime failures are separated from game/project work.

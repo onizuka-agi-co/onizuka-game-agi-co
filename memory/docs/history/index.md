@@ -180,6 +180,14 @@ _更新日: 2026-03-13_
 - Push pending: `git push origin main` failed twice (`github.com:443` connection error).
 - Next run must retry push and verify remote sync.
 
+### Automation update (2026-03-13 gh / PowerShell runtime check)
+- Added: `scripts/check-automation-runtime.ps1`
+- Created task: `ONIZUKA-Game-AGI-Automation-Runtime-Check`
+- Schedule: daily 09:00 JST on Windows Task Scheduler
+- Output log: `memory/docs/history/automation-runtime-check.log`
+- Check scope: `powershell`, `gh --version`, `gh auth status`
+- Verification: scheduled task manual trigger finished with `Last Result: 0`
+
 ### 変更履歴更新 (2026-03-13 Meeting 009)
 - 追加: `memory/docs/2026/03/13/meeting-009-light-game.md`
 - 更新: `memory/docs/2026/03/13/index.md`
@@ -210,3 +218,12 @@ _更新日: 2026-03-13_
 - Local commit e5832c was created for Meeting 011 meeting-scope files.
 - Push pending: git push origin main failed (github.com:443 connection error).
 - Next run must retry push and verify remote sync.
+
+### 変更履歴更新 (2026-03-13 Meeting 012)
+- 追加: memory/docs/2026/03/13/meeting-012-light-game.md
+- 更新: memory/docs/2026/03/13/index.md
+- 更新: DECISIONS.md (Meeting 012 decision + Project #2 sync resumed)
+- 更新: PROJECTS.md (Meeting 012 status continuation)
+- 更新: memory/docs/2026/03/index.md (2026-03-13 の要約を最新化)
+- 更新: memory/docs/history/index.md (this entry)
+- Project sync: GitHub Project #2 で Meeting 004 を Done、Meeting 012 を Ready/P0/S へ反映。

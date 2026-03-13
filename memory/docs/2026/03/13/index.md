@@ -210,3 +210,21 @@
 - Local commit e5832c was created for meeting-scope updates.
 - git -c safe.directory=D:/Prj/onizuka-game-agi-co push origin main failed with github.com:443 connection error.
 - Next run must retry push and verify HEAD == origin/main.
+
+## Automation update (2026-03-13)
+- Added scheduled runtime check script: `scripts/check-automation-runtime.ps1`
+- Created Windows scheduled task: `ONIZUKA-Game-AGI-Automation-Runtime-Check`
+- Schedule: daily at 09:00 JST
+- Check scope: `powershell -NoProfile -Command ...`, `gh --version`, and `gh auth status`
+- Log file: `memory/docs/history/automation-runtime-check.log`
+- Verification: manual run and scheduled task run both succeeded (`Last Result: 0`)
+
+## 実施 (Meeting 012)
+- [x] `PLANNING_MEETING.md` を最初に読み、Required Inputs を確認
+- [x] `games/onigame-quickshot` 未作成を再確認
+- [x] `ONIZUKA_GITHUB_PAT` 読み込みで `gh auth status` を確認
+- [x] GitHub Project #2 を更新（Meeting 004 -> Done、Meeting 012 -> Ready/P0/S）
+- [x] `DECISIONS.md` / `PROJECTS.md` / `memory/docs/history/index.md` を Meeting 012 で更新
+
+## 会議ログ
+- [meeting-012-light-game](./meeting-012-light-game.md) - Project #2 同期を再開し、次の1手を維持
