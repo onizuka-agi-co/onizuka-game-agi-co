@@ -156,3 +156,15 @@
 - Local commit `d8437aa` was created for meeting-scope updates.
 - `git -c safe.directory=D:/Prj/onizuka-game-agi-co push origin main` failed twice with `github.com:443` connection error.
 - Next run must retry push and verify `HEAD == origin/main`.
+
+## 実施 (Meeting 009)
+- [x] `PLANNING_MEETING.md` を最初に読み、Required Inputs を再確認。
+- [x] `.env` の `ONIZUKA_GITHUB_PAT` を使って `gh auth status` を再試行。
+- [x] `ONIZUKA_GITHUB_PAT` invalid を記録し、meeting-scope を更新。
+
+## Project sync pending (Meeting 009)
+- GitHub Project #2 は `ONIZUKA_GITHUB_PAT` invalid のため未同期。
+- 次runで token 復旧後、Meeting 009 の status/item を反映する。
+
+## 会議ログ
+- [meeting-009-light-game](./meeting-009-light-game.md) - token invalid を記録し、次の1手を固定

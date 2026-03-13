@@ -179,3 +179,11 @@ _更新日: 2026-03-13_
 - Local commit `d8437aa` was created for Meeting 008 meeting-scope files.
 - Push pending: `git push origin main` failed twice (`github.com:443` connection error).
 - Next run must retry push and verify remote sync.
+
+### 変更履歴更新 (2026-03-13 Meeting 009)
+- 追加: `memory/docs/2026/03/13/meeting-009-light-game.md`
+- 更新: `memory/docs/2026/03/13/index.md`
+- 更新: `DECISIONS.md` (Meeting 009 decision + Project #2 auth blocker continuation)
+- 更新: `PROJECTS.md` (Meeting 009 status continuation)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Project sync pending: `ONIZUKA_GITHUB_PAT` invalid (`gh auth status` failed), so Project #2 update is deferred.
