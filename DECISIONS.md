@@ -286,3 +286,10 @@ _更新日: 2026-03-13_
 - **Project Sync:** Updated GitHub Project #2 in this run (`Meeting 012` -> `Done`, created `Meeting 013` with `Ready` / `P0` / `S`).
 - **Decision Owner:** Agent (Field Meeting)
 - **Impact:** Next run should execute prototype bootstrap directly instead of additional planning loops.
+
+### 2026-03-13: Meeting 014 kept next step fixed and synced Project #2
+- **Decision:** Keep onigame-quickshot as the single next work item and keep the next implementation step unchanged: bootstrap a one-screen playable prototype in games/onigame-quickshot.
+- **Reason:** No playable exists yet; smallest-scope implementation remains the fastest path under current company constraints.
+- **Project Sync:** Updated GitHub Project #2 in this run (Meeting 013 -> Done, created Meeting 014 with Ready / P0 / S).
+- **Decision Owner:** Agent (Field Meeting)
+- **Impact:** Next run should execute prototype bootstrap directly instead of additional planning loops.
