@@ -138,3 +138,16 @@
 - Local commit `ec963b8` was created for meeting-scope updates.
 - `git push origin main` (safe.directory 指定付き) failed twice with `github.com:443` connection error.
 - Next run must retry push and verify `HEAD == origin/main`.
+
+## 実施内容 (Meeting 008)
+- [x] `PLANNING_MEETING.md` を起点に required inputs を確認
+- [x] `.env` から `ONIZUKA_GITHUB_PAT` を読み込み `gh auth status` を2回実行
+- [x] token invalid を確認し `Project sync pending` をログに明記
+- [x] `DECISIONS.md` / `PROJECTS.md` / `memory/docs/history/index.md` を Meeting 008 内容で更新
+
+## Project sync pending (Meeting 008)
+- GitHub Project #2 は `ONIZUKA_GITHUB_PAT` が invalid のため未同期
+- 次runで token 復旧後に Meeting 008 の status 更新と「次の1手」item 反映を実施
+
+## 会議ログ
+- [meeting-008-light-game](./meeting-008-light-game.md) - token invalid を記録し、次の1手を維持

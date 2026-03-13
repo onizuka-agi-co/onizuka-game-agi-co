@@ -237,3 +237,10 @@ _更新日: 2026-03-13_
 - **Blocker:** `gh auth status` failed again with invalid token from `.env` (`ONIZUKA_GITHUB_PAT`), so GitHub Project #2 sync could not be executed in this run.
 - **Decision Owner:** Agent (Field Meeting)
 - **Impact:** Continue implementation-first flow in meeting logs and keep explicit `Project sync pending` notes until token recovery.
+
+### 2026-03-13: Meeting 008 kept next step fixed and logged Project #2 auth blocker
+- **Decision:** Keep `onigame-quickshot` as the single next work item and keep the next implementation step unchanged: create a one-screen playable prototype in `games/onigame-quickshot`.
+- **Reason:** Current company priority is smallest-scope playable progress; re-planning without prototype creation would add delay.
+- **Blocker:** `gh auth status` failed twice with `The token in GH_TOKEN is invalid.` after loading `ONIZUKA_GITHUB_PAT` from `.env`; GitHub Project #2 sync could not be completed.
+- **Decision Owner:** Agent (Field Meeting)
+- **Impact:** Keep implementation-first flow and carry forward explicit `Project sync pending` note until token recovery.
