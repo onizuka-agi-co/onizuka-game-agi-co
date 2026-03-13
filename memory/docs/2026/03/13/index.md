@@ -151,3 +151,8 @@
 
 ## 会議ログ
 - [meeting-008-light-game](./meeting-008-light-game.md) - token invalid を記録し、次の1手を維持
+
+## Finalize pending (Meeting 008)
+- Local commit `d8437aa` was created for meeting-scope updates.
+- `git -c safe.directory=D:/Prj/onizuka-game-agi-co push origin main` failed twice with `github.com:443` connection error.
+- Next run must retry push and verify `HEAD == origin/main`.
