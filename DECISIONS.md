@@ -357,3 +357,10 @@ _更新日: 2026-03-14_
 - **Project Sync:** Updated all three Project #2 execution items (bootstrap/playtest/publish) to `onigame-dodge60` naming, kept primary next item as `Playtest onigame-dodge60 first playable and fix top friction` (`Ready`, `P0`).
 - **Decision Owner:** Agent (Field Meeting)
 - **Impact:** Next run should move the playtest item to `In progress` and ship at least one friction fix on the actual repo.
+
+### 2026-03-14: Game-specific tasks should live in the game repository issues
+- **Decision:** Company-wide operating tasks stay in `onizuka-game-agi-co` issues, but game-specific tasks must be tracked in the corresponding game repository issues.
+- **Reason:** Game implementation and release history should live with the game repo itself so the board, issue flow, and shipped code stay aligned.
+- **Project Sync:** Migrated current Dodge60 board items from company repo issues to `onizuka-agi-co/onigame-dodge60` issues (`#1`, `#2`, `#3`) and removed the old company-repo-backed board items.
+- **Decision Owner:** Human request reflected by agent
+- **Impact:** Future Project #2 work should use company repo issues only for company operations, and game repo issues for actual game work.
