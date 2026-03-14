@@ -119,13 +119,14 @@
 
 ## Standard Flow
 
-1. 現在の playable 状態を確認する
-2. 直近の変更、未解決課題、ブロッカーを確認する
-3. 今回もっとも価値が高く、かつ小さいタスクを 1 つ選ぶ
-4. 必要なら企画、開発、レビュー、調査を小さく並行実行する
-5. 実装または判断を残す
-6. ログと決定事項を更新する
-7. 次の 1 手を 1 つだけ決める
+1. GitHub Project #2 を確認し、現在の primary active item を特定する
+2. 現在の playable 状態、直近の変更、未解決課題、ブロッカーを確認する
+3. 今回もっとも価値が高く、かつ小さい "next 1 hand" を 1 つ選ぶ
+4. 必要なら active item の title / body / status を実作業に合わせて修正する
+5. 必要なら企画、開発、レビュー、調査を小さく並行実行する
+6. 実装または判断を残す
+7. ログ、決定事項、Project item を更新する
+8. 次の 1 手を 1 つだけ決める
 
 ## Task Selection Rules
 
@@ -226,6 +227,22 @@
 - Preferred title style: a concrete action such as `Bootstrap onigame-quickshot one-screen playable prototype`.
 - The meeting number may appear in the markdown log or the Project item body, but not as the Project item title.
 - If an older run left a meeting-titled Project item as the active item, rename or replace it in the same run before updating status.
+- Remove stale meeting items, test items, and other board noise when they stop helping humans understand current progress.
+
+## Project Item Template
+
+- Title: imperative and scoped to one execution slice.
+- Body should include:
+  - `Current focus`
+  - `Why this item exists`
+  - `Latest meeting reference`
+  - `Done when`
+  - `Blockers` when relevant
+- Status guidance:
+  - `Backlog` for later work not selected yet
+  - `Ready` for the next item to pull
+  - `In Progress` only when a run is actively executing that slice
+  - `Done` only when the work itself is complete, not when the meeting finishes
 
 CEO automation によって `PLANNING_MEETING.md` または `CEO_REVIEW.md` が更新された場合は、その変更を都度コミットして push してください。
 現場会議側も、これらのファイルに変更が入っていることを見つけたら、未コミットのまま放置しないで記録を残してください。

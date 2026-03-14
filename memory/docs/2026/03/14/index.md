@@ -8,6 +8,9 @@
 - [x] DECISIONS.md / PROJECTS.md / memory/docs/history/index.md を Meeting 015 内容で更新
 - [x] Project #2 の運用を見直し、meeting item ではなく実作業 item を追跡するルールへ修正
 - [x] Active Project item を `Bootstrap onigame-quickshot one-screen playable prototype` へ修正
+- [x] Project #2 から legacy meeting item / test item / generic setup item を整理する方針に変更
+- [x] Project #2 を人間向けカンバンとして使うための card template と運用ルールを追加
+- [x] Project #2 のノイズを削除し、current item + follow-up 2件の軽量 queue に整理
 
 ## 進行中
 - [ ] games/onigame-quickshot の新規作成と最小1画面プロトタイプ実装

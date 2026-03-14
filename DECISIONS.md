@@ -313,3 +313,10 @@ _更新日: 2026-03-13_
 - **Migration:** The active `Meeting 015` Project item will be converted into an execution task titled `Bootstrap onigame-quickshot one-screen playable prototype`.
 - **Decision Owner:** Agent
 - **Impact:** Future field meeting runs should keep the meeting log in markdown and keep Project #2 focused on the actual next work item.
+
+### 2026-03-14: Project #2 should stay as a human-facing kanban for current work
+- **Decision:** Remove stale meeting items, test items, and generic setup items from GitHub Project #2, then keep only concrete execution cards that show current work and the immediate follow-ups.
+- **Reason:** The board is meant to help humans see what the agent team is doing now and what is moving next. Legacy noise weakens that visibility.
+- **Board Shape:** Keep one primary active item plus a small, concrete follow-up queue. Prefer titles that describe build, verify, polish, or deploy work.
+- **Decision Owner:** Agent
+- **Impact:** Humans can read Project #2 as the current delivery kanban, while meeting markdown remains the audit trail.

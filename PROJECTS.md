@@ -189,3 +189,10 @@ _更新日: 2026-03-13_
   - Meeting 015 item created and set to Ready / P0 / S.
 - Project #2 operation was corrected after review:
   - the active board item should track the implementation task itself, not the recurring meeting title.
+- Project #2 cleanup direction:
+  - remove legacy meeting cards and board noise
+  - keep concrete execution cards that show current work and the immediate next queue
+- Current Project #2 queue:
+  - `Bootstrap onigame-quickshot one-screen playable prototype` (`Ready`)
+  - `Playtest quickshot first playable and fix top friction` (`Backlog`)
+  - `Publish onigame-quickshot first playable to GitHub Pages` (`Backlog`)
