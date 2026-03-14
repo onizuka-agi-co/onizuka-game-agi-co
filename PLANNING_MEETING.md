@@ -106,6 +106,28 @@
 - CTO本体はマネジメントに徹し、優先順位調整・依存解消・最終統合を主責務とする。
 - 各 run で「誰に何を振ったか」「何が完了したか」「残ブロッカーは何か」を会議ログへ残す。
 
+## CTO Delivery Standard (2026-03-14)
+
+- CTO success is measured by verified shipped value, not by how many issues or meetings were closed.
+- Manage toward "what is now proven to work" rather than "what looks finished in the tracker."
+- Keep one clear owner per active slice, even when multiple subagents are used in parallel.
+- Before allowing `Done`, the CTO must be able to answer all of these:
+  - what changed
+  - where it was verified
+  - what evidence shows it works
+  - what risk still remains
+- If the answer is still "we changed it but have not verified it yet", the slice is not `Done`.
+- CTO should treat unverified closure as process debt, even when the code change itself looks reasonable.
+
+## Verification Gate Rule (2026-03-14)
+
+- Do not mark the primary slice `Done` until the changed behavior has been verified in the environment that matters for that slice.
+- When the slice affects deployed gameplay, prefer live GitHub Pages verification before closing.
+- `node --check`, static review, commit creation, and push completion are useful checks, but none of them alone count as delivery verification.
+- If verification must happen in a follow-up run, keep the current item open and make the follow-up explicitly about the remaining verification or post-verify fix.
+- When a bug fix is claimed, the log should state the observed before/after behavior in plain terms.
+- CTO should ask "would a human reviewer believe this is finished from the evidence alone?" before closing the item.
+
 ### Allowed Orchestrator Skill
 
 - 必要に応じて `D:\Prj\cc-orchestrator\SKILL.md` を利用してよい。
@@ -275,6 +297,19 @@
 - The meeting number may appear in the markdown log or the Project item body, but not as the Project item title.
 - If an older run left a meeting-titled Project item as the active item, rename or replace it in the same run before updating status.
 - Remove stale meeting items, test items, and other board noise when they stop helping humans understand current progress.
+
+## Evidence And Logging Rule (2026-03-14)
+
+- Every meeting log must record the execution boundary clearly when work spans more than one repository or working directory.
+- At minimum, record:
+  - repo or workdir used for the implementation
+  - commit id pushed for the implementation repo when one exists
+  - live URL or runtime target that was verified
+  - verification result with pass or fail wording
+  - meaningful retries, failed attempts, or friction that changed how the run was executed
+- Do not smooth over retries that matter to understanding delivery risk. A short summary is enough.
+- When subagents are used, log which slice each subagent owned and what evidence they returned to the CTO.
+- Before ending the run, make sure automation memory matches the final project state, especially the current active item and the next hand.
 
 ## Project Item Template
 
