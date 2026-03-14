@@ -32,6 +32,7 @@
 - 複雑な AGI や大きなシステム設計を前提にしない
 - vibe coding で短時間に前進しにくい案は避ける
 - GitHub Pages に載せづらい重い構成は避ける
+- 公開するアプリ画面には対象リポジトリの GitHub リンクを必ず表示する
 
 ## Repository Naming Rule
 
@@ -74,6 +75,7 @@
 - 1 セッションが短い
 - 画面遷移や説明が少ない
 - GitHub Pages でそのまま試せる
+- 画面内に GitHub リポジトリへのリンクがあり、ソースへすぐ辿れる
 
 ### Implementation Gate (CEO 2026-03-13)
 
