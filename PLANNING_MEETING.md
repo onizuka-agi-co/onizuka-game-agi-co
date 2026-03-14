@@ -231,6 +231,10 @@
   - Move current work item status (`Todo` / `In Progress` / `Done`)
   - Update or create one item for the real "next 1 hand"
   - Keep the Project item title action-oriented and implementation-specific
+- Default task source:
+  - create or reuse an issue in `https://github.com/onizuka-agi-co/onizuka-game-agi-co/issues`
+  - add that repository issue to Project #2
+  - do not default to draft issues when a normal repo issue is sufficient
 - Do not leave meeting decisions only in markdown if the same task is tracked on Project #2.
 - If `gh` is blocked by auth/config/permission issues, do one quick retry, log the blocker, and continue the run with implementation-first updates.
 - When Project #2 sync is blocked, still complete meeting-scope file updates and leave one explicit "Project sync pending" note in the daily log.
@@ -239,6 +243,8 @@
 ## Project Item Policy (2026-03-14)
 
 - GitHub Project #2 must track execution work, not the recurring planning meeting itself.
+- Project #2 execution work should default to issue-backed items from `onizuka-agi-co/onizuka-game-agi-co`.
+- Use draft issues only when there is a concrete blocker to creating or reusing a repository issue.
 - Do not create recurring draft items titled `Meeting XXX: Light Game 現場定例`.
 - The meeting record belongs in markdown under `memory/docs/...`; the board item should describe the actual work to do next.
 - Keep one primary active item aligned with the current "next 1 hand".

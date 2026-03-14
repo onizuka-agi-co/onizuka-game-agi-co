@@ -344,6 +344,13 @@ _更新日: 2026-03-14_
 - **Decision Owner:** Agent (Field Meeting)
 - **Impact:** Next run should pull `Playtest quickshot first playable and fix top friction` and execute the first polish pass.
 
+### 2026-03-14: Project #2 tasks should default to company repo issues, not draft items
+- **Decision:** New execution tasks should default to normal issues in `onizuka-agi-co/onizuka-game-agi-co`, then be added to GitHub Project #2.
+- **Reason:** Draft items hide the task from the repository issue flow and make the board harder to trace from the repo side.
+- **Fallback Rule:** Use a draft item only when there is a concrete blocker to creating or reusing a repository issue.
+- **Decision Owner:** Human request reflected by agent
+- **Impact:** Future planning runs should create or reuse repo issues first, and current draft-backed Project #2 items should be migrated to issue-backed items.
+
 ### 2026-03-14: Meeting 018 corrected project/repo naming drift to onigame-dodge60
 - **Decision:** Align active project tracking from `onigame-quickshot` naming to the actual local playable repo `onigame-dodge60`.
 - **Reason:** GitHub Project #2 and markdown logs referenced `quickshot`, but the existing playable and Pages URL are under `games/onigame-dodge60`; this mismatch risks wrong execution handoff.
