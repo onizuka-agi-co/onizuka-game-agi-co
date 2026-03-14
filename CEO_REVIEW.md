@@ -43,6 +43,7 @@
 CEO review の最初に、必要な範囲で次を確認すること。
 
 - `PLANNING_MEETING.md`
+- `docs/company-operating-flow.md`
 - `PROJECTS.md`
 - `ROADMAP.md`
 - `DECISIONS.md`

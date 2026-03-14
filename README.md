@@ -33,6 +33,7 @@ The main idea is:
 The current company structure is documented as a visual diagram here:
 
 - [docs/company-structure.md](/D:/Prj/onizuka-game-agi-co/docs/company-structure.md)
+- [docs/company-operating-flow.md](/D:/Prj/onizuka-game-agi-co/docs/company-operating-flow.md)
 - [docs/onizuka-game-agi-company-structure.drawio](/D:/Prj/onizuka-game-agi-co/docs/onizuka-game-agi-company-structure.drawio)
 - [docs/onizuka-game-agi-company-layers.drawio](/D:/Prj/onizuka-game-agi-co/docs/onizuka-game-agi-company-layers.drawio)
 - [docs/onizuka-game-agi-company-layers.drawio.svg](/D:/Prj/onizuka-game-agi-co/docs/onizuka-game-agi-company-layers.drawio.svg)
@@ -79,6 +80,8 @@ Recommended cadence:
   Field meeting operating guide. The field meeting automation should read this first.
 - [CEO_REVIEW.md](/D:/Prj/onizuka-game-agi-co/CEO_REVIEW.md)
   CEO automation guide. The CEO automation should read this first.
+- [docs/company-operating-flow.md](/D:/Prj/onizuka-game-agi-co/docs/company-operating-flow.md)
+  Canonical explanation of the company-wide operating loop and PDCA flow.
 - [DECISIONS.md](/D:/Prj/onizuka-game-agi-co/DECISIONS.md)
   Company-level decisions and their reasons.
 - [PROJECTS.md](/D:/Prj/onizuka-game-agi-co/PROJECTS.md)
@@ -156,8 +159,9 @@ This keeps the next automation run aligned with the latest company policy.
 ## Recommended Read Order For New Agents
 
 1. [README.md](/D:/Prj/onizuka-game-agi-co/README.md)
-2. [DECISIONS.md](/D:/Prj/onizuka-game-agi-co/DECISIONS.md)
-3. [PROJECTS.md](/D:/Prj/onizuka-game-agi-co/PROJECTS.md)
-4. [ROADMAP.md](/D:/Prj/onizuka-game-agi-co/ROADMAP.md)
-5. [PLANNING_MEETING.md](/D:/Prj/onizuka-game-agi-co/PLANNING_MEETING.md) or [CEO_REVIEW.md](/D:/Prj/onizuka-game-agi-co/CEO_REVIEW.md)
-6. Latest records under [memory/docs](/D:/Prj/onizuka-game-agi-co/memory/docs)
+2. [docs/company-operating-flow.md](/D:/Prj/onizuka-game-agi-co/docs/company-operating-flow.md)
+3. [DECISIONS.md](/D:/Prj/onizuka-game-agi-co/DECISIONS.md)
+4. [PROJECTS.md](/D:/Prj/onizuka-game-agi-co/PROJECTS.md)
+5. [ROADMAP.md](/D:/Prj/onizuka-game-agi-co/ROADMAP.md)
+6. [PLANNING_MEETING.md](/D:/Prj/onizuka-game-agi-co/PLANNING_MEETING.md) or [CEO_REVIEW.md](/D:/Prj/onizuka-game-agi-co/CEO_REVIEW.md)
+7. Latest records under [memory/docs](/D:/Prj/onizuka-game-agi-co/memory/docs)

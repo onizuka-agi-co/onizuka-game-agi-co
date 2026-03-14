@@ -140,6 +140,7 @@
 会議の最初に、必要な範囲で次を確認すること。
 
 - `README.md`
+- `docs/company-operating-flow.md`
 - `PROJECTS.md`
 - `ROADMAP.md`
 - `DECISIONS.md`

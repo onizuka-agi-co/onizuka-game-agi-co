@@ -10,6 +10,10 @@ The diagram organizes the company into three layers:
 - Autonomous operating loop: the field meeting automation and the CEO review automation
 - Outputs and memory: product work, company memory, and decision logs
 
+For the canonical end-to-end operating loop and PDCA explanation, read:
+
+- [company-operating-flow.md](./company-operating-flow.md)
+
 ## Diagram
 
 ![ONIZUKA Game AGI company structure](./onizuka-game-agi-company-structure.drawio.png)

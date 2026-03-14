@@ -24,6 +24,7 @@
 - [x] live Pages で `#state`（READY->LIVE）遷移を検証
 - [x] `onigame-dodge60#6` を Done、次の1手 `onigame-dodge60#7` を作成して Project #2 `Ready/P1/S` に設定
 - [x] リトライ時に重複生成された `onigame-dodge60#8` を duplicate close + Project item 削除
+- [x] 会社全体の運営フロー文書 `docs/company-operating-flow.md` を追加し、README / CEO / CTO ルールから辿れるようにした
 
 ## 進行中
 - [ ] `Polish Dodge60 mobile drag feel with one fix`（`onigame-dodge60#7`）を実施

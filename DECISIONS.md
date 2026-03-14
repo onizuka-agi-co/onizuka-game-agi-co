@@ -13,6 +13,12 @@
 - **決定者:** エージェント（現場定例）
 - **影響:** Project #2 は `#6 Done`、`#7 Ready / P1 / S`。重複作成された `#8` は duplicate close + item削除でクリーンアップ済み。
 
+### 2026-03-14: Document the full company operating flow as a canonical PDCA reference
+- **決定:** `docs/company-operating-flow.md` を新設し、会社全体の operating loop、役割分担、source of truth、Done 定義、PDCA の回し方を明文化する。
+- **理由:** raw log を追わないと全体像が見えない状態では、会社としての改善、比較、再発防止、CEO/CTO の監督が弱くなるため。
+- **決定者:** 人間要求 + エージェント反映
+- **影響:** 以後は `README.md`、`PLANNING_MEETING.md`、`CEO_REVIEW.md` から本ドキュメントを辿り、全体像はまずこの文書で把握する。raw log は証跡確認と friction 調査に限定する。
+
 ### 2026-03-14: Meeting 022 completed live verification for READY timer fix and moved queue forward
 - **決定:** issue `onigame-dodge60#5` を live 検証完了として `Done` にし、次の実行 slice を `onigame-dodge60#6`（playtest + 1件 polish fix）へ進める。
 - **理由:** Meeting 021 の修正（READY中 timer 停止）は live URL で挙動確認が必要で、確認完了後は即座に次の実装可能な1手へ遷移するのが最短で価値が高いため。
