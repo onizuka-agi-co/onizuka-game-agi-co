@@ -28,7 +28,7 @@
 - **セッション長:** 1〜3分
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
 - **現況:** `games/onigame-dodge60` に最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）が存在し、GitHub Pages 公開URLも運用中
-- **次アクション:** READY猶予を含む最新fixの GitHub Pages 反映を smoke 検証（load/play/retry を確認）
+- **次アクション:** `onigame-dodge60#6` を実行し、live playtest で上位1件の摩擦を修正して Project #2 `Done` まで進める
 
 ---
 

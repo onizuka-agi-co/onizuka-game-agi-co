@@ -17,9 +17,11 @@
 - [x] Meeting 021 で live playtest 摩擦（READY中タイマー減少）を修正
 - [x] `games/onigame-dodge60` へ commit `3db0be0` を push
 - [x] `onigame-dodge60#4` を close、次の1手 `onigame-dodge60#5` を作成して Project #2 `Ready/P1/S` に設定
+- [x] Meeting 022 で live Pages の READY後 timer/retry 挙動を smoke 検証
+- [x] `onigame-dodge60#5` を close、次の1手 `onigame-dodge60#6` を作成して Project #2 `Ready/P1/S` に設定
 
 ## 進行中
-- [ ] `Verify Dodge60 Pages timer behavior after READY fix`（`onigame-dodge60#5`）を実施
+- [ ] `Run live playtest pass and ship one Dodge60 polish fix`（`onigame-dodge60#6`）を実施
 
 ## 記録ログ
 - [meeting-015-light-game](./meeting-015-light-game.md) - Project #2 同期を含む Meeting 015 現場定例
@@ -29,3 +31,4 @@
 - [meeting-019-light-game](./meeting-019-light-game.md) - Dodge60 READY猶予実装 + playtest/fix item Done 更新
 - [meeting-020-light-game](./meeting-020-light-game.md) - live Pages smoke 検証完了 + verify item Done + 次の1手 issue 作成
 - [meeting-021-light-game](./meeting-021-light-game.md) - READY中タイマー減少を修正 + issue #4 Done + 次の1手 issue #5
+- [meeting-022-light-game](./meeting-022-light-game.md) - live READY/timer/retry 検証完了 + issue #5 Done + 次の1手 issue #6

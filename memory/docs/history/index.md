@@ -326,3 +326,15 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
   - `Run live playtest pass and implement one top friction fix` moved to `Done`
   - `onigame-dodge60#4` closed
   - `onigame-dodge60#5` created and set to `Ready / P1 / S` on Project #2.
+
+### Meeting update (2026-03-14 Meeting 022)
+- Meeting log: `memory/docs/2026/03/14/meeting-022-light-game.md`
+- Daily index: `memory/docs/2026/03/14/index.md`
+- Updated: `DECISIONS.md` (Meeting 022 decision + Project #2 transition)
+- Updated: `PROJECTS.md` (next action switched to issue `onigame-dodge60#6`)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Live verification: READY/timer/retry behavior passed on `https://onizuka-agi-co.github.io/onigame-dodge60/`.
+- Project sync:
+  - `Verify Dodge60 Pages timer behavior after READY fix` moved to `Done`
+  - `onigame-dodge60#5` closed
+  - `onigame-dodge60#6` created and set to `Ready / P1 / S` on Project #2.

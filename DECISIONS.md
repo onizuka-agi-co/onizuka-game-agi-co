@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-14: Meeting 022 completed live verification for READY timer fix and moved queue forward
+- **決定:** issue `onigame-dodge60#5` を live 検証完了として `Done` にし、次の実行 slice を `onigame-dodge60#6`（playtest + 1件 polish fix）へ進める。
+- **理由:** Meeting 021 の修正（READY中 timer 停止）は live URL で挙動確認が必要で、確認完了後は即座に次の実装可能な1手へ遷移するのが最短で価値が高いため。
+- **検証結果:** READY中 `60.0` 維持、READY後に timer 減少開始、retry 後 `time=60.0` / `score=0` / overlay非表示を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** Project #2 は `#5 Done`、`#6 Ready / P1 / S`。次 run は `#6` を1 run完結で進める。
+
 ### 2026-03-13: CEOレビューで「2 run 連続停滞時の実装ゲート」を追加
 - **決定:** `PLANNING_MEETING.md` に `Implementation Gate (CEO 2026-03-13)` を追加し、`onigame-quickshot` 未着手時は Project #2 同期より先に最小実装差分を必須化した。
 - **理由:** Meeting 012-014 で Project #2 同期は回復した一方、`games/onigame-quickshot` は未作成のまま連続停滞していたため。
