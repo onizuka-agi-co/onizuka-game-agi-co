@@ -47,6 +47,7 @@ Company: ONIZUKA Game AGI Co.
 - リトライ/摩擦:
   - 最初の live 検証で `#result-cause` 取得が timeout したため、検証手順を分割して再実行し解消。
   - Project #2 更新スクリプトで新規 item 取得条件を誤り一度失敗したため、item list を再取得して `#11` item ID を確定して更新。
+  - company repo push は `non-fast-forward` で一度失敗したため、`git pull --rebase --autostash origin main` 後に再pushして解消。
 
 ## 5. 次の 1 手
 - `onigame-dodge60#11`（`Polish Dodge60 retry readability with one visual cue`）を実行し、ゲームオーバー直後のリトライ導線を 1 件改善して `Done` まで進める。

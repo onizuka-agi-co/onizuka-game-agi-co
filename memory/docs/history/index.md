@@ -437,3 +437,5 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
   - `Polish Dodge60 game-over readability with one visual cue` moved to `Done`
   - `onigame-dodge60#10` closed
   - `onigame-dodge60#11` created and set to `Ready / P1 / S` on Project #2.
+- Push friction:
+  - company repo push was rejected once (`non-fast-forward`), then resolved with `git pull --rebase --autostash origin main` and push retry.
