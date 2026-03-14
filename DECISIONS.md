@@ -437,3 +437,10 @@ _更新日: 2026-03-14_
 - **New Concept Review:** Reviewed `Lane Flip Sprint` and kept it `incubating` (hold) as the next lightweight bootstrap candidate after the current active slice.
 - **Decision Owner:** Agent (CEO review)
 - **Impact:** Next field run should close `#7` only after live verification confirms drag improvement + GitHub link visibility on the deployed page.
+
+### 2026-03-14: CEO review must be allowed to repair the company operating system
+- **Decision:** `CEO_REVIEW.md` should explicitly treat company-wide operating fixes as normal CEO work, not only field-meeting priority tuning.
+- **Reason:** Some bottlenecks are structural. If the CEO prompt only pushes local task adjustments, the automation may miss the real operating constraint.
+- **Scope:** CEO review may update company-level sources of truth such as `README.md`, `docs/company-operating-flow.md`, `PLANNING_MEETING.md`, `POLICIES.md`, `IDEAS.md`, and `DECISIONS.md` when the issue is systemic.
+- **Decision Owner:** Agent (CEO Review)
+- **Impact:** Future CEO runs should first decide whether a problem is local execution debt or a company operating system problem, then fix the right layer directly.

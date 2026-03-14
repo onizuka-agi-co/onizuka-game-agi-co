@@ -35,6 +35,9 @@
 
 - [x] Meeting 004 で company-level idea birth loop を CEO review として記録した
 
+- [x] CEO_REVIEW.md に company operating system 修正責務を追加した
+- [x] Meeting 006 で CEO review の company-wide fix 権限を記録した
+
 ## 進行中
 - [x] `Polish Dodge60 mobile drag feel with one fix`（`onigame-dodge60#7`）を完了
 - [ ] `Polish Dodge60 hit readability with one visual fix`（`onigame-dodge60#9`）を実施
@@ -51,7 +54,5 @@
 - [meeting-023-light-game](./meeting-023-light-game.md) - READY state/countdown HUD 実装 + issue #6 Done + 次の1手 issue #7
 - [meeting-024-light-game](./meeting-024-light-game.md) - mobile drag 改善 + 画面内GitHubリンク追加 + issue #7 Done + 次の1手 issue #9
 - [meeting-004-ceo-review](./meeting-004-ceo-review.md) - IDEAS birth loop 強化 + incubating candidate seed
-
-
-- [x] CEO Review 005 を実施し、`onigame-dodge60#7` の完了条件に「mobile drag 改善 + 画面内 GitHubリンク表示 + live確認」を再明確化
 - [meeting-005-ceo-review](./meeting-005-ceo-review.md) - CEOレビュー（現行維持 + 完了条件強化 + incubating候補の維持判断）
+- [meeting-006-ceo-review](./meeting-006-ceo-review.md) - CEO の company operating system 修正責務を明文化

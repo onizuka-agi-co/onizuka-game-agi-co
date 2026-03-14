@@ -43,6 +43,7 @@
 CEO review の最初に、必要な範囲で次を確認すること。
 
 - `PLANNING_MEETING.md`
+- `README.md`
 - `docs/company-operating-flow.md`
 - `IDEAS.md`
 - `PROJECTS.md`
@@ -132,6 +133,21 @@ CEO review では、日報だけで十分なら rollout まで掘らなくてよ
 6. 捨てるべきもの、減らすべきものは何か
 7. 新規企画候補を最低 1 つレビューし、採用/保留/却下の判断理由を言及したか
 8. `IDEAS.md` の funnel は回っているか。`inbox`、`incubating`、`adopted/rejected` の流れが詰まっていないか
+9. 今回見えている問題は、現場の task 問題か、会社全体の operating system 問題か
+
+
+## Company Operating System Fix Rule (2026-03-14)
+
+- CEO review is responsible for fixing the company operating system, not only the current field-meeting focus.
+- When the problem is systemic, update the company-level source of truth directly instead of only nudging one next task.
+- Systemic examples:
+  - the company loop is unclear
+  - `Done` is weak across runs
+  - idea birth or project creation is not self-sustaining
+  - logs are being used as the map instead of evidence
+  - role boundaries between CEO / CTO / subagents are unclear
+- In those cases, prefer changing the canonical governance docs first, then let future runs inherit the fix.
+- Do not treat `PLANNING_MEETING.md` as the only CEO lever. Use the smallest company-wide document change that fixes the real operating problem.
 
 ## Autonomous Idea Funnel Duty
 
@@ -180,9 +196,12 @@ CEO automation は主に次を更新してよいです。
 
 - `PLANNING_MEETING.md` の `CEO Managed Priorities`
 - `PLANNING_MEETING.md` の task selection や focus の調整
+- `README.md` の operating model / governance guidance
+- `docs/company-operating-flow.md` の canonical company loop / PDCA / source-of-truth
 - `PROJECTS.md` の状態整理
 - `DECISIONS.md` の方針変更記録
 - `IDEAS.md` の funnel 整理
+- `POLICIES.md` や他の company-level rule docs の補正
 - 必要なら GitHub Project #2 の新規 concept bootstrap backlog
 
 頻繁に全面書き換えするのではなく、重点、回避事項、次の賭け筋、playable 基準の更新を優先してください。
