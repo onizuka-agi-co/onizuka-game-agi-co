@@ -28,7 +28,7 @@
 - **セッション長:** 1〜3分
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
 - **現況:** `games/onigame-dodge60` に最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）が存在し、GitHub Pages 公開URLも運用中
-- **次アクション:** `onigame-dodge60#6` を実行し、live playtest で上位1件の摩擦を修正して Project #2 `Done` まで進める
+- **次アクション:** `onigame-dodge60#7` を実行し、mobile drag 操作の上位1件摩擦を修正して Project #2 `Done` まで進める
 
 ---
 
@@ -254,3 +254,14 @@ _更新日: 2026-03-14_
   - `Run live playtest pass and implement one top friction fix` moved to `Done`.
   - Next item `Verify Dodge60 Pages timer behavior after READY fix` created from game repo issue `onigame-dodge60#5` and set to `Ready / P1 / S`.
 - Next action: execute issue `#5` and verify live Pages timer behavior after deployment.
+
+## 2026-03-14 Meeting 023 update
+- `onigame-dodge60` remains **active**.
+- Thin slice completed: start readability improved by adding HUD state/countdown (`READY x.xs` -> `LIVE`).
+- Game repo implementation: `games/onigame-dodge60` updated and pushed as `0e0b853`.
+- Project #2 sync completed:
+  - `Run live playtest pass and ship one Dodge60 polish fix` moved to `Done`.
+  - Next item `Polish Dodge60 mobile drag feel with one fix` set to `Ready / P1 / S` (`onigame-dodge60#7`).
+- Board cleanup:
+  - Retry-side duplicate issue `onigame-dodge60#8` was closed and removed from Project #2.
+- Next action: execute issue `#7` and fix one mobile drag friction in one run.

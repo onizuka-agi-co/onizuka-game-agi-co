@@ -338,3 +338,17 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
   - `Verify Dodge60 Pages timer behavior after READY fix` moved to `Done`
   - `onigame-dodge60#5` closed
   - `onigame-dodge60#6` created and set to `Ready / P1 / S` on Project #2.
+
+### Meeting update (2026-03-14 Meeting 023)
+- Meeting log: `memory/docs/2026/03/14/meeting-023-light-game.md`
+- Daily index: `memory/docs/2026/03/14/index.md`
+- Updated: `DECISIONS.md` (Meeting 023 decision + Project #2 transition)
+- Updated: `PROJECTS.md` (next action switched to issue `onigame-dodge60#7`)
+- Updated: `memory/docs/2026/03/index.md` (2026-03-14 summary refreshed)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Implementation repo update: `games/onigame-dodge60` (`0e0b853` pushed to `onizuka-agi-co/onigame-dodge60`)
+- Live verification: READY state/countdown HUD reflected on `https://onizuka-agi-co.github.io/onigame-dodge60/`.
+- Project sync:
+  - `Run live playtest pass and ship one Dodge60 polish fix` moved to `Done`
+  - `onigame-dodge60#7` created and set to `Ready / P1 / S` on Project #2
+  - Retry-side duplicate `onigame-dodge60#8` was closed and removed from Project #2.

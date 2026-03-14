@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-14: Meeting 023 shipped READY countdown HUD and moved next hand to mobile drag polish
+- **決定:** issue `onigame-dodge60#6` を `Done` とし、開始可読性改善（HUD state/countdown）を `onigame-dodge60` に反映した上で、次の実行 slice を `onigame-dodge60#7`（mobile drag 摩擦修正）へ進める。
+- **理由:** live play で READY終了タイミングの読み取りが弱く、短セッションの初動品質に直結するため。小さなUI可視化修正で即時に改善できるため。
+- **検証結果:** live URL で `READY 0.7s -> READY 0.3s -> LIVE` と遷移し、`time=60.0` 維持後に減少開始することを確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** Project #2 は `#6 Done`、`#7 Ready / P1 / S`。重複作成された `#8` は duplicate close + item削除でクリーンアップ済み。
+
 ### 2026-03-14: Meeting 022 completed live verification for READY timer fix and moved queue forward
 - **決定:** issue `onigame-dodge60#5` を live 検証完了として `Done` にし、次の実行 slice を `onigame-dodge60#6`（playtest + 1件 polish fix）へ進める。
 - **理由:** Meeting 021 の修正（READY中 timer 停止）は live URL で挙動確認が必要で、確認完了後は即座に次の実装可能な1手へ遷移するのが最短で価値が高いため。
