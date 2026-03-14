@@ -270,3 +270,14 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Updated: `PROJECTS.md` (Meeting 016 status continuation)
 - Updated: `memory/docs/history/index.md` (this entry)
 - Project sync: GitHub Project #2 active item body updated to latest meeting reference (`meeting-016-light-game.md`) and current blocker.
+
+### Meeting update (2026-03-14 Meeting 017)
+- Meeting log: `memory/docs/2026/03/14/meeting-017-light-game.md`
+- Daily index: `memory/docs/2026/03/14/index.md`
+- Updated: `DECISIONS.md` (Meeting 017 decision + thin slice completion)
+- Updated: `PROJECTS.md` (`onigame-quickshot` moved to active)
+- Updated: `memory/docs/2026/03/index.md` (2026-03-14 summary refreshed)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Implementation: created first playable files under `games/onigame-quickshot` (`index.html`, `styles.css`, `main.js`).
+- Verification: `node --check games/onigame-quickshot/main.js` passed.
+- Project sync: GitHub Project #2 primary item `Bootstrap onigame-quickshot one-screen playable prototype` moved to `Done`.

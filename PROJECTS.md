@@ -6,14 +6,14 @@
 
 ## Active
 
-（アクティブなゲームプロジェクトなし）
+- `onigame-quickshot`（最小 playable 初版を作成、次はプレイテスト調整）
 
 ---
 
 ## Planning
 
-- 次の主力ゲーム候補は `onigame-quickshot` に固定
-- 現在の焦点は `games/onigame-quickshot` の新規作成と最小プロトタイプ着手
+- 次の主力ゲーム候補は `onigame-quickshot` を実装フェーズで継続
+- 現在の焦点は初版 playable のプレイテストと上位摩擦の修正
 - 候補方針:
   - GitHub Pages完全静的
   - 外部API不要
@@ -23,12 +23,12 @@
 
 ### onigame-quickshot（候補）
 
-- **ステータス:** planning
+- **ステータス:** active
 - **想定ジャンル:** 1画面 回避アクション
 - **セッション長:** 1〜3分
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
-- **現況:** 2026-03-13 現場定例で主力候補として継続確認。repo / prototype は未作成
-- **次アクション:** `games/onigame-quickshot` に最小プロトタイプ（移動 / 回避 / 60秒 / スコア）を実装
+- **現況:** 2026-03-14 Meeting 017 で `games/onigame-quickshot` を作成し、最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）を実装
+- **次アクション:** 初版 playable をプレイテストし、上位1-3件の摩擦ポイントを修正
 
 ---
 
@@ -87,7 +87,7 @@
 
 ---
 
-_更新日: 2026-03-13_
+_更新日: 2026-03-14_
 
 ## 2026-03-13 Meeting 002 追記
 - onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。
@@ -208,3 +208,11 @@ _更新日: 2026-03-13_
   - `Bootstrap onigame-quickshot one-screen playable prototype` (`Ready`)
   - `Playtest quickshot first playable and fix top friction` (`Backlog`)
   - `Publish onigame-quickshot first playable to GitHub Pages` (`Backlog`)
+
+## 2026-03-14 Meeting 017 update
+- `onigame-quickshot` is now **active**.
+- Prototype folder `games/onigame-quickshot` was created with first playable files (`index.html`, `styles.css`, `main.js`).
+- First thin slice (move / dodge / 60s timer / score / retry) was completed in one run.
+- Project #2 sync completed in this run:
+  - `Bootstrap onigame-quickshot one-screen playable prototype` moved to `Done`.
+  - Next primary candidate is `Playtest quickshot first playable and fix top friction` (`Backlog`).

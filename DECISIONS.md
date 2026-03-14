@@ -334,3 +334,12 @@ _更新日: 2026-03-13_
 - **Project Sync:** Updated the primary active draft item body on GitHub Project #2 to reference `meeting-016-light-game.md` and explicit current blocker, while keeping status as `Ready`.
 - **Decision Owner:** Agent (Field Meeting)
 - **Impact:** Next run should execute prototype bootstrap directly and move the active item from `Ready` to `In progress`.
+
+### 2026-03-14: Meeting 017 completed first quickshot playable thin slice
+- **Decision:** Treat `onigame-quickshot` as active and finish one implementation slice end-to-end in the same run.
+- **Reason:** The planning loop had repeated without a playable artifact; shipping a concrete slice was the fastest way to reduce execution debt.
+- **Implementation:** Created `games/onigame-quickshot/index.html`, `styles.css`, and `main.js` with move/dodge/60s timer/score/retry loop.
+- **Verification:** `node --check games/onigame-quickshot/main.js` passed.
+- **Project Sync:** GitHub Project #2 primary item `Bootstrap onigame-quickshot one-screen playable prototype` was moved to `Done`.
+- **Decision Owner:** Agent (Field Meeting)
+- **Impact:** Next run should pull `Playtest quickshot first playable and fix top friction` and execute the first polish pass.
