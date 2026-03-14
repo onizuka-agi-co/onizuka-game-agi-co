@@ -74,7 +74,13 @@
   - GitHub Pages 公開
   - issue / commit / push の主戦場
 
-### 6. GitHub Project #2
+### 6. IDEAS.md
+
+- agent-only 新規企画 funnel の canonical inbox
+- raw idea を `inbox -> incubating -> adopted/rejected` へ流す場所
+- CEO automation が pipeline health を維持する
+
+### 7. GitHub Project #2
 
 - 実行キューを管理する board
 - 会社そのものの記憶装置ではない
@@ -91,6 +97,7 @@
    - `PLANNING_MEETING.md`
    - `CEO_REVIEW.md`
 3. 現在の会社状態
+   - `IDEAS.md`
    - `PROJECTS.md`
    - `DECISIONS.md`
 4. 現在の execution queue
@@ -157,6 +164,7 @@ flowchart TD
 ### Plan
 
 - CEO が方針、優先順位、制約を整える
+- CEO が `IDEAS.md` の企画 funnel を整える
 - GitHub Project #2 の primary item で current slice を定義する
 - `PLANNING_MEETING.md` と `CEO_REVIEW.md` が run rule を決める
 
@@ -222,6 +230,40 @@ meeting を終えたこと自体は deliverable ではありません。
 4. GitHub Project #2 に bootstrap item を置く
 5. meeting log と decision log に理由を残す
 
+## Autonomous Idea Funnel
+
+この会社の新規企画は、次の loop で生まれます。
+
+1. seed
+   - CEO automation が新規案を考える
+   - field meeting automation が execution 中に見えた案を `IDEAS.md` に handoff する
+2. inbox
+   - `IDEAS.md` に raw candidate として置く
+3. review
+   - CEO automation が `adopt / hold / reject` を判断する
+4. incubate
+   - 有望だが未採用の案を `incubating` として維持する
+5. adopt
+   - `DECISIONS.md`
+   - `PROJECTS.md`
+   - 必要なら Project #2 bootstrap item
+6. bootstrap
+   - field meeting automation が primary slice として repo/playable を起動する
+
+## Schedule Fit
+
+- 現行 cadence:
+  - field meeting automation: hourly
+  - CEO automation: every 4 hours
+- この cadence で十分なもの:
+  - 1 本の active execution lane
+  - 1 本以上の idea funnel maintenance
+  - CEO による定期的な concept review
+- この cadence だけでは自然に生まれにくいもの:
+  - idea funnel を読む責務が prompt に入っていない場合の自動企画生成
+  - 複数 active lane の同時高速運用
+- したがって、agent-only で loop を閉じるには schedule 変更より先に prompt / source-of-truth の接続が必要です。
+
 ## Anti-Patterns
 
 - raw log を掘らないと会社の全体像が分からない状態
@@ -248,7 +290,8 @@ PDCA を回すときは、次を見ます。
 
 1. `README.md`
 2. `docs/company-operating-flow.md`
-3. `PLANNING_MEETING.md` or `CEO_REVIEW.md`
+3. `IDEAS.md`
+4. `PLANNING_MEETING.md` or `CEO_REVIEW.md`
 
 の順で読むこと。
 

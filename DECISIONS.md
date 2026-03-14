@@ -6,6 +6,12 @@
 
 ## 2026-03
 
+### 2026-03-14: Make the idea funnel agent-only and explicit
+- **決定:** `IDEAS.md` を単なるメモ置き場ではなく、agent-only の新規企画 funnel の canonical inbox として扱う。
+- **理由:** アイデアがあっても、CEO review と field meeting の loop に接続されていなければ、自動運営会社として新規企画が自然発生しないため。
+- **決定者:** 人間要求 + エージェント反映
+- **影響:** CEO automation は `IDEAS.md` を毎 run 確認し、最低 1 件を `adopt / hold / reject` で処理する。field meeting automation は idea handoff はしてよいが、CEO 判断か bootstrap item なしに新規 concept を primary lane に昇格させない。
+
 ### 2026-03-14: Meeting 023 shipped READY countdown HUD and moved next hand to mobile drag polish
 - **決定:** issue `onigame-dodge60#6` を `Done` とし、開始可読性改善（HUD state/countdown）を `onigame-dodge60` に反映した上で、次の実行 slice を `onigame-dodge60#7`（mobile drag 摩擦修正）へ進める。
 - **理由:** live play で READY終了タイミングの読み取りが弱く、短セッションの初動品質に直結するため。小さなUI可視化修正で即時に改善できるため。

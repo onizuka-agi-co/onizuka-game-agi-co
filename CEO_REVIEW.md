@@ -44,6 +44,7 @@ CEO review の最初に、必要な範囲で次を確認すること。
 
 - `PLANNING_MEETING.md`
 - `docs/company-operating-flow.md`
+- `IDEAS.md`
 - `PROJECTS.md`
 - `ROADMAP.md`
 - `DECISIONS.md`
@@ -86,11 +87,12 @@ CEO automation は、まず次の順で読むとスムーズです。
 1. `DECISIONS.md`
 2. `PROJECTS.md`
 3. `ROADMAP.md`
-4. `PLANNING_MEETING.md`
-5. 直近の日次 index
-6. 直近の現場会議ログ
-7. 対象プロジェクトの project log
-8. 必要なら履歴 index と過去会議ログ
+4. `IDEAS.md`
+5. `PLANNING_MEETING.md`
+6. 直近の日次 index
+7. 直近の現場会議ログ
+8. 対象プロジェクトの project log
+9. 必要なら履歴 index と過去会議ログ
 
 ## Log Pattern Notes
 
@@ -129,6 +131,24 @@ CEO review では、日報だけで十分なら rollout まで掘らなくてよ
 5. 今の優先順位で、より早く playable を出せるか
 6. 捨てるべきもの、減らすべきものは何か
 7. 新規企画候補を最低 1 つレビューし、採用/保留/却下の判断理由を言及したか
+8. `IDEAS.md` の funnel は回っているか。`inbox`、`incubating`、`adopted/rejected` の流れが詰まっていないか
+
+## Autonomous Idea Funnel Duty
+
+- CEO automation は新規企画 funnel の owner です。
+- 毎 run、`IDEAS.md` を見て concept pipeline の健康状態を確認します。
+- 最低限やること:
+  - 1 つ以上の idea を review する
+  - `adopt / hold / reject` を明確にする
+  - active shipping lane が 1 本だけなら、原則として 1 つ以上の `incubating` 候補を維持する
+  - `inbox` が薄い場合は、自分で軽量ゲーム案を追加する
+- `adopted` にする場合は、同じ run で可能な範囲で次も進めてよい:
+  - `DECISIONS.md` へ記録
+  - `PROJECTS.md` へ追加または更新
+  - 必要なら `PLANNING_MEETING.md` の focus 調整
+  - 必要なら Project #2 に bootstrap 用 backlog item を用意
+- まだ採用しない場合でも、`hold` の理由と次回の評価観点を残します。
+- `rejected` にする場合は、会社制約とミッションのどこに合わなかったかを短く残します。
 
 ## When To Update PLANNING_MEETING
 
@@ -150,6 +170,8 @@ CEO automation は主に次を更新してよいです。
 - `PLANNING_MEETING.md` の task selection や focus の調整
 - `PROJECTS.md` の状態整理
 - `DECISIONS.md` の方針変更記録
+- `IDEAS.md` の funnel 整理
+- 必要なら GitHub Project #2 の新規 concept bootstrap backlog
 
 頻繁に全面書き換えするのではなく、重点、回避事項、次の賭け筋、playable 基準の更新を優先してください。
 

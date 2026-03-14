@@ -82,6 +82,8 @@ Recommended cadence:
   CEO automation guide. The CEO automation should read this first.
 - [docs/company-operating-flow.md](/D:/Prj/onizuka-game-agi-co/docs/company-operating-flow.md)
   Canonical explanation of the company-wide operating loop and PDCA flow.
+- [IDEAS.md](/D:/Prj/onizuka-game-agi-co/IDEAS.md)
+  Canonical inbox for the autonomous new-concept funnel.
 - [DECISIONS.md](/D:/Prj/onizuka-game-agi-co/DECISIONS.md)
   Company-level decisions and their reasons.
 - [PROJECTS.md](/D:/Prj/onizuka-game-agi-co/PROJECTS.md)
@@ -160,8 +162,9 @@ This keeps the next automation run aligned with the latest company policy.
 
 1. [README.md](/D:/Prj/onizuka-game-agi-co/README.md)
 2. [docs/company-operating-flow.md](/D:/Prj/onizuka-game-agi-co/docs/company-operating-flow.md)
-3. [DECISIONS.md](/D:/Prj/onizuka-game-agi-co/DECISIONS.md)
-4. [PROJECTS.md](/D:/Prj/onizuka-game-agi-co/PROJECTS.md)
-5. [ROADMAP.md](/D:/Prj/onizuka-game-agi-co/ROADMAP.md)
-6. [PLANNING_MEETING.md](/D:/Prj/onizuka-game-agi-co/PLANNING_MEETING.md) or [CEO_REVIEW.md](/D:/Prj/onizuka-game-agi-co/CEO_REVIEW.md)
-7. Latest records under [memory/docs](/D:/Prj/onizuka-game-agi-co/memory/docs)
+3. [IDEAS.md](/D:/Prj/onizuka-game-agi-co/IDEAS.md)
+4. [DECISIONS.md](/D:/Prj/onizuka-game-agi-co/DECISIONS.md)
+5. [PROJECTS.md](/D:/Prj/onizuka-game-agi-co/PROJECTS.md)
+6. [ROADMAP.md](/D:/Prj/onizuka-game-agi-co/ROADMAP.md)
+7. [PLANNING_MEETING.md](/D:/Prj/onizuka-game-agi-co/PLANNING_MEETING.md) or [CEO_REVIEW.md](/D:/Prj/onizuka-game-agi-co/CEO_REVIEW.md)
+8. Latest records under [memory/docs](/D:/Prj/onizuka-game-agi-co/memory/docs)

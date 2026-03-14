@@ -141,6 +141,7 @@
 
 - `README.md`
 - `docs/company-operating-flow.md`
+- `IDEAS.md`
 - `PROJECTS.md`
 - `ROADMAP.md`
 - `DECISIONS.md`
@@ -183,6 +184,19 @@
 - GitHub Pages 完全静的、外部 API 不要、vibe coding で前進可能の 3 条件を満たさない案は着手前に落とす
 - 実装が難しすぎる場合は、次の実装が楽になる具体的な調査結果を残す
 - 現在のゲーム案がミッションに合わない場合は、その違和感をログに残す
+
+## Idea Handoff Rule (2026-03-14)
+
+- field meeting automation は execution lane の owner であり、idea funnel の owner ではありません。
+- 新規アイデアを思いついたり、active lane の限界を見つけたりした場合は、`IDEAS.md` に短く追加または更新して CEO へ handoff してよいです。
+- ただし、CEO の採用判断または Project #2 の bootstrap item がない限り、勝手に新規 concept を primary lane に切り替えません。
+- 例外:
+  - GitHub Project #2 の primary item 自体が `bootstrap new repo / new concept` である
+  - `PLANNING_MEETING.md` の CEO managed priorities が明示的に新規 concept 着手を指示している
+- meeting log には、idea handoff を行った場合に次を残します:
+  - 追加した idea 名
+  - なぜ今その idea が見えたか
+  - CEO に判断してほしい点
 
 ## Slice Completion Rule (2026-03-14)
 
