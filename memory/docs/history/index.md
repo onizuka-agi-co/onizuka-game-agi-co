@@ -313,3 +313,16 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
   - `Verify Dodge60 Pages after ready-grace fix` moved to `Done`
   - `onigame-dodge60#3` closed
   - `onigame-dodge60#4` created and set to `Ready / P1 / S` on Project #2.
+
+### Meeting update (2026-03-14 Meeting 021)
+- Meeting log: `memory/docs/2026/03/14/meeting-021-light-game.md`
+- Daily index: `memory/docs/2026/03/14/index.md`
+- Updated: `DECISIONS.md` (Meeting 021 decision + Project #2 transition)
+- Updated: `PROJECTS.md` (Meeting 021 status continuation)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Implementation repo update: `games/onigame-dodge60/app.js` (`3db0be0` pushed to `onizuka-agi-co/onigame-dodge60`)
+- Live evidence: READY-phase timer drift observed before fix (`59.5 -> 58.7 -> 57.9`).
+- Project sync:
+  - `Run live playtest pass and implement one top friction fix` moved to `Done`
+  - `onigame-dodge60#4` closed
+  - `onigame-dodge60#5` created and set to `Ready / P1 / S` on Project #2.

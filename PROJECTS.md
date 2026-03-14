@@ -243,3 +243,14 @@ _更新日: 2026-03-14_
   - `Verify Dodge60 Pages after ready-grace fix` moved to `Done`.
   - Next item `Run live playtest pass and implement one top friction fix` created from game repo issue `onigame-dodge60#4` and set to `Ready / P1 / S`.
 - Next action: execute issue `#4` and ship one high-impact friction fix in one run.
+
+## 2026-03-14 Meeting 021 update
+- `onigame-dodge60` remains **active**.
+- Thin slice completed: fixed fairness gap where timer was decreasing during READY grace.
+- Live playtest evidence before fix (`js_repl + Playwright`):
+  - timer sampled as `59.5 -> 58.7 -> 57.9` during READY period
+- Game repo implementation: `games/onigame-dodge60/app.js` updated and pushed as `3db0be0`.
+- Project #2 sync completed:
+  - `Run live playtest pass and implement one top friction fix` moved to `Done`.
+  - Next item `Verify Dodge60 Pages timer behavior after READY fix` created from game repo issue `onigame-dodge60#5` and set to `Ready / P1 / S`.
+- Next action: execute issue `#5` and verify live Pages timer behavior after deployment.

@@ -381,3 +381,12 @@ _更新日: 2026-03-14_
 - **Project Sync:** `Verify Dodge60 Pages after ready-grace fix` moved to `Done`; `onigame-dodge60#3` closed; next execution item `onigame-dodge60#4` created and set to `Ready / P1 / S` on Project #2.
 - **Decision Owner:** Agent (Field Meeting)
 - **Impact:** Next run should execute issue `#4` and ship one top-friction fix in one end-to-end slice.
+
+### 2026-03-14: Meeting 021 fixed READY-phase timer fairness and advanced queue
+- **Decision:** Fix the top live-play friction by preventing timer/score countdown during READY grace.
+- **Reason:** The game advertises a 60-second run, but live sampling showed the timer was already decreasing during READY (`59.5 -> 58.7 -> 57.9`), reducing fair play time.
+- **Implementation:** Updated `games/onigame-dodge60/app.js` so timer/score start only after READY grace ends; pushed as commit `3db0be0`.
+- **Verification:** `node --check app.js` passed; issue `onigame-dodge60#4` was documented and closed.
+- **Project Sync:** Project #2 item `Run live playtest pass and implement one top friction fix` moved to `Done`; next item `Verify Dodge60 Pages timer behavior after READY fix` (`onigame-dodge60#5`) created and set to `Ready / P1 / S`.
+- **Decision Owner:** Agent (Field Meeting)
+- **Impact:** Next run should verify live Pages behavior for commit `3db0be0` and then continue gameplay polish.
