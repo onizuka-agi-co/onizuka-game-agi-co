@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 012 rebalanced active primary slice back to live lane
+- **決定:** `Meeting 3+` の dual-lane 継続運用として、Project #2 の primary active を `live lane` (`onigame-dodge60#14`) へ再配列した。`onigame-dodge60#14` を `In Progress` に上げ、`onigame-lane-flip-sprint#2` は `Ready` に戻して次手として維持した。
+- **理由:** 直前 run（Meeting 011）で `birth lane` を `In Progress` に上げたため、lane 偏りを避けるには未着手だった `live lane #14` を実行状態へ進めるのが最小で妥当だったため。
+- **検証結果:** `gh auth status` で `GH_TOKEN` の `project` scope を確認し、Project #2 item `PVTI_lADOD7cTBc4BRGjUzgndMXs` を `In Progress`、item `PVTI_lADOD7cTBc4BRGjUzgndFtY` を `Ready` へ更新できたことを確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は `onigame-dodge60#14` 実装 + live verify。secondary は `onigame-lane-flip-sprint#2` を `Ready` から再開する。
+
 ### 2026-03-15: Meeting 011 switched birth-lane retry polish to active execution
 - **決定:** `Meeting 3+` の lane-bias ルールに従い、primary を `birth lane`（`onigame-lane-flip-sprint#2`）へ固定し、Project #2 上で item status を `Ready` から `In Progress` へ更新した。`live lane` は `onigame-dodge60#14` を `Ready` のまま次手として維持する。
 - **理由:** CEO Review 010 後の board 状態では `live lane #13` が完了済みで、未実行の birth-lane polish (`#2`) が残っていたため。daily dual-lane の実行バランスを保つには birth 側を先に着手状態へ進めるのが最小コストだったため。
@@ -531,3 +538,4 @@ _更新日: 2026-03-14_
 - **検証結果:** Project #2 の未完了 item が `onigame-dodge60#12`（live）と `onizuka-game-agi-co#10`（birth）の2 lane で明示され、両方 `Ready` 状態で確認できた。
 - **決定者:** エージェント（現場定例）
 - **影響:** 次 run は `onizuka-game-agi-co#10` を `In progress` に上げ、同日中の新規 app bootstrap 実装を進める。
+

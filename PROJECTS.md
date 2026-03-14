@@ -415,3 +415,13 @@ _更新日: 2026-03-15_
 - Next action:
   - Primary (`birth lane`): implement and verify `onigame-lane-flip-sprint#2` on live Pages.
   - Secondary (`live lane`): execute `onigame-dodge60#14` after birth-lane slice close.
+
+## 2026-03-15 Meeting 012 update
+- `onigame-dodge60` remains **active** (`live lane` primary switched to `onigame-dodge60#14`).
+- `live lane` status advanced:
+  - Project #2 item `Run live playtest pass and fix one post-restart friction (next)` (`onigame-dodge60#14`) was moved `Ready -> In Progress`.
+- `birth lane` queue preserved for next hand:
+  - `Polish Lane Flip Sprint retry re-entry readability with one cue` (`onigame-lane-flip-sprint#2`) was moved `In Progress -> Ready`.
+- Next action:
+  - Primary (`live lane`): implement and live-verify `onigame-dodge60#14`.
+  - Secondary (`birth lane`): resume `onigame-lane-flip-sprint#2` from `Ready`.

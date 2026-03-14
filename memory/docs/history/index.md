@@ -581,3 +581,17 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (coordination + board transition slice)
+
+### Meeting update (2026-03-15 Meeting 012)
+- Meeting log: `memory/docs/2026/03/15/meeting-012-light-game.md`
+- Daily index: `memory/docs/2026/03/15/index.md`
+- Updated: `DECISIONS.md` (Meeting 012 decision + lane rebalance)
+- Updated: `PROJECTS.md` (Meeting 012 lane status update)
+- Updated: `memory/docs/2026/03/index.md` (2026-03-15 summary refreshed)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Project sync:
+  - `onigame-dodge60#14` moved to `In Progress`
+  - `onigame-lane-flip-sprint#2` moved to `Ready`
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (coordination + board rebalance slice)

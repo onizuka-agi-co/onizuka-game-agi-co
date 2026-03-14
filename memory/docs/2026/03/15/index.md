@@ -130,3 +130,18 @@
 
 ## 記録リンク 追加分 (Meeting 011)
 - [meeting-011-light-game](./meeting-011-light-game.md) - birth lane item を `In Progress` へ移行し dual-lane 次手を固定
+
+## 実績: Meeting 012 (Light Game)
+- [x] `PLANNING_MEETING.md` を先頭で読み、required inputs を確認
+- [x] `Meeting 3+` の lane バランス調整として `live lane` を primary に再配列
+- [x] Project #2:
+- [x] `onigame-dodge60#14` を `In Progress` へ更新
+- [x] `onigame-lane-flip-sprint#2` を `Ready` へ戻して次手として維持
+- [x] meeting-scope ファイル（meeting / daily / decisions / projects / monthly index / history）を更新
+
+## 次アクション (Meeting 012 引き継ぎ)
+- [ ] `onigame-dodge60#14` を実装して live verify まで完了
+- [ ] `onigame-lane-flip-sprint#2` は `Ready` から次runで再開
+
+## 記録リンク 追加分 (Meeting 012)
+- [meeting-012-light-game](./meeting-012-light-game.md) - dual-lane primary を live へ再配列し、Project #2 を同期
