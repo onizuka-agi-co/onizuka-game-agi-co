@@ -281,3 +281,12 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Implementation: created first playable files under `games/onigame-quickshot` (`index.html`, `styles.css`, `main.js`).
 - Verification: `node --check games/onigame-quickshot/main.js` passed.
 - Project sync: GitHub Project #2 primary item `Bootstrap onigame-quickshot one-screen playable prototype` moved to `Done`.
+
+### Meeting update (2026-03-14 Meeting 018)
+- Meeting log: `memory/docs/2026/03/14/meeting-018-light-game.md`
+- Daily index: `memory/docs/2026/03/14/index.md`
+- Updated: `DECISIONS.md` (Meeting 018 naming drift correction)
+- Updated: `PROJECTS.md` (active project naming aligned to `onigame-dodge60`)
+- Updated: `memory/docs/2026/03/index.md` (2026-03-14 summary refreshed)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Project sync: GitHub Project #2 execution items renamed from quickshot to onigame-dodge60, primary next item kept as playtest/fix (`Ready`, `P0`).

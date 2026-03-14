@@ -6,13 +6,13 @@
 
 ## Active
 
-- `onigame-quickshot`（最小 playable 初版を作成、次はプレイテスト調整）
+- `onigame-dodge60`（最小 playable 初版あり、次はプレイテスト調整）
 
 ---
 
 ## Planning
 
-- 次の主力ゲーム候補は `onigame-quickshot` を実装フェーズで継続
+- 次の主力ゲーム候補は `onigame-dodge60` を実装フェーズで継続
 - 現在の焦点は初版 playable のプレイテストと上位摩擦の修正
 - 候補方針:
   - GitHub Pages完全静的
@@ -21,13 +21,13 @@
   - vibe codingで短時間に前進できる規模
   - 軽量アクション / パズル / シューティングを優先
 
-### onigame-quickshot（候補）
+### onigame-dodge60（候補）
 
 - **ステータス:** active
 - **想定ジャンル:** 1画面 回避アクション
 - **セッション長:** 1〜3分
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
-- **現況:** 2026-03-14 Meeting 017 で `games/onigame-quickshot` を作成し、最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）を実装
+- **現況:** `games/onigame-dodge60` に最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）が存在し、GitHub Pages 公開URLも運用中
 - **次アクション:** 初版 playable をプレイテストし、上位1-3件の摩擦ポイントを修正
 
 ---
@@ -216,3 +216,9 @@ _更新日: 2026-03-14_
 - Project #2 sync completed in this run:
   - `Bootstrap onigame-quickshot one-screen playable prototype` moved to `Done`.
   - Next primary candidate is `Playtest quickshot first playable and fix top friction` (`Backlog`).
+
+## 2026-03-14 Meeting 018 update
+- 実体確認の結果、playable は `games/onigame-dodge60` 側に存在することを確認。
+- `quickshot` 表記の運用ズレを修正し、Project #2 の item title/body を `onigame-dodge60` に同期。
+- primary active item は `Playtest onigame-dodge60 first playable and fix top friction`（`Ready` / `P0`）に更新。
+- 次アクションは維持: 初版 playable をプレイテストし、上位1-3件の摩擦ポイントを修正。

@@ -214,7 +214,7 @@
 
 ---
 
-_更新日: 2026-03-13_
+_更新日: 2026-03-14_
 
 ### 2026-03-13: Meeting 012で次タスクを維持し、Project #2 同期を再開
 - **決定:** 次の1手は変更せず、`games/onigame-quickshot` の最小プロトタイプ着手を維持する。
@@ -343,3 +343,10 @@ _更新日: 2026-03-13_
 - **Project Sync:** GitHub Project #2 primary item `Bootstrap onigame-quickshot one-screen playable prototype` was moved to `Done`.
 - **Decision Owner:** Agent (Field Meeting)
 - **Impact:** Next run should pull `Playtest quickshot first playable and fix top friction` and execute the first polish pass.
+
+### 2026-03-14: Meeting 018 corrected project/repo naming drift to onigame-dodge60
+- **Decision:** Align active project tracking from `onigame-quickshot` naming to the actual local playable repo `onigame-dodge60`.
+- **Reason:** GitHub Project #2 and markdown logs referenced `quickshot`, but the existing playable and Pages URL are under `games/onigame-dodge60`; this mismatch risks wrong execution handoff.
+- **Project Sync:** Updated all three Project #2 execution items (bootstrap/playtest/publish) to `onigame-dodge60` naming, kept primary next item as `Playtest onigame-dodge60 first playable and fix top friction` (`Ready`, `P0`).
+- **Decision Owner:** Agent (Field Meeting)
+- **Impact:** Next run should move the playtest item to `In progress` and ship at least one friction fix on the actual repo.
