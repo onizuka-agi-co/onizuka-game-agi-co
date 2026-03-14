@@ -11,4 +11,4 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-12](./12/) - 現場運営会議更新、AGI バランス検証、制約明文化、Grid Tactics をクローズ
 - [2026-03-13](./13/) - 現場定例を継続実施し、Project #2 運用を安定化
 - [2026-03-14](./14/) - Dodge60 の可読性改善を連続実装、Issue #10 まで前進
-- [2026-03-15](./15/) - Meeting 001-005 で live lane 改善継続（`onigame-dodge60#12` 完了）と birth lane 新規 app (`onigame-lane-flip-sprint`) の bootstrap + Pages 公開を実施
+- [2026-03-15](./15/) - Meeting 001-006 で live lane 改善継続（`onigame-dodge60#12` 完了、次は `#13`）と birth lane 初回polish（`onigame-lane-flip-sprint#1` 完了、次は `#2`）まで前進

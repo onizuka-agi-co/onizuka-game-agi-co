@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 006 completed first Lane Flip Sprint polish and advanced birth lane queue
+- **決定:** `birth lane` の primary item `onigame-lane-flip-sprint#1` を完了として close し、レーン移動の入力視認性を上げる HUD lane indicator（`Lane 2 / 3`）と lane-change feedback を `onigame-lane-flip-sprint` に実装した。次の `birth lane` 実行 item は `onigame-lane-flip-sprint#2`（retry re-entry readability の1件修正）として Project #2 `Ready / P1 / S` に設定する。
+- **理由:** app birth 後の最初のプレイテスト由来摩擦として「入力が入ったか分かりにくい」が残っており、1 run で小さく改善できる価値が高かったため。
+- **検証結果:** game repo commit `7edaabc` を `main` へ push。live URL `https://onizuka-agi-co.github.io/onigame-lane-flip-sprint/?t=1773518703598` で `lane-label` が `2 / 3 -> 3 / 3 -> 2 / 3` に変化することを確認。配信 `app.js` に `laneLabel` / `lane-feedback` 実装を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** Project #2 は `onigame-lane-flip-sprint#1 Done`、`#2 Ready`。`live lane` は `onigame-dodge60#13` を `Ready` 維持し、次 run の primary 候補とする。
+
 ### 2026-03-15: Meeting 005 completed retry re-entry clarity and advanced live lane to post-restart friction pass
 - **決定:** `live lane` の primary item `onigame-dodge60#12` を完了として close し、retry直後の再開認知を強化する visual cue（`New run started`）を `onigame-dodge60` に実装した。次の live lane 実行 item は `onigame-dodge60#13`（post-restart friction の1件修正）として Project #2 `Ready / P1 / S` に設定する。
 - **理由:** Meeting 004 で `birth lane` の app birth は完了済みだったため、dual-lane rule に従って未完了の `live lane` item (`#12`) を回収するのが最小で価値が高かったため。

@@ -38,7 +38,7 @@
 - **セッション長:** 30〜45秒
 - **採用理由:** `onigame-dodge60` の軽量回避の気持ちよさを保ちつつ、スマホ親指操作へさらに寄せやすい
 - **現況:** 新規 repo `onigame-lane-flip-sprint` を bootstrap済み。1画面 playable + GitHub Pages 公開まで完了
-- **次アクション:** `onigame-lane-flip-sprint#1` を実行し、初回プレイテスト由来の top friction を1件修正する
+- **次アクション:** `onigame-lane-flip-sprint#2` を実行し、retry後の再開認知 friction を1件修正する
 
 ### One Stroke Sweep（birth lane 予備候補）
 
@@ -364,3 +364,19 @@ _更新日: 2026-03-15_
 - Next action:
   - Primary (`live lane`): execute `onigame-dodge60#12` and close with live verification.
   - Secondary (`birth lane`): execute `onigame-lane-flip-sprint#1` for first playtest-driven polish.
+
+## 2026-03-15 Meeting 006 update
+- `onigame-dodge60` remains **active** (`live lane` next item `onigame-dodge60#13`).
+- `Lane Flip Sprint` birth lane polish progressed:
+  - Completed `onigame-lane-flip-sprint#1` and closed it.
+  - Shipped lane-input readability polish (`Lane` HUD indicator + lane-change visual feedback).
+  - Game repo implementation pushed as `7edaabc`.
+- Live verification passed on Pages:
+  - `https://onizuka-agi-co.github.io/onigame-lane-flip-sprint/?t=1773518703598`
+  - Lane label moved `2 / 3 -> 3 / 3 -> 2 / 3` on input.
+- Project #2 sync:
+  - `Playtest first Lane Flip Sprint build and fix top friction` -> `Done`
+  - New next item `Polish Lane Flip Sprint retry re-entry readability with one cue` (`onigame-lane-flip-sprint#2`) -> `Ready / P1 / S`
+- Next action:
+  - Primary (`live lane`): execute `onigame-dodge60#13` and close with live verification.
+  - Secondary (`birth lane`): execute `onigame-lane-flip-sprint#2` for retry re-entry readability polish.

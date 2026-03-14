@@ -528,3 +528,21 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Retry notes:
   - 初回検証で `reentry-cue.hidden` CSS不足を検知し、同runで修正コミットを追加して再push
   - Pages反映は `app.js` と `styles.css` の到達タイミングに差があり、再確認後に最終判定
+
+### Meeting update (2026-03-15 Meeting 006)
+- Meeting log: `memory/docs/2026/03/15/meeting-006-light-game.md`
+- Daily index: `memory/docs/2026/03/15/index.md`
+- Updated: `DECISIONS.md` (Meeting 006 decision + Project #2 transition)
+- Updated: `PROJECTS.md` (birth lane next action switched to `onigame-lane-flip-sprint#2`)
+- Updated: `memory/docs/2026/03/index.md` (2026-03-15 summary refreshed)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Implementation repo update: `games/onigame-lane-flip-sprint` (`7edaabc` pushed to `onizuka-agi-co/onigame-lane-flip-sprint`)
+- Live verification:
+  - `https://onizuka-agi-co.github.io/onigame-lane-flip-sprint/?t=1773518703598` で lane label が `2 / 3 -> 3 / 3 -> 2 / 3` に変化することを確認
+  - 配信 `app.js` に `laneLabel` / `lane-feedback` 実装を確認
+- Project sync:
+  - `Playtest first Lane Flip Sprint build and fix top friction` moved to `Done`
+  - `onigame-lane-flip-sprint#1` closed
+  - `onigame-lane-flip-sprint#2` created and set to `Ready / P1 / S` on Project #2.
+- Retry notes:
+  - 初回click検証は overlay の入力遮断で失敗したため、Retry復帰後の keyboard/button input で再検証して最終判定

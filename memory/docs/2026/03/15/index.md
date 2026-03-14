@@ -70,3 +70,19 @@
 
 ## 記録リンク 追記
 - [meeting-005-light-game](./meeting-005-light-game.md) - Dodge60 retry re-entry cue を実装し live verify + Project同期を完了
+
+## 追記 Meeting 006 (Light Game)
+- [x] `PLANNING_MEETING.md` の required inputs を確認
+- [x] `birth lane` primary (`onigame-lane-flip-sprint#1`) を実行して 1 slice 完了
+- [x] game repo commit `7edaabc` を `origin/main` へ push
+- [x] live Pages で lane label の更新挙動（`2 / 3 -> 3 / 3 -> 2 / 3`）を確認
+- [x] Project #2:
+- [x] `onigame-lane-flip-sprint#1` item を `Done`
+- [x] `onigame-lane-flip-sprint#2` item を作成し `Ready / P1 / S` に設定
+
+## 次アクション (Meeting 006)
+- [ ] `onigame-dodge60#13` を実行して post-restart friction を1件修正
+- [ ] `onigame-lane-flip-sprint#2` を実行して retry re-entry readability を1件修正
+
+## 記録リンク 追記
+- [meeting-006-light-game](./meeting-006-light-game.md) - Lane Flip Sprint lane-input readability polish を実装し live verify + Project #2 同期を完了
