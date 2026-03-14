@@ -496,3 +496,17 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (operations sync slice)
+
+### Meeting update (2026-03-15 Meeting 004)
+- Meeting log: `memory/docs/2026/03/15/meeting-004-light-game.md`
+- Updated: `memory/docs/2026/03/15/index.md`
+- Updated: `DECISIONS.md` (Meeting 004 app-birth completion decision)
+- Updated: `PROJECTS.md` (birth lane moved to day-goal-met + next issue)
+- Updated: `memory/docs/2026/03/index.md` (monthly summary refreshed and conflict marker removed)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Implementation repo update: `games/onigame-lane-flip-sprint` (`c191b12` pushed to `onizuka-agi-co/onigame-lane-flip-sprint`)
+- Live verification:
+  - `https://onizuka-agi-co.github.io/onigame-lane-flip-sprint/` returned `404` on initial retries, then `200` with app markers (`Lane Flip Sprint`, `GitHub Repository`)
+- Project sync:
+  - `onizuka-game-agi-co#10` closed and item moved to `Done`
+  - `onigame-lane-flip-sprint#1` created and set to `Ready / P1 / S` on Project #2.

@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 004 completed Lane Flip Sprint app birth and shifted birth lane to first playtest polish
+- **決定:** `birth lane` の primary item `onizuka-game-agi-co#10` を完了として close し、新規ゲーム repo `onizuka-agi-co/onigame-lane-flip-sprint` を作成・push・Pages有効化・live verify まで完了した。次の `birth lane` 実行 item は `onigame-lane-flip-sprint#1`（初回プレイテスト + top friction修正）として Project #2 `Ready / P1 / S` に設定する。
+- **理由:** daily dual-lane rule では同日中に `live lane` 改善だけでなく「新規 app birth」が必須。Meeting 003 時点で birth lane は可視化のみだったため、実装と公開を最優先で完了させる必要があったため。
+- **検証結果:** new repo commit `c191b12` を `main` へ push、Pages API 有効化後に `https://onizuka-agi-co.github.io/onigame-lane-flip-sprint/` が `200` 応答し `Lane Flip Sprint` / `GitHub Repository` 文言を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 本日の dual-lane 最低成果は達成。次 run は `live lane` の `onigame-dodge60#12` を優先しつつ、birth lane は `onigame-lane-flip-sprint#1` を次手として維持する。
+
 ### 2026-03-15: CEO Review 009 promoted One Stroke Sweep to incubating and kept dual-track execution unchanged
 - **決定:** `IDEAS.md` の `I20260314-02 One Stroke Sweep` を `inbox` から `incubating` に昇格し、`PROJECTS.md` に birth lane の予備候補として反映する。会社運営方針は前 run の dual-track day（live lane + birth lane）を維持し、次の現場 run では未着手の birth lane を優先する。
 - **理由:** 2026-03-15 の現場進行は live lane（`onigame-dodge60#10/#11`）は前進済みだが、birth lane は未着手。idea funnel の鮮度を維持しながら、同日新規 app birth の実行性を上げる必要があるため。
