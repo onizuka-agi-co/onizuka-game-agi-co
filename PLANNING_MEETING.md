@@ -253,6 +253,15 @@ CEO automation によって `PLANNING_MEETING.md` または `CEO_REVIEW.md` が�
 - Escalate only when there is a direct conflict on files this run must edit.
 - Treat unrelated modified/untracked files as background state and leave them untouched.
 
+## Encoding Safety Rule (2026-03-14)
+
+- All markdown files touched by this meeting flow must be saved as valid UTF-8 before commit.
+- When writing or rewriting meeting-scope markdown from PowerShell or scripts, always specify UTF-8 explicitly instead of relying on the shell default encoding.
+- Before commit and push, run `npm run docs:check-encoding` from the repo root.
+- If `docs:check-encoding` fails, treat that as a release blocker for the meeting run.
+- When encoding errors are found, fix the affected files first, rerun `npm run docs:check-encoding`, and only then continue to commit/push.
+- Do not finish a planning meeting run with known encoding issues in `memory/docs`, `DECISIONS.md`, `PROJECTS.md`, or other meeting-scope markdown.
+
 ## Meeting Output Finalization Rule (2026-03-13)
 
 - A planning meeting run is not complete until its meeting-scope outputs are committed and pushed.
