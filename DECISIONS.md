@@ -12,6 +12,13 @@
 - **決定者:** 人間要求 + エージェント反映
 - **影響:** 今後の field meeting は `Meeting 1` と `Meeting 2` で `live lane` と `birth lane` の両方を固定し、日末までに「1本改善 + 1本新生」を達成する前提で動く。`PROJECTS.md` には `Lane Flip Sprint` を次の birth lane 候補として可視化した。
 
+### 2026-03-15: Meeting 002 shipped retry readability cue and advanced next hand to retry re-entry clarity
+- **決定:** issue `onigame-dodge60#11` を `Done` とし、ゲームオーバー直後の再開導線を強化する retry readability cue（pulsing hint badge + retry button focus）を `onigame-dodge60` へ反映した上で、次の実行 slice を `onigame-dodge60#12`（retry re-entry clarity）へ進める。
+- **理由:** `#10` で敗北理由の可読性は改善済みだが、再挑戦行動への導線が弱く、短セッション再開までの認知コストが残っていたため。
+- **検証結果:** commit `7a1e490` を push後、live URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773504262257` で `#retry-hint` 存在と配信 `app.js` / `styles.css` の更新（retry hint 文言、focus call、pulse animation）を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** Project #2 は `#11 Done`、`#12 Ready / P1 / S`。次 run は `#12` を1 run完結で進める。
+
 ### 2026-03-15: Meeting 001 shipped game-over cause badge and advanced next hand to retry readability
 - **決定:** issue `onigame-dodge60#10` を `Done` とし、game-over 時の敗北理由を即読できる visual cue（`Reason: Hit by hazard` バッジ）を `onigame-dodge60` へ反映した上で、次の実行 slice を `onigame-dodge60#11`（retry readability の視認性改善）へ進める。
 - **理由:** hit flash だけでは結果画面で「なぜ負けたか」の意味が薄く、再挑戦前の理解コストが残っていたため。短い原因表示バッジを追加することで失敗理由を即時認知できるため。

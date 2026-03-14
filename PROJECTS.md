@@ -29,7 +29,7 @@
 - **セッション長:** 1〜3分
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
 - **現況:** `games/onigame-dodge60` に最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）が存在し、GitHub Pages 公開URLも運用中
-- **次アクション:** `onigame-dodge60#11` を実行し、retry readability の視認性改善を1件反映して Project #2 `Done` まで進める
+- **次アクション:** `onigame-dodge60#12` を実行し、retry 押下後の再開認知（re-entry clarity）を改善する visual cue を1件反映して Project #2 `Done` まで進める
 
 ### Lane Flip Sprint（birth lane 候補）
 
@@ -319,3 +319,13 @@ _更新日: 2026-03-15_
   - `Polish Dodge60 game-over readability with one visual cue` moved to `Done`.
   - Next item `Polish Dodge60 retry readability with one visual cue` (`onigame-dodge60#11`) set to `Ready / P1 / S`.
 - Next action: execute issue `#11` and ship one retry readability cue in one run.
+
+## 2026-03-15 Meeting 002 update
+- `onigame-dodge60` remains **active**.
+- Thin slice completed: retry readability improved with a pulsing retry hint badge and retry-button focus cue.
+- Game repo implementation: `games/onigame-dodge60/app.js`, `index.html`, `styles.css` updated and pushed as `7a1e490`.
+- Live verification passed on Pages (`#retry-hint` DOM confirmed, deployed `app.js` contains retry hint text + focus call, deployed `styles.css` contains pulse animation).
+- Project #2 sync completed:
+  - `Polish Dodge60 retry readability with one visual cue` moved to `Done`.
+  - Next item `Polish Dodge60 retry re-entry clarity with one visual cue` (`onigame-dodge60#12`) set to `Ready / P1 / S`.
+- Next action: execute issue `#12` and ship one retry re-entry clarity fix in one run.

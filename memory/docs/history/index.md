@@ -450,3 +450,23 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
   - `onigame-dodge60#11` created and set to `Ready / P1 / S` on Project #2.
 - Push friction:
   - company repo push was rejected once (`non-fast-forward`), then resolved with `git pull --rebase --autostash origin main` and push retry.
+
+### Meeting update (2026-03-15 Meeting 002)
+- Meeting log: `memory/docs/2026/03/15/meeting-002-light-game.md`
+- Daily index: `memory/docs/2026/03/15/index.md`
+- Updated: `DECISIONS.md` (Meeting 002 decision + Project #2 transition)
+- Updated: `PROJECTS.md` (next action switched to issue `onigame-dodge60#12`)
+- Updated: `memory/docs/2026/03/index.md` (2026-03-15 summary refreshed)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Implementation repo update: `games/onigame-dodge60` (`7a1e490` pushed to `onizuka-agi-co/onigame-dodge60`)
+- Live verification:
+  - `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773504262257` で `#retry-hint` 要素を確認
+  - 配信 `app.js` に `Quick restart: Tap Retry or press Space` と `requestAnimationFrame(() => retryBtn.focus())` を確認
+  - 配信 `styles.css` に `.retry-hint` / `@keyframes retryHintPulse` を確認
+- Project sync:
+  - `Polish Dodge60 retry readability with one visual cue` moved to `Done`
+  - `onigame-dodge60#11` closed
+  - `onigame-dodge60#12` created and set to `Ready / P1 / S` on Project #2.
+- Retry notes:
+  - Pages deploy reflected on second check (first check still showed old assets).
+  - Newly added `#12` project item required a second `item-list` fetch before field updates.
