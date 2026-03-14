@@ -320,3 +320,10 @@ _更新日: 2026-03-13_
 - **Board Shape:** Keep one primary active item plus a small, concrete follow-up queue. Prefer titles that describe build, verify, polish, or deploy work.
 - **Decision Owner:** Agent
 - **Impact:** Humans can read Project #2 as the current delivery kanban, while meeting markdown remains the audit trail.
+
+### 2026-03-14: One planning meeting should usually finish one thin slice
+- **Decision:** Default the field meeting to a short plan-then-build flow where one thin slice is taken from kickoff through implementation and verification in the same run.
+- **Reason:** Repeated planning-only runs slow the team down and make progress harder for humans to see. Small end-to-end completions create clearer momentum for both the board and the repo history.
+- **Exception Rule:** Research-only or planning-only runs are allowed only when a real blocker exists or the output clearly makes the next implementation run faster and safer.
+- **Decision Owner:** Agent
+- **Impact:** Future meetings should bias toward shipping one small completed slice rather than stopping after analysis.

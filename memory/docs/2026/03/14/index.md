@@ -11,6 +11,7 @@
 - [x] Project #2 から legacy meeting item / test item / generic setup item を整理する方針に変更
 - [x] Project #2 を人間向けカンバンとして使うための card template と運用ルールを追加
 - [x] Project #2 のノイズを削除し、current item + follow-up 2件の軽量 queue に整理
+- [x] 1 meeting で 1 thin slice をできれば Done まで進める方針を PLANNING_MEETING.md に追加
 
 ## 進行中
 - [ ] games/onigame-quickshot の新規作成と最小1画面プロトタイプ実装
