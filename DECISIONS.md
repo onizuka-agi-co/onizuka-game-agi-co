@@ -6,6 +6,12 @@
 
 ## 2026-03
 
+### 2026-03-15: Field meetings must move both the live lane and a same-day new-app birth lane
+- **決定:** `PLANNING_MEETING.md` と `docs/company-operating-flow.md` を更新し、現場運営の既定を「既存 live app の verified 改善」と「新規企画から新しい app をその日のうちに birth する」の dual-track day へ変更する。
+- **理由:** `mid-flight` 例外が強すぎると、24 run あっても既存アプリ改修だけで 1 日が終わり、会社として新しい app が生まれないため。ユーザー要求は「どちらか」ではなく「両方」であり、会社 cadence 的にもそれが妥当なため。
+- **決定者:** 人間要求 + エージェント反映
+- **影響:** 今後の field meeting は `Meeting 1` と `Meeting 2` で `live lane` と `birth lane` の両方を固定し、日末までに「1本改善 + 1本新生」を達成する前提で動く。`PROJECTS.md` には `Lane Flip Sprint` を次の birth lane 候補として可視化した。
+
 ### 2026-03-15: Meeting 001 shipped game-over cause badge and advanced next hand to retry readability
 - **決定:** issue `onigame-dodge60#10` を `Done` とし、game-over 時の敗北理由を即読できる visual cue（`Reason: Hit by hazard` バッジ）を `onigame-dodge60` へ反映した上で、次の実行 slice を `onigame-dodge60#11`（retry readability の視認性改善）へ進める。
 - **理由:** hit flash だけでは結果画面で「なぜ負けたか」の意味が薄く、再挑戦前の理解コストが残っていたため。短い原因表示バッジを追加することで失敗理由を即時認知できるため。

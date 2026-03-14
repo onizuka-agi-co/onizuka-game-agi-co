@@ -422,6 +422,17 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
   - `onigame-dodge60#9` closed
   - `onigame-dodge60#10` created and set to `Ready / P1 / S` on Project #2.
 
+### CEO update (2026-03-15 Meeting 008)
+- Meeting log: `memory/docs/2026/03/15/meeting-008-ceo-review.md`
+- Updated: `PLANNING_MEETING.md` (daily dual-track mode + dual-lane completion rule)
+- Updated: `docs/company-operating-flow.md` (dual-track operating rhythm + same-day app birth flow)
+- Updated: `PROJECTS.md` (`live lane` / `birth lane` split + `Lane Flip Sprint` candidate)
+- Updated: `DECISIONS.md` (dual-track day governance decision)
+- Updated: `memory/docs/2026/03/15/index.md` (CEO run summary added)
+- Updated: `memory/docs/2026/03/index.md` (2026-03-15 summary refreshed)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Governance change: field meetings must no longer choose between existing-app improvement and new concept creation; every healthy day must produce both a better live app and one newly born app.
+
 ### Meeting update (2026-03-15 Meeting 001)
 - Meeting log: `memory/docs/2026/03/15/meeting-001-light-game.md`
 - Daily index: `memory/docs/2026/03/15/index.md`

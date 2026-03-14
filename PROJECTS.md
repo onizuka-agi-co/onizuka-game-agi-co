@@ -12,8 +12,9 @@
 
 ## Planning
 
-- 次の主力ゲーム候補は `onigame-dodge60` を実装フェーズで継続
-- 現在の焦点は初版 playable のプレイテストと上位摩擦の修正
+- 日次運営は `live lane` と `birth lane` の両方を回す
+- `live lane`: `onigame-dodge60` を改善し続ける
+- `birth lane`: incubating 候補から 1 本を選び、その日のうちに新しい app として bootstrap する
 - 候補方針:
   - GitHub Pages完全静的
   - 外部API不要
@@ -29,6 +30,15 @@
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
 - **現況:** `games/onigame-dodge60` に最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）が存在し、GitHub Pages 公開URLも運用中
 - **次アクション:** `onigame-dodge60#11` を実行し、retry readability の視認性改善を1件反映して Project #2 `Done` まで進める
+
+### Lane Flip Sprint（birth lane 候補）
+
+- **ステータス:** incubating
+- **想定ジャンル:** 3レーン回避アクション
+- **セッション長:** 30〜45秒
+- **採用理由:** `onigame-dodge60` の軽量回避の気持ちよさを保ちつつ、スマホ親指操作へさらに寄せやすい
+- **現況:** `IDEAS.md` の incubating 候補。次の新規 app birth lane の第一候補
+- **次アクション:** 同日中に repo/bootstrap し、1画面 playable + GitHub Pages 公開まで持っていく
 
 ---
 

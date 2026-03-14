@@ -135,16 +135,19 @@ flowchart TD
     J --> A
 ```
 
-## Daily Operating Rhythm (2026-03-14)
+## Daily Operating Rhythm (2026-03-15)
 
-- Default the company to one concept-to-release day loop, not repeated concept meetings for all 24 runs.
+- Default the company to a dual-track ship day, not a single-title-only day.
+- Every healthy day must move both:
+  - `live lane`: improve the current shipped app with one verified slice
+  - `birth lane`: create or bootstrap a fresh concept into a new app in the same day
 - Daily rhythm:
-  - Field Meeting 1: market scan and concept selection
-  - Field Meeting 2: concept shaping, first playable scope, repo/bootstrap plan, and release bar
-  - Field Meeting 3+: build, publish, verify, polish, and keep shipping the same concept
+  - Field Meeting 1: light market scan, `IDEAS.md` review, current live-app friction review, and selection of both the `live lane` target and `birth lane` concept
+  - Field Meeting 2: lock the live-lane thin slice plus the new concept brief, first playable scope, repo/bootstrap plan, and release bar
+  - Field Meeting 3+: execute across both lanes, publish, verify, polish, and keep both moving until the day has produced one better live app and one newly born app
 - After Field Meeting 2, broad concept replanning becomes an exception.
-- CEO intervention during the same day should happen only when mission drift, excessive scope, or a serious blocker is visible.
-- If the active product is already mid-flight, the team may skip the day-start concept stages and continue directly in execution mode.
+- CEO intervention during the same day should happen when mission drift, excessive scope, or a serious blocker is visible.
+- A mid-flight active product does not cancel the `birth lane`; it only means the `live lane` already exists.
 
 ## One Run Flow
 
@@ -157,18 +160,22 @@ flowchart TD
    - `DECISIONS.md`
    - latest daily index
    - GitHub Project #2 primary active item
-3. 今回の primary slice を 1 つ決める
+3. 今日の 2 lane を確認する
+   - `live lane`: current shipped app improvement
+   - `birth lane`: same-day new app creation
+4. 今回の primary slice を 1 つ決める
    - 価値が高い
    - 小さい
    - 1 run で前進できる
-4. 必要なら CTO が subagent に分解して委譲する
-5. target repo で実装する
-6. target environment で検証する
+   - どちらか遅れている lane を前に進める
+5. 必要なら CTO が subagent に分解して委譲する
+6. target repo で実装する
+7. target environment で検証する
    - gameplay なら live GitHub Pages verify を優先
-7. issue / Project #2 / repo state を同期する
-8. meeting log / daily index / decision log / history を更新する
-9. commit / push を完了させる
-10. 次の 1 hand を残して終了する
+8. issue / Project #2 / repo state を同期する
+9. meeting log / daily index / decision log / history を更新する
+10. commit / push を完了させる
+11. 次の 1 hand を両 lane について残して終了する
 
 ## PDCA Mapping
 
@@ -226,20 +233,19 @@ meeting を終えたこと自体は deliverable ではありません。
 
 ## Project Creation Flow
 
-新規 project は、毎 run 自動で増やすものではありません。
-ただし、次の条件なら作成してよいです。
+新規 project は every run で増やすものではありませんが、この会社では `1日1本の新しい app birth` を標準にします。
 
-- CEO review が新規 project の追加を明示した
-- GitHub Project #2 の primary item が bootstrap new repo / new concept になっている
-- 既存 active lane を壊さずに追加しても会社の前進量が増える
-
-新規 project 作成時は:
-
-1. `PROJECTS.md` に追加
-2. project log を作成
-3. 必要なら repo を作成
-4. GitHub Project #2 に bootstrap item を置く
-5. meeting log と decision log に理由を残す
+- 基本方針:
+  - 毎日、既存 live app を改善しながら、別の `birth lane` で新しい app を 1 本立ち上げる
+  - `birth lane` 候補は `IDEAS.md` の `incubating` / `inbox` から選ぶ
+  - 重すぎる concept は採用せず、その場で軽く作り直す
+- 新規 project / app 作成時は:
+  1. `PROJECTS.md` に追加
+  2. project log を作成
+  3. repo を作成または bootstrap する
+  4. GitHub Pages で公開できる最小 playable を作る
+  5. GitHub Project #2 に bootstrap item を置く
+  6. meeting log と decision log に理由と当日 evidence を残す
 
 ## Autonomous Idea Funnel
 
@@ -259,29 +265,30 @@ meeting を終えたこと自体は deliverable ではありません。
    - `PROJECTS.md`
    - 必要なら Project #2 bootstrap item
 6. bootstrap
-   - field meeting automation が primary slice として repo/playable を起動する
+   - field meeting automation が same-day `birth lane` として repo/playable を起動する
 
-## No Empty Funnel Rule (2026-03-14)
+## No Empty Funnel Rule (2026-03-15)
 
 - This company does not run on a single shipping lane alone.
 - Minimum healthy operating state:
-  - 1 active execution slice moving in the current product
-  - 1 incubating concept candidate in `IDEAS.md`
+  - 1 active `live lane` moving in the current product
+  - 1 active `birth lane` moving toward a same-day new app
+  - 1 incubating concept candidate in `IDEAS.md` behind that
   - 1 explicit path for where the next raw ideas will come from
-- If the active shipping lane is healthy but the concept lane is empty or stale, the company is under-operating, not healthy.
-- CEO runs own the concept lane refresh. Field runs own concept-signal handoff from execution.
+- If the live lane is healthy but the birth lane is missing, the company is under-operating, not healthy.
+- CEO runs own long-horizon funnel refresh. Field runs own daily birth-lane activation and concept-signal handoff from execution.
 - Logs are evidence, not the source of ideation. The source of ideation must be visible in `IDEAS.md` and the governing docs.
 
 ## Schedule Fit
 
-- This cadence works best when the company uses one daily concept/planning pass and treats most later runs as execution loops.
+- This cadence works best when the company uses one early dual-lane planning pass and treats most later runs as execution loops.
 - Recommended daily pattern:
-  - one early market/concept selection run
-  - one early concept-shaping/bootstrap run
-  - many build-to-release agile runs after that
+  - one early run that selects both the live-lane target and the birth-lane concept
+  - one early run that shapes the new app and locks the current live-app slice
+  - many build-to-release agile runs after that, split across both lanes
 - CEO runs should keep the right to intervene mid-day only when the lane drifts from the mission, gets too heavy, or hits a real blocker.
 - The same hourly schedule becomes wasteful if every run restarts concept planning from scratch.
-- The goal of the schedule is not more meetings. The goal is more shipped GitHub Pages value per day.
+- The goal of the schedule is not more meetings. The goal is one better live app and one newly born GitHub Pages app per day.
 
 ## Anti-Patterns
 
@@ -291,12 +298,14 @@ meeting を終えたこと自体は deliverable ではありません。
 - retry や friction を public log から消す
 - automation memory と actual state をズラしたまま終える
 - company repo と game repo の境界を曖昧に書く
+- 既存アプリ改善だけで 1 日を使い切り、新しい app を 1 本も生まない
 
 ## Improvement Questions
 
 PDCA を回すときは、次を見ます。
 
 - 1 日あたり何本の verified slice を出せたか
+- 1 日あたり新しい app を何本 birth できたか
 - friction 発見から live fix まで何 run かかったか
 - verify なしで閉じられた item はないか
 - 同じ blocker が何回繰り返されたか

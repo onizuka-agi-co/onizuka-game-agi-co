@@ -95,24 +95,34 @@
 - 1 時間以内に結果が見えるタスクを選ぶ
 - 企画だけで終わらず、可能なら小さな実装や修正まで行う
 
-## Daily Cadence Mode (2026-03-14)
+## Daily Dual-Track Mode (2026-03-15)
 
-- Default the field operation to one concept-to-release day loop rather than repeated planning meetings all day.
-- Meeting 1 of the day should focus on lightweight market scan and concept selection.
-- Meeting 2 of the day should lock the concept brief, first playable scope, repo/bootstrap plan, and release bar.
-- From Meeting 3 onward, switch to build-to-release agile mode for the same concept:
-  - implement
+- Default the field operation to a dual-track ship day, not a single-title-only day.
+- Every healthy day must move both of these lanes:
+  - `live lane`: improve the current shipped app with one verified slice
+  - `birth lane`: create or bootstrap a fresh concept into a new app in the same day
+- Meeting 1 of the day should do both:
+  - lightweight market/context scan
+  - review `IDEAS.md`
+  - review the current live app's top friction
+  - choose one `live lane` target and one `birth lane` concept candidate
+- Meeting 2 of the day should lock both lanes:
+  - the current live app thin slice and verification bar
+  - the new concept brief, first playable scope, repo/bootstrap plan, and release bar
+- From Meeting 3 onward, switch to build-to-release agile execution across both lanes:
+  - improve the current live app
+  - bootstrap and ship the new app
   - publish to GitHub Pages
   - verify
   - polish
-  - repeat until the day closes
-- After Meeting 2, do not reopen broad concept planning unless one of these is true:
-  - the concept is clearly too heavy for the company constraints
-  - live evidence shows the concept is not fun enough to continue
-  - a blocking constraint makes the current concept impossible to ship safely
-  - CEO automation explicitly redirects the lane
-- Prefer finishing one concept strongly in one day over opening several half-built concepts.
-- If the current game is already mid-flight and no new daily concept reset is needed, skip directly into the execution phase and keep shipping.
+  - repeat until both lanes have visible day progress
+- Do not use `mid-flight` status as a reason to skip concept work entirely. A mid-flight live app means the `live lane` already exists; it does not remove the `birth lane`.
+- If capacity is tight, shrink the `birth lane` aggressively:
+  - one screen
+  - one mechanic
+  - one GitHub Pages deploy
+  - one visible GitHub repo link in the app
+- Prefer ending the day with `one better live app + one newly born app` over spending all 24 runs on a single title.
 
 ## CTO Management Mode (Subagent First)
 
@@ -182,57 +192,81 @@
 
 ## Standard Flow
 
-1. Confirm whether this is Meeting 1, Meeting 2, or Meeting 3+ in the current day loop.
+1. Confirm whether this is Meeting 1, Meeting 2, or Meeting 3+ in the current day loop, and identify both daily lanes:
+   - current `live lane`
+   - current `birth lane`
 2. If it is Meeting 1:
    - scan market/context lightly
-   - review IDEAS.md
-   - choose one daily concept candidate that fits mission and GitHub Pages constraints
+   - review `IDEAS.md`
+   - review the current live app's top friction
+   - choose one daily `live lane` target and one daily `birth lane` candidate that fit mission and GitHub Pages constraints
 3. If it is Meeting 2:
-   - lock the concept brief
+   - lock the current live app thin slice and acceptance bar
+   - lock the new concept brief
    - define first playable scope
    - decide repo/bootstrap plan
-   - define release/verification bar for the day
+   - define release/verification bar for the new app
 4. If it is Meeting 3 or later:
-   - treat the selected concept as fixed by default
-   - build, publish, verify, and polish instead of reopening concept discussion
-5. Check GitHub Project #2 and align the active item to the current day phase and primary slice.
-6. Choose one concrete next 1 hand that can be completed or materially advanced in the current run.
+   - keep both lanes moving by default
+   - use the current run's primary slice to advance the lane that is furthest from the day's minimum outcome
+   - do not reopen broad concept discussion unless the chosen concept is clearly too heavy or no longer worth shipping
+5. Check GitHub Project #2 and keep both lanes visible:
+   - one real implementation item for the `live lane`
+   - one real implementation/bootstrap item for the `birth lane`
+6. Choose one concrete primary slice for the current run, but leave the other lane's next hand explicit in the meeting output.
 7. Delegate to subagents as needed, then implement in the target repo.
 8. Verify in the relevant environment. For shipped gameplay, prefer live GitHub Pages verification.
-9. Update logs, issue state, and Project #2.
-10. Record the next 1 hand for the following run.
+9. Update logs, issue state, and Project #2 for whichever lane moved in the run, and record the unchanged lane's status.
+10. Record the next 1 hand for both daily lanes or explicitly state which lane already met its day goal.
 
 ## Task Selection Rules
 
-- Meeting 1 should favor market and concept selection tasks.
-- Meeting 2 should favor concept shaping, bootstrap planning, and first-release definition tasks.
-- Meeting 3+ should strongly favor execution, deploy, verification, and polish tasks.
+- Meeting 1 should include both market/concept selection and current-live-product review.
+- Meeting 2 should include both concept shaping/bootstrap planning and live-lane slice locking.
+- Meeting 3+ should strongly favor execution, deploy, verification, and polish tasks across both lanes.
 - Prefer one clear thin slice per run.
 - Prefer the smallest next slice that can move the game toward live playable value.
 - Once the day enters execution mode, concept re-planning is an exception, not the default.
 - If the concept becomes too heavy, simplify it quickly instead of expanding the planning phase.
-- Do not open multiple new concepts in the same day loop unless the current one is explicitly rejected.
+- Do not finish the day with only `live lane` polish and no `birth lane` app creation.
+- Do not finish the day with only `birth lane` bootstrap and no verified improvement on the current live app.
+- The `birth lane` should target the smallest credible new app:
+  - repo created
+  - one-screen playable
+  - GitHub Pages deploy
+  - in-app GitHub link
 - Keep GitHub Pages, static deployment, and short-session playability as non-negotiable constraints.
+
+## Daily Dual-Lane Completion Rule (2026-03-15)
+
+- A successful day is not "the same app was polished many times." A successful day moves both company obligations:
+  - `live lane`: one verified improvement on the currently shipped app
+  - `birth lane`: one fresh app advanced from concept to bootstrap/playable on the same day
+- If one lane falls behind, the next run should bias toward the missing lane instead of continuing the already-healthy one.
+- The meeting log must state daily dual-lane status explicitly:
+  - `live lane`: not started / in progress / day goal met
+  - `birth lane`: not started / in progress / day goal met
+- If the `birth lane` does not produce a new app that day, the run is incomplete from a company-operations perspective even if the active app improved.
 
 ## Idea Handoff Rule (2026-03-14)
 
-- field meeting automation は execution lane の owner であり、idea funnel の owner ではありません。
-- 新規アイデアを思いついたり、active lane の限界を見つけたりした場合は、`IDEAS.md` に短く追加または更新して CEO へ handoff してよいです。
-- ただし、CEO の採用判断または Project #2 の bootstrap item がない限り、勝手に新規 concept を primary lane に切り替えません。
-- 例外:
-  - GitHub Project #2 の primary item 自体が `bootstrap new repo / new concept` である
-  - `PLANNING_MEETING.md` の CEO managed priorities が明示的に新規 concept 着手を指示している
+- field meeting automation は `live lane` の owner であり、同時に daily `birth lane` の bootstrap owner でもあります。CEO は長期の concept funnel 健全性を監督します。
+- 新規アイデアを思いついたり、active lane の限界を見つけたりした場合は、`IDEAS.md` に短く追加または更新し、その日の `birth lane` 候補として扱ってよいです。
+- daily `birth lane` を起動するために、field meeting automation は `IDEAS.md` の `inbox` または `incubating` から 1 件を選び、同日中の bootstrap/new-app creation へ進めてよいです。
+- ただし、会社制約を満たさない concept は採用しません。重い案は軽く作り直してから進めます。
 - meeting log には、idea handoff を行った場合に次を残します:
   - 追加した idea 名
   - なぜ今その idea が見えたか
-  - CEO に判断してほしい点
+  - その日の `birth lane` に採用したかどうか
+  - CEO に判断してほしい点が残る場合はその内容
 
 ## Idea Discovery Duty (2026-03-14)
 
-- The field meeting is not the owner of the concept funnel, but it must not drop concept signals discovered during execution.
-- When gameplay work reveals a reusable mechanic, lighter adjacent concept, or "too heavy, simplify it like this" insight, add a short handoff note to `IDEAS.md` before ending the run.
-- If no new concept signal appeared, write `No new idea signal this run` in the meeting log so the CEO can tell the difference between "nothing found" and "nothing recorded."
-- The goal is not to open a new project immediately. The goal is to keep the company-level idea birth loop observable and alive.
+- The field meeting must not drop concept signals discovered during execution.
+- When gameplay work reveals a reusable mechanic, lighter adjacent concept, or "too heavy, simplify it like this" insight, add a short note to `IDEAS.md` before ending the run.
+- Each day, the field meeting should try to turn at least one viable signal or incubating concept into the `birth lane`.
+- If no new concept signal appeared in a specific run, write `No new idea signal this run` in the meeting log so the CEO can tell the difference between "nothing found" and "nothing recorded."
+- The goal is not only to keep ideation observable. The goal is to keep the company able to ship a fresh app every day while still improving the current live app.
 
 ## Slice Completion Rule (2026-03-14)
 
@@ -249,18 +283,20 @@
   - the output clearly reduces the next implementation step
 - Do not treat the meeting itself as the deliverable; the deliverable is the completed work slice.
 
-## Build-To-Release Agile Mode (2026-03-14)
+## Build-To-Release Agile Mode (2026-03-15)
 
-- After the day concept is locked, run the field lane as a build-to-release agile loop.
+- After the day lanes are locked, run the field operation as two build-to-release agile loops:
+  - `live lane`: improve the current shipped app, publish, verify, and polish
+  - `birth lane`: bootstrap the new app, publish it, verify it, and make it real the same day
 - The default loop is:
-  - ship the first playable
+  - ship one thin slice
   - publish to GitHub Pages
   - verify on the deployed page
   - fix the top friction
   - repeat
-- Prefer many small shipped improvements on the same concept over returning to abstract planning.
-- If a concept cannot reach a credible first playable quickly, simplify it instead of extending the planning phase.
-- Treat the daily goal as "release and improve" rather than "keep discussing."
+- Prefer alternating or parallelizing the two lanes with subagents rather than spending every run on only one lane.
+- If the `birth lane` concept cannot reach a credible first playable quickly, simplify it instead of extending the planning phase.
+- Treat the daily goal as `improve the current live app and birth a new app`, not just `keep discussing` and not just `keep polishing one title`.
 
 ## Preferred Work Types
 
@@ -305,6 +341,8 @@
 - 確認したファイル
 - 実行したコマンド
 - CEO に見てほしい違和感
+- `live lane` の日次状態
+- `birth lane` の日次状態
 
 ## Logging
 
