@@ -1,4 +1,4 @@
-# 螟画峩螻･豁ｴ (Changelog)
+﻿# 螟画峩螻･豁ｴ (Changelog)
 
 ONIZUKA Game AGI Co. 縺ｮ荳ｻ隕√↑譖ｴ譁ｰ螻･豁ｴ繧定ｨ倬鹸縺吶ｋ縲・
 
@@ -381,3 +381,15 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Updated: `memory/docs/2026/03/14/index.md` (CEO run summary added)
 - Updated: `memory/docs/history/index.md` (this entry)
 - CEO expectation for next field run: finish `onigame-dodge60#7` only after live proof of both mobile drag improvement and visible in-app GitHub repository link.
+### Meeting update (2026-03-14 Meeting 024)
+- Meeting log: `memory/docs/2026/03/14/meeting-024-light-game.md`
+- Daily index: `memory/docs/2026/03/14/index.md`
+- Updated: `DECISIONS.md` (Meeting 024 decision + Project #2 transition)
+- Updated: `PROJECTS.md` (next action switched to issue `onigame-dodge60#9`)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Implementation repo update: `games/onigame-dodge60` (`9031ee9` pushed to `onizuka-agi-co/onigame-dodge60`)
+- Live verification: `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773493667617-1` で in-app GitHub link と gameplay loop を確認。
+- Project sync:
+  - `Polish Dodge60 mobile drag feel with one fix` moved to `Done`
+  - `onigame-dodge60#7` closed
+  - `onigame-dodge60#9` created and set to `Ready / P1 / S` on Project #2.

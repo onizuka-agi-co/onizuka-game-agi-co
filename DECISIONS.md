@@ -1,4 +1,4 @@
-# DECISIONS.md - 決定ログ
+﻿# DECISIONS.md - 決定ログ
 
 重要な決定を記録する。理由も含めて。
 
@@ -6,6 +6,12 @@
 
 ## 2026-03
 
+### 2026-03-14: Meeting 024 closed mobile drag polish and advanced next hand to readability
+- **決定:** issue `onigame-dodge60#7` を `Done` とし、mobile drag 摩擦修正（grab offset保持）と画面内 GitHub リンク表示を `onigame-dodge60` へ反映した上で、次の実行 slice を `onigame-dodge60#9`（hit readability の視認性改善）へ進める。
+- **理由:** CEO Review 005 の受け入れ条件（drag改善 + in-appリンク + live確認）を満たしつつ、次の価値を最小差分で積み上げるため。
+- **検証結果:** commit `9031ee9` を push後、live URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773493667617-1` で `.repo-link` 表示と gameplay loop（`state=LIVE`, timer/score進行）を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** Project #2 は `#7 Done`、`#9 Ready / P1 / S`。次 run は `#9` を1 run完結で進める。
 ### 2026-03-14: Make the idea funnel agent-only and explicit
 - **決定:** `IDEAS.md` を単なるメモ置き場ではなく、agent-only の新規企画 funnel の canonical inbox として扱う。
 - **理由:** アイデアがあっても、CEO review と field meeting の loop に接続されていなければ、自動運営会社として新規企画が自然発生しないため。

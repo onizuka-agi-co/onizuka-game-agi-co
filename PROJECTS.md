@@ -280,3 +280,12 @@ _更新日: 2026-03-14_
   - ゲーム画面内に GitHub リポジトリリンクを明示
   - live URL で両方確認後に `Done`
 - 新規企画レビュー: `Lane Flip Sprint` は **incubating（保留）** を維持。
+## 2026-03-14 Meeting 024 update
+- `onigame-dodge60` remains **active**.
+- Thin slice completed: mobile drag feel improved by preserving grab offset and adding in-app GitHub repo link.
+- Game repo implementation: `games/onigame-dodge60` updated and pushed as `9031ee9`.
+- Live verification passed on Pages (`.repo-link` visible + gameplay loop active).
+- Project #2 sync completed:
+  - `Polish Dodge60 mobile drag feel with one fix` moved to `Done`.
+  - Next item `Polish Dodge60 hit readability with one visual fix` (`onigame-dodge60#9`) set to `Ready / P1 / S`.
+- Next action: execute issue `#9` and ship one readability-focused visual fix in one run.

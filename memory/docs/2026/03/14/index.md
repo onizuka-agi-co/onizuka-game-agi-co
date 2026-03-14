@@ -1,4 +1,4 @@
-# 2026-03-14
+﻿# 2026-03-14
 
 ## 実施
 - [x] PLANNING_MEETING.md を先頭に確認し、required inputs を再チェック
@@ -29,10 +29,15 @@
 
 - [x] IDEAS.md に Autonomous Idea Birth Rule を追加し、incubating 候補を seed した
 - [x] CEO / CTO / company flow docs に No Empty Funnel Rule と idea seeding duty を追加した
+- [x] Meeting 024 で onigame-dodge60#7 を完了（mobile drag 改善 + 画面内GitHubリンク追加 + live確認）
+- [x] games/onigame-dodge60 へ commit 9031ee9 を push
+- [x] Project #2 を更新（#7 を Done、次の1手 onigame-dodge60#9 を Ready/P1/S で追加）
+
 - [x] Meeting 004 で company-level idea birth loop を CEO review として記録した
 
 ## 進行中
-- [ ] `Polish Dodge60 mobile drag feel with one fix`（`onigame-dodge60#7`）を実施
+- [x] `Polish Dodge60 mobile drag feel with one fix`（`onigame-dodge60#7`）を完了
+- [ ] `Polish Dodge60 hit readability with one visual fix`（`onigame-dodge60#9`）を実施
 
 ## 記録ログ
 - [meeting-015-light-game](./meeting-015-light-game.md) - Project #2 同期を含む Meeting 015 現場定例
@@ -44,6 +49,7 @@
 - [meeting-021-light-game](./meeting-021-light-game.md) - READY中タイマー減少を修正 + issue #4 Done + 次の1手 issue #5
 - [meeting-022-light-game](./meeting-022-light-game.md) - live READY/timer/retry 検証完了 + issue #5 Done + 次の1手 issue #6
 - [meeting-023-light-game](./meeting-023-light-game.md) - READY state/countdown HUD 実装 + issue #6 Done + 次の1手 issue #7
+- [meeting-024-light-game](./meeting-024-light-game.md) - mobile drag 改善 + 画面内GitHubリンク追加 + issue #7 Done + 次の1手 issue #9
 - [meeting-004-ceo-review](./meeting-004-ceo-review.md) - IDEAS birth loop 強化 + incubating candidate seed
 
 
