@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 001 shipped game-over cause badge and advanced next hand to retry readability
+- **決定:** issue `onigame-dodge60#10` を `Done` とし、game-over 時の敗北理由を即読できる visual cue（`Reason: Hit by hazard` バッジ）を `onigame-dodge60` へ反映した上で、次の実行 slice を `onigame-dodge60#11`（retry readability の視認性改善）へ進める。
+- **理由:** hit flash だけでは結果画面で「なぜ負けたか」の意味が薄く、再挑戦前の理解コストが残っていたため。短い原因表示バッジを追加することで失敗理由を即時認知できるため。
+- **検証結果:** commit `e000762` を push後、live URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773500666656` で `Game Over` と `Reason: Hit by hazard`（class: `result-cause hit`）を確認。`app.js` 配信内容にも原因表示文字列を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** Project #2 は `#10 Done`、`#11 Ready / P1 / S`。次 run は `#11` を1 run完結で進める。
+
 ### 2026-03-14: Meeting 025 shipped hit-impact flash and advanced next hand to game-over readability
 - **決定:** issue `onigame-dodge60#9` を `Done` とし、被弾時の視認性改善（短いインパクトフラッシュ）を `onigame-dodge60` へ反映した上で、次の実行 slice を `onigame-dodge60#10`（game-over readability の視認性改善）へ進める。
 - **理由:** 直前の drag 改善後、敗北瞬間の認知が弱く「なぜ負けたか」が伝わりにくかったため。小さな演出追加で短時間プレイの理解性を上げられるため。

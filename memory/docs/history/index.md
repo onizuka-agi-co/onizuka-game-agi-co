@@ -421,3 +421,19 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
   - `Polish Dodge60 hit readability with one visual fix` moved to `Done`
   - `onigame-dodge60#9` closed
   - `onigame-dodge60#10` created and set to `Ready / P1 / S` on Project #2.
+
+### Meeting update (2026-03-15 Meeting 001)
+- Meeting log: `memory/docs/2026/03/15/meeting-001-light-game.md`
+- Daily index: `memory/docs/2026/03/15/index.md`
+- Updated: `DECISIONS.md` (Meeting 001 decision + Project #2 transition)
+- Updated: `PROJECTS.md` (next action switched to issue `onigame-dodge60#11`)
+- Updated: `memory/docs/2026/03/index.md` (2026-03-15 summary added)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Implementation repo update: `games/onigame-dodge60` (`e000762` pushed to `onizuka-agi-co/onigame-dodge60`)
+- Live verification:
+  - `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773500666656` で `Game Over` と `Reason: Hit by hazard` を確認
+  - 配信 `app.js` に `Reason: Hit by hazard` / `result-cause` 文字列を確認
+- Project sync:
+  - `Polish Dodge60 game-over readability with one visual cue` moved to `Done`
+  - `onigame-dodge60#10` closed
+  - `onigame-dodge60#11` created and set to `Ready / P1 / S` on Project #2.
