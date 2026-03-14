@@ -24,6 +24,21 @@
 - ただし field meeting automation は、CEO の採用判断か Project #2 の bootstrap item がない限り、勝手に新規 project を primary lane に昇格させません。
 - `adopted` にした案は、同じ流れで `DECISIONS.md`、`PROJECTS.md`、Project #2 へ同期します。
 
+## Autonomous Idea Birth Rule (2026-03-14)
+
+- `IDEAS.md` must not stay as a passive inbox.
+- Every CEO run must finish with at least one of these explicit outcomes:
+  - seed at least 1 new idea into `inbox`
+  - promote at least 1 idea into `incubating`
+  - document why the current `incubating` lane is still healthy and fresh
+- If `incubating` is empty at the start of a CEO run, the CEO must create or promote at least 1 incubating candidate before ending the run.
+- If 2 consecutive CEO runs finish without any new idea, status movement, or rejection rationale, the next CEO run must add at least 2 fresh ideas.
+- Acceptable idea sources:
+  - friction discovered in the active game that suggests a lighter adjacent concept
+  - a simplification or pivot from a concept that was too heavy
+  - recombination of micro-mechanics that already tested well
+  - a mission gap: "what other 1-3 minute delight is still missing?"
+
 ## Status Meanings
 
 - `inbox`: まだ粗いが保存価値がある
@@ -57,8 +72,9 @@
 
 ## 🌱 Incubating Candidates
 
-今のところ未設定。CEO automation が次回以降ここを維持する。
-
+| ID | Idea | Status | Why now | Next proof |
+|----|------|--------|---------|------------|
+| I20260314-01 | Lane Flip Sprint | incubating | Fast lane-snap movement keeps the same lightweight survival appeal while creating a cleaner mobile thumb fantasy. | One-screen prototype with three lanes, one-button lane shifts, and a 45-second run. |
 ---
 
 ## ✅ Adopted / Rejected History
@@ -115,3 +131,11 @@
 ---
 
 _更新日: 2026-03-08_
+
+## Seeded Concept Backlog (2026-03-14)
+
+| ID | Idea | Status | Why it exists | Next proof |
+|----|------|--------|---------------|------------|
+| I20260314-01 | Lane Flip Sprint | incubating | Keeps the instant-read survival feel of Dodge60 but makes thumb input even clearer with three fixed lanes. | Build a one-screen prototype with left/right lane snap and 45-second runs. |
+| I20260314-02 | One Stroke Sweep | inbox | Mobile drag already matters in Dodge60; this turns that tactile motion into the core loop for a 30-second score chase. | Mock one drag-to-collect loop with one fail state and one combo reward. |
+| I20260314-03 | Pocket Putt Panic | inbox | Short flick skill fits the mission and gives the studio a second control fantasy beyond dodge movement. | Prove a single-hole 15-second loop with one moving blocker. |

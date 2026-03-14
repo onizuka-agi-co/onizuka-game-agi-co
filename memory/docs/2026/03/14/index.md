@@ -1,4 +1,4 @@
-﻿# 2026-03-14
+# 2026-03-14
 
 ## 実施
 - [x] PLANNING_MEETING.md を先頭に確認し、required inputs を再チェック
@@ -27,6 +27,10 @@
 - [x] 会社全体の運営フロー文書 `docs/company-operating-flow.md` を追加し、README / CEO / CTO ルールから辿れるようにした
 - [x] `IDEAS.md` を agent-only 新規企画 funnel の canonical inbox として再定義し、CEO / CTO ルールへ接続した
 
+- [x] IDEAS.md に Autonomous Idea Birth Rule を追加し、incubating 候補を seed した
+- [x] CEO / CTO / company flow docs に No Empty Funnel Rule と idea seeding duty を追加した
+- [x] Meeting 004 で company-level idea birth loop を CEO review として記録した
+
 ## 進行中
 - [ ] `Polish Dodge60 mobile drag feel with one fix`（`onigame-dodge60#7`）を実施
 
@@ -40,3 +44,5 @@
 - [meeting-021-light-game](./meeting-021-light-game.md) - READY中タイマー減少を修正 + issue #4 Done + 次の1手 issue #5
 - [meeting-022-light-game](./meeting-022-light-game.md) - live READY/timer/retry 検証完了 + issue #5 Done + 次の1手 issue #6
 - [meeting-023-light-game](./meeting-023-light-game.md) - READY state/countdown HUD 実装 + issue #6 Done + 次の1手 issue #7
+- [meeting-004-ceo-review](./meeting-004-ceo-review.md) - IDEAS birth loop 強化 + incubating candidate seed
+

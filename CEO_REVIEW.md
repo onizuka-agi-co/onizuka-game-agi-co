@@ -150,6 +150,18 @@ CEO review では、日報だけで十分なら rollout まで掘らなくてよ
 - まだ採用しない場合でも、`hold` の理由と次回の評価観点を残します。
 - `rejected` にする場合は、会社制約とミッションのどこに合わなかったかを短く残します。
 
+## Autonomous Idea Seeding Rule (2026-03-14)
+
+- CEO review is responsible not only for evaluating ideas but also for generating them when the funnel is weak.
+- Every CEO run must end with exactly one explicit funnel status noted in the log:
+  - `seeded`: added at least 1 new idea to `IDEAS.md`
+  - `promoted`: moved at least 1 idea into `incubating` or `adopted`
+  - `healthy`: recorded why the current `incubating` lane is already fresh enough
+- `healthy` is allowed only when `incubating` already has at least 1 candidate and there was funnel movement within the last 2 CEO runs.
+- If `incubating` is empty, `healthy` is not allowed. The CEO must create or promote at least 1 candidate in the same run.
+- If the field meeting discovered a reusable mechanic, lighter adjacent concept, or failed-heavy-path simplification, the CEO must either turn it into an explicit idea entry or reject it with a reason.
+- A CEO run that leaves `IDEAS.md` unchanged without a written funnel-health reason is incomplete.
+
 ## When To Update PLANNING_MEETING
 
 次のいずれかなら、`PLANNING_MEETING.md` を更新してよいです。

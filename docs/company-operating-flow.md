@@ -250,8 +250,20 @@ meeting を終えたこと自体は deliverable ではありません。
 6. bootstrap
    - field meeting automation が primary slice として repo/playable を起動する
 
+## No Empty Funnel Rule (2026-03-14)
+
+- This company does not run on a single shipping lane alone.
+- Minimum healthy operating state:
+  - 1 active execution slice moving in the current product
+  - 1 incubating concept candidate in `IDEAS.md`
+  - 1 explicit path for where the next raw ideas will come from
+- If the active shipping lane is healthy but the concept lane is empty or stale, the company is under-operating, not healthy.
+- CEO runs own the concept lane refresh. Field runs own concept-signal handoff from execution.
+- Logs are evidence, not the source of ideation. The source of ideation must be visible in `IDEAS.md` and the governing docs.
+
 ## Schedule Fit
 
+- This cadence is sufficient only if CEO runs treat idea seeding as required work rather than optional reflection.
 - 現行 cadence:
   - field meeting automation: hourly
   - CEO automation: every 4 hours

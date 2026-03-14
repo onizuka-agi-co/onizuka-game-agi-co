@@ -198,6 +198,13 @@
   - なぜ今その idea が見えたか
   - CEO に判断してほしい点
 
+## Idea Discovery Duty (2026-03-14)
+
+- The field meeting is not the owner of the concept funnel, but it must not drop concept signals discovered during execution.
+- When gameplay work reveals a reusable mechanic, lighter adjacent concept, or "too heavy, simplify it like this" insight, add a short handoff note to `IDEAS.md` before ending the run.
+- If no new concept signal appeared, write `No new idea signal this run` in the meeting log so the CEO can tell the difference between "nothing found" and "nothing recorded."
+- The goal is not to open a new project immediately. The goal is to keep the company-level idea birth loop observable and alive.
+
 ## Slice Completion Rule (2026-03-14)
 
 - Default expectation: one meeting should finish one thin slice end-to-end.
