@@ -135,6 +135,17 @@ flowchart TD
     J --> A
 ```
 
+## Daily Operating Rhythm (2026-03-14)
+
+- Default the company to one concept-to-release day loop, not repeated concept meetings for all 24 runs.
+- Daily rhythm:
+  - Field Meeting 1: market scan and concept selection
+  - Field Meeting 2: concept shaping, first playable scope, repo/bootstrap plan, and release bar
+  - Field Meeting 3+: build, publish, verify, polish, and keep shipping the same concept
+- After Field Meeting 2, broad concept replanning becomes an exception.
+- CEO intervention during the same day should happen only when mission drift, excessive scope, or a serious blocker is visible.
+- If the active product is already mid-flight, the team may skip the day-start concept stages and continue directly in execution mode.
+
 ## One Run Flow
 
 1. 最新ルールを読む
@@ -263,18 +274,14 @@ meeting を終えたこと自体は deliverable ではありません。
 
 ## Schedule Fit
 
-- This cadence is sufficient only if CEO runs treat idea seeding as required work rather than optional reflection.
-- 現行 cadence:
-  - field meeting automation: hourly
-  - CEO automation: every 4 hours
-- この cadence で十分なもの:
-  - 1 本の active execution lane
-  - 1 本以上の idea funnel maintenance
-  - CEO による定期的な concept review
-- この cadence だけでは自然に生まれにくいもの:
-  - idea funnel を読む責務が prompt に入っていない場合の自動企画生成
-  - 複数 active lane の同時高速運用
-- したがって、agent-only で loop を閉じるには schedule 変更より先に prompt / source-of-truth の接続が必要です。
+- This cadence works best when the company uses one daily concept/planning pass and treats most later runs as execution loops.
+- Recommended daily pattern:
+  - one early market/concept selection run
+  - one early concept-shaping/bootstrap run
+  - many build-to-release agile runs after that
+- CEO runs should keep the right to intervene mid-day only when the lane drifts from the mission, gets too heavy, or hits a real blocker.
+- The same hourly schedule becomes wasteful if every run restarts concept planning from scratch.
+- The goal of the schedule is not more meetings. The goal is more shipped GitHub Pages value per day.
 
 ## Anti-Patterns
 

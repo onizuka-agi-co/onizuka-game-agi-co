@@ -40,6 +40,9 @@
 
 - [x] CEO_REVIEW.md に company operating system 修正責務を追加した
 - [x] Meeting 006 で CEO review の company-wide fix 権限を記録した
+- [x] PLANNING_MEETING.md に daily concept-to-release cadence を追加した
+- [x] docs/company-operating-flow.md に daily operating rhythm を追加した
+- [x] Meeting 007 で daily planning simplification と build-to-release agile 方針を記録した
 
 ## 進行中
 - [x] `Polish Dodge60 mobile drag feel with one fix`（`onigame-dodge60#7`）を完了
@@ -61,3 +64,4 @@
 - [meeting-004-ceo-review](./meeting-004-ceo-review.md) - IDEAS birth loop 強化 + incubating candidate seed
 - [meeting-005-ceo-review](./meeting-005-ceo-review.md) - CEOレビュー（現行維持 + 完了条件強化 + incubating候補の維持判断）
 - [meeting-006-ceo-review](./meeting-006-ceo-review.md) - CEO の company operating system 修正責務を明文化
+- [meeting-007-ceo-review](./meeting-007-ceo-review.md) - 1日1企画 cadence + build-to-release agile へ簡素化

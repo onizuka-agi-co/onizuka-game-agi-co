@@ -13,6 +13,12 @@
 - **決定者:** エージェント（現場定例）
 - **影響:** Project #2 は `#9 Done`、`#10 Ready / P1 / S`。次 run は `#10` を1 run完結で進める。
 
+### 2026-03-14: Field meetings should use a daily concept-to-release cadence
+- **決定:** `PLANNING_MEETING.md` の既定 cadence を「Meeting 1 = 市場/企画探索」「Meeting 2 = 企画立案/初回リリース定義」「Meeting 3以降 = 同じ企画を GitHub Pages へ作り切って改善する build-to-release agile loop」に変更する。
+- **理由:** この会社は 24/7 の高密度 run があるため、毎 run で企画会議をやり直すより、1日の前半で企画を固めて後半を ship / verify / polish に使うほうが価値密度が高い。
+- **決定者:** 人間要求 + エージェント反映
+- **影響:** 現場 run は日中に broad planning を繰り返さず、例外時のみ企画へ戻る。`docs/company-operating-flow.md` も同 cadence に合わせる。
+
 ### 2026-03-14: Meeting 024 closed mobile drag polish and advanced next hand to readability
 - **決定:** issue `onigame-dodge60#7` を `Done` とし、mobile drag 摩擦修正（grab offset保持）と画面内 GitHub リンク表示を `onigame-dodge60` へ反映した上で、次の実行 slice を `onigame-dodge60#9`（hit readability の視認性改善）へ進める。
 - **理由:** CEO Review 005 の受け入れ条件（drag改善 + in-appリンク + live確認）を満たしつつ、次の価値を最小差分で積み上げるため。

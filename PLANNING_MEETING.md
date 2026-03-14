@@ -95,6 +95,25 @@
 - 1 時間以内に結果が見えるタスクを選ぶ
 - 企画だけで終わらず、可能なら小さな実装や修正まで行う
 
+## Daily Cadence Mode (2026-03-14)
+
+- Default the field operation to one concept-to-release day loop rather than repeated planning meetings all day.
+- Meeting 1 of the day should focus on lightweight market scan and concept selection.
+- Meeting 2 of the day should lock the concept brief, first playable scope, repo/bootstrap plan, and release bar.
+- From Meeting 3 onward, switch to build-to-release agile mode for the same concept:
+  - implement
+  - publish to GitHub Pages
+  - verify
+  - polish
+  - repeat until the day closes
+- After Meeting 2, do not reopen broad concept planning unless one of these is true:
+  - the concept is clearly too heavy for the company constraints
+  - live evidence shows the concept is not fun enough to continue
+  - a blocking constraint makes the current concept impossible to ship safely
+  - CEO automation explicitly redirects the lane
+- Prefer finishing one concept strongly in one day over opening several half-built concepts.
+- If the current game is already mid-flight and no new daily concept reset is needed, skip directly into the execution phase and keep shipping.
+
 ## CTO Management Mode (Subagent First)
 
 - 現場会議エージェントは CTO として、まず全体タスクを薄い実行単位に分解する。
@@ -163,27 +182,37 @@
 
 ## Standard Flow
 
-1. GitHub Project #2 を確認し、現在の primary active item を特定する
-2. 現在の playable 状態、直近の変更、未解決課題、ブロッカーを確認する
-3. 今回もっとも価値が高く、かつ小さい "next 1 hand" を 1 つ選ぶ
-4. 必要なら active item の title / body / status を実作業に合わせて修正する
-5. 企画・調査は実装開始に必要な最小限だけ行い、できるだけ同じ run で実装に入る
-6. 1 つの thin slice を Done まで持っていくことを目標に、実装・確認・軽い修正を進める
-7. 実装完了が難しい場合だけ、ブロッカーまたは次の実装が速くなる具体的な調査結果を残す
-8. ログ、決定事項、Project item を更新する
-9. 次の 1 手を 1 つだけ決める
+1. Confirm whether this is Meeting 1, Meeting 2, or Meeting 3+ in the current day loop.
+2. If it is Meeting 1:
+   - scan market/context lightly
+   - review IDEAS.md
+   - choose one daily concept candidate that fits mission and GitHub Pages constraints
+3. If it is Meeting 2:
+   - lock the concept brief
+   - define first playable scope
+   - decide repo/bootstrap plan
+   - define release/verification bar for the day
+4. If it is Meeting 3 or later:
+   - treat the selected concept as fixed by default
+   - build, publish, verify, and polish instead of reopening concept discussion
+5. Check GitHub Project #2 and align the active item to the current day phase and primary slice.
+6. Choose one concrete next 1 hand that can be completed or materially advanced in the current run.
+7. Delegate to subagents as needed, then implement in the target repo.
+8. Verify in the relevant environment. For shipped gameplay, prefer live GitHub Pages verification.
+9. Update logs, issue state, and Project #2.
+10. Record the next 1 hand for the following run.
 
 ## Task Selection Rules
 
-- 1 回で大きな全面刷新を狙わない
-- まず playable に近づく仕事を優先する
-- 次に、遊びやすさと分かりやすさを上げる仕事を優先する
-- その次に、品質や保守性を上げる仕事を選ぶ
-- 1 meeting では、できれば 1 つの thin slice を企画から確認まで通して `Done` にする
-- 調査だけで終わる run は例外扱いにする
-- GitHub Pages 完全静的、外部 API 不要、vibe coding で前進可能の 3 条件を満たさない案は着手前に落とす
-- 実装が難しすぎる場合は、次の実装が楽になる具体的な調査結果を残す
-- 現在のゲーム案がミッションに合わない場合は、その違和感をログに残す
+- Meeting 1 should favor market and concept selection tasks.
+- Meeting 2 should favor concept shaping, bootstrap planning, and first-release definition tasks.
+- Meeting 3+ should strongly favor execution, deploy, verification, and polish tasks.
+- Prefer one clear thin slice per run.
+- Prefer the smallest next slice that can move the game toward live playable value.
+- Once the day enters execution mode, concept re-planning is an exception, not the default.
+- If the concept becomes too heavy, simplify it quickly instead of expanding the planning phase.
+- Do not open multiple new concepts in the same day loop unless the current one is explicitly rejected.
+- Keep GitHub Pages, static deployment, and short-session playability as non-negotiable constraints.
 
 ## Idea Handoff Rule (2026-03-14)
 
@@ -219,6 +248,19 @@
   - the repo lacks enough information to implement safely
   - the output clearly reduces the next implementation step
 - Do not treat the meeting itself as the deliverable; the deliverable is the completed work slice.
+
+## Build-To-Release Agile Mode (2026-03-14)
+
+- After the day concept is locked, run the field lane as a build-to-release agile loop.
+- The default loop is:
+  - ship the first playable
+  - publish to GitHub Pages
+  - verify on the deployed page
+  - fix the top friction
+  - repeat
+- Prefer many small shipped improvements on the same concept over returning to abstract planning.
+- If a concept cannot reach a credible first playable quickly, simplify it instead of extending the planning phase.
+- Treat the daily goal as "release and improve" rather than "keep discussing."
 
 ## Preferred Work Types
 
