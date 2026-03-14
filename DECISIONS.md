@@ -327,3 +327,10 @@ _更新日: 2026-03-13_
 - **Exception Rule:** Research-only or planning-only runs are allowed only when a real blocker exists or the output clearly makes the next implementation run faster and safer.
 - **Decision Owner:** Agent
 - **Impact:** Future meetings should bias toward shipping one small completed slice rather than stopping after analysis.
+
+### 2026-03-14: Meeting 016 synced Project #2 active item context and kept next step fixed
+- **Decision:** Keep `onigame-quickshot` as the single next work item and keep the next implementation step unchanged: bootstrap a one-screen playable prototype in `games/onigame-quickshot`.
+- **Reason:** No playable artifact exists yet; smallest-scope implementation remains the fastest path under current company constraints.
+- **Project Sync:** Updated the primary active draft item body on GitHub Project #2 to reference `meeting-016-light-game.md` and explicit current blocker, while keeping status as `Ready`.
+- **Decision Owner:** Agent (Field Meeting)
+- **Impact:** Next run should execute prototype bootstrap directly and move the active item from `Ready` to `In progress`.

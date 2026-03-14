@@ -196,3 +196,15 @@ _更新日: 2026-03-13_
   - `Bootstrap onigame-quickshot one-screen playable prototype` (`Ready`)
   - `Playtest quickshot first playable and fix top friction` (`Backlog`)
   - `Publish onigame-quickshot first playable to GitHub Pages` (`Backlog`)
+
+## 2026-03-14 Meeting 016 update
+- onigame-quickshot remains **planning**.
+- Prototype folder `games/onigame-quickshot` is still missing.
+- Next action remains fixed: bootstrap minimum one-screen playable prototype in `games/onigame-quickshot`.
+- Project #2 sync completed in this run:
+  - Active item `Bootstrap onigame-quickshot one-screen playable prototype` was kept as `Ready`.
+  - Active item body was updated to `meeting-016-light-game.md` reference and current blocker.
+- Current Project #2 queue remains:
+  - `Bootstrap onigame-quickshot one-screen playable prototype` (`Ready`)
+  - `Playtest quickshot first playable and fix top friction` (`Backlog`)
+  - `Publish onigame-quickshot first playable to GitHub Pages` (`Backlog`)

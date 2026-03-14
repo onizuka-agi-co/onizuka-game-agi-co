@@ -12,9 +12,12 @@
 - [x] Project #2 を人間向けカンバンとして使うための card template と運用ルールを追加
 - [x] Project #2 のノイズを削除し、current item + follow-up 2件の軽量 queue に整理
 - [x] 1 meeting で 1 thin slice をできれば Done まで進める方針を PLANNING_MEETING.md に追加
+- [x] GitHub Project #2 の active item を Meeting 016 現況へ同期（latest meeting reference / blocker 更新）
+- [x] Meeting 016 の会議ログを作成し、meeting-scope ファイルを更新
 
 ## 進行中
 - [ ] games/onigame-quickshot の新規作成と最小1画面プロトタイプ実装
 
 ## 記録ログ
 - [meeting-015-light-game](./meeting-015-light-game.md) - Project #2 同期を含む Meeting 015 現場定例
+- [meeting-016-light-game](./meeting-016-light-game.md) - Project #2 active item 同期を含む Meeting 016 現場定例

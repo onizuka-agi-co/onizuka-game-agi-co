@@ -262,3 +262,11 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - 譖ｴ譁ｰ: `memory/docs/2026/03/index.md` (2026-03-14 entry added)
 - 譖ｴ譁ｰ: `memory/docs/history/index.md` (this entry)
 - Project sync: GitHub Project #2 縺ｧ Meeting 014 繧・Done縲｀eeting 015 繧・Ready/P0/S 縺ｫ譖ｴ譁ｰ
+
+### Meeting update (2026-03-14 Meeting 016)
+- Meeting log: `memory/docs/2026/03/14/meeting-016-light-game.md`
+- Daily index: `memory/docs/2026/03/14/index.md`
+- Updated: `DECISIONS.md` (Meeting 016 decision + Project #2 active item context sync)
+- Updated: `PROJECTS.md` (Meeting 016 status continuation)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Project sync: GitHub Project #2 active item body updated to latest meeting reference (`meeting-016-light-game.md`) and current blocker.
