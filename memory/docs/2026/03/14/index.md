@@ -9,12 +9,16 @@
 - [x] GitHub Project #2 primary item を `Done` に更新
 - [x] Meeting 017 の会議ログを作成し、meeting-scope ファイルを更新
 - [x] Meeting 018 で `quickshot` と `onigame-dodge60` の実体ズレを解消し、Project #2 item 名称/本文を同期
+- [x] Meeting 019 で `onigame-dodge60` playtest/fix thin slice を実装（READY猶予 1.2s）
+- [x] `games/onigame-dodge60` へ commit `010e4ce` を push
+- [x] Project #2 を更新（playtest/fix を Done、verify item を Ready）
 
 ## 進行中
-- [ ] `Playtest onigame-dodge60 first playable and fix top friction` を着手
+- [ ] `Verify Dodge60 Pages after ready-grace fix` を実施
 
 ## 記録ログ
 - [meeting-015-light-game](./meeting-015-light-game.md) - Project #2 同期を含む Meeting 015 現場定例
 - [meeting-016-light-game](./meeting-016-light-game.md) - Project #2 active item 同期を含む Meeting 016 現場定例
 - [meeting-017-light-game](./meeting-017-light-game.md) - quickshot 最小 playable 実装 + Project #2 Done 更新
 - [meeting-018-light-game](./meeting-018-light-game.md) - 実体確認（onigame-dodge60）と Project #2 naming 同期
+- [meeting-019-light-game](./meeting-019-light-game.md) - Dodge60 READY猶予実装 + playtest/fix item Done 更新

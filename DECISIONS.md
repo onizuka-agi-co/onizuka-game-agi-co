@@ -364,3 +364,12 @@ _更新日: 2026-03-14_
 - **Project Sync:** Migrated current Dodge60 board items from company repo issues to `onizuka-agi-co/onigame-dodge60` issues (`#1`, `#2`, `#3`) and removed the old company-repo-backed board items.
 - **Decision Owner:** Human request reflected by agent
 - **Impact:** Future Project #2 work should use company repo issues only for company operations, and game repo issues for actual game work.
+
+### 2026-03-14: Meeting 019 delivered one playtest friction fix on Dodge60
+- **Decision:** Complete one thin slice by fixing early-run readability and fairness in `onigame-dodge60`.
+- **Reason:** The current primary item required a practical friction fix, not another planning-only cycle.
+- **Implementation:** Added a 1.2 second READY grace window in `games/onigame-dodge60/app.js` (no hazard spawn/collision during grace, READY banner shown).
+- **Verification:** `node --check app.js` passed in `games/onigame-dodge60`.
+- **Project Sync:** `Playtest first Dodge60 build and fix top friction` moved to `Done`; next item `Verify Dodge60 Pages after ready-grace fix` set to `Ready`.
+- **Decision Owner:** Agent (Field Meeting)
+- **Impact:** Next run should verify the live Pages build after commit `010e4ce` and confirm smoke behavior.

@@ -1,4 +1,4 @@
-# PROJECTS.md - 進行中プロジェクト
+﻿# PROJECTS.md - 進行中プロジェクト
 
 現在のプロジェクト状態一覧。
 
@@ -28,7 +28,7 @@
 - **セッション長:** 1〜3分
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
 - **現況:** `games/onigame-dodge60` に最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）が存在し、GitHub Pages 公開URLも運用中
-- **次アクション:** 初版 playable をプレイテストし、上位1-3件の摩擦ポイントを修正
+- **次アクション:** READY猶予を含む最新fixの GitHub Pages 反映を smoke 検証（load/play/retry を確認）
 
 ---
 
@@ -222,3 +222,13 @@ _更新日: 2026-03-14_
 - `quickshot` 表記の運用ズレを修正し、Project #2 の item title/body を `onigame-dodge60` に同期。
 - primary active item は `Playtest onigame-dodge60 first playable and fix top friction`（`Ready` / `P0`）に更新。
 - 次アクションは維持: 初版 playable をプレイテストし、上位1-3件の摩擦ポイントを修正。
+
+
+## 2026-03-14 Meeting 019 update
+- `onigame-dodge60` remains **active**.
+- Thin slice completed: start fairness/readability improved with a 1.2s READY grace window.
+- Game repo implementation: `games/onigame-dodge60/app.js` updated and pushed as `010e4ce`.
+- Project #2 sync completed:
+  - `Playtest first Dodge60 build and fix top friction` moved to `Done`.
+  - `Verify Dodge60 Pages after ready-grace fix` set to `Ready`.
+- Next action: verify deployed Pages behavior (READY/timer/score/retry) on the live URL.
