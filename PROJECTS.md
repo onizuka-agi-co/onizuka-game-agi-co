@@ -40,6 +40,15 @@
 - **現況:** `IDEAS.md` の incubating 候補。次の新規 app birth lane の第一候補
 - **次アクション:** 同日中に repo/bootstrap し、1画面 playable + GitHub Pages 公開まで持っていく
 
+### One Stroke Sweep（birth lane 予備候補）
+
+- **ステータス:** incubating
+- **想定ジャンル:** ドラッグ収集スコアアタック
+- **セッション長:** 30秒
+- **採用理由:** `onigame-dodge60` の drag 操作改善で得た知見を、そのまま短時間ループへ転用できる
+- **現況:** `IDEAS.md` で incubating へ昇格（CEO Review 009）
+- **次アクション:** Lane Flip Sprint が詰まった場合の即時ピボット先として、1画面 drag-to-collect prototype を同日 bootstrap する
+
 ---
 
 ## Closed

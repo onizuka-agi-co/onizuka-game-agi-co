@@ -75,6 +75,7 @@
 | ID | Idea | Status | Why now | Next proof |
 |----|------|--------|---------|------------|
 | I20260314-01 | Lane Flip Sprint | incubating | Fast lane-snap movement keeps the same lightweight survival appeal while creating a cleaner mobile thumb fantasy. | One-screen prototype with three lanes, one-button lane shifts, and a 45-second run. |
+| I20260314-02 | One Stroke Sweep | incubating | Dodge60 で確認できた drag 操作の手触りを、より短い 30 秒ループへ転用できるため。 | One-screen prototype with drag-to-collect loop, 30-second timer, and 1 fail state. |
 ---
 
 ## ✅ Adopted / Rejected History
@@ -137,5 +138,5 @@ _更新日: 2026-03-08_
 | ID | Idea | Status | Why it exists | Next proof |
 |----|------|--------|---------------|------------|
 | I20260314-01 | Lane Flip Sprint | incubating | Keeps the instant-read survival feel of Dodge60 but makes thumb input even clearer with three fixed lanes. | Build a one-screen prototype with left/right lane snap and 45-second runs. |
-| I20260314-02 | One Stroke Sweep | inbox | Mobile drag already matters in Dodge60; this turns that tactile motion into the core loop for a 30-second score chase. | Mock one drag-to-collect loop with one fail state and one combo reward. |
+| I20260314-02 | One Stroke Sweep | incubating | Mobile drag already matters in Dodge60; this turns that tactile motion into the core loop for a 30-second score chase. | Mock one drag-to-collect loop with one fail state and one combo reward. |
 | I20260314-03 | Pocket Putt Panic | inbox | Short flick skill fits the mission and gives the studio a second control fantasy beyond dodge movement. | Prove a single-hole 15-second loop with one moving blocker. |

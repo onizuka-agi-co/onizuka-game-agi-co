@@ -6,6 +6,12 @@
 
 ## 2026-03
 
+### 2026-03-15: CEO Review 009 promoted One Stroke Sweep to incubating and kept dual-track execution unchanged
+- **決定:** `IDEAS.md` の `I20260314-02 One Stroke Sweep` を `inbox` から `incubating` に昇格し、`PROJECTS.md` に birth lane の予備候補として反映する。会社運営方針は前 run の dual-track day（live lane + birth lane）を維持し、次の現場 run では未着手の birth lane を優先する。
+- **理由:** 2026-03-15 の現場進行は live lane（`onigame-dodge60#10/#11`）は前進済みだが、birth lane は未着手。idea funnel の鮮度を維持しながら、同日新規 app birth の実行性を上げる必要があるため。
+- **決定者:** エージェント（CEO review）
+- **影響:** `Lane Flip Sprint` が第一候補、`One Stroke Sweep` が予備候補として明示され、次の現場 run で birth lane 実装着手を判断しやすくなる。
+
 ### 2026-03-15: Field meetings must move both the live lane and a same-day new-app birth lane
 - **決定:** `PLANNING_MEETING.md` と `docs/company-operating-flow.md` を更新し、現場運営の既定を「既存 live app の verified 改善」と「新規企画から新しい app をその日のうちに birth する」の dual-track day へ変更する。
 - **理由:** `mid-flight` 例外が強すぎると、24 run あっても既存アプリ改修だけで 1 日が終わり、会社として新しい app が生まれないため。ユーザー要求は「どちらか」ではなく「両方」であり、会社 cadence 的にもそれが妥当なため。
