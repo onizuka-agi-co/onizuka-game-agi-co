@@ -265,3 +265,18 @@ _更新日: 2026-03-14_
 - Board cleanup:
   - Retry-side duplicate issue `onigame-dodge60#8` was closed and removed from Project #2.
 - Next action: execute issue `#7` and fix one mobile drag friction in one run.
+
+## 2026-03-14 CEO Review 004 update
+- CEO判断: 主力は `onigame-dodge60` を維持（方針転換なし）。
+- 次アクションの受け入れ条件を強化:
+  - `onigame-dodge60#7` で mobile drag 摩擦を 1 件修正
+  - ゲーム画面内に GitHub リポジトリリンクを明示
+  - live URL で両方確認後に `Done`
+- 新規企画レビュー: `A002 Lane Flip Sprint` は **incubating（保留）**。
+## 2026-03-14 CEO Review 005 update
+- CEO判断: 主力は `onigame-dodge60` を維持（方針転換なし）。
+- 次アクションの受け入れ条件を強化:
+  - `onigame-dodge60#7` で mobile drag 摩擦を 1 件修正
+  - ゲーム画面内に GitHub リポジトリリンクを明示
+  - live URL で両方確認後に `Done`
+- 新規企画レビュー: `Lane Flip Sprint` は **incubating（保留）** を維持。

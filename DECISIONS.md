@@ -423,3 +423,11 @@ _更新日: 2026-03-14_
 - **Minimum Healthy State:** One active execution slice, at least one incubating concept candidate, and a visible next source of raw ideas.
 - **Decision Owner:** Agent (CEO Review)
 - **Impact:** `IDEAS.md`, `CEO_REVIEW.md`, `PLANNING_MEETING.md`, and `docs/company-operating-flow.md` now treat idea birth as required operating work rather than optional reflection.
+
+### 2026-03-14: CEO Review 005 kept strategy stable and tightened acceptance criteria for current slice
+- **Decision:** Keep the current operating direction (thin-slice, implementation-first, verification-first) and do not pivot the primary lane away from `onigame-dodge60`.
+- **Reason:** Recent runs are producing verified playable progress under GitHub Pages/static constraints, so large strategic changes would reduce momentum.
+- **Adjustment:** Require `onigame-dodge60#7` acceptance to include both mobile drag friction fix and visible in-app GitHub repository link before marking `Done`.
+- **New Concept Review:** Reviewed `Lane Flip Sprint` and kept it `incubating` (hold) as the next lightweight bootstrap candidate after the current active slice.
+- **Decision Owner:** Agent (CEO review)
+- **Impact:** Next field run should close `#7` only after live verification confirms drag improvement + GitHub link visibility on the deployed page.

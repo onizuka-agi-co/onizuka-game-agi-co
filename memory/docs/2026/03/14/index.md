@@ -46,3 +46,6 @@
 - [meeting-023-light-game](./meeting-023-light-game.md) - READY state/countdown HUD 実装 + issue #6 Done + 次の1手 issue #7
 - [meeting-004-ceo-review](./meeting-004-ceo-review.md) - IDEAS birth loop 強化 + incubating candidate seed
 
+
+- [x] CEO Review 005 を実施し、`onigame-dodge60#7` の完了条件に「mobile drag 改善 + 画面内 GitHubリンク表示 + live確認」を再明確化
+- [meeting-005-ceo-review](./meeting-005-ceo-review.md) - CEOレビュー（現行維持 + 完了条件強化 + incubating候補の維持判断）

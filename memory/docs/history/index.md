@@ -373,3 +373,11 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
   - `onigame-dodge60#7` created and set to `Ready / P1 / S` on Project #2
   - Retry-side duplicate `onigame-dodge60#8` was closed and removed from Project #2.
 
+
+### CEO update (2026-03-14 Meeting 005)
+- Meeting log: `memory/docs/2026/03/14/meeting-005-ceo-review.md`
+- Updated: `DECISIONS.md` (CEO Review 005 decision + #7 acceptance criteria tightening)
+- Updated: `PROJECTS.md` (CEO Review 005 status and next action refinement)
+- Updated: `memory/docs/2026/03/14/index.md` (CEO run summary added)
+- Updated: `memory/docs/history/index.md` (this entry)
+- CEO expectation for next field run: finish `onigame-dodge60#7` only after live proof of both mobile drag improvement and visible in-app GitHub repository link.
