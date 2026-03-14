@@ -187,3 +187,5 @@ _更新日: 2026-03-13_
 - Project #2 sync completed in this run:
   - Meeting 014 item moved to Done.
   - Meeting 015 item created and set to Ready / P0 / S.
+- Project #2 operation was corrected after review:
+  - the active board item should track the implementation task itself, not the recurring meeting title.

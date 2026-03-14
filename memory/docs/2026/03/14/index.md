@@ -6,6 +6,8 @@
 - [x] .env から ONIZUKA_GITHUB_PAT を読み込み、gh auth status を確認
 - [x] GitHub Project #2 を更新（Meeting 014 -> Done、Meeting 015 -> Ready/P0/S）
 - [x] DECISIONS.md / PROJECTS.md / memory/docs/history/index.md を Meeting 015 内容で更新
+- [x] Project #2 の運用を見直し、meeting item ではなく実作業 item を追跡するルールへ修正
+- [x] Active Project item を `Bootstrap onigame-quickshot one-screen playable prototype` へ修正
 
 ## 進行中
 - [ ] games/onigame-quickshot の新規作成と最小1画面プロトタイプ実装

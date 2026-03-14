@@ -210,12 +210,22 @@
 - Treat `ONIZUKA_GITHUB_PAT` in `.env` as the default auth source for Project #2 operations.
 - Every run should reflect the meeting result in Project #2:
   - Move current work item status (`Todo` / `In Progress` / `Done`)
-  - Update or create one item for "次の 1 手"
-  - Keep item title aligned with meeting log title
+  - Update or create one item for the real "next 1 hand"
+  - Keep the Project item title action-oriented and implementation-specific
 - Do not leave meeting decisions only in markdown if the same task is tracked on Project #2.
 - If `gh` is blocked by auth/config/permission issues, do one quick retry, log the blocker, and continue the run with implementation-first updates.
 - When Project #2 sync is blocked, still complete meeting-scope file updates and leave one explicit "Project sync pending" note in the daily log.
 - If `gh` works through `ONIZUKA_GITHUB_PAT`, prefer that path immediately instead of retrying keyring-based auth.
+
+## Project Item Policy (2026-03-14)
+
+- GitHub Project #2 must track execution work, not the recurring planning meeting itself.
+- Do not create recurring draft items titled `Meeting XXX: Light Game 現場定例`.
+- The meeting record belongs in markdown under `memory/docs/...`; the board item should describe the actual work to do next.
+- Keep one primary active item aligned with the current "next 1 hand".
+- Preferred title style: a concrete action such as `Bootstrap onigame-quickshot one-screen playable prototype`.
+- The meeting number may appear in the markdown log or the Project item body, but not as the Project item title.
+- If an older run left a meeting-titled Project item as the active item, rename or replace it in the same run before updating status.
 
 CEO automation によって `PLANNING_MEETING.md` または `CEO_REVIEW.md` が更新された場合は、その変更を都度コミットして push してください。
 現場会議側も、これらのファイルに変更が入っていることを見つけたら、未コミットのまま放置しないで記録を残してください。

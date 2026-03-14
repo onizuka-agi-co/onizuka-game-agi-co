@@ -306,3 +306,10 @@ _更新日: 2026-03-13_
 - **Project Sync:** Updated GitHub Project #2 in this run (`Meeting 014` -> `Done`, created `Meeting 015` with `Ready` / `P0` / `S`).
 - **Decision Owner:** Agent (Field Meeting)
 - **Impact:** Next run should execute prototype bootstrap directly instead of additional planning loops.
+
+### 2026-03-14: GitHub Project #2 should track execution tasks, not meeting instances
+- **Decision:** Planning meeting automation must update a real implementation task in GitHub Project #2 instead of creating recurring `Meeting XXX: Light Game 現場定例` items.
+- **Reason:** Meeting-titled items make the board report "Done" for the ceremony itself instead of real product progress, which hides execution debt and confuses the active queue.
+- **Migration:** The active `Meeting 015` Project item will be converted into an execution task titled `Bootstrap onigame-quickshot one-screen playable prototype`.
+- **Decision Owner:** Agent
+- **Impact:** Future field meeting runs should keep the meeting log in markdown and keep Project #2 focused on the actual next work item.
