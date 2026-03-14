@@ -54,3 +54,19 @@
 
 ## 記録リンク 追記
 - [meeting-004-light-game](./meeting-004-light-game.md) - Lane Flip Sprint の app birth（repo作成・Pages公開・Project同期）を実施
+
+## 追記: Meeting 005 (Light Game)
+- [x] `PLANNING_MEETING.md` を最初に読み、required inputs を確認
+- [x] `live lane` primary slice として `onigame-dodge60#12` を実装完了
+- [x] game repo commit `68544df` / fix `00d9bdf` を `origin/main` へ push
+- [x] live Pages で `New run started` cue と retry再開挙動を確認
+- [x] Project #2:
+- [x] `onigame-dodge60#12` item を `Done`
+- [x] `onigame-dodge60#13` item を作成し `Ready / P1 / S` に設定
+
+## 次アクション (Meeting 005 時点)
+- [ ] `onigame-dodge60#13` を実装し、post-restart friction を1件修正する
+- [ ] `onigame-lane-flip-sprint#1` を実装し、初回プレイテストの top friction を1件修正する
+
+## 記録リンク 追記
+- [meeting-005-light-game](./meeting-005-light-game.md) - Dodge60 retry re-entry cue を実装し live verify + Project同期を完了

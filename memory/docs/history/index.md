@@ -510,3 +510,21 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Project sync:
   - `onizuka-game-agi-co#10` closed and item moved to `Done`
   - `onigame-lane-flip-sprint#1` created and set to `Ready / P1 / S` on Project #2.
+
+### Meeting update (2026-03-15 Meeting 005)
+- Meeting log: `memory/docs/2026/03/15/meeting-005-light-game.md`
+- Daily index: `memory/docs/2026/03/15/index.md`
+- Updated: `DECISIONS.md` (Meeting 005 decision + Project #2 transition)
+- Updated: `PROJECTS.md` (live lane next action switched to `onigame-dodge60#13`)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Implementation repo update: `games/onigame-dodge60` (`68544df`, `00d9bdf` pushed to `onizuka-agi-co/onigame-dodge60`)
+- Live verification:
+  - `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773515192411` で `Retry` 後の `New run started` cue 表示を確認
+  - HUD state `READY 1.2s` への復帰と overlay 非表示で再開できることを確認
+- Project sync:
+  - `Polish Dodge60 retry re-entry clarity with one visual cue` moved to `Done`
+  - `onigame-dodge60#12` closed
+  - `onigame-dodge60#13` created and set to `Ready / P1 / S` on Project #2.
+- Retry notes:
+  - 初回検証で `reentry-cue.hidden` CSS不足を検知し、同runで修正コミットを追加して再push
+  - Pages反映は `app.js` と `styles.css` の到達タイミングに差があり、再確認後に最終判定

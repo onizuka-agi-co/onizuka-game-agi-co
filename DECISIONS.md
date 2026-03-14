@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 005 completed retry re-entry clarity and advanced live lane to post-restart friction pass
+- **決定:** `live lane` の primary item `onigame-dodge60#12` を完了として close し、retry直後の再開認知を強化する visual cue（`New run started`）を `onigame-dodge60` に実装した。次の live lane 実行 item は `onigame-dodge60#13`（post-restart friction の1件修正）として Project #2 `Ready / P1 / S` に設定する。
+- **理由:** Meeting 004 で `birth lane` の app birth は完了済みだったため、dual-lane rule に従って未完了の `live lane` item (`#12`) を回収するのが最小で価値が高かったため。
+- **検証結果:** game repo commits `68544df` / `00d9bdf` を `main` へ push。live URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773515192411` で game over 後 `Retry` 押下時の `New run started` 表示、`READY 1.2s` 復帰、overlay 非表示を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** Project #2 は `#12 Done`、`#13 Ready`。`birth lane` は `onigame-lane-flip-sprint#1` を次 hand として維持し、次 run は両 lane の polish item 進行に移る。
+
 ### 2026-03-15: Meeting 004 completed Lane Flip Sprint app birth and shifted birth lane to first playtest polish
 - **決定:** `birth lane` の primary item `onizuka-game-agi-co#10` を完了として close し、新規ゲーム repo `onizuka-agi-co/onigame-lane-flip-sprint` を作成・push・Pages有効化・live verify まで完了した。次の `birth lane` 実行 item は `onigame-lane-flip-sprint#1`（初回プレイテスト + top friction修正）として Project #2 `Ready / P1 / S` に設定する。
 - **理由:** daily dual-lane rule では同日中に `live lane` 改善だけでなく「新規 app birth」が必須。Meeting 003 時点で birth lane は可視化のみだったため、実装と公開を最優先で完了させる必要があったため。
