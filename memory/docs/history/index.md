@@ -253,3 +253,12 @@ _更新日: 2026-03-13_
 - 更新: PROJECTS.md（CEO Review 002 update を追記）
 - 更新: memory/docs/2026/03/13/index.md（CEO Review 002 の作業を追記）
 - 更新: memory/docs/history/index.md（this entry）
+
+### 変更履歴更新 (2026-03-14 Meeting 015)
+- 追加: `memory/docs/2026/03/14/meeting-015-light-game.md`
+- 追加: `memory/docs/2026/03/14/index.md`
+- 更新: `DECISIONS.md` (Meeting 015 decision + Project #2 sync)
+- 更新: `PROJECTS.md` (Meeting 015 status continuation)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-14 entry added)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Project sync: GitHub Project #2 で Meeting 014 を Done、Meeting 015 を Ready/P0/S に更新

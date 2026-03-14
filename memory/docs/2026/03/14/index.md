@@ -1,0 +1,14 @@
+﻿# 2026-03-14
+
+## 実施
+- [x] PLANNING_MEETING.md を先頭に確認し、required inputs を再チェック
+- [x] games/onigame-quickshot 未作成を再確認し、次の1手を固定
+- [x] .env から ONIZUKA_GITHUB_PAT を読み込み、gh auth status を確認
+- [x] GitHub Project #2 を更新（Meeting 014 -> Done、Meeting 015 -> Ready/P0/S）
+- [x] DECISIONS.md / PROJECTS.md / memory/docs/history/index.md を Meeting 015 内容で更新
+
+## 進行中
+- [ ] games/onigame-quickshot の新規作成と最小1画面プロトタイプ実装
+
+## 記録ログ
+- [meeting-015-light-game](./meeting-015-light-game.md) - Project #2 同期を含む Meeting 015 現場定例
