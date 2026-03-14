@@ -23,6 +23,7 @@ Company: ONIZUKA Game AGI Co.
 - この run は meeting-scope 更新に限定し、game repo 実装は次 run で実行する。
 
 ## 3. 実行内容
+- 実行モード: GPT5.4 xHigh 前提の会議運用として実施。
 - `github-project` スキルを利用して Project #2 を同期。
 - 実行コマンド:
   - `. .\scripts\load-onizuka-gh-token.ps1`
