@@ -567,3 +567,17 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Implementation: `games/onigame-dodge60/app.js` updated and pushed as `fddea2d`.
 - Verification: live Pages on `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773522230859` confirmed READY lock (`xStart=150`, `xDuringReady=150`) and LIVE move (`xAfterLive=88`).
 - Project sync: `onigame-dodge60#13` moved to `Done`, next item `onigame-dodge60#14` created and set to `Ready / P1 / S`.
+
+### Meeting update (2026-03-15 Meeting 011)
+- Meeting log: `memory/docs/2026/03/15/meeting-011-light-game.md`
+- Daily index: `memory/docs/2026/03/15/index.md`
+- Updated: `DECISIONS.md` (Meeting 011 decision + lane status transition)
+- Updated: `PROJECTS.md` (live next-action refresh + Meeting 011 status update)
+- Updated: `memory/docs/2026/03/index.md` (2026-03-15 summary refreshed)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Project sync:
+  - `onigame-lane-flip-sprint#2` moved from `Ready` to `In Progress` on Project #2
+  - `onigame-dodge60#14` kept as `Ready / P1 / S`
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (coordination + board transition slice)

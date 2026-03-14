@@ -116,3 +116,17 @@
 
 ## 記録リンク 追記
 - [meeting-007-light-game](./meeting-007-light-game.md) - Dodge60 READY入力ロックを実装し live verify + Project #2 同期を完了
+
+## 実績: Meeting 011 (Light Game)
+- [x] `PLANNING_MEETING.md` の required inputs を再確認
+- [x] `Meeting 3+` として `birth lane` を primary に選択
+- [x] Project #2 で `onigame-lane-flip-sprint#2` を `In Progress` へ更新
+- [x] `live lane` の `onigame-dodge60#14` を `Ready` 維持で次手固定
+- [x] meeting-scope ログ更新（meeting / decisions / projects / history / monthly index）
+
+## 次アクション (Meeting 011 終了時)
+- [ ] `onigame-lane-flip-sprint#2` を実装して live verify まで完了
+- [ ] `onigame-dodge60#14` の post-restart friction 修正を実装して live verify
+
+## 記録リンク 追加分 (Meeting 011)
+- [meeting-011-light-game](./meeting-011-light-game.md) - birth lane item を `In Progress` へ移行し dual-lane 次手を固定

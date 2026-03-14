@@ -29,7 +29,7 @@
 - **セッション長:** 1〜3分
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
 - **現況:** `games/onigame-dodge60` に最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）が存在し、GitHub Pages 公開URLも運用中
-- **次アクション:** `onigame-dodge60#13` を実行し、retry再開後20秒の top friction を1件修正して Project #2 `Done` まで進める
+- **次アクション:** `onigame-dodge60#14` を実行し、post-restart friction を1件修正して Project #2 `Done` まで進める
 
 ### Lane Flip Sprint（birth lane 候補）
 
@@ -404,3 +404,14 @@ _更新日: 2026-03-15_
 - Next action:
   - Primary (`birth lane`): execute `onigame-lane-flip-sprint#2` and close with live verification.
   - Secondary (`live lane`): execute `onigame-dodge60#14` for one additional post-restart friction fix.
+
+## 2026-03-15 Meeting 011 update
+- `onigame-dodge60` remains **active** (`live lane` next item `onigame-dodge60#14` is `Ready`).
+- `Lane Flip Sprint` birth lane execution was promoted to active:
+  - `onigame-lane-flip-sprint#2` Project #2 item moved from `Ready` to `In Progress`.
+- Dual-lane visibility at end of run:
+  - `live lane`: `onigame-dodge60#14` (`Ready / P1 / S`)
+  - `birth lane`: `onigame-lane-flip-sprint#2` (`In Progress / P1 / S`)
+- Next action:
+  - Primary (`birth lane`): implement and verify `onigame-lane-flip-sprint#2` on live Pages.
+  - Secondary (`live lane`): execute `onigame-dodge60#14` after birth-lane slice close.

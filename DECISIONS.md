@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 011 switched birth-lane retry polish to active execution
+- **決定:** `Meeting 3+` の lane-bias ルールに従い、primary を `birth lane`（`onigame-lane-flip-sprint#2`）へ固定し、Project #2 上で item status を `Ready` から `In Progress` へ更新した。`live lane` は `onigame-dodge60#14` を `Ready` のまま次手として維持する。
+- **理由:** CEO Review 010 後の board 状態では `live lane #13` が完了済みで、未実行の birth-lane polish (`#2`) が残っていたため。daily dual-lane の実行バランスを保つには birth 側を先に着手状態へ進めるのが最小コストだったため。
+- **検証結果:** `gh auth status` で `GH_TOKEN` 有効（`project` scope あり）を確認し、Project #2 item `PVTI_lADOD7cTBc4BRGjUzgndFtY` の status を `In Progress` へ更新できたことを確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は `onigame-lane-flip-sprint#2` の実装 + live verify 完了。secondary は `onigame-dodge60#14` 維持。
+
 ### 2026-03-15: CEO Review 010 kept dual-track strategy and re-prioritized near-term execution to live-lane closure
 - **決定:** 会社方針（dual-track day）は変更せず維持し、次の現場 run の優先度を `onigame-dodge60#13`（live lane）> `onigame-lane-flip-sprint#2`（birth lane）へ再配列する。idea funnel は `healthy` 判定とし、`I20260314-03 Pocket Putt Panic` は `hold`（inbox 維持）とする。
 - **理由:** 2026-03-15 時点で birth lane は app birth 達成済みで polish 段階に入っている一方、live lane は `#13` が未完了で day-progress の偏りが残るため。`incubating` は2件あり、直近 CEO run で movement があるため funnel は健康状態を満たす。
