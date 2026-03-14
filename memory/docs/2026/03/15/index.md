@@ -100,3 +100,19 @@
 
 ## 記録リンク 追記
 - [meeting-010-ceo-review](./meeting-010-ceo-review.md) - dual-track維持 + live lane優先度再配列 + funnel status healthy
+
+## 追記 Meeting 007 (Light Game)
+- [x] `PLANNING_MEETING.md` を最初に読み、required inputs を確認
+- [x] `live lane` primary (`onigame-dodge60#13`) を実行して 1 slice 完了
+- [x] game repo commit `fddea2d` を `origin/main` へ push
+- [x] live Pages で `READY` 中入力ロックと `LIVE` 後移動開始を確認
+- [x] Project #2:
+- [x] `onigame-dodge60#13` item を `Done`
+- [x] `onigame-dodge60#14` item を作成し `Ready / P1 / S` に設定
+
+## 次アクション (Meeting 007)
+- [ ] `onigame-lane-flip-sprint#2` を実行して retry re-entry readability を1件修正
+- [ ] `onigame-dodge60#14` を実行して post-restart friction を1件修正
+
+## 記録リンク 追記
+- [meeting-007-light-game](./meeting-007-light-game.md) - Dodge60 READY入力ロックを実装し live verify + Project #2 同期を完了

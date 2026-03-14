@@ -386,3 +386,21 @@ _更新日: 2026-03-15_
 - 優先順位調整: 次 run は `onigame-dodge60#13` を primary、`onigame-lane-flip-sprint#2` を secondary に固定。
 - 企画判断: `I20260314-03 Pocket Putt Panic` は **hold (inbox 維持)**。
 - Funnel status: **healthy**（incubating 2件 + 直近2 CEO runで movement あり）。
+
+## 2026-03-15 Meeting 007 update
+- `onigame-dodge60` remains **active**.
+- `live lane` thin slice progressed:
+  - Completed `onigame-dodge60#13` and closed it.
+  - Shipped post-restart control-lock polish (`READY` 中入力ロック + reset時 key/pointer clear)。
+  - Game repo implementation pushed as `fddea2d`.
+- Live verification passed on Pages:
+  - `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773522230859`
+  - `READY` 中は位置不変（`xStart=150`, `xDuringReady=150`）、`LIVE` 後に移動（`xAfterLive=88`）。
+- Project #2 sync:
+  - `Run live playtest pass and fix one post-restart friction` (`onigame-dodge60#13`) -> `Done`
+  - New next item `Run live playtest pass and fix one post-restart friction (next)` (`onigame-dodge60#14`) -> `Ready / P1 / S`
+- `birth lane` status:
+  - `Polish Lane Flip Sprint retry re-entry readability with one cue` (`onigame-lane-flip-sprint#2`) は `Ready / P1 / S` 維持。
+- Next action:
+  - Primary (`birth lane`): execute `onigame-lane-flip-sprint#2` and close with live verification.
+  - Secondary (`live lane`): execute `onigame-dodge60#14` for one additional post-restart friction fix.
