@@ -300,3 +300,16 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Updated: `memory/docs/history/index.md` (this entry)
 - Implementation repo update: `games/onigame-dodge60/app.js` (`010e4ce` pushed to `onizuka-agi-co/onigame-dodge60`)
 - Project sync: playtest/fix item moved to `Done`, verify item moved to `Ready` on Project #2.
+
+### Meeting update (2026-03-14 Meeting 020)
+- Meeting log: `memory/docs/2026/03/14/meeting-020-light-game.md`
+- Daily index: `memory/docs/2026/03/14/index.md`
+- Updated: `DECISIONS.md` (Meeting 020 verification completion + queue handoff)
+- Updated: `PROJECTS.md` (next action switched to issue `onigame-dodge60#4`)
+- Updated: `memory/docs/2026/03/index.md` (2026-03-14 summary refreshed)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Verification: live Pages smoke passed (`load/play/retry` + READY grace) via `js_repl + Playwright`.
+- Project sync:
+  - `Verify Dodge60 Pages after ready-grace fix` moved to `Done`
+  - `onigame-dodge60#3` closed
+  - `onigame-dodge60#4` created and set to `Ready / P1 / S` on Project #2.

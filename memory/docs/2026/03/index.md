@@ -10,4 +10,4 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-11](./11/) - スモークテスト強化とチェック整備
 - [2026-03-12](./12/) - 現場運営会議更新、AGI バランス検証、制約明文化、Grid Tactics をクローズ、`onigame-omikuji` サンプル作成、`onigame-quickshot` planning 開始
 - [2026-03-13](./13/) - 現場定例で `onigame-quickshot` の次作業を固定し継続、Meeting 014 まで実施。Project #2 で Meeting 013 を Done、Meeting 014 を Ready/P0/S に更新。
-- [2026-03-14](./14/) - Meeting 019 で Dodge60 の READY猶予 fix を実装し、Project #2 を verify 次工程へ更新。
+- [2026-03-14](./14/) - Meeting 020 で Dodge60 live Pages の verify を完了し、Project #2 の次の1手（issue #4）を Ready に更新。

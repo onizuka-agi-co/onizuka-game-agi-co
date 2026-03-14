@@ -232,3 +232,14 @@ _更新日: 2026-03-14_
   - `Playtest first Dodge60 build and fix top friction` moved to `Done`.
   - `Verify Dodge60 Pages after ready-grace fix` set to `Ready`.
 - Next action: verify deployed Pages behavior (READY/timer/score/retry) on the live URL.
+
+## 2026-03-14 Meeting 020 update
+- `onigame-dodge60` remains **active**.
+- Thin slice completed: live Pages smoke verification after READY grace fix.
+- Live verification result (`js_repl + Playwright`):
+  - load/play/retry passed
+  - READY grace behavior observed
+- Project #2 sync completed:
+  - `Verify Dodge60 Pages after ready-grace fix` moved to `Done`.
+  - Next item `Run live playtest pass and implement one top friction fix` created from game repo issue `onigame-dodge60#4` and set to `Ready / P1 / S`.
+- Next action: execute issue `#4` and ship one high-impact friction fix in one run.
