@@ -32,6 +32,9 @@
 - [x] Meeting 024 で onigame-dodge60#7 を完了（mobile drag 改善 + 画面内GitHubリンク追加 + live確認）
 - [x] games/onigame-dodge60 へ commit 9031ee9 を push
 - [x] Project #2 を更新（#7 を Done、次の1手 onigame-dodge60#9 を Ready/P1/S で追加）
+- [x] Meeting 025 で onigame-dodge60#9 を完了（被弾時インパクトフラッシュ追加）
+- [x] games/onigame-dodge60 へ commit 2a3e469 を push
+- [x] Project #2 を更新（#9 を Done、次の1手 onigame-dodge60#10 を Ready/P1/S で追加）
 
 - [x] Meeting 004 で company-level idea birth loop を CEO review として記録した
 
@@ -40,7 +43,8 @@
 
 ## 進行中
 - [x] `Polish Dodge60 mobile drag feel with one fix`（`onigame-dodge60#7`）を完了
-- [ ] `Polish Dodge60 hit readability with one visual fix`（`onigame-dodge60#9`）を実施
+- [x] `Polish Dodge60 hit readability with one visual fix`（`onigame-dodge60#9`）を完了
+- [ ] `Polish Dodge60 game-over readability with one visual cue`（`onigame-dodge60#10`）を実施
 
 ## 記録ログ
 - [meeting-015-light-game](./meeting-015-light-game.md) - Project #2 同期を含む Meeting 015 現場定例
@@ -53,6 +57,7 @@
 - [meeting-022-light-game](./meeting-022-light-game.md) - live READY/timer/retry 検証完了 + issue #5 Done + 次の1手 issue #6
 - [meeting-023-light-game](./meeting-023-light-game.md) - READY state/countdown HUD 実装 + issue #6 Done + 次の1手 issue #7
 - [meeting-024-light-game](./meeting-024-light-game.md) - mobile drag 改善 + 画面内GitHubリンク追加 + issue #7 Done + 次の1手 issue #9
+- [meeting-025-light-game](./meeting-025-light-game.md) - 被弾時インパクトフラッシュ追加 + issue #9 Done + 次の1手 issue #10
 - [meeting-004-ceo-review](./meeting-004-ceo-review.md) - IDEAS birth loop 強化 + incubating candidate seed
 - [meeting-005-ceo-review](./meeting-005-ceo-review.md) - CEOレビュー（現行維持 + 完了条件強化 + incubating候補の維持判断）
 - [meeting-006-ceo-review](./meeting-006-ceo-review.md) - CEO の company operating system 修正責務を明文化

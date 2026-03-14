@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-14: Meeting 025 shipped hit-impact flash and advanced next hand to game-over readability
+- **決定:** issue `onigame-dodge60#9` を `Done` とし、被弾時の視認性改善（短いインパクトフラッシュ）を `onigame-dodge60` へ反映した上で、次の実行 slice を `onigame-dodge60#10`（game-over readability の視認性改善）へ進める。
+- **理由:** 直前の drag 改善後、敗北瞬間の認知が弱く「なぜ負けたか」が伝わりにくかったため。小さな演出追加で短時間プレイの理解性を上げられるため。
+- **検証結果:** commit `2a3e469` を push後、live URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773497046354` で配信 `app.js` に `drawHitFlash` / `pendingResult` 実装が含まれること、および `LIVE -> RESULT` 遷移を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** Project #2 は `#9 Done`、`#10 Ready / P1 / S`。次 run は `#10` を1 run完結で進める。
+
 ### 2026-03-14: Meeting 024 closed mobile drag polish and advanced next hand to readability
 - **決定:** issue `onigame-dodge60#7` を `Done` とし、mobile drag 摩擦修正（grab offset保持）と画面内 GitHub リンク表示を `onigame-dodge60` へ反映した上で、次の実行 slice を `onigame-dodge60#9`（hit readability の視認性改善）へ進める。
 - **理由:** CEO Review 005 の受け入れ条件（drag改善 + in-appリンク + live確認）を満たしつつ、次の価値を最小差分で積み上げるため。

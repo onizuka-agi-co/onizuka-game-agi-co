@@ -28,7 +28,7 @@
 - **セッション長:** 1〜3分
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
 - **現況:** `games/onigame-dodge60` に最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）が存在し、GitHub Pages 公開URLも運用中
-- **次アクション:** `onigame-dodge60#7` を実行し、mobile drag 操作の上位1件摩擦を修正して Project #2 `Done` まで進める
+- **次アクション:** `onigame-dodge60#10` を実行し、game-over readability の視認性改善を1件反映して Project #2 `Done` まで進める
 
 ---
 
@@ -289,3 +289,13 @@ _更新日: 2026-03-14_
   - `Polish Dodge60 mobile drag feel with one fix` moved to `Done`.
   - Next item `Polish Dodge60 hit readability with one visual fix` (`onigame-dodge60#9`) set to `Ready / P1 / S`.
 - Next action: execute issue `#9` and ship one readability-focused visual fix in one run.
+
+## 2026-03-14 Meeting 025 update
+- `onigame-dodge60` remains **active**.
+- Thin slice completed: hit readability improved with a short impact flash before result overlay.
+- Game repo implementation: `games/onigame-dodge60/app.js` updated and pushed as `2a3e469`.
+- Live verification passed on Pages (`LIVE -> RESULT` transition confirmed and deployed `app.js` contains `drawHitFlash`).
+- Project #2 sync completed:
+  - `Polish Dodge60 hit readability with one visual fix` moved to `Done`.
+  - Next item `Polish Dodge60 game-over readability with one visual cue` (`onigame-dodge60#10`) set to `Ready / P1 / S`.
+- Next action: execute issue `#10` and ship one game-over readability cue in one run.

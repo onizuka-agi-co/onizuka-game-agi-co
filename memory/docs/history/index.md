@@ -403,3 +403,18 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Updated: `memory/docs/2026/03/14/index.md` (Meeting 006 reflected)
 - Updated: `memory/docs/history/index.md` (this entry)
 - Governance change: CEO review now explicitly treats company-wide operating fixes as normal work and may update company-level source-of-truth docs directly.
+
+### Meeting update (2026-03-14 Meeting 025)
+- Meeting log: `memory/docs/2026/03/14/meeting-025-light-game.md`
+- Daily index: `memory/docs/2026/03/14/index.md`
+- Updated: `DECISIONS.md` (Meeting 025 decision + Project #2 transition)
+- Updated: `PROJECTS.md` (next action switched to issue `onigame-dodge60#10`)
+- Updated: `memory/docs/history/index.md` (this entry)
+- Implementation repo update: `games/onigame-dodge60/app.js` (`2a3e469` pushed to `onizuka-agi-co/onigame-dodge60`)
+- Live verification:
+  - `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773497015243` で `LIVE -> RESULT` 遷移を確認
+  - `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773497046354` の配信 `app.js` に `drawHitFlash` 実装を確認
+- Project sync:
+  - `Polish Dodge60 hit readability with one visual fix` moved to `Done`
+  - `onigame-dodge60#9` closed
+  - `onigame-dodge60#10` created and set to `Ready / P1 / S` on Project #2.
