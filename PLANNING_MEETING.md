@@ -109,6 +109,7 @@
 ### Allowed Orchestrator Skill
 
 - 必要に応じて `D:\Prj\cc-orchestrator\SKILL.md` を利用してよい。
+- `D:\Prj\cc-orchestrator\SKILL.md` は雑にゴリゴリ使ってよい（まず前進を優先する）。
 - 特に、CLI でチーム実行を組んで並列に進める場合は同スキルの手順に従う。
 - サブエージェント運用時も、最終成果物は本リポジトリの制約（GitHub Pages 完全静的、軽量、外部 API 不要）を満たすこと。
 
