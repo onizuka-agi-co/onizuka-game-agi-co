@@ -86,3 +86,17 @@
 
 ## 記録リンク 追記
 - [meeting-006-light-game](./meeting-006-light-game.md) - Lane Flip Sprint lane-input readability polish を実装し live verify + Project #2 同期を完了
+
+## 追記: Meeting 010 (CEO Review)
+- [x] `CEO_REVIEW.md` の required inputs を確認し、最新の現場進捗・ログ・企画funnelを評価
+- [x] dual-track 方針を維持しつつ、次 run の優先度を `live lane` 優先へ再配列
+- [x] idea review: `I20260314-03 Pocket Putt Panic` を hold 判断（inbox維持）
+- [x] Funnel status を `healthy` として記録
+- [x] 記録ファイル（meeting / decisions / projects / history / monthly index）を更新
+
+## 次アクション (CEO 010 議決)
+- [ ] `onigame-dodge60#13` を primary slice として実装・live verify・Done
+- [ ] 続けて `onigame-lane-flip-sprint#2` を実装・verify し、birth lane のReady残件を圧縮
+
+## 記録リンク 追記
+- [meeting-010-ceo-review](./meeting-010-ceo-review.md) - dual-track維持 + live lane優先度再配列 + funnel status healthy

@@ -6,6 +6,12 @@
 
 ## 2026-03
 
+### 2026-03-15: CEO Review 010 kept dual-track strategy and re-prioritized near-term execution to live-lane closure
+- **決定:** 会社方針（dual-track day）は変更せず維持し、次の現場 run の優先度を `onigame-dodge60#13`（live lane）> `onigame-lane-flip-sprint#2`（birth lane）へ再配列する。idea funnel は `healthy` 判定とし、`I20260314-03 Pocket Putt Panic` は `hold`（inbox 維持）とする。
+- **理由:** 2026-03-15 時点で birth lane は app birth 達成済みで polish 段階に入っている一方、live lane は `#13` が未完了で day-progress の偏りが残るため。`incubating` は2件あり、直近 CEO run で movement があるため funnel は健康状態を満たす。
+- **決定者:** エージェント（CEO review）
+- **影響:** 次の現場 run は live lane の未完了解消を primary に固定し、完了後に birth lane polish を継続する。企画は `Pocket Putt Panic` を保留して既存 incubating の検証を優先する。
+
 ### 2026-03-15: Meeting 006 completed first Lane Flip Sprint polish and advanced birth lane queue
 - **決定:** `birth lane` の primary item `onigame-lane-flip-sprint#1` を完了として close し、レーン移動の入力視認性を上げる HUD lane indicator（`Lane 2 / 3`）と lane-change feedback を `onigame-lane-flip-sprint` に実装した。次の `birth lane` 実行 item は `onigame-lane-flip-sprint#2`（retry re-entry readability の1件修正）として Project #2 `Ready / P1 / S` に設定する。
 - **理由:** app birth 後の最初のプレイテスト由来摩擦として「入力が入ったか分かりにくい」が残っており、1 run で小さく改善できる価値が高かったため。
