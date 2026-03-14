@@ -77,10 +77,10 @@
 
 ### Implementation Gate (CEO 2026-03-13)
 
-- `onigame-quickshot` が `planning` かつ `games/onigame-quickshot` 未作成の間は、Project #2 同期より先に最小実装差分を 1 つ作る。
+- `onigame-dodge60` の次スライスが未着手で、Project #2 に対応 item がある間は、Project #2 同期より先に最小実装差分を 1 つ作る。
 - 最小実装差分の例:
-  - `games/onigame-quickshot/index.html` の追加
-  - `games/onigame-quickshot/main.js` の追加
+  - `games/onigame-dodge60/index.html` の更新
+  - `games/onigame-dodge60/app.js` の更新
   - プレイヤー移動または 60 秒タイマーのどちらか 1 つの動作確認
 - 同一テーマで 2 run 連続で実装差分が 0 の場合、3 run 目は会議ログ内に `Execution debt` セクションを作成し、未実装理由と次runの開始5分タスクを固定する。
 - 実装差分がない run では、`次の 1 手` は「同じ文言の再掲」ではなく開始条件（作るファイル名または最初の関数名）まで具体化する。
@@ -242,7 +242,7 @@
 - Do not create recurring draft items titled `Meeting XXX: Light Game 現場定例`.
 - The meeting record belongs in markdown under `memory/docs/...`; the board item should describe the actual work to do next.
 - Keep one primary active item aligned with the current "next 1 hand".
-- Preferred title style: a concrete action such as `Bootstrap onigame-quickshot one-screen playable prototype`.
+- Preferred title style: a concrete action such as `Playtest Dodge60 first playable and fix top friction`.
 - The meeting number may appear in the markdown log or the Project item body, but not as the Project item title.
 - If an older run left a meeting-titled Project item as the active item, rename or replace it in the same run before updating status.
 - Remove stale meeting items, test items, and other board noise when they stop helping humans understand current progress.

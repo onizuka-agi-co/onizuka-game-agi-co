@@ -138,9 +138,11 @@ This keeps the next automation run aligned with the latest company policy.
 
 ## Current Project Status
 
-- No active game project right now.
+- Current active game: `onigame-dodge60`
+- Repo: `https://github.com/onizuka-agi-co/onigame-dodge60`
+- Live: `https://onizuka-agi-co.github.io/onigame-dodge60/`
 - Grid Tactics was closed on 2026-03-12 because it did not fit the company's lightweight, GitHub-Pages-first constraints well enough.
-- The next game should be selected from lighter directions such as simple action, puzzle, or shooting concepts that stay browser-local and static.
+- Current next step is to playtest `onigame-dodge60` and fix the top friction points before the next release pass.
 
 ## Repository Structure
 

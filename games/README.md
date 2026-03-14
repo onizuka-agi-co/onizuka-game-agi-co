@@ -11,6 +11,7 @@
 ## Current Local Repos
 
 - `onigame-omikuji` - sample static omikuji app
+- `onigame-dodge60` - live one-minute dodge game on GitHub Pages
 
 ## Notes
 
