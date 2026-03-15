@@ -659,3 +659,12 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - 実装リポジトリ: `games/onigame-dodge60` commit `61fb2a9` pushed
 - 検証: live before/after で `READY 0.2s` 時の cue visibility を比較確認
 - GitHub sync: `onigame-dodge60#15` closed + Project #2 `Done`、`onigame-dodge60#16` を `Ready / P1 / S` で追加
+
+### 変更履歴更新 (2026-03-15 Meeting 018)
+- 追加: `memory/docs/2026/03/15/meeting-018-light-game.md`
+- 更新: `memory/docs/2026/03/15/index.md`
+- 更新: `DECISIONS.md` (Meeting 018 decision + verified closure)
+- 更新: `PROJECTS.md` (birth lane #3 done, #4 ready)
+- 実装リポジトリ: `games/onigame-lane-flip-sprint` commit `c1acb00` pushed
+- 検証: live before/after で READY 中 lane drift (`2 / 3 -> 1 / 3` -> `2 / 3 -> 2 / 3`) を比較確認
+- GitHub sync: `onigame-lane-flip-sprint#3` closed + Project #2 `Done`、`onigame-lane-flip-sprint#4` を `Ready / P1 / S` で追加

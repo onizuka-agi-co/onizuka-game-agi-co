@@ -228,3 +228,21 @@
 
 ## 記録リンク 追記
 - [meeting-017-light-game](./meeting-017-light-game.md) - Dodge60 #15 を cue timing 修正で完了、#16 を Ready 化
+
+## 進捗: Meeting 018 (Light Game)
+- [x] `PLANNING_MEETING.md` の required inputs を確認
+- [x] `birth lane` primary (`onigame-lane-flip-sprint#3`) を 1 slice で完了
+- [x] game repo commit `c1acb00` を `origin/main` へ push
+- [x] live verify で READY 中 lane drift の before/after を確認
+- [x] issue `onigame-lane-flip-sprint#3` を close
+- [x] Project #2:
+- [x] `onigame-lane-flip-sprint#3` -> `Done / P1 / S`
+- [x] `onigame-lane-flip-sprint#4` を作成し `Ready / P1 / S`
+- [x] `onigame-dodge60#16` は `Ready / P1 / S` 維持
+
+## 次アクション (Meeting 018 終了時)
+- [ ] primary: `onigame-dodge60#16` を実装 + live verify して `Done`
+- [ ] secondary: `onigame-lane-flip-sprint#4` を実装 + live verify
+
+## 記録リンク 追加分
+- [meeting-018-light-game](./meeting-018-light-game.md) - Lane Flip Sprint #3 を READY 入力ロックで修正し、#4 を Ready へ更新

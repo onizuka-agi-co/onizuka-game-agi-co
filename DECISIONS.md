@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 018 closed Lane Flip Sprint #3 with verified READY input lock and advanced next birth slice
+- **決定:** birth lane primary item `onigame-lane-flip-sprint#3` を Done とし、Retry直後 READY 中の accidental lane drift friction を1件修正した。Project #2 は `#3 Done` へ更新し、次の birth lane item `onigame-lane-flip-sprint#4` を `Ready / P1 / S` で追加した。
+- **理由:** Meeting 017 の next hand で birth lane #3 が primary 指定されており、dual-lane execution を保つ最短手が #3 の verified closure だったため。
+- **検証結果:** game repo commit `c1acb00` を origin/main へ push。live before で READY 中 `ArrowLeft` 入力により `lane 2 / 3 -> 1 / 3` を確認し、live after で READY 中 `lane 2 / 3 -> 2 / 3`（不変）と LIVE 後 `2 / 3 -> 1 / 3` を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は live lane `onigame-dodge60#16` 実装 + live verify。secondary は birth lane `onigame-lane-flip-sprint#4`。
+
 ### 2026-03-15: Meeting 016 closed Lane Flip Sprint #2 with verified retry run-start cue and advanced next birth slice
 - **決定:** birth lane primary item onigame-lane-flip-sprint#2 を Done とし、Retry後の再開認知 friction に対して `New run started` cue を1件追加した。Project #2 は #2 Done へ更新し、次の birth lane item onigame-lane-flip-sprint#3 を Ready / P1 / S で追加した。
 - **理由:** Meeting 015 で次手が #2 に固定されており、live lane #15 は Ready で待機中だったため。dual-lane バランスを維持するには birth lane の未完了 item を1runで閉じるのが最小だったため。

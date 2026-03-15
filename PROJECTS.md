@@ -496,3 +496,20 @@ _更新日: 2026-03-15_
 - Next action:
   - Primary (birth lane): execute onigame-lane-flip-sprint#3 and close with live verification.
   - Secondary (live lane): execute onigame-dodge60#16 in one verified slice.
+
+## 2026-03-15 Meeting 018 update
+- `onigame-lane-flip-sprint` birth lane slice completed.
+- birth lane thin slice completed:
+  - Closed `onigame-lane-flip-sprint#3`.
+  - Fixed READY-phase accidental lane drift by locking lane input until `LIVE`.
+  - Game repo implementation pushed as `c1acb00`.
+- Live verification passed on Pages:
+  - before: READY + ArrowLeft moved lane `2 / 3 -> 1 / 3`
+  - after: READY + ArrowLeft kept lane `2 / 3 -> 2 / 3`, LIVE後は `2 / 3 -> 1 / 3`
+- Project #2 sync:
+  - `onigame-lane-flip-sprint#3` -> `Done / P1 / S`
+  - New next item `onigame-lane-flip-sprint#4` -> `Ready / P1 / S`
+  - `onigame-dodge60#16` remains `Ready / P1 / S`
+- Next action:
+  - Primary (live lane): execute `onigame-dodge60#16` and close with live verification.
+  - Secondary (birth lane): execute `onigame-lane-flip-sprint#4` in one verified slice.
