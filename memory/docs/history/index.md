@@ -814,3 +814,13 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (meeting lock + issue sync slice)
+
+### 変更履歴更新 (2026-03-16 Meeting 003)
+- 追加: `memory/docs/2026/03/16/meeting-003-light-game.md`
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `DECISIONS.md` (Meeting 003 decision + birth lane bootstrap closure)
+- 更新: `PROJECTS.md` (One Stroke Sweep status -> day goal met)
+- 更新: `memory/docs/2026/03/index.md` (Meeting 003 summary追加)
+- 更新: `memory/docs/history/index.md` (this entry)
+- GitHub updates: `onizuka-game-agi-co#11` closed with evidence comment; Project #2 item moved to `Done`.
+- Execution boundary evidence: child repo `onigame-one-stroke-sweep` commit `9e0d87b`, live URL verification passed.

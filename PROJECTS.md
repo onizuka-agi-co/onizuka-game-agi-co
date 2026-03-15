@@ -42,12 +42,13 @@
 
 ### One Stroke Sweep（birth lane 当日候補）
 
-- **ステータス:** active（in progress）
+- **ステータス:** active（day goal met）
 - **想定ジャンル:** ドラッグ収集スコアアタック
 - **セッション長:** 30秒
 - **採用理由:** `onigame-dodge60` の drag 操作改善で得た知見を、そのまま短時間ループへ転用できる
-- **現況:** 2026-03-16 Meeting 001 で daily fresh `birth lane` として採用し、company issue `onizuka-game-agi-co#11` を `In progress / P0 / S` へ設定
-- **次アクション:** `onizuka-game-agi-co#11` の lock 内容に沿って `onigame-one-stroke-sweep` を bootstrap し、GitHub Pages で first playable を verify する
+- **現況:** 2026-03-16 Meeting 003 で `onizuka-game-agi-co#11` を完了。新規 repo `onigame-one-stroke-sweep` の bootstrap、`main` push、GitHub Pages live verify（30秒タイマー / drag回収 / score / retry / in-app GitHub link）まで完了
+- **参照:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep` / live `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/`
+- **次アクション:** `birth lane` は day goal 達成。次 run では `onigame-lane-flip-sprint#7` か `onigame-one-stroke-sweep` の post-playtest friction 修正を secondary として回収
 
 ---
 
@@ -648,3 +649,4 @@ _更新日: 2026-03-16_
 - Next action:
   - Primary (`birth lane`): execute `onizuka-game-agi-co#11` and bootstrap `onigame-one-stroke-sweep` to live playable.
   - Secondary (`live lane`): execute `onigame-dodge60#20` with live verification.
+
