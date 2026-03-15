@@ -160,3 +160,18 @@
 
 ## 記録リンク 追加分 (Meeting 013)
 - [meeting-013-light-game](./meeting-013-light-game.md) - dual-lane 実行順を維持し、Project #2 現況を確認同期
+
+## 実施: Meeting 014 (Light Game)
+- [x] `PLANNING_MEETING.md` を最初に読み、required inputs を確認
+- [x] `Meeting 3+` として `live lane` primary（`onigame-dodge60#14`）を維持
+- [x] Project #2 の状態を確認
+  - [x] `onigame-dodge60#14` は `In Progress`
+  - [x] `onigame-lane-flip-sprint#2` は `Ready`
+- [x] meeting-scope ファイル更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 014 以降)
+- [ ] `onigame-dodge60#14` を実装し、live verify して `Done`
+- [ ] `onigame-lane-flip-sprint#2` を実装し、retry re-entry friction を1件修正して live verify
+
+## 記録リンク 追加分 (Meeting 014)
+- [meeting-014-light-game](./meeting-014-light-game.md) - live lane primary 維持、Project #2 状態確認、次の1手を明確化

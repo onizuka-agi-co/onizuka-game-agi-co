@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 014 held live-lane priority and confirmed dual-lane board state
+- **決定:** `Meeting 3+` の execution 継続として、Project #2 の primary active を `live lane`（`onigame-dodge60#14`）のまま維持し、`birth lane`（`onigame-lane-flip-sprint#2`）は `Ready` の次手で固定した。
+- **理由:** `live lane #14` は `In Progress` の未完了スライスであり、未実装のまま lane を切り替えると進捗が拡散するため。まず `#14` の実装と live verify を完了するのが最小で妥当な順序だったため。
+- **検証結果:** `gh auth status` で `GH_TOKEN` の `project` scope を確認し、Project #2 item 一覧で `#14 = In Progress`、`#2 = Ready` の状態を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は `onigame-dodge60#14` 実装 + live verify。secondary は `onigame-lane-flip-sprint#2` を `Ready` から実行する。
+
 ### 2026-03-15: Meeting 013 kept live-lane primary active and preserved dual-lane queue clarity
 - **決定:** `Meeting 3+` の execution 継続として、Project #2 の primary active を `live lane` (`onigame-dodge60#14`) のまま維持し、`birth lane` (`onigame-lane-flip-sprint#2`) は `Ready` で次手固定とした。
 - **理由:** 直前 run（Meeting 012）で `live lane #14` を `In Progress` へ上げており、未検証のまま lane を再切替すると進行が拡散するため。まず `#14` を完了させるのが最小で妥当な実行順だったため。
