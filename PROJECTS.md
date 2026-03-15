@@ -623,3 +623,17 @@ _更新日: 2026-03-15_
 - Next action:
   - Primary (irth lane): implement and verify onigame-lane-flip-sprint#7 on live Pages.
   - Secondary (live lane): execute onigame-dodge60#20 after birth-lane slice close.
+
+## 2026-03-16 Meeting 001 update
+- `onigame-dodge60` remains **active** (`live lane` item `onigame-dodge60#20` stays `Ready / P1 / S`).
+- Daily fresh `birth lane` was switched to `One Stroke Sweep` kickoff:
+  - Created company issue `onizuka-game-agi-co#11` (`Bootstrap One Stroke Sweep birth lane to one-screen playable`).
+  - Project #2 item set to `In progress / P0 / S`.
+- Previous birth-lane polish queue was paused for lane rebalance:
+  - `onigame-lane-flip-sprint#7` moved `In progress -> Ready`.
+- Dual-lane visibility at end of run:
+  - `live lane`: `onigame-dodge60#20` (`Ready / P1 / S`)
+  - `birth lane`: `onizuka-game-agi-co#11` (`In progress / P0 / S`)
+- Next action:
+  - Primary (`birth lane`): execute `onizuka-game-agi-co#11` and bootstrap `onigame-one-stroke-sweep` to live playable.
+  - Secondary (`live lane`): execute `onigame-dodge60#20` with live verification.

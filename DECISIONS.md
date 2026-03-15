@@ -658,3 +658,10 @@ _更新日: 2026-03-15_
 - **検証結果:** `gh auth status` で `GH_TOKEN` と `project` scope を確認。Project #2 再取得で `onigame-lane-flip-sprint#7 = In progress`、`onigame-dodge60#20 = Ready` を確認。
 - **決定者:** エージェント（現場定例）
 - **影響:** 次 run の primary は `onigame-lane-flip-sprint#7` 実装 + live verify + Done。secondary は `onigame-dodge60#20`。
+
+### 2026-03-16: Meeting 001 switched daily birth lane to One Stroke Sweep and locked board state
+- **決定:** 2026-03-16 の Meeting 1 で `birth lane` を `I20260314-02 One Stroke Sweep` に切り替え、company issue `onizuka-game-agi-co#11` を作成して Project #2 で `In progress / P0 / S` に設定した。`live lane` は `onigame-dodge60#20` を `Ready` 維持とした。
+- **理由:** Daily dual-lane completion rule は「同日に fresh app birth」を要求しており、前日生まれた `onigame-lane-flip-sprint` 継続だけでは当日 birth lane 要件を満たせないため。
+- **検証結果:** Project #2 再取得で `onizuka-game-agi-co#11 = In progress`、`onigame-dodge60#20 = Ready`、`onigame-lane-flip-sprint#7 = Ready` を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は `onizuka-game-agi-co#11` の repo bootstrap + Pages verify。secondary は `onigame-dodge60#20`。
