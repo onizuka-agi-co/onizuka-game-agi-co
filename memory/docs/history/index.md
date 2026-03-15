@@ -668,3 +668,13 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - 実装リポジトリ: `games/onigame-lane-flip-sprint` commit `c1acb00` pushed
 - 検証: live before/after で READY 中 lane drift (`2 / 3 -> 1 / 3` -> `2 / 3 -> 2 / 3`) を比較確認
 - GitHub sync: `onigame-lane-flip-sprint#3` closed + Project #2 `Done`、`onigame-lane-flip-sprint#4` を `Ready / P1 / S` で追加
+
+### 変更履歴更新 (2026-03-15 Meeting 019)
+- 追加: `memory/docs/2026/03/15/meeting-019-light-game.md`
+- 更新: `memory/docs/2026/03/15/index.md`
+- 更新: `DECISIONS.md` (Meeting 019 decision + verified closure)
+- 更新: `PROJECTS.md` (live lane #16 done, #17 ready)
+- 更新: `memory/docs/history/index.md` (this entry)
+- 実装リポジトリ: `games/onigame-dodge60` commit `d871db2` pushed
+- 検証: live before/after で `LIVE` 遷移時の re-entry cue 可視状態を比較確認
+- GitHub sync: `onigame-dodge60#16` closed + Project #2 `Done`、`onigame-dodge60#17` を `Ready / P1 / S` で追加

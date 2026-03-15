@@ -246,3 +246,20 @@
 
 ## 記録リンク 追加分
 - [meeting-018-light-game](./meeting-018-light-game.md) - Lane Flip Sprint #3 を READY 入力ロックで修正し、#4 を Ready へ更新
+
+## 実績: Meeting 019 (Light Game)
+- [x] `PLANNING_MEETING.md` の required inputs を確認
+- [x] `live lane` primary (`onigame-dodge60#16`) を1 sliceで完了
+- [x] game repo commit `d871db2` を `origin/main` へ push
+- [x] live verify で `READY -> LIVE` 遷移時の cue 残留を解消したことを確認
+- [x] Project #2:
+- [x] `onigame-dodge60#16` -> `Done / P1 / S`
+- [x] `onigame-dodge60#17` を作成し `Ready / P1 / S` に設定
+- [x] `onigame-lane-flip-sprint#4` は `Ready / P1 / S` のまま維持
+
+## 次アクション (Meeting 019 時点)
+- [ ] primary: `onigame-lane-flip-sprint#4` を実装 + live verify で `Done`
+- [ ] secondary: `onigame-dodge60#17` を実装 + live verify
+
+## 記録リンク 追記
+- [meeting-019-light-game](./meeting-019-light-game.md) - Dodge60 #16 をLIVE遷移時 cue即時非表示で完了、#17をReady化

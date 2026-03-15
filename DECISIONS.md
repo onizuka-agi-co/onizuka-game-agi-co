@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 019 closed Dodge60 #16 with verified LIVE-transition cue clear and advanced next live slice
+- **決定:** live lane primary item `onigame-dodge60#16` を Done とし、Retry後 `LIVE` 遷移時に re-entry cue が残る post-restart friction を1件修正した。Project #2 は `#16 Done` へ更新し、次の live lane item `onigame-dodge60#17` を `Ready / P1 / S` で追加した。
+- **理由:** Meeting 018 の next hand で `onigame-dodge60#16` が primary 指定されており、dual-lane execution を維持する最短手が #16 の verified closure だったため。
+- **検証結果:** game repo commit `d871db2` を origin/main へ push。live before で retry+1.25s 時点 `state=LIVE` かつ `cueHidden=false`、live after で retry+1.40s/1.52s 時点 `state=LIVE` かつ `cueHidden=true` を確認。deploy `app.js` に `wasInGrace && state.graceTimer <= 0` を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は birth lane `onigame-lane-flip-sprint#4` 実装 + live verify。secondary は live lane `onigame-dodge60#17`。
+
 ### 2026-03-15: Meeting 018 closed Lane Flip Sprint #3 with verified READY input lock and advanced next birth slice
 - **決定:** birth lane primary item `onigame-lane-flip-sprint#3` を Done とし、Retry直後 READY 中の accidental lane drift friction を1件修正した。Project #2 は `#3 Done` へ更新し、次の birth lane item `onigame-lane-flip-sprint#4` を `Ready / P1 / S` で追加した。
 - **理由:** Meeting 017 の next hand で birth lane #3 が primary 指定されており、dual-lane execution を保つ最短手が #3 の verified closure だったため。

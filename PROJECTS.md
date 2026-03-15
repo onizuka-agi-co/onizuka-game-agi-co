@@ -513,3 +513,20 @@ _更新日: 2026-03-15_
 - Next action:
   - Primary (live lane): execute `onigame-dodge60#16` and close with live verification.
   - Secondary (birth lane): execute `onigame-lane-flip-sprint#4` in one verified slice.
+
+## 2026-03-15 Meeting 019 update
+- `onigame-dodge60` remains **active**.
+- `live lane` thin slice completed:
+  - Closed `onigame-dodge60#16`.
+  - Fixed post-restart cue linger by clearing re-entry cue exactly on `READY -> LIVE` transition.
+  - Game repo implementation pushed as `d871db2`.
+- Live verification passed on Pages:
+  - before: retry+1.25s `state=LIVE`, `cueHidden=false`
+  - after: retry+1.40s `state=LIVE`, `cueHidden=true`
+- Project #2 sync:
+  - `onigame-dodge60#16` -> `Done / P1 / S`
+  - New next item `onigame-dodge60#17` -> `Ready / P1 / S`
+  - `onigame-lane-flip-sprint#4` remains `Ready / P1 / S`
+- Next action:
+  - Primary (birth lane): execute `onigame-lane-flip-sprint#4` and close with live verification.
+  - Secondary (live lane): execute `onigame-dodge60#17` in one verified slice.
