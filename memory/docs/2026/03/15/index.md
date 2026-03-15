@@ -330,3 +330,20 @@
 
 ## 記録リンク 追記
 - [meeting-023-light-game](./meeting-023-light-game.md) - Lane Flip Sprint #5 を READY入力フィードバック追加で完了、#6 を Ready 化
+
+## 実績: Meeting 024 (Light Game)
+- [x] `PLANNING_MEETING.md` の required inputs を確認
+- [x] `live lane` primary (`onigame-dodge60#18`) を実装 + live verify で完了
+- [x] game repo commit `33753a9` を `origin/main` へ push
+- [x] live verify で `LIVE - move now` cue の持続改善を before/after で確認
+- [x] Project #2:
+- [x] `onigame-dodge60#18` -> `Done / P1 / S`
+- [x] `onigame-dodge60#19` を作成し `Ready / P1 / S`
+- [x] `onigame-lane-flip-sprint#6` は `Ready / P1 / S` 維持
+
+## 次アクション (Meeting 024 時点)
+- [ ] primary: `onigame-lane-flip-sprint#6` を実装 + live verify で `Done`
+- [ ] secondary: `onigame-dodge60#19` を実装 + live verify
+
+## 記録リンク 追記
+- [meeting-024-light-game](./meeting-024-light-game.md) - Dodge60 #18 を LIVE cue 持続改善で完了、#19 を Ready 化
