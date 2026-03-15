@@ -206,3 +206,22 @@
 
 ## 記録リンク (追記)
 - [meeting-008-light-game](./meeting-008-light-game.md) - #8 実装完了（初回hazard出現遅延）と #9 Ready 同期
+
+## 実績: Meeting 009 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] Project #2 同期:
+  - [x] `onigame-dodge60#21` を `Ready -> In progress` へ更新
+  - [x] `onigame-lane-flip-sprint#9` は `Ready / P1 / S` を維持
+- [x] GPT-5.4 xHigh サブエージェントで primary slice の acceptance bar を固定
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 009 時点)
+- [ ] primary: `onigame-dodge60#21` を 1 friction fix + live verify で Done
+- [ ] secondary: `onigame-lane-flip-sprint#9` を 1 friction fix + live verify で前進
+
+## 日次2レーン状態 (Meeting 009)
+- live lane: in progress
+- birth lane: ready
+
+## 記録リンク (追記)
+- [meeting-009-light-game](./meeting-009-light-game.md) - #21 を In progress 化し実装優先を固定

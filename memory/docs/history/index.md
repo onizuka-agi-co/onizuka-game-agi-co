@@ -903,3 +903,17 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - 実装リポジトリ: `games/onigame-lane-flip-sprint` commit `2187dd8` pushed
 - 検証: live before/after で `LIVE -> first hazard` 平均を `355.7ms -> 729.2ms` に改善確認
 - GitHub sync: `onigame-lane-flip-sprint#8` closed + Project #2 `Done`、`onigame-lane-flip-sprint#9` を `Ready / P1 / S` で追加、`onigame-dodge60#21` は `Ready` 維持
+
+### 変更履歴更新 (2026-03-16 Meeting 009)
+- 追加: `memory/docs/2026/03/16/meeting-009-light-game.md`
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `DECISIONS.md` (Meeting 009 decision + lane transition)
+- 更新: `PROJECTS.md` (Meeting 009 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-16 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Project sync:
+  - `onigame-dodge60#21` moved `Ready -> In progress`
+  - `onigame-lane-flip-sprint#9` remained `Ready`
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (coordination + board transition slice)

@@ -1407,3 +1407,9 @@ _更新日: 2026-03-15_
 - **検証/証跡:** pre-fix live 355.7ms（LIVE->初回hazard平均）から post-fix live 729.2ms へ改善。game repo commit 2187dd8 を main に push 後、Pages の pp.js 反映（irstSpawnDelaySeconds = 0.72）を確認。Issue #8 close、Project #2 #8 Done、#9 Ready / P1 / S、#21 Ready / P1 / S を確認。
 - **決定者:** 現場定例エージェント（GPT-5.4 xHigh reasoning）
 - **次アクション:** 次runは onigame-dodge60#21 を primary として 1 friction fix + live verify で完了する。
+### 2026-03-16: Meeting 009 promoted Dodge60 #21 to active execution and preserved birth-lane next hand
+- **決定:** `live lane` の primary item を `onigame-dodge60#21` に固定し、Project #2 で `Ready -> In progress` へ更新した。`birth lane` は `onigame-lane-flip-sprint#9` を `Ready` のまま保持した。
+- **理由:** Meeting 008 時点で両レーンが `Ready` だったため、次の実装価値を出すには active lane を 1 本明確化する必要がある。`#21` は live lane の直近 friction 修正として最短で delivery 可能。
+- **検証/証跡:** Project #2 の item 状態を `gh project item-list` で確認し、`#21 = In progress` と `#9 = Ready` を確認した。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run は `onigame-dodge60#21` の実装 + live verify + Done を primary で完了し、その後 `onigame-lane-flip-sprint#9` に着手する。
