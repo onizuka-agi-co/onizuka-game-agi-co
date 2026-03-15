@@ -567,3 +567,10 @@ _更新日: 2026-03-14_
 - **影響:** 次 run は `onizuka-game-agi-co#10` を `In progress` に上げ、同日中の新規 app bootstrap 実装を進める。
 
 
+
+### 2026-03-15: Meeting 017 closed Dodge60 #15 with verified retry-cue timing fix and advanced next live slice
+- **決定:** live lane primary item `onigame-dodge60#15` を Done とし、Retry後の再開認知 friction（cue が `LIVE` 前に消える）を1件修正した。Project #2 は `#15 Done` へ更新し、次の live lane item `onigame-dodge60#16` を `Ready / P1 / S` で追加した。
+- **理由:** Meeting 016 時点の next hand で live lane #15 が primary 指定されていたため。最小差分で post-restart friction を1件閉じるのが dual-lane 維持の最短手だったため。
+- **検証結果:** game repo commit `61fb2a9` を origin/main へ push。live before で `state=READY 0.2s` 時に `cue hidden=true`、live after で同条件 `cue hidden=false` / `active=true` を確認。deploy `app.js` に `const cueMs = Math.max(980` を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は `birth lane` の `onigame-lane-flip-sprint#3` 実装 + live verify。secondary は `onigame-dodge60#16`。

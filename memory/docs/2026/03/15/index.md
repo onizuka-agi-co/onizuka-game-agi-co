@@ -213,3 +213,18 @@
 
 ## 記録リンク 追加
 - [meeting-016-light-game](./meeting-016-light-game.md) - Lane Flip Sprint #2 を完了し、#3 を Ready 化
+
+## 進捗: Meeting 017 (Light Game)
+- [x] `PLANNING_MEETING.md` の required inputs を確認
+- [x] `live lane` primary (`onigame-dodge60#15`) を 1 slice 完了
+- [x] game repo commit `61fb2a9` を `origin/main` へ push
+- [x] live verification で Retry後 1.05s の cue 可視性を before/after で確認
+- [x] issue `onigame-dodge60#15` close、Project #2 `Done` 反映
+- [x] 次 item `onigame-dodge60#16` を作成し `Ready / P1 / S` へ設定
+
+## 次アクション (Meeting 017 後)
+- [ ] primary: `onigame-lane-flip-sprint#3` を実装 + live verify
+- [ ] secondary: `onigame-dodge60#16` を実装 + live verify
+
+## 記録リンク 追記
+- [meeting-017-light-game](./meeting-017-light-game.md) - Dodge60 #15 を cue timing 修正で完了、#16 を Ready 化

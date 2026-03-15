@@ -648,3 +648,14 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - 更新: `PROJECTS.md` (birth lane #2 done, #3 ready)
 - 実装リポジトリ: `games/onigame-lane-flip-sprint` commit `89821b1` pushed
 - GitHub sync: `onigame-lane-flip-sprint#2` closed, Project #2 `#2 Done`, `#3 Ready / P1 / S`
+
+### 変更履歴更新 (2026-03-15 Meeting 017)
+- 追加: `memory/docs/2026/03/15/meeting-017-light-game.md`
+- 更新: `memory/docs/2026/03/15/index.md`
+- 更新: `DECISIONS.md` (Meeting 017 decision + verified closure)
+- 更新: `PROJECTS.md` (live lane #15 done, #16 ready)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-15 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- 実装リポジトリ: `games/onigame-dodge60` commit `61fb2a9` pushed
+- 検証: live before/after で `READY 0.2s` 時の cue visibility を比較確認
+- GitHub sync: `onigame-dodge60#15` closed + Project #2 `Done`、`onigame-dodge60#16` を `Ready / P1 / S` で追加

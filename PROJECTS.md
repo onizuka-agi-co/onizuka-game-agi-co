@@ -479,3 +479,20 @@ _更新日: 2026-03-15_
 - Next action:
   - Primary (live lane): execute onigame-dodge60#15 and close with live verification.
   - Secondary (birth lane): execute onigame-lane-flip-sprint#3 in one verified slice.
+
+## 2026-03-15 Meeting 017 update
+- onigame-dodge60 remains **active**.
+- live lane thin slice completed:
+  - Closed onigame-dodge60#15.
+  - Fixed retry re-entry cue timing so the cue stays visible through READY and does not disappear before LIVE.
+  - Game repo implementation pushed as `61fb2a9`.
+- Live verification passed on Pages:
+  - before: `state=READY 0.2s`, `cue hidden=true`
+  - after: `state=READY 0.2s`, `cue hidden=false`, `active=true`
+- Project #2 sync:
+  - onigame-dodge60#15 -> Done / P1 / S
+  - New next item onigame-dodge60#16 -> Ready / P1 / S
+  - onigame-lane-flip-sprint#3 remains Ready / P1 / S
+- Next action:
+  - Primary (birth lane): execute onigame-lane-flip-sprint#3 and close with live verification.
+  - Secondary (live lane): execute onigame-dodge60#16 in one verified slice.
