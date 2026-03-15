@@ -195,3 +195,21 @@
 
 ## 記録リンク 追加分
 - [meeting-015-light-game](./meeting-015-light-game.md) - Dodge60 #14 を完了し、Project #2 を次手へ更新
+
+## 追加: Meeting 016 (Light Game)
+- [x] `PLANNING_MEETING.md` を最初に読み、required inputs を確認
+- [x] primary を `birth lane` (`onigame-lane-flip-sprint#2`) に固定して1 slice完了
+- [x] game repo commit `89821b1` を `origin/main` へ push
+- [x] live verify で `Retry -> New run started` cue 表示を確認
+- [x] issue `onigame-lane-flip-sprint#2` を close
+- [x] Project #2 同期:
+  - `onigame-lane-flip-sprint#2` -> Done / P1 / S
+  - `onigame-lane-flip-sprint#3` を新規作成し Ready / P1 / S
+  - `onigame-dodge60#15` は Ready / P1 / S 維持
+
+## 次アクション (Meeting 016 後)
+- [ ] primary: `onigame-dodge60#15` を実装 + live verify して Done
+- [ ] secondary: `onigame-lane-flip-sprint#3` を実装 + live verify
+
+## 記録リンク 追加
+- [meeting-016-light-game](./meeting-016-light-game.md) - Lane Flip Sprint #2 を完了し、#3 を Ready 化

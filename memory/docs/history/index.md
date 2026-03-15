@@ -639,3 +639,12 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
   - onigame-dodge60#14 moved to Done
   - onigame-dodge60#14 closed
   - onigame-dodge60#15 created and set to Ready / P1 / S on Project #2.
+
+### 変更履歴更新 (2026-03-15 Meeting 016)
+- 追加: `memory/docs/2026/03/15/meeting-016-light-game.md`
+- 更新: `memory/docs/2026/03/15/index.md`
+- 更新: `memory/docs/2026/03/index.md`
+- 更新: `DECISIONS.md` (Meeting 016 decision + live verify evidence)
+- 更新: `PROJECTS.md` (birth lane #2 done, #3 ready)
+- 実装リポジトリ: `games/onigame-lane-flip-sprint` commit `89821b1` pushed
+- GitHub sync: `onigame-lane-flip-sprint#2` closed, Project #2 `#2 Done`, `#3 Ready / P1 / S`

@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 016 closed Lane Flip Sprint #2 with verified retry run-start cue and advanced next birth slice
+- **決定:** birth lane primary item onigame-lane-flip-sprint#2 を Done とし、Retry後の再開認知 friction に対して `New run started` cue を1件追加した。Project #2 は #2 Done へ更新し、次の birth lane item onigame-lane-flip-sprint#3 を Ready / P1 / S で追加した。
+- **理由:** Meeting 015 で次手が #2 に固定されており、live lane #15 は Ready で待機中だったため。dual-lane バランスを維持するには birth lane の未完了 item を1runで閉じるのが最小だったため。
+- **検証結果:** game repo commit `89821b1` を origin/main へ push。live deploy 確認で `app.js` に `New run started` を確認し、ブラウザ検証で `OVER -> Retry -> READY` と run cue 表示 (`cueVisibleAfterRetry=true`) を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は live lane onigame-dodge60#15 実装 + live verify。secondary は birth lane onigame-lane-flip-sprint#3。
+
 ### 2026-03-15: Meeting 015 closed Dodge60 #14 with verified READY-hold handoff fix and advanced next live slice
 - **決定:** live lane primary item onigame-dodge60#14 を Done とし、READY中にホールドしたドラッグ入力がLIVE遷移直後に反映されない post-restart friction を1件修正した。Project #2 は #14 Done へ更新し、次の live lane item onigame-dodge60#15 を Ready / P1 / S で追加した。
 - **理由:** #14 は In Progress の未完了スライスであり、Meeting 013/014 で実装債務が継続していたため。最小の1件修正を実装・live verify・board同期まで同run完了することが最短だったため。

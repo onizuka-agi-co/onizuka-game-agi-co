@@ -38,7 +38,7 @@
 - **セッション長:** 30〜45秒
 - **採用理由:** `onigame-dodge60` の軽量回避の気持ちよさを保ちつつ、スマホ親指操作へさらに寄せやすい
 - **現況:** 新規 repo `onigame-lane-flip-sprint` を bootstrap済み。1画面 playable + GitHub Pages 公開まで完了
-- **次アクション:** `onigame-lane-flip-sprint#2` を実行し、retry後の再開認知 friction を1件修正する
+- **次アクション:** `onigame-lane-flip-sprint#3` を実行し、retry直後20秒の post-restart friction を1件修正する
 
 ### One Stroke Sweep（birth lane 予備候補）
 
@@ -462,3 +462,20 @@ _更新日: 2026-03-15_
 - Next action:
   - Primary (irth lane): execute onigame-lane-flip-sprint#2 and close with live verification.
   - Secondary (live lane): execute onigame-dodge60#15 in one verified slice.
+
+## 2026-03-15 Meeting 016 update
+- `onigame-lane-flip-sprint` birth lane slice completed.
+- birth lane thin slice completed:
+  - Closed onigame-lane-flip-sprint#2.
+  - Added retry re-entry run-start cue (`New run started`) for immediate restart recognition.
+  - Game repo implementation pushed as `89821b1`.
+- Live verification passed on Pages:
+  - deployed `app.js` contains `New run started`
+  - browser verification: `OVER -> Retry -> READY` and run cue visible
+- Project #2 sync:
+  - onigame-lane-flip-sprint#2 -> Done / P1 / S
+  - New next item onigame-lane-flip-sprint#3 -> Ready / P1 / S
+  - onigame-dodge60#15 remains Ready / P1 / S
+- Next action:
+  - Primary (live lane): execute onigame-dodge60#15 and close with live verification.
+  - Secondary (birth lane): execute onigame-lane-flip-sprint#3 in one verified slice.
