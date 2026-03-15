@@ -29,7 +29,7 @@
 - **セッション長:** 1〜3分
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
 - **現況:** `games/onigame-dodge60` に最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）が存在し、GitHub Pages 公開URLも運用中
-- **次アクション:** `onigame-dodge60#20` は 2026-03-16 Meeting 005 で完了（LIVE cue最小表示 0.5s -> 0.85s）。次runは `onigame-lane-flip-sprint#7` を primary とし、live lane は post-playtest friction を secondary で継続する
+- **次アクション:** `onigame-dodge60#20` は 2026-03-16 Meeting 005 で完了（LIVE cue最小表示 0.5s -> 0.85s）。次runは `onigame-lane-flip-sprint#8` を primary とし、live lane は post-playtest friction を secondary で継続する
 
 ### Lane Flip Sprint（birth lane 候補）
 
@@ -38,7 +38,7 @@
 - **セッション長:** 30〜45秒
 - **採用理由:** `onigame-dodge60` の軽量回避の気持ちよさを保ちつつ、スマホ親指操作へさらに寄せやすい
 - **現況:** 新規 repo `onigame-lane-flip-sprint` を bootstrap済み。1画面 playable + GitHub Pages 公開まで完了
-- **次アクション:** `onigame-lane-flip-sprint#7` を実行し、early-run 20秒の readability/control friction を1件修正する
+- **次アクション:** `onigame-lane-flip-sprint#7` は 2026-03-16 Meeting 006 で完了（LIVE cue を first-move まで保持 + fallback 1.8s 自動消灯）。次runは `onigame-lane-flip-sprint#8` を実行し、early-run 20秒の readability/control friction を1件修正する
 
 ### One Stroke Sweep（birth lane 当日候補）
 
@@ -48,7 +48,7 @@
 - **採用理由:** `onigame-dodge60` の drag 操作改善で得た知見を、そのまま短時間ループへ転用できる
 - **現況:** 2026-03-16 Meeting 003 で `onizuka-game-agi-co#11` を完了。新規 repo `onigame-one-stroke-sweep` の bootstrap、`main` push、GitHub Pages live verify（30秒タイマー / drag回収 / score / retry / in-app GitHub link）まで完了
 - **参照:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep` / live `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/`
-- **次アクション:** `birth lane` は day goal 達成。次 run では `onigame-lane-flip-sprint#7` か `onigame-one-stroke-sweep` の post-playtest friction 修正を secondary として回収
+- **次アクション:** `birth lane` は day goal 達成。次 run では `onigame-lane-flip-sprint#8` か `onigame-one-stroke-sweep` の post-playtest friction 修正を secondary として回収
 
 ---
 
@@ -657,3 +657,19 @@ _更新日: 2026-03-16_
 - Next action:
   - Primary (live lane): implement and live-verify onigame-dodge60#20.
   - Secondary (birth lane): execute onigame-lane-flip-sprint#7 after #20 closure.
+
+## 2026-03-16 Meeting 006 update
+- `onigame-dodge60` remains **active (day goal met)** (`onigame-dodge60#20` is Done).
+- `Lane Flip Sprint` birth-lane secondary slice completed:
+  - Closed `onigame-lane-flip-sprint#7`.
+  - Shipped first-move persistent LIVE cue (`LIVE - flip now` stays until first successful lane move; fallback auto-hide 1.8s).
+  - Game repo implementation pushed as `071a9c1`.
+- Live verification passed on Pages:
+  - `2200ms` no-move: `state=LIVE`, `cueHidden=false`
+  - first move直後: lane `2 / 3 -> 1 / 3` with `cueHidden=true`
+- Project #2 sync:
+  - `onigame-lane-flip-sprint#7` -> `Done / P1 / S`
+  - New next item `onigame-lane-flip-sprint#8` -> `Ready / P1 / S`
+- Next action:
+  - Primary (birth lane): execute `onigame-lane-flip-sprint#8` and close with live verification.
+  - Secondary (live lane): continue one small post-playtest friction fix on Dodge60.

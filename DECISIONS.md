@@ -5,6 +5,13 @@
 ---
 
 ## 2026-03
+### 2026-03-16: Meeting 006 closed Lane Flip Sprint #7 with first-move LIVE-cue persistence
+- **決定:** `onigame-lane-flip-sprint#7` を `Done` とし、early-run friction を1件修正した。`LIVE - flip now` cue を固定タイマーだけで消す方式から、`最初の有効レーン移動まで保持 + 1.8s fallback 自動消灯` へ変更し、issue close と Project #2 Done 同期まで同runで完了した。
+- **理由:** `#7` の acceptance bar は「first 20秒の friction 1件修正 + live verify + board同期」であり、`READY -> LIVE` 直後に cue が先に消えて初動確信が弱くなる問題が最小差分で改善できる高価値 friction だったため。
+- **検証結果:** game repo commit `071a9c1` を `origin/main` へ push。live verify で no-move `2200ms` 時点 `state=LIVE` かつ `cueHidden=false`、first move直後に lane `2 / 3 -> 1 / 3` と同時 `cueHidden=true` を確認。Project #2 で `#7 Done`、次手 `#8 Ready / P1 / S` を確認した。
+- **決定者:** エージェント（現場定例、GPT-5.4 high reasoning 補助あり）
+- **影響:** 次 run の primary は `birth lane` `onigame-lane-flip-sprint#8` の1件修正 + live verify。`live lane` は day goal met として secondary で継続改善する。
+
 ### 2026-03-16: Meeting 005 closed Dodge60 #20 with verified post-restart LIVE-cue readability
 - **決定:** `onigame-dodge60#20` を `Done` とし、Retry -> READY -> LIVE 導線の post-restart friction を1件修正した。`LIVE - move now` cue の最小表示時間を `0.5s` から `0.85s` に延長し、issue close と Project #2 Done 同期まで同runで完了した。
 - **理由:** #20 の acceptance bar は「1件修正 + live verify + board同期」であり、再開直後の cue 可読時間の短さが最小差分で改善できる高価値 friction だったため。

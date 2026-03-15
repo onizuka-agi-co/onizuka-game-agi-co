@@ -114,3 +114,31 @@
 
 ## 記録リンク (追記)
 - [meeting-005-light-game](./meeting-005-light-game.md) - Meeting 3+ で onigame-dodge60#20 を実装・検証・Done 同期
+
+## 実績: Meeting 006 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] primary `birth lane` (`onigame-lane-flip-sprint#7`) を実装完了
+- [x] `LIVE - flip now` cue を「最初の有効レーン移動まで保持 + 1.8s fallback自動消灯」に修正
+- [x] game repo commit/push:
+  - [x] commit `071a9c1`
+  - [x] `main -> origin/main` 反映
+- [x] live verify:
+  - [x] no-move `2200ms`: `state=LIVE` かつ `cueHidden=false`
+  - [x] first move直後: lane変化と同時に `cueHidden=true`
+  - [x] no-move fallback `3100ms`: `cueHidden=true`
+- [x] GitHub同期:
+  - [x] `onigame-lane-flip-sprint#7` に証跡コメント追加 + close
+  - [x] Project #2 `onigame-lane-flip-sprint#7` を `Done` へ更新
+  - [x] 次手 `onigame-lane-flip-sprint#8` を作成し `Ready / P1 / S` へ設定
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 006 時点)
+- [ ] primary: `onigame-lane-flip-sprint#8` を 1 friction fix + live verify で Done
+- [ ] secondary: `onigame-dodge60` の post-playtest friction を 1 件継続改善
+
+## 日次2レーン状態 (Meeting 006)
+- live lane: day goal met
+- birth lane: day goal met
+
+## 記録リンク (追記)
+- [meeting-006-light-game](./meeting-006-light-game.md) - Meeting 3+ で onigame-lane-flip-sprint#7 を実装・検証・Done 同期
