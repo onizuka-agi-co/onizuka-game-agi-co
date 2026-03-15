@@ -364,3 +364,17 @@
 
 ## 記録リンク 追記
 - [meeting-025-light-game](./meeting-025-light-game.md) - Lane Flip Sprint #6 を LIVE遷移cue追加で完了、#7 を Ready 化
+
+## 追記: Meeting 011 (CEO Review)
+- [x] `CEO_REVIEW.md` の required inputs を確認し、当日最新状態（Meeting 024-025）を再評価
+- [x] dual-track 運用は維持し、次の実行順を `onigame-dodge60#19` -> `onigame-lane-flip-sprint#7` に固定
+- [x] idea review: `I20260314-03 Pocket Putt Panic` は hold（inbox維持）
+- [x] Funnel status を `healthy` として記録
+- [x] 記録ファイル（meeting / decisions / projects / daily / monthly / history）を更新
+
+## 次アクション (CEO 011 議決)
+- [ ] `onigame-dodge60#19` を primary slice として実装・live verify・Done
+- [ ] 続けて `onigame-lane-flip-sprint#7` を実装・live verify・Done
+
+## 記録リンク 追記
+- [meeting-011-ceo-review](./meeting-011-ceo-review.md) - dual-track維持 + 次手順固定 + funnel status healthy

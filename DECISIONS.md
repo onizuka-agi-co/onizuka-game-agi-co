@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: CEO Review 011 kept dual-track strategy, fixed next-hand order, and validated funnel health
+- **決定:** 会社の運営方針（dual-track day）は変更せず維持し、次の現場実行順を `onigame-dodge60#19`（live lane）→ `onigame-lane-flip-sprint#7`（birth lane）に固定する。idea funnel は `healthy` 判定とし、`Pocket Putt Panic` は引き続き `hold`（inbox維持）とする。
+- **理由:** 2026-03-15 Meeting 024/025 で両 lane とも verified closure が継続し、現在キューは `#19 Ready` と `#7 Ready` で明確。運営レイヤーの追加変更より、実装順を明示して day-end の詰まりを防ぐ方が効果的なため。
+- **検証結果:** `README.md` / `docs/company-operating-flow.md` / `IDEAS.md` / `PROJECTS.md` / `ROADMAP.md` / `DECISIONS.md` / 当日ログ（Meeting 024-025, CEO 008-010）と CEO automation memory を確認し、最新状態を再評価。internal rollout log でも直近 run の実行・検証完了を確認した。
+- **決定者:** エージェント（CEO review）
+- **影響:** 次の現場 run は live lane `onigame-dodge60#19` の実装 + live verify を primary とし、続けて birth lane `onigame-lane-flip-sprint#7` を実装 + live verify で回収する。
+
 ### 2026-03-15: Meeting 025 closed Lane Flip Sprint #6 with verified LIVE-transition cue and advanced next birth slice
 - **決定:** birth lane primary item `onigame-lane-flip-sprint#6` を Done とし、`READY -> LIVE` 切替直後の開始認知 friction を1件修正した。`LIVE - flip now` cue を追加し、Project #2 は `#6 Done` へ更新、次 item `onigame-lane-flip-sprint#7` を `Ready / P1 / S` で追加した。
 - **理由:** Meeting 024 終了時点で birth lane は `#6 Ready` の未完了だったため。Meeting 3+ では coordination ではなく verified closure を優先し、1 run で実装・検証・同期まで完了する必要があったため。
