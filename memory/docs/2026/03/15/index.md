@@ -281,3 +281,18 @@
 ## 記録リンク 追記
 - [meeting-020-light-game](./meeting-020-light-game.md) - Lane Flip Sprint #4 を端入力フィードバック追加で完了、#5 を Ready 化
 
+
+## 実績: Meeting 021 (Light Game)
+- [x] `PLANNING_MEETING.md` の required inputs を確認
+- [x] `Meeting 3+` の lane 切替として `live lane` (`onigame-dodge60#17`) を primary に設定
+- [x] Project #2:
+- [x] `onigame-dodge60#17` を `Ready -> In Progress` へ更新
+- [x] `onigame-lane-flip-sprint#5` は `Ready / P1 / S` を維持
+- [x] meeting-scope ファイル更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 021 時点)
+- [ ] primary: `onigame-dodge60#17` を実装 + live verify で `Done`
+- [ ] secondary: `onigame-lane-flip-sprint#5` を実装 + live verify
+
+## 記録リンク 追記
+- [meeting-021-light-game](./meeting-021-light-game.md) - live lane #17 を In Progress へ移行し、dual-lane 次手を固定

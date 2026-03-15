@@ -595,3 +595,10 @@ _更新日: 2026-03-15_
 - **検証結果:** game repo commit `61fb2a9` を origin/main へ push。live before で `state=READY 0.2s` 時に `cue hidden=true`、live after で同条件 `cue hidden=false` / `active=true` を確認。deploy `app.js` に `const cueMs = Math.max(980` を確認。
 - **決定者:** エージェント（現場定例）
 - **影響:** 次 run の primary は `birth lane` の `onigame-lane-flip-sprint#3` 実装 + live verify。secondary は `onigame-dodge60#16`。
+
+### 2026-03-15: Meeting 021 promoted Dodge60 #17 to active execution and preserved birth-lane next hand
+- **決定:** `live lane` primary item `onigame-dodge60#17` を `Ready` から `In Progress` へ更新し、同runで `birth lane` は `onigame-lane-flip-sprint#5` を `Ready` 維持に固定した。
+- **理由:** Meeting 020 で birth lane #4 を閉じた直後のため、dual-lane 実行バランスでは live lane #17 の着手が最短だったため。
+- **検証結果:** `gh auth status` で `GH_TOKEN` 有効と `project` scope を確認。Project #2 再取得で `onigame-dodge60#17 = In progress`、`onigame-lane-flip-sprint#5 = Ready` を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は `onigame-dodge60#17` の実装 + live verify 完了。secondary は `onigame-lane-flip-sprint#5`。

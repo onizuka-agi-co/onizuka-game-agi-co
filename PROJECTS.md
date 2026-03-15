@@ -530,3 +530,14 @@ _更新日: 2026-03-15_
 - Next action:
   - Primary (birth lane): execute `onigame-lane-flip-sprint#4` and close with live verification.
   - Secondary (live lane): execute `onigame-dodge60#17` in one verified slice.
+
+## 2026-03-15 Meeting 021 update
+- `onigame-dodge60` remains **active** (`live lane` primary moved to `In Progress`: `onigame-dodge60#17`).
+- `Lane Flip Sprint` remains **active (day goal met)** with next polish item:
+  - `onigame-lane-flip-sprint#5` kept at `Ready / P1 / S`.
+- Project #2 sync in this run:
+  - `onigame-dodge60#17`: `Ready -> In Progress`
+  - `onigame-lane-flip-sprint#5`: `Ready` (unchanged)
+- Next action:
+  - Primary (`live lane`): execute `onigame-dodge60#17` and close with live verification.
+  - Secondary (`birth lane`): execute `onigame-lane-flip-sprint#5` in one verified slice.
