@@ -135,6 +135,33 @@
 - CTO本体はマネジメントに徹し、優先順位調整・依存解消・最終統合を主責務とする。
 - 各 run で「誰に何を振ったか」「何が完了したか」「残ブロッカーは何か」を会議ログへ残す。
 
+## Codex Spark Legion Standard (2026-03-16)
+
+- 2 つ以上の独立トラックに分けられる現場 run では、[$codex-spark-eclipse-legion](D:\\Prj\\codex-spark-eclipse-legion\\SKILL.md) を第一選択としてフル活用する。
+- サブエージェントの model は明示的に `gpt-5.3-codex-spark` を指定する。
+- CTO 本体は immediate blocking step をローカルで保持し、並列化は sidecar work または ownership が分離できる slice に限定する。
+- fan-out の標準形は `2-4` 席:
+  - producing seats: 実装 / 検証 / repo or project sync / review などの独立 slice
+  - one Devil's Advocate seat: assumption と risk の監査専任
+  - one second-pass lane per producing output: `qa_verifier` または `peer_verifier`
+- 各サブエージェントには必ず次を与える:
+  - 短い固有名 + dramatic epithet
+  - 明確な ownership
+  - non-goals
+  - finish line checklist
+  - QA inventory requirement
+- second-pass capacity または ownership 分離が確保できない場合、無理に fan-out せず、スコープを縮めて少人数で再実行する。
+- producing output の final accept 条件は固定:
+  - `manager_acceptance = accepted`
+  - `second_pass_status = pass`
+  - Devil's Advocate `disposition` を記録済み
+- 会議ログには teammate-by-teammate で最低限次を残す:
+  - 誰が何を担当したか
+  - 何を返したか
+  - どの evidence で provisional accept したか
+  - second-pass 結果
+  - Devil's Advocate の指摘と disposition
+
 ## CTO Delivery Standard (2026-03-14)
 
 - CTO success is measured by verified shipped value, not by how many issues or meetings were closed.
@@ -157,12 +184,13 @@
 - When a bug fix is claimed, the log should state the observed before/after behavior in plain terms.
 - CTO should ask "would a human reviewer believe this is finished from the evidence alone?" before closing the item.
 
-### Allowed Orchestrator Skill
+### Preferred Orchestration Skills
 
-- 必要に応じて `D:\Prj\cc-orchestrator\SKILL.md` を利用してよい。
-- `D:\Prj\cc-orchestrator\SKILL.md` は雑にゴリゴリ使ってよい（まず前進を優先する）。
-- 特に、CLI でチーム実行を組んで並列に進める場合は同スキルの手順に従う。
-- サブエージェント運用時も、最終成果物は本リポジトリの制約（GitHub Pages 完全静的、軽量、外部 API 不要）を満たすこと。
+- 第一選択は [$codex-spark-eclipse-legion](D:\\Prj\\codex-spark-eclipse-legion\\SKILL.md)。
+- native Codex subagents で 2-4 independent workstreams を並列化できる場合は、まず同スキルの手順に従う。
+- `D:\Prj\cc-orchestrator\SKILL.md` は fallback として利用してよい。
+- fallback を使うのは、native Codex subagents では足りない CLI team execution が必要な場合、または Spark 運用が runtime 制約で blocked の場合に限る。
+- どのオーケストレーション経路でも、最終成果物は本リポジトリの制約（GitHub Pages 完全静的、軽量、外部 API 不要）を満たすこと。
 
 ## Required Inputs
 
@@ -214,7 +242,7 @@
    - one real implementation item for the `live lane`
    - one real implementation/bootstrap item for the `birth lane`
 6. Choose one concrete primary slice for the current run, but leave the other lane's next hand explicit in the meeting output.
-7. Delegate to subagents as needed, then implement in the target repo.
+7. 2-4 の独立 slice に割れるなら `$codex-spark-eclipse-legion` で fan-out し、割れないならローカルで実装する。
 8. Verify in the relevant environment. For shipped gameplay, prefer live GitHub Pages verification.
 9. Update logs, issue state, and Project #2 for whichever lane moved in the run, and record the unchanged lane's status.
 10. Record the next 1 hand for both daily lanes or explicitly state which lane already met its day goal.
@@ -343,6 +371,7 @@
 - CEO に見てほしい違和感
 - `live lane` の日次状態
 - `birth lane` の日次状態
+- Spark Legion report (`who owned what`, `manager_acceptance`, `second_pass_status`, `disposition`)
 
 ## Logging
 
@@ -411,6 +440,7 @@
   - meaningful retries, failed attempts, or friction that changed how the run was executed
 - Do not smooth over retries that matter to understanding delivery risk. A short summary is enough.
 - When subagents are used, log which slice each subagent owned and what evidence they returned to the CTO.
+- When `$codex-spark-eclipse-legion` is used, also log each agent's short name + epithet, `manager_acceptance`, `second_pass_status`, and Devil's Advocate `disposition`.
 - Before ending the run, make sure automation memory matches the final project state, especially the current active item and the next hand.
 
 ## Project Item Template
