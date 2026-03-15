@@ -673,3 +673,19 @@ _更新日: 2026-03-16_
 - Next action:
   - Primary (birth lane): execute `onigame-lane-flip-sprint#8` and close with live verification.
   - Secondary (live lane): continue one small post-playtest friction fix on Dodge60.
+
+## 2026-03-16 CEO Review 001 update
+- 方針判断: dual-track day を維持（戦略変更なし）。
+- 優先順位: 次 run は `onigame-lane-flip-sprint#8` を primary、`onigame-dodge60` の post-playtest friction 1件を secondary。
+- Funnel判断: `Pocket Putt Panic` を `incubating` へ昇格し、`IDEAS.md` の採用履歴を現況に同期。
+- 運営修正: `ROADMAP.md` を現行の公開済み3タイトル + dual-lane運営に合わせて更新。
+
+## 2026-03-16 Meeting 007 update
+- `onigame-dodge60` remains **active**.
+- `live lane` queue was restored for dual-lane visibility:
+  - Created `onigame-dodge60#21` and set Project #2 item to `Ready / P1 / S`.
+- `Lane Flip Sprint` birth-lane execution was promoted:
+  - `onigame-lane-flip-sprint#8` moved `Ready -> In Progress`.
+- Next action:
+  - Primary (`birth lane`): close `onigame-lane-flip-sprint#8` with one fix + live verification.
+  - Secondary (`live lane`): execute `onigame-dodge60#21` in one verified slice.

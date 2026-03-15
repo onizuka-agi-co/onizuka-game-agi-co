@@ -30,3 +30,6 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-16](./16/) - Meeting 004 で onigame-dodge60#20 を In Progress 化し、live lane 実装優先を固定
 - [2026-03-16](./16/) - Meeting 005 で onigame-dodge60#20 を完了（LIVE cue最小表示 0.5s -> 0.85s）、issue close と Project #2 Done 同期まで完了
 - [2026-03-16](./16/) - Meeting 006 で onigame-lane-flip-sprint#7 を完了（LIVE cue を first-move まで保持 + fallback 1.8s）、次手 #8 を Ready 化
+
+- [2026-03-16](./16/) - CEO Review 001 で idea funnel を promoted に更新し、ROADMAP を現行運営へ同期
+- [2026-03-16](./16/) - Meeting 007 で `onigame-lane-flip-sprint#8` を In Progress 化し、live lane 次手 `onigame-dodge60#21` を Ready 化

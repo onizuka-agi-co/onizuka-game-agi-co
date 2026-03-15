@@ -863,3 +863,32 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir D:\Prj\onizuka-game-agi-co
   - no game-repo code commit in this run (coordination + board transition slice)
+
+### 変更履歴更新 (2026-03-16 CEO Review 001)
+- 追加: `memory/docs/2026/03/16/meeting-001-ceo-review.md`
+- 更新: `IDEAS.md`（funnel同期: Pocket Putt Panic を incubating 昇格、adopted履歴更新、新規 inbox seed）
+- 更新: `ROADMAP.md`（現行3タイトル + dual-lane運営へ再定義）
+- 更新: `DECISIONS.md`（CEO Review 001 decision 追加）
+- 更新: `PROJECTS.md`（CEO Review 001 update 追記）
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `memory/docs/2026/03/index.md`
+- 更新: `memory/docs/history/index.md`（this entry）
+- Funnel status: `promoted`
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - company-doc sync run（game repo code commit なし）
+
+### 変更履歴更新 (2026-03-16 Meeting 007)
+- 追加: `memory/docs/2026/03/16/meeting-007-light-game.md`
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `DECISIONS.md` (Meeting 007 decision + dual-lane next-hand sync)
+- 更新: `PROJECTS.md` (Meeting 007 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-16 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Project sync:
+  - `onigame-lane-flip-sprint#8` moved `Ready -> In progress`
+  - created `onigame-dodge60#21` and added as `Ready / P1 / S`
+  - kept `onizuka-game-agi-co#11` as `Done / P0 / S`
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (coordination + board sync slice)

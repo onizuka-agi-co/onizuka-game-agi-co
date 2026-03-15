@@ -1,10 +1,17 @@
-﻿# DECISIONS.md - 決定ログ
+# DECISIONS.md - 決定ログ
 
 重要な決定を記録する。理由も含めて。
 
 ---
 
 ## 2026-03
+
+### 2026-03-16: CEO Review 001 aligned funnel/roadmap with current operating reality
+- **決定:** 会社の主戦略（dual-track day）は維持しつつ、company operating system の情報整合を優先して `IDEAS.md` と `ROADMAP.md` を更新した。`Pocket Putt Panic` は `inbox` から `incubating` に昇格し、`Lane Flip Sprint` と `One Stroke Sweep` は `adopted` 履歴へ反映した。
+- **理由:** 現場実行は順調だが、企画ファネルと中期計画の記述が実態より古く、次 run の判断コストを増やしていたため。戦略転換より canonical docs の同期修正が効果的だった。
+- **検証結果:** `README.md` / `docs/company-operating-flow.md` / `PLANNING_MEETING.md` / `IDEAS.md` / `PROJECTS.md` / `ROADMAP.md` / `DECISIONS.md` / 2026-03-16 日次ログを確認。`live lane` と `birth lane` の day goal 達成状態、および次 hand `onigame-lane-flip-sprint#8` を再確認した。
+- **決定者:** エージェント（CEO review, GPT-5.4 xHigh reasoning）
+- **影響:** 次現場 run は `onigame-lane-flip-sprint#8` を primary、`onigame-dodge60` の post-playtest friction 改善を secondary としつつ、idea funnel は `incubating` 1件以上を維持して回す。
 ### 2026-03-16: Meeting 006 closed Lane Flip Sprint #7 with first-move LIVE-cue persistence
 - **決定:** `onigame-lane-flip-sprint#7` を `Done` とし、early-run friction を1件修正した。`LIVE - flip now` cue を固定タイマーだけで消す方式から、`最初の有効レーン移動まで保持 + 1.8s fallback 自動消灯` へ変更し、issue close と Project #2 Done 同期まで同runで完了した。
 - **理由:** `#7` の acceptance bar は「first 20秒の friction 1件修正 + live verify + board同期」であり、`READY -> LIVE` 直後に cue が先に消えて初動確信が弱くなる問題が最小差分で改善できる高価値 friction だったため。
@@ -27,6 +34,7 @@
 - **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -40,6 +48,7 @@
 - **影響:** 次 run は実装フェーズとして `#7` を primary で verified closure する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -53,6 +62,7 @@
 - **影響:** 次の現場 run は live lane `onigame-dodge60#19` の実装 + live verify を primary とし、続けて birth lane `onigame-lane-flip-sprint#7` を実装 + live verify で回収する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -66,6 +76,7 @@
 - **影響:** 次 run の primary は birth lane `onigame-lane-flip-sprint#7` 実装 + live verify。secondary は live lane `onigame-dodge60#20`。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -79,6 +90,7 @@
 - **影響:** 次 run の primary は live lane `onigame-dodge60#19` 実装 + live verify。secondary は birth lane `onigame-lane-flip-sprint#7`。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -92,6 +104,7 @@
 - **影響:** 次 run の primary は birth lane `onigame-lane-flip-sprint#6` 実装 + live verify。secondary は live lane `onigame-dodge60#19`。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -105,6 +118,7 @@
 - **影響:** 次 run の primary は birth lane `onigame-lane-flip-sprint#5` 実装 + live verify。secondary は live lane `onigame-dodge60#18`。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -118,6 +132,7 @@
 - **影響:** 次 run の primary は live lane `onigame-dodge60#17` 実装 + live verify。secondary は birth lane `onigame-lane-flip-sprint#5`。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -131,6 +146,7 @@
 - **影響:** 次 run の primary は birth lane `onigame-lane-flip-sprint#4` 実装 + live verify。secondary は live lane `onigame-dodge60#17`。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -144,6 +160,7 @@
 - **影響:** 次 run の primary は live lane `onigame-dodge60#16` 実装 + live verify。secondary は birth lane `onigame-lane-flip-sprint#4`。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -157,6 +174,7 @@
 - **影響:** 次 run の primary は live lane onigame-dodge60#15 実装 + live verify。secondary は birth lane onigame-lane-flip-sprint#3。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -169,6 +187,7 @@
 - **決定者:** エージェント（現場定例）
 - **影響:** 次 run の primary は irth lane onigame-lane-flip-sprint#2 実装 + live verify。secondary は live lane onigame-dodge60#15。
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -182,6 +201,7 @@
 - **影響:** 次 run の primary は `onigame-dodge60#14` 実装 + live verify。secondary は `onigame-lane-flip-sprint#2` を `Ready` から実行する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -195,6 +215,7 @@
 - **影響:** 次 run の primary は `onigame-dodge60#14` 実装 + live verify。secondary は `onigame-lane-flip-sprint#2` を `Ready` から再開する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -208,6 +229,7 @@
 - **影響:** 次 run の primary は `onigame-dodge60#14` 実装 + live verify。secondary は `onigame-lane-flip-sprint#2` を `Ready` から再開する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -221,6 +243,7 @@
 - **影響:** 次 run の primary は `onigame-lane-flip-sprint#2` の実装 + live verify 完了。secondary は `onigame-dodge60#14` 維持。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -233,6 +256,7 @@
 - **影響:** 次の現場 run は live lane の未完了解消を primary に固定し、完了後に birth lane polish を継続する。企画は `Pocket Putt Panic` を保留して既存 incubating の検証を優先する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -246,6 +270,7 @@
 - **影響:** Project #2 は `onigame-dodge60#13 Done`、`#14 Ready`。`birth lane` は `onigame-lane-flip-sprint#2` を `Ready` 維持で次 run の primary 候補とする。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -259,6 +284,7 @@
 - **影響:** Project #2 は `onigame-lane-flip-sprint#1 Done`、`#2 Ready`。`live lane` は `onigame-dodge60#13` を `Ready` 維持し、次 run の primary 候補とする。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -272,6 +298,7 @@
 - **影響:** Project #2 は `#12 Done`、`#13 Ready`。`birth lane` は `onigame-lane-flip-sprint#1` を次 hand として維持し、次 run は両 lane の polish item 進行に移る。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -285,6 +312,7 @@
 - **影響:** 本日の dual-lane 最低成果は達成。次 run は `live lane` の `onigame-dodge60#12` を優先しつつ、birth lane は `onigame-lane-flip-sprint#1` を次手として維持する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -297,6 +325,7 @@
 - **影響:** `Lane Flip Sprint` が第一候補、`One Stroke Sweep` が予備候補として明示され、次の現場 run で birth lane 実装着手を判断しやすくなる。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -309,6 +338,7 @@
 - **影響:** 今後の field meeting は `Meeting 1` と `Meeting 2` で `live lane` と `birth lane` の両方を固定し、日末までに「1本改善 + 1本新生」を達成する前提で動く。`PROJECTS.md` には `Lane Flip Sprint` を次の birth lane 候補として可視化した。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -322,6 +352,7 @@
 - **影響:** Project #2 は `#11 Done`、`#12 Ready / P1 / S`。次 run は `#12` を1 run完結で進める。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -335,6 +366,7 @@
 - **影響:** Project #2 は `#10 Done`、`#11 Ready / P1 / S`。次 run は `#11` を1 run完結で進める。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -348,6 +380,7 @@
 - **影響:** Project #2 は `#9 Done`、`#10 Ready / P1 / S`。次 run は `#10` を1 run完結で進める。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -360,6 +393,7 @@
 - **影響:** 現場 run は日中に broad planning を繰り返さず、例外時のみ企画へ戻る。`docs/company-operating-flow.md` も同 cadence に合わせる。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -372,6 +406,7 @@
 - **決定者:** エージェント（現場定例）
 - **影響:** Project #2 は `#7 Done`、`#9 Ready / P1 / S`。次 run は `#9` を1 run完結で進める。
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -384,6 +419,7 @@
 - **影響:** CEO automation は `IDEAS.md` を毎 run 確認し、最低 1 件を `adopt / hold / reject` で処理する。field meeting automation は idea handoff はしてよいが、CEO 判断か bootstrap item なしに新規 concept を primary lane に昇格させない。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -397,6 +433,7 @@
 - **影響:** Project #2 は `#6 Done`、`#7 Ready / P1 / S`。重複作成された `#8` は duplicate close + item削除でクリーンアップ済み。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -409,6 +446,7 @@
 - **影響:** 以後は `README.md`、`PLANNING_MEETING.md`、`CEO_REVIEW.md` から本ドキュメントを辿り、全体像はまずこの文書で把握する。raw log は証跡確認と friction 調査に限定する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -422,6 +460,7 @@
 - **影響:** Project #2 は `#5 Done`、`#6 Ready / P1 / S`。次 run は `#6` を1 run完結で進める。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -434,6 +473,7 @@
 - **影響:** 現場定例は「会議更新だけで終了」を許容せず、最小ファイル追加または最小挙動追加を先に行う。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -447,6 +487,7 @@
 - **影響先:** 認証復旧後、Meeting 005 の会議題名に揃えて Project #2 の status と次の1手 item を同期する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -459,6 +500,7 @@
 - **影響:** 現場定例は Project 同期失敗時でも meeting-scope 更新と具体的な実装成果を残す運用へ移行する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -472,6 +514,7 @@
 - **影響:** Meeting 003 の board 反映は復旧後に同期。会議ログと履歴で未反映状態を明示して追跡する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -484,6 +527,7 @@
 - **影響:** `PROJECTS.md` と GitHub Project #2 は `onigame-quickshot` prototype bootstrap を次の 1 手として扱う
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -496,6 +540,7 @@
 - **影響:** `PROJECTS.md` は planning 候補を `onigame-quickshot` 中心に更新。次セッションの実装対象は `games/onigame-quickshot` の最小プロトタイプになる
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -508,6 +553,7 @@
 - **影響:** 親 repo は `games/onigame-*` を直接追跡しない。サンプルとして `games/onigame-omikuji` を作成し、この構成で今後のゲームを増やせる状態にした
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -520,6 +566,7 @@
 - **影響:** `PROJECTS.md` と `README.md` から現行主力プロジェクト扱いを外し、次のゲーム候補は軽量アクション / パズル / シューティング寄りで再選定する
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -532,6 +579,7 @@
 - **影響:** `README.md`、`PLANNING_MEETING.md`、`CEO_REVIEW.md`、`PROJECTS.md` で静的配信制約とピボット条件を明文化。今後の企画審査では Pages適性と実装軽さを先に判定する
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -544,6 +592,7 @@
 - **影響:** 今後の新規 repo 提案・作成時は `onigame-<repo-name>` を標準にする。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -556,6 +605,7 @@
 - **影響:** 次の実装優先は「AGI強化単体」から「先手後手バイアス緩和 + AGI評価改善」の順に変更
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -568,6 +618,7 @@
 - **影響:** 描画統合は2番目に後ろ倒し、AGI Easyの目標勝率は新規プレイヤー30-40%
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -580,6 +631,7 @@
 - **影響:** 演出・拡張機能はWeek 2以降へ後ろ倒し
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -592,6 +644,7 @@
 - **影響:** 小さな実装変更でも状態破損を即時検出しやすくなる
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -604,6 +657,7 @@
 - **影響:** 仕様追加より先にUI土台と検証導線の着手を行う
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -616,6 +670,7 @@
 - **影響:** 描画統合前でもルール検証と自動完走チェックが可能
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -628,6 +683,7 @@
 - **影響:** 実装追加ごとに完走性を継続確認できる
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -640,6 +696,7 @@
 - **影響:** 仕様ブレを抑え、初期実装タスクに着手可能
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -652,6 +709,7 @@
 - **影響:** 日次進捗はプロジェクト記録で追跡する
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -664,6 +722,7 @@
 - **影響:** 演出強化や拡張機能はWeek 2へ後ろ倒し
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -680,6 +739,7 @@
 - **決定者:** 人間
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -691,6 +751,7 @@
 - **決定者:** 人間 + エージェント合意
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -702,6 +763,7 @@
 - **決定者:** エージェント提案 → 人間承認
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -713,6 +775,7 @@
 - **決定者:** 人間
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -724,6 +787,7 @@
 - **決定者:** エージェント合意（Product Owner, Tech Lead, Designer, QA）
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -735,6 +799,7 @@
 - **決定者:** QA提案 → チーム合意
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -746,6 +811,7 @@
 - **決定者:** Designer提案 → チーム合意
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -758,6 +824,7 @@
 - **決定者:** Tech Lead提案 → 人間承認
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -769,6 +836,7 @@
 - **決定者:** Tech Lead提案 → チーム合意
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -780,6 +848,7 @@
 - **決定者:** Product Owner提案 → チーム合意
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -791,6 +860,7 @@
 - **決定者:** チーム合意（Product Owner, Tech Lead, Designer, QA）
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -802,6 +872,7 @@
 - **決定者:** Designer提案 → チーム合意
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -830,6 +901,7 @@
 _更新日: 2026-03-15_
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -843,6 +915,7 @@ _更新日: 2026-03-15_
 - **影響先:** 次runは Project 更新より先に `games/onigame-quickshot` の最小プロトタイプ実装を開始する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -856,6 +929,7 @@ _更新日: 2026-03-15_
 - **影響先:** 認証復旧後に Meeting 007 の題名に揃えた item 更新（status + 次の1手）を Project #2 へ同期する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -869,6 +943,7 @@ _更新日: 2026-03-15_
 - **影響先:** 次回 run で認証復旧後に、Meeting 004 の項目を Project #2 へ同期する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -882,6 +957,7 @@ _更新日: 2026-03-15_
 - **影響先:** 次回 run で認証復旧後に Project #2 へ同内容を同期する。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -895,6 +971,7 @@ _更新日: 2026-03-15_
 - **Impact:** Continue implementation-first flow in meeting logs and keep explicit `Project sync pending` notes until token recovery.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -908,6 +985,7 @@ _更新日: 2026-03-15_
 - **Impact:** Keep implementation-first flow and carry forward explicit `Project sync pending` note until token recovery.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -921,6 +999,7 @@ _更新日: 2026-03-15_
 - **Impact:** Keep implementation-first flow and carry forward explicit `Project sync pending` note until token recovery.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -934,6 +1013,7 @@ _更新日: 2026-03-15_
 - **Impact:** Continue implementation-first flow and carry forward explicit `Project sync pending` note until token recovery.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -947,6 +1027,7 @@ _更新日: 2026-03-15_
 - **Impact:** Continue implementation-first flow and carry forward explicit Project sync pending note until token recovery.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -960,6 +1041,7 @@ _更新日: 2026-03-15_
 - **Impact:** Future automation debugging becomes faster because command-runtime failures are separated from game/project work.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -973,6 +1055,7 @@ _更新日: 2026-03-15_
 - **Impact:** Next run should execute prototype bootstrap directly instead of additional planning loops.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -986,6 +1069,7 @@ _更新日: 2026-03-15_
 - **Impact:** Next run should execute prototype bootstrap directly instead of additional planning loops.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -999,6 +1083,7 @@ _更新日: 2026-03-15_
 - **Impact:** Next run should execute prototype bootstrap directly instead of additional planning loops.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1012,6 +1097,7 @@ _更新日: 2026-03-15_
 - **Impact:** Future field meeting runs should keep the meeting log in markdown and keep Project #2 focused on the actual next work item.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1025,6 +1111,7 @@ _更新日: 2026-03-15_
 - **Impact:** Humans can read Project #2 as the current delivery kanban, while meeting markdown remains the audit trail.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1038,6 +1125,7 @@ _更新日: 2026-03-15_
 - **Impact:** Future meetings should bias toward shipping one small completed slice rather than stopping after analysis.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1051,6 +1139,7 @@ _更新日: 2026-03-15_
 - **Impact:** Next run should execute prototype bootstrap directly and move the active item from `Ready` to `In progress`.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1066,6 +1155,7 @@ _更新日: 2026-03-15_
 - **Impact:** Next run should pull `Playtest quickshot first playable and fix top friction` and execute the first polish pass.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1079,6 +1169,7 @@ _更新日: 2026-03-15_
 - **Impact:** Future planning runs should create or reuse repo issues first, and current draft-backed Project #2 items should be migrated to issue-backed items.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1092,6 +1183,7 @@ _更新日: 2026-03-15_
 - **Impact:** Next run should move the playtest item to `In progress` and ship at least one friction fix on the actual repo.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1105,6 +1197,7 @@ _更新日: 2026-03-15_
 - **Impact:** Future Project #2 work should use company repo issues only for company operations, and game repo issues for actual game work.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1120,6 +1213,7 @@ _更新日: 2026-03-15_
 - **Impact:** Next run should verify the live Pages build after commit `010e4ce` and confirm smoke behavior.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1134,6 +1228,7 @@ _更新日: 2026-03-15_
 - **Impact:** Next run should execute issue `#4` and ship one top-friction fix in one end-to-end slice.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1149,6 +1244,7 @@ _更新日: 2026-03-15_
 - **Impact:** Next run should verify live Pages behavior for commit `3db0be0` and then continue gameplay polish.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1162,6 +1258,7 @@ _更新日: 2026-03-15_
 - **Impact:** `IDEAS.md`, `CEO_REVIEW.md`, `PLANNING_MEETING.md`, and `docs/company-operating-flow.md` now treat idea birth as required operating work rather than optional reflection.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1176,6 +1273,7 @@ _更新日: 2026-03-15_
 - **Impact:** Next field run should close `#7` only after live verification confirms drag improvement + GitHub link visibility on the deployed page.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1189,6 +1287,7 @@ _更新日: 2026-03-15_
 - **Impact:** Future CEO runs should first decide whether a problem is local execution debt or a company operating system problem, then fix the right layer directly.
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1204,6 +1303,7 @@ _更新日: 2026-03-15_
 
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1217,6 +1317,7 @@ _更新日: 2026-03-15_
 - **影響:** 次 run の primary は `birth lane` の `onigame-lane-flip-sprint#3` 実装 + live verify。secondary は `onigame-dodge60#16`。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1230,6 +1331,7 @@ _更新日: 2026-03-15_
 - **影響:** 次 run の primary は `onigame-dodge60#17` の実装 + live verify 完了。secondary は `onigame-lane-flip-sprint#5`。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1243,6 +1345,7 @@ _更新日: 2026-03-15_
 - **影響:** 次 run の primary は `live lane` の `onigame-dodge60#18` 実装 + live verify。secondary は `onigame-lane-flip-sprint#6`。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1256,6 +1359,7 @@ _更新日: 2026-03-15_
 - **影響:** 次 run の primary は `onigame-lane-flip-sprint#7` 実装 + live verify + Done。secondary は `onigame-dodge60#20`。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1269,6 +1373,7 @@ _更新日: 2026-03-15_
 - **影響:** 次 run の primary は `onizuka-game-agi-co#11` の repo bootstrap + Pages verify。secondary は `onigame-dodge60#20`。
 
 ### 2026-03
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
@@ -1287,3 +1392,11 @@ _更新日: 2026-03-15_
 - **検証結果:** Project #2 再確認で onigame-dodge60#20 = In progress、onigame-lane-flip-sprint#7 = Ready、onizuka-game-agi-co#11 = Done を確認。
 - **決定者:** エージェント（現場定例, GPT-5.4 high reasoning 補助あり）
 - **影響:** 次 run の primary は onigame-dodge60#20 実装 + live verify + Done。secondary は onigame-lane-flip-sprint#7。
+
+
+### 2026-03-16: Meeting 007 promoted Lane Flip Sprint #8 and created Dodge60 #21 as dual-lane next hand
+- **決定:** `onigame-lane-flip-sprint#8` を `In progress` へ更新し本runの primary とした。`live lane` 側は実装キュー空白を避けるため `onigame-dodge60#21` を新規作成し Project #2 に `Ready / P1 / S` で追加した。
+- **理由:** day goal 達成済みでも dual-lane 可視性を維持し、次runで実装へ即着手できる状態を優先するため。
+- **検証/証跡:** Project #2 item status を再取得し `#8 In progress`, `#21 Ready`, `#11 Done` を確認。Spark Legion の producer/second-pass/Devil's Advocate で判断根拠を二重化した。
+- **決定者:** 現場定例エージェント（GPT-5.4 xHigh 運用）
+- **次アクション:** 次runで `onigame-lane-flip-sprint#8` を実装・live verify・Done、続けて `onigame-dodge60#21` を実装着手する。

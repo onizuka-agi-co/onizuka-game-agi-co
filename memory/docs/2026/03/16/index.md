@@ -142,3 +142,39 @@
 
 ## 記録リンク (追記)
 - [meeting-006-light-game](./meeting-006-light-game.md) - Meeting 3+ で onigame-lane-flip-sprint#7 を実装・検証・Done 同期
+
+## 実績: Meeting 001 (CEO Review)
+- [x] `CEO_REVIEW.md` の手順に従い required inputs を確認
+- [x] 会社戦略は維持し、company OS の情報整合を優先して `IDEAS.md` / `ROADMAP.md` を更新
+- [x] funnel 更新:
+  - [x] `Pocket Putt Panic` を `inbox -> incubating` へ昇格
+  - [x] `Lane Flip Sprint` / `One Stroke Sweep` を `adopted` 履歴へ反映
+  - [x] 新規 inbox 案 `I20260316-01 Signal Drift` を seed
+- [x] CEO記録を同期（meeting / decisions / projects / monthly index / history）
+
+## 次アクション (CEO Review 001 時点)
+- [ ] primary: `onigame-lane-flip-sprint#8` を 1 friction fix + live verify で Done
+- [ ] secondary: `onigame-dodge60` の post-playtest friction を 1 件修正
+
+## 記録リンク (追記)
+- [meeting-001-ceo-review](./meeting-001-ceo-review.md) - Funnel/roadmap を現況同期した CEO run
+
+## 実績: Meeting 007 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] Project #2 同期:
+  - [x] `onigame-lane-flip-sprint#8` を `Ready -> In progress` へ更新
+  - [x] `onigame-dodge60#21` を新規作成して Project #2 `Ready / P1 / S` へ追加
+  - [x] `onizuka-game-agi-co#11` の `Done / P0 / S` を確認
+- [x] Spark Legion 3席（producer / qa_verifier / Devil's Advocate）で根拠を二重化
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 007 時点)
+- [ ] primary: `onigame-lane-flip-sprint#8` を 1 friction fix + live verify で Done
+- [ ] secondary: `onigame-dodge60#21` を 1 friction fix + live verify で前進
+
+## 日次2レーン状態 (Meeting 007)
+- live lane: in progress
+- birth lane: in progress
+
+## 記録リンク (追記)
+- [meeting-007-light-game](./meeting-007-light-game.md) - #8 In progress 化と live lane 次手 #21 の board 同期
