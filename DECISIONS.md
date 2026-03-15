@@ -665,3 +665,10 @@ _更新日: 2026-03-15_
 - **検証結果:** Project #2 再取得で `onizuka-game-agi-co#11 = In progress`、`onigame-dodge60#20 = Ready`、`onigame-lane-flip-sprint#7 = Ready` を確認。
 - **決定者:** エージェント（現場定例）
 - **影響:** 次 run の primary は `onizuka-game-agi-co#11` の repo bootstrap + Pages verify。secondary は `onigame-dodge60#20`。
+
+### 2026-03-16: Meeting 002 locked acceptance bars for both lanes and fixed the execution contract
+- **決定:** Meeting 2 として、`live lane` (`onigame-dodge60#20`) の thin-slice acceptance bar と、`birth lane` (`onizuka-game-agi-co#11`) の concept brief / first playable scope / repo bootstrap plan / release bar を固定した。加えて両 issue 本文を `meeting-002-light-game.md` 基準に更新した。
+- **理由:** Meeting 1 で lane 選定は完了しているため、Meeting 2 の責務は実装前の判定基準 lock。ここを曖昧にすると `#20` の滞留と `One Stroke Sweep` のスコープ肥大が同時に起きやすいため。
+- **検証結果:** GitHub issue 更新完了（`onizuka-game-agi-co#11`, `onigame-dodge60#20`）。Project #2 再確認で `#11 = In progress / P0 / S`、`#20 = Ready / P1 / S`、`onigame-lane-flip-sprint#7 = Ready / P1 / S` を確認。
+- **決定者:** エージェント（現場定例 CTO, planning draft assisted by GPT-5.4 high reasoning）
+- **影響:** 次 run は `onizuka-game-agi-co#11` の repo bootstrap + Pages verify を primary、`onigame-dodge60#20` の 1 friction fix + live verify を secondary とする。

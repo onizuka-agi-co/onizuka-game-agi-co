@@ -796,3 +796,21 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (meeting kickoff + board sync slice)
+
+### 変更履歴更新 (2026-03-16 Meeting 002)
+- 追加: `memory/docs/2026/03/16/meeting-002-light-game.md`
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `DECISIONS.md` (Meeting 002 decision + acceptance lock)
+- 更新: `PROJECTS.md` (One Stroke Sweep moved to active birth lane and Meeting 002 update added)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-16 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Issue sync:
+  - updated `onizuka-game-agi-co#11` body with concept/first-playable/release lock
+  - updated `onigame-dodge60#20` body with thin-slice acceptance lock
+- Project state check:
+  - `onizuka-game-agi-co#11` = `In progress / P0 / S`
+  - `onigame-dodge60#20` = `Ready / P1 / S`
+  - `onigame-lane-flip-sprint#7` = `Ready / P1 / S`
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (meeting lock + issue sync slice)

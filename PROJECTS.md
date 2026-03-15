@@ -40,14 +40,14 @@
 - **現況:** 新規 repo `onigame-lane-flip-sprint` を bootstrap済み。1画面 playable + GitHub Pages 公開まで完了
 - **次アクション:** `onigame-lane-flip-sprint#7` を実行し、early-run 20秒の readability/control friction を1件修正する
 
-### One Stroke Sweep（birth lane 予備候補）
+### One Stroke Sweep（birth lane 当日候補）
 
-- **ステータス:** incubating
+- **ステータス:** active（in progress）
 - **想定ジャンル:** ドラッグ収集スコアアタック
 - **セッション長:** 30秒
 - **採用理由:** `onigame-dodge60` の drag 操作改善で得た知見を、そのまま短時間ループへ転用できる
-- **現況:** `IDEAS.md` で incubating へ昇格（CEO Review 009）
-- **次アクション:** Lane Flip Sprint が詰まった場合の即時ピボット先として、1画面 drag-to-collect prototype を同日 bootstrap する
+- **現況:** 2026-03-16 Meeting 001 で daily fresh `birth lane` として採用し、company issue `onizuka-game-agi-co#11` を `In progress / P0 / S` へ設定
+- **次アクション:** `onizuka-game-agi-co#11` の lock 内容に沿って `onigame-one-stroke-sweep` を bootstrap し、GitHub Pages で first playable を verify する
 
 ---
 
@@ -106,7 +106,7 @@
 
 ---
 
-_更新日: 2026-03-15_
+_更新日: 2026-03-16_
 
 ## 2026-03-13 Meeting 002 追記
 - onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。
@@ -634,6 +634,17 @@ _更新日: 2026-03-15_
 - Dual-lane visibility at end of run:
   - `live lane`: `onigame-dodge60#20` (`Ready / P1 / S`)
   - `birth lane`: `onizuka-game-agi-co#11` (`In progress / P0 / S`)
+- Next action:
+  - Primary (`birth lane`): execute `onizuka-game-agi-co#11` and bootstrap `onigame-one-stroke-sweep` to live playable.
+  - Secondary (`live lane`): execute `onigame-dodge60#20` with live verification.
+
+## 2026-03-16 Meeting 002 update
+- `onigame-dodge60` remains **active** (`live lane` item `onigame-dodge60#20` stays `Ready / P1 / S`).
+- `One Stroke Sweep` remains **active (birth lane in progress)**:
+  - `onizuka-game-agi-co#11` kept at `In progress / P0 / S`.
+  - concept brief / first playable scope / repo plan / release bar were locked in Meeting 002.
+- Previous birth-lane polish queue remains parked:
+  - `onigame-lane-flip-sprint#7` stays `Ready / P1 / S`.
 - Next action:
   - Primary (`birth lane`): execute `onizuka-game-agi-co#11` and bootstrap `onigame-one-stroke-sweep` to live playable.
   - Secondary (`live lane`): execute `onigame-dodge60#20` with live verification.
