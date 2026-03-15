@@ -13,6 +13,13 @@
 - **決定者:** エージェント（CEO review）
 - **影響:** 次の現場 run は live lane `onigame-dodge60#19` の実装 + live verify を primary とし、続けて birth lane `onigame-lane-flip-sprint#7` を実装 + live verify で回収する。
 
+### 2026-03-15: Meeting 026 closed Dodge60 #19 with verified LIVE-cue minimum visibility and advanced next live slice
+- **決定:** live lane primary item `onigame-dodge60#19` を Done とし、`READY` 中に入力ホールドして `LIVE` 遷移した際に cue が即時消失する post-restart friction を1件修正した。`LIVE` cue に最小表示時間（0.5s）を追加し、Project #2 は `#19 Done` へ更新、次 item `onigame-dodge60#20` を `Ready / P1 / S` で追加した。
+- **理由:** Meeting 025 終了時点の primary は live lane `#19` であり、Meeting 3+ ルールでは coordination ではなく verified closure を優先する必要があったため。
+- **検証結果:** game repo commit `e7a7197` を origin/main へ push。live before で `state=LIVE`, `liveCueHidden=true` を確認し、live after で同条件 `state=LIVE`, `liveCueHidden=false`, `liveCueText=LIVE - move now` を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は birth lane `onigame-lane-flip-sprint#7` 実装 + live verify。secondary は live lane `onigame-dodge60#20`。
+
 ### 2026-03-15: Meeting 025 closed Lane Flip Sprint #6 with verified LIVE-transition cue and advanced next birth slice
 - **決定:** birth lane primary item `onigame-lane-flip-sprint#6` を Done とし、`READY -> LIVE` 切替直後の開始認知 friction を1件修正した。`LIVE - flip now` cue を追加し、Project #2 は `#6 Done` へ更新、次 item `onigame-lane-flip-sprint#7` を `Ready / P1 / S` で追加した。
 - **理由:** Meeting 024 終了時点で birth lane は `#6 Ready` の未完了だったため。Meeting 3+ では coordination ではなく verified closure を優先し、1 run で実装・検証・同期まで完了する必要があったため。

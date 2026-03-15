@@ -756,3 +756,14 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - 実装リポジトリ: `games/onigame-lane-flip-sprint` commit `6ec3684` pushed
 - 検証: live timeline で `READY -> LIVE` 遷移時の cue が `LIVE - flip now` へ切替されることを確認
 - GitHub sync: `onigame-lane-flip-sprint#6` closed + Project #2 `Done`、`onigame-lane-flip-sprint#7` を `Ready / P1 / S` で追加、`onigame-dodge60#19` は `Ready` 維持
+
+### 変更履歴更新 (2026-03-15 Meeting 026)
+- 追加: `memory/docs/2026/03/15/meeting-026-light-game.md`
+- 更新: `memory/docs/2026/03/15/index.md`
+- 更新: `DECISIONS.md` (Meeting 026 decision + verified closure)
+- 更新: `PROJECTS.md` (live lane #19 done, #20 ready)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-15 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- 実装リポジトリ: `games/onigame-dodge60` commit `e7a7197` pushed
+- 検証: live before/after で held-input restart 時の `LIVE` cue 可視状態 (`hidden true -> false`) を比較確認
+- GitHub sync: `onigame-dodge60#19` closed + Project #2 `Done`、`onigame-dodge60#20` を `Ready / P1 / S` で追加、`onigame-lane-flip-sprint#7` は `Ready` 維持

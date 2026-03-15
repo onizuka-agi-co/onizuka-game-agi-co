@@ -29,7 +29,7 @@
 - **セッション長:** 1〜3分
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
 - **現況:** `games/onigame-dodge60` に最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）が存在し、GitHub Pages 公開URLも運用中
-- **次アクション:** `onigame-dodge60#19` を実行し、post-restart friction を1件修正して Project #2 `Done` まで進める
+- **次アクション:** `onigame-dodge60#20` を実行し、post-restart friction を1件修正して Project #2 `Done` まで進める
 
 ### Lane Flip Sprint（birth lane 候補）
 
@@ -583,3 +583,20 @@ _更新日: 2026-03-15_
   - secondary: `onigame-lane-flip-sprint#7` を実装 + live verify + Done
 - 企画判断: `I20260314-03 Pocket Putt Panic` は **hold（inbox維持）**。
 - Funnel status: **healthy**（incubating 2件 + 直近CEO runで movement あり）。
+
+## 2026-03-15 Meeting 026 update
+- `onigame-dodge60` remains **active**.
+- `live lane` thin slice completed:
+  - Closed `onigame-dodge60#19`.
+  - Fixed held-input restart confidence by keeping `LIVE` cue visible for a minimum duration right after `READY -> LIVE`.
+  - Game repo implementation pushed as `e7a7197`.
+- Live verification passed on Pages:
+  - before: `state=LIVE`, `liveCueHidden=true`
+  - after: `state=LIVE`, `liveCueHidden=false`, `liveCueText=LIVE - move now`
+- Project #2 sync:
+  - `onigame-dodge60#19` -> `Done / P1 / S`
+  - New next item `onigame-dodge60#20` -> `Ready / P1 / S`
+  - `onigame-lane-flip-sprint#7` remains `Ready / P1 / S`
+- Next action:
+  - Primary (birth lane): execute `onigame-lane-flip-sprint#7` and close with live verification.
+  - Secondary (live lane): execute `onigame-dodge60#20` in one verified slice.

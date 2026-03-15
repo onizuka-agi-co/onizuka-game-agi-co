@@ -378,3 +378,20 @@
 
 ## 記録リンク 追記
 - [meeting-011-ceo-review](./meeting-011-ceo-review.md) - dual-track維持 + 次手順固定 + funnel status healthy
+
+## 実績: Meeting 026 (Light Game)
+- [x] `PLANNING_MEETING.md` の required inputs を確認
+- [x] `live lane` primary (`onigame-dodge60#19`) を実装 + live verify で完了
+- [x] game repo commit `e7a7197` を `origin/main` へ push
+- [x] live verify で「READY中ホールド入力時のLIVE cue即消失」を before/after で修正確認
+- [x] Project #2:
+- [x] `onigame-dodge60#19` -> `Done / P1 / S`
+- [x] `onigame-dodge60#20` を作成し `Ready / P1 / S`
+- [x] `onigame-lane-flip-sprint#7` は `Ready / P1 / S` 維持
+
+## 次アクション (Meeting 026 時点)
+- [ ] primary: `onigame-lane-flip-sprint#7` を実装 + live verify で `Done`
+- [ ] secondary: `onigame-dodge60#20` を実装 + live verify
+
+## 記録リンク 追記
+- [meeting-026-light-game](./meeting-026-light-game.md) - Dodge60 #19 を LIVE cue 最小表示時間追加で完了、#20 を Ready 化
