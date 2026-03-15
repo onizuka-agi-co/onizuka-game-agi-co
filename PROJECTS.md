@@ -38,7 +38,7 @@
 - **セッション長:** 30〜45秒
 - **採用理由:** `onigame-dodge60` の軽量回避の気持ちよさを保ちつつ、スマホ親指操作へさらに寄せやすい
 - **現況:** 新規 repo `onigame-lane-flip-sprint` を bootstrap済み。1画面 playable + GitHub Pages 公開まで完了
-- **次アクション:** `onigame-lane-flip-sprint#6` を実行し、early-run 20秒の readability/control friction を1件修正する
+- **次アクション:** `onigame-lane-flip-sprint#7` を実行し、early-run 20秒の readability/control friction を1件修正する
 
 ### One Stroke Sweep（birth lane 予備候補）
 

@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 025 closed Lane Flip Sprint #6 with verified LIVE-transition cue and advanced next birth slice
+- **決定:** birth lane primary item `onigame-lane-flip-sprint#6` を Done とし、`READY -> LIVE` 切替直後の開始認知 friction を1件修正した。`LIVE - flip now` cue を追加し、Project #2 は `#6 Done` へ更新、次 item `onigame-lane-flip-sprint#7` を `Ready / P1 / S` で追加した。
+- **理由:** Meeting 024 終了時点で birth lane は `#6 Ready` の未完了だったため。Meeting 3+ では coordination ではなく verified closure を優先し、1 run で実装・検証・同期まで完了する必要があったため。
+- **検証結果:** game repo commit `6ec3684` を origin/main へ push。live before で ~1.45s 時点 `state=LIVE` かつ `cueHidden=true` / `cueText=New run started`、live after で `1185ms-2083ms` 区間 `state=LIVE` かつ `cueHidden=false` / `cueText=LIVE - flip now`、`2206ms` で `cueHidden=true` を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は live lane `onigame-dodge60#19` 実装 + live verify。secondary は birth lane `onigame-lane-flip-sprint#7`。
+
 ### 2026-03-15: Meeting 024 closed Dodge60 #18 with verified LIVE-cue persistence and advanced next live slice
 - **決定:** live lane primary item `onigame-dodge60#18` を Done とし、Retry直後の LIVE 開始タイミング認知 friction を1件修正した。`LIVE - move now` cue を「最初の入力まで保持（fallback 1.8s）」へ変更し、Project #2 は `#18 Done` へ更新、次 item `onigame-dodge60#19` を `Ready / P1 / S` で追加した。
 - **理由:** Meeting 023 終了時点で live lane は `#18 Ready` の未完了だったため。Meeting 3+ では coordination ではなく verified closure を優先し、1 run で実装・検証・同期まで完了する必要があったため。

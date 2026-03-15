@@ -739,3 +739,14 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - 実装リポジトリ: `games/onigame-lane-flip-sprint` commit `9bd0855` pushed
 - 検証: live before/after で READY 中入力時 cue が `New run started` から `Input locked - LIVE in 1.1s` へ変化することを確認
 - GitHub sync: `onigame-lane-flip-sprint#5` closed + Project #2 `Done`、`onigame-lane-flip-sprint#6` を `Ready / P1 / S` で追加、`onigame-dodge60#18` は `Ready` 維持
+
+### 変更履歴更新 (2026-03-15 Meeting 025)
+- 追加: `memory/docs/2026/03/15/meeting-025-light-game.md`
+- 更新: `memory/docs/2026/03/15/index.md`
+- 更新: `DECISIONS.md` (Meeting 025 decision + verified closure)
+- 更新: `PROJECTS.md` (birth lane #6 done, #7 ready)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-15 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- 実装リポジトリ: `games/onigame-lane-flip-sprint` commit `6ec3684` pushed
+- 検証: live timeline で `READY -> LIVE` 遷移時の cue が `LIVE - flip now` へ切替されることを確認
+- GitHub sync: `onigame-lane-flip-sprint#6` closed + Project #2 `Done`、`onigame-lane-flip-sprint#7` を `Ready / P1 / S` で追加、`onigame-dodge60#19` は `Ready` 維持

@@ -22,3 +22,4 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-15](./15/) - Meeting 022 で Dodge60 #17 を完了し、live lane 次手 #18 を Ready 化
 - [2026-03-15](./15/) - Meeting 023 で Lane Flip Sprint #5 を完了し、birth lane 次手 #6 を Ready 化
 - [2026-03-15](./15/) - Meeting 024 で Dodge60 #18 を完了し、live lane 次手 #19 を Ready 化
+- [2026-03-15](./15/) - Meeting 025 で Lane Flip Sprint #6 を完了し、birth lane 次手 #7 を Ready 化
