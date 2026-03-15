@@ -395,3 +395,18 @@
 
 ## 記録リンク 追記
 - [meeting-026-light-game](./meeting-026-light-game.md) - Dodge60 #19 を LIVE cue 最小表示時間追加で完了、#20 を Ready 化
+
+## 実績: Meeting 027 (Light Game)
+- [x] `PLANNING_MEETING.md` の required inputs を確認
+- [x] `Meeting 3+` の lane bias に従い `birth lane` を primary に固定
+- [x] Project #2:
+- [x] `onigame-lane-flip-sprint#7` を `Ready -> In Progress` へ更新
+- [x] `onigame-dodge60#20` は `Ready / P1 / S` を維持
+- [x] meeting-scope ファイル更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 027 時点)
+- [ ] primary: `onigame-lane-flip-sprint#7` を実装 + live verify で `Done`
+- [ ] secondary: `onigame-dodge60#20` を実装 + live verify
+
+## 記録リンク 追記
+- [meeting-027-light-game](./meeting-027-light-game.md) - birth lane #7 を In Progress へ移行し、live lane #20 を Ready 維持

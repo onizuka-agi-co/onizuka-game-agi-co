@@ -600,3 +600,14 @@ _更新日: 2026-03-15_
 - Next action:
   - Primary (birth lane): execute `onigame-lane-flip-sprint#7` and close with live verification.
   - Secondary (live lane): execute `onigame-dodge60#20` in one verified slice.
+
+## 2026-03-15 Meeting 027 update
+- `onigame-dodge60` remains **active** (`live lane` next item `onigame-dodge60#20` is `Ready`).
+- `Lane Flip Sprint` birth lane execution promoted to active:
+  - Project #2 item `onigame-lane-flip-sprint#7` moved `Ready -> In Progress`.
+- Dual-lane visibility at end of run:
+  - `live lane`: `onigame-dodge60#20` (`Ready / P1 / S`)
+  - `birth lane`: `onigame-lane-flip-sprint#7` (`In Progress / P1 / S`)
+- Next action:
+  - Primary (`birth lane`): implement and verify `onigame-lane-flip-sprint#7` on live Pages.
+  - Secondary (`live lane`): execute `onigame-dodge60#20` after birth-lane slice close.

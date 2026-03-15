@@ -644,3 +644,10 @@ _更新日: 2026-03-15_
 - **検証結果:** game repo commit `9bd0855` を origin/main へ push。live before で `READY` 中 `ArrowLeft` 入力後も cue が `New run started` のまま、live after で同条件 cue が `Input locked - LIVE in 1.1s` へ更新されることを確認。
 - **決定者:** エージェント（現場定例）
 - **影響:** 次 run の primary は `live lane` の `onigame-dodge60#18` 実装 + live verify。secondary は `onigame-lane-flip-sprint#6`。
+
+### 2026-03-15: Meeting 027 promoted Lane Flip Sprint #7 to active execution while keeping live lane queued
+- **決定:** `Meeting 3+` の lane bias に従い、`birth lane` primary item `onigame-lane-flip-sprint#7` を Project #2 で `Ready` から `In Progress` へ更新した。`live lane` は `onigame-dodge60#20` を `Ready` 維持で次手固定とした。
+- **理由:** Meeting 026 時点で live lane は `#19` 完了済みだった一方、birth lane `#7` が未着手だったため。daily dual-lane completion を維持するには birth lane の着手明確化が最短だったため。
+- **検証結果:** `gh auth status` で `GH_TOKEN` と `project` scope を確認。Project #2 再取得で `onigame-lane-flip-sprint#7 = In progress`、`onigame-dodge60#20 = Ready` を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は `onigame-lane-flip-sprint#7` 実装 + live verify + Done。secondary は `onigame-dodge60#20`。
