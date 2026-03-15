@@ -609,3 +609,10 @@ _更新日: 2026-03-15_
 - **検証結果:** `gh auth status` で `GH_TOKEN` 有効と `project` scope を確認。Project #2 再取得で `onigame-dodge60#17 = In progress`、`onigame-lane-flip-sprint#5 = Ready` を確認。
 - **決定者:** エージェント（現場定例）
 - **影響:** 次 run の primary は `onigame-dodge60#17` の実装 + live verify 完了。secondary は `onigame-lane-flip-sprint#5`。
+
+### 2026-03-15: Meeting 023 closed Lane Flip Sprint #5 with verified READY-input feedback and advanced next birth slice
+- **決定:** `birth lane` primary item `onigame-lane-flip-sprint#5` を `Done` とし、`READY` 中入力が無反応に見える early-run friction を1件修正した。Project #2 は `#5 Done` へ更新し、次の birth lane item `onigame-lane-flip-sprint#6` を `Ready / P1 / S` で追加した。
+- **理由:** Meeting 022 時点の next hand で birth lane #5 が primary 指定されており、dual-lane completion を維持するために最短で1 friction を閉じる必要があったため。
+- **検証結果:** game repo commit `9bd0855` を origin/main へ push。live before で `READY` 中 `ArrowLeft` 入力後も cue が `New run started` のまま、live after で同条件 cue が `Input locked - LIVE in 1.1s` へ更新されることを確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は `live lane` の `onigame-dodge60#18` 実装 + live verify。secondary は `onigame-lane-flip-sprint#6`。

@@ -38,7 +38,7 @@
 - **セッション長:** 30〜45秒
 - **採用理由:** `onigame-dodge60` の軽量回避の気持ちよさを保ちつつ、スマホ親指操作へさらに寄せやすい
 - **現況:** 新規 repo `onigame-lane-flip-sprint` を bootstrap済み。1画面 playable + GitHub Pages 公開まで完了
-- **次アクション:** `onigame-lane-flip-sprint#5` を実行し、early-run 20秒の readability/control friction を1件修正する
+- **次アクション:** `onigame-lane-flip-sprint#6` を実行し、early-run 20秒の readability/control friction を1件修正する
 
 ### One Stroke Sweep（birth lane 予備候補）
 
@@ -558,3 +558,20 @@ _更新日: 2026-03-15_
 - Next action:
   - Primary (birth lane): execute `onigame-lane-flip-sprint#5` and close with live verification.
   - Secondary (live lane): execute `onigame-dodge60#18` in one verified slice.
+
+## 2026-03-15 Meeting 023 update
+- `onigame-lane-flip-sprint` remains **active (day goal met)**.
+- `birth lane` thin slice completed:
+  - Closed `onigame-lane-flip-sprint#5`.
+  - Added READY-phase input-lock cue with remaining seconds (`Input locked - LIVE in x.xs`) to improve early-run readability.
+  - Game repo implementation pushed as `9bd0855`.
+- Live verification passed on Pages:
+  - before: READY + ArrowLeft kept cue `New run started`
+  - after: READY + ArrowLeft changed cue to `Input locked - LIVE in 1.1s`
+- Project #2 sync:
+  - `onigame-lane-flip-sprint#5` -> `Done / P1 / S`
+  - New next item `onigame-lane-flip-sprint#6` -> `Ready / P1 / S`
+  - `onigame-dodge60#18` remains `Ready / P1 / S`
+- Next action:
+  - Primary (live lane): execute `onigame-dodge60#18` and close with live verification.
+  - Secondary (birth lane): execute `onigame-lane-flip-sprint#6` in one verified slice.
