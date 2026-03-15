@@ -650,3 +650,10 @@ _更新日: 2026-03-16_
   - Primary (`birth lane`): execute `onizuka-game-agi-co#11` and bootstrap `onigame-one-stroke-sweep` to live playable.
   - Secondary (`live lane`): execute `onigame-dodge60#20` with live verification.
 
+## 2026-03-16 Meeting 004 update
+- onigame-dodge60 remains **active** (live lane primary onigame-dodge60#20 moved to In Progress).
+- One Stroke Sweep remains **active (day goal met)** (onizuka-game-agi-co#11 stays Done).
+- Lane Flip Sprint remains secondary queue (onigame-lane-flip-sprint#7 stays Ready / P1 / S).
+- Next action:
+  - Primary (live lane): implement and live-verify onigame-dodge60#20.
+  - Secondary (birth lane): execute onigame-lane-flip-sprint#7 after #20 closure.

@@ -27,3 +27,4 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-16](./16/) - Meeting 001 で One Stroke Sweep を日次 birth lane に採用し、`onizuka-game-agi-co#11` を In Progress 化
 - [2026-03-16](./16/) - Meeting 002 で dual-lane の acceptance/release bar を lock し、`#11` と `#20` の issue 契約を更新
 - [2026-03-16](./16/) - Meeting 003 で `onigame-one-stroke-sweep` の repo bootstrap + Pages検証を完了し、birth lane day goal を達成
+- [2026-03-16](./16/) - Meeting 004 で onigame-dodge60#20 を In Progress 化し、live lane 実装優先を固定

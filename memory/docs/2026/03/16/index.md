@@ -68,3 +68,23 @@
 
 ## 記録リンク (追記)
 - [meeting-003-light-game](./meeting-003-light-game.md) - Meeting 3+ で One Stroke Sweep の bootstrap + Pages verify を完了
+
+## 実績: Meeting 004 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] Project #2 同期:
+  - [x] onigame-dodge60#20 を Ready -> In progress へ更新
+  - [x] onigame-lane-flip-sprint#7 は Ready / P1 / S を維持
+  - [x] onizuka-game-agi-co#11 は Done / P0 / S を確認
+- [x] GPT-5.4 high reasoning サブエージェントで lane 優先順位を検証
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 004 時点)
+- [ ] primary: onigame-dodge60#20 を実装し 1 friction fix + live verify で Done
+- [ ] secondary: onigame-lane-flip-sprint#7 を 1 friction fix + live verify で Done
+
+## 日次2レーン状態 (Meeting 004)
+- live lane: in progress
+- birth lane: day goal met
+
+## 記録リンク (追記)
+- [meeting-004-light-game](./meeting-004-light-game.md) - Meeting 3+ で #20 を In Progress 化し次の実装手を固定

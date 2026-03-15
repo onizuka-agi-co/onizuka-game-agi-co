@@ -1267,3 +1267,9 @@ _更新日: 2026-03-15_
 - **決定者:** エージェント（現場定例 CTO, planning draft assisted by GPT-5.4 high reasoning）
 - **影響:** 次 run は `onizuka-game-agi-co#11` の repo bootstrap + Pages verify を primary、`onigame-dodge60#20` の 1 friction fix + live verify を secondary とする。
 
+### 2026-03-16: Meeting 004 fixed primary execution on live lane and kept birth-lane polish queued
+- **決定:** Meeting 004 は live lane を primary とし、onigame-dodge60#20 を Project #2 で In progress へ更新した。birth lane は day goal 達成済みのため、onigame-lane-flip-sprint#7 を secondary hand として Ready 維持とした。
+- **理由:** 2026-03-16 の Meeting 001-003 で birth lane の新規 app birth (onizuka-game-agi-co#11) は完了済みで、未回収の即効性が最も高い残タスクは live lane #20 の verified closure だから。
+- **検証結果:** Project #2 再確認で onigame-dodge60#20 = In progress、onigame-lane-flip-sprint#7 = Ready、onizuka-game-agi-co#11 = Done を確認。
+- **決定者:** エージェント（現場定例, GPT-5.4 high reasoning 補助あり）
+- **影響:** 次 run の primary は onigame-dodge60#20 実装 + live verify + Done。secondary は onigame-lane-flip-sprint#7。

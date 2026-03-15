@@ -824,3 +824,18 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - 更新: `memory/docs/history/index.md` (this entry)
 - GitHub updates: `onizuka-game-agi-co#11` closed with evidence comment; Project #2 item moved to `Done`.
 - Execution boundary evidence: child repo `onigame-one-stroke-sweep` commit `9e0d87b`, live URL verification passed.
+
+### 変更履歴更新 (2026-03-16 Meeting 004)
+- 追加: memory/docs/2026/03/16/meeting-004-light-game.md
+- 更新: memory/docs/2026/03/16/index.md
+- 更新: DECISIONS.md (Meeting 004 decision + lane priority lock)
+- 更新: PROJECTS.md (Meeting 004 lane status update)
+- 更新: memory/docs/2026/03/index.md (2026-03-16 summary refreshed)
+- 更新: memory/docs/history/index.md (this entry)
+- Project sync:
+  - onigame-dodge60#20 moved Ready -> In progress
+  - onigame-lane-flip-sprint#7 remained Ready
+  - onizuka-game-agi-co#11 remained Done
+- Run boundary:
+  - workdir D:\Prj\onizuka-game-agi-co
+  - no game-repo code commit in this run (coordination + board transition slice)
