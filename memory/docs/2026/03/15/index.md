@@ -1,4 +1,4 @@
-# 2026-03-15
+﻿# 2026-03-15
 
 ## 完了
 - [x] `PLANNING_MEETING.md` を先頭に確認し、required inputs と前回状態を確認
@@ -263,3 +263,21 @@
 
 ## 記録リンク 追記
 - [meeting-019-light-game](./meeting-019-light-game.md) - Dodge60 #16 をLIVE遷移時 cue即時非表示で完了、#17をReady化
+
+## 実績: Meeting 020 (Light Game)
+- [x] PLANNING_MEETING.md の required inputs を確認
+- [x] irth lane primary (onigame-lane-flip-sprint#4) を1 sliceで完了
+- [x] game repo commit e061aa6 を origin/main へ push
+- [x] live verify で端レーン入力の blocked feedback before/after を確認
+- [x] Project #2:
+- [x] onigame-lane-flip-sprint#4 -> Done / P1 / S
+- [x] onigame-lane-flip-sprint#5 を作成し Ready / P1 / S に設定
+- [x] onigame-dodge60#17 は Ready / P1 / S 維持
+
+## 次アクション (Meeting 020 時点)
+- [ ] primary: onigame-dodge60#17 を実装 + live verify で Done
+- [ ] secondary: onigame-lane-flip-sprint#5 を実装 + live verify
+
+## 記録リンク 追記
+- [meeting-020-light-game](./meeting-020-light-game.md) - Lane Flip Sprint #4 を端入力フィードバック追加で完了、#5 を Ready 化
+

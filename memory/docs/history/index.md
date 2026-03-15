@@ -240,7 +240,7 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Project sync pending: token loader script blocked by execution policy + ONIZUKA_GITHUB_PAT invalid on gh auth status retry.
 
 ### 螟画峩螻･豁ｴ譖ｴ譁ｰ (2026-03-13 Meeting 011 finalize)
-- Local commit e5832c was created for Meeting 011 meeting-scope files.
+- Local commit e5832c was created for Meeting 011 meeting-scope files.
 - Push pending: git push origin main failed (github.com:443 connection error).
 - Next run must retry push and verify remote sync.
 
@@ -678,3 +678,15 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - 実装リポジトリ: `games/onigame-dodge60` commit `d871db2` pushed
 - 検証: live before/after で `LIVE` 遷移時の re-entry cue 可視状態を比較確認
 - GitHub sync: `onigame-dodge60#16` closed + Project #2 `Done`、`onigame-dodge60#17` を `Ready / P1 / S` で追加
+
+### 変更履歴更新 (2026-03-15 Meeting 020)
+- 追加: memory/docs/2026/03/15/meeting-020-light-game.md
+- 更新: memory/docs/2026/03/15/index.md
+- 更新: DECISIONS.md (Meeting 020 decision + verified closure)
+- 更新: PROJECTS.md (birth lane #4 done, #5 ready)
+- 更新: memory/docs/2026/03/index.md (2026-03-15 summary refreshed)
+- 更新: memory/docs/history/index.md (this entry)
+- 実装リポジトリ: games/onigame-lane-flip-sprint commit e061aa6 pushed
+- 検証: live before/after で端レーン入力時 feedback (hasBlockedClass false -> true) を比較確認
+- GitHub sync: onigame-lane-flip-sprint#4 closed + Project #2 Done、onigame-lane-flip-sprint#5 を Ready / P1 / S で追加
+

@@ -29,7 +29,7 @@
 - **セッション長:** 1〜3分
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
 - **現況:** `games/onigame-dodge60` に最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）が存在し、GitHub Pages 公開URLも運用中
-- **次アクション:** `onigame-dodge60#14` を実行し、post-restart friction を1件修正して Project #2 `Done` まで進める
+- **次アクション:** `onigame-dodge60#17` を実行し、post-restart friction を1件修正して Project #2 `Done` まで進める
 
 ### Lane Flip Sprint（birth lane 候補）
 
@@ -38,7 +38,7 @@
 - **セッション長:** 30〜45秒
 - **採用理由:** `onigame-dodge60` の軽量回避の気持ちよさを保ちつつ、スマホ親指操作へさらに寄せやすい
 - **現況:** 新規 repo `onigame-lane-flip-sprint` を bootstrap済み。1画面 playable + GitHub Pages 公開まで完了
-- **次アクション:** `onigame-lane-flip-sprint#3` を実行し、retry直後20秒の post-restart friction を1件修正する
+- **次アクション:** `onigame-lane-flip-sprint#5` を実行し、early-run 20秒の readability/control friction を1件修正する
 
 ### One Stroke Sweep（birth lane 予備候補）
 
