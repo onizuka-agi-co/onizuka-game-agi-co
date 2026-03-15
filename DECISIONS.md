@@ -1400,3 +1400,10 @@ _更新日: 2026-03-15_
 - **検証/証跡:** Project #2 item status を再取得し `#8 In progress`, `#21 Ready`, `#11 Done` を確認。Spark Legion の producer/second-pass/Devil's Advocate で判断根拠を二重化した。
 - **決定者:** 現場定例エージェント（GPT-5.4 xHigh 運用）
 - **次アクション:** 次runで `onigame-lane-flip-sprint#8` を実装・live verify・Done、続けて `onigame-dodge60#21` を実装着手する。
+
+### 2026-03-16: Meeting 008 closed Lane Flip Sprint #8 with verified early-run spawn timing fix
+- **決定:** onigame-lane-flip-sprint#8 を Done とし、early-run friction（READY -> LIVE 直後の初回hazardが早すぎる）を 1件修正した。さらに birth lane 次手として onigame-lane-flip-sprint#9 を作成し Ready / P1 / S に設定した。
+- **理由:** #8 の acceptance bar は「1 friction fix + live verify + board done」であり、最短で可視的なプレイ感改善を証跡付きで閉じることが優先だったため。
+- **検証/証跡:** pre-fix live 355.7ms（LIVE->初回hazard平均）から post-fix live 729.2ms へ改善。game repo commit 2187dd8 を main に push 後、Pages の pp.js 反映（irstSpawnDelaySeconds = 0.72）を確認。Issue #8 close、Project #2 #8 Done、#9 Ready / P1 / S、#21 Ready / P1 / S を確認。
+- **決定者:** 現場定例エージェント（GPT-5.4 xHigh reasoning）
+- **次アクション:** 次runは onigame-dodge60#21 を primary として 1 friction fix + live verify で完了する。

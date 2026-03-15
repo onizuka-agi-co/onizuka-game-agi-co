@@ -689,3 +689,20 @@ _更新日: 2026-03-16_
 - Next action:
   - Primary (`birth lane`): close `onigame-lane-flip-sprint#8` with one fix + live verification.
   - Secondary (`live lane`): execute `onigame-dodge60#21` in one verified slice.
+
+## 2026-03-16 Meeting 008 update
+- `onigame-lane-flip-sprint` remains **active**.
+- `birth lane` thin slice completed:
+  - Closed `onigame-lane-flip-sprint#8`.
+  - Fixed early-run reaction margin by delaying first hazard spawn after `READY -> LIVE` (`0.35s -> 0.72s`).
+  - Game repo implementation pushed as `2187dd8`.
+- Live verification passed on Pages:
+  - before avg: `355.7ms` (`LIVE` -> first hazard)
+  - after avg: `729.2ms` (`LIVE` -> first hazard)
+- Project #2 sync:
+  - `onigame-lane-flip-sprint#8` -> `Done / P1 / S`
+  - New next item `onigame-lane-flip-sprint#9` -> `Ready / P1 / S`
+  - `onigame-dodge60#21` remains `Ready / P1 / S`
+- Next action:
+  - Primary (live lane): execute `onigame-dodge60#21` and close with live verification.
+  - Secondary (birth lane): execute `onigame-lane-flip-sprint#9` in one verified slice.

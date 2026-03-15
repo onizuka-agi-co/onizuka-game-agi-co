@@ -33,3 +33,4 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 
 - [2026-03-16](./16/) - CEO Review 001 で idea funnel を promoted に更新し、ROADMAP を現行運営へ同期
 - [2026-03-16](./16/) - Meeting 007 で `onigame-lane-flip-sprint#8` を In Progress 化し、live lane 次手 `onigame-dodge60#21` を Ready 化
+- [2026-03-16](./16/) - Meeting 008 で `onigame-lane-flip-sprint#8` を完了（初回hazard出現遅延 0.35s -> 0.72s）、birth lane 次手 `#9` を Ready 化

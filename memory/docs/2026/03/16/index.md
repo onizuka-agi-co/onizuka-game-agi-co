@@ -178,3 +178,31 @@
 
 ## 記録リンク (追記)
 - [meeting-007-light-game](./meeting-007-light-game.md) - #8 In progress 化と live lane 次手 #21 の board 同期
+
+## 実績: Meeting 008 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] primary `onigame-lane-flip-sprint#8` を実装完了（1 friction fix）
+- [x] `games/onigame-lane-flip-sprint/app.js` で初回 hazard 出現遅延を `0.35s -> 0.72s` に調整
+- [x] game repo commit/push:
+  - [x] commit `2187dd8`
+  - [x] `main -> origin/main` 反映
+- [x] live verify:
+  - [x] pre-fix avg `355.7ms`（LIVE->初回hazard）
+  - [x] post-fix live avg `729.2ms`
+  - [x] live `app.js` で `firstSpawnDelaySeconds = 0.72` 反映確認
+- [x] GitHub同期:
+  - [x] `onigame-lane-flip-sprint#8` に証跡コメント追加 + close
+  - [x] Project #2 `onigame-lane-flip-sprint#8` を `Done` へ更新
+  - [x] 次手 `onigame-lane-flip-sprint#9` を作成し `Ready / P1 / S` へ設定
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 008 時点)
+- [ ] primary: `onigame-dodge60#21` を 1 friction fix + live verify で Done
+- [ ] secondary: `onigame-lane-flip-sprint#9` を 1 friction fix + live verify で前進
+
+## 日次2レーン状態 (Meeting 008)
+- live lane: ready
+- birth lane: ready
+
+## 記録リンク (追記)
+- [meeting-008-light-game](./meeting-008-light-game.md) - #8 実装完了（初回hazard出現遅延）と #9 Ready 同期

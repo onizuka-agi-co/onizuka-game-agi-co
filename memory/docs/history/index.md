@@ -892,3 +892,14 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (coordination + board sync slice)
+
+### 変更履歴更新 (2026-03-16 Meeting 008)
+- 追加: `memory/docs/2026/03/16/meeting-008-light-game.md`
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `DECISIONS.md` (Meeting 008 decision + verified closure)
+- 更新: `PROJECTS.md` (birth lane #8 done, #9 ready)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-16 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- 実装リポジトリ: `games/onigame-lane-flip-sprint` commit `2187dd8` pushed
+- 検証: live before/after で `LIVE -> first hazard` 平均を `355.7ms -> 729.2ms` に改善確認
+- GitHub sync: `onigame-lane-flip-sprint#8` closed + Project #2 `Done`、`onigame-lane-flip-sprint#9` を `Ready / P1 / S` で追加、`onigame-dodge60#21` は `Ready` 維持
