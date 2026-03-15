@@ -42,6 +42,7 @@ Company: ONIZUKA Game AGI Co.
 ### 検証
 - Syntax: `node --check app.js` pass
 - Deploy反映確認: `https://onizuka-agi-co.github.io/onigame-dodge60/app.js?t=<timestamp>` に `0.85` 反映を確認
+- Before/After: before は Retry後の `LIVE` cue が短く開始認知が弱かった。after は `LIVE` 遷移 +1300ms 時点でも cue 表示が残る。
 - Live verify (Playwright):
   - URL: `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773601449338`
   - `resetGame(true)` 後、`LIVE` 遷移から `+1300ms` 時点で `LIVE - move now` 表示継続を確認（hidden=false）
