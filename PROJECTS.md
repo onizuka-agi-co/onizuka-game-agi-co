@@ -445,3 +445,20 @@ _更新日: 2026-03-15_
 - Next action:
   - Primary (`live lane`): implement and live-verify `onigame-dodge60#14`.
   - Secondary (`birth lane`): execute `onigame-lane-flip-sprint#2` after `#14` completion.
+
+## 2026-03-15 Meeting 015 update
+- onigame-dodge60 remains **active**.
+- live lane thin slice completed:
+  - Closed onigame-dodge60#14.
+  - Shipped READY-hold drag handoff fix so held pointer input applies immediately after LIVE.
+  - Game repo implementation pushed as 4cdc3d0.
+- Live verification passed on Pages:
+  - Before: READY hold x=180 -> afterLive x=180
+  - After: READY hold x=180 -> afterLive x=42.00000277717434
+- Project #2 sync:
+  - onigame-dodge60#14 -> Done / P1 / S
+  - New next item onigame-dodge60#15 -> Ready / P1 / S
+  - onigame-lane-flip-sprint#2 remains Ready / P1 / S
+- Next action:
+  - Primary (irth lane): execute onigame-lane-flip-sprint#2 and close with live verification.
+  - Secondary (live lane): execute onigame-dodge60#15 in one verified slice.

@@ -623,3 +623,19 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (coordination + board state confirmation slice)
+
+### Meeting update (2026-03-15 Meeting 015)
+- Meeting log: memory/docs/2026/03/15/meeting-015-light-game.md
+- Daily index: memory/docs/2026/03/15/index.md
+- Updated: DECISIONS.md (Meeting 015 decision + verified closure)
+- Updated: PROJECTS.md (live lane next action moved to onigame-dodge60#15)
+- Updated: memory/docs/2026/03/index.md (2026-03-15 summary refreshed)
+- Updated: memory/docs/history/index.md (this entry)
+- Implementation repo update: games/onigame-dodge60/app.js (4cdc3d0 pushed to onizuka-agi-co/onigame-dodge60)
+- Live verification:
+  - before: READY hold x=180 -> afterLive x=180
+  - after: READY hold x=180 -> afterLive x=42.00000277717434
+- Project sync:
+  - onigame-dodge60#14 moved to Done
+  - onigame-dodge60#14 closed
+  - onigame-dodge60#15 created and set to Ready / P1 / S on Project #2.

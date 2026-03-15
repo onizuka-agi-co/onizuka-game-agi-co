@@ -6,6 +6,12 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 015 closed Dodge60 #14 with verified READY-hold handoff fix and advanced next live slice
+- **決定:** live lane primary item onigame-dodge60#14 を Done とし、READY中にホールドしたドラッグ入力がLIVE遷移直後に反映されない post-restart friction を1件修正した。Project #2 は #14 Done へ更新し、次の live lane item onigame-dodge60#15 を Ready / P1 / S で追加した。
+- **理由:** #14 は In Progress の未完了スライスであり、Meeting 013/014 で実装債務が継続していたため。最小の1件修正を実装・live verify・board同期まで同run完了することが最短だったため。
+- **検証結果:** before (live) で READY hold: x=180 -> afterLive x=180、after (live) で READY hold: x=180 -> afterLive x=42.00000277717434 を確認。実装 commit 4cdc3d0 を origin/main へ pushし、issue onigame-dodge60#14 を close。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は irth lane onigame-lane-flip-sprint#2 実装 + live verify。secondary は live lane onigame-dodge60#15。
 ### 2026-03-15: Meeting 014 held live-lane priority and confirmed dual-lane board state
 - **決定:** `Meeting 3+` の execution 継続として、Project #2 の primary active を `live lane`（`onigame-dodge60#14`）のまま維持し、`birth lane`（`onigame-lane-flip-sprint#2`）は `Ready` の次手で固定した。
 - **理由:** `live lane #14` は `In Progress` の未完了スライスであり、未実装のまま lane を切り替えると進捗が拡散するため。まず `#14` の実装と live verify を完了するのが最小で妥当な順序だったため。
@@ -552,4 +558,5 @@ _更新日: 2026-03-14_
 - **検証結果:** Project #2 の未完了 item が `onigame-dodge60#12`（live）と `onizuka-game-agi-co#10`（birth）の2 lane で明示され、両方 `Ready` 状態で確認できた。
 - **決定者:** エージェント（現場定例）
 - **影響:** 次 run は `onizuka-game-agi-co#10` を `In progress` に上げ、同日中の新規 app bootstrap 実装を進める。
+
 

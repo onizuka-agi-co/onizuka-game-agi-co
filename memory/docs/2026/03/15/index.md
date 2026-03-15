@@ -175,3 +175,23 @@
 
 ## 記録リンク 追加分 (Meeting 014)
 - [meeting-014-light-game](./meeting-014-light-game.md) - live lane primary 維持、Project #2 状態確認、次の1手を明確化
+
+## 実績: Meeting 015 (Light Game)
+- [x] PLANNING_MEETING.md を最初に読み、required inputsを確認
+- [x] live lane primary (onigame-dodge60#14) を実装・live verifyまで完了
+- [x] game repo commit 4cdc3d0 を origin/main へ push
+- [x] live before/after を取得
+  - before: READY hold 後も x=180 -> 180
+  - after: READY hold 後に x=180 -> 42.00000277717434
+- [x] onigame-dodge60#14 を close
+- [x] Project #2 同期:
+  - onigame-dodge60#14 -> Done / P1 / S
+  - onigame-dodge60#15 を新規作成し Ready / P1 / S
+  - onigame-lane-flip-sprint#2 は Ready / P1 / S 維持
+
+## 次アクション (Meeting 015 議事)
+- [ ] primary: onigame-lane-flip-sprint#2 を実装して live verify まで完了
+- [ ] secondary: onigame-dodge60#15 を 1 run で実装 + live verify
+
+## 記録リンク 追加分
+- [meeting-015-light-game](./meeting-015-light-game.md) - Dodge60 #14 を完了し、Project #2 を次手へ更新
