@@ -28,3 +28,4 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-16](./16/) - Meeting 002 で dual-lane の acceptance/release bar を lock し、`#11` と `#20` の issue 契約を更新
 - [2026-03-16](./16/) - Meeting 003 で `onigame-one-stroke-sweep` の repo bootstrap + Pages検証を完了し、birth lane day goal を達成
 - [2026-03-16](./16/) - Meeting 004 で onigame-dodge60#20 を In Progress 化し、live lane 実装優先を固定
+- [2026-03-16](./16/) - Meeting 005 で onigame-dodge60#20 を完了（LIVE cue最小表示 0.5s -> 0.85s）、issue close と Project #2 Done 同期まで完了

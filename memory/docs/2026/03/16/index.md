@@ -88,3 +88,29 @@
 
 ## 記録リンク (追記)
 - [meeting-004-light-game](./meeting-004-light-game.md) - Meeting 3+ で #20 を In Progress 化し次の実装手を固定
+
+## 実績: Meeting 005 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] primary `onigame-dodge60#20` を実装完了（1 friction fix）
+- [x] `games/onigame-dodge60/app.js` で LIVE cue の最小表示時間を `0.5 -> 0.85` に調整
+- [x] game repo commit/push:
+  - [x] commit `4dbfc51`
+  - [x] `main -> origin/main` 反映
+- [x] live verify:
+  - [x] deploy `app.js` に `0.85` 反映を確認
+  - [x] Retry相当経路で `LIVE` 遷移 +1300ms 時点の cue表示継続を確認
+- [x] GitHub同期:
+  - [x] `onigame-dodge60#20` に証跡コメント追加 + close
+  - [x] Project #2 item `PVTI_lADOD7cTBc4BRGjUzgnepYA` が `Done` を確認
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 005 時点)
+- [ ] primary: `onigame-lane-flip-sprint#7` を 1 friction fix + live verify で Done
+- [ ] secondary: `onigame-dodge60` の post-playtest friction を小さく1件継続改善
+
+## 日次2レーン状態 (Meeting 005)
+- live lane: day goal met
+- birth lane: day goal met
+
+## 記録リンク (追記)
+- [meeting-005-light-game](./meeting-005-light-game.md) - Meeting 3+ で onigame-dodge60#20 を実装・検証・Done 同期

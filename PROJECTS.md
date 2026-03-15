@@ -29,7 +29,7 @@
 - **セッション長:** 1〜3分
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
 - **現況:** `games/onigame-dodge60` に最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）が存在し、GitHub Pages 公開URLも運用中
-- **次アクション:** `onigame-dodge60#20` を実行し、post-restart friction を1件修正して Project #2 `Done` まで進める
+- **次アクション:** `onigame-dodge60#20` は 2026-03-16 Meeting 005 で完了（LIVE cue最小表示 0.5s -> 0.85s）。次runは `onigame-lane-flip-sprint#7` を primary とし、live lane は post-playtest friction を secondary で継続する
 
 ### Lane Flip Sprint（birth lane 候補）
 

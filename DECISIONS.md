@@ -5,6 +5,13 @@
 ---
 
 ## 2026-03
+### 2026-03-16: Meeting 005 closed Dodge60 #20 with verified post-restart LIVE-cue readability
+- **決定:** `onigame-dodge60#20` を `Done` とし、Retry -> READY -> LIVE 導線の post-restart friction を1件修正した。`LIVE - move now` cue の最小表示時間を `0.5s` から `0.85s` に延長し、issue close と Project #2 Done 同期まで同runで完了した。
+- **理由:** #20 の acceptance bar は「1件修正 + live verify + board同期」であり、再開直後の cue 可読時間の短さが最小差分で改善できる高価値 friction だったため。
+- **検証結果:** game repo commit `4dbfc51` を `origin/main` へ push。live `app.js` に `state.liveCueMinVisibleTimer = 0.85` の反映を確認し、live verify（`resetGame(true)` 経路）で `LIVE` 遷移 +1300ms 時点の cue 表示継続（hidden=false）を確認した。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は `birth lane` `onigame-lane-flip-sprint#7` の1件修正 + live verify。`live lane` は day goal met として secondary で継続改善する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
 - **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
 - **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
