@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 013 kept live-lane primary active and preserved dual-lane queue clarity
+- **決定:** `Meeting 3+` の execution 継続として、Project #2 の primary active を `live lane` (`onigame-dodge60#14`) のまま維持し、`birth lane` (`onigame-lane-flip-sprint#2`) は `Ready` で次手固定とした。
+- **理由:** 直前 run（Meeting 012）で `live lane #14` を `In Progress` へ上げており、未検証のまま lane を再切替すると進行が拡散するため。まず `#14` を完了させるのが最小で妥当な実行順だったため。
+- **検証結果:** `gh auth status` で `GH_TOKEN` の `project` scope を確認し、Project #2 item 一覧で `#14 = In Progress`、`#2 = Ready` の配列を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は `onigame-dodge60#14` 実装 + live verify。secondary は `onigame-lane-flip-sprint#2` を `Ready` から再開する。
+
 ### 2026-03-15: Meeting 012 rebalanced active primary slice back to live lane
 - **決定:** `Meeting 3+` の dual-lane 継続運用として、Project #2 の primary active を `live lane` (`onigame-dodge60#14`) へ再配列した。`onigame-dodge60#14` を `In Progress` に上げ、`onigame-lane-flip-sprint#2` は `Ready` に戻して次手として維持した。
 - **理由:** 直前 run（Meeting 011）で `birth lane` を `In Progress` に上げたため、lane 偏りを避けるには未着手だった `live lane #14` を実行状態へ進めるのが最小で妥当だったため。

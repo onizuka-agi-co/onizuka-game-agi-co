@@ -425,3 +425,13 @@ _更新日: 2026-03-15_
 - Next action:
   - Primary (`live lane`): implement and live-verify `onigame-dodge60#14`.
   - Secondary (`birth lane`): resume `onigame-lane-flip-sprint#2` from `Ready`.
+
+## 2026-03-15 Meeting 013 update
+- `onigame-dodge60` remains **active** (`live lane` primary kept on `onigame-dodge60#14`).
+- `live lane` status maintained:
+  - Project #2 item `Run live playtest pass and fix one post-restart friction (next)` (`onigame-dodge60#14`) remains `In Progress`.
+- `birth lane` queue maintained:
+  - `Polish Lane Flip Sprint retry re-entry readability with one cue` (`onigame-lane-flip-sprint#2`) remains `Ready`.
+- Next action:
+  - Primary (`live lane`): implement and live-verify `onigame-dodge60#14`.
+  - Secondary (`birth lane`): execute `onigame-lane-flip-sprint#2` after `#14` completion.
