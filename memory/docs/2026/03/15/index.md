@@ -410,3 +410,19 @@
 
 ## 記録リンク 追記
 - [meeting-027-light-game](./meeting-027-light-game.md) - birth lane #7 を In Progress へ移行し、live lane #20 を Ready 維持
+
+## 実績: Meeting 028 (Light Game)
+- [x] `PLANNING_MEETING.md` の required inputs を確認
+- [x] 4 sub-agents (Product Owner, Tech Lead, Designer, QA) を spawn（rate limit により完了せず）
+- [x] multi-perspective assessment を CTO として synthesise
+- [x] dual-lane execution 優先度を確認:
+  - primary: `onigame-lane-flip-sprint#7` (In Progress)
+  - secondary: `onigame-dodge60#20` (Ready)
+- [x] meeting-scope ファイル更新（meeting / daily / decisions / projects）
+
+## 次アクション (Meeting 028 時点)
+- [ ] primary: `onigame-lane-flip-sprint#7` を実装 + live verify で `Done`
+- [ ] secondary: `onigame-dodge60#20` を実装 + live verify
+
+## 記録リンク 追記
+- [meeting-028-light-game](./meeting-028-light-game.md) - coordination run, sub-agent rate limit, dual-lane 優先度確認
