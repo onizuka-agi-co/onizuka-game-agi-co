@@ -296,3 +296,20 @@
 
 ## 記録リンク 追記
 - [meeting-021-light-game](./meeting-021-light-game.md) - live lane #17 を In Progress へ移行し、dual-lane 次手を固定
+
+## 実績: Meeting 022 (Light Game)
+- [x] `PLANNING_MEETING.md` の required inputs を確認
+- [x] `live lane` primary (`onigame-dodge60#17`) を実装 + live verify で完了
+- [x] game repo commit `54a86f5` を `origin/main` へ push
+- [x] live verify で `READY -> LIVE` 遷移時の `#live-cue` 表示（`LIVE - move now`）を確認
+- [x] Project #2:
+- [x] `onigame-dodge60#17` -> `Done / P1 / S`
+- [x] `onigame-dodge60#18` を作成し `Ready / P1 / S`
+- [x] `onigame-lane-flip-sprint#5` は `Ready / P1 / S` 維持
+
+## 次アクション (Meeting 022 時点)
+- [ ] primary: `onigame-lane-flip-sprint#5` を実装 + live verify で `Done`
+- [ ] secondary: `onigame-dodge60#18` を実装 + live verify
+
+## 記録リンク 追記
+- [meeting-022-light-game](./meeting-022-light-game.md) - Dodge60 #17 を LIVE開始cue 追加で完了、#18 を Ready 化

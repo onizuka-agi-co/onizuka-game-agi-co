@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-15: Meeting 022 closed Dodge60 #17 with verified LIVE-start cue and advanced next live slice
+- **決定:** live lane primary item `onigame-dodge60#17` を Done とし、Retry後 `READY -> LIVE` 切替瞬間の開始確信 friction を1件修正した。`LIVE - move now` cue を追加し、Project #2 は `#17 Done` へ更新、次 item `onigame-dodge60#18` を `Ready / P1 / S` で追加した。
+- **理由:** Meeting 021 で `#17` は `In Progress` まで進んでおり、Meeting 3+ では coordination ではなく verified closure を優先する必要があったため。
+- **検証結果:** game repo commit `54a86f5` を origin/main へ push。live before で retry後 `LIVE` 時に dedicated cue 未実装を確認し、live after で retry後 `1200ms` 時点 `state=LIVE` かつ `#live-cue` 表示（`LIVE - move now`）を確認。
+- **決定者:** エージェント（現場定例）
+- **影響:** 次 run の primary は birth lane `onigame-lane-flip-sprint#5` 実装 + live verify。secondary は live lane `onigame-dodge60#18`。
+
 ### 2026-03-15: Meeting 020 closed Lane Flip Sprint #4 with verified edge-input blocked feedback and advanced next birth slice
 - **決定:** birth lane primary item `onigame-lane-flip-sprint#4` を Done とし、LIVE中に端レーン入力しても反応が見えない early-run friction を1件修正した。Project #2 は `#4 Done` へ更新し、次の birth lane item `onigame-lane-flip-sprint#5` を `Ready / P1 / S` で追加した。
 - **理由:** Meeting 019 の next hand で `onigame-lane-flip-sprint#4` が primary 指定されており、dual-lane execution を維持する最短手が #4 の verified closure だったため。
