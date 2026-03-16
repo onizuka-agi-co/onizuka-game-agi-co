@@ -118,6 +118,19 @@ _更新日: 2026-03-16_
   - Primary (`birth lane`): lock `Pocket Putt Panic` concept brief / first playable / repo bootstrap plan in Meeting 2
   - Secondary (`live lane`): keep `onigame-dodge60#25` ready for Meeting 3+ execution
 
+## 2026-03-17 Meeting 002 update
+- `onigame-dodge60` remains **active** and `onigame-dodge60#25` stays **Ready** with the thin-slice contract locked:
+  - exactly one early-run confidence friction on the current `0.92s` first-spawn-delay baseline
+  - live URL verify required before `Done`
+- `Pocket Putt Panic` is now the locked **birth lane** for 2026-03-17:
+  - concept brief fixed to `15-second one-screen mini-putt score attack`
+  - control fixed to `pull-and-release`
+  - scope fixed to `one tiny hole + one moving blocker + retry + repo link`
+  - repo/bootstrap plan fixed to `onigame-pocket-putt-panic`
+- Next action:
+  - Primary (`birth lane`): bootstrap `onigame-pocket-putt-panic` and verify on GitHub Pages
+  - Secondary (`live lane`): execute `onigame-dodge60#25` with one friction fix + live verify
+
 ## 2026-03-13 Meeting 002 追記
 - onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。
 - Blocker: GitHub CLI 認証切れにより GitHub Project #2 の item 状態更新が未反映。

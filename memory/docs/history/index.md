@@ -1137,3 +1137,20 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (Meeting 1 planning + board sync slice)
+
+### 変更履歴更新 (2026-03-17 Meeting 002)
+- 追加: `memory/docs/2026/03/17/meeting-002-light-game.md`
+- 更新: `memory/docs/2026/03/17/index.md`
+- 更新: `DECISIONS.md` (Meeting 002 decision + lock contract)
+- 更新: `PROJECTS.md` (Meeting 002 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-17 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Issue sync:
+  - update `onizuka-game-agi-co#12` body with concept / first-playable / repo / release lock
+  - update `onigame-dodge60#25` body with thin-slice acceptance lock
+- Project state confirmation:
+  - `onizuka-game-agi-co#12` remained `Ready / P0 / S`
+  - `onigame-dodge60#25` remained `Ready / P1 / S`
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (Meeting 2 lock + issue sync slice)

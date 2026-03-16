@@ -20,6 +20,29 @@
 
 ## 記録リンク
 - [meeting-001-light-game](./meeting-001-light-game.md) - Meeting 1 lane selection と Project #2 同期
+
+## 実績: Meeting 002 (Light Game)
+- [x] Meeting 判定を `Meeting 2` として実施
+- [x] `live lane` (`onigame-dodge60#25`) の thin-slice acceptance bar を lock
+- [x] `birth lane` (`onizuka-game-agi-co#12`) の concept brief / first playable / repo plan / release bar を lock
+- [x] issue 本文更新対象を固定:
+  - [x] `onizuka-game-agi-co#12`
+  - [x] `onigame-dodge60#25`
+- [x] Project #2 状態確認:
+  - [x] `onizuka-game-agi-co#12`: `Ready / P0 / S`
+  - [x] `onigame-dodge60#25`: `Ready / P1 / S`
+- [x] `gpt-5.4` `xhigh` サブエージェント監査で birth lane scope を `pull-and-release + one hole` に縮小
+
+## 次アクション (Meeting 002 時点)
+- [ ] primary: `onizuka-game-agi-co#12` を実装し `onigame-pocket-putt-panic` を bootstrap + Pages verify
+- [ ] secondary: `onigame-dodge60#25` を 1 friction fix + live verify で Done
+
+## 日次2レーン状態 (Meeting 002)
+- `live lane`: ready
+- `birth lane`: in progress
+
+## 記録リンク (追記)
+- [meeting-002-light-game](./meeting-002-light-game.md) - Meeting 2 acceptance/release lock
 ## 実績: AWSアイコン基調の構成図リビルド
 - [x] `docs/onizuka-game-agi-aws-architecture.drawio` を AWS公式アイコン主導の見た目へ組み替え
 - [x] よくある AWS 構成図の文法に合わせて「アイコン上・ラベル下・薄い境界・少ない装飾」に調整

@@ -2088,3 +2088,10 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **理由:** #23 で初回spawn遅延を導入した後も、READY->LIVE 直後の初回hazard圧が早く、early-run の開始確信を下げる摩擦が残っていたため。
 - **検証:** commit `e19890d` を origin/main へ反映し、live `app.js` で before `0.58` / after `0.92` を確認。Playwright smoke で `READY 1.2s -> READY 0.4s -> LIVE` と console error 0 を確認。
 - **次手:** live lane は onigame-dodge60#25 を primary、birth lane は post-#10 friction 観測を secondary で維持する。
+
+### 2026-03-17: Meeting 002 locked Pocket Putt Panic bootstrap scope and Dodge60 #25 acceptance bar
+- **決定:** Meeting 2 として `live lane` `onigame-dodge60#25` の thin-slice acceptance bar と、`birth lane` `onizuka-game-agi-co#12` (`Pocket Putt Panic`) の concept / first playable / repo / release contract を固定した。
+- **理由:** Meeting 1 で lane 選定は完了しており、Meeting 3+ を迷わず execution に入れるには control spec と hole count の曖昧さをこの run で潰す必要があったため。
+- **検証:** GitHub issue `#12` / `#25` の本文更新対象を確定し、Project #2 で `#12 = Ready / P0 / S`, `#25 = Ready / P1 / S` を確認。`gpt-5.4` `xhigh` subagent 監査で `accept with edits` を受け、birth lane を `pull-and-release + one tiny hole` へ縮小した。
+- **決定オーナー:** エージェント（現場定例、GPT-5.4 xHigh manager + lock auditor）
+- **次手:** 次 run は `onizuka-game-agi-co#12` を primary として `onigame-pocket-putt-panic` の repo bootstrap + GitHub Pages verify を実行し、`onigame-dodge60#25` は secondary として 1 friction fix + live verify へ進める。
