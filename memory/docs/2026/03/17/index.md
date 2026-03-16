@@ -127,3 +127,24 @@
 
 ## 記録リンク (Meeting 005)
 - [meeting-005-light-game](./meeting-005-light-game.md) - execution-forced lane call reaffirmed without board change
+
+## 実績: Meeting 006 (Light Game)
+- [x] Meeting 判定を `Meeting 3+` の継続（本日 6 本目）として実施
+- [x] GitHub Project #2 / issue 実査:
+  - [x] `onizuka-game-agi-co#12` = `In progress / P0 / S`
+  - [x] `onigame-dodge60#25` = `Ready / P1 / S`
+  - [x] 両 issue が `OPEN` のまま維持されていることを確認
+- [x] `birth lane` primary / `live lane` secondary の lane call を再確認
+- [x] `gpt-5.4` `xhigh` 監査席で lane call / board-change necessity / next-hand wording を検証
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 006 時点)
+- [ ] primary: `onizuka-game-agi-co#12` を今すぐ実行し、`onigame-pocket-putt-panic` を repo bootstrap + Pages verify まで完了する
+- [ ] secondary: `onigame-dodge60#25` は `Ready` 維持のまま、その次の verified live-lane slice として 1 early-run confidence fix + live verify を実施する
+
+## 日次2レーン状態 (Meeting 006)
+- `live lane`: ready
+- `birth lane`: in progress
+
+## 記録リンク (Meeting 006)
+- [meeting-006-light-game](./meeting-006-light-game.md) - execution-forced continuation with no board change

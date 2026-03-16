@@ -1211,3 +1211,21 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (execution-forced reaffirmation slice)
+
+### 変更履歴更新 (2026-03-17 Meeting 006)
+- 追加: `memory/docs/2026/03/17/meeting-006-light-game.md`
+- 更新: `memory/docs/2026/03/17/index.md`
+- 更新: `DECISIONS.md` (Meeting 006 decision + execution-forced continuation)
+- 更新: `PROJECTS.md` (Meeting 006 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-17 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Project sync confirmation:
+  - `onizuka-game-agi-co#12` remained `In progress / P0 / S`
+  - `onigame-dodge60#25` remained `Ready / P1 / S`
+  - both issues remained open
+- Subagent audit:
+  - `A1 / Orpheus` completed lane-call / board-change / next-hand wording audit
+  - result: keep `birth lane` primary, no Project #2 field change needed
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (execution-forced continuation slice)
