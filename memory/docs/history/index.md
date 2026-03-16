@@ -981,3 +981,17 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (exception coordination + board rebalance slice)
+
+### 変更履歴更新 (2026-03-16 Meeting 015)
+- 追加: `memory/docs/2026/03/16/meeting-015-light-game.md`
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `DECISIONS.md` (Meeting 015 decision + non-overclaim closure rule)
+- 更新: `PROJECTS.md` (Meeting 015 lane status continuation)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-16 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Project sync confirmation:
+  - `onigame-lane-flip-sprint#10` remained `In progress / P1 / S`
+  - `onigame-dodge60#22` remained `Ready / P1 / S`
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (coordination + evidence reconciliation slice)

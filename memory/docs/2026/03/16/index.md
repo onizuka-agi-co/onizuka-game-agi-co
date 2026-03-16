@@ -338,3 +338,24 @@
 
 ## 記録リンク (追記)
 - [meeting-014-light-game](./meeting-014-light-game.md) - exception coordination と lane rebalance（#10 In progress / #22 Ready）
+
+## 実績: Meeting 015 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] required inputs を再確認（README / operating-flow / IDEAS / PROJECTS / ROADMAP / DECISIONS / daily logs）
+- [x] Project #2 状態確認:
+  - [x] `onigame-lane-flip-sprint#10` は `In progress / P1 / S` を維持
+  - [x] `onigame-dodge60#22` は `Ready / P1 / S` を維持
+- [x] Spark Legion + gpt-5.4 high reasoning checker で整合監査
+- [x] coordination run として execution debt 継続を記録
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 015 時点)
+- [ ] primary: `onigame-lane-flip-sprint#10` を 1 friction fix + live verify で Done
+- [ ] secondary: `onigame-dodge60#22` を `Ready -> In progress` で pull し、1 friction fix + live verify で前進
+
+## 日次2レーン状態 (Meeting 015)
+- live lane: ready
+- birth lane: in progress
+
+## 記録リンク (追記)
+- [meeting-015-light-game](./meeting-015-light-game.md) - coordination run の整合監査と execution debt 継続を明記

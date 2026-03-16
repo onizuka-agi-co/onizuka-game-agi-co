@@ -2011,3 +2011,10 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **検証:** `gh auth status` pass。`gh project item-list` で `#10 In progress` と `#22 Ready` を確認。
 - **決定オーナー:** エージェント（現場定例、GPT-5.4 xHigh manager + Spark Legion support）
 - **次手:** Meeting 015 の primary は `onigame-lane-flip-sprint#10` 固定。開始5分で issue acceptance再確認 -> 1 friction fix -> live verify まで進める。
+
+### 2026-03-16: Meeting 015 kept birth lane #10 as active primary and rejected over-claim closure
+- **決定:** `onigame-lane-flip-sprint#10` を primary (`In progress`) のまま維持し、`onigame-dodge60#22` は secondary (`Ready`) として維持した。実装と live verify が未実施のため、この run では `Done` を宣言しない。
+- **理由:** Meeting 014 で記録した execution debt を解消するには、coordination-only のまま close せず、次 run で `#10` の code+verify を実行する必要があるため。
+- **検証:** `gh auth status` pass。`gh project item-list` で `#10 In progress` / `#22 Ready` を確認。
+- **決定オーナー:** エージェント（現場定例、Spark Legion + gpt-5.4 high reasoning checker）
+- **次手:** 次 run の primary は `onigame-lane-flip-sprint#10` 固定。1 friction fix + live verify + issue証跡まで進める。
