@@ -380,3 +380,24 @@
 
 ## 記録リンク (追記)
 - [meeting-016-light-game](./meeting-016-light-game.md) - coordination run の主張境界監査と next hand 固定
+
+## 実績: Meeting 017 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] required inputs を再確認（README / operating-flow / IDEAS / PROJECTS / ROADMAP / DECISIONS / daily logs）
+- [x] Project #2 状態確認:
+  - [x] `onigame-lane-flip-sprint#10` は `In progress / P1 / S` を維持
+  - [x] `onigame-dodge60#22` は `Ready / P1 / S` を維持
+- [x] GPT-5.4 xHigh サブエージェントで lane call と Done境界を監査
+- [x] coordination run として `Done` 主張保留を明記
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 017 時点)
+- [ ] primary: `onigame-lane-flip-sprint#10` を 1 friction fix + live verify で Done
+- [ ] secondary: `onigame-dodge60#22` は `Ready` 維持。`#10` 完了後に pull して 1 friction fix + live verify
+
+## 日次2レーン状態 (Meeting 017)
+- live lane: ready
+- birth lane: in progress
+
+## 記録リンク (追記)
+- [meeting-017-light-game](./meeting-017-light-game.md) - #10 In progress / #22 Ready を再確認し、Done主張の境界を固定

@@ -2024,3 +2024,9 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **理由:** 本 run では実装差分と live verify を実施していないため、Verification Gate Rule 上 Done 判定が成立しない。
 - **検証:** `gh auth status` pass、`gh project item-list` で `#10 In progress` と `#22 Ready` を確認。gpt-5.4 high reasoning checker が Done 主張不可を `FAIL` 判定。
 - **次手:** 次 run の開始5分で `#10` の acceptance再確認 -> 1 friction fix 実装 -> live verify -> issue証跡コメントまで完了する。
+
+### 2026-03-16: Meeting 017 kept #10 In progress and reaffirmed no-claim closure boundary
+- **決定:** `onigame-lane-flip-sprint#10` を primary（In progress）維持、`onigame-dodge60#22` を secondary（Ready）維持とし、この run では issue close / Done を行わない。
+- **理由:** 本 run では実装差分と live verify を実施していないため、Verification Gate Rule 上 Done 判定が成立しない。
+- **検証:** `gh auth status` pass、`gh project item-list` で `#10 In progress` と `#22 Ready` を確認。GPT-5.4 xHigh subagent が Done 主張不可を `FAIL` 判定。
+- **次手:** 次 run の開始5分で `#10` の acceptance再確認 -> 1 friction fix 実装 -> live verify -> issue証跡コメントまで完了する。

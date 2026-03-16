@@ -773,3 +773,11 @@ _更新日: 2026-03-16_
 - Next action:
   - Primary (`birth lane`): execute `onigame-lane-flip-sprint#10` with one friction fix + live verification.
   - Secondary (`live lane`): keep `onigame-dodge60#22` ready and pull after `#10` closure.
+
+## 2026-03-16 Meeting 017 update
+- `onigame-dodge60` remains **active** (live lane item `onigame-dodge60#22` stays `Ready / P1 / S`).
+- `onigame-lane-flip-sprint` remains **active** (birth lane item `onigame-lane-flip-sprint#10` stays `In progress / P1 / S`).
+- Meeting 017 は coordination run として、実装・live verify 未実施のため `Done` 主張を保留。
+- Next action:
+  - Primary (`birth lane`): execute `onigame-lane-flip-sprint#10` with one friction fix + live verification.
+  - Secondary (`live lane`): keep `onigame-dodge60#22` ready and pull after `#10` closure.

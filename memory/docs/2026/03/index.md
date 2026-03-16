@@ -43,3 +43,4 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-16](./16/) - Meeting 015 で `#10 In progress / #22 Ready` を再確認し、coordination-only の execution debt 継続を記録
 
 - [2026-03-16](./16/) - Meeting 016 で #10 In progress / #22 Ready を再確認し、Done主張の境界を固定（coordination-only）
+- [2026-03-16](./16/) - Meeting 017 で #10 In progress / #22 Ready を再確認し、Done主張境界を維持（coordination-only）
