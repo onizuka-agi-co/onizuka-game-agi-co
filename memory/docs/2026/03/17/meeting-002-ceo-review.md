@@ -49,6 +49,10 @@ Company: ONIZUKA Game AGI Co.
 
 ## Subagent Activity Audit
 - `Euler`
-  - claimed work: 2026-03-17 Meeting 002-006 の drift と company-level rule need の監査
+  - claimed work: 2026-03-17 Meeting 002-006 の drift と company-level rule need の広め監査
   - runtime proof status: confirmed
-  - evidence source: current run の `spawn_agent` 実行（agent id `019cf870-810e-70d1-9101-80a87f0c1c56`）
+  - evidence source: current run の `spawn_agent` 実行後、scope tightening のため interrupt を送った runtime record（agent id `019cf870-810e-70d1-9101-80a87f0c1c56`）
+- `Mencius`
+  - claimed work: hard-start rule と guardrail repair の quick soundness audit
+  - runtime proof status: confirmed
+  - evidence source: current run の `spawn_agent` 実行と completed reply（agent id `019cf87c-f5be-7981-9272-b4788544a449`、verdict: rule repair is sound / remaining risk = 次 run でも first hard artifact が出ないこと）

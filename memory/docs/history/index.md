@@ -1243,6 +1243,9 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
   - `gh project item-list 2 --owner onizuka-agi-co --limit 200 --format json` で `#12 In progress / #25 Ready` を確認
   - `gh issue view 12` / `gh issue view 25` で両 issue `OPEN` を確認
   - `gh repo view onizuka-agi-co/onigame-pocket-putt-panic` で repo 未作成を確認
+- Subagent audit:
+  - `Euler` は広め監査を開始後に scope tightening のため interrupted
+  - `Mencius` は quick soundness audit を completed し、rule repair は sound / 最大リスクは次 run でも first hard artifact が出ないことと判定
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (CEO operating-system repair slice)
