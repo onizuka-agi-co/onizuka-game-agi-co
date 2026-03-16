@@ -154,11 +154,14 @@ This keeps the next automation run aligned with the latest company policy.
 
 ## Current Project Status
 
-- Current active game: `onigame-dodge60`
-- Repo: `https://github.com/onizuka-agi-co/onigame-dodge60`
-- Live: `https://onizuka-agi-co.github.io/onigame-dodge60/`
+- Current live lane: `onigame-dodge60`
+- Live repo: `https://github.com/onizuka-agi-co/onigame-dodge60`
+- Live URL: `https://onizuka-agi-co.github.io/onigame-dodge60/`
+- Current active birth lane: `Pocket Putt Panic`
+- Birth lane issue: `onizuka-game-agi-co#12` (`In progress`, target repo `onigame-pocket-putt-panic`)
+- Next incubating candidate behind the active birth lane: `Signal Drift`
 - Grid Tactics was closed on 2026-03-12 because it did not fit the company's lightweight, GitHub-Pages-first constraints well enough.
-- Current next step is to playtest `onigame-dodge60` and fix the top friction points before the next release pass.
+- Current next step is to bootstrap `onigame-pocket-putt-panic` to a Pages-verified first playable while keeping `onigame-dodge60#25` as the next live-lane friction fix.
 
 ## Repository Structure
 

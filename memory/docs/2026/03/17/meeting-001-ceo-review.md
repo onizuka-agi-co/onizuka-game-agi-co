@@ -21,9 +21,10 @@ Company: ONIZUKA Game AGI Co.
 ## 3. 変えるべき点
 - `Pocket Putt Panic` を `incubating` のままではなく `adopted` に同期する。
 - behind-the-lane 候補を空にしないため、`Signal Drift` を `incubating` に昇格する。
-- `ROADMAP.md` と `PROJECTS.md` を 2026-03-17 の dual-lane 現況へ更新する。
+- `README.md` / `ROADMAP.md` / `PROJECTS.md` を 2026-03-17 の dual-lane 現況へ更新する。
 
 ## 4. 実際に更新したファイル
+- `README.md`
 - `IDEAS.md`
 - `ROADMAP.md`
 - `PROJECTS.md`
