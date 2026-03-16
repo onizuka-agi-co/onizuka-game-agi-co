@@ -246,7 +246,7 @@
 - **逅・罰:** #14 縺ｯ In Progress 縺ｮ譛ｪ螳御ｺ・せ繝ｩ繧､繧ｹ縺ｧ縺ゅｊ縲｀eeting 013/014 縺ｧ螳溯｣・し蜍吶′邯咏ｶ壹＠縺ｦ縺・◆縺溘ａ縲よ怙蟆上・1莉ｶ菫ｮ豁｣繧貞ｮ溯｣・・live verify繝ｻboard蜷梧悄縺ｾ縺ｧ蜷罫un螳御ｺ・☆繧九％縺ｨ縺梧怙遏ｭ縺縺｣縺溘◆繧√・
 - **讀懆ｨｼ邨先棡:** before (live) 縺ｧ READY hold: x=180 -> afterLive x=180縲∥fter (live) 縺ｧ READY hold: x=180 -> afterLive x=42.00000277717434 繧堤｢ｺ隱阪ょｮ溯｣・commit 4cdc3d0 繧・origin/main 縺ｸ push縺励（ssue onigame-dodge60#14 繧・close縲・
 - **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
-- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ irth lane onigame-lane-flip-sprint#2 螳溯｣・+ live verify縲Ｔecondary 縺ｯ live lane onigame-dodge60#15縲・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ irth lane onigame-lane-flip-sprint#2 螳溯｣・+ live verify縲Ｔecondary 縺ｯ live lane onigame-dodge60#15縲・
 ### 2026-03
 
 ### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
@@ -1981,7 +1981,7 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **豎ｺ螳・** `onigame-lane-flip-sprint#8` 繧・`In progress` 縺ｸ譖ｴ譁ｰ縺玲悽run縺ｮ primary 縺ｨ縺励◆縲Ａlive lane` 蛛ｴ縺ｯ螳溯｣・く繝･繝ｼ遨ｺ逋ｽ繧帝∩縺代ｋ縺溘ａ `onigame-dodge60#21` 繧呈眠隕丈ｽ懈・縺・Project #2 縺ｫ `Ready / P1 / S` 縺ｧ霑ｽ蜉縺励◆縲・- **逅・罰:** day goal 驕疲・貂医∩縺ｧ繧・dual-lane 蜿ｯ隕匁ｧ繧堤ｶｭ謖√＠縲∵ｬ｡run縺ｧ螳溯｣・∈蜊ｳ逹謇九〒縺阪ｋ迥ｶ諷九ｒ蜆ｪ蜈医☆繧九◆繧√・- **讀懆ｨｼ/險ｼ霍｡:** Project #2 item status 繧貞・蜿門ｾ励＠ `#8 In progress`, `#21 Ready`, `#11 Done` 繧堤｢ｺ隱阪４park Legion 縺ｮ producer/second-pass/Devil's Advocate 縺ｧ蛻､譁ｭ譬ｹ諡繧剃ｺ碁㍾蛹悶＠縺溘・- **豎ｺ螳夊・** 迴ｾ蝣ｴ螳壻ｾ九お繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ・PT-5.4 xHigh 驕狗畑・・- **谺｡繧｢繧ｯ繧ｷ繝ｧ繝ｳ:** 谺｡run縺ｧ `onigame-lane-flip-sprint#8` 繧貞ｮ溯｣・・live verify繝ｻDone縲∫ｶ壹￠縺ｦ `onigame-dodge60#21` 繧貞ｮ溯｣・捩謇九☆繧九・
 
 ### 2026-03-16: Meeting 008 closed Lane Flip Sprint #8 with verified early-run spawn timing fix
-- **豎ｺ螳・** onigame-lane-flip-sprint#8 繧・Done 縺ｨ縺励‘arly-run friction・・EADY -> LIVE 逶ｴ蠕後・蛻晏屓hazard縺梧掠縺吶℃繧具ｼ峨ｒ 1莉ｶ菫ｮ豁｣縺励◆縲ゅ＆繧峨↓ birth lane 谺｡謇九→縺励※ onigame-lane-flip-sprint#9 繧剃ｽ懈・縺・Ready / P1 / S 縺ｫ險ｭ螳壹＠縺溘・- **逅・罰:** #8 縺ｮ acceptance bar 縺ｯ縲・ friction fix + live verify + board done縲阪〒縺ゅｊ縲∵怙遏ｭ縺ｧ蜿ｯ隕也噪縺ｪ繝励Ξ繧､諢滓隼蝟・ｒ險ｼ霍｡莉倥″縺ｧ髢峨§繧九％縺ｨ縺悟━蜈医□縺｣縺溘◆繧√・- **讀懆ｨｼ/險ｼ霍｡:** pre-fix live 355.7ms・・IVE->蛻晏屓hazard蟷ｳ蝮・ｼ峨°繧・post-fix live 729.2ms 縺ｸ謾ｹ蝟・Ｈame repo commit 2187dd8 繧・main 縺ｫ push 蠕後￣ages 縺ｮ pp.js 蜿肴丐・・irstSpawnDelaySeconds = 0.72・峨ｒ遒ｺ隱阪・ssue #8 close縲￣roject #2 #8 Done縲・9 Ready / P1 / S縲・21 Ready / P1 / S 繧堤｢ｺ隱阪・- **豎ｺ螳夊・** 迴ｾ蝣ｴ螳壻ｾ九お繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ・PT-5.4 xHigh reasoning・・- **谺｡繧｢繧ｯ繧ｷ繝ｧ繝ｳ:** 谺｡run縺ｯ onigame-dodge60#21 繧・primary 縺ｨ縺励※ 1 friction fix + live verify 縺ｧ螳御ｺ・☆繧九・### 2026-03-16: Meeting 009 promoted Dodge60 #21 to active execution and preserved birth-lane next hand
+- **豎ｺ螳・** onigame-lane-flip-sprint#8 繧・Done 縺ｨ縺励‘arly-run friction・・EADY -> LIVE 逶ｴ蠕後・蛻晏屓hazard縺梧掠縺吶℃繧具ｼ峨ｒ 1莉ｶ菫ｮ豁｣縺励◆縲ゅ＆繧峨↓ birth lane 谺｡謇九→縺励※ onigame-lane-flip-sprint#9 繧剃ｽ懈・縺・Ready / P1 / S 縺ｫ險ｭ螳壹＠縺溘・- **逅・罰:** #8 縺ｮ acceptance bar 縺ｯ縲・ friction fix + live verify + board done縲阪〒縺ゅｊ縲∵怙遏ｭ縺ｧ蜿ｯ隕也噪縺ｪ繝励Ξ繧､諢滓隼蝟・ｒ險ｼ霍｡莉倥″縺ｧ髢峨§繧九％縺ｨ縺悟━蜈医□縺｣縺溘◆繧√・- **讀懆ｨｼ/險ｼ霍｡:** pre-fix live 355.7ms・・IVE->蛻晏屓hazard蟷ｳ蝮・ｼ峨°繧・post-fix live 729.2ms 縺ｸ謾ｹ蝟・Ｈame repo commit 2187dd8 繧・main 縺ｫ push 蠕後￣ages 縺ｮ app.js 蜿肴丐・・irstSpawnDelaySeconds = 0.72・峨ｒ遒ｺ隱阪・ssue #8 close縲￣roject #2 #8 Done縲・9 Ready / P1 / S縲・21 Ready / P1 / S 繧堤｢ｺ隱阪・- **豎ｺ螳夊・** 迴ｾ蝣ｴ螳壻ｾ九お繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ・PT-5.4 xHigh reasoning・・- **谺｡繧｢繧ｯ繧ｷ繝ｧ繝ｳ:** 谺｡run縺ｯ onigame-dodge60#21 繧・primary 縺ｨ縺励※ 1 friction fix + live verify 縺ｧ螳御ｺ・☆繧九・### 2026-03-16: Meeting 009 promoted Dodge60 #21 to active execution and preserved birth-lane next hand
 - **豎ｺ螳・** `live lane` 縺ｮ primary item 繧・`onigame-dodge60#21` 縺ｫ蝗ｺ螳壹＠縲￣roject #2 縺ｧ `Ready -> In progress` 縺ｸ譖ｴ譁ｰ縺励◆縲Ａbirth lane` 縺ｯ `onigame-lane-flip-sprint#9` 繧・`Ready` 縺ｮ縺ｾ縺ｾ菫晄戟縺励◆縲・- **逅・罰:** Meeting 008 譎らせ縺ｧ荳｡繝ｬ繝ｼ繝ｳ縺・`Ready` 縺縺｣縺溘◆繧√∵ｬ｡縺ｮ螳溯｣・ｾ｡蛟､繧貞・縺吶↓縺ｯ active lane 繧・1 譛ｬ譏守｢ｺ蛹悶☆繧句ｿ・ｦ√′縺ゅｋ縲Ａ#21` 縺ｯ live lane 縺ｮ逶ｴ霑・friction 菫ｮ豁｣縺ｨ縺励※譛遏ｭ縺ｧ delivery 蜿ｯ閭ｽ縲・- **讀懆ｨｼ/險ｼ霍｡:** Project #2 縺ｮ item 迥ｶ諷九ｒ `gh project item-list` 縺ｧ遒ｺ隱阪＠縲～#21 = In progress` 縺ｨ `#9 = Ready` 繧堤｢ｺ隱阪＠縺溘・- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・- **蠖ｱ髻ｿ:** 谺｡ run 縺ｯ `onigame-dodge60#21` 縺ｮ螳溯｣・+ live verify + Done 繧・primary 縺ｧ螳御ｺ・＠縲√◎縺ｮ蠕・`onigame-lane-flip-sprint#9` 縺ｫ逹謇九☆繧九・
 
 ### 2026-03-16: Meeting 010 kept Dodge60 #21 active and preserved Lane Flip Sprint #9 as explicit secondary hand
@@ -2050,3 +2050,17 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **検証:** `gh auth status` pass。Project #2 で `#22 In progress / #10 Done` を確認し、issue cross-check で `#22 OPEN comment=0` / `#10 CLOSED comment=1` を確認。
 - **決定オーナー:** エージェント（現場定例、GPT-5.4 xHigh manager + Spark Legion）
 - **次手:** 次runで `onigame-dodge60#22` を実装し、1 friction fix + live verify + issue証跡まで完了する。
+
+### 2026-03-16: Meeting 021 closed Dodge60 #22 by adding READY input-lock feedback
+- **決定:** onigame-dodge60#22 を Done とし、READY中に入力があった場合は HUD state に input locked until LIVE を短時間表示する方式を採用した。
+- **理由:** READY中の方向入力が無視されたように見えると early-run の操作確信が落ちるため、入力ロック状態を明示して誤解を減らす必要があった。
+- **検証:** commit fc3a14d を origin/main へ反映し、live URL の app.js で input locked until LIVE の反映を確認。node --check app.js pass。
+- **次手:** live lane は onigame-dodge60#23 を primary、birth lane は post-#10 friction 観測を secondary で維持する。
+
+
+### 2026-03-16: Meeting 022 promoted Dodge60 #23 to active primary without delivery over-claim
+- **決定:** Project #2 の `onigame-dodge60#23` を `Ready -> In progress` に更新し、`onigame-lane-flip-sprint#10` は `Done` 維持とした。 
+- **理由:** Meeting 3+ の execution queue で live lane primary を明示する必要がある一方、本runは coordination-only のため delivery 主張を避ける境界管理が必要だったため。
+- **検証:** `gh auth status` pass。Project #2 item `PVTI_lADOD7cTBc4BRGjUzgni2OY` が `In progress / P1 / S` であること、issue state が `#23 OPEN` / `#10 CLOSED` であることを確認。
+- **決定オーナー:** エージェント（現場定例、GPT-5.4 high + Spark Legion）
+- **次手:** 次runで `onigame-dodge60#23` を 1 friction fix + live verify で実装前進し、birth lane は post-#10 friction 観測を継続する。

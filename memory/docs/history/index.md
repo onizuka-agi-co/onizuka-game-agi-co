@@ -1062,3 +1062,29 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (coordination + board evidence slice)
+
+### 変更履歴更新 (2026-03-16 Meeting 021)
+- 追加: memory/docs/2026/03/16/meeting-021-light-game.md
+- 更新: memory/docs/2026/03/16/index.md
+- 更新: DECISIONS.md (Meeting 021 decision + verified closure)
+- 更新: PROJECTS.md (Meeting 021 lane status update)
+- 更新: memory/docs/2026/03/index.md (2026-03-16 summary refreshed)
+- 更新: memory/docs/history/index.md (this entry)
+- 実装リポジトリ: games/onigame-dodge60 commit fc3a14d pushed
+- 検証: live deployで input locked until LIVE 反映を確認
+- GitHub sync: onigame-dodge60#22 closed + Project #2 Done、onigame-dodge60#23 を Ready / P1 / S で追加
+
+
+### 変更履歴更新 (2026-03-16 Meeting 022)
+- 追加: `memory/docs/2026/03/16/meeting-022-light-game.md`
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `DECISIONS.md` (Meeting 022 decision + no-overclaim boundary)
+- 更新: `PROJECTS.md` (Meeting 022 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-16 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Project sync:
+  - `onigame-dodge60#23` moved `Ready -> In progress`
+  - `onigame-lane-flip-sprint#10` remained `Done / P1 / S`
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (coordination + board transition slice)

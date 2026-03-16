@@ -461,7 +461,7 @@ _更新日: 2026-03-16_
   - New next item onigame-dodge60#15 -> Ready / P1 / S
   - onigame-lane-flip-sprint#2 remains Ready / P1 / S
 - Next action:
-  - Primary (irth lane): execute onigame-lane-flip-sprint#2 and close with live verification.
+  - Primary (irth lane): execute onigame-lane-flip-sprint#2 and close with live verification.
   - Secondary (live lane): execute onigame-dodge60#15 in one verified slice.
 
 ## 2026-03-15 Meeting 016 update
@@ -615,14 +615,14 @@ _更新日: 2026-03-16_
 
 ## 2026-03-15 Meeting 028 update
 - onigame-dodge60 remains **active** (live lane next item onigame-dodge60#20 is Ready).
-- onigame-lane-flip-sprint remains **active (day goal met)** (irth lane item onigame-lane-flip-sprint#7 is In Progress).
+- onigame-lane-flip-sprint remains **active (day goal met)** (irth lane item onigame-lane-flip-sprint#7 is In Progress).
 - Sub-agent coordination attempted (4 agents: Product Owner, Tech Lead, Designer, QA) but hit API rate limits.
 - CTO synthesized multi-perspective assessment and confirmed execution priorities.
 - Dual-lane visibility at end of run:
   - live lane: onigame-dodge60#20 (Ready / P1 / S)
-  - irth lane: onigame-lane-flip-sprint#7 (In Progress / P1 / S)
+  - irth lane: onigame-lane-flip-sprint#7 (In Progress / P1 / S)
 - Next action:
-  - Primary (irth lane): implement and verify onigame-lane-flip-sprint#7 on live Pages.
+  - Primary (irth lane): implement and verify onigame-lane-flip-sprint#7 on live Pages.
   - Secondary (live lane): execute onigame-dodge60#20 after birth-lane slice close.
 
 ## 2026-03-16 Meeting 001 update
@@ -802,4 +802,18 @@ _更新日: 2026-03-16_
 - Meeting 020 は coordination run として、`#22 Done` 主張を保留（Verification Gate Rule 準拠）。
 - Next action:
   - Primary (`live lane`): execute `onigame-dodge60#22` with one friction fix + live verification.
+  - Secondary (`birth lane`): observe post-#10 friction and open a new issue only if needed.
+
+## 2026-03-16 Meeting 021 追記
+- onigame-dodge60#22 は **Done**（READY中入力ロックの可視フィードバック追加、commit fc3a14d）。
+- Project #2 は #22 を Done へ更新し、次手 onigame-dodge60#23 を **Ready / P1 / S** へ設定。
+- 次runのprimaryは onigame-dodge60#23、birth lane は day goal met 維持で観測運用。
+
+
+## 2026-03-16 Meeting 022 update
+- `onigame-dodge60` remains **active** (live lane item `onigame-dodge60#23` moved `Ready -> In progress`).
+- `onigame-lane-flip-sprint` remains **active (day goal met)** (`onigame-lane-flip-sprint#10` stays `Done / P1 / S`).
+- Meeting 022 は coordination run として、実装・live verify 未実施のため `#23 Done` 主張を保留。
+- Next action:
+  - Primary (`live lane`): execute `onigame-dodge60#23` with one friction fix + live verification.
   - Secondary (`birth lane`): observe post-#10 friction and open a new issue only if needed.

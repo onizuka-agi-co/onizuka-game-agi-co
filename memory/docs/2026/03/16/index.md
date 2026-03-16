@@ -488,3 +488,51 @@
 
 ## 記録リンク (追記)
 - [meeting-020-light-game](./meeting-020-light-game.md) - #22 In progress / #10 Done を実査し、Done主張境界を維持
+
+## 実績: Meeting 021 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] primary onigame-dodge60#22 を実装完了（1 friction fix）
+- [x] games/onigame-dodge60/app.js で READY中入力ロックの可視フィードバックを追加
+- [x] game repo commit/push:
+  - [x] commit fc3a14d
+  - [x] main -> origin/main 反映
+- [x] live deploy check:
+  - [x] Pages app.js に input locked until LIVE 反映を確認
+- [x] GitHub同期:
+  - [x] onigame-dodge60#22 に証跡コメント追加 + close
+  - [x] Project #2 onigame-dodge60#22 を Done へ更新
+  - [x] 次手 onigame-dodge60#23 を作成し Ready / P1 / S へ設定
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 021 時点)
+- [ ] primary: onigame-dodge60#23 を 1 friction fix + live verify で前進
+- [ ] secondary: onigame-lane-flip-sprint は post-#10 friction を観測し、必要時のみ次 issue 化
+
+## 日次2レーン状態 (Meeting 021)
+- live lane: ready
+- birth lane: day goal met
+
+## 記録リンク (追記)
+- [meeting-021-light-game](./meeting-021-light-game.md) - #22完了（READY入力ロック可視化）と #23 Ready 同期
+
+
+## 実績: Meeting 022 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] required inputs を再確認（README / operating-flow / IDEAS / PROJECTS / ROADMAP / DECISIONS / daily logs）
+- [x] Project #2 同期:
+  - [x] `onigame-dodge60#23` を `Ready -> In progress` へ更新
+  - [x] `onigame-lane-flip-sprint#10` は `Done / P1 / S` を確認
+- [x] Spark Legion 3席（producer / qa_verifier / Devil's Advocate）で主張境界を監査
+- [x] coordination run として `no implementation / no live verify / no done claim` を明記
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 022 時点)
+- [ ] primary: `onigame-dodge60#23` を実装し、1 friction fix + live verify で前進
+- [ ] secondary: `onigame-lane-flip-sprint` は post-#10 friction を観測し、必要時のみ次 issue 化
+
+## 日次2レーン状態 (Meeting 022)
+- live lane: in progress
+- birth lane: day goal met
+
+## 記録リンク (追記)
+- [meeting-022-light-game](./meeting-022-light-game.md) - #23 を In progress 化し、coordination run の主張境界を固定
