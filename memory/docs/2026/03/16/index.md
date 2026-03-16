@@ -467,3 +467,24 @@
 
 ## 記録リンク (追記)
 - [meeting-019-light-game](./meeting-019-light-game.md) - #22 を In progress 化し、Done主張境界を再固定
+
+## 実績: Meeting 020 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] required inputs を再確認（README / operating-flow / IDEAS / PROJECTS / ROADMAP / DECISIONS / daily logs）
+- [x] Project #2 状態確認:
+  - [x] `onigame-dodge60#22` は `In progress / P1 / S` を維持
+  - [x] `onigame-lane-flip-sprint#10` は `Done / P1 / S` を確認
+- [x] Spark Legion 3席（producer / qa_verifier / Devil's Advocate）で証跡監査
+- [x] coordination run として `#22 Done` 主張ブロックを明記
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 020 時点)
+- [ ] primary: `onigame-dodge60#22` を実装し、1 friction fix + live verify で Done
+- [ ] secondary: `onigame-lane-flip-sprint` は post-#10 friction を観測し、必要時のみ次issue化
+
+## 日次2レーン状態 (Meeting 020)
+- live lane: in progress
+- birth lane: day goal met
+
+## 記録リンク (追記)
+- [meeting-020-light-game](./meeting-020-light-game.md) - #22 In progress / #10 Done を実査し、Done主張境界を維持

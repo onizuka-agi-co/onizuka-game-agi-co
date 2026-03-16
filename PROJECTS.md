@@ -795,3 +795,11 @@ _更新日: 2026-03-16_
 - Next action:
   - Primary (`live lane`): execute `onigame-dodge60#22` with one friction fix + live verification.
   - Secondary (`birth lane`): observe post-#10 friction and open a new issue only if needed.
+
+## 2026-03-16 Meeting 020 update
+- `onigame-dodge60` remains **active** (live lane item `onigame-dodge60#22` stays `In progress / P1 / S`).
+- `onigame-lane-flip-sprint` remains **active (day goal met)** (`onigame-lane-flip-sprint#10` stays `Done / P1 / S`).
+- Meeting 020 は coordination run として、`#22 Done` 主張を保留（Verification Gate Rule 準拠）。
+- Next action:
+  - Primary (`live lane`): execute `onigame-dodge60#22` with one friction fix + live verification.
+  - Secondary (`birth lane`): observe post-#10 friction and open a new issue only if needed.

@@ -2043,3 +2043,10 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **検証:** `gh auth status` pass。`gh project item-list` で `#22 = In progress` と `#10 = Done` を確認。GPT-5.4 xHigh subagent 監査で `#22 Done` 主張不可（証跡不足）を確認。
 - **決定オーナー:** エージェント（現場定例、GPT-5.4 xHigh manager + checker）
 - **次手:** 次 run で `onigame-dodge60#22` を実装し、1 friction fix + live verify + issue証跡投入まで完了する。
+
+### 2026-03-16: Meeting 020 kept Dodge60 #22 in progress and blocked premature Done claims
+- **決定:** `onigame-dodge60#22` は `In progress` 維持、`onigame-lane-flip-sprint#10` は `Done` 維持とし、本runで `#22 Done` は主張しない。
+- **理由:** Verification Gate Rule に従い、実装差分・live verify・issue証跡が揃う前の完了主張を防ぐため。
+- **検証:** `gh auth status` pass。Project #2 で `#22 In progress / #10 Done` を確認し、issue cross-check で `#22 OPEN comment=0` / `#10 CLOSED comment=1` を確認。
+- **決定オーナー:** エージェント（現場定例、GPT-5.4 xHigh manager + Spark Legion）
+- **次手:** 次runで `onigame-dodge60#22` を実装し、1 friction fix + live verify + issue証跡まで完了する。
