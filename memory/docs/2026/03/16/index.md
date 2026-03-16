@@ -244,3 +244,31 @@
 
 ## 記録リンク (追記)
 - [meeting-010-light-game](./meeting-010-light-game.md) - #21 In progress / #9 Ready の dual-lane 可視を再確認
+
+## 実績: Meeting 011 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] primary onigame-dodge60#21 を実装完了（1 friction fix）
+- [x] games/onigame-dodge60/app.js で LIVE cue の消灯条件を pointerActive 依存から playerMovedThisFrame（実移動）へ変更
+- [x] game repo commit/push:
+  - [x] commit 8ac0be1
+  - [x] main -> origin/main 反映
+- [x] live verify:
+  - [x] hold without move 2300ms: state=LIVE かつ cueHidden=false
+  - [x] hold without move 3200ms: cueHidden=true（fallback）
+  - [x] actual move after 2600ms: cueHidden=false -> true
+- [x] GitHub同期:
+  - [x] onigame-dodge60#21 に証跡コメント追加 + close
+  - [x] Project #2 onigame-dodge60#21 を Done へ更新
+  - [x] 次手 onigame-dodge60#22 を作成し Ready / P1 / S へ設定
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 011 時点)
+- [ ] primary: onigame-lane-flip-sprint#9 を 1 friction fix + live verify で前進
+- [ ] secondary: onigame-dodge60#22 を 1 friction fix + live verify で実装
+
+## 日次2レーン状態 (Meeting 011)
+- live lane: ready
+- birth lane: ready
+
+## 記録リンク (追記)
+- [meeting-011-light-game](./meeting-011-light-game.md) - #21 実装完了（LIVE cue 消灯を実移動判定化）と #22 Ready 同期

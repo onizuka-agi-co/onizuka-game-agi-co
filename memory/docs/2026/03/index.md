@@ -36,3 +36,4 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-16](./16/) - Meeting 008 で `onigame-lane-flip-sprint#8` を完了（初回hazard出現遅延 0.35s -> 0.72s）、birth lane 次手 `#9` を Ready 化
 - [2026-03-16](./16/) - Meeting 009 で `onigame-dodge60#21` を In Progress 化し、`onigame-lane-flip-sprint#9` を Ready 維持
 - [2026-03-16](./16/) - Meeting 010 で `onigame-dodge60#21` In progress と `onigame-lane-flip-sprint#9` Ready の dual-lane 可視を再確認
+- [2026-03-16](./16/) - Meeting 011 で onigame-dodge60#21 を完了（LIVE cue を実移動判定化）し、live lane 次手 #22 を Ready 化

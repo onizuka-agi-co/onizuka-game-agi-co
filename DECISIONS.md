@@ -1,969 +1,1378 @@
-# DECISIONS.md - 決定ログ
+﻿# DECISIONS.md - 豎ｺ螳壹Ο繧ｰ
 
-重要な決定を記録する。理由も含めて。
+驥崎ｦ√↑豎ｺ螳壹ｒ險倬鹸縺吶ｋ縲ら炊逕ｱ繧ょ性繧√※縲・
 
 ---
 
 ## 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: CEO Review 001 aligned funnel/roadmap with current operating reality
-- **決定:** 会社の主戦略（dual-track day）は維持しつつ、company operating system の情報整合を優先して `IDEAS.md` と `ROADMAP.md` を更新した。`Pocket Putt Panic` は `inbox` から `incubating` に昇格し、`Lane Flip Sprint` と `One Stroke Sweep` は `adopted` 履歴へ反映した。
-- **理由:** 現場実行は順調だが、企画ファネルと中期計画の記述が実態より古く、次 run の判断コストを増やしていたため。戦略転換より canonical docs の同期修正が効果的だった。
-- **検証結果:** `README.md` / `docs/company-operating-flow.md` / `PLANNING_MEETING.md` / `IDEAS.md` / `PROJECTS.md` / `ROADMAP.md` / `DECISIONS.md` / 2026-03-16 日次ログを確認。`live lane` と `birth lane` の day goal 達成状態、および次 hand `onigame-lane-flip-sprint#8` を再確認した。
-- **決定者:** エージェント（CEO review, GPT-5.4 xHigh reasoning）
-- **影響:** 次現場 run は `onigame-lane-flip-sprint#8` を primary、`onigame-dodge60` の post-playtest friction 改善を secondary としつつ、idea funnel は `incubating` 1件以上を維持して回す。
-### 2026-03-16: Meeting 006 closed Lane Flip Sprint #7 with first-move LIVE-cue persistence
-- **決定:** `onigame-lane-flip-sprint#7` を `Done` とし、early-run friction を1件修正した。`LIVE - flip now` cue を固定タイマーだけで消す方式から、`最初の有効レーン移動まで保持 + 1.8s fallback 自動消灯` へ変更し、issue close と Project #2 Done 同期まで同runで完了した。
-- **理由:** `#7` の acceptance bar は「first 20秒の friction 1件修正 + live verify + board同期」であり、`READY -> LIVE` 直後に cue が先に消えて初動確信が弱くなる問題が最小差分で改善できる高価値 friction だったため。
-- **検証結果:** game repo commit `071a9c1` を `origin/main` へ push。live verify で no-move `2200ms` 時点 `state=LIVE` かつ `cueHidden=false`、first move直後に lane `2 / 3 -> 1 / 3` と同時 `cueHidden=true` を確認。Project #2 で `#7 Done`、次手 `#8 Ready / P1 / S` を確認した。
-- **決定者:** エージェント（現場定例、GPT-5.4 high reasoning 補助あり）
-- **影響:** 次 run の primary は `birth lane` `onigame-lane-flip-sprint#8` の1件修正 + live verify。`live lane` は day goal met として secondary で継続改善する。
-
+- **豎ｺ螳・** 莨夂､ｾ縺ｮ荳ｻ謌ｦ逡･・・ual-track day・峨・邯ｭ謖√＠縺､縺､縲…ompany operating system 縺ｮ諠・ｱ謨ｴ蜷医ｒ蜆ｪ蜈医＠縺ｦ `IDEAS.md` 縺ｨ `ROADMAP.md` 繧呈峩譁ｰ縺励◆縲ＡPocket Putt Panic` 縺ｯ `inbox` 縺九ｉ `incubating` 縺ｫ譏・ｼ縺励～Lane Flip Sprint` 縺ｨ `One Stroke Sweep` 縺ｯ `adopted` 螻･豁ｴ縺ｸ蜿肴丐縺励◆縲・- **逅・罰:** 迴ｾ蝣ｴ螳溯｡後・鬆・ｪｿ縺縺後∽ｼ∫判繝輔ぃ繝阪Ν縺ｨ荳ｭ譛溯ｨ育判縺ｮ險倩ｿｰ縺悟ｮ滓・繧医ｊ蜿､縺上∵ｬ｡ run 縺ｮ蛻､譁ｭ繧ｳ繧ｹ繝医ｒ蠅励ｄ縺励※縺・◆縺溘ａ縲よ姶逡･霆｢謠帙ｈ繧・canonical docs 縺ｮ蜷梧悄菫ｮ豁｣縺悟柑譫懃噪縺縺｣縺溘・- **讀懆ｨｼ邨先棡:** `README.md` / `docs/company-operating-flow.md` / `PLANNING_MEETING.md` / `IDEAS.md` / `PROJECTS.md` / `ROADMAP.md` / `DECISIONS.md` / 2026-03-16 譌･谺｡繝ｭ繧ｰ繧堤｢ｺ隱阪Ａlive lane` 縺ｨ `birth lane` 縺ｮ day goal 驕疲・迥ｶ諷九√♀繧医・谺｡ hand `onigame-lane-flip-sprint#8` 繧貞・遒ｺ隱阪＠縺溘・- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ・EO review, GPT-5.4 xHigh reasoning・・- **蠖ｱ髻ｿ:** 谺｡迴ｾ蝣ｴ run 縺ｯ `onigame-lane-flip-sprint#8` 繧・primary縲～onigame-dodge60` 縺ｮ post-playtest friction 謾ｹ蝟・ｒ secondary 縺ｨ縺励▽縺､縲（dea funnel 縺ｯ `incubating` 1莉ｶ莉･荳翫ｒ邯ｭ謖√＠縺ｦ蝗槭☆縲・### 2026-03-16: Meeting 006 closed Lane Flip Sprint #7 with first-move LIVE-cue persistence
+- **豎ｺ螳・** `onigame-lane-flip-sprint#7` 繧・`Done` 縺ｨ縺励‘arly-run friction 繧・莉ｶ菫ｮ豁｣縺励◆縲ＡLIVE - flip now` cue 繧貞崋螳壹ち繧､繝槭・縺縺代〒豸医☆譁ｹ蠑上°繧峨～譛蛻昴・譛牙柑繝ｬ繝ｼ繝ｳ遘ｻ蜍輔∪縺ｧ菫晄戟 + 1.8s fallback 閾ｪ蜍墓ｶ育・` 縺ｸ螟画峩縺励（ssue close 縺ｨ Project #2 Done 蜷梧悄縺ｾ縺ｧ蜷罫un縺ｧ螳御ｺ・＠縺溘・- **逅・罰:** `#7` 縺ｮ acceptance bar 縺ｯ縲掲irst 20遘偵・ friction 1莉ｶ菫ｮ豁｣ + live verify + board蜷梧悄縲阪〒縺ゅｊ縲～READY -> LIVE` 逶ｴ蠕後↓ cue 縺悟・縺ｫ豸医∴縺ｦ蛻晏虚遒ｺ菫｡縺悟ｼｱ縺上↑繧句撫鬘後′譛蟆丞ｷｮ蛻・〒謾ｹ蝟・〒縺阪ｋ鬮倅ｾ｡蛟､ friction 縺縺｣縺溘◆繧√・- **讀懆ｨｼ邨先棡:** game repo commit `071a9c1` 繧・`origin/main` 縺ｸ push縲Ｍive verify 縺ｧ no-move `2200ms` 譎らせ `state=LIVE` 縺九▽ `cueHidden=false`縲’irst move逶ｴ蠕後↓ lane `2 / 3 -> 1 / 3` 縺ｨ蜷梧凾 `cueHidden=true` 繧堤｢ｺ隱阪１roject #2 縺ｧ `#7 Done`縲∵ｬ｡謇・`#8 Ready / P1 / S` 繧堤｢ｺ隱阪＠縺溘・- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ九；PT-5.4 high reasoning 陬懷勧縺ゅｊ・・- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `birth lane` `onigame-lane-flip-sprint#8` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａlive lane` 縺ｯ day goal met 縺ｨ縺励※ secondary 縺ｧ邯咏ｶ壽隼蝟・☆繧九・
 ### 2026-03-16: Meeting 005 closed Dodge60 #20 with verified post-restart LIVE-cue readability
-- **決定:** `onigame-dodge60#20` を `Done` とし、Retry -> READY -> LIVE 導線の post-restart friction を1件修正した。`LIVE - move now` cue の最小表示時間を `0.5s` から `0.85s` に延長し、issue close と Project #2 Done 同期まで同runで完了した。
-- **理由:** #20 の acceptance bar は「1件修正 + live verify + board同期」であり、再開直後の cue 可読時間の短さが最小差分で改善できる高価値 friction だったため。
-- **検証結果:** game repo commit `4dbfc51` を `origin/main` へ push。live `app.js` に `state.liveCueMinVisibleTimer = 0.85` の反映を確認し、live verify（`resetGame(true)` 経路）で `LIVE` 遷移 +1300ms 時点の cue 表示継続（hidden=false）を確認した。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `birth lane` `onigame-lane-flip-sprint#7` の1件修正 + live verify。`live lane` は day goal met として secondary で継続改善する。
+- **豎ｺ螳・** `onigame-dodge60#20` 繧・`Done` 縺ｨ縺励ヽetry -> READY -> LIVE 蟆守ｷ壹・ post-restart friction 繧・莉ｶ菫ｮ豁｣縺励◆縲ＡLIVE - move now` cue 縺ｮ譛蟆剰｡ｨ遉ｺ譎る俣繧・`0.5s` 縺九ｉ `0.85s` 縺ｫ蟒ｶ髟ｷ縺励（ssue close 縺ｨ Project #2 Done 蜷梧悄縺ｾ縺ｧ蜷罫un縺ｧ螳御ｺ・＠縺溘・- **逅・罰:** #20 縺ｮ acceptance bar 縺ｯ縲・莉ｶ菫ｮ豁｣ + live verify + board蜷梧悄縲阪〒縺ゅｊ縲∝・髢狗峩蠕後・ cue 蜿ｯ隱ｭ譎る俣縺ｮ遏ｭ縺輔′譛蟆丞ｷｮ蛻・〒謾ｹ蝟・〒縺阪ｋ鬮倅ｾ｡蛟､ friction 縺縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commit `4dbfc51` 繧・`origin/main` 縺ｸ push縲Ｍive `app.js` 縺ｫ `state.liveCueMinVisibleTimer = 0.85` 縺ｮ蜿肴丐繧堤｢ｺ隱阪＠縲〕ive verify・・resetGame(true)` 邨瑚ｷｯ・峨〒 `LIVE` 驕ｷ遘ｻ +1300ms 譎らせ縺ｮ cue 陦ｨ遉ｺ邯咏ｶ夲ｼ・idden=false・峨ｒ遒ｺ隱阪＠縺溘・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `birth lane` `onigame-lane-flip-sprint#7` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａlive lane` 縺ｯ day goal met 縺ｨ縺励※ secondary 縺ｧ邯咏ｶ壽隼蝟・☆繧九・
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。
-
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・
+
 ### 2026-03
-
-### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 028 executed coordination run with sub-agent rate limits
-- **決定:** Meeting 028 を coordination run として実行し、4 sub-agents (Product Owner, Tech Lead, Designer, QA) を spawn した。API rate limit (429) により全 sub-agent が完了しなかったため、CTO として multi-perspective assessment を synthesise し、dual-lane 実行優先度を確認した。
-- **理由:** Meeting 027 時点で `onigame-lane-flip-sprint#7` が `In Progress` のため、本 run は当該 item の verified closure を primary とする。late evening (23:14 JST) のため coordination 中心で構わない。
-- **検証結果:** `PLANNING_MEETING.md`, `PROJECTS.md`, `DECISIONS.md`, game repo files を確認。Project #2 状態は `#7 In Progress`, `#20 Ready` を維持。
-- **決定者:** エージェント（現場定例 CTO）
-- **影響:** 次 run は実装フェーズとして `#7` を primary で verified closure する。
 
-### 2026-03
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: CEO Review 011 kept dual-track strategy, fixed next-hand order, and validated funnel health
-- **決定:** 会社の運営方針（dual-track day）は変更せず維持し、次の現場実行順を `onigame-dodge60#19`（live lane）→ `onigame-lane-flip-sprint#7`（birth lane）に固定する。idea funnel は `healthy` 判定とし、`Pocket Putt Panic` は引き続き `hold`（inbox維持）とする。
-- **理由:** 2026-03-15 Meeting 024/025 で両 lane とも verified closure が継続し、現在キューは `#19 Ready` と `#7 Ready` で明確。運営レイヤーの追加変更より、実装順を明示して day-end の詰まりを防ぐ方が効果的なため。
-- **検証結果:** `README.md` / `docs/company-operating-flow.md` / `IDEAS.md` / `PROJECTS.md` / `ROADMAP.md` / `DECISIONS.md` / 当日ログ（Meeting 024-025, CEO 008-010）と CEO automation memory を確認し、最新状態を再評価。internal rollout log でも直近 run の実行・検証完了を確認した。
-- **決定者:** エージェント（CEO review）
-- **影響:** 次の現場 run は live lane `onigame-dodge60#19` の実装 + live verify を primary とし、続けて birth lane `onigame-lane-flip-sprint#7` を実装 + live verify で回収する。
-
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 028 executed coordination run with sub-agent rate limits
+- **豎ｺ螳・** Meeting 028 繧・coordination run 縺ｨ縺励※螳溯｡後＠縲・ sub-agents (Product Owner, Tech Lead, Designer, QA) 繧・spawn 縺励◆縲・PI rate limit (429) 縺ｫ繧医ｊ蜈ｨ sub-agent 縺悟ｮ御ｺ・＠縺ｪ縺九▲縺溘◆繧√，TO 縺ｨ縺励※ multi-perspective assessment 繧・synthesise 縺励‥ual-lane 螳溯｡悟━蜈亥ｺｦ繧堤｢ｺ隱阪＠縺溘・
+- **逅・罰:** Meeting 027 譎らせ縺ｧ `onigame-lane-flip-sprint#7` 縺・`In Progress` 縺ｮ縺溘ａ縲∵悽 run 縺ｯ蠖楢ｩｲ item 縺ｮ verified closure 繧・primary 縺ｨ縺吶ｋ縲Ｍate evening (23:14 JST) 縺ｮ縺溘ａ coordination 荳ｭ蠢・〒讒九ｏ縺ｪ縺・・
+- **讀懆ｨｼ邨先棡:** `PLANNING_MEETING.md`, `PROJECTS.md`, `DECISIONS.md`, game repo files 繧堤｢ｺ隱阪１roject #2 迥ｶ諷九・ `#7 In Progress`, `#20 Ready` 繧堤ｶｭ謖√・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ・CTO・・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｯ螳溯｣・ヵ繧ｧ繝ｼ繧ｺ縺ｨ縺励※ `#7` 繧・primary 縺ｧ verified closure 縺吶ｋ縲・
+
 ### 2026-03
 
-### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 026 closed Dodge60 #19 with verified LIVE-cue minimum visibility and advanced next live slice
-- **決定:** live lane primary item `onigame-dodge60#19` を Done とし、`READY` 中に入力ホールドして `LIVE` 遷移した際に cue が即時消失する post-restart friction を1件修正した。`LIVE` cue に最小表示時間（0.5s）を追加し、Project #2 は `#19 Done` へ更新、次 item `onigame-dodge60#20` を `Ready / P1 / S` で追加した。
-- **理由:** Meeting 025 終了時点の primary は live lane `#19` であり、Meeting 3+ ルールでは coordination ではなく verified closure を優先する必要があったため。
-- **検証結果:** game repo commit `e7a7197` を origin/main へ push。live before で `state=LIVE`, `liveCueHidden=true` を確認し、live after で同条件 `state=LIVE`, `liveCueHidden=false`, `liveCueText=LIVE - move now` を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は birth lane `onigame-lane-flip-sprint#7` 実装 + live verify。secondary は live lane `onigame-dodge60#20`。
-
-### 2026-03
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 025 closed Lane Flip Sprint #6 with verified LIVE-transition cue and advanced next birth slice
-- **決定:** birth lane primary item `onigame-lane-flip-sprint#6` を Done とし、`READY -> LIVE` 切替直後の開始認知 friction を1件修正した。`LIVE - flip now` cue を追加し、Project #2 は `#6 Done` へ更新、次 item `onigame-lane-flip-sprint#7` を `Ready / P1 / S` で追加した。
-- **理由:** Meeting 024 終了時点で birth lane は `#6 Ready` の未完了だったため。Meeting 3+ では coordination ではなく verified closure を優先し、1 run で実装・検証・同期まで完了する必要があったため。
-- **検証結果:** game repo commit `6ec3684` を origin/main へ push。live before で ~1.45s 時点 `state=LIVE` かつ `cueHidden=true` / `cueText=New run started`、live after で `1185ms-2083ms` 区間 `state=LIVE` かつ `cueHidden=false` / `cueText=LIVE - flip now`、`2206ms` で `cueHidden=true` を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は live lane `onigame-dodge60#19` 実装 + live verify。secondary は birth lane `onigame-lane-flip-sprint#7`。
-
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: CEO Review 011 kept dual-track strategy, fixed next-hand order, and validated funnel health
+- **豎ｺ螳・** 莨夂､ｾ縺ｮ驕句霧譁ｹ驥晢ｼ・ual-track day・峨・螟画峩縺帙★邯ｭ謖√＠縲∵ｬ｡縺ｮ迴ｾ蝣ｴ螳溯｡碁・ｒ `onigame-dodge60#19`・・ive lane・俄・ `onigame-lane-flip-sprint#7`・・irth lane・峨↓蝗ｺ螳壹☆繧九Ｊdea funnel 縺ｯ `healthy` 蛻､螳壹→縺励～Pocket Putt Panic` 縺ｯ蠑輔″邯壹″ `hold`・・nbox邯ｭ謖・ｼ峨→縺吶ｋ縲・
+- **逅・罰:** 2026-03-15 Meeting 024/025 縺ｧ荳｡ lane 縺ｨ繧・verified closure 縺檎ｶ咏ｶ壹＠縲∫樟蝨ｨ繧ｭ繝･繝ｼ縺ｯ `#19 Ready` 縺ｨ `#7 Ready` 縺ｧ譏守｢ｺ縲る°蝟ｶ繝ｬ繧､繝､繝ｼ縺ｮ霑ｽ蜉螟画峩繧医ｊ縲∝ｮ溯｣・・ｒ譏守､ｺ縺励※ day-end 縺ｮ隧ｰ縺ｾ繧翫ｒ髦ｲ縺先婿縺悟柑譫懃噪縺ｪ縺溘ａ縲・
+- **讀懆ｨｼ邨先棡:** `README.md` / `docs/company-operating-flow.md` / `IDEAS.md` / `PROJECTS.md` / `ROADMAP.md` / `DECISIONS.md` / 蠖捺律繝ｭ繧ｰ・・eeting 024-025, CEO 008-010・峨→ CEO automation memory 繧堤｢ｺ隱阪＠縲∵怙譁ｰ迥ｶ諷九ｒ蜀崎ｩ穂ｾ｡縲Ｊnternal rollout log 縺ｧ繧ら峩霑・run 縺ｮ螳溯｡後・讀懆ｨｼ螳御ｺ・ｒ遒ｺ隱阪＠縺溘・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ・EO review・・
+- **蠖ｱ髻ｿ:** 谺｡縺ｮ迴ｾ蝣ｴ run 縺ｯ live lane `onigame-dodge60#19` 縺ｮ螳溯｣・+ live verify 繧・primary 縺ｨ縺励∫ｶ壹￠縺ｦ birth lane `onigame-lane-flip-sprint#7` 繧貞ｮ溯｣・+ live verify 縺ｧ蝗槫庶縺吶ｋ縲・
+
 ### 2026-03
-
-### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 024 closed Dodge60 #18 with verified LIVE-cue persistence and advanced next live slice
-- **決定:** live lane primary item `onigame-dodge60#18` を Done とし、Retry直後の LIVE 開始タイミング認知 friction を1件修正した。`LIVE - move now` cue を「最初の入力まで保持（fallback 1.8s）」へ変更し、Project #2 は `#18 Done` へ更新、次 item `onigame-dodge60#19` を `Ready / P1 / S` で追加した。
-- **理由:** Meeting 023 終了時点で live lane は `#18 Ready` の未完了だったため。Meeting 3+ では coordination ではなく verified closure を優先し、1 run で実装・検証・同期まで完了する必要があったため。
-- **検証結果:** game repo commit `33753a9` を origin/main へ push。live before で retry + 2100ms 時点 `state=LIVE` かつ `liveCueHidden=true`、live after で同条件 `liveCueHidden=false` と `LIVE - move now` 表示を確認。さらに入力後に `liveCueHidden=true` へ遷移することを確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は birth lane `onigame-lane-flip-sprint#6` 実装 + live verify。secondary は live lane `onigame-dodge60#19`。
 
-### 2026-03
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 022 closed Dodge60 #17 with verified LIVE-start cue and advanced next live slice
-- **決定:** live lane primary item `onigame-dodge60#17` を Done とし、Retry後 `READY -> LIVE` 切替瞬間の開始確信 friction を1件修正した。`LIVE - move now` cue を追加し、Project #2 は `#17 Done` へ更新、次 item `onigame-dodge60#18` を `Ready / P1 / S` で追加した。
-- **理由:** Meeting 021 で `#17` は `In Progress` まで進んでおり、Meeting 3+ では coordination ではなく verified closure を優先する必要があったため。
-- **検証結果:** game repo commit `54a86f5` を origin/main へ push。live before で retry後 `LIVE` 時に dedicated cue 未実装を確認し、live after で retry後 `1200ms` 時点 `state=LIVE` かつ `#live-cue` 表示（`LIVE - move now`）を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は birth lane `onigame-lane-flip-sprint#5` 実装 + live verify。secondary は live lane `onigame-dodge60#18`。
-
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 026 closed Dodge60 #19 with verified LIVE-cue minimum visibility and advanced next live slice
+- **豎ｺ螳・** live lane primary item `onigame-dodge60#19` 繧・Done 縺ｨ縺励～READY` 荳ｭ縺ｫ蜈･蜉帙・繝ｼ繝ｫ繝峨＠縺ｦ `LIVE` 驕ｷ遘ｻ縺励◆髫帙↓ cue 縺悟叉譎よｶ亥､ｱ縺吶ｋ post-restart friction 繧・莉ｶ菫ｮ豁｣縺励◆縲ＡLIVE` cue 縺ｫ譛蟆剰｡ｨ遉ｺ譎る俣・・.5s・峨ｒ霑ｽ蜉縺励￣roject #2 縺ｯ `#19 Done` 縺ｸ譖ｴ譁ｰ縲∵ｬ｡ item `onigame-dodge60#20` 繧・`Ready / P1 / S` 縺ｧ霑ｽ蜉縺励◆縲・
+- **逅・罰:** Meeting 025 邨ゆｺ・凾轤ｹ縺ｮ primary 縺ｯ live lane `#19` 縺ｧ縺ゅｊ縲｀eeting 3+ 繝ｫ繝ｼ繝ｫ縺ｧ縺ｯ coordination 縺ｧ縺ｯ縺ｪ縺・verified closure 繧貞━蜈医☆繧句ｿ・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commit `e7a7197` 繧・origin/main 縺ｸ push縲Ｍive before 縺ｧ `state=LIVE`, `liveCueHidden=true` 繧堤｢ｺ隱阪＠縲〕ive after 縺ｧ蜷梧擅莉ｶ `state=LIVE`, `liveCueHidden=false`, `liveCueText=LIVE - move now` 繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ birth lane `onigame-lane-flip-sprint#7` 螳溯｣・+ live verify縲Ｔecondary 縺ｯ live lane `onigame-dodge60#20`縲・
+
 ### 2026-03
-
-### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 020 closed Lane Flip Sprint #4 with verified edge-input blocked feedback and advanced next birth slice
-- **決定:** birth lane primary item `onigame-lane-flip-sprint#4` を Done とし、LIVE中に端レーン入力しても反応が見えない early-run friction を1件修正した。Project #2 は `#4 Done` へ更新し、次の birth lane item `onigame-lane-flip-sprint#5` を `Ready / P1 / S` で追加した。
-- **理由:** Meeting 019 の next hand で `onigame-lane-flip-sprint#4` が primary 指定されており、dual-lane execution を維持する最短手が #4 の verified closure だったため。
-- **検証結果:** game repo commit `e061aa6` を origin/main へ push。live before で `lane=1 / 3` かつ `hasBlockedClass=false`、live after で同条件 `hasBlockedClass=true` を確認。deploy `app.js` に `lane-feedback-blocked` 実装反映を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は live lane `onigame-dodge60#17` 実装 + live verify。secondary は birth lane `onigame-lane-flip-sprint#5`。
 
-### 2026-03
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 019 closed Dodge60 #16 with verified LIVE-transition cue clear and advanced next live slice
-- **決定:** live lane primary item `onigame-dodge60#16` を Done とし、Retry後 `LIVE` 遷移時に re-entry cue が残る post-restart friction を1件修正した。Project #2 は `#16 Done` へ更新し、次の live lane item `onigame-dodge60#17` を `Ready / P1 / S` で追加した。
-- **理由:** Meeting 018 の next hand で `onigame-dodge60#16` が primary 指定されており、dual-lane execution を維持する最短手が #16 の verified closure だったため。
-- **検証結果:** game repo commit `d871db2` を origin/main へ push。live before で retry+1.25s 時点 `state=LIVE` かつ `cueHidden=false`、live after で retry+1.40s/1.52s 時点 `state=LIVE` かつ `cueHidden=true` を確認。deploy `app.js` に `wasInGrace && state.graceTimer <= 0` を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は birth lane `onigame-lane-flip-sprint#4` 実装 + live verify。secondary は live lane `onigame-dodge60#17`。
-
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 025 closed Lane Flip Sprint #6 with verified LIVE-transition cue and advanced next birth slice
+- **豎ｺ螳・** birth lane primary item `onigame-lane-flip-sprint#6` 繧・Done 縺ｨ縺励～READY -> LIVE` 蛻・崛逶ｴ蠕後・髢句ｧ玖ｪ咲衍 friction 繧・莉ｶ菫ｮ豁｣縺励◆縲ＡLIVE - flip now` cue 繧定ｿｽ蜉縺励￣roject #2 縺ｯ `#6 Done` 縺ｸ譖ｴ譁ｰ縲∵ｬ｡ item `onigame-lane-flip-sprint#7` 繧・`Ready / P1 / S` 縺ｧ霑ｽ蜉縺励◆縲・
+- **逅・罰:** Meeting 024 邨ゆｺ・凾轤ｹ縺ｧ birth lane 縺ｯ `#6 Ready` 縺ｮ譛ｪ螳御ｺ・□縺｣縺溘◆繧√・eeting 3+ 縺ｧ縺ｯ coordination 縺ｧ縺ｯ縺ｪ縺・verified closure 繧貞━蜈医＠縲・ run 縺ｧ螳溯｣・・讀懆ｨｼ繝ｻ蜷梧悄縺ｾ縺ｧ螳御ｺ・☆繧句ｿ・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commit `6ec3684` 繧・origin/main 縺ｸ push縲Ｍive before 縺ｧ ~1.45s 譎らせ `state=LIVE` 縺九▽ `cueHidden=true` / `cueText=New run started`縲〕ive after 縺ｧ `1185ms-2083ms` 蛹ｺ髢・`state=LIVE` 縺九▽ `cueHidden=false` / `cueText=LIVE - flip now`縲～2206ms` 縺ｧ `cueHidden=true` 繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ live lane `onigame-dodge60#19` 螳溯｣・+ live verify縲Ｔecondary 縺ｯ birth lane `onigame-lane-flip-sprint#7`縲・
+
 ### 2026-03
-
-### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 018 closed Lane Flip Sprint #3 with verified READY input lock and advanced next birth slice
-- **決定:** birth lane primary item `onigame-lane-flip-sprint#3` を Done とし、Retry直後 READY 中の accidental lane drift friction を1件修正した。Project #2 は `#3 Done` へ更新し、次の birth lane item `onigame-lane-flip-sprint#4` を `Ready / P1 / S` で追加した。
-- **理由:** Meeting 017 の next hand で birth lane #3 が primary 指定されており、dual-lane execution を保つ最短手が #3 の verified closure だったため。
-- **検証結果:** game repo commit `c1acb00` を origin/main へ push。live before で READY 中 `ArrowLeft` 入力により `lane 2 / 3 -> 1 / 3` を確認し、live after で READY 中 `lane 2 / 3 -> 2 / 3`（不変）と LIVE 後 `2 / 3 -> 1 / 3` を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は live lane `onigame-dodge60#16` 実装 + live verify。secondary は birth lane `onigame-lane-flip-sprint#4`。
 
-### 2026-03
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 016 closed Lane Flip Sprint #2 with verified retry run-start cue and advanced next birth slice
-- **決定:** birth lane primary item onigame-lane-flip-sprint#2 を Done とし、Retry後の再開認知 friction に対して `New run started` cue を1件追加した。Project #2 は #2 Done へ更新し、次の birth lane item onigame-lane-flip-sprint#3 を Ready / P1 / S で追加した。
-- **理由:** Meeting 015 で次手が #2 に固定されており、live lane #15 は Ready で待機中だったため。dual-lane バランスを維持するには birth lane の未完了 item を1runで閉じるのが最小だったため。
-- **検証結果:** game repo commit `89821b1` を origin/main へ push。live deploy 確認で `app.js` に `New run started` を確認し、ブラウザ検証で `OVER -> Retry -> READY` と run cue 表示 (`cueVisibleAfterRetry=true`) を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は live lane onigame-dodge60#15 実装 + live verify。secondary は birth lane onigame-lane-flip-sprint#3。
-
-### 2026-03
-
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 024 closed Dodge60 #18 with verified LIVE-cue persistence and advanced next live slice
+- **豎ｺ螳・** live lane primary item `onigame-dodge60#18` 繧・Done 縺ｨ縺励ヽetry逶ｴ蠕後・ LIVE 髢句ｧ九ち繧､繝溘Φ繧ｰ隱咲衍 friction 繧・莉ｶ菫ｮ豁｣縺励◆縲ＡLIVE - move now` cue 繧偵梧怙蛻昴・蜈･蜉帙∪縺ｧ菫晄戟・・allback 1.8s・峨阪∈螟画峩縺励￣roject #2 縺ｯ `#18 Done` 縺ｸ譖ｴ譁ｰ縲∵ｬ｡ item `onigame-dodge60#19` 繧・`Ready / P1 / S` 縺ｧ霑ｽ蜉縺励◆縲・
+- **逅・罰:** Meeting 023 邨ゆｺ・凾轤ｹ縺ｧ live lane 縺ｯ `#18 Ready` 縺ｮ譛ｪ螳御ｺ・□縺｣縺溘◆繧√・eeting 3+ 縺ｧ縺ｯ coordination 縺ｧ縺ｯ縺ｪ縺・verified closure 繧貞━蜈医＠縲・ run 縺ｧ螳溯｣・・讀懆ｨｼ繝ｻ蜷梧悄縺ｾ縺ｧ螳御ｺ・☆繧句ｿ・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commit `33753a9` 繧・origin/main 縺ｸ push縲Ｍive before 縺ｧ retry + 2100ms 譎らせ `state=LIVE` 縺九▽ `liveCueHidden=true`縲〕ive after 縺ｧ蜷梧擅莉ｶ `liveCueHidden=false` 縺ｨ `LIVE - move now` 陦ｨ遉ｺ繧堤｢ｺ隱阪ゅ＆繧峨↓蜈･蜉帛ｾ後↓ `liveCueHidden=true` 縺ｸ驕ｷ遘ｻ縺吶ｋ縺薙→繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ birth lane `onigame-lane-flip-sprint#6` 螳溯｣・+ live verify縲Ｔecondary 縺ｯ live lane `onigame-dodge60#19`縲・
+
+### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 015 closed Dodge60 #14 with verified READY-hold handoff fix and advanced next live slice
-- **決定:** live lane primary item onigame-dodge60#14 を Done とし、READY中にホールドしたドラッグ入力がLIVE遷移直後に反映されない post-restart friction を1件修正した。Project #2 は #14 Done へ更新し、次の live lane item onigame-dodge60#15 を Ready / P1 / S で追加した。
-- **理由:** #14 は In Progress の未完了スライスであり、Meeting 013/014 で実装債務が継続していたため。最小の1件修正を実装・live verify・board同期まで同run完了することが最短だったため。
-- **検証結果:** before (live) で READY hold: x=180 -> afterLive x=180、after (live) で READY hold: x=180 -> afterLive x=42.00000277717434 を確認。実装 commit 4cdc3d0 を origin/main へ pushし、issue onigame-dodge60#14 を close。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は irth lane onigame-lane-flip-sprint#2 実装 + live verify。secondary は live lane onigame-dodge60#15。
-### 2026-03
-
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 022 closed Dodge60 #17 with verified LIVE-start cue and advanced next live slice
+- **豎ｺ螳・** live lane primary item `onigame-dodge60#17` 繧・Done 縺ｨ縺励ヽetry蠕・`READY -> LIVE` 蛻・崛迸ｬ髢薙・髢句ｧ狗｢ｺ菫｡ friction 繧・莉ｶ菫ｮ豁｣縺励◆縲ＡLIVE - move now` cue 繧定ｿｽ蜉縺励￣roject #2 縺ｯ `#17 Done` 縺ｸ譖ｴ譁ｰ縲∵ｬ｡ item `onigame-dodge60#18` 繧・`Ready / P1 / S` 縺ｧ霑ｽ蜉縺励◆縲・
+- **逅・罰:** Meeting 021 縺ｧ `#17` 縺ｯ `In Progress` 縺ｾ縺ｧ騾ｲ繧薙〒縺翫ｊ縲｀eeting 3+ 縺ｧ縺ｯ coordination 縺ｧ縺ｯ縺ｪ縺・verified closure 繧貞━蜈医☆繧句ｿ・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commit `54a86f5` 繧・origin/main 縺ｸ push縲Ｍive before 縺ｧ retry蠕・`LIVE` 譎ゅ↓ dedicated cue 譛ｪ螳溯｣・ｒ遒ｺ隱阪＠縲〕ive after 縺ｧ retry蠕・`1200ms` 譎らせ `state=LIVE` 縺九▽ `#live-cue` 陦ｨ遉ｺ・・LIVE - move now`・峨ｒ遒ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ birth lane `onigame-lane-flip-sprint#5` 螳溯｣・+ live verify縲Ｔecondary 縺ｯ live lane `onigame-dodge60#18`縲・
+
+### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 014 held live-lane priority and confirmed dual-lane board state
-- **決定:** `Meeting 3+` の execution 継続として、Project #2 の primary active を `live lane`（`onigame-dodge60#14`）のまま維持し、`birth lane`（`onigame-lane-flip-sprint#2`）は `Ready` の次手で固定した。
-- **理由:** `live lane #14` は `In Progress` の未完了スライスであり、未実装のまま lane を切り替えると進捗が拡散するため。まず `#14` の実装と live verify を完了するのが最小で妥当な順序だったため。
-- **検証結果:** `gh auth status` で `GH_TOKEN` の `project` scope を確認し、Project #2 item 一覧で `#14 = In Progress`、`#2 = Ready` の状態を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `onigame-dodge60#14` 実装 + live verify。secondary は `onigame-lane-flip-sprint#2` を `Ready` から実行する。
-
-### 2026-03
-
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 020 closed Lane Flip Sprint #4 with verified edge-input blocked feedback and advanced next birth slice
+- **豎ｺ螳・** birth lane primary item `onigame-lane-flip-sprint#4` 繧・Done 縺ｨ縺励´IVE荳ｭ縺ｫ遶ｯ繝ｬ繝ｼ繝ｳ蜈･蜉帙＠縺ｦ繧ょ渚蠢懊′隕九∴縺ｪ縺・early-run friction 繧・莉ｶ菫ｮ豁｣縺励◆縲１roject #2 縺ｯ `#4 Done` 縺ｸ譖ｴ譁ｰ縺励∵ｬ｡縺ｮ birth lane item `onigame-lane-flip-sprint#5` 繧・`Ready / P1 / S` 縺ｧ霑ｽ蜉縺励◆縲・
+- **逅・罰:** Meeting 019 縺ｮ next hand 縺ｧ `onigame-lane-flip-sprint#4` 縺・primary 謖・ｮ壹＆繧後※縺翫ｊ縲‥ual-lane execution 繧堤ｶｭ謖√☆繧区怙遏ｭ謇九′ #4 縺ｮ verified closure 縺縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commit `e061aa6` 繧・origin/main 縺ｸ push縲Ｍive before 縺ｧ `lane=1 / 3` 縺九▽ `hasBlockedClass=false`縲〕ive after 縺ｧ蜷梧擅莉ｶ `hasBlockedClass=true` 繧堤｢ｺ隱阪Ｅeploy `app.js` 縺ｫ `lane-feedback-blocked` 螳溯｣・渚譏繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ live lane `onigame-dodge60#17` 螳溯｣・+ live verify縲Ｔecondary 縺ｯ birth lane `onigame-lane-flip-sprint#5`縲・
+
+### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 013 kept live-lane primary active and preserved dual-lane queue clarity
-- **決定:** `Meeting 3+` の execution 継続として、Project #2 の primary active を `live lane` (`onigame-dodge60#14`) のまま維持し、`birth lane` (`onigame-lane-flip-sprint#2`) は `Ready` で次手固定とした。
-- **理由:** 直前 run（Meeting 012）で `live lane #14` を `In Progress` へ上げており、未検証のまま lane を再切替すると進行が拡散するため。まず `#14` を完了させるのが最小で妥当な実行順だったため。
-- **検証結果:** `gh auth status` で `GH_TOKEN` の `project` scope を確認し、Project #2 item 一覧で `#14 = In Progress`、`#2 = Ready` の配列を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `onigame-dodge60#14` 実装 + live verify。secondary は `onigame-lane-flip-sprint#2` を `Ready` から再開する。
-
-### 2026-03
-
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 019 closed Dodge60 #16 with verified LIVE-transition cue clear and advanced next live slice
+- **豎ｺ螳・** live lane primary item `onigame-dodge60#16` 繧・Done 縺ｨ縺励ヽetry蠕・`LIVE` 驕ｷ遘ｻ譎ゅ↓ re-entry cue 縺梧ｮ九ｋ post-restart friction 繧・莉ｶ菫ｮ豁｣縺励◆縲１roject #2 縺ｯ `#16 Done` 縺ｸ譖ｴ譁ｰ縺励∵ｬ｡縺ｮ live lane item `onigame-dodge60#17` 繧・`Ready / P1 / S` 縺ｧ霑ｽ蜉縺励◆縲・
+- **逅・罰:** Meeting 018 縺ｮ next hand 縺ｧ `onigame-dodge60#16` 縺・primary 謖・ｮ壹＆繧後※縺翫ｊ縲‥ual-lane execution 繧堤ｶｭ謖√☆繧区怙遏ｭ謇九′ #16 縺ｮ verified closure 縺縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commit `d871db2` 繧・origin/main 縺ｸ push縲Ｍive before 縺ｧ retry+1.25s 譎らせ `state=LIVE` 縺九▽ `cueHidden=false`縲〕ive after 縺ｧ retry+1.40s/1.52s 譎らせ `state=LIVE` 縺九▽ `cueHidden=true` 繧堤｢ｺ隱阪Ｅeploy `app.js` 縺ｫ `wasInGrace && state.graceTimer <= 0` 繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ birth lane `onigame-lane-flip-sprint#4` 螳溯｣・+ live verify縲Ｔecondary 縺ｯ live lane `onigame-dodge60#17`縲・
+
+### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 012 rebalanced active primary slice back to live lane
-- **決定:** `Meeting 3+` の dual-lane 継続運用として、Project #2 の primary active を `live lane` (`onigame-dodge60#14`) へ再配列した。`onigame-dodge60#14` を `In Progress` に上げ、`onigame-lane-flip-sprint#2` は `Ready` に戻して次手として維持した。
-- **理由:** 直前 run（Meeting 011）で `birth lane` を `In Progress` に上げたため、lane 偏りを避けるには未着手だった `live lane #14` を実行状態へ進めるのが最小で妥当だったため。
-- **検証結果:** `gh auth status` で `GH_TOKEN` の `project` scope を確認し、Project #2 item `PVTI_lADOD7cTBc4BRGjUzgndMXs` を `In Progress`、item `PVTI_lADOD7cTBc4BRGjUzgndFtY` を `Ready` へ更新できたことを確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `onigame-dodge60#14` 実装 + live verify。secondary は `onigame-lane-flip-sprint#2` を `Ready` から再開する。
-
-### 2026-03
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 018 closed Lane Flip Sprint #3 with verified READY input lock and advanced next birth slice
+- **豎ｺ螳・** birth lane primary item `onigame-lane-flip-sprint#3` 繧・Done 縺ｨ縺励ヽetry逶ｴ蠕・READY 荳ｭ縺ｮ accidental lane drift friction 繧・莉ｶ菫ｮ豁｣縺励◆縲１roject #2 縺ｯ `#3 Done` 縺ｸ譖ｴ譁ｰ縺励∵ｬ｡縺ｮ birth lane item `onigame-lane-flip-sprint#4` 繧・`Ready / P1 / S` 縺ｧ霑ｽ蜉縺励◆縲・
+- **逅・罰:** Meeting 017 縺ｮ next hand 縺ｧ birth lane #3 縺・primary 謖・ｮ壹＆繧後※縺翫ｊ縲‥ual-lane execution 繧剃ｿ昴▽譛遏ｭ謇九′ #3 縺ｮ verified closure 縺縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commit `c1acb00` 繧・origin/main 縺ｸ push縲Ｍive before 縺ｧ READY 荳ｭ `ArrowLeft` 蜈･蜉帙↓繧医ｊ `lane 2 / 3 -> 1 / 3` 繧堤｢ｺ隱阪＠縲〕ive after 縺ｧ READY 荳ｭ `lane 2 / 3 -> 2 / 3`・井ｸ榊､会ｼ峨→ LIVE 蠕・`2 / 3 -> 1 / 3` 繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ live lane `onigame-dodge60#16` 螳溯｣・+ live verify縲Ｔecondary 縺ｯ birth lane `onigame-lane-flip-sprint#4`縲・
+
+### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
+### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 016 closed Lane Flip Sprint #2 with verified retry run-start cue and advanced next birth slice
+- **豎ｺ螳・** birth lane primary item onigame-lane-flip-sprint#2 繧・Done 縺ｨ縺励ヽetry蠕後・蜀埼幕隱咲衍 friction 縺ｫ蟇ｾ縺励※ `New run started` cue 繧・莉ｶ霑ｽ蜉縺励◆縲１roject #2 縺ｯ #2 Done 縺ｸ譖ｴ譁ｰ縺励∵ｬ｡縺ｮ birth lane item onigame-lane-flip-sprint#3 繧・Ready / P1 / S 縺ｧ霑ｽ蜉縺励◆縲・
+- **逅・罰:** Meeting 015 縺ｧ谺｡謇九′ #2 縺ｫ蝗ｺ螳壹＆繧後※縺翫ｊ縲〕ive lane #15 縺ｯ Ready 縺ｧ蠕・ｩ滉ｸｭ縺縺｣縺溘◆繧√Ｅual-lane 繝舌Λ繝ｳ繧ｹ繧堤ｶｭ謖√☆繧九↓縺ｯ birth lane 縺ｮ譛ｪ螳御ｺ・item 繧・run縺ｧ髢峨§繧九・縺梧怙蟆上□縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commit `89821b1` 繧・origin/main 縺ｸ push縲Ｍive deploy 遒ｺ隱阪〒 `app.js` 縺ｫ `New run started` 繧堤｢ｺ隱阪＠縲√ヶ繝ｩ繧ｦ繧ｶ讀懆ｨｼ縺ｧ `OVER -> Retry -> READY` 縺ｨ run cue 陦ｨ遉ｺ (`cueVisibleAfterRetry=true`) 繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ live lane onigame-dodge60#15 螳溯｣・+ live verify縲Ｔecondary 縺ｯ birth lane onigame-lane-flip-sprint#3縲・
+
+### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
+### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 015 closed Dodge60 #14 with verified READY-hold handoff fix and advanced next live slice
+- **豎ｺ螳・** live lane primary item onigame-dodge60#14 繧・Done 縺ｨ縺励ヽEADY荳ｭ縺ｫ繝帙・繝ｫ繝峨＠縺溘ラ繝ｩ繝・げ蜈･蜉帙′LIVE驕ｷ遘ｻ逶ｴ蠕後↓蜿肴丐縺輔ｌ縺ｪ縺・post-restart friction 繧・莉ｶ菫ｮ豁｣縺励◆縲１roject #2 縺ｯ #14 Done 縺ｸ譖ｴ譁ｰ縺励∵ｬ｡縺ｮ live lane item onigame-dodge60#15 繧・Ready / P1 / S 縺ｧ霑ｽ蜉縺励◆縲・
+- **逅・罰:** #14 縺ｯ In Progress 縺ｮ譛ｪ螳御ｺ・せ繝ｩ繧､繧ｹ縺ｧ縺ゅｊ縲｀eeting 013/014 縺ｧ螳溯｣・し蜍吶′邯咏ｶ壹＠縺ｦ縺・◆縺溘ａ縲よ怙蟆上・1莉ｶ菫ｮ豁｣繧貞ｮ溯｣・・live verify繝ｻboard蜷梧悄縺ｾ縺ｧ蜷罫un螳御ｺ・☆繧九％縺ｨ縺梧怙遏ｭ縺縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** before (live) 縺ｧ READY hold: x=180 -> afterLive x=180縲∥fter (live) 縺ｧ READY hold: x=180 -> afterLive x=42.00000277717434 繧堤｢ｺ隱阪ょｮ溯｣・commit 4cdc3d0 繧・origin/main 縺ｸ push縺励（ssue onigame-dodge60#14 繧・close縲・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ irth lane onigame-lane-flip-sprint#2 螳溯｣・+ live verify縲Ｔecondary 縺ｯ live lane onigame-dodge60#15縲・
+### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 011 switched birth-lane retry polish to active execution
-- **決定:** `Meeting 3+` の lane-bias ルールに従い、primary を `birth lane`（`onigame-lane-flip-sprint#2`）へ固定し、Project #2 上で item status を `Ready` から `In Progress` へ更新した。`live lane` は `onigame-dodge60#14` を `Ready` のまま次手として維持する。
-- **理由:** CEO Review 010 後の board 状態では `live lane #13` が完了済みで、未実行の birth-lane polish (`#2`) が残っていたため。daily dual-lane の実行バランスを保つには birth 側を先に着手状態へ進めるのが最小コストだったため。
-- **検証結果:** `gh auth status` で `GH_TOKEN` 有効（`project` scope あり）を確認し、Project #2 item `PVTI_lADOD7cTBc4BRGjUzgndFtY` の status を `In Progress` へ更新できたことを確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `onigame-lane-flip-sprint#2` の実装 + live verify 完了。secondary は `onigame-dodge60#14` 維持。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 014 held live-lane priority and confirmed dual-lane board state
+- **豎ｺ螳・** `Meeting 3+` 縺ｮ execution 邯咏ｶ壹→縺励※縲￣roject #2 縺ｮ primary active 繧・`live lane`・・onigame-dodge60#14`・峨・縺ｾ縺ｾ邯ｭ謖√＠縲～birth lane`・・onigame-lane-flip-sprint#2`・峨・ `Ready` 縺ｮ谺｡謇九〒蝗ｺ螳壹＠縺溘・
+- **逅・罰:** `live lane #14` 縺ｯ `In Progress` 縺ｮ譛ｪ螳御ｺ・せ繝ｩ繧､繧ｹ縺ｧ縺ゅｊ縲∵悴螳溯｣・・縺ｾ縺ｾ lane 繧貞・繧頑崛縺医ｋ縺ｨ騾ｲ謐励′諡｡謨｣縺吶ｋ縺溘ａ縲ゅ∪縺・`#14` 縺ｮ螳溯｣・→ live verify 繧貞ｮ御ｺ・☆繧九・縺梧怙蟆上〒螯･蠖薙↑鬆・ｺ上□縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** `gh auth status` 縺ｧ `GH_TOKEN` 縺ｮ `project` scope 繧堤｢ｺ隱阪＠縲￣roject #2 item 荳隕ｧ縺ｧ `#14 = In Progress`縲～#2 = Ready` 縺ｮ迥ｶ諷九ｒ遒ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `onigame-dodge60#14` 螳溯｣・+ live verify縲Ｔecondary 縺ｯ `onigame-lane-flip-sprint#2` 繧・`Ready` 縺九ｉ螳溯｡後☆繧九・
+
+### 2026-03
 
-### 2026-03
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
+### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 013 kept live-lane primary active and preserved dual-lane queue clarity
+- **豎ｺ螳・** `Meeting 3+` 縺ｮ execution 邯咏ｶ壹→縺励※縲￣roject #2 縺ｮ primary active 繧・`live lane` (`onigame-dodge60#14`) 縺ｮ縺ｾ縺ｾ邯ｭ謖√＠縲～birth lane` (`onigame-lane-flip-sprint#2`) 縺ｯ `Ready` 縺ｧ谺｡謇句崋螳壹→縺励◆縲・
+- **逅・罰:** 逶ｴ蜑・run・・eeting 012・峨〒 `live lane #14` 繧・`In Progress` 縺ｸ荳翫￡縺ｦ縺翫ｊ縲∵悴讀懆ｨｼ縺ｮ縺ｾ縺ｾ lane 繧貞・蛻・崛縺吶ｋ縺ｨ騾ｲ陦後′諡｡謨｣縺吶ｋ縺溘ａ縲ゅ∪縺・`#14` 繧貞ｮ御ｺ・＆縺帙ｋ縺ｮ縺梧怙蟆上〒螯･蠖薙↑螳溯｡碁・□縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** `gh auth status` 縺ｧ `GH_TOKEN` 縺ｮ `project` scope 繧堤｢ｺ隱阪＠縲￣roject #2 item 荳隕ｧ縺ｧ `#14 = In Progress`縲～#2 = Ready` 縺ｮ驟榊・繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `onigame-dodge60#14` 螳溯｣・+ live verify縲Ｔecondary 縺ｯ `onigame-lane-flip-sprint#2` 繧・`Ready` 縺九ｉ蜀埼幕縺吶ｋ縲・
+
+### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: CEO Review 010 kept dual-track strategy and re-prioritized near-term execution to live-lane closure
-- **決定:** 会社方針（dual-track day）は変更せず維持し、次の現場 run の優先度を `onigame-dodge60#13`（live lane）> `onigame-lane-flip-sprint#2`（birth lane）へ再配列する。idea funnel は `healthy` 判定とし、`I20260314-03 Pocket Putt Panic` は `hold`（inbox 維持）とする。
-- **理由:** 2026-03-15 時点で birth lane は app birth 達成済みで polish 段階に入っている一方、live lane は `#13` が未完了で day-progress の偏りが残るため。`incubating` は2件あり、直近 CEO run で movement があるため funnel は健康状態を満たす。
-- **決定者:** エージェント（CEO review）
-- **影響:** 次の現場 run は live lane の未完了解消を primary に固定し、完了後に birth lane polish を継続する。企画は `Pocket Putt Panic` を保留して既存 incubating の検証を優先する。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 012 rebalanced active primary slice back to live lane
+- **豎ｺ螳・** `Meeting 3+` 縺ｮ dual-lane 邯咏ｶ夐°逕ｨ縺ｨ縺励※縲￣roject #2 縺ｮ primary active 繧・`live lane` (`onigame-dodge60#14`) 縺ｸ蜀埼・蛻励＠縺溘Ａonigame-dodge60#14` 繧・`In Progress` 縺ｫ荳翫￡縲～onigame-lane-flip-sprint#2` 縺ｯ `Ready` 縺ｫ謌ｻ縺励※谺｡謇九→縺励※邯ｭ謖√＠縺溘・
+- **逅・罰:** 逶ｴ蜑・run・・eeting 011・峨〒 `birth lane` 繧・`In Progress` 縺ｫ荳翫￡縺溘◆繧√〕ane 蛛上ｊ繧帝∩縺代ｋ縺ｫ縺ｯ譛ｪ逹謇九□縺｣縺・`live lane #14` 繧貞ｮ溯｡檎憾諷九∈騾ｲ繧√ｋ縺ｮ縺梧怙蟆上〒螯･蠖薙□縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** `gh auth status` 縺ｧ `GH_TOKEN` 縺ｮ `project` scope 繧堤｢ｺ隱阪＠縲￣roject #2 item `PVTI_lADOD7cTBc4BRGjUzgndMXs` 繧・`In Progress`縲（tem `PVTI_lADOD7cTBc4BRGjUzgndFtY` 繧・`Ready` 縺ｸ譖ｴ譁ｰ縺ｧ縺阪◆縺薙→繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `onigame-dodge60#14` 螳溯｣・+ live verify縲Ｔecondary 縺ｯ `onigame-lane-flip-sprint#2` 繧・`Ready` 縺九ｉ蜀埼幕縺吶ｋ縲・
+
+### 2026-03
 
-### 2026-03
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
+### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 011 switched birth-lane retry polish to active execution
+- **豎ｺ螳・** `Meeting 3+` 縺ｮ lane-bias 繝ｫ繝ｼ繝ｫ縺ｫ蠕薙＞縲｝rimary 繧・`birth lane`・・onigame-lane-flip-sprint#2`・峨∈蝗ｺ螳壹＠縲￣roject #2 荳翫〒 item status 繧・`Ready` 縺九ｉ `In Progress` 縺ｸ譖ｴ譁ｰ縺励◆縲Ａlive lane` 縺ｯ `onigame-dodge60#14` 繧・`Ready` 縺ｮ縺ｾ縺ｾ谺｡謇九→縺励※邯ｭ謖√☆繧九・
+- **逅・罰:** CEO Review 010 蠕後・ board 迥ｶ諷九〒縺ｯ `live lane #13` 縺悟ｮ御ｺ・ｸ医∩縺ｧ縲∵悴螳溯｡後・ birth-lane polish (`#2`) 縺梧ｮ九▲縺ｦ縺・◆縺溘ａ縲Ｅaily dual-lane 縺ｮ螳溯｡後ヰ繝ｩ繝ｳ繧ｹ繧剃ｿ昴▽縺ｫ縺ｯ birth 蛛ｴ繧貞・縺ｫ逹謇狗憾諷九∈騾ｲ繧√ｋ縺ｮ縺梧怙蟆上さ繧ｹ繝医□縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** `gh auth status` 縺ｧ `GH_TOKEN` 譛牙柑・・project` scope 縺ゅｊ・峨ｒ遒ｺ隱阪＠縲￣roject #2 item `PVTI_lADOD7cTBc4BRGjUzgndFtY` 縺ｮ status 繧・`In Progress` 縺ｸ譖ｴ譁ｰ縺ｧ縺阪◆縺薙→繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `onigame-lane-flip-sprint#2` 縺ｮ螳溯｣・+ live verify 螳御ｺ・Ｔecondary 縺ｯ `onigame-dodge60#14` 邯ｭ謖√・
+
+### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 007 fixed post-restart control lock and advanced live lane queue
-- **決定:** `live lane` の primary item `onigame-dodge60#13` を完了として close し、retry直後の post-restart friction（READY中の誤入力移動）を抑えるため `READY` 入力ロックと reset時 input state clear を `onigame-dodge60` に実装した。次の live lane 実行 item は `onigame-dodge60#14` として Project #2 `Ready / P1 / S` に設定する。
-- **理由:** 直前の再開キュー改善後も、retry直後に入力状態が残ると再開品質が不安定になるため。短時間セッションの再挑戦体験を安定化する価値が高かったため。
-- **検証結果:** game repo commit `fddea2d` を `main` へ push。live URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773522230859` で `READY 1.0s -> READY 0.2s -> LIVE` を確認し、座標観測 `xStart=150`, `xDuringReady=150`, `xAfterLive=88`（`readyLocked=true`, `movedAfterLive=true`）を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** Project #2 は `onigame-dodge60#13 Done`、`#14 Ready`。`birth lane` は `onigame-lane-flip-sprint#2` を `Ready` 維持で次 run の primary 候補とする。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: CEO Review 010 kept dual-track strategy and re-prioritized near-term execution to live-lane closure
+- **豎ｺ螳・** 莨夂､ｾ譁ｹ驥晢ｼ・ual-track day・峨・螟画峩縺帙★邯ｭ謖√＠縲∵ｬ｡縺ｮ迴ｾ蝣ｴ run 縺ｮ蜆ｪ蜈亥ｺｦ繧・`onigame-dodge60#13`・・ive lane・・ `onigame-lane-flip-sprint#2`・・irth lane・峨∈蜀埼・蛻励☆繧九Ｊdea funnel 縺ｯ `healthy` 蛻､螳壹→縺励～I20260314-03 Pocket Putt Panic` 縺ｯ `hold`・・nbox 邯ｭ謖・ｼ峨→縺吶ｋ縲・
+- **逅・罰:** 2026-03-15 譎らせ縺ｧ birth lane 縺ｯ app birth 驕疲・貂医∩縺ｧ polish 谿ｵ髫弱↓蜈･縺｣縺ｦ縺・ｋ荳譁ｹ縲〕ive lane 縺ｯ `#13` 縺梧悴螳御ｺ・〒 day-progress 縺ｮ蛛上ｊ縺梧ｮ九ｋ縺溘ａ縲Ａincubating` 縺ｯ2莉ｶ縺ゅｊ縲∫峩霑・CEO run 縺ｧ movement 縺後≠繧九◆繧・funnel 縺ｯ蛛･蠎ｷ迥ｶ諷九ｒ貅縺溘☆縲・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ・EO review・・
+- **蠖ｱ髻ｿ:** 谺｡縺ｮ迴ｾ蝣ｴ run 縺ｯ live lane 縺ｮ譛ｪ螳御ｺ・ｧ｣豸医ｒ primary 縺ｫ蝗ｺ螳壹＠縲∝ｮ御ｺ・ｾ後↓ birth lane polish 繧堤ｶ咏ｶ壹☆繧九ゆｼ∫判縺ｯ `Pocket Putt Panic` 繧剃ｿ晉蕗縺励※譌｢蟄・incubating 縺ｮ讀懆ｨｼ繧貞━蜈医☆繧九・
+
+### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
+### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 007 fixed post-restart control lock and advanced live lane queue
+- **豎ｺ螳・** `live lane` 縺ｮ primary item `onigame-dodge60#13` 繧貞ｮ御ｺ・→縺励※ close 縺励〉etry逶ｴ蠕後・ post-restart friction・・EADY荳ｭ縺ｮ隱､蜈･蜉帷ｧｻ蜍包ｼ峨ｒ謚代∴繧九◆繧・`READY` 蜈･蜉帙Ο繝・け縺ｨ reset譎・input state clear 繧・`onigame-dodge60` 縺ｫ螳溯｣・＠縺溘よｬ｡縺ｮ live lane 螳溯｡・item 縺ｯ `onigame-dodge60#14` 縺ｨ縺励※ Project #2 `Ready / P1 / S` 縺ｫ險ｭ螳壹☆繧九・
+- **逅・罰:** 逶ｴ蜑阪・蜀埼幕繧ｭ繝･繝ｼ謾ｹ蝟・ｾ後ｂ縲〉etry逶ｴ蠕後↓蜈･蜉帷憾諷九′谿九ｋ縺ｨ蜀埼幕蜩∬ｳｪ縺御ｸ榊ｮ牙ｮ壹↓縺ｪ繧九◆繧√ら洒譎る俣繧ｻ繝・す繝ｧ繝ｳ縺ｮ蜀肴倦謌ｦ菴馴ｨ薙ｒ螳牙ｮ壼喧縺吶ｋ萓｡蛟､縺碁ｫ倥°縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commit `fddea2d` 繧・`main` 縺ｸ push縲Ｍive URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773522230859` 縺ｧ `READY 1.0s -> READY 0.2s -> LIVE` 繧堤｢ｺ隱阪＠縲∝ｺｧ讓呵ｦｳ貂ｬ `xStart=150`, `xDuringReady=150`, `xAfterLive=88`・・readyLocked=true`, `movedAfterLive=true`・峨ｒ遒ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** Project #2 縺ｯ `onigame-dodge60#13 Done`縲～#14 Ready`縲Ａbirth lane` 縺ｯ `onigame-lane-flip-sprint#2` 繧・`Ready` 邯ｭ謖√〒谺｡ run 縺ｮ primary 蛟呵｣懊→縺吶ｋ縲・
+
 ### 2026-03
 
-### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 006 completed first Lane Flip Sprint polish and advanced birth lane queue
-- **決定:** `birth lane` の primary item `onigame-lane-flip-sprint#1` を完了として close し、レーン移動の入力視認性を上げる HUD lane indicator（`Lane 2 / 3`）と lane-change feedback を `onigame-lane-flip-sprint` に実装した。次の `birth lane` 実行 item は `onigame-lane-flip-sprint#2`（retry re-entry readability の1件修正）として Project #2 `Ready / P1 / S` に設定する。
-- **理由:** app birth 後の最初のプレイテスト由来摩擦として「入力が入ったか分かりにくい」が残っており、1 run で小さく改善できる価値が高かったため。
-- **検証結果:** game repo commit `7edaabc` を `main` へ push。live URL `https://onizuka-agi-co.github.io/onigame-lane-flip-sprint/?t=1773518703598` で `lane-label` が `2 / 3 -> 3 / 3 -> 2 / 3` に変化することを確認。配信 `app.js` に `laneLabel` / `lane-feedback` 実装を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** Project #2 は `onigame-lane-flip-sprint#1 Done`、`#2 Ready`。`live lane` は `onigame-dodge60#13` を `Ready` 維持し、次 run の primary 候補とする。
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
+### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 006 completed first Lane Flip Sprint polish and advanced birth lane queue
+- **豎ｺ螳・** `birth lane` 縺ｮ primary item `onigame-lane-flip-sprint#1` 繧貞ｮ御ｺ・→縺励※ close 縺励√Ξ繝ｼ繝ｳ遘ｻ蜍輔・蜈･蜉幄ｦ冶ｪ肴ｧ繧剃ｸ翫￡繧・HUD lane indicator・・Lane 2 / 3`・峨→ lane-change feedback 繧・`onigame-lane-flip-sprint` 縺ｫ螳溯｣・＠縺溘よｬ｡縺ｮ `birth lane` 螳溯｡・item 縺ｯ `onigame-lane-flip-sprint#2`・・etry re-entry readability 縺ｮ1莉ｶ菫ｮ豁｣・峨→縺励※ Project #2 `Ready / P1 / S` 縺ｫ險ｭ螳壹☆繧九・
+- **逅・罰:** app birth 蠕後・譛蛻昴・繝励Ξ繧､繝・せ繝育罰譚･鞫ｩ謫ｦ縺ｨ縺励※縲悟・蜉帙′蜈･縺｣縺溘°蛻・°繧翫↓縺上＞縲阪′谿九▲縺ｦ縺翫ｊ縲・ run 縺ｧ蟆上＆縺乗隼蝟・〒縺阪ｋ萓｡蛟､縺碁ｫ倥°縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commit `7edaabc` 繧・`main` 縺ｸ push縲Ｍive URL `https://onizuka-agi-co.github.io/onigame-lane-flip-sprint/?t=1773518703598` 縺ｧ `lane-label` 縺・`2 / 3 -> 3 / 3 -> 2 / 3` 縺ｫ螟牙喧縺吶ｋ縺薙→繧堤｢ｺ隱阪る・菫｡ `app.js` 縺ｫ `laneLabel` / `lane-feedback` 螳溯｣・ｒ遒ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** Project #2 縺ｯ `onigame-lane-flip-sprint#1 Done`縲～#2 Ready`縲Ａlive lane` 縺ｯ `onigame-dodge60#13` 繧・`Ready` 邯ｭ謖√＠縲∵ｬ｡ run 縺ｮ primary 蛟呵｣懊→縺吶ｋ縲・
+
 ### 2026-03
 
-### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 005 completed retry re-entry clarity and advanced live lane to post-restart friction pass
-- **決定:** `live lane` の primary item `onigame-dodge60#12` を完了として close し、retry直後の再開認知を強化する visual cue（`New run started`）を `onigame-dodge60` に実装した。次の live lane 実行 item は `onigame-dodge60#13`（post-restart friction の1件修正）として Project #2 `Ready / P1 / S` に設定する。
-- **理由:** Meeting 004 で `birth lane` の app birth は完了済みだったため、dual-lane rule に従って未完了の `live lane` item (`#12`) を回収するのが最小で価値が高かったため。
-- **検証結果:** game repo commits `68544df` / `00d9bdf` を `main` へ push。live URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773515192411` で game over 後 `Retry` 押下時の `New run started` 表示、`READY 1.2s` 復帰、overlay 非表示を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** Project #2 は `#12 Done`、`#13 Ready`。`birth lane` は `onigame-lane-flip-sprint#1` を次 hand として維持し、次 run は両 lane の polish item 進行に移る。
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
+### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 005 completed retry re-entry clarity and advanced live lane to post-restart friction pass
+- **豎ｺ螳・** `live lane` 縺ｮ primary item `onigame-dodge60#12` 繧貞ｮ御ｺ・→縺励※ close 縺励〉etry逶ｴ蠕後・蜀埼幕隱咲衍繧貞ｼｷ蛹悶☆繧・visual cue・・New run started`・峨ｒ `onigame-dodge60` 縺ｫ螳溯｣・＠縺溘よｬ｡縺ｮ live lane 螳溯｡・item 縺ｯ `onigame-dodge60#13`・・ost-restart friction 縺ｮ1莉ｶ菫ｮ豁｣・峨→縺励※ Project #2 `Ready / P1 / S` 縺ｫ險ｭ螳壹☆繧九・
+- **逅・罰:** Meeting 004 縺ｧ `birth lane` 縺ｮ app birth 縺ｯ螳御ｺ・ｸ医∩縺縺｣縺溘◆繧√‥ual-lane rule 縺ｫ蠕薙▲縺ｦ譛ｪ螳御ｺ・・ `live lane` item (`#12`) 繧貞屓蜿弱☆繧九・縺梧怙蟆上〒萓｡蛟､縺碁ｫ倥°縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commits `68544df` / `00d9bdf` 繧・`main` 縺ｸ push縲Ｍive URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773515192411` 縺ｧ game over 蠕・`Retry` 謚ｼ荳区凾縺ｮ `New run started` 陦ｨ遉ｺ縲～READY 1.2s` 蠕ｩ蟶ｰ縲｛verlay 髱櫁｡ｨ遉ｺ繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** Project #2 縺ｯ `#12 Done`縲～#13 Ready`縲Ａbirth lane` 縺ｯ `onigame-lane-flip-sprint#1` 繧呈ｬ｡ hand 縺ｨ縺励※邯ｭ謖√＠縲∵ｬ｡ run 縺ｯ荳｡ lane 縺ｮ polish item 騾ｲ陦後↓遘ｻ繧九・
+
 ### 2026-03
 
-### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 004 completed Lane Flip Sprint app birth and shifted birth lane to first playtest polish
-- **決定:** `birth lane` の primary item `onizuka-game-agi-co#10` を完了として close し、新規ゲーム repo `onizuka-agi-co/onigame-lane-flip-sprint` を作成・push・Pages有効化・live verify まで完了した。次の `birth lane` 実行 item は `onigame-lane-flip-sprint#1`（初回プレイテスト + top friction修正）として Project #2 `Ready / P1 / S` に設定する。
-- **理由:** daily dual-lane rule では同日中に `live lane` 改善だけでなく「新規 app birth」が必須。Meeting 003 時点で birth lane は可視化のみだったため、実装と公開を最優先で完了させる必要があったため。
-- **検証結果:** new repo commit `c191b12` を `main` へ push、Pages API 有効化後に `https://onizuka-agi-co.github.io/onigame-lane-flip-sprint/` が `200` 応答し `Lane Flip Sprint` / `GitHub Repository` 文言を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 本日の dual-lane 最低成果は達成。次 run は `live lane` の `onigame-dodge60#12` を優先しつつ、birth lane は `onigame-lane-flip-sprint#1` を次手として維持する。
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
+### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 004 completed Lane Flip Sprint app birth and shifted birth lane to first playtest polish
+- **豎ｺ螳・** `birth lane` 縺ｮ primary item `onizuka-game-agi-co#10` 繧貞ｮ御ｺ・→縺励※ close 縺励∵眠隕上ご繝ｼ繝 repo `onizuka-agi-co/onigame-lane-flip-sprint` 繧剃ｽ懈・繝ｻpush繝ｻPages譛牙柑蛹悶・live verify 縺ｾ縺ｧ螳御ｺ・＠縺溘よｬ｡縺ｮ `birth lane` 螳溯｡・item 縺ｯ `onigame-lane-flip-sprint#1`・亥・蝗槭・繝ｬ繧､繝・せ繝・+ top friction菫ｮ豁｣・峨→縺励※ Project #2 `Ready / P1 / S` 縺ｫ險ｭ螳壹☆繧九・
+- **逅・罰:** daily dual-lane rule 縺ｧ縺ｯ蜷梧律荳ｭ縺ｫ `live lane` 謾ｹ蝟・□縺代〒縺ｪ縺上梧眠隕・app birth縲阪′蠢・医・eeting 003 譎らせ縺ｧ birth lane 縺ｯ蜿ｯ隕門喧縺ｮ縺ｿ縺縺｣縺溘◆繧√∝ｮ溯｣・→蜈ｬ髢九ｒ譛蜆ｪ蜈医〒螳御ｺ・＆縺帙ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** new repo commit `c191b12` 繧・`main` 縺ｸ push縲￣ages API 譛牙柑蛹門ｾ後↓ `https://onizuka-agi-co.github.io/onigame-lane-flip-sprint/` 縺・`200` 蠢懃ｭ斐＠ `Lane Flip Sprint` / `GitHub Repository` 譁・ｨ繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 譛ｬ譌･縺ｮ dual-lane 譛菴取・譫懊・驕疲・縲よｬ｡ run 縺ｯ `live lane` 縺ｮ `onigame-dodge60#12` 繧貞━蜈医＠縺､縺､縲｜irth lane 縺ｯ `onigame-lane-flip-sprint#1` 繧呈ｬ｡謇九→縺励※邯ｭ謖√☆繧九・
+
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: CEO Review 009 promoted One Stroke Sweep to incubating and kept dual-track execution unchanged
-- **決定:** `IDEAS.md` の `I20260314-02 One Stroke Sweep` を `inbox` から `incubating` に昇格し、`PROJECTS.md` に birth lane の予備候補として反映する。会社運営方針は前 run の dual-track day（live lane + birth lane）を維持し、次の現場 run では未着手の birth lane を優先する。
-- **理由:** 2026-03-15 の現場進行は live lane（`onigame-dodge60#10/#11`）は前進済みだが、birth lane は未着手。idea funnel の鮮度を維持しながら、同日新規 app birth の実行性を上げる必要があるため。
-- **決定者:** エージェント（CEO review）
-- **影響:** `Lane Flip Sprint` が第一候補、`One Stroke Sweep` が予備候補として明示され、次の現場 run で birth lane 実装着手を判断しやすくなる。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: CEO Review 009 promoted One Stroke Sweep to incubating and kept dual-track execution unchanged
+- **豎ｺ螳・** `IDEAS.md` 縺ｮ `I20260314-02 One Stroke Sweep` 繧・`inbox` 縺九ｉ `incubating` 縺ｫ譏・ｼ縺励～PROJECTS.md` 縺ｫ birth lane 縺ｮ莠亥ｙ蛟呵｣懊→縺励※蜿肴丐縺吶ｋ縲ゆｼ夂､ｾ驕句霧譁ｹ驥昴・蜑・run 縺ｮ dual-track day・・ive lane + birth lane・峨ｒ邯ｭ謖√＠縲∵ｬ｡縺ｮ迴ｾ蝣ｴ run 縺ｧ縺ｯ譛ｪ逹謇九・ birth lane 繧貞━蜈医☆繧九・
+- **逅・罰:** 2026-03-15 縺ｮ迴ｾ蝣ｴ騾ｲ陦後・ live lane・・onigame-dodge60#10/#11`・峨・蜑埼ｲ貂医∩縺縺後｜irth lane 縺ｯ譛ｪ逹謇九Ｊdea funnel 縺ｮ魄ｮ蠎ｦ繧堤ｶｭ謖√＠縺ｪ縺後ｉ縲∝酔譌･譁ｰ隕・app birth 縺ｮ螳溯｡梧ｧ繧剃ｸ翫￡繧句ｿ・ｦ√′縺ゅｋ縺溘ａ縲・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ・EO review・・
+- **蠖ｱ髻ｿ:** `Lane Flip Sprint` 縺檎ｬｬ荳蛟呵｣懊～One Stroke Sweep` 縺御ｺ亥ｙ蛟呵｣懊→縺励※譏守､ｺ縺輔ｌ縲∵ｬ｡縺ｮ迴ｾ蝣ｴ run 縺ｧ birth lane 螳溯｣・捩謇九ｒ蛻､譁ｭ縺励ｄ縺吶￥縺ｪ繧九・
 
 ### 2026-03
 
-### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Field meetings must move both the live lane and a same-day new-app birth lane
-- **決定:** `PLANNING_MEETING.md` と `docs/company-operating-flow.md` を更新し、現場運営の既定を「既存 live app の verified 改善」と「新規企画から新しい app をその日のうちに birth する」の dual-track day へ変更する。
-- **理由:** `mid-flight` 例外が強すぎると、24 run あっても既存アプリ改修だけで 1 日が終わり、会社として新しい app が生まれないため。ユーザー要求は「どちらか」ではなく「両方」であり、会社 cadence 的にもそれが妥当なため。
-- **決定者:** 人間要求 + エージェント反映
-- **影響:** 今後の field meeting は `Meeting 1` と `Meeting 2` で `live lane` と `birth lane` の両方を固定し、日末までに「1本改善 + 1本新生」を達成する前提で動く。`PROJECTS.md` には `Lane Flip Sprint` を次の birth lane 候補として可視化した。
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
+### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Field meetings must move both the live lane and a same-day new-app birth lane
+- **豎ｺ螳・** `PLANNING_MEETING.md` 縺ｨ `docs/company-operating-flow.md` 繧呈峩譁ｰ縺励∫樟蝣ｴ驕句霧縺ｮ譌｢螳壹ｒ縲梧里蟄・live app 縺ｮ verified 謾ｹ蝟・阪→縲梧眠隕丈ｼ∫判縺九ｉ譁ｰ縺励＞ app 繧偵◎縺ｮ譌･縺ｮ縺・■縺ｫ birth 縺吶ｋ縲阪・ dual-track day 縺ｸ螟画峩縺吶ｋ縲・
+- **逅・罰:** `mid-flight` 萓句､悶′蠑ｷ縺吶℃繧九→縲・4 run 縺ゅ▲縺ｦ繧よ里蟄倥い繝励Μ謾ｹ菫ｮ縺縺代〒 1 譌･縺檎ｵゅｏ繧翫∽ｼ夂､ｾ縺ｨ縺励※譁ｰ縺励＞ app 縺檎函縺ｾ繧後↑縺・◆繧√ゅΘ繝ｼ繧ｶ繝ｼ隕∵ｱゅ・縲後←縺｡繧峨°縲阪〒縺ｯ縺ｪ縺上御ｸ｡譁ｹ縲阪〒縺ゅｊ縲∽ｼ夂､ｾ cadence 逧・↓繧ゅ◎繧後′螯･蠖薙↑縺溘ａ縲・
+- **豎ｺ螳夊・** 莠ｺ髢楢ｦ∵ｱ・+ 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥渚譏
+- **蠖ｱ髻ｿ:** 莉雁ｾ後・ field meeting 縺ｯ `Meeting 1` 縺ｨ `Meeting 2` 縺ｧ `live lane` 縺ｨ `birth lane` 縺ｮ荳｡譁ｹ繧貞崋螳壹＠縲∵律譛ｫ縺ｾ縺ｧ縺ｫ縲・譛ｬ謾ｹ蝟・+ 1譛ｬ譁ｰ逕溘阪ｒ驕疲・縺吶ｋ蜑肴署縺ｧ蜍輔￥縲ＡPROJECTS.md` 縺ｫ縺ｯ `Lane Flip Sprint` 繧呈ｬ｡縺ｮ birth lane 蛟呵｣懊→縺励※蜿ｯ隕門喧縺励◆縲・
+
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 002 shipped retry readability cue and advanced next hand to retry re-entry clarity
-- **決定:** issue `onigame-dodge60#11` を `Done` とし、ゲームオーバー直後の再開導線を強化する retry readability cue（pulsing hint badge + retry button focus）を `onigame-dodge60` へ反映した上で、次の実行 slice を `onigame-dodge60#12`（retry re-entry clarity）へ進める。
-- **理由:** `#10` で敗北理由の可読性は改善済みだが、再挑戦行動への導線が弱く、短セッション再開までの認知コストが残っていたため。
-- **検証結果:** commit `7a1e490` を push後、live URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773504262257` で `#retry-hint` 存在と配信 `app.js` / `styles.css` の更新（retry hint 文言、focus call、pulse animation）を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** Project #2 は `#11 Done`、`#12 Ready / P1 / S`。次 run は `#12` を1 run完結で進める。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 002 shipped retry readability cue and advanced next hand to retry re-entry clarity
+- **豎ｺ螳・** issue `onigame-dodge60#11` 繧・`Done` 縺ｨ縺励√ご繝ｼ繝繧ｪ繝ｼ繝舌・逶ｴ蠕後・蜀埼幕蟆守ｷ壹ｒ蠑ｷ蛹悶☆繧・retry readability cue・・ulsing hint badge + retry button focus・峨ｒ `onigame-dodge60` 縺ｸ蜿肴丐縺励◆荳翫〒縲∵ｬ｡縺ｮ螳溯｡・slice 繧・`onigame-dodge60#12`・・etry re-entry clarity・峨∈騾ｲ繧√ｋ縲・
+- **逅・罰:** `#10` 縺ｧ謨怜圏逅・罰縺ｮ蜿ｯ隱ｭ諤ｧ縺ｯ謾ｹ蝟・ｸ医∩縺縺後∝・謖第姶陦悟虚縺ｸ縺ｮ蟆守ｷ壹′蠑ｱ縺上∫洒繧ｻ繝・す繝ｧ繝ｳ蜀埼幕縺ｾ縺ｧ縺ｮ隱咲衍繧ｳ繧ｹ繝医′谿九▲縺ｦ縺・◆縺溘ａ縲・
+- **讀懆ｨｼ邨先棡:** commit `7a1e490` 繧・push蠕後〕ive URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773504262257` 縺ｧ `#retry-hint` 蟄伜惠縺ｨ驟堺ｿ｡ `app.js` / `styles.css` 縺ｮ譖ｴ譁ｰ・・etry hint 譁・ｨ縲’ocus call縲｝ulse animation・峨ｒ遒ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** Project #2 縺ｯ `#11 Done`縲～#12 Ready / P1 / S`縲よｬ｡ run 縺ｯ `#12` 繧・ run螳檎ｵ舌〒騾ｲ繧√ｋ縲・
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 001 shipped game-over cause badge and advanced next hand to retry readability
-- **決定:** issue `onigame-dodge60#10` を `Done` とし、game-over 時の敗北理由を即読できる visual cue（`Reason: Hit by hazard` バッジ）を `onigame-dodge60` へ反映した上で、次の実行 slice を `onigame-dodge60#11`（retry readability の視認性改善）へ進める。
-- **理由:** hit flash だけでは結果画面で「なぜ負けたか」の意味が薄く、再挑戦前の理解コストが残っていたため。短い原因表示バッジを追加することで失敗理由を即時認知できるため。
-- **検証結果:** commit `e000762` を push後、live URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773500666656` で `Game Over` と `Reason: Hit by hazard`（class: `result-cause hit`）を確認。`app.js` 配信内容にも原因表示文字列を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** Project #2 は `#10 Done`、`#11 Ready / P1 / S`。次 run は `#11` を1 run完結で進める。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 001 shipped game-over cause badge and advanced next hand to retry readability
+- **豎ｺ螳・** issue `onigame-dodge60#10` 繧・`Done` 縺ｨ縺励“ame-over 譎ゅ・謨怜圏逅・罰繧貞叉隱ｭ縺ｧ縺阪ｋ visual cue・・Reason: Hit by hazard` 繝舌ャ繧ｸ・峨ｒ `onigame-dodge60` 縺ｸ蜿肴丐縺励◆荳翫〒縲∵ｬ｡縺ｮ螳溯｡・slice 繧・`onigame-dodge60#11`・・etry readability 縺ｮ隕冶ｪ肴ｧ謾ｹ蝟・ｼ峨∈騾ｲ繧√ｋ縲・
+- **逅・罰:** hit flash 縺縺代〒縺ｯ邨先棡逕ｻ髱｢縺ｧ縲後↑縺懆ｲ縺代◆縺九阪・諢丞袖縺瑚埋縺上∝・謖第姶蜑阪・逅・ｧ｣繧ｳ繧ｹ繝医′谿九▲縺ｦ縺・◆縺溘ａ縲ら洒縺・次蝗陦ｨ遉ｺ繝舌ャ繧ｸ繧定ｿｽ蜉縺吶ｋ縺薙→縺ｧ螟ｱ謨礼炊逕ｱ繧貞叉譎りｪ咲衍縺ｧ縺阪ｋ縺溘ａ縲・
+- **讀懆ｨｼ邨先棡:** commit `e000762` 繧・push蠕後〕ive URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773500666656` 縺ｧ `Game Over` 縺ｨ `Reason: Hit by hazard`・・lass: `result-cause hit`・峨ｒ遒ｺ隱阪Ａapp.js` 驟堺ｿ｡蜀・ｮｹ縺ｫ繧ょ次蝗陦ｨ遉ｺ譁・ｭ怜・繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** Project #2 縺ｯ `#10 Done`縲～#11 Ready / P1 / S`縲よｬ｡ run 縺ｯ `#11` 繧・ run螳檎ｵ舌〒騾ｲ繧√ｋ縲・
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Meeting 025 shipped hit-impact flash and advanced next hand to game-over readability
-- **決定:** issue `onigame-dodge60#9` を `Done` とし、被弾時の視認性改善（短いインパクトフラッシュ）を `onigame-dodge60` へ反映した上で、次の実行 slice を `onigame-dodge60#10`（game-over readability の視認性改善）へ進める。
-- **理由:** 直前の drag 改善後、敗北瞬間の認知が弱く「なぜ負けたか」が伝わりにくかったため。小さな演出追加で短時間プレイの理解性を上げられるため。
-- **検証結果:** commit `2a3e469` を push後、live URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773497046354` で配信 `app.js` に `drawHitFlash` / `pendingResult` 実装が含まれること、および `LIVE -> RESULT` 遷移を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** Project #2 は `#9 Done`、`#10 Ready / P1 / S`。次 run は `#10` を1 run完結で進める。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Meeting 025 shipped hit-impact flash and advanced next hand to game-over readability
+- **豎ｺ螳・** issue `onigame-dodge60#9` 繧・`Done` 縺ｨ縺励∬｢ｫ蠑ｾ譎ゅ・隕冶ｪ肴ｧ謾ｹ蝟・ｼ育洒縺・う繝ｳ繝代け繝医ヵ繝ｩ繝・す繝･・峨ｒ `onigame-dodge60` 縺ｸ蜿肴丐縺励◆荳翫〒縲∵ｬ｡縺ｮ螳溯｡・slice 繧・`onigame-dodge60#10`・・ame-over readability 縺ｮ隕冶ｪ肴ｧ謾ｹ蝟・ｼ峨∈騾ｲ繧√ｋ縲・
+- **逅・罰:** 逶ｴ蜑阪・ drag 謾ｹ蝟・ｾ後∵風蛹礼椪髢薙・隱咲衍縺悟ｼｱ縺上後↑縺懆ｲ縺代◆縺九阪′莨昴ｏ繧翫↓縺上°縺｣縺溘◆繧√ょｰ上＆縺ｪ貍泌・霑ｽ蜉縺ｧ遏ｭ譎る俣繝励Ξ繧､縺ｮ逅・ｧ｣諤ｧ繧剃ｸ翫￡繧峨ｌ繧九◆繧√・
+- **讀懆ｨｼ邨先棡:** commit `2a3e469` 繧・push蠕後〕ive URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773497046354` 縺ｧ驟堺ｿ｡ `app.js` 縺ｫ `drawHitFlash` / `pendingResult` 螳溯｣・′蜷ｫ縺ｾ繧後ｋ縺薙→縲√♀繧医・ `LIVE -> RESULT` 驕ｷ遘ｻ繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** Project #2 縺ｯ `#9 Done`縲～#10 Ready / P1 / S`縲よｬ｡ run 縺ｯ `#10` 繧・ run螳檎ｵ舌〒騾ｲ繧√ｋ縲・
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Field meetings should use a daily concept-to-release cadence
-- **決定:** `PLANNING_MEETING.md` の既定 cadence を「Meeting 1 = 市場/企画探索」「Meeting 2 = 企画立案/初回リリース定義」「Meeting 3以降 = 同じ企画を GitHub Pages へ作り切って改善する build-to-release agile loop」に変更する。
-- **理由:** この会社は 24/7 の高密度 run があるため、毎 run で企画会議をやり直すより、1日の前半で企画を固めて後半を ship / verify / polish に使うほうが価値密度が高い。
-- **決定者:** 人間要求 + エージェント反映
-- **影響:** 現場 run は日中に broad planning を繰り返さず、例外時のみ企画へ戻る。`docs/company-operating-flow.md` も同 cadence に合わせる。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Field meetings should use a daily concept-to-release cadence
+- **豎ｺ螳・** `PLANNING_MEETING.md` 縺ｮ譌｢螳・cadence 繧偵勲eeting 1 = 蟶ょｴ/莨∫判謗｢邏｢縲阪勲eeting 2 = 莨∫判遶区｡・蛻晏屓繝ｪ繝ｪ繝ｼ繧ｹ螳夂ｾｩ縲阪勲eeting 3莉･髯・= 蜷後§莨∫判繧・GitHub Pages 縺ｸ菴懊ｊ蛻・▲縺ｦ謾ｹ蝟・☆繧・build-to-release agile loop縲阪↓螟画峩縺吶ｋ縲・
+- **逅・罰:** 縺薙・莨夂､ｾ縺ｯ 24/7 縺ｮ鬮伜ｯ・ｺｦ run 縺後≠繧九◆繧√∵ｯ・run 縺ｧ莨∫判莨夊ｭｰ繧偵ｄ繧顔峩縺吶ｈ繧翫・譌･縺ｮ蜑榊濠縺ｧ莨∫判繧貞崋繧√※蠕悟濠繧・ship / verify / polish 縺ｫ菴ｿ縺・⊇縺・′萓｡蛟､蟇・ｺｦ縺碁ｫ倥＞縲・
+- **豎ｺ螳夊・** 莠ｺ髢楢ｦ∵ｱ・+ 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥渚譏
+- **蠖ｱ髻ｿ:** 迴ｾ蝣ｴ run 縺ｯ譌･荳ｭ縺ｫ broad planning 繧堤ｹｰ繧願ｿ斐＆縺壹∽ｾ句､匁凾縺ｮ縺ｿ莨∫判縺ｸ謌ｻ繧九Ａdocs/company-operating-flow.md` 繧ょ酔 cadence 縺ｫ蜷医ｏ縺帙ｋ縲・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Meeting 024 closed mobile drag polish and advanced next hand to readability
-- **決定:** issue `onigame-dodge60#7` を `Done` とし、mobile drag 摩擦修正（grab offset保持）と画面内 GitHub リンク表示を `onigame-dodge60` へ反映した上で、次の実行 slice を `onigame-dodge60#9`（hit readability の視認性改善）へ進める。
-- **理由:** CEO Review 005 の受け入れ条件（drag改善 + in-appリンク + live確認）を満たしつつ、次の価値を最小差分で積み上げるため。
-- **検証結果:** commit `9031ee9` を push後、live URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773493667617-1` で `.repo-link` 表示と gameplay loop（`state=LIVE`, timer/score進行）を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** Project #2 は `#7 Done`、`#9 Ready / P1 / S`。次 run は `#9` を1 run完結で進める。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Meeting 024 closed mobile drag polish and advanced next hand to readability
+- **豎ｺ螳・** issue `onigame-dodge60#7` 繧・`Done` 縺ｨ縺励［obile drag 鞫ｩ謫ｦ菫ｮ豁｣・・rab offset菫晄戟・峨→逕ｻ髱｢蜀・GitHub 繝ｪ繝ｳ繧ｯ陦ｨ遉ｺ繧・`onigame-dodge60` 縺ｸ蜿肴丐縺励◆荳翫〒縲∵ｬ｡縺ｮ螳溯｡・slice 繧・`onigame-dodge60#9`・・it readability 縺ｮ隕冶ｪ肴ｧ謾ｹ蝟・ｼ峨∈騾ｲ繧√ｋ縲・
+- **逅・罰:** CEO Review 005 縺ｮ蜿励￠蜈･繧梧擅莉ｶ・・rag謾ｹ蝟・+ in-app繝ｪ繝ｳ繧ｯ + live遒ｺ隱搾ｼ峨ｒ貅縺溘＠縺､縺､縲∵ｬ｡縺ｮ萓｡蛟､繧呈怙蟆丞ｷｮ蛻・〒遨阪∩荳翫￡繧九◆繧√・
+- **讀懆ｨｼ邨先棡:** commit `9031ee9` 繧・push蠕後〕ive URL `https://onizuka-agi-co.github.io/onigame-dodge60/?t=1773493667617-1` 縺ｧ `.repo-link` 陦ｨ遉ｺ縺ｨ gameplay loop・・state=LIVE`, timer/score騾ｲ陦鯉ｼ峨ｒ遒ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** Project #2 縺ｯ `#7 Done`縲～#9 Ready / P1 / S`縲よｬ｡ run 縺ｯ `#9` 繧・ run螳檎ｵ舌〒騾ｲ繧√ｋ縲・
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Make the idea funnel agent-only and explicit
-- **決定:** `IDEAS.md` を単なるメモ置き場ではなく、agent-only の新規企画 funnel の canonical inbox として扱う。
-- **理由:** アイデアがあっても、CEO review と field meeting の loop に接続されていなければ、自動運営会社として新規企画が自然発生しないため。
-- **決定者:** 人間要求 + エージェント反映
-- **影響:** CEO automation は `IDEAS.md` を毎 run 確認し、最低 1 件を `adopt / hold / reject` で処理する。field meeting automation は idea handoff はしてよいが、CEO 判断か bootstrap item なしに新規 concept を primary lane に昇格させない。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Make the idea funnel agent-only and explicit
+- **豎ｺ螳・** `IDEAS.md` 繧貞腰縺ｪ繧九Γ繝｢鄂ｮ縺榊ｴ縺ｧ縺ｯ縺ｪ縺上∥gent-only 縺ｮ譁ｰ隕丈ｼ∫判 funnel 縺ｮ canonical inbox 縺ｨ縺励※謇ｱ縺・・
+- **逅・罰:** 繧｢繧､繝・い縺後≠縺｣縺ｦ繧ゅ，EO review 縺ｨ field meeting 縺ｮ loop 縺ｫ謗･邯壹＆繧後※縺・↑縺代ｌ縺ｰ縲∬・蜍暮°蝟ｶ莨夂､ｾ縺ｨ縺励※譁ｰ隕丈ｼ∫判縺瑚・辟ｶ逋ｺ逕溘＠縺ｪ縺・◆繧√・
+- **豎ｺ螳夊・** 莠ｺ髢楢ｦ∵ｱ・+ 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥渚譏
+- **蠖ｱ髻ｿ:** CEO automation 縺ｯ `IDEAS.md` 繧呈ｯ・run 遒ｺ隱阪＠縲∵怙菴・1 莉ｶ繧・`adopt / hold / reject` 縺ｧ蜃ｦ逅・☆繧九Ｇield meeting automation 縺ｯ idea handoff 縺ｯ縺励※繧医＞縺後，EO 蛻､譁ｭ縺・bootstrap item 縺ｪ縺励↓譁ｰ隕・concept 繧・primary lane 縺ｫ譏・ｼ縺輔○縺ｪ縺・・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Meeting 023 shipped READY countdown HUD and moved next hand to mobile drag polish
-- **決定:** issue `onigame-dodge60#6` を `Done` とし、開始可読性改善（HUD state/countdown）を `onigame-dodge60` に反映した上で、次の実行 slice を `onigame-dodge60#7`（mobile drag 摩擦修正）へ進める。
-- **理由:** live play で READY終了タイミングの読み取りが弱く、短セッションの初動品質に直結するため。小さなUI可視化修正で即時に改善できるため。
-- **検証結果:** live URL で `READY 0.7s -> READY 0.3s -> LIVE` と遷移し、`time=60.0` 維持後に減少開始することを確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** Project #2 は `#6 Done`、`#7 Ready / P1 / S`。重複作成された `#8` は duplicate close + item削除でクリーンアップ済み。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Meeting 023 shipped READY countdown HUD and moved next hand to mobile drag polish
+- **豎ｺ螳・** issue `onigame-dodge60#6` 繧・`Done` 縺ｨ縺励・幕蟋句庄隱ｭ諤ｧ謾ｹ蝟・ｼ・UD state/countdown・峨ｒ `onigame-dodge60` 縺ｫ蜿肴丐縺励◆荳翫〒縲∵ｬ｡縺ｮ螳溯｡・slice 繧・`onigame-dodge60#7`・・obile drag 鞫ｩ謫ｦ菫ｮ豁｣・峨∈騾ｲ繧√ｋ縲・
+- **逅・罰:** live play 縺ｧ READY邨ゆｺ・ち繧､繝溘Φ繧ｰ縺ｮ隱ｭ縺ｿ蜿悶ｊ縺悟ｼｱ縺上∫洒繧ｻ繝・す繝ｧ繝ｳ縺ｮ蛻晏虚蜩∬ｳｪ縺ｫ逶ｴ邨舌☆繧九◆繧√ょｰ上＆縺ｪUI蜿ｯ隕門喧菫ｮ豁｣縺ｧ蜊ｳ譎ゅ↓謾ｹ蝟・〒縺阪ｋ縺溘ａ縲・
+- **讀懆ｨｼ邨先棡:** live URL 縺ｧ `READY 0.7s -> READY 0.3s -> LIVE` 縺ｨ驕ｷ遘ｻ縺励～time=60.0` 邯ｭ謖∝ｾ後↓貂帛ｰ鷹幕蟋九☆繧九％縺ｨ繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** Project #2 縺ｯ `#6 Done`縲～#7 Ready / P1 / S`縲る㍾隍・ｽ懈・縺輔ｌ縺・`#8` 縺ｯ duplicate close + item蜑企勁縺ｧ繧ｯ繝ｪ繝ｼ繝ｳ繧｢繝・・貂医∩縲・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Document the full company operating flow as a canonical PDCA reference
-- **決定:** `docs/company-operating-flow.md` を新設し、会社全体の operating loop、役割分担、source of truth、Done 定義、PDCA の回し方を明文化する。
-- **理由:** raw log を追わないと全体像が見えない状態では、会社としての改善、比較、再発防止、CEO/CTO の監督が弱くなるため。
-- **決定者:** 人間要求 + エージェント反映
-- **影響:** 以後は `README.md`、`PLANNING_MEETING.md`、`CEO_REVIEW.md` から本ドキュメントを辿り、全体像はまずこの文書で把握する。raw log は証跡確認と friction 調査に限定する。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Document the full company operating flow as a canonical PDCA reference
+- **豎ｺ螳・** `docs/company-operating-flow.md` 繧呈眠險ｭ縺励∽ｼ夂､ｾ蜈ｨ菴薙・ operating loop縲∝ｽｹ蜑ｲ蛻・球縲《ource of truth縲．one 螳夂ｾｩ縲￣DCA 縺ｮ蝗槭＠譁ｹ繧呈・譁・喧縺吶ｋ縲・
+- **逅・罰:** raw log 繧定ｿｽ繧上↑縺・→蜈ｨ菴灘ワ縺瑚ｦ九∴縺ｪ縺・憾諷九〒縺ｯ縲∽ｼ夂､ｾ縺ｨ縺励※縺ｮ謾ｹ蝟・∵ｯ碑ｼ・∝・逋ｺ髦ｲ豁｢縲，EO/CTO 縺ｮ逶｣逹｣縺悟ｼｱ縺上↑繧九◆繧√・
+- **豎ｺ螳夊・** 莠ｺ髢楢ｦ∵ｱ・+ 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥渚譏
+- **蠖ｱ髻ｿ:** 莉･蠕後・ `README.md`縲～PLANNING_MEETING.md`縲～CEO_REVIEW.md` 縺九ｉ譛ｬ繝峨く繝･繝｡繝ｳ繝医ｒ霎ｿ繧翫∝・菴灘ワ縺ｯ縺ｾ縺壹％縺ｮ譁・嶌縺ｧ謚頑升縺吶ｋ縲Ｓaw log 縺ｯ險ｼ霍｡遒ｺ隱阪→ friction 隱ｿ譟ｻ縺ｫ髯仙ｮ壹☆繧九・
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Meeting 022 completed live verification for READY timer fix and moved queue forward
-- **決定:** issue `onigame-dodge60#5` を live 検証完了として `Done` にし、次の実行 slice を `onigame-dodge60#6`（playtest + 1件 polish fix）へ進める。
-- **理由:** Meeting 021 の修正（READY中 timer 停止）は live URL で挙動確認が必要で、確認完了後は即座に次の実装可能な1手へ遷移するのが最短で価値が高いため。
-- **検証結果:** READY中 `60.0` 維持、READY後に timer 減少開始、retry 後 `time=60.0` / `score=0` / overlay非表示を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** Project #2 は `#5 Done`、`#6 Ready / P1 / S`。次 run は `#6` を1 run完結で進める。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Meeting 022 completed live verification for READY timer fix and moved queue forward
+- **豎ｺ螳・** issue `onigame-dodge60#5` 繧・live 讀懆ｨｼ螳御ｺ・→縺励※ `Done` 縺ｫ縺励∵ｬ｡縺ｮ螳溯｡・slice 繧・`onigame-dodge60#6`・・laytest + 1莉ｶ polish fix・峨∈騾ｲ繧√ｋ縲・
+- **逅・罰:** Meeting 021 縺ｮ菫ｮ豁｣・・EADY荳ｭ timer 蛛懈ｭ｢・峨・ live URL 縺ｧ謖吝虚遒ｺ隱阪′蠢・ｦ√〒縲∫｢ｺ隱榊ｮ御ｺ・ｾ後・蜊ｳ蠎ｧ縺ｫ谺｡縺ｮ螳溯｣・庄閭ｽ縺ｪ1謇九∈驕ｷ遘ｻ縺吶ｋ縺ｮ縺梧怙遏ｭ縺ｧ萓｡蛟､縺碁ｫ倥＞縺溘ａ縲・
+- **讀懆ｨｼ邨先棡:** READY荳ｭ `60.0` 邯ｭ謖√ヽEADY蠕後↓ timer 貂帛ｰ鷹幕蟋九〉etry 蠕・`time=60.0` / `score=0` / overlay髱櫁｡ｨ遉ｺ繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** Project #2 縺ｯ `#5 Done`縲～#6 Ready / P1 / S`縲よｬ｡ run 縺ｯ `#6` 繧・ run螳檎ｵ舌〒騾ｲ繧√ｋ縲・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: CEOレビューで「2 run 連続停滞時の実装ゲート」を追加
-- **決定:** `PLANNING_MEETING.md` に `Implementation Gate (CEO 2026-03-13)` を追加し、`onigame-quickshot` 未着手時は Project #2 同期より先に最小実装差分を必須化した。
-- **理由:** Meeting 012-014 で Project #2 同期は回復した一方、`games/onigame-quickshot` は未作成のまま連続停滞していたため。
-- **決定者:** エージェント（CEOレビュー）
-- **影響:** 現場定例は「会議更新だけで終了」を許容せず、最小ファイル追加または最小挙動追加を先に行う。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: CEO繝ｬ繝薙Η繝ｼ縺ｧ縲・ run 騾｣邯壼●貊樊凾縺ｮ螳溯｣・ご繝ｼ繝医阪ｒ霑ｽ蜉
+- **豎ｺ螳・** `PLANNING_MEETING.md` 縺ｫ `Implementation Gate (CEO 2026-03-13)` 繧定ｿｽ蜉縺励～onigame-quickshot` 譛ｪ逹謇区凾縺ｯ Project #2 蜷梧悄繧医ｊ蜈医↓譛蟆丞ｮ溯｣・ｷｮ蛻・ｒ蠢・亥喧縺励◆縲・
+- **逅・罰:** Meeting 012-014 縺ｧ Project #2 蜷梧悄縺ｯ蝗槫ｾｩ縺励◆荳譁ｹ縲～games/onigame-quickshot` 縺ｯ譛ｪ菴懈・縺ｮ縺ｾ縺ｾ騾｣邯壼●貊槭＠縺ｦ縺・◆縺溘ａ縲・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ・EO繝ｬ繝薙Η繝ｼ・・
+- **蠖ｱ髻ｿ:** 迴ｾ蝣ｴ螳壻ｾ九・縲御ｼ夊ｭｰ譖ｴ譁ｰ縺縺代〒邨ゆｺ・阪ｒ險ｱ螳ｹ縺帙★縲∵怙蟆上ヵ繧｡繧､繝ｫ霑ｽ蜉縺ｾ縺溘・譛蟆乗嫌蜍戊ｿｽ蜉繧貞・縺ｫ陦後≧縲・
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Meeting 005で次タスク維持、Project #2 同期をPAT無効ブロッカーとして継続記録
-- **決定:** `onigame-quickshot` の次タスクは変更せず、`games/onigame-quickshot` の最小プロトタイプ実装を継続する。
-- **理由:** 企画の再検討より実装着手点の固定を優先したほうが、playable に最短で近づけるため。
-- **副作用:** `.env` の `ONIZUKA_GITHUB_PAT` を使った `gh auth status` が再試行でも失敗し、GitHub Project #2 更新は未反映。
-- **決定者:** エージェント（現場定例）
-- **影響先:** 認証復旧後、Meeting 005 の会議題名に揃えて Project #2 の status と次の1手 item を同期する。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Meeting 005縺ｧ谺｡繧ｿ繧ｹ繧ｯ邯ｭ謖√￣roject #2 蜷梧悄繧単AT辟｡蜉ｹ繝悶Ο繝・き繝ｼ縺ｨ縺励※邯咏ｶ夊ｨ倬鹸
+- **豎ｺ螳・** `onigame-quickshot` 縺ｮ谺｡繧ｿ繧ｹ繧ｯ縺ｯ螟画峩縺帙★縲～games/onigame-quickshot` 縺ｮ譛蟆上・繝ｭ繝医ち繧､繝怜ｮ溯｣・ｒ邯咏ｶ壹☆繧九・
+- **逅・罰:** 莨∫判縺ｮ蜀肴､懆ｨ弱ｈ繧雁ｮ溯｣・捩謇狗せ縺ｮ蝗ｺ螳壹ｒ蜆ｪ蜈医＠縺溘⊇縺・′縲｝layable 縺ｫ譛遏ｭ縺ｧ霑代▼縺代ｋ縺溘ａ縲・
+- **蜑ｯ菴懃畑:** `.env` 縺ｮ `ONIZUKA_GITHUB_PAT` 繧剃ｽｿ縺｣縺・`gh auth status` 縺悟・隧ｦ陦後〒繧ょ､ｱ謨励＠縲；itHub Project #2 譖ｴ譁ｰ縺ｯ譛ｪ蜿肴丐縲・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ蜈・** 隱崎ｨｼ蠕ｩ譌ｧ蠕後｀eeting 005 縺ｮ莨夊ｭｰ鬘悟錐縺ｫ謠・∴縺ｦ Project #2 縺ｮ status 縺ｨ谺｡縺ｮ1謇・item 繧貞酔譛溘☆繧九・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: CEOレビューで「Project同期失敗時も実装前進を止めない」運用に変更
-- **決定:** `PLANNING_MEETING.md` に、`gh` 認証/設定エラー時は 1 回再試行後にブロッカー記録へ切り替え、run 内の実装前進を優先するルールを追加した。
-- **理由:** 2026-03-13 の現場定例が 3 run 連続で `onigame-quickshot` 実装未着手のまま繰り返され、Project #2 連携障害が前進停止要因になっていたため。
-- **決定者:** エージェント（CEOレビュー）
-- **影響:** 現場定例は Project 同期失敗時でも meeting-scope 更新と具体的な実装成果を残す運用へ移行する。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: CEO繝ｬ繝薙Η繝ｼ縺ｧ縲訓roject蜷梧悄螟ｱ謨玲凾繧ょｮ溯｣・燕騾ｲ繧呈ｭ｢繧√↑縺・埼°逕ｨ縺ｫ螟画峩
+- **豎ｺ螳・** `PLANNING_MEETING.md` 縺ｫ縲～gh` 隱崎ｨｼ/險ｭ螳壹お繝ｩ繝ｼ譎ゅ・ 1 蝗槫・隧ｦ陦悟ｾ後↓繝悶Ο繝・き繝ｼ險倬鹸縺ｸ蛻・ｊ譖ｿ縺医〉un 蜀・・螳溯｣・燕騾ｲ繧貞━蜈医☆繧九Ν繝ｼ繝ｫ繧定ｿｽ蜉縺励◆縲・
+- **逅・罰:** 2026-03-13 縺ｮ迴ｾ蝣ｴ螳壻ｾ九′ 3 run 騾｣邯壹〒 `onigame-quickshot` 螳溯｣・悴逹謇九・縺ｾ縺ｾ郢ｰ繧願ｿ斐＆繧後￣roject #2 騾｣謳ｺ髫懷ｮｳ縺悟燕騾ｲ蛛懈ｭ｢隕∝屏縺ｫ縺ｪ縺｣縺ｦ縺・◆縺溘ａ縲・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ・EO繝ｬ繝薙Η繝ｼ・・
+- **蠖ｱ髻ｿ:** 迴ｾ蝣ｴ螳壻ｾ九・ Project 蜷梧悄螟ｱ謨玲凾縺ｧ繧・meeting-scope 譖ｴ譁ｰ縺ｨ蜈ｷ菴鍋噪縺ｪ螳溯｣・・譫懊ｒ谿九☆驕狗畑縺ｸ遘ｻ陦後☆繧九・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Meeting 003で次タスク維持、Project #2 連携を環境ブロッカーとして記録
-- **決定:** `onigame-quickshot` の次作業は変更せず、`games/onigame-quickshot` の最小プロトタイプ着手を最優先に維持する。
-- **理由:** playable へ最短で進む判断としては引き続き妥当で、企画再検討より実装着手点の固定が有効なため。
-- **副作用:** `gh` が `C:\Users\Aslan\AppData\Roaming\GitHub CLI\config.yml` へのアクセス拒否で起動できず、GitHub Project #2 更新は未反映。
-- **決定者:** エージェント（現場定例）
-- **影響:** Meeting 003 の board 反映は復旧後に同期。会議ログと履歴で未反映状態を明示して追跡する。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Meeting 003縺ｧ谺｡繧ｿ繧ｹ繧ｯ邯ｭ謖√￣roject #2 騾｣謳ｺ繧堤腸蠅・ヶ繝ｭ繝・き繝ｼ縺ｨ縺励※險倬鹸
+- **豎ｺ螳・** `onigame-quickshot` 縺ｮ谺｡菴懈･ｭ縺ｯ螟画峩縺帙★縲～games/onigame-quickshot` 縺ｮ譛蟆上・繝ｭ繝医ち繧､繝礼捩謇九ｒ譛蜆ｪ蜈医↓邯ｭ謖√☆繧九・
+- **逅・罰:** playable 縺ｸ譛遏ｭ縺ｧ騾ｲ繧蛻､譁ｭ縺ｨ縺励※縺ｯ蠑輔″邯壹″螯･蠖薙〒縲∽ｼ∫判蜀肴､懆ｨ弱ｈ繧雁ｮ溯｣・捩謇狗せ縺ｮ蝗ｺ螳壹′譛牙柑縺ｪ縺溘ａ縲・
+- **蜑ｯ菴懃畑:** `gh` 縺・`C:\Users\Aslan\AppData\Roaming\GitHub CLI\config.yml` 縺ｸ縺ｮ繧｢繧ｯ繧ｻ繧ｹ諡貞凄縺ｧ襍ｷ蜍輔〒縺阪★縲；itHub Project #2 譖ｴ譁ｰ縺ｯ譛ｪ蜿肴丐縲・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** Meeting 003 縺ｮ board 蜿肴丐縺ｯ蠕ｩ譌ｧ蠕後↓蜷梧悄縲ゆｼ夊ｭｰ繝ｭ繧ｰ縺ｨ螻･豁ｴ縺ｧ譛ｪ蜿肴丐迥ｶ諷九ｒ譏守､ｺ縺励※霑ｽ霍｡縺吶ｋ縲・
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: `onigame-quickshot` の次作業を最小プロトタイプ着手に固定
-- **決定:** `onigame-quickshot` を次の主力候補として維持し、次セッションの作業を `games/onigame-quickshot` の新規作成と 1 画面プロトタイプ実装に固定する。repo / prototype 未着手のためステータスは `planning` のまま据え置く
-- **理由:** 候補の再検討を続けるより、実装着手点を 1 つに固定したほうが現在の会社方針に沿って早く playable に近づけるため
-- **決定者:** エージェント（現場定例）
-- **影響:** `PROJECTS.md` と GitHub Project #2 は `onigame-quickshot` prototype bootstrap を次の 1 手として扱う
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: `onigame-quickshot` 縺ｮ谺｡菴懈･ｭ繧呈怙蟆上・繝ｭ繝医ち繧､繝礼捩謇九↓蝗ｺ螳・
+- **豎ｺ螳・** `onigame-quickshot` 繧呈ｬ｡縺ｮ荳ｻ蜉帛呵｣懊→縺励※邯ｭ謖√＠縲∵ｬ｡繧ｻ繝・す繝ｧ繝ｳ縺ｮ菴懈･ｭ繧・`games/onigame-quickshot` 縺ｮ譁ｰ隕丈ｽ懈・縺ｨ 1 逕ｻ髱｢繝励Ο繝医ち繧､繝怜ｮ溯｣・↓蝗ｺ螳壹☆繧九Ｓepo / prototype 譛ｪ逹謇九・縺溘ａ繧ｹ繝・・繧ｿ繧ｹ縺ｯ `planning` 縺ｮ縺ｾ縺ｾ謐ｮ縺育ｽｮ縺・
+- **逅・罰:** 蛟呵｣懊・蜀肴､懆ｨ弱ｒ邯壹￠繧九ｈ繧翫∝ｮ溯｣・捩謇狗せ繧・1 縺､縺ｫ蝗ｺ螳壹＠縺溘⊇縺・′迴ｾ蝨ｨ縺ｮ莨夂､ｾ譁ｹ驥昴↓豐ｿ縺｣縺ｦ譌ｩ縺・playable 縺ｫ霑代▼縺代ｋ縺溘ａ
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** `PROJECTS.md` 縺ｨ GitHub Project #2 縺ｯ `onigame-quickshot` prototype bootstrap 繧呈ｬ｡縺ｮ 1 謇九→縺励※謇ｱ縺・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-12: 次の主力候補を `onigame-quickshot` に決定
-- **決定:** 次に着手する主力候補を `onigame-quickshot`（1画面・短時間回避アクション）とし、v0.1 仕様を基準にプロトタイプへ進む
-- **理由:** 「GitHub Pages完全静的」「外部API不要」「vibe codingで短時間に前進」という現方針と最も整合し、セッション時間も 1〜3 分で設計しやすいため
-- **決定者:** エージェント（現場定例）
-- **影響:** `PROJECTS.md` は planning 候補を `onigame-quickshot` 中心に更新。次セッションの実装対象は `games/onigame-quickshot` の最小プロトタイプになる
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・12: 谺｡縺ｮ荳ｻ蜉帛呵｣懊ｒ `onigame-quickshot` 縺ｫ豎ｺ螳・
+- **豎ｺ螳・** 谺｡縺ｫ逹謇九☆繧倶ｸｻ蜉帛呵｣懊ｒ `onigame-quickshot`・・逕ｻ髱｢繝ｻ遏ｭ譎る俣蝗樣∩繧｢繧ｯ繧ｷ繝ｧ繝ｳ・峨→縺励」0.1 莉墓ｧ倥ｒ蝓ｺ貅悶↓繝励Ο繝医ち繧､繝励∈騾ｲ繧
+- **逅・罰:** 縲隈itHub Pages螳悟・髱咏噪縲阪悟､夜ΚAPI荳崎ｦ√阪計ibe coding縺ｧ遏ｭ譎る俣縺ｫ蜑埼ｲ縲阪→縺・≧迴ｾ譁ｹ驥昴→譛繧よ紛蜷医＠縲√そ繝・す繝ｧ繝ｳ譎る俣繧・1縲・ 蛻・〒險ｭ險医＠繧・☆縺・◆繧・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** `PROJECTS.md` 縺ｯ planning 蛟呵｣懊ｒ `onigame-quickshot` 荳ｭ蠢・↓譖ｴ譁ｰ縲よｬ｡繧ｻ繝・す繝ｧ繝ｳ縺ｮ螳溯｣・ｯｾ雎｡縺ｯ `games/onigame-quickshot` 縺ｮ譛蟆上・繝ｭ繝医ち繧､繝励↓縺ｪ繧・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-12: `games/onigame-*` を独立Gitリポジトリ置き場として使う
-- **決定:** 会社 repo 配下の `games/` は、各ゲームの独立Gitリポジトリをローカルに並べる作業場所として扱う。各ゲームは 1 repo / 1 GitHub Pages を前提にする
-- **理由:** 1ゲームごとに Pages デプロイ、Issue、README、公開管理を分けたほうが運用しやすく、会社 repo も運営記録に集中できるため
-- **決定者:** 人間 + エージェント反映
-- **影響:** 親 repo は `games/onigame-*` を直接追跡しない。サンプルとして `games/onigame-omikuji` を作成し、この構成で今後のゲームを増やせる状態にした
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・12: `games/onigame-*` 繧堤峡遶季it繝ｪ繝昴ず繝医Μ鄂ｮ縺榊ｴ縺ｨ縺励※菴ｿ縺・
+- **豎ｺ螳・** 莨夂､ｾ repo 驟堺ｸ九・ `games/` 縺ｯ縲∝推繧ｲ繝ｼ繝縺ｮ迢ｬ遶季it繝ｪ繝昴ず繝医Μ繧偵Ο繝ｼ繧ｫ繝ｫ縺ｫ荳ｦ縺ｹ繧倶ｽ懈･ｭ蝣ｴ謇縺ｨ縺励※謇ｱ縺・ょ推繧ｲ繝ｼ繝縺ｯ 1 repo / 1 GitHub Pages 繧貞燕謠舌↓縺吶ｋ
+- **逅・罰:** 1繧ｲ繝ｼ繝縺斐→縺ｫ Pages 繝・・繝ｭ繧､縲！ssue縲ヽEADME縲∝・髢狗ｮ｡逅・ｒ蛻・￠縺溘⊇縺・′驕狗畑縺励ｄ縺吶￥縲∽ｼ夂､ｾ repo 繧る°蝟ｶ險倬鹸縺ｫ髮・ｸｭ縺ｧ縺阪ｋ縺溘ａ
+- **豎ｺ螳夊・** 莠ｺ髢・+ 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥渚譏
+- **蠖ｱ髻ｿ:** 隕ｪ repo 縺ｯ `games/onigame-*` 繧堤峩謗･霑ｽ霍｡縺励↑縺・ゅし繝ｳ繝励Ν縺ｨ縺励※ `games/onigame-omikuji` 繧剃ｽ懈・縺励√％縺ｮ讒区・縺ｧ莉雁ｾ後・繧ｲ繝ｼ繝繧貞｢励ｄ縺帙ｋ迥ｶ諷九↓縺励◆
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-12: Grid Tactics をクローズ
-- **決定:** `Grid Tactics` は active から closed に変更し、今後の主力候補から外す
-- **理由:** ターン制タクティカル + AGI前提の方向は、この会社の「GitHub Pages完全静的」「外部API不要」「vibe codingで短時間に前進できる規模」という条件に対して重すぎたため
-- **決定者:** 人間
-- **影響:** `PROJECTS.md` と `README.md` から現行主力プロジェクト扱いを外し、次のゲーム候補は軽量アクション / パズル / シューティング寄りで再選定する
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・12: Grid Tactics 繧偵け繝ｭ繝ｼ繧ｺ
+- **豎ｺ螳・** `Grid Tactics` 縺ｯ active 縺九ｉ closed 縺ｫ螟画峩縺励∽ｻ雁ｾ後・荳ｻ蜉帛呵｣懊°繧牙､悶☆
+- **逅・罰:** 繧ｿ繝ｼ繝ｳ蛻ｶ繧ｿ繧ｯ繝・ぅ繧ｫ繝ｫ + AGI蜑肴署縺ｮ譁ｹ蜷代・縲√％縺ｮ莨夂､ｾ縺ｮ縲隈itHub Pages螳悟・髱咏噪縲阪悟､夜ΚAPI荳崎ｦ√阪計ibe coding縺ｧ遏ｭ譎る俣縺ｫ蜑埼ｲ縺ｧ縺阪ｋ隕乗ｨ｡縲阪→縺・≧譚｡莉ｶ縺ｫ蟇ｾ縺励※驥阪☆縺弱◆縺溘ａ
+- **豎ｺ螳夊・** 莠ｺ髢・
+- **蠖ｱ髻ｿ:** `PROJECTS.md` 縺ｨ `README.md` 縺九ｉ迴ｾ陦御ｸｻ蜉帙・繝ｭ繧ｸ繧ｧ繧ｯ繝域桶縺・ｒ螟悶＠縲∵ｬ｡縺ｮ繧ｲ繝ｼ繝蛟呵｣懊・霆ｽ驥上い繧ｯ繧ｷ繝ｧ繝ｳ / 繝代ぜ繝ｫ / 繧ｷ繝･繝ｼ繝・ぅ繝ｳ繧ｰ蟇・ｊ縺ｧ蜀埼∈螳壹☆繧・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-12: GitHub Pages完全静的と vibe coding 規模を非交渉条件として明文化
-- **決定:** 今後のゲーム案は「GitHub Pagesにそのまま載る完全静的構成」「バックエンド不要」「外部API不要」「vibe codingで短時間に前進できる規模」を必須条件とする。重いAGIやAPI前提の案は不採用、または即ピボット対象とする
-- **理由:** 会社のミッションと運用前提は軽量ブラウザゲームなのに、企画判断が重いタクティカル / AGI前提へ寄ると実装負荷と運用負荷が一気に増え、GitHub Pages制約とも衝突するため
-- **決定者:** 人間 + エージェント反映
-- **影響:** `README.md`、`PLANNING_MEETING.md`、`CEO_REVIEW.md`、`PROJECTS.md` で静的配信制約とピボット条件を明文化。今後の企画審査では Pages適性と実装軽さを先に判定する
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・12: GitHub Pages螳悟・髱咏噪縺ｨ vibe coding 隕乗ｨ｡繧帝撼莠､貂画擅莉ｶ縺ｨ縺励※譏取枚蛹・
+- **豎ｺ螳・** 莉雁ｾ後・繧ｲ繝ｼ繝譯医・縲隈itHub Pages縺ｫ縺昴・縺ｾ縺ｾ霈峨ｋ螳悟・髱咏噪讒区・縲阪後ヰ繝・け繧ｨ繝ｳ繝我ｸ崎ｦ√阪悟､夜ΚAPI荳崎ｦ√阪計ibe coding縺ｧ遏ｭ譎る俣縺ｫ蜑埼ｲ縺ｧ縺阪ｋ隕乗ｨ｡縲阪ｒ蠢・域擅莉ｶ縺ｨ縺吶ｋ縲る㍾縺БGI繧БPI蜑肴署縺ｮ譯医・荳肴治逕ｨ縲√∪縺溘・蜊ｳ繝斐・繝・ヨ蟇ｾ雎｡縺ｨ縺吶ｋ
+- **逅・罰:** 莨夂､ｾ縺ｮ繝溘ャ繧ｷ繝ｧ繝ｳ縺ｨ驕狗畑蜑肴署縺ｯ霆ｽ驥上ヶ繝ｩ繧ｦ繧ｶ繧ｲ繝ｼ繝縺ｪ縺ｮ縺ｫ縲∽ｼ∫判蛻､譁ｭ縺碁㍾縺・ち繧ｯ繝・ぅ繧ｫ繝ｫ / AGI蜑肴署縺ｸ蟇・ｋ縺ｨ螳溯｣・ｲ闕ｷ縺ｨ驕狗畑雋闕ｷ縺御ｸ豌励↓蠅励∴縲；itHub Pages蛻ｶ邏・→繧り｡晉ｪ√☆繧九◆繧・
+- **豎ｺ螳夊・** 莠ｺ髢・+ 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥渚譏
+- **蠖ｱ髻ｿ:** `README.md`縲～PLANNING_MEETING.md`縲～CEO_REVIEW.md`縲～PROJECTS.md` 縺ｧ髱咏噪驟堺ｿ｡蛻ｶ邏・→繝斐・繝・ヨ譚｡莉ｶ繧呈・譁・喧縲ゆｻ雁ｾ後・莨∫判蟇ｩ譟ｻ縺ｧ縺ｯ Pages驕ｩ諤ｧ縺ｨ螳溯｣・ｻｽ縺輔ｒ蜈医↓蛻､螳壹☆繧・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-12: 新規リポジトリのプレフィックスを `onigame-` に統一
-- **決定:** 今後 ONIZUKA Game AGI Co. が作成する新規リポジトリは `onigame-` プレフィックスを使う。
-- **理由:** 会社制作のリポジトリだと短く分かりやすく伝わり、公開時の見た目も揃うため。
-- **決定者:** エージェント
-- **影響:** 今後の新規 repo 提案・作成時は `onigame-<repo-name>` を標準にする。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・12: 譁ｰ隕上Μ繝昴ず繝医Μ縺ｮ繝励Ξ繝輔ぅ繝・け繧ｹ繧・`onigame-` 縺ｫ邨ｱ荳
+- **豎ｺ螳・** 莉雁ｾ・ONIZUKA Game AGI Co. 縺御ｽ懈・縺吶ｋ譁ｰ隕上Μ繝昴ず繝医Μ縺ｯ `onigame-` 繝励Ξ繝輔ぅ繝・け繧ｹ繧剃ｽｿ縺・・
+- **逅・罰:** 莨夂､ｾ蛻ｶ菴懊・繝ｪ繝昴ず繝医Μ縺縺ｨ遏ｭ縺丞・縺九ｊ繧・☆縺丈ｼ昴ｏ繧翫∝・髢区凾縺ｮ隕九◆逶ｮ繧よ純縺・◆繧√・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝・
+- **蠖ｱ髻ｿ:** 莉雁ｾ後・譁ｰ隕・repo 謠先｡医・菴懈・譎ゅ・ `onigame-<repo-name>` 繧呈ｨ呎ｺ悶↓縺吶ｋ縲・
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-12: 勝率偏りの一次要因を「先手後手バイアス」と判定
-- **決定:** AGI強度調整の前段として、`game:balance`（100試合 x 先手player/agi）を標準診断に追加し、偏り原因を先に分離する
-- **理由:** `game:smoke` の player 12-0 だけでは原因が不明確だったため。`game:balance` で先手側100%勝利を確認し、先手後手バイアスが支配的と判明
-- **決定者:** エージェント（現場定例）
-- **影響:** 次の実装優先は「AGI強化単体」から「先手後手バイアス緩和 + AGI評価改善」の順に変更
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・12: 蜍晉紫蛛上ｊ縺ｮ荳谺｡隕∝屏繧偵悟・謇句ｾ梧焔繝舌う繧｢繧ｹ縲阪→蛻､螳・
+- **豎ｺ螳・** AGI蠑ｷ蠎ｦ隱ｿ謨ｴ縺ｮ蜑肴ｮｵ縺ｨ縺励※縲～game:balance`・・00隧ｦ蜷・x 蜈域焔player/agi・峨ｒ讓呎ｺ冶ｨｺ譁ｭ縺ｫ霑ｽ蜉縺励∝￥繧雁次蝗繧貞・縺ｫ蛻・屬縺吶ｋ
+- **逅・罰:** `game:smoke` 縺ｮ player 12-0 縺縺代〒縺ｯ蜴溷屏縺御ｸ肴・遒ｺ縺縺｣縺溘◆繧√Ａgame:balance` 縺ｧ蜈域焔蛛ｴ100%蜍晏茜繧堤｢ｺ隱阪＠縲∝・謇句ｾ梧焔繝舌う繧｢繧ｹ縺梧髪驟咲噪縺ｨ蛻､譏・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡縺ｮ螳溯｣・━蜈医・縲窟GI蠑ｷ蛹門腰菴薙阪°繧峨悟・謇句ｾ梧焔繝舌う繧｢繧ｹ邱ｩ蜥・+ AGI隧穂ｾ｡謾ｹ蝟・阪・鬆・↓螟画峩
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-11: AGI Easy 強度調整を最優先に変更
-- **決定:** 優先順位を「1) AGI Easy強度調整 → 2) 描画統合 → 3) 入力接続」に変更
-- **理由:** 12-0のプレイヤー勝率はMVPの核心価値（AGI体験）を破壊しており、UIが完成しても「弱すぎるAI」という印象が残る
-- **決定者:** エージェント合意（週次プランニング会議・午後）
-- **影響:** 描画統合は2番目に後ろ倒し、AGI Easyの目標勝率は新規プレイヤー30-40%
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・11: AGI Easy 蠑ｷ蠎ｦ隱ｿ謨ｴ繧呈怙蜆ｪ蜈医↓螟画峩
+- **豎ｺ螳・** 蜆ｪ蜈磯・ｽ阪ｒ縲・) AGI Easy蠑ｷ蠎ｦ隱ｿ謨ｴ 竊・2) 謠冗判邨ｱ蜷・竊・3) 蜈･蜉帶磁邯壹阪↓螟画峩
+- **逅・罰:** 12-0縺ｮ繝励Ξ繧､繝､繝ｼ蜍晉紫縺ｯMVP縺ｮ譬ｸ蠢・ｾ｡蛟､・・GI菴馴ｨ難ｼ峨ｒ遐ｴ螢翫＠縺ｦ縺翫ｊ縲ゞI縺悟ｮ梧・縺励※繧ゅ悟ｼｱ縺吶℃繧帰I縲阪→縺・≧蜊ｰ雎｡縺梧ｮ九ｋ
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥粋諢擾ｼ磯ｱ谺｡繝励Λ繝ｳ繝九Φ繧ｰ莨夊ｭｰ繝ｻ蜊亥ｾ鯉ｼ・
+- **蠖ｱ髻ｿ:** 謠冗判邨ｱ蜷医・2逡ｪ逶ｮ縺ｫ蠕後ｍ蛟偵＠縲、GI Easy縺ｮ逶ｮ讓吝享邇・・譁ｰ隕上・繝ｬ繧､繝､繝ｼ30-40%
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-11: 週次プランニング - 今週の優先順位確定
-- **決定:** 今週の優先順位を「1) 描画統合 → 2) 入力接続 → 3) 勝率偏り修正」に確定
-- **理由:** プレイアブル化がMVP完了の必須条件であり、勝率偏りはテスト有効性に影響するため
-- **決定者:** エージェント合意（週次プランニング会議）
-- **影響:** 演出・拡張機能はWeek 2以降へ後ろ倒し
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・11: 騾ｱ谺｡繝励Λ繝ｳ繝九Φ繧ｰ - 莉企ｱ縺ｮ蜆ｪ蜈磯・ｽ咲｢ｺ螳・
+- **豎ｺ螳・** 莉企ｱ縺ｮ蜆ｪ蜈磯・ｽ阪ｒ縲・) 謠冗判邨ｱ蜷・竊・2) 蜈･蜉帶磁邯・竊・3) 蜍晉紫蛛上ｊ菫ｮ豁｣縲阪↓遒ｺ螳・
+- **逅・罰:** 繝励Ξ繧､繧｢繝悶Ν蛹悶′MVP螳御ｺ・・蠢・域擅莉ｶ縺ｧ縺ゅｊ縲∝享邇・￥繧翫・繝・せ繝域怏蜉ｹ諤ｧ縺ｫ蠖ｱ髻ｿ縺吶ｋ縺溘ａ
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥粋諢擾ｼ磯ｱ谺｡繝励Λ繝ｳ繝九Φ繧ｰ莨夊ｭｰ・・
+- **蠖ｱ髻ｿ:** 貍泌・繝ｻ諡｡蠑ｵ讖溯・縺ｯWeek 2莉･髯阪∈蠕後ｍ蛟偵＠
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-11: スモーク不変条件チェックを標準化
-- **決定:** games/grid-tactics/core/smoke-test.js に状態不変条件チェック（HP整合、盤外防止、座標重複防止、phase整合）を追加し、日次スモークの標準とする
-- **理由:** 完走判定だけではロジック破綻の早期検知が弱く、回帰を見逃すため
-- **決定者:** エージェント合意（朝会）
-- **影響:** 小さな実装変更でも状態破損を即時検出しやすくなる
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・11: 繧ｹ繝｢繝ｼ繧ｯ荳榊､画擅莉ｶ繝√ぉ繝・け繧呈ｨ呎ｺ門喧
+- **豎ｺ螳・** games/grid-tactics/core/smoke-test.js 縺ｫ迥ｶ諷倶ｸ榊､画擅莉ｶ繝√ぉ繝・け・・P謨ｴ蜷医∫乢螟夜亟豁｢縲∝ｺｧ讓咎㍾隍・亟豁｢縲｝hase謨ｴ蜷茨ｼ峨ｒ霑ｽ蜉縺励∵律谺｡繧ｹ繝｢繝ｼ繧ｯ縺ｮ讓呎ｺ悶→縺吶ｋ
+- **逅・罰:** 螳瑚ｵｰ蛻､螳壹□縺代〒縺ｯ繝ｭ繧ｸ繝・け遐ｴ邯ｻ縺ｮ譌ｩ譛滓､懃衍縺悟ｼｱ縺上∝屓蟶ｰ繧定ｦ矩・☆縺溘ａ
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥粋諢擾ｼ域悃莨夲ｼ・
+- **蠖ｱ髻ｿ:** 蟆上＆縺ｪ螳溯｣・､画峩縺ｧ繧ら憾諷狗ｴ謳阪ｒ蜊ｳ譎よ､懷・縺励ｄ縺吶￥縺ｪ繧・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-11: 本日の優先順を固定
-- **決定:** 実装優先順を「描画統合着手 -> 入力接続 -> 勝率偏り測定の拡張」に固定
-- **理由:** プレイアブル化のボトルネック解消を最優先しつつ、品質課題を並行で前進させるため
-- **決定者:** エージェント合意（朝会）
-- **影響:** 仕様追加より先にUI土台と検証導線の着手を行う
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・11: 譛ｬ譌･縺ｮ蜆ｪ蜈磯・ｒ蝗ｺ螳・
+- **豎ｺ螳・** 螳溯｣・━蜈磯・ｒ縲梧緒逕ｻ邨ｱ蜷育捩謇・-> 蜈･蜉帶磁邯・-> 蜍晉紫蛛上ｊ貂ｬ螳壹・諡｡蠑ｵ縲阪↓蝗ｺ螳・
+- **逅・罰:** 繝励Ξ繧､繧｢繝悶Ν蛹悶・繝懊ヨ繝ｫ繝阪ャ繧ｯ隗｣豸医ｒ譛蜆ｪ蜈医＠縺､縺､縲∝刀雉ｪ隱ｲ鬘後ｒ荳ｦ陦後〒蜑埼ｲ縺輔○繧九◆繧・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥粋諢擾ｼ域悃莨夲ｼ・
+- **蠖ｱ髻ｿ:** 莉墓ｧ倩ｿｽ蜉繧医ｊ蜈医↓UI蝨溷床縺ｨ讀懆ｨｼ蟆守ｷ壹・逹謇九ｒ陦後≧
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-10: コアロジック先行実装
-- **決定:** `games/grid-tactics/core` に依存なし最小ロジック（盤面/行動/ターン/勝敗/Easy AGI）を先行実装
-- **理由:** 実装基盤未着手リスク（P×I最大）を即時に下げるため
-- **決定者:** エージェント合意（朝会）
-- **影響:** 描画統合前でもルール検証と自動完走チェックが可能
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・10: 繧ｳ繧｢繝ｭ繧ｸ繝・け蜈郁｡悟ｮ溯｣・
+- **豎ｺ螳・** `games/grid-tactics/core` 縺ｫ萓晏ｭ倥↑縺玲怙蟆上Ο繧ｸ繝・け・育乢髱｢/陦悟虚/繧ｿ繝ｼ繝ｳ/蜍晄風/Easy AGI・峨ｒ蜈郁｡悟ｮ溯｣・
+- **逅・罰:** 螳溯｣・渕逶､譛ｪ逹謇九Μ繧ｹ繧ｯ・・ﾃ悠譛螟ｧ・峨ｒ蜊ｳ譎ゅ↓荳九￡繧九◆繧・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥粋諢擾ｼ域悃莨夲ｼ・
+- **蠖ｱ髻ｿ:** 謠冗判邨ｱ蜷亥燕縺ｧ繧ゅΝ繝ｼ繝ｫ讀懆ｨｼ縺ｨ閾ｪ蜍募ｮ瑚ｵｰ繝√ぉ繝・け縺悟庄閭ｽ
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-10: スモークテストを日次基準に採用
-- **決定:** `npm run game:smoke` を最小受け入れチェックとして運用
-- **理由:** ターン不整合・終局不能を早期検知するため
-- **決定者:** エージェント合意（朝会）
-- **影響:** 実装追加ごとに完走性を継続確認できる
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・10: 繧ｹ繝｢繝ｼ繧ｯ繝・せ繝医ｒ譌･谺｡蝓ｺ貅悶↓謗｡逕ｨ
+- **豎ｺ螳・** `npm run game:smoke` 繧呈怙蟆丞女縺大・繧後メ繧ｧ繝・け縺ｨ縺励※驕狗畑
+- **逅・罰:** 繧ｿ繝ｼ繝ｳ荳肴紛蜷医・邨ょｱ荳崎・繧呈掠譛滓､懃衍縺吶ｋ縺溘ａ
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥粋諢擾ｼ域悃莨夲ｼ・
+- **蠖ｱ髻ｿ:** 螳溯｣・ｿｽ蜉縺斐→縺ｫ螳瑚ｵｰ諤ｧ繧堤ｶ咏ｶ夂｢ｺ隱阪〒縺阪ｋ
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-09: ルール仕様 v0.1 の採用
-- **決定:** `docs/game-rules-v0.1.md` を実装開始の基準仕様として採用
-- **理由:** ルール未定義が最優先ブロッカーだったため
-- **決定者:** エージェント合意（朝会）
-- **影響:** 仕様ブレを抑え、初期実装タスクに着手可能
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・09: 繝ｫ繝ｼ繝ｫ莉墓ｧ・v0.1 縺ｮ謗｡逕ｨ
+- **豎ｺ螳・** `docs/game-rules-v0.1.md` 繧貞ｮ溯｣・幕蟋九・蝓ｺ貅紋ｻ墓ｧ倥→縺励※謗｡逕ｨ
+- **逅・罰:** 繝ｫ繝ｼ繝ｫ譛ｪ螳夂ｾｩ縺梧怙蜆ｪ蜈医ヶ繝ｭ繝・き繝ｼ縺縺｣縺溘◆繧・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥粋諢擾ｼ域悃莨夲ｼ・
+- **蠖ｱ髻ｿ:** 莉墓ｧ倥ヶ繝ｬ繧呈椛縺医∝・譛溷ｮ溯｣・ち繧ｹ繧ｯ縺ｫ逹謇句庄閭ｽ
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-09: Grid Tactics を active に移行
-- **決定:** プロジェクトステータスを planning から active へ変更
-- **理由:** 企画判断が揃い、実装準備フェーズへ入ったため
-- **決定者:** エージェント合意（朝会）
-- **影響:** 日次進捗はプロジェクト記録で追跡する
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・09: Grid Tactics 繧・active 縺ｫ遘ｻ陦・
+- **豎ｺ螳・** 繝励Ο繧ｸ繧ｧ繧ｯ繝医せ繝・・繧ｿ繧ｹ繧・planning 縺九ｉ active 縺ｸ螟画峩
+- **逅・罰:** 莨∫判蛻､譁ｭ縺梧純縺・∝ｮ溯｣・ｺ門ｙ繝輔ぉ繝ｼ繧ｺ縺ｸ蜈･縺｣縺溘◆繧・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥粋諢擾ｼ域悃莨夲ｼ・
+- **蠖ｱ髻ｿ:** 譌･谺｡騾ｲ謐励・繝励Ο繧ｸ繧ｧ繧ｯ繝郁ｨ倬鹸縺ｧ霑ｽ霍｡縺吶ｋ
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-09: 今週の実装完了条件を再確認
-- **決定:** 今週の完了条件を「1試合完走可能な最小プロトタイプ」とする
-- **理由:** スコープ肥大を防ぎ、週内の到達可能性を高めるため
-- **決定者:** エージェント合意（朝会）
-- **影響:** 演出強化や拡張機能はWeek 2へ後ろ倒し
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・09: 莉企ｱ縺ｮ螳溯｣・ｮ御ｺ・擅莉ｶ繧貞・遒ｺ隱・
+- **豎ｺ螳・** 莉企ｱ縺ｮ螳御ｺ・擅莉ｶ繧偵・隧ｦ蜷亥ｮ瑚ｵｰ蜿ｯ閭ｽ縺ｪ譛蟆上・繝ｭ繝医ち繧､繝励阪→縺吶ｋ
+- **逅・罰:** 繧ｹ繧ｳ繝ｼ繝苓ぇ螟ｧ繧帝亟縺弱・ｱ蜀・・蛻ｰ驕泌庄閭ｽ諤ｧ繧帝ｫ倥ａ繧九◆繧・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥粋諢擾ｼ域悃莨夲ｼ・
+- **蠖ｱ髻ｿ:** 貍泌・蠑ｷ蛹悶ｄ諡｡蠑ｵ讖溯・縺ｯWeek 2縺ｸ蠕後ｍ蛟偵＠
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-08: デプロイ要件
-- **決定:** ゲームはGitHub Pagesで動作する規模にする（**完全静的構成**）
-- **理由:** インフラコスト0、デプロイ簡単化、会社サイトと統一
-- **影響:** 
-  - バックエンド不要
-  - AGIロジックもブラウザ内で完結
-  - データ保存はLocalStorage
-  - 外部API呼び出しなし
-- **決定者:** 人間
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・08: 繝・・繝ｭ繧､隕∽ｻｶ
+- **豎ｺ螳・** 繧ｲ繝ｼ繝縺ｯGitHub Pages縺ｧ蜍穂ｽ懊☆繧玖ｦ乗ｨ｡縺ｫ縺吶ｋ・・*螳悟・髱咏噪讒区・**・・
+- **逅・罰:** 繧､繝ｳ繝輔Λ繧ｳ繧ｹ繝・縲√ョ繝励Ο繧､邁｡蜊伜喧縲∽ｼ夂､ｾ繧ｵ繧､繝医→邨ｱ荳
+- **蠖ｱ髻ｿ:** 
+  - 繝舌ャ繧ｯ繧ｨ繝ｳ繝我ｸ崎ｦ・
+  - AGI繝ｭ繧ｸ繝・け繧ゅヶ繝ｩ繧ｦ繧ｶ蜀・〒螳檎ｵ・
+  - 繝・・繧ｿ菫晏ｭ倥・LocalStorage
+  - 螟夜ΚAPI蜻ｼ縺ｳ蜃ｺ縺励↑縺・
+- **豎ｺ螳夊・** 莠ｺ髢・
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-08: ミッション決定
-- **決定:** ミッションを「日常のスキマを、わくわくで埋める。」にする
-- **理由:** 隙間時間ゲーム会社として明確で、ポジティブな響き
-- **決定者:** 人間 + エージェント合意
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・08: 繝溘ャ繧ｷ繝ｧ繝ｳ豎ｺ螳・
+- **豎ｺ螳・** 繝溘ャ繧ｷ繝ｧ繝ｳ繧偵梧律蟶ｸ縺ｮ繧ｹ繧ｭ繝槭ｒ縲√ｏ縺上ｏ縺上〒蝓九ａ繧九ゅ阪↓縺吶ｋ
+- **逅・罰:** 髫咎俣譎る俣繧ｲ繝ｼ繝莨夂､ｾ縺ｨ縺励※譏守｢ｺ縺ｧ縲√・繧ｸ繝・ぅ繝悶↑髻ｿ縺・
+- **豎ｺ螳夊・** 莠ｺ髢・+ 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥粋諢・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-08: Memory構造の採用
-- **決定:** onizuka-agi-co/memory と同じVitePress構造を採用
-- **理由:** AIが読み書きしやすく、人間も見やすい
-- **決定者:** エージェント提案 → 人間承認
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・08: Memory讒矩縺ｮ謗｡逕ｨ
+- **豎ｺ螳・** onizuka-agi-co/memory 縺ｨ蜷後§VitePress讒矩繧呈治逕ｨ
+- **逅・罰:** AI縺瑚ｪｭ縺ｿ譖ｸ縺阪＠繧・☆縺上∽ｺｺ髢薙ｂ隕九ｄ縺吶＞
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝域署譯・竊・莠ｺ髢捺価隱・
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-08: リポジトリをパブリックに
-- **決定:** onizuka-game-agi-co をパブリックリポジトリにする
-- **理由:** GitHub Pages を使うため
-- **決定者:** 人間
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・08: 繝ｪ繝昴ず繝医Μ繧偵ヱ繝悶Μ繝・け縺ｫ
+- **豎ｺ螳・** onizuka-game-agi-co 繧偵ヱ繝悶Μ繝・け繝ｪ繝昴ず繝医Μ縺ｫ縺吶ｋ
+- **逅・罰:** GitHub Pages 繧剃ｽｿ縺・◆繧・
+- **豎ｺ螳夊・** 莠ｺ髢・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-08: 週次プランニング - 今週の焦点
-- **決定:** 今週の焦点は「動くプロトタイプを作る」
-- **理由:** 企画フェーズは終了、次は実装フェーズ
-- **決定者:** エージェント合意（Product Owner, Tech Lead, Designer, QA）
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・08: 騾ｱ谺｡繝励Λ繝ｳ繝九Φ繧ｰ - 莉企ｱ縺ｮ辟ｦ轤ｹ
+- **豎ｺ螳・** 莉企ｱ縺ｮ辟ｦ轤ｹ縺ｯ縲悟虚縺上・繝ｭ繝医ち繧､繝励ｒ菴懊ｋ縲・
+- **逅・罰:** 莨∫判繝輔ぉ繝ｼ繧ｺ縺ｯ邨ゆｺ・∵ｬ｡縺ｯ螳溯｣・ヵ繧ｧ繝ｼ繧ｺ
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝亥粋諢擾ｼ・roduct Owner, Tech Lead, Designer, QA・・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-08: 品質基準（MVP）
-- **決定:** クリティカルバグ0、ターン進行不整合0、マッチ完了率95%以上
-- **理由:** 最小限の品質基準を定義し、ユーザー体験を保証
-- **決定者:** QA提案 → チーム合意
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・08: 蜩∬ｳｪ蝓ｺ貅厄ｼ・VP・・
+- **豎ｺ螳・** 繧ｯ繝ｪ繝・ぅ繧ｫ繝ｫ繝舌げ0縲√ち繝ｼ繝ｳ騾ｲ陦御ｸ肴紛蜷・縲√・繝・メ螳御ｺ・紫95%莉･荳・
+- **逅・罰:** 譛蟆城剞縺ｮ蜩∬ｳｪ蝓ｺ貅悶ｒ螳夂ｾｩ縺励√Θ繝ｼ繧ｶ繝ｼ菴馴ｨ薙ｒ菫晁ｨｼ
+- **豎ｺ螳夊・** QA謠先｡・竊・繝√・繝蜷域э
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-08: ゲームタイプ決定
-- **決定:** ターン制タクティカルスカーミッシュ（Grid Tactics）を採用
-- **理由:** 7x7グリッドでAGIの判断が見えやすく、5-10分プレイで隙間時間に最適
-- **決定者:** Designer提案 → チーム合意
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・08: 繧ｲ繝ｼ繝繧ｿ繧､繝玲ｱｺ螳・
+- **豎ｺ螳・** 繧ｿ繝ｼ繝ｳ蛻ｶ繧ｿ繧ｯ繝・ぅ繧ｫ繝ｫ繧ｹ繧ｫ繝ｼ繝溘ャ繧ｷ繝･・・rid Tactics・峨ｒ謗｡逕ｨ
+- **逅・罰:** 7x7繧ｰ繝ｪ繝・ラ縺ｧAGI縺ｮ蛻､譁ｭ縺瑚ｦ九∴繧・☆縺上・-10蛻・・繝ｬ繧､縺ｧ髫咎俣譎る俣縺ｫ譛驕ｩ
+- **豎ｺ螳夊・** Designer謠先｡・竊・繝√・繝蜷域э
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-08: 技術スタック決定
-- **決定:** Phaser 3 + React + TypeScript（GitHub Pagesで完全静的ホスティング）
-- **理由:** Phaserは2Dグリッドゲームに最適、インフラコスト0、デプロイ簡単
-- **影響:** AGIロジックもブラウザ内完結、データ保存はLocalStorage、外部APIなし
-- **決定者:** Tech Lead提案 → 人間承認
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・08: 謚陦薙せ繧ｿ繝・け豎ｺ螳・
+- **豎ｺ螳・** Phaser 3 + React + TypeScript・・itHub Pages縺ｧ螳悟・髱咏噪繝帙せ繝・ぅ繝ｳ繧ｰ・・
+- **逅・罰:** Phaser縺ｯ2D繧ｰ繝ｪ繝・ラ繧ｲ繝ｼ繝縺ｫ譛驕ｩ縲√う繝ｳ繝輔Λ繧ｳ繧ｹ繝・縲√ョ繝励Ο繧､邁｡蜊・
+- **蠖ｱ髻ｿ:** AGI繝ｭ繧ｸ繝・け繧ゅヶ繝ｩ繧ｦ繧ｶ蜀・ｮ檎ｵ舌√ョ繝ｼ繧ｿ菫晏ｭ倥・LocalStorage縲∝､夜ΚAPI縺ｪ縺・
+- **豎ｺ螳夊・** Tech Lead謠先｡・竊・莠ｺ髢捺価隱・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-08: アーキテクチャ決定
-- **決定:** MVPはレイヤード構成、後にヘキサゴナルへ移行
-- **理由:** MVP期間は速度優先、事後的にリファクタリング可能
-- **決定者:** Tech Lead提案 → チーム合意
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・08: 繧｢繝ｼ繧ｭ繝・け繝√Ε豎ｺ螳・
+- **豎ｺ螳・** MVP縺ｯ繝ｬ繧､繝､繝ｼ繝画ｧ区・縲∝ｾ後↓繝倥く繧ｵ繧ｴ繝翫Ν縺ｸ遘ｻ陦・
+- **逅・罰:** MVP譛滄俣縺ｯ騾溷ｺｦ蜆ｪ蜈医∽ｺ句ｾ檎噪縺ｫ繝ｪ繝輔ぃ繧ｯ繧ｿ繝ｪ繝ｳ繧ｰ蜿ｯ閭ｽ
+- **豎ｺ螳夊・** Tech Lead謠先｡・竊・繝√・繝蜷域э
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-08: MVPスコープ確定
-- **決定:** 7x7グリッド、2ユニット（Striker + Guardian）、10-15ターン、カバーシステム
-- **理由:** 小さく始めて早く検証するため
-- **決定者:** Product Owner提案 → チーム合意
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・08: MVP繧ｹ繧ｳ繝ｼ繝礼｢ｺ螳・
+- **豎ｺ螳・** 7x7繧ｰ繝ｪ繝・ラ縲・繝ｦ繝九ャ繝茨ｼ・triker + Guardian・峨・0-15繧ｿ繝ｼ繝ｳ縲√き繝舌・繧ｷ繧ｹ繝・Β
+- **逅・罰:** 蟆上＆縺丞ｧ九ａ縺ｦ譌ｩ縺乗､懆ｨｼ縺吶ｋ縺溘ａ
+- **豎ｺ螳夊・** Product Owner謠先｡・竊・繝√・繝蜷域э
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-08: 今週の実装優先順位（Meeting 004）
-- **決定:** ゲームルール文書を最初の2時間で作成、その後プロトタイプ実装開始
-- **理由:** ルールなしでは実装不可、ブロッカーを最優先で解消
-- **決定者:** チーム合意（Product Owner, Tech Lead, Designer, QA）
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・08: 莉企ｱ縺ｮ螳溯｣・━蜈磯・ｽ搾ｼ・eeting 004・・
+- **豎ｺ螳・** 繧ｲ繝ｼ繝繝ｫ繝ｼ繝ｫ譁・嶌繧呈怙蛻昴・2譎る俣縺ｧ菴懈・縲√◎縺ｮ蠕後・繝ｭ繝医ち繧､繝怜ｮ溯｣・幕蟋・
+- **逅・罰:** 繝ｫ繝ｼ繝ｫ縺ｪ縺励〒縺ｯ螳溯｣・ｸ榊庄縲√ヶ繝ｭ繝・き繝ｼ繧呈怙蜆ｪ蜈医〒隗｣豸・
+- **豎ｺ螳夊・** 繝√・繝蜷域э・・roduct Owner, Tech Lead, Designer, QA・・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-08: オンボーディング戦略
-- **決定:** 初戦はガイド付き（別チュートリアル画面ではなくゲーム内案内）、AGIは最初「イージー」モード
-- **理由:** 新規プレイヤーの挫折防止、5-10分で「気持ちいい」体験提供
-- **決定者:** Designer提案 → チーム合意
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・08: 繧ｪ繝ｳ繝懊・繝・ぅ繝ｳ繧ｰ謌ｦ逡･
+- **豎ｺ螳・** 蛻晄姶縺ｯ繧ｬ繧､繝我ｻ倥″・亥挨繝√Η繝ｼ繝医Μ繧｢繝ｫ逕ｻ髱｢縺ｧ縺ｯ縺ｪ縺上ご繝ｼ繝蜀・｡亥・・峨、GI縺ｯ譛蛻昴後う繝ｼ繧ｸ繝ｼ縲阪Δ繝ｼ繝・
+- **逅・罰:** 譁ｰ隕上・繝ｬ繧､繝､繝ｼ縺ｮ謖ｫ謚倬亟豁｢縲・-10蛻・〒縲梧ｰ玲戟縺｡縺・＞縲堺ｽ馴ｨ捺署萓・
+- **豎ｺ螳夊・** Designer謠先｡・竊・繝√・繝蜷域э
 
 ### 2026-03
+
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
 
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-08: テスタビリティ向上策
-- **決定:** 開発コンソール（チートコード）、決定論的RNG + アクションログ、モックAGIモードを実装
-- **理由:** バグ再現可能性とテスト効率向上
-- **決定者:** QA提案 → チーム合意
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・08: 繝・せ繧ｿ繝薙Μ繝・ぅ蜷台ｸ顔ｭ・
+- **豎ｺ螳・** 髢狗匱繧ｳ繝ｳ繧ｽ繝ｼ繝ｫ・医メ繝ｼ繝医さ繝ｼ繝会ｼ峨∵ｱｺ螳夊ｫ也噪RNG + 繧｢繧ｯ繧ｷ繝ｧ繝ｳ繝ｭ繧ｰ縲√Δ繝・けAGI繝｢繝ｼ繝峨ｒ螳溯｣・
+- **逅・罰:** 繝舌げ蜀咲樟蜿ｯ閭ｽ諤ｧ縺ｨ繝・せ繝亥柑邇・髄荳・
+- **豎ｺ螳夊・** QA謠先｡・竊・繝√・繝蜷域э
 
 ---
 
-## 決定記録テンプレート
+## 豎ｺ螳夊ｨ倬鹸繝・Φ繝励Ξ繝ｼ繝・
 
 ```markdown
-### YYYY-MM-DD: タイトル
-- **決定:** 何を決めたか
-- **理由:** なぜその決定か
-- **代替案:** 他に検討した案（あれば）
-- **決定者:** 人間 / エージェント / 合意
-- **影響:** この決定による影響範囲
+### YYYY-MM-DD: 繧ｿ繧､繝医Ν
+- **豎ｺ螳・** 菴輔ｒ豎ｺ繧√◆縺・
+- **逅・罰:** 縺ｪ縺懊◎縺ｮ豎ｺ螳壹°
+- **莉｣譖ｿ譯・** 莉悶↓讀懆ｨ弱＠縺滓｡茨ｼ医≠繧後・・・
+- **豎ｺ螳夊・** 莠ｺ髢・/ 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝・/ 蜷域э
+- **蠖ｱ髻ｿ:** 縺薙・豎ｺ螳壹↓繧医ｋ蠖ｱ髻ｿ遽・峇
 ```
 
 ---
 
-_更新日: 2026-03-15_
+_譖ｴ譁ｰ譌･: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Meeting 012で次タスクを維持し、Project #2 同期を再開
-- **決定:** 次の1手は変更せず、`games/onigame-quickshot` の最小プロトタイプ着手を維持する。
-- **理由:** playable 未着手のため、企画再検討より実装着手の固定継続が最短で価値を生むため。
-- **副作用:** Project #2 は今回復旧し、`Meeting 004` を Done、`Meeting 012` を Ready/P0/S で反映。
-- **決定者:** エージェント（現場定例）
-- **影響先:** 次runは Project 更新より先に `games/onigame-quickshot` の最小プロトタイプ実装を開始する。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Meeting 012縺ｧ谺｡繧ｿ繧ｹ繧ｯ繧堤ｶｭ謖√＠縲￣roject #2 蜷梧悄繧貞・髢・
+- **豎ｺ螳・** 谺｡縺ｮ1謇九・螟画峩縺帙★縲～games/onigame-quickshot` 縺ｮ譛蟆上・繝ｭ繝医ち繧､繝礼捩謇九ｒ邯ｭ謖√☆繧九・
+- **逅・罰:** playable 譛ｪ逹謇九・縺溘ａ縲∽ｼ∫判蜀肴､懆ｨ弱ｈ繧雁ｮ溯｣・捩謇九・蝗ｺ螳夂ｶ咏ｶ壹′譛遏ｭ縺ｧ萓｡蛟､繧堤函繧縺溘ａ縲・
+- **蜑ｯ菴懃畑:** Project #2 縺ｯ莉雁屓蠕ｩ譌ｧ縺励～Meeting 004` 繧・Done縲～Meeting 012` 繧・Ready/P0/S 縺ｧ蜿肴丐縲・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ蜈・** 谺｡run縺ｯ Project 譖ｴ譁ｰ繧医ｊ蜈医↓ `games/onigame-quickshot` 縺ｮ譛蟆上・繝ｭ繝医ち繧､繝怜ｮ溯｣・ｒ髢句ｧ九☆繧九・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Meeting 007で次タスクを維持し、Project #2 を認証ブロッカーとして継続
-- **決定:** 次の1手は変更せず、`games/onigame-quickshot` の最小プロトタイプ着手を維持する。
-- **理由:** 企画の再検討より実装着手点の固定を優先するほうが、playable への最短経路を維持できるため。
-- **副作用:** `.env` の `ONIZUKA_GITHUB_PAT` で `gh auth status` を2回試行しても token invalid が継続し、GitHub Project #2 更新は未反映。
-- **決定者:** エージェント（現場定例）
-- **影響先:** 認証復旧後に Meeting 007 の題名に揃えた item 更新（status + 次の1手）を Project #2 へ同期する。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Meeting 007縺ｧ谺｡繧ｿ繧ｹ繧ｯ繧堤ｶｭ謖√＠縲￣roject #2 繧定ｪ崎ｨｼ繝悶Ο繝・き繝ｼ縺ｨ縺励※邯咏ｶ・
+- **豎ｺ螳・** 谺｡縺ｮ1謇九・螟画峩縺帙★縲～games/onigame-quickshot` 縺ｮ譛蟆上・繝ｭ繝医ち繧､繝礼捩謇九ｒ邯ｭ謖√☆繧九・
+- **逅・罰:** 莨∫判縺ｮ蜀肴､懆ｨ弱ｈ繧雁ｮ溯｣・捩謇狗せ縺ｮ蝗ｺ螳壹ｒ蜆ｪ蜈医☆繧九⊇縺・′縲｝layable 縺ｸ縺ｮ譛遏ｭ邨瑚ｷｯ繧堤ｶｭ謖√〒縺阪ｋ縺溘ａ縲・
+- **蜑ｯ菴懃畑:** `.env` 縺ｮ `ONIZUKA_GITHUB_PAT` 縺ｧ `gh auth status` 繧・蝗櫁ｩｦ陦後＠縺ｦ繧・token invalid 縺檎ｶ咏ｶ壹＠縲；itHub Project #2 譖ｴ譁ｰ縺ｯ譛ｪ蜿肴丐縲・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ蜈・** 隱崎ｨｼ蠕ｩ譌ｧ蠕後↓ Meeting 007 縺ｮ鬘悟錐縺ｫ謠・∴縺・item 譖ｴ譁ｰ・・tatus + 谺｡縺ｮ1謇具ｼ峨ｒ Project #2 縺ｸ蜷梧悄縺吶ｋ縲・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Meeting 004で次タスク維持、Project #2 同期をPAT無効ブロッカーとして継続記録
-- **決定:** `onigame-quickshot` の次タスクは変更せず、`games/onigame-quickshot` の最小プロトタイプ実装を継続する。
-- **理由:** 企画再検討より実装着手を優先するほうが、現行方針に沿って playable へ最短で近づけるため。
-- **副作用:** `.env` の `ONIZUKA_GITHUB_PAT` を使った `gh auth status` を 2 回試行してもトークン無効で、GitHub Project #2 更新は未反映。
-- **決定者:** エージェント（現場定例）
-- **影響先:** 次回 run で認証復旧後に、Meeting 004 の項目を Project #2 へ同期する。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Meeting 004縺ｧ谺｡繧ｿ繧ｹ繧ｯ邯ｭ謖√￣roject #2 蜷梧悄繧単AT辟｡蜉ｹ繝悶Ο繝・き繝ｼ縺ｨ縺励※邯咏ｶ夊ｨ倬鹸
+- **豎ｺ螳・** `onigame-quickshot` 縺ｮ谺｡繧ｿ繧ｹ繧ｯ縺ｯ螟画峩縺帙★縲～games/onigame-quickshot` 縺ｮ譛蟆上・繝ｭ繝医ち繧､繝怜ｮ溯｣・ｒ邯咏ｶ壹☆繧九・
+- **逅・罰:** 莨∫判蜀肴､懆ｨ弱ｈ繧雁ｮ溯｣・捩謇九ｒ蜆ｪ蜈医☆繧九⊇縺・′縲∫樟陦梧婿驥昴↓豐ｿ縺｣縺ｦ playable 縺ｸ譛遏ｭ縺ｧ霑代▼縺代ｋ縺溘ａ縲・
+- **蜑ｯ菴懃畑:** `.env` 縺ｮ `ONIZUKA_GITHUB_PAT` 繧剃ｽｿ縺｣縺・`gh auth status` 繧・2 蝗櫁ｩｦ陦後＠縺ｦ繧ゅヨ繝ｼ繧ｯ繝ｳ辟｡蜉ｹ縺ｧ縲；itHub Project #2 譖ｴ譁ｰ縺ｯ譛ｪ蜿肴丐縲・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ蜈・** 谺｡蝗・run 縺ｧ隱崎ｨｼ蠕ｩ譌ｧ蠕後↓縲｀eeting 004 縺ｮ鬆・岼繧・Project #2 縺ｸ蜷梧悄縺吶ｋ縲・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Meeting 002で次の1タスクを維持し、Project #2 認証障害をブロッカー化
-- **決定:** onigame-quickshot の次タスクは変更せず、games/onigame-quickshot の最小プロトタイプ実装を継続する。
-- **理由:** 会社方針（軽量・短セッション・GitHub Pages完全静的）と整合し、最短で playable に近づくため。
-- **副作用:** GitHub Project #2 の item 更新は gh auth 無効で未反映。運用ログで追跡が一時的にMarkdown側へ偏る。
-- **決定者:** エージェント（現場定例）
-- **影響先:** 次回 run で認証復旧後に Project #2 へ同内容を同期する。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Meeting 002縺ｧ谺｡縺ｮ1繧ｿ繧ｹ繧ｯ繧堤ｶｭ謖√＠縲￣roject #2 隱崎ｨｼ髫懷ｮｳ繧偵ヶ繝ｭ繝・き繝ｼ蛹・
+- **豎ｺ螳・** onigame-quickshot 縺ｮ谺｡繧ｿ繧ｹ繧ｯ縺ｯ螟画峩縺帙★縲“ames/onigame-quickshot 縺ｮ譛蟆上・繝ｭ繝医ち繧､繝怜ｮ溯｣・ｒ邯咏ｶ壹☆繧九・
+- **逅・罰:** 莨夂､ｾ譁ｹ驥晢ｼ郁ｻｽ驥上・遏ｭ繧ｻ繝・す繝ｧ繝ｳ繝ｻGitHub Pages螳悟・髱咏噪・峨→謨ｴ蜷医＠縲∵怙遏ｭ縺ｧ playable 縺ｫ霑代▼縺上◆繧√・
+- **蜑ｯ菴懃畑:** GitHub Project #2 縺ｮ item 譖ｴ譁ｰ縺ｯ gh auth 辟｡蜉ｹ縺ｧ譛ｪ蜿肴丐縲る°逕ｨ繝ｭ繧ｰ縺ｧ霑ｽ霍｡縺御ｸ譎ら噪縺ｫMarkdown蛛ｴ縺ｸ蛛上ｋ縲・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ蜈・** 谺｡蝗・run 縺ｧ隱崎ｨｼ蠕ｩ譌ｧ蠕後↓ Project #2 縺ｸ蜷悟・螳ｹ繧貞酔譛溘☆繧九・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Meeting 006 kept next step fixed and logged Project #2 auth blocker
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Meeting 006 kept next step fixed and logged Project #2 auth blocker
 - **Decision:** Keep `onigame-quickshot` as the single next work item and keep the next implementation step unchanged: create minimum prototype in `games/onigame-quickshot`.
 - **Reason:** Current mission priority is playable progress with smallest scope. Re-planning without prototype progress would not improve delivery speed.
 - **Blocker:** `gh auth status` failed again with invalid token from `.env` (`ONIZUKA_GITHUB_PAT`), so GitHub Project #2 sync could not be executed in this run.
@@ -972,12 +1381,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Meeting 008 kept next step fixed and logged Project #2 auth blocker
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Meeting 008 kept next step fixed and logged Project #2 auth blocker
 - **Decision:** Keep `onigame-quickshot` as the single next work item and keep the next implementation step unchanged: create a one-screen playable prototype in `games/onigame-quickshot`.
 - **Reason:** Current company priority is smallest-scope playable progress; re-planning without prototype creation would add delay.
 - **Blocker:** `gh auth status` failed twice with `The token in GH_TOKEN is invalid.` after loading `ONIZUKA_GITHUB_PAT` from `.env`; GitHub Project #2 sync could not be completed.
@@ -986,12 +1401,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Meeting 009 kept next step fixed and logged Project #2 auth blocker
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Meeting 009 kept next step fixed and logged Project #2 auth blocker
 - **Decision:** Keep `onigame-quickshot` as the single next work item and keep the next implementation step unchanged: bootstrap a one-screen playable prototype in `games/onigame-quickshot`.
 - **Reason:** The team still has no playable artifact for the next game; smallest-scope implementation remains the fastest route.
 - **Blocker:** `gh auth status` failed with `The token in GH_TOKEN is invalid.` after loading `ONIZUKA_GITHUB_PAT` from `.env`; Project #2 sync was not executable in this run.
@@ -1000,12 +1421,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Meeting 010 kept the single next task and logged Project #2 auth blocker
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Meeting 010 kept the single next task and logged Project #2 auth blocker
 - **Decision:** Keep `onigame-quickshot` as the single next work item and keep the next implementation step unchanged: bootstrap a one-screen playable prototype in `games/onigame-quickshot`.
 - **Reason:** The team still lacks a playable artifact; smallest-scope implementation remains the fastest route.
 - **Blocker:** `gh auth status` failed twice with `The token in GH_TOKEN is invalid.` after loading `ONIZUKA_GITHUB_PAT` from `.env`; Project #2 sync could not be executed.
@@ -1014,12 +1441,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Meeting 011 kept next step fixed and logged Project #2 auth blocker
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Meeting 011 kept next step fixed and logged Project #2 auth blocker
 - **Decision:** Keep onigame-quickshot as the single next work item and keep the next implementation step unchanged: bootstrap a one-screen playable prototype in games/onigame-quickshot.
 - **Reason:** No playable artifact exists yet; smallest-scope implementation remains the fastest route.
 - **Blocker:** scripts/load-onizuka-gh-token.ps1 was blocked by PowerShell execution policy, and inline .env token retry still failed with The token in GH_TOKEN is invalid.. Project #2 sync could not be executed.
@@ -1028,12 +1461,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Add a daily automation runtime check for gh and PowerShell
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Add a daily automation runtime check for gh and PowerShell
 - **Decision:** Add `scripts/check-automation-runtime.ps1` and schedule it for a daily 09:00 JST health check.
 - **Reason:** Recent runs showed repeated blockers around `gh` auth and PowerShell execution policy. A lightweight scheduled check gives fast visibility into whether automation can actually execute the required commands.
 - **Scope:** Verify `powershell` execution, `gh --version`, and `gh auth status`, then append the result to `memory/docs/history/automation-runtime-check.log`.
@@ -1042,12 +1481,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Meeting 013 kept next step fixed and synced Project #2
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Meeting 013 kept next step fixed and synced Project #2
 - **Decision:** Keep `onigame-quickshot` as the single next work item and keep the next implementation step unchanged: bootstrap a one-screen playable prototype in `games/onigame-quickshot`.
 - **Reason:** No playable exists yet; smallest-scope implementation remains the fastest path under current company constraints.
 - **Project Sync:** Updated GitHub Project #2 in this run (`Meeting 012` -> `Done`, created `Meeting 013` with `Ready` / `P0` / `S`).
@@ -1056,12 +1501,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-13: Meeting 014 kept next step fixed and synced Project #2
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・13: Meeting 014 kept next step fixed and synced Project #2
 - **Decision:** Keep onigame-quickshot as the single next work item and keep the next implementation step unchanged: bootstrap a one-screen playable prototype in games/onigame-quickshot.
 - **Reason:** No playable exists yet; smallest-scope implementation remains the fastest path under current company constraints.
 - **Project Sync:** Updated GitHub Project #2 in this run (Meeting 013 -> Done, created Meeting 014 with Ready / P0 / S).
@@ -1070,12 +1521,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Meeting 015 kept next step fixed and synced Project #2
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Meeting 015 kept next step fixed and synced Project #2
 - **Decision:** Keep `onigame-quickshot` as the single next work item and keep the next implementation step unchanged: bootstrap a one-screen playable prototype in `games/onigame-quickshot`.
 - **Reason:** No playable exists yet; smallest-scope implementation remains the fastest path under current company constraints.
 - **Project Sync:** Updated GitHub Project #2 in this run (`Meeting 014` -> `Done`, created `Meeting 015` with `Ready` / `P0` / `S`).
@@ -1084,13 +1541,19 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: GitHub Project #2 should track execution tasks, not meeting instances
-- **Decision:** Planning meeting automation must update a real implementation task in GitHub Project #2 instead of creating recurring `Meeting XXX: Light Game 現場定例` items.
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: GitHub Project #2 should track execution tasks, not meeting instances
+- **Decision:** Planning meeting automation must update a real implementation task in GitHub Project #2 instead of creating recurring `Meeting XXX: Light Game 迴ｾ蝣ｴ螳壻ｾ義 items.
 - **Reason:** Meeting-titled items make the board report "Done" for the ceremony itself instead of real product progress, which hides execution debt and confuses the active queue.
 - **Migration:** The active `Meeting 015` Project item will be converted into an execution task titled `Bootstrap onigame-quickshot one-screen playable prototype`.
 - **Decision Owner:** Agent
@@ -1098,12 +1561,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Project #2 should stay as a human-facing kanban for current work
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Project #2 should stay as a human-facing kanban for current work
 - **Decision:** Remove stale meeting items, test items, and generic setup items from GitHub Project #2, then keep only concrete execution cards that show current work and the immediate follow-ups.
 - **Reason:** The board is meant to help humans see what the agent team is doing now and what is moving next. Legacy noise weakens that visibility.
 - **Board Shape:** Keep one primary active item plus a small, concrete follow-up queue. Prefer titles that describe build, verify, polish, or deploy work.
@@ -1112,12 +1581,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: One planning meeting should usually finish one thin slice
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: One planning meeting should usually finish one thin slice
 - **Decision:** Default the field meeting to a short plan-then-build flow where one thin slice is taken from kickoff through implementation and verification in the same run.
 - **Reason:** Repeated planning-only runs slow the team down and make progress harder for humans to see. Small end-to-end completions create clearer momentum for both the board and the repo history.
 - **Exception Rule:** Research-only or planning-only runs are allowed only when a real blocker exists or the output clearly makes the next implementation run faster and safer.
@@ -1126,12 +1601,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Meeting 016 synced Project #2 active item context and kept next step fixed
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Meeting 016 synced Project #2 active item context and kept next step fixed
 - **Decision:** Keep `onigame-quickshot` as the single next work item and keep the next implementation step unchanged: bootstrap a one-screen playable prototype in `games/onigame-quickshot`.
 - **Reason:** No playable artifact exists yet; smallest-scope implementation remains the fastest path under current company constraints.
 - **Project Sync:** Updated the primary active draft item body on GitHub Project #2 to reference `meeting-016-light-game.md` and explicit current blocker, while keeping status as `Ready`.
@@ -1140,12 +1621,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Meeting 017 completed first quickshot playable thin slice
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Meeting 017 completed first quickshot playable thin slice
 - **Decision:** Treat `onigame-quickshot` as active and finish one implementation slice end-to-end in the same run.
 - **Reason:** The planning loop had repeated without a playable artifact; shipping a concrete slice was the fastest way to reduce execution debt.
 - **Implementation:** Created `games/onigame-quickshot/index.html`, `styles.css`, and `main.js` with move/dodge/60s timer/score/retry loop.
@@ -1156,12 +1643,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Project #2 tasks should default to company repo issues, not draft items
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Project #2 tasks should default to company repo issues, not draft items
 - **Decision:** New execution tasks should default to normal issues in `onizuka-agi-co/onizuka-game-agi-co`, then be added to GitHub Project #2.
 - **Reason:** Draft items hide the task from the repository issue flow and make the board harder to trace from the repo side.
 - **Fallback Rule:** Use a draft item only when there is a concrete blocker to creating or reusing a repository issue.
@@ -1170,12 +1663,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Meeting 018 corrected project/repo naming drift to onigame-dodge60
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Meeting 018 corrected project/repo naming drift to onigame-dodge60
 - **Decision:** Align active project tracking from `onigame-quickshot` naming to the actual local playable repo `onigame-dodge60`.
 - **Reason:** GitHub Project #2 and markdown logs referenced `quickshot`, but the existing playable and Pages URL are under `games/onigame-dodge60`; this mismatch risks wrong execution handoff.
 - **Project Sync:** Updated all three Project #2 execution items (bootstrap/playtest/publish) to `onigame-dodge60` naming, kept primary next item as `Playtest onigame-dodge60 first playable and fix top friction` (`Ready`, `P0`).
@@ -1184,12 +1683,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Game-specific tasks should live in the game repository issues
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Game-specific tasks should live in the game repository issues
 - **Decision:** Company-wide operating tasks stay in `onizuka-game-agi-co` issues, but game-specific tasks must be tracked in the corresponding game repository issues.
 - **Reason:** Game implementation and release history should live with the game repo itself so the board, issue flow, and shipped code stay aligned.
 - **Project Sync:** Migrated current Dodge60 board items from company repo issues to `onizuka-agi-co/onigame-dodge60` issues (`#1`, `#2`, `#3`) and removed the old company-repo-backed board items.
@@ -1198,12 +1703,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Meeting 019 delivered one playtest friction fix on Dodge60
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Meeting 019 delivered one playtest friction fix on Dodge60
 - **Decision:** Complete one thin slice by fixing early-run readability and fairness in `onigame-dodge60`.
 - **Reason:** The current primary item required a practical friction fix, not another planning-only cycle.
 - **Implementation:** Added a 1.2 second READY grace window in `games/onigame-dodge60/app.js` (no hazard spawn/collision during grace, READY banner shown).
@@ -1214,12 +1725,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Meeting 020 completed live Pages verification and moved queue forward
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Meeting 020 completed live Pages verification and moved queue forward
 - **Decision:** Complete the current thin slice by verifying the deployed Dodge60 Pages build after the READY grace fix.
 - **Reason:** Project #2 primary item was verification-focused, so this run should close the loop with live smoke evidence instead of additional planning.
 - **Verification:** `js_repl + Playwright` smoke on `https://onizuka-agi-co.github.io/onigame-dodge60/` confirmed load/play/retry and READY-grace behavior.
@@ -1229,12 +1746,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: Meeting 021 fixed READY-phase timer fairness and advanced queue
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: Meeting 021 fixed READY-phase timer fairness and advanced queue
 - **Decision:** Fix the top live-play friction by preventing timer/score countdown during READY grace.
 - **Reason:** The game advertises a 60-second run, but live sampling showed the timer was already decreasing during READY (`59.5 -> 58.7 -> 57.9`), reducing fair play time.
 - **Implementation:** Updated `games/onigame-dodge60/app.js` so timer/score start only after READY grace ends; pushed as commit `3db0be0`.
@@ -1245,12 +1768,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: The company must maintain a live idea-birth lane
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: The company must maintain a live idea-birth lane
 - **Decision:** `IDEAS.md` must not remain a passive backlog. Every CEO run must seed, promote, or explicitly justify concept funnel health, and field runs must hand off concept signals they discover.
 - **Reason:** A 24/7 agent company cannot rely on human ideation bursts. If the active shipping lane moves but the concept lane is empty, the company is under-operating.
 - **Minimum Healthy State:** One active execution slice, at least one incubating concept candidate, and a visible next source of raw ideas.
@@ -1259,12 +1788,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: CEO Review 005 kept strategy stable and tightened acceptance criteria for current slice
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: CEO Review 005 kept strategy stable and tightened acceptance criteria for current slice
 - **Decision:** Keep the current operating direction (thin-slice, implementation-first, verification-first) and do not pivot the primary lane away from `onigame-dodge60`.
 - **Reason:** Recent runs are producing verified playable progress under GitHub Pages/static constraints, so large strategic changes would reduce momentum.
 - **Adjustment:** Require `onigame-dodge60#7` acceptance to include both mobile drag friction fix and visible in-app GitHub repository link before marking `Done`.
@@ -1274,12 +1809,18 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-14: CEO review must be allowed to repair the company operating system
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・14: CEO review must be allowed to repair the company operating system
 - **Decision:** `CEO_REVIEW.md` should explicitly treat company-wide operating fixes as normal CEO work, not only field-meeting priority tuning.
 - **Reason:** Some bottlenecks are structural. If the CEO prompt only pushes local task adjustments, the automation may miss the real operating constraint.
 - **Scope:** CEO review may update company-level sources of truth such as `README.md`, `docs/company-operating-flow.md`, `PLANNING_MEETING.md`, `POLICIES.md`, `IDEAS.md`, and `DECISIONS.md` when the issue is systemic.
@@ -1288,131 +1829,160 @@ _更新日: 2026-03-15_
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 003 rebalanced execution toward the delayed birth lane
-- **決定:** Meeting 3+ の lane bias ルールに従い、`birth lane` を本 run の primary slice として扱い、`Lane Flip Sprint` の bootstrap を company repo issue `onizuka-game-agi-co#10` として作成・Project #2 へ追加した。
-- **理由:** 同日 `live lane` は既に verified 改善が進んでいる一方、`birth lane` は未着手で、daily dual-lane completion rule を満たしていなかったため。
-- **検証結果:** Project #2 の未完了 item が `onigame-dodge60#12`（live）と `onizuka-game-agi-co#10`（birth）の2 lane で明示され、両方 `Ready` 状態で確認できた。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run は `onizuka-game-agi-co#10` を `In progress` に上げ、同日中の新規 app bootstrap 実装を進める。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 003 rebalanced execution toward the delayed birth lane
+- **豎ｺ螳・** Meeting 3+ 縺ｮ lane bias 繝ｫ繝ｼ繝ｫ縺ｫ蠕薙＞縲～birth lane` 繧呈悽 run 縺ｮ primary slice 縺ｨ縺励※謇ｱ縺・～Lane Flip Sprint` 縺ｮ bootstrap 繧・company repo issue `onizuka-game-agi-co#10` 縺ｨ縺励※菴懈・繝ｻProject #2 縺ｸ霑ｽ蜉縺励◆縲・
+- **逅・罰:** 蜷梧律 `live lane` 縺ｯ譌｢縺ｫ verified 謾ｹ蝟・′騾ｲ繧薙〒縺・ｋ荳譁ｹ縲～birth lane` 縺ｯ譛ｪ逹謇九〒縲‥aily dual-lane completion rule 繧呈ｺ縺溘＠縺ｦ縺・↑縺九▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** Project #2 縺ｮ譛ｪ螳御ｺ・item 縺・`onigame-dodge60#12`・・ive・峨→ `onizuka-game-agi-co#10`・・irth・峨・2 lane 縺ｧ譏守､ｺ縺輔ｌ縲∽ｸ｡譁ｹ `Ready` 迥ｶ諷九〒遒ｺ隱阪〒縺阪◆縲・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｯ `onizuka-game-agi-co#10` 繧・`In progress` 縺ｫ荳翫￡縲∝酔譌･荳ｭ縺ｮ譁ｰ隕・app bootstrap 螳溯｣・ｒ騾ｲ繧√ｋ縲・
 
 
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 017 closed Dodge60 #15 with verified retry-cue timing fix and advanced next live slice
-- **決定:** live lane primary item `onigame-dodge60#15` を Done とし、Retry後の再開認知 friction（cue が `LIVE` 前に消える）を1件修正した。Project #2 は `#15 Done` へ更新し、次の live lane item `onigame-dodge60#16` を `Ready / P1 / S` で追加した。
-- **理由:** Meeting 016 時点の next hand で live lane #15 が primary 指定されていたため。最小差分で post-restart friction を1件閉じるのが dual-lane 維持の最短手だったため。
-- **検証結果:** game repo commit `61fb2a9` を origin/main へ push。live before で `state=READY 0.2s` 時に `cue hidden=true`、live after で同条件 `cue hidden=false` / `active=true` を確認。deploy `app.js` に `const cueMs = Math.max(980` を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `birth lane` の `onigame-lane-flip-sprint#3` 実装 + live verify。secondary は `onigame-dodge60#16`。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 017 closed Dodge60 #15 with verified retry-cue timing fix and advanced next live slice
+- **豎ｺ螳・** live lane primary item `onigame-dodge60#15` 繧・Done 縺ｨ縺励ヽetry蠕後・蜀埼幕隱咲衍 friction・・ue 縺・`LIVE` 蜑阪↓豸医∴繧具ｼ峨ｒ1莉ｶ菫ｮ豁｣縺励◆縲１roject #2 縺ｯ `#15 Done` 縺ｸ譖ｴ譁ｰ縺励∵ｬ｡縺ｮ live lane item `onigame-dodge60#16` 繧・`Ready / P1 / S` 縺ｧ霑ｽ蜉縺励◆縲・
+- **逅・罰:** Meeting 016 譎らせ縺ｮ next hand 縺ｧ live lane #15 縺・primary 謖・ｮ壹＆繧後※縺・◆縺溘ａ縲よ怙蟆丞ｷｮ蛻・〒 post-restart friction 繧・莉ｶ髢峨§繧九・縺・dual-lane 邯ｭ謖√・譛遏ｭ謇九□縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commit `61fb2a9` 繧・origin/main 縺ｸ push縲Ｍive before 縺ｧ `state=READY 0.2s` 譎ゅ↓ `cue hidden=true`縲〕ive after 縺ｧ蜷梧擅莉ｶ `cue hidden=false` / `active=true` 繧堤｢ｺ隱阪Ｅeploy `app.js` 縺ｫ `const cueMs = Math.max(980` 繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `birth lane` 縺ｮ `onigame-lane-flip-sprint#3` 螳溯｣・+ live verify縲Ｔecondary 縺ｯ `onigame-dodge60#16`縲・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 021 promoted Dodge60 #17 to active execution and preserved birth-lane next hand
-- **決定:** `live lane` primary item `onigame-dodge60#17` を `Ready` から `In Progress` へ更新し、同runで `birth lane` は `onigame-lane-flip-sprint#5` を `Ready` 維持に固定した。
-- **理由:** Meeting 020 で birth lane #4 を閉じた直後のため、dual-lane 実行バランスでは live lane #17 の着手が最短だったため。
-- **検証結果:** `gh auth status` で `GH_TOKEN` 有効と `project` scope を確認。Project #2 再取得で `onigame-dodge60#17 = In progress`、`onigame-lane-flip-sprint#5 = Ready` を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `onigame-dodge60#17` の実装 + live verify 完了。secondary は `onigame-lane-flip-sprint#5`。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 021 promoted Dodge60 #17 to active execution and preserved birth-lane next hand
+- **豎ｺ螳・** `live lane` primary item `onigame-dodge60#17` 繧・`Ready` 縺九ｉ `In Progress` 縺ｸ譖ｴ譁ｰ縺励∝酔run縺ｧ `birth lane` 縺ｯ `onigame-lane-flip-sprint#5` 繧・`Ready` 邯ｭ謖√↓蝗ｺ螳壹＠縺溘・
+- **逅・罰:** Meeting 020 縺ｧ birth lane #4 繧帝哩縺倥◆逶ｴ蠕後・縺溘ａ縲‥ual-lane 螳溯｡後ヰ繝ｩ繝ｳ繧ｹ縺ｧ縺ｯ live lane #17 縺ｮ逹謇九′譛遏ｭ縺縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** `gh auth status` 縺ｧ `GH_TOKEN` 譛牙柑縺ｨ `project` scope 繧堤｢ｺ隱阪１roject #2 蜀榊叙蠕励〒 `onigame-dodge60#17 = In progress`縲～onigame-lane-flip-sprint#5 = Ready` 繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `onigame-dodge60#17` 縺ｮ螳溯｣・+ live verify 螳御ｺ・Ｔecondary 縺ｯ `onigame-lane-flip-sprint#5`縲・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 023 closed Lane Flip Sprint #5 with verified READY-input feedback and advanced next birth slice
-- **決定:** `birth lane` primary item `onigame-lane-flip-sprint#5` を `Done` とし、`READY` 中入力が無反応に見える early-run friction を1件修正した。Project #2 は `#5 Done` へ更新し、次の birth lane item `onigame-lane-flip-sprint#6` を `Ready / P1 / S` で追加した。
-- **理由:** Meeting 022 時点の next hand で birth lane #5 が primary 指定されており、dual-lane completion を維持するために最短で1 friction を閉じる必要があったため。
-- **検証結果:** game repo commit `9bd0855` を origin/main へ push。live before で `READY` 中 `ArrowLeft` 入力後も cue が `New run started` のまま、live after で同条件 cue が `Input locked - LIVE in 1.1s` へ更新されることを確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` の `onigame-dodge60#18` 実装 + live verify。secondary は `onigame-lane-flip-sprint#6`。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 023 closed Lane Flip Sprint #5 with verified READY-input feedback and advanced next birth slice
+- **豎ｺ螳・** `birth lane` primary item `onigame-lane-flip-sprint#5` 繧・`Done` 縺ｨ縺励～READY` 荳ｭ蜈･蜉帙′辟｡蜿榊ｿ懊↓隕九∴繧・early-run friction 繧・莉ｶ菫ｮ豁｣縺励◆縲１roject #2 縺ｯ `#5 Done` 縺ｸ譖ｴ譁ｰ縺励∵ｬ｡縺ｮ birth lane item `onigame-lane-flip-sprint#6` 繧・`Ready / P1 / S` 縺ｧ霑ｽ蜉縺励◆縲・
+- **逅・罰:** Meeting 022 譎らせ縺ｮ next hand 縺ｧ birth lane #5 縺・primary 謖・ｮ壹＆繧後※縺翫ｊ縲‥ual-lane completion 繧堤ｶｭ謖√☆繧九◆繧√↓譛遏ｭ縺ｧ1 friction 繧帝哩縺倥ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** game repo commit `9bd0855` 繧・origin/main 縺ｸ push縲Ｍive before 縺ｧ `READY` 荳ｭ `ArrowLeft` 蜈･蜉帛ｾ後ｂ cue 縺・`New run started` 縺ｮ縺ｾ縺ｾ縲〕ive after 縺ｧ蜷梧擅莉ｶ cue 縺・`Input locked - LIVE in 1.1s` 縺ｸ譖ｴ譁ｰ縺輔ｌ繧九％縺ｨ繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` 縺ｮ `onigame-dodge60#18` 螳溯｣・+ live verify縲Ｔecondary 縺ｯ `onigame-lane-flip-sprint#6`縲・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-15: Meeting 027 promoted Lane Flip Sprint #7 to active execution while keeping live lane queued
-- **決定:** `Meeting 3+` の lane bias に従い、`birth lane` primary item `onigame-lane-flip-sprint#7` を Project #2 で `Ready` から `In Progress` へ更新した。`live lane` は `onigame-dodge60#20` を `Ready` 維持で次手固定とした。
-- **理由:** Meeting 026 時点で live lane は `#19` 完了済みだった一方、birth lane `#7` が未着手だったため。daily dual-lane completion を維持するには birth lane の着手明確化が最短だったため。
-- **検証結果:** `gh auth status` で `GH_TOKEN` と `project` scope を確認。Project #2 再取得で `onigame-lane-flip-sprint#7 = In progress`、`onigame-dodge60#20 = Ready` を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `onigame-lane-flip-sprint#7` 実装 + live verify + Done。secondary は `onigame-dodge60#20`。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・15: Meeting 027 promoted Lane Flip Sprint #7 to active execution while keeping live lane queued
+- **豎ｺ螳・** `Meeting 3+` 縺ｮ lane bias 縺ｫ蠕薙＞縲～birth lane` primary item `onigame-lane-flip-sprint#7` 繧・Project #2 縺ｧ `Ready` 縺九ｉ `In Progress` 縺ｸ譖ｴ譁ｰ縺励◆縲Ａlive lane` 縺ｯ `onigame-dodge60#20` 繧・`Ready` 邯ｭ謖√〒谺｡謇句崋螳壹→縺励◆縲・
+- **逅・罰:** Meeting 026 譎らせ縺ｧ live lane 縺ｯ `#19` 螳御ｺ・ｸ医∩縺縺｣縺滉ｸ譁ｹ縲｜irth lane `#7` 縺梧悴逹謇九□縺｣縺溘◆繧√Ｅaily dual-lane completion 繧堤ｶｭ謖√☆繧九↓縺ｯ birth lane 縺ｮ逹謇区・遒ｺ蛹悶′譛遏ｭ縺縺｣縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** `gh auth status` 縺ｧ `GH_TOKEN` 縺ｨ `project` scope 繧堤｢ｺ隱阪１roject #2 蜀榊叙蠕励〒 `onigame-lane-flip-sprint#7 = In progress`縲～onigame-dodge60#20 = Ready` 繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `onigame-lane-flip-sprint#7` 螳溯｣・+ live verify + Done縲Ｔecondary 縺ｯ `onigame-dodge60#20`縲・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-16: Meeting 001 switched daily birth lane to One Stroke Sweep and locked board state
-- **決定:** 2026-03-16 の Meeting 1 で `birth lane` を `I20260314-02 One Stroke Sweep` に切り替え、company issue `onizuka-game-agi-co#11` を作成して Project #2 で `In progress / P0 / S` に設定した。`live lane` は `onigame-dodge60#20` を `Ready` 維持とした。
-- **理由:** Daily dual-lane completion rule は「同日に fresh app birth」を要求しており、前日生まれた `onigame-lane-flip-sprint` 継続だけでは当日 birth lane 要件を満たせないため。
-- **検証結果:** Project #2 再取得で `onizuka-game-agi-co#11 = In progress`、`onigame-dodge60#20 = Ready`、`onigame-lane-flip-sprint#7 = Ready` を確認。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `onizuka-game-agi-co#11` の repo bootstrap + Pages verify。secondary は `onigame-dodge60#20`。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・16: Meeting 001 switched daily birth lane to One Stroke Sweep and locked board state
+- **豎ｺ螳・** 2026-03-16 縺ｮ Meeting 1 縺ｧ `birth lane` 繧・`I20260314-02 One Stroke Sweep` 縺ｫ蛻・ｊ譖ｿ縺医…ompany issue `onizuka-game-agi-co#11` 繧剃ｽ懈・縺励※ Project #2 縺ｧ `In progress / P0 / S` 縺ｫ險ｭ螳壹＠縺溘Ａlive lane` 縺ｯ `onigame-dodge60#20` 繧・`Ready` 邯ｭ謖√→縺励◆縲・
+- **逅・罰:** Daily dual-lane completion rule 縺ｯ縲悟酔譌･縺ｫ fresh app birth縲阪ｒ隕∵ｱゅ＠縺ｦ縺翫ｊ縲∝燕譌･逕溘∪繧後◆ `onigame-lane-flip-sprint` 邯咏ｶ壹□縺代〒縺ｯ蠖捺律 birth lane 隕∽ｻｶ繧呈ｺ縺溘○縺ｪ縺・◆繧√・
+- **讀懆ｨｼ邨先棡:** Project #2 蜀榊叙蠕励〒 `onizuka-game-agi-co#11 = In progress`縲～onigame-dodge60#20 = Ready`縲～onigame-lane-flip-sprint#7 = Ready` 繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `onizuka-game-agi-co#11` 縺ｮ repo bootstrap + Pages verify縲Ｔecondary 縺ｯ `onigame-dodge60#20`縲・
 
 ### 2026-03
 
+### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
+- **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
+- **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。
+- **検証:** commit 8ac0be1 を origin/main へ反映し、live URL で 2300ms cueHidden=false / 3200ms cueHidden=true（hold without move）と、ArrowRight後 cueHidden=true（actual move）を確認。
+- **次手:** birth lane onigame-lane-flip-sprint#9 を primary、live lane は onigame-dodge60#22 を Ready / P1 / S で維持する。
+
 ### 2026-03-16: Meeting 003 completed One Stroke Sweep birth-lane bootstrap with live verification
-- **決定:** `onizuka-game-agi-co#11` を `Done` とし、`onigame-one-stroke-sweep` を新規 repo として bootstrap、GitHub Pages 公開、live verify まで 1 run で完了した。Project #2 の該当 item は `Done` へ更新し、`live lane` の次手は `onigame-dodge60#20` を維持した。
-- **理由:** Meeting 3+ では両レーンの実行完了を優先し、遅れていた `birth lane` の day-goal（same-day new app birth）を先に充足する必要があったため。
-- **検証結果:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`、commit `9e0d87b`、Pages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` を確認。live verify で `timer 30.0 -> 28.6`、`score 0 -> 4`、time-up と retry reset を確認し、fatal runtime error は観測なし。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run の primary は `live lane` `onigame-dodge60#20` の1件修正 + live verify。`birth lane` は day goal met として `onigame-lane-flip-sprint#7` を secondary queue で維持。-16: Meeting 002 locked acceptance bars for both lanes and fixed the execution contract
-- **決定:** Meeting 2 として、`live lane` (`onigame-dodge60#20`) の thin-slice acceptance bar と、`birth lane` (`onizuka-game-agi-co#11`) の concept brief / first playable scope / repo bootstrap plan / release bar を固定した。加えて両 issue 本文を `meeting-002-light-game.md` 基準に更新した。
-- **理由:** Meeting 1 で lane 選定は完了しているため、Meeting 2 の責務は実装前の判定基準 lock。ここを曖昧にすると `#20` の滞留と `One Stroke Sweep` のスコープ肥大が同時に起きやすいため。
-- **検証結果:** GitHub issue 更新完了（`onizuka-game-agi-co#11`, `onigame-dodge60#20`）。Project #2 再確認で `#11 = In progress / P0 / S`、`#20 = Ready / P1 / S`、`onigame-lane-flip-sprint#7 = Ready / P1 / S` を確認。
-- **決定者:** エージェント（現場定例 CTO, planning draft assisted by GPT-5.4 high reasoning）
-- **影響:** 次 run は `onizuka-game-agi-co#11` の repo bootstrap + Pages verify を primary、`onigame-dodge60#20` の 1 friction fix + live verify を secondary とする。
+- **豎ｺ螳・** `onizuka-game-agi-co#11` 繧・`Done` 縺ｨ縺励～onigame-one-stroke-sweep` 繧呈眠隕・repo 縺ｨ縺励※ bootstrap縲；itHub Pages 蜈ｬ髢九〕ive verify 縺ｾ縺ｧ 1 run 縺ｧ螳御ｺ・＠縺溘１roject #2 縺ｮ隧ｲ蠖・item 縺ｯ `Done` 縺ｸ譖ｴ譁ｰ縺励～live lane` 縺ｮ谺｡謇九・ `onigame-dodge60#20` 繧堤ｶｭ謖√＠縺溘・
+- **逅・罰:** Meeting 3+ 縺ｧ縺ｯ荳｡繝ｬ繝ｼ繝ｳ縺ｮ螳溯｡悟ｮ御ｺ・ｒ蜆ｪ蜈医＠縲・≦繧後※縺・◆ `birth lane` 縺ｮ day-goal・・ame-day new app birth・峨ｒ蜈医↓蜈・ｶｳ縺吶ｋ蠢・ｦ√′縺ゅ▲縺溘◆繧√・
+- **讀懆ｨｼ邨先棡:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep`縲…ommit `9e0d87b`縲￣ages URL `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/` 繧堤｢ｺ隱阪Ｍive verify 縺ｧ `timer 30.0 -> 28.6`縲～score 0 -> 4`縲》ime-up 縺ｨ retry reset 繧堤｢ｺ隱阪＠縲’atal runtime error 縺ｯ隕ｳ貂ｬ縺ｪ縺励・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ `live lane` `onigame-dodge60#20` 縺ｮ1莉ｶ菫ｮ豁｣ + live verify縲Ａbirth lane` 縺ｯ day goal met 縺ｨ縺励※ `onigame-lane-flip-sprint#7` 繧・secondary queue 縺ｧ邯ｭ謖√・16: Meeting 002 locked acceptance bars for both lanes and fixed the execution contract
+- **豎ｺ螳・** Meeting 2 縺ｨ縺励※縲～live lane` (`onigame-dodge60#20`) 縺ｮ thin-slice acceptance bar 縺ｨ縲～birth lane` (`onizuka-game-agi-co#11`) 縺ｮ concept brief / first playable scope / repo bootstrap plan / release bar 繧貞崋螳壹＠縺溘ょ刈縺医※荳｡ issue 譛ｬ譁・ｒ `meeting-002-light-game.md` 蝓ｺ貅悶↓譖ｴ譁ｰ縺励◆縲・
+- **逅・罰:** Meeting 1 縺ｧ lane 驕ｸ螳壹・螳御ｺ・＠縺ｦ縺・ｋ縺溘ａ縲｀eeting 2 縺ｮ雋ｬ蜍吶・螳溯｣・燕縺ｮ蛻､螳壼渕貅・lock縲ゅ％縺薙ｒ譖匁乂縺ｫ縺吶ｋ縺ｨ `#20` 縺ｮ貊樒蕗縺ｨ `One Stroke Sweep` 縺ｮ繧ｹ繧ｳ繝ｼ繝苓ぇ螟ｧ縺悟酔譎ゅ↓襍ｷ縺阪ｄ縺吶＞縺溘ａ縲・
+- **讀懆ｨｼ邨先棡:** GitHub issue 譖ｴ譁ｰ螳御ｺ・ｼ・onizuka-game-agi-co#11`, `onigame-dodge60#20`・峨１roject #2 蜀咲｢ｺ隱阪〒 `#11 = In progress / P0 / S`縲～#20 = Ready / P1 / S`縲～onigame-lane-flip-sprint#7 = Ready / P1 / S` 繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ・CTO, planning draft assisted by GPT-5.4 high reasoning・・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｯ `onizuka-game-agi-co#11` 縺ｮ repo bootstrap + Pages verify 繧・primary縲～onigame-dodge60#20` 縺ｮ 1 friction fix + live verify 繧・secondary 縺ｨ縺吶ｋ縲・
 
 ### 2026-03-16: Meeting 004 fixed primary execution on live lane and kept birth-lane polish queued
-- **決定:** Meeting 004 は live lane を primary とし、onigame-dodge60#20 を Project #2 で In progress へ更新した。birth lane は day goal 達成済みのため、onigame-lane-flip-sprint#7 を secondary hand として Ready 維持とした。
-- **理由:** 2026-03-16 の Meeting 001-003 で birth lane の新規 app birth (onizuka-game-agi-co#11) は完了済みで、未回収の即効性が最も高い残タスクは live lane #20 の verified closure だから。
-- **検証結果:** Project #2 再確認で onigame-dodge60#20 = In progress、onigame-lane-flip-sprint#7 = Ready、onizuka-game-agi-co#11 = Done を確認。
-- **決定者:** エージェント（現場定例, GPT-5.4 high reasoning 補助あり）
-- **影響:** 次 run の primary は onigame-dodge60#20 実装 + live verify + Done。secondary は onigame-lane-flip-sprint#7。
+- **豎ｺ螳・** Meeting 004 縺ｯ live lane 繧・primary 縺ｨ縺励｛nigame-dodge60#20 繧・Project #2 縺ｧ In progress 縺ｸ譖ｴ譁ｰ縺励◆縲Ｃirth lane 縺ｯ day goal 驕疲・貂医∩縺ｮ縺溘ａ縲｛nigame-lane-flip-sprint#7 繧・secondary hand 縺ｨ縺励※ Ready 邯ｭ謖√→縺励◆縲・
+- **逅・罰:** 2026-03-16 縺ｮ Meeting 001-003 縺ｧ birth lane 縺ｮ譁ｰ隕・app birth (onizuka-game-agi-co#11) 縺ｯ螳御ｺ・ｸ医∩縺ｧ縲∵悴蝗槫庶縺ｮ蜊ｳ蜉ｹ諤ｧ縺梧怙繧るｫ倥＞谿九ち繧ｹ繧ｯ縺ｯ live lane #20 縺ｮ verified closure 縺縺九ｉ縲・
+- **讀懆ｨｼ邨先棡:** Project #2 蜀咲｢ｺ隱阪〒 onigame-dodge60#20 = In progress縲｛nigame-lane-flip-sprint#7 = Ready縲｛nizuka-game-agi-co#11 = Done 繧堤｢ｺ隱阪・
+- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ・ GPT-5.4 high reasoning 陬懷勧縺ゅｊ・・
+- **蠖ｱ髻ｿ:** 谺｡ run 縺ｮ primary 縺ｯ onigame-dodge60#20 螳溯｣・+ live verify + Done縲Ｔecondary 縺ｯ onigame-lane-flip-sprint#7縲・
 
 
 ### 2026-03-16: Meeting 007 promoted Lane Flip Sprint #8 and created Dodge60 #21 as dual-lane next hand
-- **決定:** `onigame-lane-flip-sprint#8` を `In progress` へ更新し本runの primary とした。`live lane` 側は実装キュー空白を避けるため `onigame-dodge60#21` を新規作成し Project #2 に `Ready / P1 / S` で追加した。
-- **理由:** day goal 達成済みでも dual-lane 可視性を維持し、次runで実装へ即着手できる状態を優先するため。
-- **検証/証跡:** Project #2 item status を再取得し `#8 In progress`, `#21 Ready`, `#11 Done` を確認。Spark Legion の producer/second-pass/Devil's Advocate で判断根拠を二重化した。
-- **決定者:** 現場定例エージェント（GPT-5.4 xHigh 運用）
-- **次アクション:** 次runで `onigame-lane-flip-sprint#8` を実装・live verify・Done、続けて `onigame-dodge60#21` を実装着手する。
+- **豎ｺ螳・** `onigame-lane-flip-sprint#8` 繧・`In progress` 縺ｸ譖ｴ譁ｰ縺玲悽run縺ｮ primary 縺ｨ縺励◆縲Ａlive lane` 蛛ｴ縺ｯ螳溯｣・く繝･繝ｼ遨ｺ逋ｽ繧帝∩縺代ｋ縺溘ａ `onigame-dodge60#21` 繧呈眠隕丈ｽ懈・縺・Project #2 縺ｫ `Ready / P1 / S` 縺ｧ霑ｽ蜉縺励◆縲・- **逅・罰:** day goal 驕疲・貂医∩縺ｧ繧・dual-lane 蜿ｯ隕匁ｧ繧堤ｶｭ謖√＠縲∵ｬ｡run縺ｧ螳溯｣・∈蜊ｳ逹謇九〒縺阪ｋ迥ｶ諷九ｒ蜆ｪ蜈医☆繧九◆繧√・- **讀懆ｨｼ/險ｼ霍｡:** Project #2 item status 繧貞・蜿門ｾ励＠ `#8 In progress`, `#21 Ready`, `#11 Done` 繧堤｢ｺ隱阪４park Legion 縺ｮ producer/second-pass/Devil's Advocate 縺ｧ蛻､譁ｭ譬ｹ諡繧剃ｺ碁㍾蛹悶＠縺溘・- **豎ｺ螳夊・** 迴ｾ蝣ｴ螳壻ｾ九お繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ・PT-5.4 xHigh 驕狗畑・・- **谺｡繧｢繧ｯ繧ｷ繝ｧ繝ｳ:** 谺｡run縺ｧ `onigame-lane-flip-sprint#8` 繧貞ｮ溯｣・・live verify繝ｻDone縲∫ｶ壹￠縺ｦ `onigame-dodge60#21` 繧貞ｮ溯｣・捩謇九☆繧九・
 
 ### 2026-03-16: Meeting 008 closed Lane Flip Sprint #8 with verified early-run spawn timing fix
-- **決定:** onigame-lane-flip-sprint#8 を Done とし、early-run friction（READY -> LIVE 直後の初回hazardが早すぎる）を 1件修正した。さらに birth lane 次手として onigame-lane-flip-sprint#9 を作成し Ready / P1 / S に設定した。
-- **理由:** #8 の acceptance bar は「1 friction fix + live verify + board done」であり、最短で可視的なプレイ感改善を証跡付きで閉じることが優先だったため。
-- **検証/証跡:** pre-fix live 355.7ms（LIVE->初回hazard平均）から post-fix live 729.2ms へ改善。game repo commit 2187dd8 を main に push 後、Pages の pp.js 反映（irstSpawnDelaySeconds = 0.72）を確認。Issue #8 close、Project #2 #8 Done、#9 Ready / P1 / S、#21 Ready / P1 / S を確認。
-- **決定者:** 現場定例エージェント（GPT-5.4 xHigh reasoning）
-- **次アクション:** 次runは onigame-dodge60#21 を primary として 1 friction fix + live verify で完了する。
-### 2026-03-16: Meeting 009 promoted Dodge60 #21 to active execution and preserved birth-lane next hand
-- **決定:** `live lane` の primary item を `onigame-dodge60#21` に固定し、Project #2 で `Ready -> In progress` へ更新した。`birth lane` は `onigame-lane-flip-sprint#9` を `Ready` のまま保持した。
-- **理由:** Meeting 008 時点で両レーンが `Ready` だったため、次の実装価値を出すには active lane を 1 本明確化する必要がある。`#21` は live lane の直近 friction 修正として最短で delivery 可能。
-- **検証/証跡:** Project #2 の item 状態を `gh project item-list` で確認し、`#21 = In progress` と `#9 = Ready` を確認した。
-- **決定者:** エージェント（現場定例）
-- **影響:** 次 run は `onigame-dodge60#21` の実装 + live verify + Done を primary で完了し、その後 `onigame-lane-flip-sprint#9` に着手する。
+- **豎ｺ螳・** onigame-lane-flip-sprint#8 繧・Done 縺ｨ縺励‘arly-run friction・・EADY -> LIVE 逶ｴ蠕後・蛻晏屓hazard縺梧掠縺吶℃繧具ｼ峨ｒ 1莉ｶ菫ｮ豁｣縺励◆縲ゅ＆繧峨↓ birth lane 谺｡謇九→縺励※ onigame-lane-flip-sprint#9 繧剃ｽ懈・縺・Ready / P1 / S 縺ｫ險ｭ螳壹＠縺溘・- **逅・罰:** #8 縺ｮ acceptance bar 縺ｯ縲・ friction fix + live verify + board done縲阪〒縺ゅｊ縲∵怙遏ｭ縺ｧ蜿ｯ隕也噪縺ｪ繝励Ξ繧､諢滓隼蝟・ｒ險ｼ霍｡莉倥″縺ｧ髢峨§繧九％縺ｨ縺悟━蜈医□縺｣縺溘◆繧√・- **讀懆ｨｼ/險ｼ霍｡:** pre-fix live 355.7ms・・IVE->蛻晏屓hazard蟷ｳ蝮・ｼ峨°繧・post-fix live 729.2ms 縺ｸ謾ｹ蝟・Ｈame repo commit 2187dd8 繧・main 縺ｫ push 蠕後￣ages 縺ｮ pp.js 蜿肴丐・・irstSpawnDelaySeconds = 0.72・峨ｒ遒ｺ隱阪・ssue #8 close縲￣roject #2 #8 Done縲・9 Ready / P1 / S縲・21 Ready / P1 / S 繧堤｢ｺ隱阪・- **豎ｺ螳夊・** 迴ｾ蝣ｴ螳壻ｾ九お繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ・PT-5.4 xHigh reasoning・・- **谺｡繧｢繧ｯ繧ｷ繝ｧ繝ｳ:** 谺｡run縺ｯ onigame-dodge60#21 繧・primary 縺ｨ縺励※ 1 friction fix + live verify 縺ｧ螳御ｺ・☆繧九・### 2026-03-16: Meeting 009 promoted Dodge60 #21 to active execution and preserved birth-lane next hand
+- **豎ｺ螳・** `live lane` 縺ｮ primary item 繧・`onigame-dodge60#21` 縺ｫ蝗ｺ螳壹＠縲￣roject #2 縺ｧ `Ready -> In progress` 縺ｸ譖ｴ譁ｰ縺励◆縲Ａbirth lane` 縺ｯ `onigame-lane-flip-sprint#9` 繧・`Ready` 縺ｮ縺ｾ縺ｾ菫晄戟縺励◆縲・- **逅・罰:** Meeting 008 譎らせ縺ｧ荳｡繝ｬ繝ｼ繝ｳ縺・`Ready` 縺縺｣縺溘◆繧√∵ｬ｡縺ｮ螳溯｣・ｾ｡蛟､繧貞・縺吶↓縺ｯ active lane 繧・1 譛ｬ譏守｢ｺ蛹悶☆繧句ｿ・ｦ√′縺ゅｋ縲Ａ#21` 縺ｯ live lane 縺ｮ逶ｴ霑・friction 菫ｮ豁｣縺ｨ縺励※譛遏ｭ縺ｧ delivery 蜿ｯ閭ｽ縲・- **讀懆ｨｼ/險ｼ霍｡:** Project #2 縺ｮ item 迥ｶ諷九ｒ `gh project item-list` 縺ｧ遒ｺ隱阪＠縲～#21 = In progress` 縺ｨ `#9 = Ready` 繧堤｢ｺ隱阪＠縺溘・- **豎ｺ螳夊・** 繧ｨ繝ｼ繧ｸ繧ｧ繝ｳ繝茨ｼ育樟蝣ｴ螳壻ｾ具ｼ・- **蠖ｱ髻ｿ:** 谺｡ run 縺ｯ `onigame-dodge60#21` 縺ｮ螳溯｣・+ live verify + Done 繧・primary 縺ｧ螳御ｺ・＠縲√◎縺ｮ蠕・`onigame-lane-flip-sprint#9` 縺ｫ逹謇九☆繧九・
 
 ### 2026-03-16: Meeting 010 kept Dodge60 #21 active and preserved Lane Flip Sprint #9 as explicit secondary hand
 - **Decision:** Meeting 010 continues in `Meeting 3+` execution mode with `onigame-dodge60#21` as primary (`In progress`) and `onigame-lane-flip-sprint#9` as secondary (`Ready`), keeping both daily lanes visible on Project #2.
@@ -1420,3 +1990,4 @@ _更新日: 2026-03-15_
 - **Verification Evidence:** `gh project item-list 2 --owner onizuka-agi-co --limit 200 --format json` confirmed `#21 In progress` and `#9 Ready`; `gh issue view 9 --repo onizuka-agi-co/onigame-lane-flip-sprint` confirmed issue is open and execution-ready.
 - **Decision Owner:** Agent (Field Meeting, GPT-5.4 xHigh manager + Spark Legion support)
 - **Next Action:** Next run executes `onigame-dodge60#21` to code/live verification closure, then pulls `onigame-lane-flip-sprint#9`.
+
