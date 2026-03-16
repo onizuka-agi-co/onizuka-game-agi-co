@@ -536,3 +536,44 @@
 
 ## 記録リンク (追記)
 - [meeting-022-light-game](./meeting-022-light-game.md) - #23 を In progress 化し、coordination run の主張境界を固定
+
+## 実績: Meeting 002 (CEO Review)
+- [x] `CEO_REVIEW.md` の手順に従い required inputs を確認
+- [x] 会社状態を評価し、coordination-only 連続を company operating system 課題として特定
+- [x] `docs/company-operating-flow.md` に `Coordination-Only Run Guardrail (2026-03-16)` を追加
+- [x] CEO記録を同期（meeting / decisions / projects / monthly index / history）
+
+## 次アクション (CEO Review 002 時点)
+- [ ] primary: `onigame-dodge60#23` を code change + live verify で前進
+- [ ] secondary: `onigame-lane-flip-sprint` は post-#10 friction を観測し、必要時のみ次 issue 化
+
+## 記録リンク (追記)
+- [meeting-002-ceo-review](./meeting-002-ceo-review.md) - coordination-only 連続に対する company-level guardrail 追加
+
+## 実績: Meeting 023 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] primary onigame-dodge60#23 を実装完了（1 friction fix）
+- [x] games/onigame-dodge60/app.js で READY->LIVE 直後の初回 hazard 生成を遅延（0.58s）
+- [x] game repo commit/push:
+  - [x] commit ed40918
+  - [x] main -> origin/main 反映
+- [x] live verify:
+  - [x] before deploy marker: hasDelay=false / hasTransitionAssign=false
+  - [x] after deploy marker: hasDelay=true / hasTransitionAssign=true
+  - [x] Playwright runtime smoke: READY 1.2s -> LIVE, console error 0
+- [x] GitHub同期:
+  - [x] onigame-dodge60#23 に証跡コメント追加 + close
+  - [x] Project #2 onigame-dodge60#23 を Done へ更新
+  - [x] 次手 onigame-dodge60#24 を作成し Ready / P1 / S へ設定
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 023 時点)
+- [ ] primary: onigame-dodge60#24 を 1 friction fix + live verify で前進
+- [ ] secondary: onigame-lane-flip-sprint は post-#10 friction を観測し、必要時のみ次 issue 化
+
+## 日次2レーン状態 (Meeting 023)
+- live lane: ready
+- birth lane: day goal met
+
+## 記録リンク (追記)
+- [meeting-023-light-game](./meeting-023-light-game.md) - #23 実装完了（READY->LIVE直後のfirst spawn遅延）と #24 Ready 同期

@@ -817,3 +817,17 @@ _更新日: 2026-03-16_
 - Next action:
   - Primary (`live lane`): execute `onigame-dodge60#23` with one friction fix + live verification.
   - Secondary (`birth lane`): observe post-#10 friction and open a new issue only if needed.
+
+## 2026-03-16 CEO Review 002 update
+- CEO判断: プロダクト戦略は維持（`onigame-dodge60` live lane 継続 + birth lane 観測）。
+- 運営修正: coordination-only 連続による実装停滞を company OS 課題として扱い、`docs/company-operating-flow.md` に実行強制ガードを追加。
+- 次アクション固定:
+  - primary: `onigame-dodge60#23` を code change + live verify まで進める
+  - secondary: `onigame-lane-flip-sprint` は post-#10 friction 観測（必要時のみ issue 化）
+
+## 2026-03-16 Meeting 023 update
+- `onigame-dodge60#23` は **completed**（READY->LIVE直後の first hazard spawn を 0.58s 遅延、commit `ed40918`）。
+- Project #2 は `onigame-dodge60#23` を `Done / P1 / S` へ同期。
+- live lane 次手として `onigame-dodge60#24` を作成し、Project #2 `Ready / P1 / S` へ設定。
+- birth lane は `onigame-lane-flip-sprint#10` の day goal met を維持（観測運用）。
+- 次 run の primary は `onigame-dodge60#24`（1 friction fix + live verify）。

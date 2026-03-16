@@ -1088,3 +1088,26 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (coordination + board transition slice)
+
+### 変更履歴更新 (2026-03-16 CEO Review 002)
+- 追加: `memory/docs/2026/03/16/meeting-002-ceo-review.md`
+- 更新: `docs/company-operating-flow.md` (Coordination-Only Run Guardrail 追加)
+- 更新: `DECISIONS.md` (CEO Review 002 decision 追記)
+- 更新: `PROJECTS.md` (CEO Review 002 status update)
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `memory/docs/2026/03/index.md`
+- 更新: `memory/docs/history/index.md` (this entry)
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (CEO governance update slice)
+
+### 変更履歴更新 (2026-03-16 Meeting 023)
+- 追加: `memory/docs/2026/03/16/meeting-023-light-game.md`
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `DECISIONS.md` (Meeting 023 decision + verified closure)
+- 更新: `PROJECTS.md` (Meeting 023 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-16 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- 実装リポジトリ: `games/onigame-dodge60` commit `ed40918` pushed
+- 検証: live app.js marker before/after + Playwright runtime smoke（READY->LIVE, console error 0）
+- GitHub sync: `onigame-dodge60#23` closed + Project #2 `Done`、`onigame-dodge60#24` を `Ready / P1 / S` で追加

@@ -2064,3 +2064,15 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **検証:** `gh auth status` pass。Project #2 item `PVTI_lADOD7cTBc4BRGjUzgni2OY` が `In progress / P1 / S` であること、issue state が `#23 OPEN` / `#10 CLOSED` であることを確認。
 - **決定オーナー:** エージェント（現場定例、GPT-5.4 high + Spark Legion）
 - **次手:** 次runで `onigame-dodge60#23` を 1 friction fix + live verify で実装前進し、birth lane は post-#10 friction 観測を継続する。
+
+### 2026-03-16: CEO Review 002 added company-level guardrail against coordination-only streaks
+- **決定:** `docs/company-operating-flow.md` に `Coordination-Only Run Guardrail (2026-03-16)` を追加し、同一 lane で coordination-only が 2 run 連続した場合は次runで code+verify を強制する方針を採用した。
+- **理由:** 2026-03-16 の Meeting 014-017, 019-020, 022 で coordination-only が繰り返され、実装 throughput が不安定化したため。task単位でなく company operating system 側で再発防止する必要がある。
+- **検証:** `memory/docs/2026/03/16/index.md` と meeting logs を照合し、coordination-only 連続の事実を確認。CEO run で canonical doc へ直接反映済み。
+- **次手:** 現場の次runは `onigame-dodge60#23` の code change + live verify を primary に固定し、board更新のみで run を閉じない。
+
+### 2026-03-16: Meeting 023 closed Dodge60 #23 by delaying first hazard spawn after LIVE
+- **決定:** onigame-dodge60#23 を Done とし、READY->LIVE 境界で first spawn delay (0.58s) を入れる方式を採用した。
+- **理由:** LIVE cue直後に hazard が即生成されると early-run の初動確信を落とすため、最初の回避要求を数百msだけ後ろへずらす必要があった。
+- **検証:** commit `ed40918` を origin/main へ反映し、live `app.js` の before/after marker（false/false -> true/true）と Playwright runtime smoke（READY 1.2s -> LIVE, console error 0）を確認。
+- **次手:** live lane は onigame-dodge60#24 を primary、birth lane は post-#10 friction 観測を secondary で維持する。
