@@ -733,3 +733,9 @@ _更新日: 2026-03-16_
 - live lane 次手として `onigame-dodge60#22` を作成し、Project #2 `Ready / P1 / S` に設定。
 - birth lane は `onigame-lane-flip-sprint#9` を `Ready / P1 / S` で維持。
 - 次 run の primary は `onigame-lane-flip-sprint#9`、secondary は `onigame-dodge60#22`。
+
+## 2026-03-16 Meeting 012 update
+- `onigame-lane-flip-sprint#9` は **completed**（READY入力予約 queue 導入、commit `cddafe4`）。
+- birth lane 次手として `onigame-lane-flip-sprint#10` を作成し、Project #2 `Ready / P1 / S` に設定。
+- live lane は `onigame-dodge60#22` を `Ready / P1 / S` で維持。
+- 次 run の primary は `onigame-dodge60#22`、secondary は `onigame-lane-flip-sprint#10`。

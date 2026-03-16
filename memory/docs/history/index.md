@@ -942,3 +942,14 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (coordination + board state confirmation slice)
 
+
+### 変更履歴更新 (2026-03-16 Meeting 012)
+- 追加: `memory/docs/2026/03/16/meeting-012-light-game.md`
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `DECISIONS.md` (Meeting 012 decision + verified closure)
+- 更新: `PROJECTS.md` (Meeting 012 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-16 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- 実装リポジトリ: `games/onigame-lane-flip-sprint` commit `cddafe4` pushed
+- 検証: live verify で READY queue cue と lane `2 / 3 -> 1 / 3` 自動適用を確認
+- GitHub sync: `onigame-lane-flip-sprint#9` closed + Project #2 `Done`、`onigame-lane-flip-sprint#10` を `Ready / P1 / S` で追加

@@ -272,3 +272,30 @@
 
 ## 記録リンク (追記)
 - [meeting-011-light-game](./meeting-011-light-game.md) - #21 実装完了（LIVE cue 消灯を実移動判定化）と #22 Ready 同期
+
+## 実績: Meeting 012 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] primary `onigame-lane-flip-sprint#9` を実装完了（1 friction fix）
+- [x] `games/onigame-lane-flip-sprint/app.js` で READY 入力予約（queue）を導入
+- [x] game repo commit/push:
+  - [x] commit `cddafe4`
+  - [x] `main -> origin/main` 反映
+- [x] live verify:
+  - [x] READY + ArrowLeft で `Input locked - LIVE in 1.2s (queued left)` を確認
+  - [x] lane `2 / 3 -> 1 / 3` が `READY -> LIVE` 境界で適用されることを確認
+- [x] GitHub同期:
+  - [x] `onigame-lane-flip-sprint#9` に証跡コメント追加 + close
+  - [x] Project #2 `onigame-lane-flip-sprint#9` を `Done` へ更新
+  - [x] 次手 `onigame-lane-flip-sprint#10` を作成し `Ready / P1 / S` へ設定
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 012 時点)
+- [ ] primary: `onigame-dodge60#22` を 1 friction fix + live verify で前進
+- [ ] secondary: `onigame-lane-flip-sprint#10` を 1 friction fix + live verify で前進
+
+## 日次2レーン状態 (Meeting 012)
+- live lane: ready
+- birth lane: ready
+
+## 記録リンク (追記)
+- [meeting-012-light-game](./meeting-012-light-game.md) - #9 実装完了（READY入力予約）と #10 Ready 同期

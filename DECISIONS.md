@@ -1991,3 +1991,9 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **Decision Owner:** Agent (Field Meeting, GPT-5.4 xHigh manager + Spark Legion support)
 - **Next Action:** Next run executes `onigame-dodge60#21` to code/live verification closure, then pulls `onigame-lane-flip-sprint#9`.
 
+
+### 2026-03-16: Meeting 012 closed Lane Flip Sprint #9 by queueing READY input across LIVE boundary
+- **決定:** onigame-lane-flip-sprint#9 を Done とし、READY 中入力を `queuedMoveDelta` で保持して `READY -> LIVE` 遷移時に即時適用する方式を採用した。
+- **理由:** early-run で READY 終端付近の入力が落ちると初動確信が下がるため、1入力だけ予約して境界で適用する必要があった。
+- **検証:** commit `cddafe4` を origin/main へ反映し、live URL で `Input locked - LIVE in 1.2s (queued left)` 表示と lane `2 / 3 -> 1 / 3` の自動適用を確認。
+- **次手:** live lane は onigame-dodge60#22 を primary、birth lane は onigame-lane-flip-sprint#10 を secondary として `Ready / P1 / S` で維持する。
