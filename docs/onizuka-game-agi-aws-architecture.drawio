@@ -82,7 +82,7 @@
           <mxGeometry x="372" y="190" width="260" height="20" as="geometry"/>
         </mxCell>
         <mxCell id="aws-boundary-note" value="AWS icons are visual references only. Labels describe the real local / GitHub workflow instead of deployed AWS services." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="190" width="670" height="20" as="geometry"/>
+          <mxGeometry x="1240" y="118" width="280" height="52" as="geometry"/>
         </mxCell>
 
         <mxCell id="control-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCFDFE;strokeColor=#D0D7E2;strokeWidth=1.5;" vertex="1" parent="1">
@@ -172,10 +172,10 @@
         </mxCell>
 
         <mxCell id="source-note" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#D0D7E2;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="430" y="660" width="1060" height="26" as="geometry"/>
+          <mxGeometry x="392" y="636" width="300" height="52" as="geometry"/>
         </mxCell>
-        <mxCell id="source-note-text" value="Current local snapshot keeps game repos nested under /games. Operating model also allows sibling repositories." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
-          <mxGeometry x="444" y="664" width="1032" height="18" as="geometry"/>
+        <mxCell id="source-note-text" value="Current local snapshot keeps game repos nested under /games.&lt;br&gt;Sibling repositories are also allowed." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
+          <mxGeometry x="408" y="646" width="268" height="32" as="geometry"/>
         </mxCell>
 
         <mxCell id="delivery-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCFDFE;strokeColor=#D0D7E2;strokeWidth=1.5;" vertex="1" parent="1">
@@ -235,65 +235,86 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="agent-to-step" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8AA2B2;strokeWidth=1.8;endArrow=block;endFill=1;" edge="1" parent="1" source="agent-icon" target="step-icon">
+        <mxCell id="agent-to-step" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#8AA2B2;strokeWidth=1.8;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.35;entryDx=0;entryDy=0;" edge="1" parent="1" source="agent-icon" target="step-icon">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="820" y="470"/>
+                <mxPoint x="820" y="334"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        <mxCell id="workspace-to-company" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="workspace-icon" target="company-repo-icon">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="272" y="460"/>
-              <mxPoint x="272" y="402"/>
-              <mxPoint x="700" y="402"/>
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="workspace-to-company" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="workspace-icon" target="company-repo-icon">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="270" y="620"/>
-              <mxPoint x="450" y="620"/>
+              <mxPoint x="300" y="620"/>
+              <mxPoint x="300" y="580"/>
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="config-to-step" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0597F2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="config-icon" target="step-icon">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="step-to-watch" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0597F2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step-icon" target="watch-icon">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="step-to-pipe" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0597F2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step-icon" target="pipe-icon">
+        <mxCell id="step-to-watch" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#0597F2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=0.2;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-icon" target="watch-icon">
+            <mxGeometry relative="1" as="geometry"/>
+          </mxCell>
+        <mxCell id="step-to-pipe" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#0597F2;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-icon" target="pipe-icon">
+            <mxGeometry relative="1" as="geometry">
+                <Array as="points">
+                    <mxPoint x="732" y="206"/>
+                    <mxPoint x="1180" y="206"/>
+                    <mxPoint x="1180" y="344"/>
+                </Array>
+                </mxGeometry>
+            </mxCell>
+        <mxCell id="pipe-to-build" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#0597F2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipe-icon" target="build-icon">
+            <mxGeometry relative="1" as="geometry"/>
+          </mxCell>
+        <mxCell id="company-to-pipe" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.82;entryDx=0;entryDy=0;" edge="1" parent="1" source="company-repo-icon" target="pipe-icon">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="570" y="580"/>
+                <mxPoint x="570" y="530"/>
+                <mxPoint x="1160" y="530"/>
+                <mxPoint x="1160" y="364"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        <mxCell id="build-to-docs" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F205B3;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="build-icon" target="docs-edge-icon">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1660" y="344"/>
+                <mxPoint x="1660" y="940"/>
+                <mxPoint x="360" y="940"/>
+                <mxPoint x="360" y="844"/>
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        <mxCell id="dodge-to-edge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="dodge-repo-icon" target="dodge-edge-icon">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="732" y="286"/>
-              <mxPoint x="1272" y="286"/>
-              <mxPoint x="1272" y="280"/>
+              <mxPoint x="880" y="580"/>
+              <mxPoint x="880" y="780"/>
+              <mxPoint x="802" y="780"/>
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="pipe-to-build" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0597F2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="pipe-icon" target="build-icon">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="company-to-pipe" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="company-repo-icon" target="pipe-icon">
+        <mxCell id="lane-to-edge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lane-repo-icon" target="lane-edge-icon">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="482" y="528"/>
-              <mxPoint x="1272" y="528"/>
+              <mxPoint x="1260" y="580"/>
+              <mxPoint x="1260" y="780"/>
+              <mxPoint x="1122" y="780"/>
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="build-to-docs" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F205B3;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="build-icon" target="docs-edge-icon">
+        <mxCell id="sweep-to-edge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="sweep-repo-icon" target="sweep-edge-icon">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1606" y="930"/>
-              <mxPoint x="482" y="930"/>
+              <mxPoint x="1590" y="580"/>
+              <mxPoint x="1590" y="780"/>
+              <mxPoint x="1442" y="780"/>
             </Array>
           </mxGeometry>
-        </mxCell>
-        <mxCell id="dodge-to-edge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="dodge-repo-icon" target="dodge-edge-icon">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="lane-to-edge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="lane-repo-icon" target="lane-edge-icon">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="sweep-to-edge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="sweep-repo-icon" target="sweep-edge-icon">
-          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
         <mxCell id="footer" value="Updated: 2026-03-17 JST | Variant: AWS reference-style icon view | Source: docs/onizuka-game-agi-aws-architecture.drawio" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">

@@ -7,6 +7,12 @@ const BOX_INTERIOR_THRESHOLD = 8;
 const MAX_OBSTACLE_AREA = 100_000;
 const MAX_OBSTACLE_WIDTH = 420;
 const MAX_OBSTACLE_HEIGHT = 240;
+const TEXT_OVERFLOW_TOLERANCE = 4;
+const DEFAULT_TEXT_PADDING = 16;
+const MIN_TERMINAL_SEGMENT_LENGTH = 20;
+const TERMINAL_SEGMENT_NOISE_TOLERANCE = 1;
+const LABEL_INTERIOR_THRESHOLD = 1;
+const LABEL_BOX_PADDING = 2;
 
 function parseAttributes(source) {
   const attributes = {};
@@ -67,6 +73,15 @@ function parseTranslate(transformText = '') {
 function toNumber(value, fallback = 0) {
   const number = Number(value);
   return Number.isFinite(number) ? number : fallback;
+}
+
+function decodeXmlEntities(text = '') {
+  return text
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, '\'')
+    .replace(/&amp;/g, '&');
 }
 
 function parsePathData(d, offset) {
@@ -193,6 +208,10 @@ function dot(a, b) {
 
 function distance(a, b) {
   return Math.hypot(a.x - b.x, a.y - b.y);
+}
+
+function segmentLength(segment) {
+  return distance(segment.start, segment.end);
 }
 
 function segmentBounds(segment) {
@@ -344,6 +363,258 @@ function isBackgroundRect(rect) {
   }
 
   return rect.width > MAX_OBSTACLE_WIDTH || rect.height > MAX_OBSTACLE_HEIGHT;
+}
+
+function parseStyleNumber(style, key, fallback = null) {
+  const rawValue = style[key];
+
+  if (rawValue === undefined) {
+    return fallback;
+  }
+
+  const match = String(rawValue).match(/-?\d*\.?\d+/);
+  if (!match) {
+    return fallback;
+  }
+
+  return Number(match[0]);
+}
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function estimateTextWidth(text, fontSize) {
+  let width = 0;
+
+  for (const char of text) {
+    if (/\s/.test(char)) {
+      width += fontSize * 0.35;
+      continue;
+    }
+
+    if (/[\u3000-\u30FF\u3400-\u9FFF\uF900-\uFAFF]/u.test(char)) {
+      width += fontSize * 0.92;
+      continue;
+    }
+
+    if (/[A-Z0-9]/.test(char)) {
+      width += fontSize * 0.62;
+      continue;
+    }
+
+    width += fontSize * 0.56;
+  }
+
+  return width;
+}
+
+function extractLineMetrics(value, defaultFontSize) {
+  const decoded = decodeXmlEntities(value);
+  const tokenRegex = /<br\s*\/?>|<font\b([^>]*)>|<\/font>|([^<]+)/gi;
+  const fontStack = [defaultFontSize];
+  const lines = [];
+  let currentLine = { width: 0, fontSize: defaultFontSize, text: '' };
+
+  function pushLine() {
+    lines.push(currentLine);
+    currentLine = { width: 0, fontSize: defaultFontSize, text: '' };
+  }
+
+  for (const match of decoded.matchAll(tokenRegex)) {
+    const [token, fontAttributes = '', textChunk = ''] = match;
+
+    if (/^<br/i.test(token)) {
+      pushLine();
+      continue;
+    }
+
+    if (/^<font/i.test(token)) {
+      const attributes = parseAttributes(fontAttributes);
+      const inlineStyle = parseStyle(attributes.style ?? '');
+      const fontSize = parseStyleNumber(inlineStyle, 'font-size', fontStack[fontStack.length - 1]);
+      fontStack.push(fontSize);
+      continue;
+    }
+
+    if (/^<\/font/i.test(token)) {
+      if (fontStack.length > 1) {
+        fontStack.pop();
+      }
+      continue;
+    }
+
+    if (!textChunk) {
+      continue;
+    }
+
+    const normalizedText = textChunk.replace(/\s+/g, ' ');
+    const fontSize = fontStack[fontStack.length - 1];
+    currentLine.width += estimateTextWidth(normalizedText, fontSize);
+    currentLine.fontSize = Math.max(currentLine.fontSize, fontSize);
+    currentLine.text += normalizedText;
+  }
+
+  if (currentLine.text || lines.length === 0) {
+    lines.push(currentLine);
+  }
+
+  return lines.filter((line) => line.text.trim().length > 0);
+}
+
+function parseDrawioTextLayouts(drawioText) {
+  const layouts = [];
+  const cellRegex = /<mxCell\b([^>]*?)(?:\/>|>([\s\S]*?)<\/mxCell>)/g;
+
+  for (const match of drawioText.matchAll(cellRegex)) {
+    const [, rawAttributes = '', body = ''] = match;
+    const attributes = parseAttributes(rawAttributes);
+    const rawStyle = attributes.style ?? '';
+    const isTextCell = /(^|;)text(;|$)/i.test(rawStyle);
+
+    if (attributes.vertex !== '1') {
+      continue;
+    }
+
+    if (!attributes.value) {
+      continue;
+    }
+
+    const geometryMatch = body.match(/<mxGeometry\b([^>]*?)\/>/);
+    if (!geometryMatch) {
+      continue;
+    }
+
+    const geometryAttributes = parseAttributes(geometryMatch[1]);
+    const x = toNumber(geometryAttributes.x);
+    const y = toNumber(geometryAttributes.y);
+    const width = toNumber(geometryAttributes.width);
+    const height = toNumber(geometryAttributes.height);
+
+    if (width <= 0 || height <= 0) {
+      continue;
+    }
+
+    const style = parseStyle(rawStyle);
+    const fontSize = parseStyleNumber(style, 'fontSize', 17);
+    const spacingDefault = isTextCell ? 0 : DEFAULT_TEXT_PADDING;
+    const spacing = parseStyleNumber(style, 'spacing', spacingDefault);
+    const spacingLeft = parseStyleNumber(style, 'spacingLeft', spacing);
+    const spacingRight = parseStyleNumber(style, 'spacingRight', spacing);
+    const spacingTop = parseStyleNumber(style, 'spacingTop', spacing);
+    const spacingBottom = parseStyleNumber(style, 'spacingBottom', spacing);
+    const align = style.align ?? 'left';
+    const verticalAlign = style.verticalAlign ?? 'middle';
+    const lines = extractLineMetrics(attributes.value, fontSize);
+    const estimatedWidth = lines.reduce((maxWidth, line) => Math.max(maxWidth, line.width), 0);
+    const estimatedHeight = lines.reduce(
+      (total, line) => total + (line.fontSize * 1.25),
+      0,
+    );
+    const availableWidth = Math.max(0, width - spacingLeft - spacingRight);
+    const availableHeight = Math.max(0, height - spacingTop - spacingBottom);
+    const contentWidth = Math.min(estimatedWidth, availableWidth);
+    const contentHeight = Math.min(estimatedHeight, availableHeight);
+
+    let contentX = x + spacingLeft;
+    if (align === 'center') {
+      contentX = x + spacingLeft + ((availableWidth - contentWidth) / 2);
+    } else if (align === 'right') {
+      contentX = x + width - spacingRight - contentWidth;
+    }
+
+    let contentY = y + spacingTop;
+    if (verticalAlign === 'middle') {
+      contentY = y + spacingTop + ((availableHeight - contentHeight) / 2);
+    } else if (verticalAlign === 'bottom') {
+      contentY = y + height - spacingBottom - contentHeight;
+    }
+
+    const paddedWidth = clamp(contentWidth + (LABEL_BOX_PADDING * 2), 0, width);
+    const paddedHeight = clamp(contentHeight + (LABEL_BOX_PADDING * 2), 0, height);
+    const labelBoxX = clamp(contentX - LABEL_BOX_PADDING, x, x + width - paddedWidth);
+    const labelBoxY = clamp(contentY - LABEL_BOX_PADDING, y, y + height - paddedHeight);
+
+    layouts.push({
+      cellId: attributes.id ?? 'unknown-cell',
+      value: decodeXmlEntities(attributes.value).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
+      isTextCell,
+      x,
+      y,
+      width,
+      height,
+      availableWidth,
+      availableHeight,
+      estimatedWidth,
+      estimatedHeight,
+      labelBox: {
+        cellId: attributes.id ?? 'unknown-cell',
+        x: labelBoxX,
+        y: labelBoxY,
+        width: paddedWidth,
+        height: paddedHeight,
+        label: decodeXmlEntities(attributes.value).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
+      },
+    });
+  }
+
+  return layouts;
+}
+
+function findTextOverflowIssues(textBlocks) {
+  const issues = [];
+
+  for (const block of textBlocks) {
+    if (block.estimatedWidth > block.availableWidth + TEXT_OVERFLOW_TOLERANCE) {
+      issues.push({
+        type: 'text-overflow',
+        axis: 'width',
+        cellId: block.cellId,
+        available: block.availableWidth,
+        estimated: block.estimatedWidth,
+        label: block.value,
+      });
+    }
+
+    if (block.estimatedHeight > block.availableHeight + TEXT_OVERFLOW_TOLERANCE) {
+      issues.push({
+        type: 'text-overflow',
+        axis: 'height',
+        cellId: block.cellId,
+        available: block.availableHeight,
+        estimated: block.estimatedHeight,
+        label: block.value,
+      });
+    }
+  }
+
+  return issues;
+}
+
+async function readCompanionDrawio(targetPath) {
+  const candidates = [
+    targetPath.replace(/\.svg$/i, ''),
+    targetPath.replace(/\.drawio\.svg$/i, '.drawio'),
+  ];
+
+  for (const candidate of candidates) {
+    if (!candidate || candidate === targetPath) {
+      continue;
+    }
+
+    try {
+      return {
+        path: candidate,
+        text: await readFile(candidate, 'utf8'),
+      };
+    } catch (error) {
+      if (error?.code !== 'ENOENT') {
+        throw error;
+      }
+    }
+  }
+
+  return null;
 }
 
 function parseSvg(svgText) {
@@ -559,6 +830,75 @@ function findEdgeRectCollisions(edges, rects) {
   return issues;
 }
 
+function findEdgeLabelCollisions(edges, labelBoxes) {
+  const issues = [];
+
+  for (const edge of edges) {
+    for (const label of labelBoxes) {
+      if (edge.cellId === label.cellId) {
+        continue;
+      }
+
+      const bounds = rectBounds(label);
+
+      for (const segment of edge.segments) {
+        if (!boundsOverlap(segmentBounds(segment), bounds)) {
+          continue;
+        }
+
+        const interiorLength = interiorLengthInsideRect(segment, label);
+
+        if (interiorLength > LABEL_INTERIOR_THRESHOLD) {
+          issues.push({
+            type: 'edge-label',
+            edgeCellId: edge.cellId,
+            labelCellId: label.cellId,
+            label: label.label,
+            length: interiorLength,
+          });
+        }
+      }
+    }
+  }
+
+  return issues;
+}
+
+function findShortTerminalSegments(edges) {
+  const issues = [];
+
+  for (const edge of edges) {
+    if (edge.segments.length === 0) {
+      continue;
+    }
+
+    const terminal = {
+      position: 'end',
+      segment: edge.segments[edge.segments.length - 1],
+    };
+    const length = segmentLength(terminal.segment);
+
+    // draw.io sometimes emits a sub-pixel cleanup segment after a long final run.
+    // Those do not create the "tiny arrow" visual artifact we want to catch.
+    if (length <= TERMINAL_SEGMENT_NOISE_TOLERANCE) {
+      continue;
+    }
+
+    if (length + EPSILON >= MIN_TERMINAL_SEGMENT_LENGTH) {
+      continue;
+    }
+
+    issues.push({
+      type: 'edge-terminal',
+      edgeCellId: edge.cellId,
+      position: terminal.position,
+      length,
+    });
+  }
+
+  return issues;
+}
+
 function summarizeIssues(issues) {
   const summaries = new Map();
 
@@ -576,6 +916,68 @@ function summarizeIssues(issues) {
       }
 
       summaries.get(key).details.add(issue.detail);
+      continue;
+    }
+
+    if (issue.type === 'text-overflow') {
+      const key = `${issue.cellId}::${issue.axis}`;
+
+      if (!summaries.has(key)) {
+        summaries.set(key, {
+          type: 'text-overflow',
+          axis: issue.axis,
+          cellId: issue.cellId,
+          available: issue.available,
+          estimated: issue.estimated,
+          label: issue.label,
+        });
+      } else {
+        const summary = summaries.get(key);
+        summary.available = Math.min(summary.available, issue.available);
+        summary.estimated = Math.max(summary.estimated, issue.estimated);
+      }
+
+      continue;
+    }
+
+    if (issue.type === 'edge-terminal') {
+      const key = `${issue.edgeCellId}::${issue.position}`;
+
+      if (!summaries.has(key)) {
+        summaries.set(key, {
+          type: 'edge-terminal',
+          edgeCellId: issue.edgeCellId,
+          position: issue.position,
+          minLength: issue.length,
+          count: 1,
+        });
+        continue;
+      }
+
+      const summary = summaries.get(key);
+      summary.minLength = Math.min(summary.minLength, issue.length);
+      summary.count += 1;
+      continue;
+    }
+
+    if (issue.type === 'edge-label') {
+      const key = `${issue.edgeCellId}::${issue.labelCellId}`;
+
+      if (!summaries.has(key)) {
+        summaries.set(key, {
+          type: 'edge-label',
+          edgeCellId: issue.edgeCellId,
+          labelCellId: issue.labelCellId,
+          label: issue.label,
+          maxLength: issue.length,
+          count: 1,
+        });
+        continue;
+      }
+
+      const summary = summaries.get(key);
+      summary.maxLength = Math.max(summary.maxLength, issue.length);
+      summary.count += 1;
       continue;
     }
 
@@ -606,6 +1008,18 @@ function formatIssue(issue) {
     return `- edge-edge: ${issue.firstCellId} <-> ${issue.secondCellId} (${details.length} contact(s): ${details.join('; ')})`;
   }
 
+  if (issue.type === 'text-overflow') {
+    return `- text-overflow(${issue.axis}): ${issue.cellId} requires ${issue.estimated.toFixed(1)}px but only ${issue.available.toFixed(1)}px is available [${issue.label}]`;
+  }
+
+  if (issue.type === 'edge-terminal') {
+    return `- edge-terminal: ${issue.edgeCellId} has a too-short ${issue.position} segment (${issue.minLength.toFixed(1)}px across ${issue.count} segment(s)); keep at least ${MIN_TERMINAL_SEGMENT_LENGTH}px of straight run near arrowheads`;
+  }
+
+  if (issue.type === 'edge-label') {
+    return `- edge-label: ${issue.edgeCellId} crosses label text in ${issue.labelCellId} (max interior ${issue.maxLength.toFixed(1)}px across ${issue.count} segment(s)) [${issue.label}]`;
+  }
+
   return `- edge-rect: ${issue.edgeCellId} -> ${issue.rectCellId} (max interior ${issue.maxLength.toFixed(1)}px across ${issue.count} segment(s))`;
 }
 
@@ -618,13 +1032,25 @@ async function main() {
   const rects = collectObstacleRects(cells);
   const edgeIssues = findEdgeOverlaps(edges);
   const rectIssues = findEdgeRectCollisions(edges, rects);
-  const issues = summarizeIssues([...edgeIssues, ...rectIssues]);
+  const terminalIssues = findShortTerminalSegments(edges);
+  const companionDrawio = await readCompanionDrawio(targetPath);
+  const textLayouts = companionDrawio ? parseDrawioTextLayouts(companionDrawio.text) : [];
+  const textBlocks = textLayouts.filter((layout) => !layout.isTextCell);
+  const labelBoxes = textLayouts
+    .filter((layout) => layout.isTextCell && layout.labelBox.width > 0 && layout.labelBox.height > 0)
+    .map((layout) => layout.labelBox);
+  const textIssues = findTextOverflowIssues(textBlocks);
+  const labelIssues = findEdgeLabelCollisions(edges, labelBoxes);
+  const issues = summarizeIssues([...edgeIssues, ...rectIssues, ...terminalIssues, ...labelIssues, ...textIssues]);
 
   console.log(`[diagram:check] ${path.relative(process.cwd(), targetPath)}`);
   console.log(`[diagram:check] parsed ${cells.size} cells, ${edges.length} edges, ${rects.length} obstacle rects`);
+  if (companionDrawio) {
+    console.log(`[diagram:check] parsed ${textBlocks.length} text block(s) and ${labelBoxes.length} label box(es) from ${path.relative(process.cwd(), companionDrawio.path)}`);
+  }
 
   if (issues.length === 0) {
-    console.log('[diagram:check] OK: no overlaps detected by the current heuristics');
+    console.log('[diagram:check] OK: no overlaps, label intrusions, or text overflows detected by the current heuristics');
     return;
   }
 
