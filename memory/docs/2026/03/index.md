@@ -54,3 +54,4 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-16](./16/) - Meeting 023 で onigame-dodge60#23 を完了（READY->LIVE直後のfirst spawn遅延 0.58s）し、次手 #24 を Ready 化
 
 - [2026-03-16](./16/) - Meeting 024 で onigame-dodge60#24 を完了（firstSpawnDelay 0.58->0.92）し、次手 #25 を Ready 化
+- [2026-03-17](./17/) - Meeting 001 で `Pocket Putt Panic` を fresh birth lane に採用し、company issue #12 を Project #2 `Ready / P0 / S` へ追加

@@ -1122,3 +1122,18 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - 実装リポジトリ: `games/onigame-dodge60` commit `e19890d` pushed
 - 検証: live app.js marker before/after（`0.58 -> 0.92`）+ Playwright runtime smoke（READY->LIVE, console error 0）
 - GitHub sync: `onigame-dodge60#24` closed + Project #2 `Done`、`onigame-dodge60#25` を `Ready / P1 / S` で追加
+
+### 変更履歴更新 (2026-03-17 Meeting 001)
+- 追加: `memory/docs/2026/03/17/meeting-001-light-game.md`
+- 追加: `memory/docs/2026/03/17/index.md`
+- 更新: `DECISIONS.md` (Meeting 001 decision + birth lane selection)
+- 更新: `PROJECTS.md` (Meeting 001 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-17 summary added)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Project sync:
+  - created `onizuka-game-agi-co#12`
+  - added `#12` to Project #2 as `Ready / P0 / S`
+  - confirmed `onigame-dodge60#25` remains `Ready / P1 / S`
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (Meeting 1 planning + board sync slice)

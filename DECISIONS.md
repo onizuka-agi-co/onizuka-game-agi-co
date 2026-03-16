@@ -6,6 +6,12 @@
 
 ## 2026-03
 
+### 2026-03-17: Meeting 001 selected Pocket Putt Panic as the new daily birth lane
+- **決定:** 2026-03-17 の Meeting 1 では `live lane` を `onigame-dodge60#25` 維持、fresh `birth lane` を `Pocket Putt Panic` に設定し、company issue `onizuka-game-agi-co#12` を新規作成した。
+- **理由:** 前日 birth lane は `day goal met` で完了済みのため、新しい当日 birth lane が必要だった。`Pocket Putt Panic` は `IDEAS.md` の incubating 候補の中で最も GitHub Pages 静的配信と 1画面短セッションに寄せやすかった。
+- **検証:** `gh issue create --repo onizuka-agi-co/onizuka-game-agi-co` で `#12` を作成し、Project #2 へ追加後 `Ready / P0 / S` を確認。`onigame-dodge60#25` も `Ready / P1 / S` を維持確認。
+- **次手:** Meeting 2 で `onizuka-game-agi-co#12` の concept brief / first playable scope / repo/bootstrap plan / release bar を lock する。
+
 ### 2026-03-16: Meeting 011 closed Dodge60 #21 by switching LIVE-cue clear to real movement evidence
 - **決定:** onigame-dodge60#21 を Done とし、LIVE cue の消灯条件を state.pointerActive ではなく playerMovedThisFrame（実移動）基準へ変更した。
 - **理由:** Retry直後に pointer を置いたままでも cue が消えうると開始確信が落ちるため、消灯トリガーを「入力あり」ではなく「実際に動いた」に揃える必要があった。

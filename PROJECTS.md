@@ -109,6 +109,15 @@
 
 _更新日: 2026-03-16_
 
+## 2026-03-17 Meeting 001 update
+- `onigame-dodge60` remains **active** (`live lane` item `onigame-dodge60#25` stays `Ready / P1 / S`).
+- Fresh `birth lane` for 2026-03-17 was selected as `Pocket Putt Panic`:
+  - created company issue `onizuka-game-agi-co#12`
+  - added to Project #2 as `Ready / P0 / S`
+- Next action:
+  - Primary (`birth lane`): lock `Pocket Putt Panic` concept brief / first playable / repo bootstrap plan in Meeting 2
+  - Secondary (`live lane`): keep `onigame-dodge60#25` ready for Meeting 3+ execution
+
 ## 2026-03-13 Meeting 002 追記
 - onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。
 - Blocker: GitHub CLI 認証切れにより GitHub Project #2 の item 状態更新が未反映。
