@@ -6,7 +6,8 @@
 
 ## Active
 
-- `onigame-dodge60`（最小 playable 初版あり、次はプレイテスト調整）
+- `onigame-dodge60`（live lane / `onigame-dodge60#25` Ready）
+- `Pocket Putt Panic`（2026-03-17 の active birth lane / repo bootstrap 待ち）
 
 ---
 
@@ -14,13 +15,28 @@
 
 - 日次運営は `live lane` と `birth lane` の両方を回す
 - `live lane`: `onigame-dodge60` を改善し続ける
-- `birth lane`: incubating 候補から 1 本を選び、その日のうちに新しい app として bootstrap する
+- `birth lane`: 当日の active 候補を 1 本選び、その日のうちに新しい app として bootstrap する
+- 2026-03-17 現在:
+  - active `birth lane`: `Pocket Putt Panic`
+  - next incubating fallback: `Signal Drift`
 - 候補方針:
   - GitHub Pages完全静的
   - 外部API不要
   - ブラウザ内完結
   - vibe codingで短時間に前進できる規模
   - 軽量アクション / パズル / シューティングを優先
+
+## 2026-03-17 Canonical Snapshot
+
+- `live lane`: `onigame-dodge60`
+  - current next hand: `onigame-dodge60#25` を 1 early-run confidence fix + live verify で Done に進める
+- `birth lane`: `Pocket Putt Panic`
+  - current next hand: `onizuka-game-agi-co#12` を `onigame-pocket-putt-panic` の repo bootstrap + Pages verify まで進める
+- shipped secondary queue:
+  - `onigame-lane-flip-sprint` は `#10` まで完了済みで、post-playtest friction が見えたときのみ再開
+  - `onigame-one-stroke-sweep` は first playable 公開済みで、current lanes が詰まっていない限り secondary polish 候補
+- next incubating candidate:
+  - `Signal Drift`
 
 ### onigame-dodge60（候補）
 
@@ -29,26 +45,35 @@
 - **セッション長:** 1〜3分
 - **採用理由:** 軽量・静的配信・短時間ループの条件を満たしやすい
 - **現況:** `games/onigame-dodge60` に最小1画面 playable（移動 / 回避 / 60秒 / スコア / リトライ）が存在し、GitHub Pages 公開URLも運用中
-- **次アクション:** `onigame-dodge60#20` は 2026-03-16 Meeting 005 で完了（LIVE cue最小表示 0.5s -> 0.85s）。次runは `onigame-lane-flip-sprint#8` を primary とし、live lane は post-playtest friction を secondary で継続する
+- **次アクション:** `onigame-dodge60#25` を 2026-03-17 の live lane current hand とし、`0.92s` first-spawn-delay 基準で early-run confidence friction を 1 件修正して live verify まで進める
 
 ### Lane Flip Sprint（birth lane 候補）
 
-- **ステータス:** active（day goal met）
+- **ステータス:** active（shipped / monitor）
 - **想定ジャンル:** 3レーン回避アクション
 - **セッション長:** 30〜45秒
 - **採用理由:** `onigame-dodge60` の軽量回避の気持ちよさを保ちつつ、スマホ親指操作へさらに寄せやすい
 - **現況:** 新規 repo `onigame-lane-flip-sprint` を bootstrap済み。1画面 playable + GitHub Pages 公開まで完了
-- **次アクション:** `onigame-lane-flip-sprint#7` は 2026-03-16 Meeting 006 で完了（LIVE cue を first-move まで保持 + fallback 1.8s 自動消灯）。次runは `onigame-lane-flip-sprint#8` を実行し、early-run 20秒の readability/control friction を1件修正する
+- **次アクション:** 直近の polish queue は `#10` まで完了済み。2026-03-17 は primary lane から外し、強い post-playtest friction が見えた場合のみ次 issue を起票する
 
 ### One Stroke Sweep（birth lane 当日候補）
 
-- **ステータス:** active（day goal met）
+- **ステータス:** active（shipped / monitor）
 - **想定ジャンル:** ドラッグ収集スコアアタック
 - **セッション長:** 30秒
 - **採用理由:** `onigame-dodge60` の drag 操作改善で得た知見を、そのまま短時間ループへ転用できる
 - **現況:** 2026-03-16 Meeting 003 で `onizuka-game-agi-co#11` を完了。新規 repo `onigame-one-stroke-sweep` の bootstrap、`main` push、GitHub Pages live verify（30秒タイマー / drag回収 / score / retry / in-app GitHub link）まで完了
 - **参照:** repo `https://github.com/onizuka-agi-co/onigame-one-stroke-sweep` / live `https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/`
-- **次アクション:** `birth lane` は day goal 達成。次 run では `onigame-lane-flip-sprint#8` か `onigame-one-stroke-sweep` の post-playtest friction 修正を secondary として回収
+- **次アクション:** 2026-03-17 は shipped catalog として維持し、明確な friction が見えた場合だけ secondary rotation に戻す
+
+### Pocket Putt Panic（current birth lane）
+
+- **ステータス:** active（birth lane locked）
+- **想定ジャンル:** 1画面 mini-putt score attack
+- **セッション長:** 15秒
+- **採用理由:** 既存 3 タイトルと操作ファンタジーが重ならず、GitHub Pages 静的構成のまま 1 画面 / 短時間で検証しやすい
+- **現況:** 2026-03-17 Meeting 001-002 で company issue `onizuka-game-agi-co#12` を作成し、concept / first playable / repo plan / release bar を lock。repo plan は `onigame-pocket-putt-panic`
+- **次アクション:** `onizuka-game-agi-co#12` を primary として repo bootstrap、GitHub Pages publish、live verify まで same-day で完了する
 
 ---
 
@@ -107,7 +132,7 @@
 
 ---
 
-_更新日: 2026-03-16_
+_更新日: 2026-03-17_
 
 ## 2026-03-17 Meeting 001 update
 - `onigame-dodge60` remains **active** (`live lane` item `onigame-dodge60#25` stays `Ready / P1 / S`).
@@ -141,6 +166,16 @@ _更新日: 2026-03-16_
 - Next action:
   - Primary (`birth lane`): execute `onizuka-game-agi-co#12` and bootstrap `onigame-pocket-putt-panic` to Pages-verified playable
   - Secondary (`live lane`): execute `onigame-dodge60#25` with one friction fix + live verify
+
+## 2026-03-17 CEO Review 001 update
+- CEO判断: 会社の主戦略は維持。`live lane = onigame-dodge60`、`birth lane = Pocket Putt Panic` の dual-lane をそのまま進める。
+- Canonical sync:
+  - `Pocket Putt Panic` を active birth lane / adopted idea として同期
+  - `Signal Drift` を次の incubating 候補へ昇格
+  - `README.md` / `PROJECTS.md` / `ROADMAP.md` を 2026-03-17 の現況へ更新
+- 次アクション固定:
+  - primary: `onizuka-game-agi-co#12` を repo bootstrap + Pages verify まで進める
+  - secondary: `onigame-dodge60#25` を 1 early-run confidence fix + live verify で Done にする
 
 ## 2026-03-13 Meeting 002 追記
 - onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。

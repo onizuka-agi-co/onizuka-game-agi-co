@@ -6,6 +6,12 @@
 
 ## 2026-03
 
+### 2026-03-17: CEO Review 001 adopted Pocket Putt Panic and restored a non-empty funnel
+- **決定:** 会社の主戦略は維持しつつ、canonical docs を 2026-03-17 の現況へ同期した。`Pocket Putt Panic` を `adopted` に移し、`Signal Drift` を次の `incubating` 候補へ昇格した。あわせて `README.md` / `IDEAS.md` / `ROADMAP.md` / `PROJECTS.md` の current summary を更新した。
+- **理由:** 2026-03-17 の Meeting 001-003 で `Pocket Putt Panic` は active birth lane として選定・scope lock・Project #2 `In progress` まで進んだが、idea funnel と roadmap summary はその一段前の状態に留まっていた。active birth lane を `incubating` のままにすると project state と funnel state がズレ、behind-the-lane の候補も空になるため。
+- **検証:** `README.md`, `CEO_REVIEW.md`, `IDEAS.md`, `ROADMAP.md`, `PROJECTS.md`, `memory/docs/2026/03/17/index.md`, `meeting-001-light-game.md`, `meeting-002-light-game.md`, `meeting-003-light-game.md` を確認し、`onizuka-game-agi-co#12` が active birth lane、`onigame-dodge60#25` が live-lane ready のままであることを照合した。
+- **次手:** primary は `onizuka-game-agi-co#12` の repo bootstrap + Pages verify、secondary は `onigame-dodge60#25` の 1 early-run confidence fix + live verify を固定する。
+
 ### 2026-03-17: Meeting 001 selected Pocket Putt Panic as the new daily birth lane
 - **決定:** 2026-03-17 の Meeting 1 では `live lane` を `onigame-dodge60#25` 維持、fresh `birth lane` を `Pocket Putt Panic` に設定し、company issue `onizuka-game-agi-co#12` を新規作成した。
 - **理由:** 前日 birth lane は `day goal met` で完了済みのため、新しい当日 birth lane が必要だった。`Pocket Putt Panic` は `IDEAS.md` の incubating 候補の中で最も GitHub Pages 静的配信と 1画面短セッションに寄せやすかった。

@@ -50,23 +50,10 @@
 
 ## 💡 Idea Inbox
 
-### カテゴリ: パズル
-
-| ID | アイデア | 評価 | ステータス | 備考 |
-|----|---------|------|------------|------|
-| P001 | 3マス消しパズル | ⭐⭐ | inbox | シンプルだが差別化必要 |
-
-### カテゴリ: アクション
-
-| ID | アイデア | 評価 | ステータス | 備考 |
-|----|---------|------|------------|------|
-| A001 | ワンタップジャンプ | ⭐⭐⭐ | inbox | 作りやすく遊びやすい |
-
-### カテゴリ: その他
-
-| ID | アイデア | 評価 | ステータス | 備考 |
-|----|---------|------|------------|------|
-| - | - | - | - | - |
+| ID | Idea | Status | Why it exists | Next proof |
+|----|------|--------|---------------|------------|
+| P001 | 3マス消しパズル | inbox | ルール理解が速く、静的配信との相性が良い。 | 1面のみの 90 秒スコアアタックを試作する。 |
+| A001 | ワンタップジャンプ | inbox | 片手操作で短セッションに寄せやすい。 | 障害物2種だけの 45 秒ループを作る。 |
 
 ---
 
@@ -74,69 +61,62 @@
 
 | ID | Idea | Status | Why now | Next proof |
 |----|------|--------|---------|------------|
-| I20260314-01 | Lane Flip Sprint | incubating | Fast lane-snap movement keeps the same lightweight survival appeal while creating a cleaner mobile thumb fantasy. | One-screen prototype with three lanes, one-button lane shifts, and a 45-second run. |
-| I20260314-02 | One Stroke Sweep | incubating | Dodge60 で確認できた drag 操作の手触りを、より短い 30 秒ループへ転用できるため。 | One-screen prototype with drag-to-collect loop, 30-second timer, and 1 fail state. |
+| I20260316-01 | Signal Drift | incubating | `Pocket Putt Panic` を active birth lane へ昇格したあとも、入力差のある軽量候補を 1 本後ろに残す必要がある。 | 左右スワイプで 1 本レーンを保つ 30 秒回避ループを 1 画面で確認する。 |
+
 ---
 
 ## ✅ Adopted / Rejected History
 
-今のところ未設定。採用や見送りが出たらここか `DECISIONS.md` で追跡する。
+| ID | Idea | Decision | Date | Note |
+|----|------|----------|------|------|
+| I20260314-01 | Lane Flip Sprint | adopted | 2026-03-15 | 新規 repo `onigame-lane-flip-sprint` を作成し、GitHub Pages 公開まで完了。 |
+| I20260314-02 | One Stroke Sweep | adopted | 2026-03-16 | 新規 repo `onigame-one-stroke-sweep` を作成し、GitHub Pages 公開まで完了。 |
+| I20260314-03 | Pocket Putt Panic | adopted | 2026-03-17 | 当日の active birth lane として採用し、company issue `onizuka-game-agi-co#12` と `onigame-pocket-putt-panic` の bootstrap plan を lock 済み。 |
 
 ---
 
-## 🎲 アイデア詳細
+## Current Funnel Snapshot (2026-03-17)
+
+- active adopted birth lane: `Pocket Putt Panic`
+- next incubating candidate behind it: `Signal Drift`
+- raw inbox remains open for lighter puzzle / one-tap variants
+
+---
+
+## Idea Notes
 
 ### P001: 3マス消しパズル
 - **概要:** 3つ揃えて消すシンプルパズル
 - **遊び方:** タップで移動、3つ揃うと消える
-- **想定時間:** 1-3分/プレイ
+- **想定時間:** 1〜3分/プレイ
 - **ステータス:** inbox
 - **強み:** ルールがシンプル
-- **弱み:** 既存ゲーム多数、差別化必要
-- **AI活用:** レベル自動生成？
+- **弱み:** 既存ゲーム多数、差別化が必要
 
 ### A001: ワンタップジャンプ
-- **概要:** タップでジャンプ、障害物を避ける
-- **遊び方:** 画面タップでジャンプ、長押しで高く
-- **想定時間:** 30秒-2分/プレイ
+- **概要:** タップでジャンプし、障害物を避ける
+- **遊び方:** 画面タップでジャンプ、長押しで高さを変える
+- **想定時間:** 30秒〜2分/プレイ
 - **ステータス:** inbox
-- **強み:** 操作が簡単、リプレイ性高い
-- **弱み:** ジャンルとして飽和気味
-- **AI活用:** 障害物パターン生成
+- **強み:** 操作が簡単で再プレイ性を作りやすい
+- **弱み:** ジャンルが飽和しやすい
+
+### I20260316-01: Signal Drift
+- **概要:** 左右スワイプでレーンを保ち続ける短時間の姿勢制御ゲーム
+- **遊び方:** スワイプだけで drift を補正し、30秒生存や score chase を狙う
+- **想定時間:** 30〜45秒/プレイ
+- **ステータス:** incubating
+- **強み:** 既存 shipped 3本と入力の手触りを変えられる
+- **弱み:** モバイル入力の気持ちよさ検証がまだ必要
+
+### I20260314-03: Pocket Putt Panic
+- **概要:** 15秒で遊ぶ 1画面 mini-putt score attack
+- **遊び方:** pull-and-release でショットし、one tiny hole と one moving blocker を越えて score を取る
+- **想定時間:** 15秒/プレイ
+- **ステータス:** adopted
+- **強み:** 既存ラインと操作系が重ならず、same-day birth lane に向く
+- **弱み:** hole や副ルールを増やすとすぐ mini-golf 化して重くなる
 
 ---
 
-## アイデア追加テンプレート
-
-```markdown
-### ID: アイデア名
-- **概要:** 簡単な説明
-- **遊び方:** 操作方法
-- **想定時間:** 1プレイ何分
-- **ステータス:** inbox / incubating / adopted / rejected
-- **強み:** このゲームの良さ
-- **弱み:** 懸念点
-- **AI活用:** どうAIを使うか
-- **参考:** 類似ゲームやインスピレーション元
-```
-
----
-
-## 評価基準
-
-- ⭐⭐⭐ すぐ作りたい
-- ⭐⭐ 機が熟せば
-- ⭐ アイデアとして保存
-- ❌ 見送り
-
----
-
-_更新日: 2026-03-08_
-
-## Seeded Concept Backlog (2026-03-14)
-
-| ID | Idea | Status | Why it exists | Next proof |
-|----|------|--------|---------------|------------|
-| I20260314-01 | Lane Flip Sprint | incubating | Keeps the instant-read survival feel of Dodge60 but makes thumb input even clearer with three fixed lanes. | Build a one-screen prototype with left/right lane snap and 45-second runs. |
-| I20260314-02 | One Stroke Sweep | incubating | Mobile drag already matters in Dodge60; this turns that tactile motion into the core loop for a 30-second score chase. | Mock one drag-to-collect loop with one fail state and one combo reward. |
-| I20260314-03 | Pocket Putt Panic | inbox | Short flick skill fits the mission and gives the studio a second control fantasy beyond dodge movement. | Prove a single-hole 15-second loop with one moving blocker. |
+_更新日: 2026-03-17_

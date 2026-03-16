@@ -1168,3 +1168,17 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (Meeting 3+ board sync slice)
+
+### 変更履歴更新 (2026-03-17 CEO Review 001)
+- 追加: `memory/docs/2026/03/17/meeting-001-ceo-review.md`
+- 更新: `README.md` (current live lane / birth lane / incubating summary を更新)
+- 更新: `IDEAS.md` (`Pocket Putt Panic` を adopted、`Signal Drift` を incubating へ同期)
+- 更新: `ROADMAP.md` (Q1 remaining work を 2026-03-17 現況へ更新)
+- 更新: `PROJECTS.md` (canonical snapshot と CEO Review 001 update を追加)
+- 更新: `DECISIONS.md` (CEO Review 001 decision 追記)
+- 更新: `memory/docs/2026/03/17/index.md`
+- 更新: `memory/docs/2026/03/index.md`
+- 更新: `memory/docs/history/index.md` (this entry)
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (CEO canonical-sync slice)
