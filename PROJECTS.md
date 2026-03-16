@@ -749,3 +749,11 @@ _更新日: 2026-03-16_
 - Next action:
   - Primary (`live lane`): execute `onigame-dodge60#22` and close with live verification.
   - Secondary (`birth lane`): execute `onigame-lane-flip-sprint#10` after `#22` closure.
+
+## 2026-03-16 Meeting 014 update
+- `onigame-dodge60` remains **active** (live lane item `onigame-dodge60#22` moved `In progress -> Ready`).
+- `onigame-lane-flip-sprint` remains **active** (birth lane item `onigame-lane-flip-sprint#10` moved `Ready -> In progress`).
+- Meeting 014 は `exception coordination / incomplete run` とし、execution debt を明記。
+- Next action:
+  - Primary (`birth lane`): execute `onigame-lane-flip-sprint#10` and close with live verification.
+  - Secondary (`live lane`): execute `onigame-dodge60#22` after `#10` closure.

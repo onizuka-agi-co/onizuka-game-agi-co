@@ -2004,3 +2004,10 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **検証:** `gh project item-list` で `#22 = In progress` と `#10 = Ready` を確認。`gh auth status` は `GH_TOKEN` 経由で pass。
 - **決定オーナー:** エージェント（現場定例、GPT-5.4 xHigh manager + subagent assist）
 - **次手:** 次 run の primary は `onigame-dodge60#22` の実装 + live verify + Done、secondary は `onigame-lane-flip-sprint#10` を維持。
+
+### 2026-03-16: Meeting 014 recorded execution debt and rebalanced active lane to birth #10
+- **決定:** Meeting 014 を `exception coordination / incomplete run` として記録し、Project #2 の active item を `onigame-lane-flip-sprint#10 = In progress`、`onigame-dodge60#22 = Ready` に切り替えた。
+- **理由:** Meeting 013 に続く coordination-only 継続は Meeting 3+ execution rule と dual-lane process integrity を弱めるため。active item を birth lane 側へ寄せ、次 run の code+verify 実行を強制する必要があった。
+- **検証:** `gh auth status` pass。`gh project item-list` で `#10 In progress` と `#22 Ready` を確認。
+- **決定オーナー:** エージェント（現場定例、GPT-5.4 xHigh manager + Spark Legion support）
+- **次手:** Meeting 015 の primary は `onigame-lane-flip-sprint#10` 固定。開始5分で issue acceptance再確認 -> 1 friction fix -> live verify まで進める。

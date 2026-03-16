@@ -318,3 +318,23 @@
 
 ## 記録リンク (追記)
 - [meeting-013-light-game](./meeting-013-light-game.md) - #22 を In progress 化し #10 Ready を維持
+
+## 実績: Meeting 014 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] Project #2 lane rebalance を実施:
+  - [x] `onigame-lane-flip-sprint#10` を `Ready -> In progress` へ更新
+  - [x] `onigame-dodge60#22` を `In progress -> Ready` へ更新
+- [x] GPT-5.4 xHigh サブエージェント3席（producer / qa_verifier / Devil's Advocate）で方針監査
+- [x] `execution debt` を記録し、Meeting 015 の開始5分タスクを固定
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 014 時点)
+- [ ] primary: `onigame-lane-flip-sprint#10` を 1 friction fix + live verify で Done
+- [ ] secondary: `onigame-dodge60#22` を 1 friction fix + live verify で前進
+
+## 日次2レーン状態 (Meeting 014)
+- live lane: ready
+- birth lane: in progress
+
+## 記録リンク (追記)
+- [meeting-014-light-game](./meeting-014-light-game.md) - exception coordination と lane rebalance（#10 In progress / #22 Ready）
