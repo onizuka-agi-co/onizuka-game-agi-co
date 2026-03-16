@@ -246,6 +246,9 @@ CEO review の出力は、最低限次を含めること。
 
 - `Company: ONIZUKA Game AGI Co.`
 
+- If this CEO run uses subagents or audits subagent activity, append `Subagent Activity Audit`.
+- For each agent, record `claimed work`, `runtime proof status` (`confirmed` / `planned only` / `not found`), and `evidence source`.
+
 ## Logging
 
 必要に応じて次を更新してください。
@@ -266,6 +269,9 @@ CEO review の出力は、最低限次を含めること。
 
 `PLANNING_MEETING.md` または `CEO_REVIEW.md` を更新した場合は、その変更を都度コミットして push してください。
 方針更新をローカル未反映のまま残さず、次の automation が必ず最新のルールを読める状態にしてください。
+
+- When CEO review mentions subagents, do not mix meeting-log claims with rollout runtime proof.
+- Cite `rollout-*.jsonl` lines when runtime confirmation matters.
 
 ## Good CEO Behavior
 

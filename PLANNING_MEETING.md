@@ -161,6 +161,18 @@
   - どの evidence で provisional accept したか
   - second-pass 結果
   - Devil's Advocate の指摘と disposition
+- 最終ユーザー返答にも `Subagent Activity Report` を必須で入れる:
+  - 1 agent = 1 bullet
+  - `handle / short name / role`
+  - `ownership`
+  - 実際に行った作業 (`commands`, `files`, `issues`, `checks`)
+  - 返した成果物または findings
+  - `manager_acceptance` / `second_pass_status` / `disposition`
+- runtime evidence がない席を「実行した」として書かない。少なくとも次のどれかを満たすこと:
+  - `spawn_agent` call
+  - subagent notification / output
+  - distinct delegated artifact tied to that agent
+- 計画したが未spawnの席は completed agent として数えず、必要なら `planned only` または `not spawned` と明記する。
 
 ## CTO Delivery Standard (2026-03-14)
 
@@ -372,6 +384,7 @@
 - `live lane` の日次状態
 - `birth lane` の日次状態
 - Spark Legion report (`who owned what`, `manager_acceptance`, `second_pass_status`, `disposition`)
+- `Subagent Activity Report` (`who actually ran`, `what each one did`, `evidence returned`, `runtime proof status`)
 
 ## Logging
 
@@ -441,6 +454,10 @@
 - Do not smooth over retries that matter to understanding delivery risk. A short summary is enough.
 - When subagents are used, log which slice each subagent owned and what evidence they returned to the CTO.
 - When `$codex-spark-eclipse-legion` is used, also log each agent's short name + epithet, `manager_acceptance`, `second_pass_status`, and Devil's Advocate `disposition`.
+- For each reported subagent, record concrete actions, not only ownership labels.
+- Prefer file paths, issue numbers, commands, checks, or verified URLs as the action evidence.
+- Do not list a subagent as executed unless runtime evidence exists in rollout or session logs.
+- If a seat was planned but not executed, omit it from completed-agent reporting or mark it explicitly as `planned only`.
 - Before ending the run, make sure automation memory matches the final project state, especially the current active item and the next hand.
 
 ## Project Item Template
