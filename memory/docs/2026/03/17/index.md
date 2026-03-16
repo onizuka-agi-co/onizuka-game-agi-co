@@ -20,3 +20,8 @@
 
 ## 記録リンク
 - [meeting-001-light-game](./meeting-001-light-game.md) - Meeting 1 lane selection と Project #2 同期
+## 実績: AWSアイコン基調の構成図リビルド
+- [x] `docs/onizuka-game-agi-aws-architecture.drawio` を AWS公式アイコン主導の見た目へ組み替え
+- [x] よくある AWS 構成図の文法に合わせて「アイコン上・ラベル下・薄い境界・少ない装飾」に調整
+- [x] 指定パレットはタイトル・注記・アクセント配線だけに抑えて、アイコン自体を主役に変更
+- [x] `svg/png` を再出力し、`scripts/check-diagram-svg-overlaps.mjs` で交差ゼロを確認

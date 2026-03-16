@@ -34,11 +34,21 @@ The current company structure is documented as a visual diagram here:
 
 - [docs/company-structure.md](/D:/Prj/onizuka-game-agi-co/docs/company-structure.md)
 - [docs/company-operating-flow.md](/D:/Prj/onizuka-game-agi-co/docs/company-operating-flow.md)
+- [docs/onizuka-game-agi-aws-architecture.md](/D:/Prj/onizuka-game-agi-co/docs/onizuka-game-agi-aws-architecture.md)
+- [docs/onizuka-game-agi-aws-architecture.drawio](/D:/Prj/onizuka-game-agi-co/docs/onizuka-game-agi-aws-architecture.drawio)
+- [docs/onizuka-game-agi-aws-architecture.drawio.svg](/D:/Prj/onizuka-game-agi-co/docs/onizuka-game-agi-aws-architecture.drawio.svg)
 - [docs/onizuka-game-agi-company-structure.drawio](/D:/Prj/onizuka-game-agi-co/docs/onizuka-game-agi-company-structure.drawio)
 - [docs/onizuka-game-agi-company-layers.drawio](/D:/Prj/onizuka-game-agi-co/docs/onizuka-game-agi-company-layers.drawio)
 - [docs/onizuka-game-agi-company-layers.drawio.svg](/D:/Prj/onizuka-game-agi-co/docs/onizuka-game-agi-company-layers.drawio.svg)
 
 ![ONIZUKA Game AGI company structure](docs/onizuka-game-agi-company-structure.drawio.png)
+
+### AWS Reference-Style Icon Variant
+
+This variant presents the same company/project topology in the look of a common AWS architecture diagram.
+It is intentionally non-canonical: official AWS icons lead the layout, while the real platform remains local workspace + GitHub + GitHub Pages.
+
+![ONIZUKA Game AGI AWS reference-style icon view](docs/onizuka-game-agi-aws-architecture.drawio.png)
 
 ## Core Automation Roles
 

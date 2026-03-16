@@ -605,3 +605,10 @@
 
 ## 記録リンク (追記)
 - [meeting-024-light-game](./meeting-024-light-game.md) - #24 実装完了（firstSpawnDelay 0.58->0.92）と #25 Ready 同期
+
+## 実績: AWS-like 構成図ビジュアル整備
+- [x] `docs/onizuka-game-agi-aws-architecture.drawio` を AWS風メタファーで再設計
+- [x] サイバーパンク配色 `#F205B3 / #180D40 / #2B1C8C / #0597F2 / #05DBF2` と Material風の境界・面・チップ階層を適用
+- [x] AWS badge icon を比喩マーカーとして配置し、GitHub / local workspace / Pages の実態と混同しない注記を追加
+- [x] `svg/png` を再出力し、`scripts/check-diagram-svg-overlaps.mjs` で重なり・文字あふれゼロを確認
+- [x] README / `docs/company-structure.md` / companion doc に導線と説明を追加

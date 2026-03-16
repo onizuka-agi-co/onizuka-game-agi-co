@@ -41,6 +41,22 @@ This variant emphasizes the operating relationship between strategy and executio
 - [Exported SVG](./onizuka-game-agi-company-layers.drawio.svg)
 - [Exported PNG](./onizuka-game-agi-company-layers.drawio.png)
 
+## AWS Reference-Style Icon Variant
+
+This variant reframes the company structure in the style of a common AWS architecture diagram.
+It is a visual metaphor only and should not be read as a literal deployed AWS environment.
+
+### Variant Diagram
+
+![ONIZUKA Game AGI AWS reference-style icon view](./onizuka-game-agi-aws-architecture.drawio.png)
+
+### Variant Source Files
+
+- [Explanation page](./onizuka-game-agi-aws-architecture.md)
+- [Editable draw.io source](./onizuka-game-agi-aws-architecture.drawio)
+- [Exported SVG](./onizuka-game-agi-aws-architecture.drawio.svg)
+- [Exported PNG](./onizuka-game-agi-aws-architecture.drawio.png)
+
 ## Reading Guide
 
 - The top shows the parent company and the mission of ONIZUKA Game AGI Co.
