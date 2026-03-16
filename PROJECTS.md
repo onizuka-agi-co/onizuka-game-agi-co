@@ -131,6 +131,17 @@ _更新日: 2026-03-16_
   - Primary (`birth lane`): bootstrap `onigame-pocket-putt-panic` and verify on GitHub Pages
   - Secondary (`live lane`): execute `onigame-dodge60#25` with one friction fix + live verify
 
+## 2026-03-17 Meeting 003 update
+- `Pocket Putt Panic` remains the **active birth lane** and Project #2 item `onizuka-game-agi-co#12` moved `Ready -> In progress`.
+- `onigame-dodge60` remains **active** and `onigame-dodge60#25` stays `Ready / P1 / S` as the secondary execution queue.
+- Meeting 003 was a board/log sync slice only:
+  - no game-repo code change
+  - no live verify
+  - no `Done` claim
+- Next action:
+  - Primary (`birth lane`): execute `onizuka-game-agi-co#12` and bootstrap `onigame-pocket-putt-panic` to Pages-verified playable
+  - Secondary (`live lane`): execute `onigame-dodge60#25` with one friction fix + live verify
+
 ## 2026-03-13 Meeting 002 追記
 - onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。
 - Blocker: GitHub CLI 認証切れにより GitHub Project #2 の item 状態更新が未反映。

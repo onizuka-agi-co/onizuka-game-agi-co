@@ -49,3 +49,22 @@
 - [x] 指定パレットはタイトル・注記・アクセント配線だけに抑えて、アイコン自体を主役に変更
 - [x] `svg/png` を再出力し、`scripts/check-diagram-svg-overlaps.mjs` で交差ゼロを確認
 - [x] AWS未使用であることが一目で伝わるよう、図中ラベルと説明文を役割ベース表記へ修正
+
+## 実績: Meeting 003 (Light Game)
+- [x] Meeting 判定を `Meeting 3+` として実施
+- [x] GitHub Project #2 実査:
+  - [x] `onizuka-game-agi-co#12` を `In progress / P0 / S` に更新
+  - [x] `onigame-dodge60#25` が `Ready / P1 / S` のまま維持されていることを確認
+- [x] primary slice を `birth lane` に固定し、execution queue を明示
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 003 時点)
+- [ ] primary: `onizuka-game-agi-co#12` を実行し、`onigame-pocket-putt-panic` を bootstrap + Pages verify
+- [ ] secondary: `onigame-dodge60#25` を 1 early-run confidence fix + live verify で Done
+
+## 日次2レーン状態 (Meeting 003)
+- `live lane`: ready
+- `birth lane`: in progress
+
+## 記録リンク (Meeting 003)
+- [meeting-003-light-game](./meeting-003-light-game.md) - Meeting 3+ board transition and next-hand fix

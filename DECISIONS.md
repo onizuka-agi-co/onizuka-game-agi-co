@@ -2095,3 +2095,10 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **検証:** GitHub issue `#12` / `#25` の本文更新対象を確定し、Project #2 で `#12 = Ready / P0 / S`, `#25 = Ready / P1 / S` を確認。`gpt-5.4` `xhigh` subagent 監査で `accept with edits` を受け、birth lane を `pull-and-release + one tiny hole` へ縮小した。
 - **決定オーナー:** エージェント（現場定例、GPT-5.4 xHigh manager + lock auditor）
 - **次手:** 次 run は `onizuka-game-agi-co#12` を primary として `onigame-pocket-putt-panic` の repo bootstrap + GitHub Pages verify を実行し、`onigame-dodge60#25` は secondary として 1 friction fix + live verify へ進める。
+
+### 2026-03-17: Meeting 003 promoted Pocket Putt Panic to active birth-lane execution
+- **決定:** Meeting 3+ として `birth lane` `onizuka-game-agi-co#12` を primary に固定し、Project #2 item を `Ready -> In progress` に更新した。`onigame-dodge60#25` は `Ready / P1 / S` のまま secondary として維持した。
+- **理由:** Meeting 2 までで `Pocket Putt Panic` の scope lock は完了しており、Meeting 3+ では execution queue を明確にしないと fresh app birth が停滞するため。
+- **検証:** `gh auth status` pass。`gh project item-list 2 --owner onizuka-agi-co --limit 200 --format json` で `#12 = In progress / P0 / S` と `#25 = Ready / P1 / S` を確認。
+- **決定オーナー:** エージェント（現場定例）
+- **次手:** 次 run は `onizuka-game-agi-co#12` を実行して `onigame-pocket-putt-panic` の repo bootstrap / main push / GitHub Pages verify を行い、`onigame-dodge60#25` は secondary として 1 friction fix + live verify に進める。
