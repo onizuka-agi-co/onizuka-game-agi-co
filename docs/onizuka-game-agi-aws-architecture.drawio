@@ -18,7 +18,7 @@
         <mxCell id="title" value="ONIZUKA Game AGI Co. | AWS Reference-Style Icon View" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=28;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="280" y="24" width="1340" height="34" as="geometry"/>
         </mxCell>
-        <mxCell id="subtitle" value="AWS architecture diagram visual language as a metaphor. Icons are the base; real platform remains local workspace + GitHub + GitHub Pages." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontFamily=Noto Sans JP;fontColor=#D9F7FF;" vertex="1" parent="1">
+        <mxCell id="subtitle" value="AWS icon language as a visual reference only. No AWS services are deployed here; runtime stays local workspace + GitHub + GitHub Pages." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontFamily=Noto Sans JP;fontColor=#D9F7FF;" vertex="1" parent="1">
           <mxGeometry x="220" y="58" width="1460" height="22" as="geometry"/>
         </mxCell>
 
@@ -65,10 +65,10 @@
         <mxCell id="actors-note" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8FB;strokeColor=#F205B3;strokeWidth=1.5;" vertex="1" parent="1">
           <mxGeometry x="58" y="760" width="204" height="260" as="geometry"/>
         </mxCell>
-        <mxCell id="actors-note-title" value="What changed" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#180D40;" vertex="1" parent="1">
+        <mxCell id="actors-note-title" value="Reading note" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#180D40;" vertex="1" parent="1">
           <mxGeometry x="76" y="780" width="160" height="20" as="geometry"/>
         </mxCell>
-        <mxCell id="actors-note-text" value="This version follows the look of common AWS architecture diagrams more closely:&lt;br&gt;- official AWS icons lead the layout&lt;br&gt;- labels sit under icons&lt;br&gt;- boundaries are light and neutral&lt;br&gt;- cyberpunk colors stay in title, notes, and accents only" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontFamily=Noto Sans JP;fontColor=#364152;" vertex="1" parent="1">
+        <mxCell id="actors-note-text" value="This version borrows the look of common AWS architecture diagrams:&lt;br&gt;- official AWS icons lead the layout&lt;br&gt;- labels name the actual repo / workflow roles&lt;br&gt;- boundaries stay light and neutral&lt;br&gt;- cyberpunk colors stay in title, notes, and accents only" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontFamily=Noto Sans JP;fontColor=#364152;" vertex="1" parent="1">
           <mxGeometry x="76" y="812" width="168" height="186" as="geometry"/>
         </mxCell>
 
@@ -78,10 +78,10 @@
         <mxCell id="aws-cloud-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.group_aws_cloud;html=1;" vertex="1" parent="1">
           <mxGeometry x="340" y="188" width="24" height="24" as="geometry"/>
         </mxCell>
-        <mxCell id="aws-boundary-title" value="AWS Cloud (visual metaphor)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="aws-boundary-title" value="Cloud-style boundary" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="372" y="190" width="260" height="20" as="geometry"/>
         </mxCell>
-        <mxCell id="aws-boundary-note" value="Icon-first layout modeled after common AWS reference diagrams. Service names are analogy markers for company/project roles." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
+        <mxCell id="aws-boundary-note" value="AWS icons are visual references only. Labels describe the real local / GitHub workflow instead of deployed AWS services." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
           <mxGeometry x="1120" y="190" width="670" height="20" as="geometry"/>
         </mxCell>
 
@@ -91,42 +91,42 @@
         <mxCell id="control-chip" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E7F8FD;strokeColor=#05DBF2;strokeWidth=1.2;" vertex="1" parent="1">
           <mxGeometry x="382" y="266" width="156" height="26" as="geometry"/>
         </mxCell>
-        <mxCell id="control-title" value="Control plane" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#0F2A43;" vertex="1" parent="1">
+        <mxCell id="control-title" value="Control / review" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#0F2A43;" vertex="1" parent="1">
           <mxGeometry x="382" y="271" width="156" height="16" as="geometry"/>
         </mxCell>
 
         <mxCell id="config-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.config;html=1;" vertex="1" parent="1">
           <mxGeometry x="430" y="312" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="config-label" value="AWS Config&lt;br&gt;Governance docs" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="config-label" value="Policy / rules&lt;br&gt;README + AGENTS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="390" y="384" width="144" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="step-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.step_functions;html=1;" vertex="1" parent="1">
           <mxGeometry x="700" y="312" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="step-label" value="AWS Step Functions&lt;br&gt;CEO review loop" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="step-label" value="CEO review&lt;br&gt;decision loop" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="650" y="384" width="164" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="watch-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudwatch;html=1;" vertex="1" parent="1">
           <mxGeometry x="970" y="312" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="watch-label" value="Amazon CloudWatch&lt;br&gt;Verify / evidence" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="watch-label" value="Verification&lt;br&gt;evidence log" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="918" y="384" width="168" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="pipe-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codepipeline;html=1;" vertex="1" parent="1">
           <mxGeometry x="1240" y="312" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="pipe-label" value="AWS CodePipeline&lt;br&gt;Project queue / issues" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="pipe-label" value="Board / issues&lt;br&gt;project flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="1180" y="384" width="184" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="build-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codebuild;html=1;" vertex="1" parent="1">
           <mxGeometry x="1510" y="312" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="build-label" value="AWS CodeBuild&lt;br&gt;Docs deploy workflow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="build-label" value="Docs publish&lt;br&gt;workflow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="1450" y="384" width="184" height="34" as="geometry"/>
         </mxCell>
 
@@ -136,7 +136,7 @@
         <mxCell id="source-chip" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF2FF;strokeColor=#2B1C8C;strokeWidth=1.2;" vertex="1" parent="1">
           <mxGeometry x="382" y="486" width="164" height="26" as="geometry"/>
         </mxCell>
-        <mxCell id="source-title" value="Source plane" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#1D2A4D;" vertex="1" parent="1">
+        <mxCell id="source-title" value="Repo / source" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#1D2A4D;" vertex="1" parent="1">
           <mxGeometry x="382" y="491" width="164" height="16" as="geometry"/>
         </mxCell>
         <mxCell id="source-private-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.group_private_subnet;html=1;" vertex="1" parent="1">
@@ -146,28 +146,28 @@
         <mxCell id="company-repo-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codecommit;html=1;" vertex="1" parent="1">
           <mxGeometry x="450" y="548" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="company-repo-label" value="AWS CodeCommit&lt;br&gt;Company repo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="company-repo-label" value="Company repo&lt;br&gt;docs + memory" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="394" y="620" width="176" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="dodge-repo-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codecommit;html=1;" vertex="1" parent="1">
           <mxGeometry x="770" y="548" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="dodge-repo-label" value="AWS CodeCommit&lt;br&gt;onigame-dodge60" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="dodge-repo-label" value="Game repo&lt;br&gt;onigame-dodge60" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="704" y="620" width="196" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="lane-repo-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codecommit;html=1;" vertex="1" parent="1">
           <mxGeometry x="1090" y="548" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="lane-repo-label" value="AWS CodeCommit&lt;br&gt;onigame-lane-flip-sprint" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="lane-repo-label" value="Game repo&lt;br&gt;onigame-lane-flip-sprint" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="1006" y="620" width="232" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="sweep-repo-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codecommit;html=1;" vertex="1" parent="1">
           <mxGeometry x="1410" y="548" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="sweep-repo-label" value="AWS CodeCommit&lt;br&gt;onigame-one-stroke-sweep" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="sweep-repo-label" value="Game repo&lt;br&gt;onigame-one-stroke-sweep" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="1322" y="620" width="240" height="34" as="geometry"/>
         </mxCell>
 
@@ -184,7 +184,7 @@
         <mxCell id="delivery-chip" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF0F8;strokeColor=#F205B3;strokeWidth=1.2;" vertex="1" parent="1">
           <mxGeometry x="382" y="746" width="190" height="26" as="geometry"/>
         </mxCell>
-        <mxCell id="delivery-title" value="Static delivery plane" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#4A153C;" vertex="1" parent="1">
+        <mxCell id="delivery-title" value="Static publish" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#4A153C;" vertex="1" parent="1">
           <mxGeometry x="382" y="751" width="190" height="16" as="geometry"/>
         </mxCell>
         <mxCell id="delivery-public-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.group_public_subnet;html=1;" vertex="1" parent="1">
@@ -194,35 +194,35 @@
         <mxCell id="docs-edge-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;html=1;" vertex="1" parent="1">
           <mxGeometry x="450" y="812" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="docs-edge-label" value="Amazon CloudFront&lt;br&gt;memory/docs site" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="docs-edge-label" value="Docs page&lt;br&gt;company site" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="388" y="884" width="188" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="dodge-edge-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;html=1;" vertex="1" parent="1">
           <mxGeometry x="770" y="812" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="dodge-edge-label" value="Amazon CloudFront&lt;br&gt;Dodge60 page" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="dodge-edge-label" value="Game page&lt;br&gt;Dodge60" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="708" y="884" width="188" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="lane-edge-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;html=1;" vertex="1" parent="1">
           <mxGeometry x="1090" y="812" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="lane-edge-label" value="Amazon CloudFront&lt;br&gt;Lane Flip page" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="lane-edge-label" value="Game page&lt;br&gt;Lane Flip" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="1028" y="884" width="188" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="sweep-edge-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;html=1;" vertex="1" parent="1">
           <mxGeometry x="1410" y="812" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="sweep-edge-label" value="Amazon CloudFront&lt;br&gt;One Stroke page" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="sweep-edge-label" value="Game page&lt;br&gt;One Stroke" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="1348" y="884" width="188" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="static-note" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8FB;strokeColor=#F205B3;strokeWidth=1.2;" vertex="1" parent="1">
           <mxGeometry x="450" y="944" width="1024" height="42" as="geometry"/>
         </mxCell>
-        <mxCell id="static-note-text" value="Static-only contract: no backend, DB, queue, or auth is required for a shipping game. The docs flow is company-only; each game publishes its own page." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#4A153C;" vertex="1" parent="1">
+        <mxCell id="static-note-text" value="Actual runtime is GitHub Pages-style static delivery, not AWS hosting. The docs flow is company-only; each game publishes its own page." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#4A153C;" vertex="1" parent="1">
           <mxGeometry x="464" y="956" width="996" height="18" as="geometry"/>
         </mxCell>
 

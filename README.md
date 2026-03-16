@@ -46,7 +46,8 @@ The current company structure is documented as a visual diagram here:
 ### AWS Reference-Style Icon Variant
 
 This variant presents the same company/project topology in the look of a common AWS architecture diagram.
-It is intentionally non-canonical: official AWS icons lead the layout, while the real platform remains local workspace + GitHub + GitHub Pages.
+It is intentionally non-canonical: official AWS icons lead the layout, but no AWS service is actually used here.
+The real platform remains local workspace + GitHub + GitHub Pages.
 
 ![ONIZUKA Game AGI AWS reference-style icon view](docs/onizuka-game-agi-aws-architecture.drawio.png)
 

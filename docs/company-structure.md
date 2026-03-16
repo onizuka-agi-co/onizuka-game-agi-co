@@ -45,6 +45,7 @@ This variant emphasizes the operating relationship between strategy and executio
 
 This variant reframes the company structure in the style of a common AWS architecture diagram.
 It is a visual metaphor only and should not be read as a literal deployed AWS environment.
+No AWS service is actually used in this project.
 
 ### Variant Diagram
 
