@@ -41,3 +41,5 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-16](./16/) - Meeting 013 で `onigame-dodge60#22` を In Progress 化し、`onigame-lane-flip-sprint#10` を Ready 維持
 - [2026-03-16](./16/) - Meeting 014 で execution debt を記録し、Project #2 を `#10 In progress / #22 Ready` に再編成
 - [2026-03-16](./16/) - Meeting 015 で `#10 In progress / #22 Ready` を再確認し、coordination-only の execution debt 継続を記録
+
+- [2026-03-16](./16/) - Meeting 016 で #10 In progress / #22 Ready を再確認し、Done主張の境界を固定（coordination-only）

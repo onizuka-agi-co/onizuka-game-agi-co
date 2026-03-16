@@ -359,3 +359,24 @@
 
 ## 記録リンク (追記)
 - [meeting-015-light-game](./meeting-015-light-game.md) - coordination run の整合監査と execution debt 継続を明記
+
+## 実績: Meeting 016 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] required inputs を再確認（README / operating-flow / IDEAS / PROJECTS / ROADMAP / DECISIONS / daily logs）
+- [x] Project #2 状態確認:
+  - [x] `onigame-lane-flip-sprint#10` は `In progress / P1 / S` を維持
+  - [x] `onigame-dodge60#22` は `Ready / P1 / S` を維持
+- [x] Spark Legion + gpt-5.4 high reasoning checker で Done 可否を監査
+- [x] coordination run として `Done` 主張保留を明記
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 016 時点)
+- [ ] primary: `onigame-lane-flip-sprint#10` を 1 friction fix + live verify で Done
+- [ ] secondary: `onigame-dodge60#22` は `Ready` 維持。`#10` 完了後に pull して 1 friction fix + live verify
+
+## 日次2レーン状態 (Meeting 016)
+- live lane: ready
+- birth lane: in progress
+
+## 記録リンク (追記)
+- [meeting-016-light-game](./meeting-016-light-game.md) - coordination run の主張境界監査と next hand 固定
