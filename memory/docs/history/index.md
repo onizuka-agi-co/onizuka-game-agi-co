@@ -1264,3 +1264,18 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (execution-forced continuation slice)
+
+### 変更履歴更新 (2026-03-17 Meeting 008)
+- 追加: `memory/docs/2026/03/17/meeting-008-light-game.md`
+- 更新: `memory/docs/2026/03/17/index.md`
+- 更新: `DECISIONS.md` (Meeting 008 decision + unchanged Project #2 state)
+- 更新: `PROJECTS.md` (Meeting 008 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-17 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Project sync confirmation:
+  - `onizuka-game-agi-co#12` remained `In progress / P0 / S`
+  - `onigame-dodge60#25` remained `Ready / P1 / S`
+  - both issues remained open
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (execution-forced continuation slice)
