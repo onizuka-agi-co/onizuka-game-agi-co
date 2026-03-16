@@ -1413,3 +1413,10 @@ _更新日: 2026-03-15_
 - **検証/証跡:** Project #2 の item 状態を `gh project item-list` で確認し、`#21 = In progress` と `#9 = Ready` を確認した。
 - **決定者:** エージェント（現場定例）
 - **影響:** 次 run は `onigame-dodge60#21` の実装 + live verify + Done を primary で完了し、その後 `onigame-lane-flip-sprint#9` に着手する。
+
+### 2026-03-16: Meeting 010 kept Dodge60 #21 active and preserved Lane Flip Sprint #9 as explicit secondary hand
+- **Decision:** Meeting 010 continues in `Meeting 3+` execution mode with `onigame-dodge60#21` as primary (`In progress`) and `onigame-lane-flip-sprint#9` as secondary (`Ready`), keeping both daily lanes visible on Project #2.
+- **Reason:** Daily dual-lane rule requires explicit visibility of both lanes even when one thin slice is selected as primary. Current board state already matches this and was re-verified.
+- **Verification Evidence:** `gh project item-list 2 --owner onizuka-agi-co --limit 200 --format json` confirmed `#21 In progress` and `#9 Ready`; `gh issue view 9 --repo onizuka-agi-co/onigame-lane-flip-sprint` confirmed issue is open and execution-ready.
+- **Decision Owner:** Agent (Field Meeting, GPT-5.4 xHigh manager + Spark Legion support)
+- **Next Action:** Next run executes `onigame-dodge60#21` to code/live verification closure, then pulls `onigame-lane-flip-sprint#9`.
