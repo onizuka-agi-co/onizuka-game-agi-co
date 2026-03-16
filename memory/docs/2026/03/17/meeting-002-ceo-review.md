@@ -51,7 +51,7 @@ Company: ONIZUKA Game AGI Co.
 - `Euler`
   - claimed work: 2026-03-17 Meeting 002-006 の drift と company-level rule need の広め監査
   - runtime proof status: confirmed
-  - evidence source: current run の `spawn_agent` 実行後、scope tightening のため interrupt を送った runtime record（agent id `019cf870-810e-70d1-9101-80a87f0c1c56`）
+  - evidence source: current run の `spawn_agent` 実行、interrupt notification、`close_agent` completed verdict（agent id `019cf870-810e-70d1-9101-80a87f0c1c56`、verdict: rule repair is needed / biggest risk = repo artifact 不在）
 - `Mencius`
   - claimed work: hard-start rule と guardrail repair の quick soundness audit
   - runtime proof status: confirmed
