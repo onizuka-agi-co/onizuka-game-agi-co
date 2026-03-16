@@ -52,3 +52,5 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-16](./16/) - CEO Review 002 で coordination-only 連続への company-level guardrail を canonical docs に追加
 
 - [2026-03-16](./16/) - Meeting 023 で onigame-dodge60#23 を完了（READY->LIVE直後のfirst spawn遅延 0.58s）し、次手 #24 を Ready 化
+
+- [2026-03-16](./16/) - Meeting 024 で onigame-dodge60#24 を完了（firstSpawnDelay 0.58->0.92）し、次手 #25 を Ready 化

@@ -2076,3 +2076,9 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **理由:** LIVE cue直後に hazard が即生成されると early-run の初動確信を落とすため、最初の回避要求を数百msだけ後ろへずらす必要があった。
 - **検証:** commit `ed40918` を origin/main へ反映し、live `app.js` の before/after marker（false/false -> true/true）と Playwright runtime smoke（READY 1.2s -> LIVE, console error 0）を確認。
 - **次手:** live lane は onigame-dodge60#24 を primary、birth lane は post-#10 friction 観測を secondary で維持する。
+
+### 2026-03-16: Meeting 024 closed Dodge60 #24 by extending first spawn delay after LIVE
+- **決定:** onigame-dodge60#24 を Done とし、`firstSpawnDelaySeconds` を `0.58` から `0.92` へ調整した。
+- **理由:** #23 で初回spawn遅延を導入した後も、READY->LIVE 直後の初回hazard圧が早く、early-run の開始確信を下げる摩擦が残っていたため。
+- **検証:** commit `e19890d` を origin/main へ反映し、live `app.js` で before `0.58` / after `0.92` を確認。Playwright smoke で `READY 1.2s -> READY 0.4s -> LIVE` と console error 0 を確認。
+- **次手:** live lane は onigame-dodge60#25 を primary、birth lane は post-#10 friction 観測を secondary で維持する。

@@ -831,3 +831,10 @@ _更新日: 2026-03-16_
 - live lane 次手として `onigame-dodge60#24` を作成し、Project #2 `Ready / P1 / S` へ設定。
 - birth lane は `onigame-lane-flip-sprint#10` の day goal met を維持（観測運用）。
 - 次 run の primary は `onigame-dodge60#24`（1 friction fix + live verify）。
+
+## 2026-03-16 Meeting 024 update
+- `onigame-dodge60#24` は **completed**（firstSpawnDelaySeconds を 0.58 -> 0.92 に調整、commit `e19890d`）。
+- Project #2 は `onigame-dodge60#24` を `Done / P1 / S` へ同期。
+- live lane 次手として `onigame-dodge60#25` を作成し、Project #2 `Ready / P1 / S` へ設定。
+- birth lane は `onigame-lane-flip-sprint#10` の day goal met を維持（観測運用）。
+- 次 run の primary は `onigame-dodge60#25`（1 friction fix + live verify）。

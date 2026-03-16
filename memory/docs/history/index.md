@@ -1111,3 +1111,14 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - 実装リポジトリ: `games/onigame-dodge60` commit `ed40918` pushed
 - 検証: live app.js marker before/after + Playwright runtime smoke（READY->LIVE, console error 0）
 - GitHub sync: `onigame-dodge60#23` closed + Project #2 `Done`、`onigame-dodge60#24` を `Ready / P1 / S` で追加
+
+### 変更履歴更新 (2026-03-16 Meeting 024)
+- 追加: `memory/docs/2026/03/16/meeting-024-light-game.md`
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `DECISIONS.md` (Meeting 024 decision + verified closure)
+- 更新: `PROJECTS.md` (Meeting 024 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-16 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- 実装リポジトリ: `games/onigame-dodge60` commit `e19890d` pushed
+- 検証: live app.js marker before/after（`0.58 -> 0.92`）+ Playwright runtime smoke（READY->LIVE, console error 0）
+- GitHub sync: `onigame-dodge60#24` closed + Project #2 `Done`、`onigame-dodge60#25` を `Ready / P1 / S` で追加

@@ -577,3 +577,31 @@
 
 ## 記録リンク (追記)
 - [meeting-023-light-game](./meeting-023-light-game.md) - #23 実装完了（READY->LIVE直後のfirst spawn遅延）と #24 Ready 同期
+
+## 実績: Meeting 024 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] primary onigame-dodge60#24 を実装完了（1 friction fix）
+- [x] games/onigame-dodge60/app.js で firstSpawnDelaySeconds を `0.58 -> 0.92` に調整
+- [x] game repo commit/push:
+  - [x] commit e19890d
+  - [x] main -> origin/main 反映
+- [x] live verify:
+  - [x] live app.js marker before: firstSpawnDelaySeconds=0.58
+  - [x] live app.js marker after: firstSpawnDelaySeconds=0.92
+  - [x] Playwright smoke: READY 1.2s -> READY 0.4s -> LIVE, console error 0
+- [x] GitHub同期:
+  - [x] onigame-dodge60#24 に証跡コメント追加 + close
+  - [x] Project #2 onigame-dodge60#24 を Done へ更新
+  - [x] 次手 onigame-dodge60#25 を作成し Ready / P1 / S へ設定
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 024 時点)
+- [ ] primary: onigame-dodge60#25 を 1 friction fix + live verify で前進
+- [ ] secondary: onigame-lane-flip-sprint は post-#10 friction を観測し、必要時のみ次 issue 化
+
+## 日次2レーン状態 (Meeting 024)
+- live lane: ready
+- birth lane: day goal met
+
+## 記録リンク (追記)
+- [meeting-024-light-game](./meeting-024-light-game.md) - #24 実装完了（firstSpawnDelay 0.58->0.92）と #25 Ready 同期
