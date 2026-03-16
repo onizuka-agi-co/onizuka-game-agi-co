@@ -1279,3 +1279,22 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (execution-forced continuation slice)
+
+### 変更履歴更新 (2026-03-17 Meeting 009)
+- 追加: `memory/docs/2026/03/17/meeting-009-light-game.md`
+- 更新: `memory/docs/2026/03/17/index.md`
+- 更新: `DECISIONS.md` (Meeting 009 decision + birth-lane hard-start next hand)
+- 更新: `PROJECTS.md` (Meeting 009 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-17 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Project sync confirmation:
+  - `onizuka-game-agi-co#12` remained `In progress / P0 / S`
+  - `onigame-dodge60#25` remained `Ready / P1 / S`
+  - both issues remained open
+  - `onizuka-agi-co/onigame-pocket-putt-panic` repository was still missing
+- Subagent audit:
+  - `Plato` completed the `GPT-5.4 xHigh` audit seat
+  - result: keep birth primary, no Project #2 field change, no Done claim, next hand must produce the birth-lane hard-start artifact
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (execution-forced continuation slice)

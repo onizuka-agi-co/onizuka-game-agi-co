@@ -222,3 +222,36 @@
 
 ## 記録リンク (Meeting 008)
 - [meeting-008-light-game](./meeting-008-light-game.md) - execution-forced continuation with unchanged board state
+
+## 実績: Meeting 009 (Light Game)
+- [x] Meeting 種別を `Meeting 3+` として確認し、2026-03-17 の `Meeting 009` として記録
+- [x] required inputs 再確認:
+  - [x] `README.md`
+  - [x] `PLANNING_MEETING.md`
+  - [x] `docs/company-operating-flow.md`
+  - [x] `IDEAS.md`
+  - [x] `PROJECTS.md`
+  - [x] `ROADMAP.md`
+  - [x] `DECISIONS.md`
+  - [x] `memory/docs/2026/03/17/index.md`
+  - [x] `memory/docs/2026/03/17/meeting-008-light-game.md`
+- [x] GitHub Project #2 / issue / repo 実査:
+  - [x] `onizuka-game-agi-co#12` = `In progress / P0 / S`
+  - [x] `onigame-dodge60#25` = `Ready / P1 / S`
+  - [x] 両 issue とも `OPEN`
+  - [x] `onigame-pocket-putt-panic` repo が未作成であることを確認
+- [x] board 状態は妥当と判断し、field 変更なし
+- [x] `gpt-5.4` `xhigh` 監査席で lane call / board-change necessity / done-claim boundary を再監査
+- [x] meeting-scope ログ更新 (`meeting-009` / daily / decisions / projects / monthly / history)
+
+## 次アクション (Meeting 009 以後)
+- [ ] primary: `onizuka-game-agi-co#12` を実行し、`onigame-pocket-putt-panic` の repo 作成または初期 static scaffold 作成を first hard artifact として残す
+- [ ] primary continuation: そのまま `main` push + Pages verify まで進める
+- [ ] secondary: `onigame-dodge60#25` は birth lane hard-start artifact の後に 1 early-run confidence fix + live verify で Done に進める
+
+## 日次2レーン状況 (Meeting 009)
+- `live lane`: ready
+- `birth lane`: in progress
+
+## 記録リンク (Meeting 009)
+- [meeting-009-light-game](./meeting-009-light-game.md) - birth lane hard-start artifact を next hand に固定
