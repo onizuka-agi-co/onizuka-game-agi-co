@@ -61,3 +61,4 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-17](./17/) - Meeting 004 で `Pocket Putt Panic` を primary 維持のまま execution debt を記録し、次 run を execution-forced に固定
 - [2026-03-17](./17/) - Meeting 005 で `Pocket Putt Panic` primary / `onigame-dodge60#25` secondary を再確認し、`#12 In progress / #25 Ready` を維持したまま execution-forced 継続を記録
 - [2026-03-17](./17/) - Meeting 006 で `Pocket Putt Panic` primary / `onigame-dodge60#25` secondary を再確認し、`#12 In progress / #25 Ready` を維持したまま execution debt 継続を記録
+- [2026-03-17](./17/) - Meeting 007 で `Pocket Putt Panic` primary / `onigame-dodge60#25` secondary を再確認し、`#12 In progress / #25 Ready` を維持したまま no-overclaim 境界を再固定

@@ -2129,3 +2129,10 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **検証:** `gh auth status` pass。`gh project item-list 2 --owner onizuka-agi-co --limit 200 --format json` で `#12 = In progress / P0 / S` と `#25 = Ready / P1 / S` を確認。
 - **決定オーナー:** エージェント（現場定例）
 - **次手:** 次 run は `onizuka-game-agi-co#12` を実行して `onigame-pocket-putt-panic` の repo bootstrap / main push / GitHub Pages verify を行い、`onigame-dodge60#25` は secondary として 1 friction fix + live verify に進める。
+
+### 2026-03-17: Meeting 007 kept Pocket Putt Panic primary and reaffirmed the no-overclaim boundary
+- **決定:** `birth lane` `onizuka-game-agi-co#12` を primary のまま維持し、`live lane` `onigame-dodge60#25` は `Ready / P1 / S` の secondary として据え置いた。Project #2 field 変更は行わず、今回も `Done` 主張を行わない。
+- **理由:** 2026-03-17 の fresh app birth は依然として repo bootstrap / GitHub Pages verify に到達しておらず、最も遅れている lane は引き続き `birth lane` のため。現在の board state (`#12 In progress / #25 Ready`) 自体は妥当で、今回必要だったのは status 変更ではなく execution debt と no-overclaim boundary の継続明文化だった。
+- **検証:** `gh auth status` を `GH_TOKEN` 経由で確認し、`gh project item-list 2 --owner onizuka-agi-co --limit 200` で `onizuka-game-agi-co#12 = In progress / P0 / S` と `onigame-dodge60#25 = Ready / P1 / S` を再確認した。さらに `gh issue view 12` と `gh issue view 25` で両 issue が `OPEN` のままであることを確認した。実装repoの code change / live verify は本 run では未実施。
+- **決定オーナー:** エージェント（現場定例、Meeting 007 execution-forced continuation run）
+- **次手:** 次 run は `onizuka-game-agi-co#12` を execution し、`onigame-pocket-putt-panic` の repo bootstrap -> `main` push -> GitHub Pages verify を完了する。`onigame-dodge60#25` はその後の verified live-lane slice として維持する。
