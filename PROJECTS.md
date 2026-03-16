@@ -739,3 +739,13 @@ _更新日: 2026-03-16_
 - birth lane 次手として `onigame-lane-flip-sprint#10` を作成し、Project #2 `Ready / P1 / S` に設定。
 - live lane は `onigame-dodge60#22` を `Ready / P1 / S` で維持。
 - 次 run の primary は `onigame-dodge60#22`、secondary は `onigame-lane-flip-sprint#10`。
+
+## 2026-03-16 Meeting 013 update
+- `onigame-dodge60` remains **active**.
+- `live lane` primary item was promoted to execution:
+  - `onigame-dodge60#22` moved `Ready -> In progress` (`P1 / S`).
+- `onigame-lane-flip-sprint` remains **active** as secondary queue:
+  - `onigame-lane-flip-sprint#10` kept `Ready / P1 / S`.
+- Next action:
+  - Primary (`live lane`): execute `onigame-dodge60#22` and close with live verification.
+  - Secondary (`birth lane`): execute `onigame-lane-flip-sprint#10` after `#22` closure.

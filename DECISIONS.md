@@ -1997,3 +1997,10 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **理由:** early-run で READY 終端付近の入力が落ちると初動確信が下がるため、1入力だけ予約して境界で適用する必要があった。
 - **検証:** commit `cddafe4` を origin/main へ反映し、live URL で `Input locked - LIVE in 1.2s (queued left)` 表示と lane `2 / 3 -> 1 / 3` の自動適用を確認。
 - **次手:** live lane は onigame-dodge60#22 を primary、birth lane は onigame-lane-flip-sprint#10 を secondary として `Ready / P1 / S` で維持する。
+
+### 2026-03-16: Meeting 013 promoted Dodge60 #22 to active execution and preserved Lane Flip Sprint #10 as explicit secondary hand
+- **決定:** Project #2 で `onigame-dodge60#22` を `In progress` へ更新し、`onigame-lane-flip-sprint#10` は `Ready` のまま維持した。
+- **理由:** Meeting 3+ の実行モードでは、1本を primary で前進させつつ、もう1 lane の次手を明示的に残すことが dual-lane 運営要件に一致するため。
+- **検証:** `gh project item-list` で `#22 = In progress` と `#10 = Ready` を確認。`gh auth status` は `GH_TOKEN` 経由で pass。
+- **決定オーナー:** エージェント（現場定例、GPT-5.4 xHigh manager + subagent assist）
+- **次手:** 次 run の primary は `onigame-dodge60#22` の実装 + live verify + Done、secondary は `onigame-lane-flip-sprint#10` を維持。

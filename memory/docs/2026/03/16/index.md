@@ -299,3 +299,22 @@
 
 ## 記録リンク (追記)
 - [meeting-012-light-game](./meeting-012-light-game.md) - #9 実装完了（READY入力予約）と #10 Ready 同期
+
+## 実績: Meeting 013 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] Project #2 同期:
+  - [x] `onigame-dodge60#22` を `Ready -> In progress` へ更新
+  - [x] `onigame-lane-flip-sprint#10` は `Ready / P1 / S` を維持
+- [x] GPT-5.4 xHigh サブエージェントで board action を検証
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 013 時点)
+- [ ] primary: `onigame-dodge60#22` を 1 friction fix + live verify で Done
+- [ ] secondary: `onigame-lane-flip-sprint#10` を 1 friction fix + live verify で前進
+
+## 日次2レーン状態 (Meeting 013)
+- live lane: in progress
+- birth lane: ready
+
+## 記録リンク (追記)
+- [meeting-013-light-game](./meeting-013-light-game.md) - #22 を In progress 化し #10 Ready を維持
