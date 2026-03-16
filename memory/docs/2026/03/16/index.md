@@ -401,3 +401,69 @@
 
 ## 記録リンク (追記)
 - [meeting-017-light-game](./meeting-017-light-game.md) - #10 In progress / #22 Ready を再確認し、Done主張の境界を固定
+
+## QA Check: onigame-lane-flip-sprint#10
+- 評価: 提案修正は acceptance の「one early-run friction fix」として妥当。
+- 根拠:
+  - `#9` で追加した READY 入力予約が `READY -> LIVE` 直後に自動適用される一方、現状の `applyLaneDelta()` は lane change 成立時に LIVE cue を消す。
+  - そのため queued auto-apply が `#7` の「first move まで LIVE cue を保持」と衝突しており、開始確信を落とす early-run friction 1件として筋が通る。
+  - `applyLaneDelta(delta, { clearLiveCue: false })` のように auto-apply のみ cue 消灯を抑制する案は局所的で、fix scope も小さい。
+- 回帰リスク:
+  - manual move でも cue が残り続ける条件分岐ミス
+  - queued auto-apply 後に fallback timer まで無効化して cue が残留
+  - 壁端で queue 適用不成立時の cue / blocked feedback の整合崩れ
+- 最小確認:
+  - READY 中に入力予約 -> LIVE 遷移で lane は自動反映され、`LIVE - flip now` は即消えない
+  - 予約なしで LIVE 開始 -> 最初の手動移動で cue が消える
+  - 予約ありでも手動移動なしなら fallback 時間経過で cue が消える
+  - 左端/右端で不成立 queue 時、cue が不正に消えず手動有効移動で消える
+
+## 実績: Meeting 018 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] primary `onigame-lane-flip-sprint#10` を実装完了（1 friction fix）
+- [x] `games/onigame-lane-flip-sprint/app.js` で queued auto-apply 時の `LIVE cue` 即消灯を抑制
+- [x] game repo commit/push:
+  - [x] commit `a3f6342`
+  - [x] `main -> origin/main` 反映
+- [x] live verify:
+  - [x] deploy `app.js` に `clearLiveCue: false` 反映確認
+  - [x] queued input case: `cueHidden=false` を確認
+  - [x] manual first-move case: `cueHidden=false -> true` を確認
+  - [x] queued + no manual case: fallback後 `cueHidden=true` を確認
+- [x] GitHub同期:
+  - [x] `onigame-lane-flip-sprint#10` に証跡コメント追加 + close
+  - [x] Project #2 `onigame-lane-flip-sprint#10` を `Done` へ更新
+  - [x] `onigame-dodge60#22` は `Ready / P1 / S` を維持
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 018 時点)
+- [ ] primary: `onigame-dodge60#22` を `Ready -> In progress` へ進め、1 friction fix + live verify で Done
+- [ ] secondary: `onigame-lane-flip-sprint` の post-#10 friction を観測し、必要時のみ次issue化
+
+## 日次2レーン状態 (Meeting 018)
+- live lane: ready
+- birth lane: day goal met
+
+## 記録リンク (追記)
+- [meeting-018-light-game](./meeting-018-light-game.md) - #10 実装完了（queued auto-apply時のLIVE cue即消灯抑制）と Done同期
+
+## 実績: Meeting 019 (Light Game)
+- [x] Meeting 判定を Meeting 3+ として実施
+- [x] required inputs を再確認（README / operating-flow / IDEAS / PROJECTS / ROADMAP / DECISIONS / daily logs）
+- [x] Project #2 同期:
+  - [x] `onigame-dodge60#22` を `Ready -> In progress` へ更新
+  - [x] `onigame-lane-flip-sprint#10` は `Done / P1 / S` を確認
+- [x] GPT-5.4 xHigh サブエージェントで lane call と Done境界を監査
+- [x] coordination run として `#22 Done` 主張保留を明記
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 019 時点)
+- [ ] primary: `onigame-dodge60#22` を実装し、1 friction fix + live verify で Done
+- [ ] secondary: `onigame-lane-flip-sprint` は post-#10 friction を観測し、必要時のみ次issue化
+
+## 日次2レーン状態 (Meeting 019)
+- live lane: in progress
+- birth lane: day goal met
+
+## 記録リンク (追記)
+- [meeting-019-light-game](./meeting-019-light-game.md) - #22 を In progress 化し、Done主張境界を再固定

@@ -2030,3 +2030,16 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **理由:** 本 run では実装差分と live verify を実施していないため、Verification Gate Rule 上 Done 判定が成立しない。
 - **検証:** `gh auth status` pass、`gh project item-list` で `#10 In progress` と `#22 Ready` を確認。GPT-5.4 xHigh subagent が Done 主張不可を `FAIL` 判定。
 - **次手:** 次 run の開始5分で `#10` の acceptance再確認 -> 1 friction fix 実装 -> live verify -> issue証跡コメントまで完了する。
+
+### 2026-03-16: Meeting 018 closed Lane Flip Sprint #10 by keeping LIVE cue visible on queued READY auto-apply
+- **決定:** onigame-lane-flip-sprint#10 を Done とし、READYで予約された入力の自動適用時には `LIVE - flip now` cue を即消灯しない方式を採用した。
+- **理由:** #9 で導入した queued input と #7 の LIVE cue 保持が衝突し、READY->LIVE境界で cue が即消える friction が残っていたため。
+- **検証:** commit `a3f6342` を origin/main へ反映し、live URL で (1) queued input時 `cueHidden=false`、(2) manual first moveで `false -> true`、(3) no manualでfallback後 `true` を確認。
+- **次手:** live lane は onigame-dodge60#22 を primary とし、Ready -> In progress へ進めて 1 friction fix + live verify を実施する。
+
+### 2026-03-16: Meeting 019 restored Dodge60 #22 as active primary and kept Done-claim boundary explicit
+- **決定:** Project #2 で `onigame-dodge60#22` を `Ready -> In progress` に更新し、`onigame-lane-flip-sprint#10` は `Done` 維持とした。 
+- **理由:** `#10` 完了後の実装責務を live lane に戻し、次runの primary を `#22` へ固定することで dual-lane 実行責務を明確化するため。
+- **検証:** `gh auth status` pass。`gh project item-list` で `#22 = In progress` と `#10 = Done` を確認。GPT-5.4 xHigh subagent 監査で `#22 Done` 主張不可（証跡不足）を確認。
+- **決定オーナー:** エージェント（現場定例、GPT-5.4 xHigh manager + checker）
+- **次手:** 次 run で `onigame-dodge60#22` を実装し、1 friction fix + live verify + issue証跡投入まで完了する。

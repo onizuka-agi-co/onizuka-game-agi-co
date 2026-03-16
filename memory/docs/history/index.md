@@ -1023,3 +1023,28 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (coordination + evidence reconciliation slice)
+
+### 変更履歴更新 (2026-03-16 Meeting 018)
+- 追加: `memory/docs/2026/03/16/meeting-018-light-game.md`
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `DECISIONS.md` (Meeting 018 decision + verified closure)
+- 更新: `PROJECTS.md` (Meeting 018 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-16 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- 実装リポジトリ: `games/onigame-lane-flip-sprint` commit `a3f6342` pushed
+- 検証: live 3ケースで `LIVE cue` 挙動（queued保持 / manual消灯 / fallback消灯）を確認
+- GitHub sync: `onigame-lane-flip-sprint#10` closed + Project #2 `Done`、`onigame-dodge60#22` は `Ready / P1 / S` 維持
+
+### 変更履歴更新 (2026-03-16 Meeting 019)
+- 追加: `memory/docs/2026/03/16/meeting-019-light-game.md`
+- 更新: `memory/docs/2026/03/16/index.md`
+- 更新: `DECISIONS.md` (Meeting 019 decision + lane restore)
+- 更新: `PROJECTS.md` (Meeting 019 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-16 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Project sync:
+  - `onigame-dodge60#22` moved `Ready -> In progress`
+  - `onigame-lane-flip-sprint#10` remained `Done / P1 / S`
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (coordination + board transition slice)
