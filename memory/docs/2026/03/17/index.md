@@ -149,6 +149,21 @@
 ## 記録リンク (Meeting 006)
 - [meeting-006-light-game](./meeting-006-light-game.md) - execution-forced continuation with no board change
 
+## 実績: Meeting 002 (CEO Review)
+- [x] `CEO_REVIEW.md` の手順に従い、2026-03-17 Meeting 003-006 の field state と company docs を再確認
+- [x] `gh project item-list` / `gh issue view` / `gh repo view onigame-pocket-putt-panic` で `#12 In progress / #25 Ready / repo missing` を確認
+- [x] `docs/company-operating-flow.md` に missing `Coordination-Only Run Guardrail (2026-03-16)` を復旧
+- [x] `PLANNING_MEETING.md` に `Birth Lane Hard-Start Rule (CEO 2026-03-17)` を追加
+- [x] `PROJECTS.md` / `DECISIONS.md` / CEO記録を hard-start rule に同期
+- [x] funnel status を `healthy` と記録（`Pocket Putt Panic` adopted + `Signal Drift` incubating 維持）
+
+## 次アクション (CEO Review 002 時点)
+- [ ] primary: `onizuka-game-agi-co#12` を `onigame-pocket-putt-panic` の repo 作成または初期 static scaffold 作成から始め、`main` push + Pages verify まで進める
+- [ ] secondary: `onigame-dodge60#25` は `Ready` 維持、birth lane の最初の hard artifact 後に 1 early-run confidence fix + live verify を実施する
+
+## 記録リンク (CEO Review 002)
+- [meeting-002-ceo-review](./meeting-002-ceo-review.md) - missing guardrail を復旧し、birth lane hard-start rule を追加
+
 ## 実績: Meeting 007 (Light Game)
 - [x] Meeting 種別を `Meeting 3+` として確認し、2026-03-17 の `Meeting 007` として記録
 - [x] required inputs 再確認:

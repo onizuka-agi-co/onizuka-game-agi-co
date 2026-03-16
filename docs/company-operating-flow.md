@@ -149,6 +149,19 @@ flowchart TD
 - CEO intervention during the same day should happen when mission drift, excessive scope, or a serious blocker is visible.
 - A mid-flight active product does not cancel the `birth lane`; it only means the `live lane` already exists.
 
+## Coordination-Only Run Guardrail (2026-03-16)
+
+- If the same lane ends 2 runs in a row with no code change and no relevant verification, the next run may not close as board/log sync only.
+- The forced next run must leave at least one hard artifact in the stalled lane:
+  - code change in the target repo
+  - relevant verification evidence
+  - or an explicit simplify / pivot / demote decision if the current concept is no longer worth shipping
+- For a `birth lane` whose repo does not exist yet, the minimum hard artifact is:
+  - creation of the `onigame-*` repository
+  - or creation of the initial static scaffold (`index.html`, `styles.css`, `app.js`, `README.md`)
+- A `birth lane` issue may stay `In progress` without a repo only once after Meeting 2 lock. If the repo is still missing on the following run, repo creation or concept shrink/pivot must happen in that same run.
+- Logs should record the exact first artifact created, not only the intention to start.
+
 ## One Run Flow
 
 1. 最新ルールを読む

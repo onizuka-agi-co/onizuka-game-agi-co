@@ -6,6 +6,12 @@
 
 ## 2026-03
 
+### 2026-03-17: CEO Review 002 repaired the missing coordination-only guardrail and added a birth-lane hard-start rule
+- **決定:** `docs/company-operating-flow.md` に実在していなかった `Coordination-Only Run Guardrail (2026-03-16)` を canonical source of truth として復旧し、あわせて `PLANNING_MEETING.md` に `Birth Lane Hard-Start Rule (CEO 2026-03-17)` を追加した。Meeting 2 で birth lane を lock した後、repo 未作成のまま coordination-only を繰り返すことを運営違反として扱う。
+- **理由:** 2026-03-17 Meeting 003-006 で `onizuka-game-agi-co#12` は `In progress` のまま、repo `onigame-pocket-putt-panic` が未作成、実装差分も relevant verify も 0 の run が続いた。さらに 2026-03-16 CEO Review 002 で「canonical docs に追加済み」と記録した guardrail が `docs/company-operating-flow.md` 上で確認できず、company OS の source-of-truth 自体にズレがあったため。
+- **検証:** `gh project item-list 2 --owner onizuka-agi-co --limit 200 --format json` で `onizuka-game-agi-co#12 = In progress / P0 / S` と `onigame-dodge60#25 = Ready / P1 / S` を確認し、`gh issue view 12` / `gh issue view 25` で両 issue が `OPEN` のままであることを確認した。`gh repo view onizuka-agi-co/onigame-pocket-putt-panic` は repository not found を返し、`docs/company-operating-flow.md` 全文確認では guardrail heading が未記載だった。
+- **次手:** 次の field run は `onizuka-game-agi-co#12` の最初の hard artifact として `onigame-pocket-putt-panic` repo 作成または初期 static scaffold 作成から開始する。これが無理なら同 run 内で concept をさらに縮小または demote する。secondary は `onigame-dodge60#25` を `Ready` 維持とする。
+
 ### 2026-03-17: Meeting 006 kept Pocket Putt Panic primary and recorded a third execution-forced coordination-only run
 - **決定:** `birth lane` `onizuka-game-agi-co#12` を引き続き primary とし、`live lane` `onigame-dodge60#25` は `Ready / P1 / S` の secondary として維持した。board live state は既に正しかったため、Project #2 の status 変更は行わなかった。
 - **理由:** 2026-03-17 の fresh app birth は依然として repo bootstrap / GitHub Pages verify に到達しておらず、day minimum outcome に最も遠い lane は引き続き `birth lane` のため。`#12 In progress / #25 Ready` は execution queue として整合しており、今回不足していたのは board 操作ではなく実装着手だった。

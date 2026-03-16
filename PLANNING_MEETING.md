@@ -87,6 +87,17 @@
 - 同一テーマで 2 run 連続で実装差分が 0 の場合、3 run 目は会議ログ内に `Execution debt` セクションを作成し、未実装理由と次runの開始5分タスクを固定する。
 - 実装差分がない run では、`次の 1 手` は「同じ文言の再掲」ではなく開始条件（作るファイル名または最初の関数名）まで具体化する。
 
+## Birth Lane Hard-Start Rule (CEO 2026-03-17)
+
+- Meeting 2 で birth-lane の repo/bootstrap plan を lock したら、Meeting 3+ は同じ plan の再確認だけで閉じてはいけない。
+- target repo がまだ存在しない場合、次 run の最初の hard deliverable は次のいずれか:
+  - `onigame-*` repo の作成
+  - 初期 static scaffold (`index.html`, `styles.css`, `app.js`, `README.md`) の作成
+  - 初期 scaffold の `main` push または GitHub Pages 有効化
+- board sync、issue wording、meeting log 更新は、その hard artifact の後に行う。代替にはしない。
+- execution-forced を 2 run 続けても repo 不在かつ code diff 0 のままなら、次 run では concept をさらに縮小するか demote するかを同 run 内で決める。
+- 会議ログには、最初に作った repo / file artifact か、明示した pivot / demotion action を必ず書く。
+
 ## Meeting Style
 
 - 会議は短く、実務寄りに進める
@@ -249,6 +260,7 @@
 4. If it is Meeting 3 or later:
    - keep both lanes moving by default
    - use the current run's primary slice to advance the lane that is furthest from the day's minimum outcome
+   - if the locked `birth lane` repo is still missing, default the primary slice to repo creation or scaffold creation first
    - do not reopen broad concept discussion unless the chosen concept is clearly too heavy or no longer worth shipping
 5. Check GitHub Project #2 and keep both lanes visible:
    - one real implementation item for the `live lane`
@@ -267,6 +279,7 @@
 - Prefer one clear thin slice per run.
 - Prefer the smallest next slice that can move the game toward live playable value.
 - Once the day enters execution mode, concept re-planning is an exception, not the default.
+- When a locked `birth lane` still lacks a repo, prefer repo/scaffold creation over more coordination-only reaffirmation.
 - If the concept becomes too heavy, simplify it quickly instead of expanding the planning phase.
 - Do not finish the day with only `live lane` polish and no `birth lane` app creation.
 - Do not finish the day with only `birth lane` bootstrap and no verified improvement on the current live app.

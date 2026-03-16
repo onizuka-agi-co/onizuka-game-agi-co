@@ -1230,6 +1230,23 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (execution-forced continuation slice)
 
+### 変更履歴更新 (2026-03-17 CEO Review 002)
+- 追加: `memory/docs/2026/03/17/meeting-002-ceo-review.md`
+- 更新: `docs/company-operating-flow.md` (missing coordination-only guardrail を復旧し、birth-lane repo-start boundary を追加)
+- 更新: `PLANNING_MEETING.md` (`Birth Lane Hard-Start Rule` を追加し、Meeting 3+ の primary selection を補強)
+- 更新: `PROJECTS.md` (`Pocket Putt Panic` の current next hand と CEO Review 002 update を同期)
+- 更新: `DECISIONS.md` (CEO Review 002 decision を追記)
+- 更新: `memory/docs/2026/03/17/index.md`
+- 更新: `memory/docs/2026/03/index.md`
+- 更新: `memory/docs/history/index.md` (this entry)
+- Verification:
+  - `gh project item-list 2 --owner onizuka-agi-co --limit 200 --format json` で `#12 In progress / #25 Ready` を確認
+  - `gh issue view 12` / `gh issue view 25` で両 issue `OPEN` を確認
+  - `gh repo view onizuka-agi-co/onigame-pocket-putt-panic` で repo 未作成を確認
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (CEO operating-system repair slice)
+
 ### 変更履歴更新 (2026-03-17 Meeting 007)
 - 追加: `memory/docs/2026/03/17/meeting-007-light-game.md`
 - 更新: `memory/docs/2026/03/17/index.md`

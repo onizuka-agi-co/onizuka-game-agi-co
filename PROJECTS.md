@@ -31,7 +31,7 @@
 - `live lane`: `onigame-dodge60`
   - current next hand: `onigame-dodge60#25` を 1 early-run confidence fix + live verify で Done に進める
 - `birth lane`: `Pocket Putt Panic`
-  - current next hand: `onizuka-game-agi-co#12` を `onigame-pocket-putt-panic` の repo bootstrap + Pages verify まで進める
+  - current next hand: `onizuka-game-agi-co#12` を `onigame-pocket-putt-panic` の repo 作成または初期 static scaffold 作成から開始し、Pages verify まで進める
 - shipped secondary queue:
   - `onigame-lane-flip-sprint` は `#10` まで完了済みで、post-playtest friction が見えたときのみ再開
   - `onigame-one-stroke-sweep` は first playable 公開済みで、current lanes が詰まっていない限り secondary polish 候補
@@ -73,7 +73,7 @@
 - **セッション長:** 15秒
 - **採用理由:** 既存 3 タイトルと操作ファンタジーが重ならず、GitHub Pages 静的構成のまま 1 画面 / 短時間で検証しやすい
 - **現況:** 2026-03-17 Meeting 001-002 で company issue `onizuka-game-agi-co#12` を作成し、concept / first playable / repo plan / release bar を lock。repo plan は `onigame-pocket-putt-panic`
-- **次アクション:** `onizuka-game-agi-co#12` を primary として repo bootstrap、GitHub Pages publish、live verify まで same-day で完了する
+- **次アクション:** `onizuka-game-agi-co#12` を primary として repo 作成または `index.html` / `styles.css` / `app.js` / `README.md` の初期 scaffold を最初の hard artifact とし、そのまま GitHub Pages publish / live verify まで same-day で完了する
 
 ---
 
@@ -224,6 +224,16 @@ _更新日: 2026-03-17_
 - Next action:
   - Primary (`birth lane`): execute `onizuka-game-agi-co#12` now and finish `onigame-pocket-putt-panic` bootstrap + Pages verify
   - Secondary (`live lane`): keep `onigame-dodge60#25` ready for one early-run confidence fix + live verify after birth-lane closure
+
+## 2026-03-17 CEO Review 002 update
+- CEO判断: `live lane = onigame-dodge60` / `birth lane = Pocket Putt Panic` の dual-lane は維持。今回の問題は戦略ではなく、company OS の source-of-truth drift と execution start の弱さ。
+- 運営修正:
+  - `docs/company-operating-flow.md` に missing `Coordination-Only Run Guardrail (2026-03-16)` を復旧
+  - `PLANNING_MEETING.md` に `Birth Lane Hard-Start Rule (CEO 2026-03-17)` を追加
+  - repo 未作成の birth lane を `In progress` のまま reaffirm し続けない boundary を明文化
+- 次アクション固定:
+  - primary: `onizuka-game-agi-co#12` は `onigame-pocket-putt-panic` の repo 作成または初期 static scaffold 作成を最初の hard artifact にし、そのまま `main` push + Pages verify まで進める
+  - secondary: `onigame-dodge60#25` は `Ready / P1 / S` 維持、birth lane の最初の hard artifact 後に 1 early-run confidence fix + live verify を実施
 
 ## 2026-03-13 Meeting 002 追記
 - onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。
