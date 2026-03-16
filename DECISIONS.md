@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-17: Meeting 004 kept Pocket Putt Panic primary and recorded execution debt after two coordination-only runs
+- **決定:** `birth lane` `onizuka-game-agi-co#12` を primary のまま維持し、`live lane` `onigame-dodge60#25` は `Ready / P1 / S` の secondary として据え置いた。あわせて `Pocket Putt Panic` を `Meeting 003-004` の連続 coordination-only lane と判定し、次 run を execution-forced に固定した。
+- **理由:** 2026-03-17 の fresh app birth はまだ repo bootstrap / GitHub Pages verify に到達しておらず、day minimum outcome に最も遠いのは `birth lane` のため。board state 自体は既に `#12 In progress / #25 Ready` で正しく、今回必要だったのは status 変更より execution debt の明文化だった。
+- **検証:** `gh auth status` を `GH_TOKEN` 経由で確認し、`gh project item-list 2 --owner onizuka-agi-co --limit 200 --format json` で `onizuka-game-agi-co#12 = In progress / P0 / S` と `onigame-dodge60#25 = Ready / P1 / S` を再確認した。実装repoの code change / live verify は本 run では未実施。
+- **決定オーナー:** エージェント（現場定例、Meeting 004 coordination guardrail run）
+- **次手:** 次 run は `onizuka-game-agi-co#12` の execution-forced run とし、`onigame-pocket-putt-panic` の repo bootstrap -> `main` push -> GitHub Pages verify を完了する。`onigame-dodge60#25` はその次の verified live-lane slice として維持する。
+
 ### 2026-03-17: CEO Review 001 adopted Pocket Putt Panic and restored a non-empty funnel
 - **決定:** 会社の主戦略は維持しつつ、canonical docs を 2026-03-17 の現況へ同期した。`Pocket Putt Panic` を `adopted` に移し、`Signal Drift` を次の `incubating` 候補へ昇格した。あわせて `README.md` / `IDEAS.md` / `ROADMAP.md` / `PROJECTS.md` の current summary を更新した。
 - **理由:** 2026-03-17 の Meeting 001-003 で `Pocket Putt Panic` は active birth lane として選定・scope lock・Project #2 `In progress` まで進んだが、idea funnel と roadmap summary はその一段前の状態に留まっていた。active birth lane を `incubating` のままにすると project state と funnel state がズレ、behind-the-lane の候補も空になるため。

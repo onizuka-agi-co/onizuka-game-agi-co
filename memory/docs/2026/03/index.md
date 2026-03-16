@@ -58,3 +58,4 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-17](./17/) - Meeting 002 で `Pocket Putt Panic` の bootstrap scope と `onigame-dodge60#25` の acceptance bar を lock
 - [2026-03-17](./17/) - Meeting 003 で `Pocket Putt Panic` を Project #2 `In progress / P0 / S` へ進め、birth lane primary を execution queue に固定
 - [2026-03-17](./17/) - CEO Review 001 で `Pocket Putt Panic` を adopted へ反映し、`Signal Drift` を incubating へ昇格、Q1 roadmap / projects を現況同期
+- [2026-03-17](./17/) - Meeting 004 で `Pocket Putt Panic` を primary 維持のまま execution debt を記録し、次 run を execution-forced に固定

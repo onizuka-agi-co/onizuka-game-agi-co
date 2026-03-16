@@ -85,3 +85,24 @@
 
 ## 記録リンク (CEO Review 001)
 - [meeting-001-ceo-review](./meeting-001-ceo-review.md) - active birth lane の採用同期と non-empty funnel の回復
+
+## 実績: Meeting 004 (Light Game)
+- [x] Meeting 判定を `Meeting 3+` の継続（本日 4 本目）として実施
+- [x] GitHub Project #2 実査:
+  - [x] `onizuka-game-agi-co#12` = `In progress / P0 / S`
+  - [x] `onigame-dodge60#25` = `Ready / P1 / S`
+- [x] board state が既に正しいことを確認し、status は据え置き
+- [x] `birth lane` の coordination-only 2 連続を `Execution debt` として記録
+- [x] 次 run を `Pocket Putt Panic` の execution-forced mode に固定
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 004 時点)
+- [ ] primary: `onizuka-game-agi-co#12` を execution-forced で実行し、`onigame-pocket-putt-panic` を repo bootstrap + Pages verify まで完了する
+- [ ] secondary: `onigame-dodge60#25` は `Ready` 維持のまま、birth lane 完了後に 1 early-run confidence fix + live verify で Done に進める
+
+## 日次2レーン状態 (Meeting 004)
+- `live lane`: ready
+- `birth lane`: in progress
+
+## 記録リンク (Meeting 004)
+- [meeting-004-light-game](./meeting-004-light-game.md) - coordination-only streak を execution debt として固定
