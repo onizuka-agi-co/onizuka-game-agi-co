@@ -106,3 +106,24 @@
 
 ## 記録リンク (Meeting 004)
 - [meeting-004-light-game](./meeting-004-light-game.md) - coordination-only streak を execution debt として固定
+
+## 実績: Meeting 005 (Light Game)
+- [x] Meeting 判定を `Meeting 3+` の継続（本日 5 本目）として実施
+- [x] GitHub Project #2 / issue 実査:
+  - [x] `onizuka-game-agi-co#12` = `In progress / P0 / S`
+  - [x] `onigame-dodge60#25` = `Ready / P1 / S`
+  - [x] 両 issue が `OPEN` のまま維持されていることを確認
+- [x] `birth lane` primary / `live lane` secondary の lane call を再確認
+- [x] `gpt-5.4` `xhigh` 監査席で lane call と next-hand wording を検証
+- [x] meeting-scope ログ更新（meeting / daily / decisions / projects / monthly index / history）
+
+## 次アクション (Meeting 005 時点)
+- [ ] primary: `onizuka-game-agi-co#12` を execution-forced のまま実行し、`onigame-pocket-putt-panic` を repo bootstrap + Pages verify まで完了する
+- [ ] secondary: `onigame-dodge60#25` は `Ready` 維持のまま、birth lane 完了後に 1 early-run confidence fix + live verify で Done に進める
+
+## 日次2レーン状態 (Meeting 005)
+- `live lane`: ready
+- `birth lane`: in progress
+
+## 記録リンク (Meeting 005)
+- [meeting-005-light-game](./meeting-005-light-game.md) - execution-forced lane call reaffirmed without board change
