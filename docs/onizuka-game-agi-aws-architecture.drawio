@@ -42,7 +42,7 @@
           <mxGeometry x="56" y="366" width="208" height="18" as="geometry"/>
         </mxCell>
 
-        <mxCell id="agent-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.q_developer;html=1;" vertex="1" parent="1">
+        <mxCell id="agent-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.users;html=1;" vertex="1" parent="1">
           <mxGeometry x="132" y="432" width="56" height="56" as="geometry"/>
         </mxCell>
         <mxCell id="agent-label" value="Codex + agent team" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
@@ -235,10 +235,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="agent-to-step" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#8AA2B2;strokeWidth=1.8;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.35;entryDx=0;entryDy=0;" edge="1" parent="1" source="agent-icon" target="step-icon">
+        <mxCell id="agent-to-step" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#8AA2B2;strokeWidth=1.8;endArrow=block;endFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.35;entryDx=0;entryDy=0;" edge="1" parent="1" source="agent-icon" target="step-icon">
             <mxGeometry relative="1" as="geometry">
               <Array as="points">
-                <mxPoint x="820" y="470"/>
+                <mxPoint x="820" y="446"/>
                 <mxPoint x="820" y="334"/>
               </Array>
             </mxGeometry>
@@ -284,8 +284,8 @@
               <Array as="points">
                 <mxPoint x="1660" y="344"/>
                 <mxPoint x="1660" y="940"/>
-                <mxPoint x="360" y="940"/>
-                <mxPoint x="360" y="844"/>
+                <mxPoint x="340" y="940"/>
+                <mxPoint x="340" y="844"/>
               </Array>
             </mxGeometry>
           </mxCell>
