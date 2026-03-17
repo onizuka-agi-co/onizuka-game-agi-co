@@ -1394,3 +1394,23 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (execution-forced continuation slice)
+
+### 変更履歴更新 (2026-03-17 Meeting 014)
+- 追加: `memory/docs/2026/03/17/meeting-014-light-game.md`
+- 更新: `memory/docs/2026/03/17/index.md`
+- 更新: `DECISIONS.md` (Meeting 014 decision + no-overclaim boundary reaffirmed)
+- 更新: `PROJECTS.md` (Meeting 014 lane status update)
+- 更新: `memory/docs/2026/03/index.md` (2026-03-17 summary refreshed)
+- 更新: `memory/docs/history/index.md` (this entry)
+- Project sync confirmation:
+  - `gh auth status` passed with `GH_TOKEN`
+  - `onizuka-game-agi-co#12` remained `In progress / P0 / S`
+  - `onigame-dodge60#25` remained `Ready / P1 / S`
+  - both issues remained open
+  - `onizuka-agi-co/onigame-pocket-putt-panic` repository was still missing
+- Subagent note:
+  - one `GPT-5.4 xHigh` audit seat (`Newton`) completed
+  - verdict: keep `birth lane` primary / `live lane` secondary / no Project #2 field change / no `Done` claim, with child repo -> scaffold -> first local commit -> remote create -> push -> Pages verify wording
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - no game-repo code commit in this run (execution-forced continuation slice)

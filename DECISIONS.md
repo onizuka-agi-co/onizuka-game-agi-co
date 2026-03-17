@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-17: Meeting 014 kept Pocket Putt Panic primary and tightened the no-overclaim boundary
+- **決定:** `birth lane` `onizuka-game-agi-co#12` を primary のまま維持し、`live lane` `onigame-dodge60#25` は `Ready / P1 / S` の secondary として据え置いた。Project #2 field 変更は行わず、今回も `Done` 主張は行わない。
+- **理由:** 2026-03-17 の fresh app birth は依然として child repo / initial scaffold / first local commit / GitHub Pages verify に到達しておらず、最も遅れている lane は引き続き `birth lane` のため。Meeting 013 までに固定した child-repo-first launch path も未着手で、今回必要だったのは board 変更ではなく `repo created` や `first local commit exists` のような過剰主張を避ける表現境界の再確認だった。
+- **検証:** `gh auth status` を `GH_TOKEN` 経由で確認し、`gh issue view 12 --repo onizuka-agi-co/onizuka-game-agi-co --json number,title,state,url` と `gh issue view 25 --repo onizuka-agi-co/onigame-dodge60 --json number,title,state,url` で両 issue が `OPEN` のままであることを確認した。`gh project item-list 2 --owner onizuka-agi-co --limit 200 --format json` で `onizuka-game-agi-co#12 = In progress / P0 / S` と `onigame-dodge60#25 = Ready / P1 / S` を再確認し、`gh repo view onizuka-agi-co/onigame-pocket-putt-panic --json name,url` は repository not found を返した。`GPT-5.4 xHigh` audit seat は Meeting 014 を `Meeting 3+` と認定し、lane call と no-overclaim boundary を accept した。実装repoの code change / live verify は本 run では未実施。
+- **決定オーナー:** エージェント（現場定例、Meeting 014 execution-forced continuation run + GPT-5.4 xHigh audit seat）
+- **次手:** 次 run は `onizuka-game-agi-co#12` を実行し、`games/onigame-pocket-putt-panic/` を独立 child repo として作成し、`index.html` / `styles.css` / `app.js` / `README.md` を追加して first local commit を残す。その後 remote repo 作成、`main` push、GitHub Pages verify へ進める。`onigame-dodge60#25` はその child-repo artifact 後の verified live-lane slice として維持する。
+
 ### 2026-03-17: Meeting 013 kept Pocket Putt Panic primary and preserved the child-repo-first next hand
 - **決定:** `birth lane` `onizuka-game-agi-co#12` を primary のまま維持し、`live lane` `onigame-dodge60#25` は `Ready / P1 / S` の secondary として据え置いた。Project #2 field 変更は行わず、今回も `Done` 主張は行わない。
 - **理由:** 2026-03-17 の fresh app birth は依然として child repo / initial scaffold / first local commit / GitHub Pages verify に到達しておらず、最も遅れている lane は引き続き `birth lane` のため。CEO Review 003 で固定された child-repo-first launch path もまだ未着手で、board 状態を動かす根拠は増えていない。
