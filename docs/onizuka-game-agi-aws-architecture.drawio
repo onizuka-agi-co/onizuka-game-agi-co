@@ -68,7 +68,7 @@
         <mxCell id="actors-note-title" value="Reading note" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#180D40;" vertex="1" parent="1">
           <mxGeometry x="76" y="780" width="160" height="20" as="geometry"/>
         </mxCell>
-        <mxCell id="actors-note-text" value="This version borrows the look of common AWS architecture diagrams:&lt;br&gt;- official AWS icons lead the layout&lt;br&gt;- labels name the actual repo / workflow roles&lt;br&gt;- boundaries stay light and neutral&lt;br&gt;- cyberpunk colors stay in title, notes, and accents only" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontFamily=Noto Sans JP;fontColor=#364152;" vertex="1" parent="1">
+        <mxCell id="actors-note-text" value="This view borrows the&lt;br&gt;look of common AWS-style&lt;br&gt;architecture diagrams:&lt;br&gt;- official icons lead&lt;br&gt;the layout&lt;br&gt;- labels name real repo&lt;br&gt;and workflow roles&lt;br&gt;- cyberpunk colors stay&lt;br&gt;only in accents" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;fontFamily=Noto Sans JP;fontColor=#364152;" vertex="1" parent="1">
           <mxGeometry x="76" y="812" width="168" height="186" as="geometry"/>
         </mxCell>
 
@@ -81,7 +81,7 @@
         <mxCell id="aws-boundary-title" value="Cloud-style boundary" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
           <mxGeometry x="372" y="190" width="260" height="20" as="geometry"/>
         </mxCell>
-        <mxCell id="aws-boundary-note" value="AWS icons are visual references only. Labels describe the real local / GitHub workflow instead of deployed AWS services." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
+        <mxCell id="aws-boundary-note" value="AWS icons are visual references only.&lt;br&gt;Labels map to the real local workflow.&lt;br&gt;No AWS services are deployed here." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
           <mxGeometry x="1240" y="118" width="280" height="52" as="geometry"/>
         </mxCell>
 
@@ -174,7 +174,7 @@
         <mxCell id="source-note" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#D0D7E2;strokeWidth=1;" vertex="1" parent="1">
           <mxGeometry x="392" y="636" width="300" height="52" as="geometry"/>
         </mxCell>
-        <mxCell id="source-note-text" value="Current local snapshot keeps game repos nested under /games.&lt;br&gt;Sibling repositories are also allowed." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
+        <mxCell id="source-note-text" value="Current local snapshot keeps game repos&lt;br&gt;under /games. Sibling repos are also allowed." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
           <mxGeometry x="408" y="646" width="268" height="32" as="geometry"/>
         </mxCell>
 
@@ -317,8 +317,8 @@
           </mxGeometry>
         </mxCell>
 
-        <mxCell id="footer" value="Updated: 2026-03-17 JST | Variant: AWS reference-style icon view | Source: docs/onizuka-game-agi-aws-architecture.drawio" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
-          <mxGeometry x="1080" y="1124" width="720" height="18" as="geometry"/>
+        <mxCell id="footer" value="Updated: 2026-03-17 JST | AWS-style visual metaphor | Source: docs/onizuka-game-agi-aws-architecture.drawio" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="1124" width="760" height="18" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>

@@ -29,13 +29,32 @@ function parseStyle(styleText = '') {
   const style = {};
 
   for (const declaration of styleText.split(';')) {
-    if (!declaration.includes(':')) {
+    const trimmed = declaration.trim();
+    if (!trimmed) {
       continue;
     }
 
-    const [rawKey, rawValue] = declaration.split(':');
-    const key = rawKey.trim();
-    const value = rawValue.trim();
+    const separatorIndex = (() => {
+      const equalsIndex = trimmed.indexOf('=');
+      const colonIndex = trimmed.indexOf(':');
+
+      if (equalsIndex === -1) {
+        return colonIndex;
+      }
+
+      if (colonIndex === -1) {
+        return equalsIndex;
+      }
+
+      return Math.min(equalsIndex, colonIndex);
+    })();
+
+    if (separatorIndex === -1) {
+      continue;
+    }
+
+    const key = trimmed.slice(0, separatorIndex).trim();
+    const value = trimmed.slice(separatorIndex + 1).trim();
 
     if (key) {
       style[key] = value;
@@ -1173,7 +1192,7 @@ async function main() {
     const terminalIssues = findShortTerminalSegments(edges);
   const companionDrawio = await readCompanionDrawio(targetPath);
   const textLayouts = companionDrawio ? parseDrawioTextLayouts(companionDrawio.text) : [];
-  const textBlocks = textLayouts.filter((layout) => !layout.isTextCell);
+  const textBlocks = textLayouts;
   const labelBoxes = textLayouts
     .filter((layout) => layout.isTextCell && layout.labelBox.width > 0 && layout.labelBox.height > 0)
     .map((layout) => layout.labelBox);
