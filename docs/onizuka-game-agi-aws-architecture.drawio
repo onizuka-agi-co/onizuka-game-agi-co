@@ -172,10 +172,10 @@
         </mxCell>
 
         <mxCell id="source-note" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#D0D7E2;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="392" y="636" width="300" height="52" as="geometry"/>
+          <mxGeometry x="392" y="658" width="300" height="42" as="geometry"/>
         </mxCell>
         <mxCell id="source-note-text" value="Current local snapshot keeps game repos&lt;br&gt;under /games. Sibling repos are also allowed." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
-          <mxGeometry x="408" y="646" width="268" height="32" as="geometry"/>
+          <mxGeometry x="408" y="666" width="268" height="26" as="geometry"/>
         </mxCell>
 
         <mxCell id="delivery-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCFDFE;strokeColor=#D0D7E2;strokeWidth=1.5;" vertex="1" parent="1">

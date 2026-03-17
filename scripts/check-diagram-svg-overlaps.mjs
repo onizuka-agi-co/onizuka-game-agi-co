@@ -14,6 +14,8 @@ const MIN_TERMINAL_SEGMENT_LENGTH = 20;
 const TERMINAL_SEGMENT_NOISE_TOLERANCE = 1;
 const LABEL_INTERIOR_THRESHOLD = 1;
 const LABEL_BOX_PADDING = 2;
+const LABEL_RECT_OVERLAP_AREA_THRESHOLD = 24;
+const FRAME_CELL_ID_PATTERN = /(?:^|[-_])frame(?:[-_]|$)/i;
 
 function parseAttributes(source) {
   const attributes = {};
@@ -261,6 +263,38 @@ function rectBounds(rect) {
   };
 }
 
+function intersectionRect(a, b) {
+  const minX = Math.max(a.x, b.x);
+  const minY = Math.max(a.y, b.y);
+  const maxX = Math.min(a.x + a.width, b.x + b.width);
+  const maxY = Math.min(a.y + a.height, b.y + b.height);
+
+  if (maxX <= minX || maxY <= minY) {
+    return null;
+  }
+
+  return {
+    x: minX,
+    y: minY,
+    width: maxX - minX,
+    height: maxY - minY,
+  };
+}
+
+function rectContainsRect(outer, inner, epsilon = EPSILON) {
+  return (
+    inner.x >= outer.x - epsilon
+    && inner.y >= outer.y - epsilon
+    && (inner.x + inner.width) <= (outer.x + outer.width + epsilon)
+    && (inner.y + inner.height) <= (outer.y + outer.height + epsilon)
+  );
+}
+
+function isOwnedTextRectPair(labelCellId, rectCellId) {
+  const normalizedLabelId = String(labelCellId).replace(/(?:-text|_text)$/i, '');
+  return normalizedLabelId === rectCellId;
+}
+
 function classifySegmentIntersection(first, second) {
   const firstVector = subtract(first.end, first.start);
   const secondVector = subtract(second.end, second.start);
@@ -382,6 +416,10 @@ function isDecorativeRect(rect) {
   if (
     lowerId.startsWith('label-')
     || lowerId.includes('-label')
+    || lowerId.endsWith('-chip')
+    || lowerId.includes('-chip-')
+    || lowerId.endsWith('_chip')
+    || lowerId.includes('badge')
     || lowerId === 'title'
     || lowerId === 'title-bg'
     || lowerId.endsWith('-bg')
@@ -393,6 +431,18 @@ function isDecorativeRect(rect) {
   }
 
   return isNone(rect.stroke);
+}
+
+function classifyRectLintRole(rect) {
+  if (FRAME_CELL_ID_PATTERN.test(rect.cellId)) {
+    return 'border-only';
+  }
+
+  if (isBackgroundRect(rect)) {
+    return 'ignore';
+  }
+
+  return 'obstacle';
 }
 
 function parseStyleNumber(style, key, fallback = null) {
@@ -589,6 +639,66 @@ function parseDrawioTextLayouts(drawioText) {
   }
 
   return layouts;
+}
+
+function parseDrawioRectLayouts(drawioText) {
+  const rects = [];
+  const cellRegex = /<mxCell\b([^>]*?)(?:\/>|>([\s\S]*?)<\/mxCell>)/g;
+
+  for (const match of drawioText.matchAll(cellRegex)) {
+    const [, rawAttributes = '', body = ''] = match;
+    const attributes = parseAttributes(rawAttributes);
+    const rawStyle = attributes.style ?? '';
+
+    if (attributes.vertex !== '1') {
+      continue;
+    }
+
+    if (/(^|;)text(;|$)/i.test(rawStyle)) {
+      continue;
+    }
+
+    const style = parseStyle(rawStyle);
+    const shape = String(style.shape ?? '').toLowerCase();
+
+    if (shape && !['rect', 'rectangle'].includes(shape)) {
+      continue;
+    }
+
+    const geometryMatch = body.match(/<mxGeometry\b([^>]*?)\/>/);
+    if (!geometryMatch) {
+      continue;
+    }
+
+    const geometryAttributes = parseAttributes(geometryMatch[1]);
+    const width = toNumber(geometryAttributes.width);
+    const height = toNumber(geometryAttributes.height);
+
+    if (width <= 0 || height <= 0) {
+      continue;
+    }
+
+    const rect = {
+      cellId: attributes.id ?? 'unknown-cell',
+      x: toNumber(geometryAttributes.x),
+      y: toNumber(geometryAttributes.y),
+      width,
+      height,
+      stroke: style.strokeColor,
+    };
+    const lintRole = classifyRectLintRole(rect);
+
+    if (lintRole === 'ignore') {
+      continue;
+    }
+
+    rects.push({
+      ...rect,
+      lintRole,
+    });
+  }
+
+  return rects;
 }
 
 function findTextOverflowIssues(textBlocks) {
@@ -992,6 +1102,54 @@ function findEdgeLabelCollisions(edges, labelBoxes) {
   return issues;
 }
 
+function findLabelRectOverlaps(labelBoxes, rects) {
+  const issues = [];
+
+  for (const label of labelBoxes) {
+    for (const rect of rects) {
+      if (label.cellId === rect.cellId) {
+        continue;
+      }
+
+      if (rect.lintRole !== 'obstacle') {
+        continue;
+      }
+
+      if (isOwnedTextRectPair(label.cellId, rect.cellId)) {
+        continue;
+      }
+
+      const overlap = intersectionRect(label, rect);
+
+      if (!overlap) {
+        continue;
+      }
+
+      if (rectContainsRect(rect, label)) {
+        continue;
+      }
+
+      const area = overlap.width * overlap.height;
+
+      if (area <= LABEL_RECT_OVERLAP_AREA_THRESHOLD) {
+        continue;
+      }
+
+      issues.push({
+        type: 'label-rect',
+        labelCellId: label.cellId,
+        rectCellId: rect.cellId,
+        label: label.label,
+        area,
+        width: overlap.width,
+        height: overlap.height,
+      });
+    }
+  }
+
+  return issues;
+}
+
 function findShortTerminalSegments(edges) {
   const issues = [];
 
@@ -1131,6 +1289,31 @@ function summarizeIssues(issues) {
       continue;
     }
 
+      if (issue.type === 'label-rect') {
+        const key = `${issue.labelCellId}::${issue.rectCellId}`;
+
+      if (!summaries.has(key)) {
+        summaries.set(key, {
+          type: 'label-rect',
+          labelCellId: issue.labelCellId,
+          rectCellId: issue.rectCellId,
+          label: issue.label,
+          maxArea: issue.area,
+          maxWidth: issue.width,
+          maxHeight: issue.height,
+          count: 1,
+        });
+        continue;
+      }
+
+      const summary = summaries.get(key);
+      summary.maxArea = Math.max(summary.maxArea, issue.area);
+      summary.maxWidth = Math.max(summary.maxWidth, issue.width);
+      summary.maxHeight = Math.max(summary.maxHeight, issue.height);
+      summary.count += 1;
+      continue;
+    }
+
     const key = `${issue.edgeCellId}::${issue.rectCellId}`;
 
     if (!summaries.has(key)) {
@@ -1170,6 +1353,10 @@ function formatIssue(issue) {
     return `- edge-label: ${issue.edgeCellId} crosses label text in ${issue.labelCellId} (max interior ${issue.maxLength.toFixed(1)}px across ${issue.count} segment(s)) [${issue.label}]`;
   }
 
+  if (issue.type === 'label-rect') {
+    return `- label-rect: ${issue.labelCellId} overlaps ${issue.rectCellId} (${issue.maxWidth.toFixed(1)}px x ${issue.maxHeight.toFixed(1)}px, max area ${issue.maxArea.toFixed(1)}px) [${issue.label}]`;
+  }
+
   if (issue.type === 'edge-rect-border') {
     const sides = [...issue.sides].sort().join(', ');
     return `- edge-rect-border: ${issue.edgeCellId} rides along ${issue.rectCellId} border (max overlap ${issue.maxLength.toFixed(1)}px across ${issue.count} segment(s); side(s): ${sides})`;
@@ -1198,7 +1385,9 @@ async function main() {
     .map((layout) => layout.labelBox);
   const textIssues = findTextOverflowIssues(textBlocks);
   const labelIssues = findEdgeLabelCollisions(edges, labelBoxes);
-    const issues = summarizeIssues([...edgeIssues, ...rectIssues, ...borderIssues, ...terminalIssues, ...labelIssues, ...textIssues]);
+  const drawioRects = companionDrawio ? parseDrawioRectLayouts(companionDrawio.text) : [];
+  const labelRectIssues = findLabelRectOverlaps(labelBoxes, drawioRects);
+    const issues = summarizeIssues([...edgeIssues, ...rectIssues, ...borderIssues, ...terminalIssues, ...labelIssues, ...labelRectIssues, ...textIssues]);
 
     console.log(`[diagram:check] ${path.relative(process.cwd(), targetPath)}`);
     console.log(`[diagram:check] parsed ${cells.size} cells, ${edges.length} edges, ${rects.length} obstacle rects, ${borderRects.length} border rects`);
@@ -1207,7 +1396,7 @@ async function main() {
   }
 
   if (issues.length === 0) {
-      console.log('[diagram:check] OK: no overlaps, border rides, label intrusions, or text overflows detected by the current heuristics');
+      console.log('[diagram:check] OK: no overlaps, border rides, label intrusions, label-box collisions, or text overflows detected by the current heuristics');
     return;
   }
 
