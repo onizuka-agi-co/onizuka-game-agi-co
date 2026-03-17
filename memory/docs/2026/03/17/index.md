@@ -353,3 +353,31 @@
 
 ## Log Links (Meeting 012)
 - [meeting-012-light-game](./meeting-012-light-game.md) - execution-forced continuation with unchanged board state and child-repo-first next hand
+
+## Status: Meeting 013 (Light Game)
+- [x] Confirmed this run is still `Meeting 3+` on 2026-03-17.
+- [x] Re-read required inputs for the current field state.
+- [x] Re-verified GitHub live state:
+  - [x] `gh auth status` passed with `GH_TOKEN`
+  - [x] `onizuka-game-agi-co#12` = `In progress / P0 / S`
+  - [x] `onigame-dodge60#25` = `Ready / P1 / S`
+  - [x] both issues remain `OPEN`
+  - [x] `onigame-pocket-putt-panic` repository is still missing
+- [x] Kept `birth lane` primary and `live lane` secondary.
+- [x] Kept Project #2 fields unchanged because the live board already matched the intended queue.
+- [x] Recorded `no child repo / no scaffold / no first local commit / no live verify / no Done claim`.
+- [x] One `GPT-5.4 xHigh` audit seat (`Anscombe`) completed and accepted the lane call, no-overclaim boundary, and child-repo-first next hand.
+- [x] Updated meeting-scope files (`meeting-013` / daily / decisions / projects / monthly / history).
+
+## Next Actions (Meeting 013)
+- [ ] primary: execute `onizuka-game-agi-co#12` and create `games/onigame-pocket-putt-panic/` as an independent child repo
+- [ ] primary continuation: add the initial static scaffold and make the first local commit as the first hard-start artifact
+- [ ] primary continuation: continue from that artifact to remote repo creation, `main` push, and GitHub Pages verify
+- [ ] secondary: keep `onigame-dodge60#25` ready, then execute one early-run confidence fix + live verify after the birth-lane child-repo artifact exists
+
+## Daily Dual-Lane Status (Meeting 013)
+- `live lane`: ready
+- `birth lane`: in progress
+
+## Log Links (Meeting 013)
+- [meeting-013-light-game](./meeting-013-light-game.md) - execution-forced continuation with unchanged board state and child-repo-first next hand
