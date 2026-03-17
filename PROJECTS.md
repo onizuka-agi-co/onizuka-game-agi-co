@@ -72,8 +72,8 @@
 - **想定ジャンル:** 1画面 mini-putt score attack
 - **セッション長:** 15秒
 - **採用理由:** 既存 3 タイトルと操作ファンタジーが重ならず、GitHub Pages 静的構成のまま 1 画面 / 短時間で検証しやすい
-- **現況:** 2026-03-17 Meeting 001-002 で company issue `onizuka-game-agi-co#12` を作成し、concept / first playable / repo plan / release bar を lock。repo plan は `onigame-pocket-putt-panic`
-- **次アクション:** `onizuka-game-agi-co#12` を primary として repo 作成または `index.html` / `styles.css` / `app.js` / `README.md` の初期 scaffold を最初の hard artifact とし、そのまま GitHub Pages publish / live verify まで same-day で完了する
+- **現況:** 2026-03-17 Meeting 001-002 で company issue `onizuka-game-agi-co#12` を作成し、concept / first playable / repo plan / release bar を lock。repo plan は `onigame-pocket-putt-panic`。2026-03-17 CEO Review 003 時点でも GitHub remote repo は未作成で、local child repo の first commit も company log にはまだ現れていない
+- **次アクション:** `onizuka-game-agi-co#12` を primary として `games/onigame-pocket-putt-panic/` の独立 child repo を作り、`index.html` / `styles.css` / `app.js` / `README.md` の初期 scaffold + first local commit を最初の hard artifact とする。その後 GitHub repo 作成、`main` push、GitHub Pages live verify まで same-day で進める
 
 ---
 
@@ -234,6 +234,16 @@ _更新日: 2026-03-17_
 - 次アクション固定:
   - primary: `onizuka-game-agi-co#12` は `onigame-pocket-putt-panic` の repo 作成または初期 static scaffold 作成を最初の hard artifact にし、そのまま `main` push + Pages verify まで進める
   - secondary: `onigame-dodge60#25` は `Ready / P1 / S` 維持、birth lane の最初の hard artifact 後に 1 early-run confidence fix + live verify を実施
+
+## 2026-03-17 CEO Review 003 update
+- CEO判断: `live lane = onigame-dodge60` / `birth lane = Pocket Putt Panic` の dual-lane は維持。今回の問題は concept ではなく、`repo missing` から child repo hard artifact へ移る実行経路が現場ルールにまだ十分埋め込まれていなかったこと。
+- 運営修正:
+  - `PLANNING_MEETING.md` に `Birth Repo Execution Path (CEO 2026-03-17)` を追加
+  - `docs/company-operating-flow.md` に `Birth Repo Launch Path (2026-03-17)` を追加
+  - `Pocket Putt Panic` の next hand を `games/onigame-pocket-putt-panic/` child repo -> first local commit -> GitHub repo -> Pages verify の順序へ具体化
+- 次アクション固定:
+  - primary: 次の現場 run は `games/onigame-pocket-putt-panic/` を独立 child repo として作成し、初期 scaffold + first local commit を必ず残したうえで remote 作成 / `main` push / Pages verify へ進む
+  - secondary: `onigame-dodge60#25` は `Ready / P1 / S` のまま維持し、birth lane に child-repo artifact が出た後に 1 early-run confidence fix + live verify を実施
 
 ## 2026-03-13 Meeting 002 追記
 - onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。

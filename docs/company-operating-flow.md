@@ -162,6 +162,19 @@ flowchart TD
 - A `birth lane` issue may stay `In progress` without a repo only once after Meeting 2 lock. If the repo is still missing on the following run, repo creation or concept shrink/pivot must happen in that same run.
 - Logs should record the exact first artifact created, not only the intention to start.
 
+## Birth Repo Launch Path (2026-03-17)
+
+- When the active `birth lane` remote repo is still missing, the field run should begin in `games/onigame-<slug>/` inside the company workspace.
+- Prefer the `onigame-repo-starter` skill for the standard launch path when it is available.
+- The valid first hard-artifact path is:
+  - create the local child repo directory
+  - initialize an independent git repo
+  - create the static scaffold (`index.html`, `styles.css`, `app.js`, `README.md`)
+  - make the first local commit
+  - then create the remote repo, push `main`, and verify GitHub Pages
+- If remote creation or Pages enablement is blocked, the run still counts as a hard-start only when the local child repo plus first commit exists and the blocker is logged explicitly.
+- Repeating company-repo log updates without that child-repo artifact is operating-system failure, not forward progress.
+
 ## One Run Flow
 
 1. 最新ルールを読む

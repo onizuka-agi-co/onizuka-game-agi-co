@@ -98,6 +98,19 @@
 - execution-forced を 2 run 続けても repo 不在かつ code diff 0 のままなら、次 run では concept をさらに縮小するか demote するかを同 run 内で決める。
 - 会議ログには、最初に作った repo / file artifact か、明示した pivot / demotion action を必ず書く。
 
+## Birth Repo Execution Path (CEO 2026-03-17)
+
+- target birth repo がまだ存在しない run は、company repo の docs 更新から始めず、`games/onigame-<slug>/` の child repo 実行から始める。
+- [`onigame-repo-starter`](./.agents/skills/onigame-repo-starter/SKILL.md) が利用可能なら、それを標準の起動手順として使う。利用できない場合も同じ流れを手動で実行する。
+- missing-repo run の最小順序は次の通り:
+  - `games/onigame-<slug>/` を作る
+  - child repo 内で `git init -b main` する
+  - `index.html` / `styles.css` / `app.js` / `README.md` を作る
+  - 最初の local commit を作る
+  - その後に GitHub repo 作成、`main` push、GitHub Pages verify へ進む
+- GitHub repo 作成や Pages 有効化が詰まっても、child repo と first commit が残っていれば hard-start artifact とみなす。その場合は blocker を明記し、次 hand を remote / publish 手順へ固定する。
+- `repo missing` のまま child repo も first commit も作らず、board sync と meeting log 更新だけで閉じるのは有効な Meeting 3+ close ではない。
+
 ## Meeting Style
 
 - 会議は短く、実務寄りに進める
