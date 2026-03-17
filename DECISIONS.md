@@ -2156,3 +2156,10 @@ _譖ｴ譁ｰ譌･: 2026-03-15_
 - **検証:** `gh auth status` を `GH_TOKEN` 経由で確認し、`gh project item-list 2 --owner onizuka-agi-co --limit 200` で `onizuka-game-agi-co#12 = In progress / P0 / S` と `onigame-dodge60#25 = Ready / P1 / S` を再確認した。さらに `gh issue view 12` と `gh issue view 25` で両 issue が `OPEN` のままであることを確認した。実装repoの code change / live verify は本 run では未実施。
 - **決定オーナー:** エージェント（現場定例、Meeting 007 execution-forced continuation run）
 - **次手:** 次 run は `onizuka-game-agi-co#12` を execution し、`onigame-pocket-putt-panic` の repo bootstrap -> `main` push -> GitHub Pages verify を完了する。`onigame-dodge60#25` はその後の verified live-lane slice として維持する。
+
+### 2026-03-17: Meeting 010 kept Pocket Putt Panic primary and preserved the unchanged board boundary
+- **決定:** `birth lane` `onizuka-game-agi-co#12` を primary のまま維持し、`live lane` `onigame-dodge60#25` は `Ready / P1 / S` の secondary として据え置いた。Project #2 field 変更は行わず、今回も `Done` 主張は行わない。
+- **理由:** 2026-03-17 の fresh app birth は依然として repo bootstrap / GitHub Pages verify に到達しておらず、`gh repo view onizuka-agi-co/onigame-pocket-putt-panic` でも target repo 不在が継続しているため。live board state はすでに `#12 In progress / #25 Ready` で正しく、今回不足していたのは board 操作ではなく hard-start artifact の実装だった。
+- **検証:** `gh auth status` を `GH_TOKEN` 経由で確認し、`gh issue view 12 --repo onizuka-agi-co/onizuka-game-agi-co --json number,title,state,url` と `gh issue view 25 --repo onizuka-agi-co/onigame-dodge60 --json number,title,state,url` で両 issue が `OPEN` のままであることを確認した。`gh project item-list 2 --owner onizuka-agi-co --limit 200 --format json` で `onizuka-game-agi-co#12 = In progress / P0 / S` と `onigame-dodge60#25 = Ready / P1 / S` を再確認し、`gh repo view onizuka-agi-co/onigame-pocket-putt-panic --json name,url` は repository not found を返した。実装repoの code change / live verify は本 run では未実施。
+- **決定オーナー:** エージェント（現場定例、Meeting 010 execution-forced continuation run）
+- **次手:** 次 run は `onizuka-game-agi-co#12` を実行し、`onigame-pocket-putt-panic` の repo 作成または `index.html` / `styles.css` / `app.js` / `README.md` の初期 scaffold 作成を first hard artifact として残し、そのまま `main` push -> GitHub Pages verify まで進める。`onigame-dodge60#25` はその後の verified live-lane slice として維持する。
