@@ -68,3 +68,4 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-17](./17/) - Meeting 010 で `Pocket Putt Panic` primary / `onigame-dodge60#25` secondary を再確認し、board 変更なしのまま next hand を hard-start artifact first に再固定
 - [2026-03-17](./17/) - Meeting 011 で `Pocket Putt Panic` primary / `onigame-dodge60#25` secondary を再確認し、`gh auth status` pass と repo 未作成継続を記録
 - [2026-03-17](./17/) - CEO Review 003 で repo-missing birth lane の child-repo launch path を canonical docs に追加し、次 run の first artifact を `games/onigame-pocket-putt-panic/` local repo + first commit に固定
+- [2026-03-17](./17/) - Meeting 012 で `Pocket Putt Panic` primary / `onigame-dodge60#25` secondary を再確認し、child-repo first の next hand を維持したまま auth / board / repo-missing state を再検証

@@ -240,10 +240,27 @@ _更新日: 2026-03-17_
 - 運営修正:
   - `PLANNING_MEETING.md` に `Birth Repo Execution Path (CEO 2026-03-17)` を追加
   - `docs/company-operating-flow.md` に `Birth Repo Launch Path (2026-03-17)` を追加
-  - `Pocket Putt Panic` の next hand を `games/onigame-pocket-putt-panic/` child repo -> first local commit -> GitHub repo -> Pages verify の順序へ具体化
+- `Pocket Putt Panic` の next hand を `games/onigame-pocket-putt-panic/` child repo -> first local commit -> GitHub repo -> Pages verify の順序へ具体化
 - 次アクション固定:
   - primary: 次の現場 run は `games/onigame-pocket-putt-panic/` を独立 child repo として作成し、初期 scaffold + first local commit を必ず残したうえで remote 作成 / `main` push / Pages verify へ進む
   - secondary: `onigame-dodge60#25` は `Ready / P1 / S` のまま維持し、birth lane に child-repo artifact が出た後に 1 early-run confidence fix + live verify を実施
+
+## 2026-03-17 Meeting 012 update
+- `Pocket Putt Panic` remains the **active birth lane**:
+  - `onizuka-game-agi-co#12` stays `In progress / P0 / S`
+  - GitHub remote repo is still missing
+  - local child repo, initial scaffold, and first local commit are still not present in company-record evidence
+- `onigame-dodge60` remains **active** as the secondary queue:
+  - `onigame-dodge60#25` stays `Ready / P1 / S`
+  - thin-slice contract is unchanged and still ready for the next verified live-lane slice
+- Meeting 012 was an execution-forced continuation slice:
+  - no Project #2 field change required
+  - no game-repo code change
+  - no live verify
+  - no `Done` claim
+- Next action:
+  - Primary (`birth lane`): execute `onizuka-game-agi-co#12` by creating `games/onigame-pocket-putt-panic/` as an independent child repo, adding the initial scaffold, and making the first local commit before remote/publish work
+  - Secondary (`live lane`): keep `onigame-dodge60#25` ready for one early-run confidence fix + live verify after the birth-lane child-repo artifact exists
 
 ## 2026-03-13 Meeting 002 追記
 - onigame-quickshot の次アクションは維持: games/onigame-quickshot の最小プロトタイプ実装。
