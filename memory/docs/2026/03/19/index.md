@@ -52,3 +52,9 @@
 - [x] rerouted `docs/onizuka-game-agi-company-structure.ja.drawio` so the governance and loop arrows no longer cut through nearby cards or rounded section frames
 - [x] regenerated the companion `docs/onizuka-game-agi-company-structure.ja.drawio.png` and `docs/onizuka-game-agi-company-structure.ja.drawio.svg` exports after the layout fix
 - [x] strengthened `scripts/check-diagram-svg-overlaps.mjs` so the pre-fix JA SVG now reports the missed `edge-rect` and `edge-rect-border` issues while the current JA SVG passes
+
+## Task: Diagram Readability And Terminal Spacing
+
+- [x] widened `ceo-review` in `docs/onizuka-game-agi-company-structure.ja.drawio` so the dark card text has more horizontal breathing room
+- [x] moved the `arrow-memory-review` terminal so the top-edge terminals on `ceo-review` are no longer visually crowded
+- [x] extended `scripts/check-diagram-svg-overlaps.mjs` with `text-legibility` and `edge-terminal-spacing`, then regenerated the companion JA SVG/PNG and re-ran the checker to `OK`

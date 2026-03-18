@@ -77,7 +77,7 @@
           <mxGeometry x="585" y="462" width="250" height="92" as="geometry"/>
         </mxCell>
         <mxCell id="ceo-review" value="&lt;b&gt;CEO レビュー自動化&lt;/b&gt;&lt;br&gt;方向修正、ガードレール、&lt;br&gt;次の一手" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f1f3a;strokeColor=#ffcc4f;strokeWidth=1.8;fontSize=15;fontFamily=Noto Sans JP;fontColor=#ffffff;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="920" y="462" width="250" height="92" as="geometry"/>
+          <mxGeometry x="905" y="462" width="280" height="92" as="geometry"/>
         </mxCell>
         <mxCell id="cto-chip" value="CTO フロー" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#13b3ce;strokeColor=#0f1f3a;strokeWidth=1.4;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
           <mxGeometry x="840" y="490" width="74" height="28" as="geometry"/>
@@ -150,7 +150,7 @@
             <Array as="points">
               <mxPoint x="1210" y="494"/>
               <mxPoint x="1210" y="430"/>
-              <mxPoint x="1050" y="430"/>
+              <mxPoint x="1015" y="430"/>
             </Array>
           </mxGeometry>
         </mxCell>

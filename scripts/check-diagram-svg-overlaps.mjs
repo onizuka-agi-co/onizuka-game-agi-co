@@ -13,9 +13,17 @@ const MIN_BORDER_OVERLAP_LENGTH = 12;
 const MAX_BORDER_CLEARANCE = 6;
 const MIN_TERMINAL_SEGMENT_LENGTH = 20;
 const TERMINAL_SEGMENT_NOISE_TOLERANCE = 1;
+const MIN_TERMINAL_SPACING = 16;
+const MAX_TERMINAL_SIDE_DISTANCE = 24;
 const LABEL_INTERIOR_THRESHOLD = 1;
 const LABEL_BOX_PADDING = 2;
 const LABEL_RECT_OVERLAP_AREA_THRESHOLD = 24;
+const COMPACT_TEXT_MAX_WIDTH = 280;
+const COMPACT_TEXT_MAX_HEIGHT = 110;
+const COMPACT_TEXT_MAX_FONT_SIZE = 15;
+const COMPACT_TEXT_MIN_LINES = 3;
+const COMPACT_TEXT_WIDTH_RATIO_THRESHOLD = 0.68;
+const COMPACT_TEXT_HEIGHT_RATIO_THRESHOLD = 0.72;
 const FRAME_CELL_ID_PATTERN = /(?:^|[-_])frame(?:[-_]|$)/i;
 
 function parseAttributes(source) {
@@ -82,6 +90,55 @@ function isNone(value) {
 
 function normalizePaint(value) {
   return String(value ?? '').trim().toLowerCase();
+}
+
+function parseHexColor(value) {
+  const normalized = normalizePaint(value);
+
+  if (!normalized.startsWith('#')) {
+    return null;
+  }
+
+  if (normalized.length === 4) {
+    return {
+      r: Number.parseInt(normalized.slice(1, 2).repeat(2), 16),
+      g: Number.parseInt(normalized.slice(2, 3).repeat(2), 16),
+      b: Number.parseInt(normalized.slice(3, 4).repeat(2), 16),
+    };
+  }
+
+  if (normalized.length === 7) {
+    return {
+      r: Number.parseInt(normalized.slice(1, 3), 16),
+      g: Number.parseInt(normalized.slice(3, 5), 16),
+      b: Number.parseInt(normalized.slice(5, 7), 16),
+    };
+  }
+
+  return null;
+}
+
+function isDarkPaint(value) {
+  const color = parseHexColor(value);
+
+  if (!color) {
+    return false;
+  }
+
+  const toLinear = (channel) => {
+    const normalized = channel / 255;
+    return normalized <= 0.04045
+      ? normalized / 12.92
+      : ((normalized + 0.055) / 1.055) ** 2.4;
+  };
+
+  const luminance = (
+    (0.2126 * toLinear(color.r))
+    + (0.7152 * toLinear(color.g))
+    + (0.0722 * toLinear(color.b))
+  );
+
+  return luminance <= 0.2;
 }
 
 function isWhiteLikeFill(fill) {
@@ -712,6 +769,10 @@ function parseDrawioTextLayouts(drawioText) {
       cellId: attributes.id ?? 'unknown-cell',
       value: decodeXmlEntities(attributes.value).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
       isTextCell,
+      fontSize,
+      lineCount: lines.length,
+      fillColor: style.fillColor,
+      fontColor: style.fontColor,
       x,
       y,
       width,
@@ -836,6 +897,168 @@ function findTextOverflowIssues(textBlocks) {
         available: block.availableHeight,
         estimated: block.estimatedHeight,
         label: block.value,
+      });
+    }
+  }
+
+  return issues;
+}
+
+function findTextLegibilityIssues(textBlocks) {
+  const issues = [];
+
+  for (const block of textBlocks) {
+    if (block.isTextCell) {
+      continue;
+    }
+
+    if (
+      block.lineCount < COMPACT_TEXT_MIN_LINES
+      || block.fontSize > COMPACT_TEXT_MAX_FONT_SIZE
+      || block.width > COMPACT_TEXT_MAX_WIDTH
+      || block.height > COMPACT_TEXT_MAX_HEIGHT
+      || !isDarkPaint(block.fillColor)
+    ) {
+      continue;
+    }
+
+    const widthRatio = block.availableWidth > 0 ? block.estimatedWidth / block.availableWidth : Infinity;
+    const heightRatio = block.availableHeight > 0 ? block.estimatedHeight / block.availableHeight : Infinity;
+
+    if (
+      widthRatio < COMPACT_TEXT_WIDTH_RATIO_THRESHOLD
+      || heightRatio < COMPACT_TEXT_HEIGHT_RATIO_THRESHOLD
+    ) {
+      continue;
+    }
+
+    issues.push({
+      type: 'text-legibility',
+      cellId: block.cellId,
+      label: block.value,
+      lineCount: block.lineCount,
+      fontSize: block.fontSize,
+      widthRatio,
+      heightRatio,
+      width: block.width,
+      height: block.height,
+    });
+  }
+
+  return issues;
+}
+
+function buildRectMap(rects) {
+  const rectMap = new Map();
+
+  for (const rect of rects) {
+    rectMap.set(rect.cellId, rect);
+  }
+
+  return rectMap;
+}
+
+function projectTerminalToRectSide(point, rect) {
+  const right = rect.x + rect.width;
+  const bottom = rect.y + rect.height;
+  const distances = [
+    {
+      side: 'top',
+      distance: Math.abs(point.y - rect.y),
+      x: clamp(point.x, rect.x, right),
+      y: rect.y,
+      axisCoord: clamp(point.x, rect.x, right),
+    },
+    {
+      side: 'bottom',
+      distance: Math.abs(point.y - bottom),
+      x: clamp(point.x, rect.x, right),
+      y: bottom,
+      axisCoord: clamp(point.x, rect.x, right),
+    },
+    {
+      side: 'left',
+      distance: Math.abs(point.x - rect.x),
+      x: rect.x,
+      y: clamp(point.y, rect.y, bottom),
+      axisCoord: clamp(point.y, rect.y, bottom),
+    },
+    {
+      side: 'right',
+      distance: Math.abs(point.x - right),
+      x: right,
+      y: clamp(point.y, rect.y, bottom),
+      axisCoord: clamp(point.y, rect.y, bottom),
+    },
+  ];
+
+  return distances.sort((first, second) => first.distance - second.distance)[0];
+}
+
+function findCrowdedEdgeTerminals(edges, rects) {
+  const issues = [];
+  const rectMap = buildRectMap(rects);
+  const terminals = [];
+
+  for (const edge of edges) {
+    if (edge.segments.length === 0) {
+      continue;
+    }
+
+    const sourceRect = edge.sourceCellId ? rectMap.get(edge.sourceCellId) : null;
+    if (sourceRect) {
+      const attachment = projectTerminalToRectSide(edge.segments[0].start, sourceRect);
+      if (attachment.distance <= MAX_TERMINAL_SIDE_DISTANCE) {
+        terminals.push({
+          edgeCellId: edge.cellId,
+          rectCellId: edge.sourceCellId,
+          position: 'start',
+          ...attachment,
+        });
+      }
+    }
+
+    const targetRect = edge.targetCellId ? rectMap.get(edge.targetCellId) : null;
+    if (targetRect) {
+      const attachment = projectTerminalToRectSide(edge.segments[edge.segments.length - 1].end, targetRect);
+      if (attachment.distance <= MAX_TERMINAL_SIDE_DISTANCE) {
+        terminals.push({
+          edgeCellId: edge.cellId,
+          rectCellId: edge.targetCellId,
+          position: 'end',
+          ...attachment,
+        });
+      }
+    }
+  }
+
+  for (let firstIndex = 0; firstIndex < terminals.length; firstIndex += 1) {
+    for (let secondIndex = firstIndex + 1; secondIndex < terminals.length; secondIndex += 1) {
+      const first = terminals[firstIndex];
+      const second = terminals[secondIndex];
+
+      if (
+        first.edgeCellId === second.edgeCellId
+        || first.rectCellId !== second.rectCellId
+        || first.side !== second.side
+      ) {
+        continue;
+      }
+
+      const spacing = Math.abs(first.axisCoord - second.axisCoord);
+      if (spacing + EPSILON >= MIN_TERMINAL_SPACING) {
+        continue;
+      }
+
+      issues.push({
+        type: 'edge-terminal-spacing',
+        rectCellId: first.rectCellId,
+        side: first.side,
+        firstEdgeCellId: first.edgeCellId,
+        firstPosition: first.position,
+        secondEdgeCellId: second.edgeCellId,
+        secondPosition: second.position,
+        spacing,
       });
     }
   }
@@ -1348,8 +1571,24 @@ function summarizeIssues(issues) {
       continue;
     }
 
-      if (issue.type === 'edge-terminal') {
-        const key = `${issue.edgeCellId}::${issue.position}`;
+    if (issue.type === 'text-legibility') {
+      const key = `${issue.cellId}::text-legibility`;
+
+      if (!summaries.has(key)) {
+        summaries.set(key, { ...issue });
+      } else {
+        const summary = summaries.get(key);
+        summary.widthRatio = Math.max(summary.widthRatio, issue.widthRatio);
+        summary.heightRatio = Math.max(summary.heightRatio, issue.heightRatio);
+        summary.lineCount = Math.max(summary.lineCount, issue.lineCount);
+        summary.fontSize = Math.max(summary.fontSize, issue.fontSize);
+      }
+
+      continue;
+    }
+
+    if (issue.type === 'edge-terminal') {
+      const key = `${issue.edgeCellId}::${issue.position}`;
 
       if (!summaries.has(key)) {
         summaries.set(key, {
@@ -1365,31 +1604,59 @@ function summarizeIssues(issues) {
       const summary = summaries.get(key);
       summary.minLength = Math.min(summary.minLength, issue.length);
       summary.count += 1;
+      continue;
+    }
+
+    if (issue.type === 'edge-terminal-spacing') {
+      const pairKey = [
+        `${issue.firstEdgeCellId}:${issue.firstPosition}`,
+        `${issue.secondEdgeCellId}:${issue.secondPosition}`,
+      ].sort().join('::');
+      const key = `edge-terminal-spacing::${issue.rectCellId}::${issue.side}::${pairKey}`;
+
+      if (!summaries.has(key)) {
+        summaries.set(key, {
+          type: 'edge-terminal-spacing',
+          rectCellId: issue.rectCellId,
+          side: issue.side,
+          firstEdgeCellId: issue.firstEdgeCellId,
+          firstPosition: issue.firstPosition,
+          secondEdgeCellId: issue.secondEdgeCellId,
+          secondPosition: issue.secondPosition,
+          minSpacing: issue.spacing,
+          count: 1,
+        });
         continue;
       }
 
-      if (issue.type === 'edge-rect-border') {
-        const key = `edge-rect-border::${issue.edgeCellId}::${issue.rectCellId}`;
+      const summary = summaries.get(key);
+      summary.minSpacing = Math.min(summary.minSpacing, issue.spacing);
+      summary.count += 1;
+      continue;
+    }
 
-        if (!summaries.has(key)) {
-          summaries.set(key, {
-            type: 'edge-rect-border',
-            edgeCellId: issue.edgeCellId,
-            rectCellId: issue.rectCellId,
-            details: new Set([`${issue.side}:${issue.relation}:${issue.offset.toFixed(1)}px/${issue.length.toFixed(1)}px`]),
-            count: 1,
-          });
-          continue;
-        }
+    if (issue.type === 'edge-rect-border') {
+      const key = `edge-rect-border::${issue.edgeCellId}::${issue.rectCellId}`;
 
-        const summary = summaries.get(key);
-        summary.details.add(`${issue.side}:${issue.relation}:${issue.offset.toFixed(1)}px/${issue.length.toFixed(1)}px`);
-        summary.count += 1;
+      if (!summaries.has(key)) {
+        summaries.set(key, {
+          type: 'edge-rect-border',
+          edgeCellId: issue.edgeCellId,
+          rectCellId: issue.rectCellId,
+          details: new Set([`${issue.side}:${issue.relation}:${issue.offset.toFixed(1)}px/${issue.length.toFixed(1)}px`]),
+          count: 1,
+        });
         continue;
       }
 
-      if (issue.type === 'edge-label') {
-        const key = `${issue.edgeCellId}::${issue.labelCellId}`;
+      const summary = summaries.get(key);
+      summary.details.add(`${issue.side}:${issue.relation}:${issue.offset.toFixed(1)}px/${issue.length.toFixed(1)}px`);
+      summary.count += 1;
+      continue;
+    }
+
+    if (issue.type === 'edge-label') {
+      const key = `${issue.edgeCellId}::${issue.labelCellId}`;
 
       if (!summaries.has(key)) {
         summaries.set(key, {
@@ -1409,8 +1676,8 @@ function summarizeIssues(issues) {
       continue;
     }
 
-      if (issue.type === 'label-rect') {
-        const key = `${issue.labelCellId}::${issue.rectCellId}`;
+    if (issue.type === 'label-rect') {
+      const key = `${issue.labelCellId}::${issue.rectCellId}`;
 
       if (!summaries.has(key)) {
         summaries.set(key, {
@@ -1465,8 +1732,16 @@ function formatIssue(issue) {
     return `- text-overflow(${issue.axis}): ${issue.cellId} requires ${issue.estimated.toFixed(1)}px but only ${issue.available.toFixed(1)}px is available [${issue.label}]`;
   }
 
+  if (issue.type === 'text-legibility') {
+    return `- text-legibility: ${issue.cellId} is visually dense (${issue.lineCount} lines at ${issue.fontSize.toFixed(1)}px inside ${issue.width.toFixed(1)}px x ${issue.height.toFixed(1)}px; width ${(issue.widthRatio * 100).toFixed(1)}%, height ${(issue.heightRatio * 100).toFixed(1)}%) [${issue.label}]`;
+  }
+
   if (issue.type === 'edge-terminal') {
     return `- edge-terminal: ${issue.edgeCellId} has a too-short ${issue.position} segment (${issue.minLength.toFixed(1)}px across ${issue.count} segment(s)); keep at least ${MIN_TERMINAL_SEGMENT_LENGTH}px of straight run near arrowheads`;
+  }
+
+  if (issue.type === 'edge-terminal-spacing') {
+    return `- edge-terminal-spacing: ${issue.rectCellId} has crowded ${issue.side} terminals ${issue.firstEdgeCellId}(${issue.firstPosition}) and ${issue.secondEdgeCellId}(${issue.secondPosition}) at ${issue.minSpacing.toFixed(1)}px; keep at least ${MIN_TERMINAL_SPACING}px between terminals on the same side`;
   }
 
   if (issue.type === 'edge-label') {
@@ -1491,33 +1766,45 @@ async function main() {
   const svgText = await readFile(targetPath, 'utf8');
   const companionDrawio = await readCompanionDrawio(targetPath);
   const edgeConnections = companionDrawio ? parseDrawioEdgeConnections(companionDrawio.text) : new Map();
-    const cells = parseSvg(svgText);
-    const edges = collectEdges(cells, edgeConnections);
-    const rects = collectObstacleRects(cells);
-    const borderRects = collectBorderRects(cells);
-    const edgeIssues = findEdgeOverlaps(edges);
-    const rectIssues = findEdgeRectCollisions(edges, rects);
-    const borderIssues = findEdgeRectBorderOverlaps(edges, borderRects);
-    const terminalIssues = findShortTerminalSegments(edges);
+  const cells = parseSvg(svgText);
+  const edges = collectEdges(cells, edgeConnections);
+  const rects = collectObstacleRects(cells);
+  const borderRects = collectBorderRects(cells);
+  const edgeIssues = findEdgeOverlaps(edges);
+  const rectIssues = findEdgeRectCollisions(edges, rects);
+  const borderIssues = findEdgeRectBorderOverlaps(edges, borderRects);
+  const terminalIssues = findShortTerminalSegments(edges);
   const textLayouts = companionDrawio ? parseDrawioTextLayouts(companionDrawio.text) : [];
   const textBlocks = textLayouts;
   const labelBoxes = textLayouts
     .filter((layout) => layout.isTextCell && layout.labelBox.width > 0 && layout.labelBox.height > 0)
     .map((layout) => layout.labelBox);
   const textIssues = findTextOverflowIssues(textBlocks);
+  const textLegibilityIssues = findTextLegibilityIssues(textBlocks);
   const labelIssues = findEdgeLabelCollisions(edges, labelBoxes);
   const drawioRects = companionDrawio ? parseDrawioRectLayouts(companionDrawio.text) : [];
   const labelRectIssues = findLabelRectOverlaps(labelBoxes, drawioRects);
-    const issues = summarizeIssues([...edgeIssues, ...rectIssues, ...borderIssues, ...terminalIssues, ...labelIssues, ...labelRectIssues, ...textIssues]);
+  const terminalSpacingIssues = findCrowdedEdgeTerminals(edges, drawioRects.length > 0 ? drawioRects : rects);
+  const issues = summarizeIssues([
+    ...edgeIssues,
+    ...rectIssues,
+    ...borderIssues,
+    ...terminalIssues,
+    ...terminalSpacingIssues,
+    ...labelIssues,
+    ...labelRectIssues,
+    ...textIssues,
+    ...textLegibilityIssues,
+  ]);
 
-    console.log(`[diagram:check] ${path.relative(process.cwd(), targetPath)}`);
-    console.log(`[diagram:check] parsed ${cells.size} cells, ${edges.length} edges, ${rects.length} obstacle rects, ${borderRects.length} border rects`);
+  console.log(`[diagram:check] ${path.relative(process.cwd(), targetPath)}`);
+  console.log(`[diagram:check] parsed ${cells.size} cells, ${edges.length} edges, ${rects.length} obstacle rects, ${borderRects.length} border rects`);
   if (companionDrawio) {
     console.log(`[diagram:check] parsed ${textBlocks.length} text block(s) and ${labelBoxes.length} label box(es) from ${path.relative(process.cwd(), companionDrawio.path)}`);
   }
 
   if (issues.length === 0) {
-      console.log('[diagram:check] OK: no overlaps, border rides, label intrusions, label-box collisions, or text overflows detected by the current heuristics');
+    console.log('[diagram:check] OK: no overlaps, border rides, crowded terminals, label intrusions, label-box collisions, text density, or text overflows detected by the current heuristics');
     return;
   }
 
