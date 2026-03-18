@@ -22,3 +22,10 @@
 ## 記録リンク
 
 - [meeting-001-repository-polish](./meeting-001-repository-polish.md) - repository polish の作業範囲と検証結果
+
+## 実績: Memory Brand Colormap Alignment
+
+- [x] `memory/docs/.vitepress/public/memory-brand.svg` の `#13b3ce / #ffcc4f / #101926 / #0f1f3a / #ffffff` を docs theme token の基準色に固定
+- [x] `memory/docs/.vitepress/theme/custom.css` の brand / button / panel / dark mode 配色を同じカラーマップに統一
+- [x] `memory/docs/.vitepress/config.ts` の `theme-color` を `#101926` に合わせた
+- [x] `npm run docs:build` で build と encoding check を再確認

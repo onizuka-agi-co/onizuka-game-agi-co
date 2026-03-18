@@ -3,12 +3,56 @@
 :root {
   --vp-font-family-base: 'Manrope', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
   --vp-font-family-heading: 'Space Grotesk', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
-  --memory-accent: #13b3ce;
-  --memory-chip: #f8f5ee;
-  --memory-ink: #101926;
-  --memory-ink-soft: #5a6476;
-  --memory-border: #d7e2f2;
-  --memory-panel: #ffffff;
+  --memory-brand-cyan: #13b3ce;
+  --memory-brand-gold: #ffcc4f;
+  --memory-brand-ink: #101926;
+  --memory-brand-ink-deep: #0f1f3a;
+  --memory-brand-paper: #ffffff;
+  --memory-accent: var(--memory-brand-cyan);
+  --memory-chip: rgba(255, 204, 79, 0.14);
+  --memory-ink: var(--memory-brand-ink);
+  --memory-ink-soft: rgba(16, 25, 38, 0.72);
+  --memory-border: rgba(16, 25, 38, 0.12);
+  --memory-panel: var(--memory-brand-paper);
+  --vp-c-brand-1: var(--memory-brand-cyan);
+  --vp-c-brand-2: var(--memory-brand-cyan);
+  --vp-c-brand-3: var(--memory-brand-gold);
+  --vp-c-brand-soft: rgba(19, 179, 206, 0.18);
+  --vp-button-brand-bg: var(--memory-brand-ink);
+  --vp-button-brand-hover-bg: var(--memory-brand-ink-deep);
+  --vp-button-brand-active-bg: var(--memory-brand-ink-deep);
+  --vp-button-brand-border: var(--memory-brand-ink);
+  --vp-button-brand-hover-border: var(--memory-brand-ink-deep);
+  --vp-button-brand-text: var(--memory-brand-paper);
+  --vp-button-alt-bg: rgba(19, 179, 206, 0.08);
+  --vp-button-alt-hover-bg: rgba(255, 204, 79, 0.16);
+  --vp-button-alt-border: rgba(16, 25, 38, 0.12);
+}
+
+:root.dark {
+  --memory-ink: var(--memory-brand-paper);
+  --memory-ink-soft: rgba(255, 255, 255, 0.74);
+  --memory-border: rgba(255, 255, 255, 0.12);
+  --memory-panel: var(--memory-brand-ink);
+  --vp-c-bg: var(--memory-brand-ink);
+  --vp-c-bg-soft: var(--memory-brand-ink-deep);
+  --vp-c-bg-elv: var(--memory-brand-ink-deep);
+  --vp-c-text-1: rgba(255, 255, 255, 0.92);
+  --vp-c-text-2: rgba(255, 255, 255, 0.74);
+  --vp-c-divider: rgba(255, 255, 255, 0.12);
+  --vp-c-brand-1: var(--memory-brand-cyan);
+  --vp-c-brand-2: var(--memory-brand-cyan);
+  --vp-c-brand-3: var(--memory-brand-gold);
+  --vp-c-brand-soft: rgba(19, 179, 206, 0.2);
+  --vp-button-brand-bg: var(--memory-brand-cyan);
+  --vp-button-brand-hover-bg: var(--memory-brand-gold);
+  --vp-button-brand-active-bg: var(--memory-brand-gold);
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-text: var(--memory-brand-ink);
+  --vp-button-alt-bg: rgba(255, 255, 255, 0.04);
+  --vp-button-alt-hover-bg: rgba(255, 204, 79, 0.14);
+  --vp-button-alt-border: rgba(255, 255, 255, 0.12);
 }
 
 .VPNav,
@@ -56,7 +100,7 @@
 .VPHome .VPHero .name {
   font-family: var(--vp-font-family-heading);
   letter-spacing: 0.01em;
-  color: #0f1b34;
+  color: var(--memory-brand-ink);
   font-weight: 700;
 }
 
@@ -71,10 +115,10 @@
 
 .VPHome .image-src {
   border-radius: 28px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(246, 250, 255, 0.96));
-  border: 1px solid rgba(19, 179, 206, 0.18);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.92));
+  border: 1px solid rgba(19, 179, 206, 0.22);
   padding: 1rem;
-  box-shadow: 0 18px 36px rgba(16, 30, 61, 0.14);
+  box-shadow: 0 18px 36px rgba(16, 25, 38, 0.16);
 }
 
 .VPHome .VPHero .actions .action .VPButton {
@@ -114,6 +158,29 @@
 .VPFooter {
   border-top: 1px solid var(--memory-border);
   background: linear-gradient(180deg, rgba(15, 25, 45, 0.02), rgba(15, 25, 45, 0.06));
+}
+
+:root.dark .VPNavBar .content,
+:root.dark .VPNavBar .content .container {
+  background: linear-gradient(90deg, rgba(16, 25, 38, 0.94), rgba(15, 31, 58, 0.94));
+}
+
+:root.dark .VPHome .VPHero .name {
+  color: var(--memory-brand-paper);
+}
+
+:root.dark .VPHome .image-src {
+  background: linear-gradient(145deg, rgba(16, 25, 38, 0.96), rgba(15, 31, 58, 0.96));
+  border-color: rgba(19, 179, 206, 0.24);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+}
+
+:root.dark .vp-doc img {
+  background: rgba(15, 31, 58, 0.8);
+}
+
+:root.dark .VPFooter {
+  background: linear-gradient(180deg, rgba(16, 25, 38, 0.96), rgba(15, 31, 58, 0.96));
 }
 
 .sidebar .outline-link,
@@ -170,9 +237,17 @@
   border: 1px solid var(--vp-c-divider);
   border-radius: 20px;
   background:
-    radial-gradient(circle at top right, rgba(255, 214, 102, 0.28), transparent 42%),
-    linear-gradient(135deg, rgba(255, 247, 214, 0.88), rgba(255, 255, 255, 0.98));
+    radial-gradient(circle at top right, rgba(255, 204, 79, 0.24), transparent 42%),
+    radial-gradient(circle at bottom left, rgba(19, 179, 206, 0.12), transparent 38%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.94));
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+:root.dark .author-demo-card {
+  background:
+    radial-gradient(circle at top right, rgba(255, 204, 79, 0.18), transparent 42%),
+    radial-gradient(circle at bottom left, rgba(19, 179, 206, 0.18), transparent 38%),
+    linear-gradient(135deg, rgba(16, 25, 38, 0.96), rgba(15, 31, 58, 0.96));
 }
 
 .author-demo-avatar {

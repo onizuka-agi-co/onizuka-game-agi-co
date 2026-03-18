@@ -15,7 +15,7 @@ export default defineConfig({
     ['link', { rel: 'apple-touch-icon', href: '/memory-brand.svg' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['meta', { name: 'theme-color', content: '#10213a' }],
+    ['meta', { name: 'theme-color', content: '#101926' }],
   ],
   themeConfig: {
     logo: '/memory-brand.svg',

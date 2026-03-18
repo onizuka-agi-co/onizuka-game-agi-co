@@ -1434,3 +1434,15 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - kept existing Pages `base`, deploy target, and public URLs unchanged
+
+### 変更履歴更新 (2026-03-19 Memory Brand Colormap Alignment)
+- 更新: `memory/docs/.vitepress/theme/custom.css` (brand token と dark/light UI colors を `memory-brand.svg` の colormap に統一)
+- 更新: `memory/docs/.vitepress/config.ts` (`theme-color` を `#101926` に更新)
+- 更新: `memory/docs/2026/03/19/index.md`
+- 更新: `memory/docs/history/index.md` (this entry)
+- Verification:
+  - `Select-String` で `custom.css` の hex palette を確認
+  - `npm run docs:build`
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - Pages `base` と deploy target は変更なし
