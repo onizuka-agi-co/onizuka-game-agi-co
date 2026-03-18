@@ -74,13 +74,13 @@
           <mxGeometry x="600" y="340" width="560" height="72" as="geometry"/>
         </mxCell>
         <mxCell id="field-meeting" value="&lt;b&gt;現場ミーティング自動化&lt;/b&gt;&lt;br&gt;主実行スライス&lt;br&gt;バース候補選定" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#13b3ce;strokeWidth=1.8;fontSize=15;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="585" y="444" width="250" height="92" as="geometry"/>
+          <mxGeometry x="585" y="462" width="250" height="92" as="geometry"/>
         </mxCell>
         <mxCell id="ceo-review" value="&lt;b&gt;CEO レビュー自動化&lt;/b&gt;&lt;br&gt;方向修正、ガードレール、&lt;br&gt;次の一手" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f1f3a;strokeColor=#ffcc4f;strokeWidth=1.8;fontSize=15;fontFamily=Noto Sans JP;fontColor=#ffffff;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="920" y="444" width="250" height="92" as="geometry"/>
+          <mxGeometry x="920" y="462" width="250" height="92" as="geometry"/>
         </mxCell>
         <mxCell id="cto-chip" value="CTO フロー" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#13b3ce;strokeColor=#0f1f3a;strokeWidth=1.4;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
-          <mxGeometry x="846" y="472" width="76" height="28" as="geometry"/>
+          <mxGeometry x="840" y="490" width="74" height="28" as="geometry"/>
         </mxCell>
         <mxCell id="loop-note" value="24/7 のエビデンス循環&lt;br&gt;現場が進め、記録が証跡を残し、&lt;br&gt;CEO レビューが次の更新へ戻す" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=15;fontFamily=Noto Sans JP;fontColor=#0f1f3a;" vertex="1" parent="1">
           <mxGeometry x="620" y="580" width="520" height="54" as="geometry"/>
@@ -124,19 +124,24 @@
         <mxCell id="arrow-company-loop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#0f1f3a;endArrow=block;endFill=1;" edge="1" parent="1" source="company-card" target="governance-docs">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1180" y="300"/>
-              <mxPoint x="1120" y="300"/>
+              <mxPoint x="1100" y="300"/>
+              <mxPoint x="1100" y="300"/>
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="arrow-docs-field" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#13b3ce;endArrow=block;endFill=1;" edge="1" parent="1" source="governance-docs" target="field-meeting">
-          <mxGeometry relative="1" as="geometry"/>
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="430"/>
+              <mxPoint x="710" y="430"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="arrow-field-memory" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#13b3ce;endArrow=block;endFill=1;" edge="1" parent="1" source="field-meeting" target="memory-docs">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="860" y="550"/>
-              <mxPoint x="1230" y="550"/>
+              <mxPoint x="860" y="568"/>
+              <mxPoint x="1230" y="568"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -144,8 +149,8 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1210" y="494"/>
-              <mxPoint x="1210" y="410"/>
-              <mxPoint x="1050" y="410"/>
+              <mxPoint x="1210" y="430"/>
+              <mxPoint x="1050" y="430"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -153,9 +158,8 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="56" y="-10" as="offset"/>
             <Array as="points">
-              <mxPoint x="900" y="410"/>
-              <mxPoint x="900" y="260"/>
-              <mxPoint x="820" y="260"/>
+              <mxPoint x="550" y="452"/>
+              <mxPoint x="550" y="376"/>
             </Array>
           </mxGeometry>
         </mxCell>

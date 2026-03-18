@@ -10,6 +10,7 @@ const MAX_OBSTACLE_HEIGHT = 240;
 const TEXT_OVERFLOW_TOLERANCE = 4;
 const DEFAULT_TEXT_PADDING = 16;
 const MIN_BORDER_OVERLAP_LENGTH = 12;
+const MAX_BORDER_CLEARANCE = 6;
 const MIN_TERMINAL_SEGMENT_LENGTH = 20;
 const TERMINAL_SEGMENT_NOISE_TOLERANCE = 1;
 const LABEL_INTERIOR_THRESHOLD = 1;
@@ -77,6 +78,15 @@ function getPaint(attributes, name) {
 
 function isNone(value) {
   return value === undefined || value === null || value === '' || value === 'none';
+}
+
+function normalizePaint(value) {
+  return String(value ?? '').trim().toLowerCase();
+}
+
+function isWhiteLikeFill(fill) {
+  const normalized = normalizePaint(fill);
+  return normalized === '' || normalized === '#fff' || normalized === '#ffffff' || normalized === 'white';
 }
 
 function parseTranslate(transformText = '') {
@@ -254,6 +264,15 @@ function boundsOverlap(a, b, epsilon = EPSILON) {
   );
 }
 
+function expandBounds(bounds, padding) {
+  return {
+    minX: bounds.minX - padding,
+    maxX: bounds.maxX + padding,
+    minY: bounds.minY - padding,
+    maxY: bounds.maxY + padding,
+  };
+}
+
 function rectBounds(rect) {
   return {
     minX: rect.x,
@@ -261,6 +280,76 @@ function rectBounds(rect) {
     minY: rect.y,
     maxY: rect.y + rect.height,
   };
+}
+
+function rangeOverlapLength(startA, endA, startB, endB) {
+  const minA = Math.min(startA, endA);
+  const maxA = Math.max(startA, endA);
+  const minB = Math.min(startB, endB);
+  const maxB = Math.max(startB, endB);
+  const overlapStart = Math.max(minA, minB);
+  const overlapEnd = Math.min(maxA, maxB);
+  return Math.max(0, overlapEnd - overlapStart);
+}
+
+function findSegmentRectBorderContacts(segment, rect) {
+  if (isNone(rect.stroke)) {
+    return [];
+  }
+
+  const contacts = [];
+  const horizontal = approximatelyEqual(segment.start.y, segment.end.y);
+  const vertical = approximatelyEqual(segment.start.x, segment.end.x);
+  const right = rect.x + rect.width;
+  const bottom = rect.y + rect.height;
+
+  if (horizontal) {
+    const y = (segment.start.y + segment.end.y) / 2;
+    const overlapLength = rangeOverlapLength(segment.start.x, segment.end.x, rect.x, right);
+
+    if (overlapLength >= MIN_BORDER_OVERLAP_LENGTH) {
+      for (const side of ['top', 'bottom']) {
+        const borderY = side === 'top' ? rect.y : bottom;
+        const offset = Math.abs(y - borderY);
+
+        if (offset > MAX_BORDER_CLEARANCE) {
+          continue;
+        }
+
+        contacts.push({
+          side,
+          length: overlapLength,
+          offset,
+          relation: offset <= EPSILON ? 'overlap' : 'clearance',
+        });
+      }
+    }
+  }
+
+  if (vertical) {
+    const x = (segment.start.x + segment.end.x) / 2;
+    const overlapLength = rangeOverlapLength(segment.start.y, segment.end.y, rect.y, bottom);
+
+    if (overlapLength >= MIN_BORDER_OVERLAP_LENGTH) {
+      for (const side of ['left', 'right']) {
+        const borderX = side === 'left' ? rect.x : right;
+        const offset = Math.abs(x - borderX);
+
+        if (offset > MAX_BORDER_CLEARANCE) {
+          continue;
+        }
+
+        contacts.push({
+          side,
+          length: overlapLength,
+          offset,
+          relation: offset <= EPSILON ? 'overlap' : 'clearance',
+        });
+      }
+    }
+  }
+
+  return contacts;
 }
 
 function intersectionRect(a, b) {
@@ -407,7 +496,11 @@ function isBackgroundRect(rect) {
     return true;
   }
 
-  return rect.width > MAX_OBSTACLE_WIDTH || rect.height > MAX_OBSTACLE_HEIGHT;
+  if (rect.width > MAX_OBSTACLE_WIDTH || rect.height > MAX_OBSTACLE_HEIGHT) {
+    return isWhiteLikeFill(rect.fill);
+  }
+
+  return false;
 }
 
 function isDecorativeRect(rect) {
@@ -701,6 +794,25 @@ function parseDrawioRectLayouts(drawioText) {
   return rects;
 }
 
+function parseDrawioEdgeConnections(drawioText) {
+  const connections = new Map();
+
+  for (const match of drawioText.matchAll(/<mxCell\b([^>]*?)(?:\/>|>)/g)) {
+    const attributes = parseAttributes(match[1]);
+
+    if (attributes.edge !== '1' || !attributes.id) {
+      continue;
+    }
+
+    connections.set(attributes.id, {
+      sourceCellId: attributes.source ?? null,
+      targetCellId: attributes.target ?? null,
+    });
+  }
+
+  return connections;
+}
+
 function findTextOverflowIssues(textBlocks) {
   const issues = [];
 
@@ -858,7 +970,7 @@ function parseSvg(svgText) {
   return cells;
 }
 
-function collectEdges(cells) {
+function collectEdges(cells, edgeConnections = new Map()) {
   const edges = [];
 
   for (const cell of cells.values()) {
@@ -874,6 +986,8 @@ function collectEdges(cells) {
       edges.push({
         cellId: cell.cellId,
         segments: linePath.segments,
+        sourceCellId: edgeConnections.get(cell.cellId)?.sourceCellId ?? null,
+        targetCellId: edgeConnections.get(cell.cellId)?.targetCellId ?? null,
       });
     }
   }
@@ -999,8 +1113,17 @@ function findEdgeRectCollisions(edges, rects) {
       }
 
       const bounds = rectBounds(rect);
+      const lastSegmentIndex = edge.segments.length - 1;
 
-      for (const segment of edge.segments) {
+      for (const [segmentIndex, segment] of edge.segments.entries()) {
+        if (segmentIndex === 0 && edge.sourceCellId === rect.cellId) {
+          continue;
+        }
+
+        if (segmentIndex === lastSegmentIndex && edge.targetCellId === rect.cellId) {
+          continue;
+        }
+
         if (!boundsOverlap(segmentBounds(segment), bounds)) {
           continue;
         }
@@ -1031,34 +1154,33 @@ function findEdgeRectBorderOverlaps(edges, rects) {
         continue;
       }
 
-      const borderSegments = rectBorderSegments(rect);
+      const expandedBounds = expandBounds(rectBounds(rect), MAX_BORDER_CLEARANCE);
+      const lastSegmentIndex = edge.segments.length - 1;
 
-      for (const edgeSegment of edge.segments) {
+      for (const [segmentIndex, edgeSegment] of edge.segments.entries()) {
+        if (segmentIndex === 0 && edge.sourceCellId === rect.cellId) {
+          continue;
+        }
+
+        if (segmentIndex === lastSegmentIndex && edge.targetCellId === rect.cellId) {
+          continue;
+        }
+
         const edgeBounds = segmentBounds(edgeSegment);
 
-        for (const border of borderSegments) {
-          const borderBounds = segmentBounds(border.segment);
+        if (!boundsOverlap(edgeBounds, expandedBounds, MAX_BORDER_CLEARANCE)) {
+          continue;
+        }
 
-          if (!boundsOverlap(edgeBounds, borderBounds)) {
-            continue;
-          }
-
-          const intersection = classifySegmentIntersection(edgeSegment, border.segment);
-
-          if (!intersection || intersection.type !== 'overlap') {
-            continue;
-          }
-
-          if (intersection.length <= MIN_BORDER_OVERLAP_LENGTH) {
-            continue;
-          }
-
+        for (const contact of findSegmentRectBorderContacts(edgeSegment, rect)) {
           issues.push({
             type: 'edge-rect-border',
             edgeCellId: edge.cellId,
             rectCellId: rect.cellId,
-            side: border.side,
-            length: intersection.length,
+            side: contact.side,
+            length: contact.length,
+            offset: contact.offset,
+            relation: contact.relation,
           });
         }
       }
@@ -1247,23 +1369,21 @@ function summarizeIssues(issues) {
       }
 
       if (issue.type === 'edge-rect-border') {
-        const key = `${issue.edgeCellId}::${issue.rectCellId}`;
+        const key = `edge-rect-border::${issue.edgeCellId}::${issue.rectCellId}`;
 
         if (!summaries.has(key)) {
           summaries.set(key, {
             type: 'edge-rect-border',
             edgeCellId: issue.edgeCellId,
             rectCellId: issue.rectCellId,
-            maxLength: issue.length,
-            sides: new Set([issue.side]),
+            details: new Set([`${issue.side}:${issue.relation}:${issue.offset.toFixed(1)}px/${issue.length.toFixed(1)}px`]),
             count: 1,
           });
           continue;
         }
 
         const summary = summaries.get(key);
-        summary.maxLength = Math.max(summary.maxLength, issue.length);
-        summary.sides.add(issue.side);
+        summary.details.add(`${issue.side}:${issue.relation}:${issue.offset.toFixed(1)}px/${issue.length.toFixed(1)}px`);
         summary.count += 1;
         continue;
       }
@@ -1314,7 +1434,7 @@ function summarizeIssues(issues) {
       continue;
     }
 
-    const key = `${issue.edgeCellId}::${issue.rectCellId}`;
+    const key = `edge-rect::${issue.edgeCellId}::${issue.rectCellId}`;
 
     if (!summaries.has(key)) {
       summaries.set(key, {
@@ -1358,8 +1478,8 @@ function formatIssue(issue) {
   }
 
   if (issue.type === 'edge-rect-border') {
-    const sides = [...issue.sides].sort().join(', ');
-    return `- edge-rect-border: ${issue.edgeCellId} rides along ${issue.rectCellId} border (max overlap ${issue.maxLength.toFixed(1)}px across ${issue.count} segment(s); side(s): ${sides})`;
+    const details = [...issue.details].sort().join('; ');
+    return `- edge-rect-border: ${issue.edgeCellId} hugs ${issue.rectCellId} border (${issue.count} contact(s): ${details})`;
   }
 
   return `- edge-rect: ${issue.edgeCellId} -> ${issue.rectCellId} (max interior ${issue.maxLength.toFixed(1)}px across ${issue.count} segment(s))`;
@@ -1369,15 +1489,16 @@ async function main() {
   const targetArg = process.argv[2] ?? DEFAULT_TARGET;
   const targetPath = path.resolve(process.cwd(), targetArg);
   const svgText = await readFile(targetPath, 'utf8');
+  const companionDrawio = await readCompanionDrawio(targetPath);
+  const edgeConnections = companionDrawio ? parseDrawioEdgeConnections(companionDrawio.text) : new Map();
     const cells = parseSvg(svgText);
-    const edges = collectEdges(cells);
+    const edges = collectEdges(cells, edgeConnections);
     const rects = collectObstacleRects(cells);
     const borderRects = collectBorderRects(cells);
     const edgeIssues = findEdgeOverlaps(edges);
     const rectIssues = findEdgeRectCollisions(edges, rects);
     const borderIssues = findEdgeRectBorderOverlaps(edges, borderRects);
     const terminalIssues = findShortTerminalSegments(edges);
-  const companionDrawio = await readCompanionDrawio(targetPath);
   const textLayouts = companionDrawio ? parseDrawioTextLayouts(companionDrawio.text) : [];
   const textBlocks = textLayouts;
   const labelBoxes = textLayouts
