@@ -2,7 +2,7 @@
 
 ## Mission
 
-**日常のスキマを、わくわくで埋める。**
+**Fill everyday gaps with delight.**
 
 ## What We Do
 

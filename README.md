@@ -16,7 +16,7 @@
 
 ## 🎯 Mission
 
-- 日常のスキマを、わくわくで埋める。
+- Fill everyday gaps with delight.
 - Build short-session browser games that can launch on GitHub Pages with minimal friction.
 
 ## 🧭 What This Repository Does

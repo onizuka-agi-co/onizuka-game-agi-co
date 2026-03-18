@@ -1446,3 +1446,14 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - Pages `base` と deploy target は変更なし
+
+### 変更履歴更新 (2026-03-19 English Mission Copy Cleanup)
+- 更新: `README.md` (`Mission` の先頭 bullet を英語へ修正)
+- 更新: `memory/docs/about/index.md` (英語ページの mission copy を英語へ統一)
+- 更新: `memory/docs/2026/03/19/index.md`
+- 更新: `memory/docs/history/index.md` (this entry)
+- Verification:
+  - `Select-String` で英語 surface に日本語 mission copy が残っていないことを確認
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - 日本語 surface (`README.ja.md`, AGENTS.md, 既存 meeting logs) は未変更

@@ -29,3 +29,8 @@
 - [x] `memory/docs/.vitepress/theme/custom.css` の brand / button / panel / dark mode 配色を同じカラーマップに統一
 - [x] `memory/docs/.vitepress/config.ts` の `theme-color` を `#101926` に合わせた
 - [x] `npm run docs:build` で build と encoding check を再確認
+
+## 実績: English Mission Copy Cleanup
+
+- [x] `README.md` の `Mission` を英語のみへ修正
+- [x] `memory/docs/about/index.md` の英語ページ内 mission copy を英語へ統一
