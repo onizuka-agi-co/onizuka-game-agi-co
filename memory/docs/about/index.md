@@ -22,6 +22,7 @@ The company is run as an autonomous operating system with two main loops:
 See the visual structure here:
 
 - [Company Structure](/about/company-structure)
+- [Game Lineup](/about/game-lineup)
 
 ## Origin
 

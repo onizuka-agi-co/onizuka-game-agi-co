@@ -36,6 +36,64 @@ This repository is the company operating system for ONIZUKA Game AGI Co.
 - `target repo`: `onigame-pocket-putt-panic`
 - `next incubating candidate`: `Signal Drift`
 
+## 🕹️ Game Showcase
+
+### Developing Now
+
+#### onigame-dodge60
+
+![Gameplay screenshot of Dodge60 showing the player square dodging falling hazards in the active live-lane build.](memory/docs/about/assets/game-lineup/onigame-dodge60-showcase.png)
+
+`Developing`
+
+One minute of clean panic, still being tuned as the current live lane.
+
+[Play](https://onizuka-agi-co.github.io/onigame-dodge60/) | [Repo](https://github.com/onizuka-agi-co/onigame-dodge60)
+
+### Shipped Games
+
+#### onigame-lane-flip-sprint
+
+![Gameplay screenshot of Lane Flip Sprint showing the three-lane dodge field and thumb-friendly controls.](memory/docs/about/assets/game-lineup/onigame-lane-flip-sprint-showcase.png)
+
+`Shipped`
+
+Three-lane micro dodge built for 45-second thumb sessions.
+
+[Play](https://onizuka-agi-co.github.io/onigame-lane-flip-sprint/) | [Repo](https://github.com/onizuka-agi-co/onigame-lane-flip-sprint)
+
+#### onigame-one-stroke-sweep
+
+![Gameplay screenshot of One Stroke Sweep showing the drag-to-sweep arena and active spark field.](memory/docs/about/assets/game-lineup/onigame-one-stroke-sweep-showcase.png)
+
+`Shipped`
+
+One-screen score attack built around a fast drag-to-sweep loop.
+
+[Play](https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/) | [Repo](https://github.com/onizuka-agi-co/onigame-one-stroke-sweep)
+
+#### onigame-omikuji
+
+![Gameplay screenshot of onigame-omikuji showing a drawn fortune slip and recent results panel.](memory/docs/about/assets/game-lineup/onigame-omikuji-showcase.png)
+
+`Shipped`
+
+One-click omikuji app for tiny breaks and instant fortune feedback.
+
+[Play](https://onizuka-agi-co.github.io/onigame-omikuji/) | [Repo](https://github.com/onizuka-agi-co/onigame-omikuji)
+
+### Pipeline
+
+#### Pocket Putt Panic
+
+`Planning`
+
+Active birth-lane concept only. A screenshot will be added once the repo exists and the first playable is live.
+
+Target repo: `onigame-pocket-putt-panic`
+
+See the fuller catalog in [`memory/docs/about/game-lineup.md`](memory/docs/about/game-lineup.md).
+
 ## 🗂️ Operating Surfaces
 
 - [`PLANNING_MEETING.md`](PLANNING_MEETING.md)

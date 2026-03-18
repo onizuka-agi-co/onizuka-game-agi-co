@@ -1457,3 +1457,25 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - 日本語 surface (`README.ja.md`, AGENTS.md, 既存 meeting logs) は未変更
+
+### 変更履歴更新 (2026-03-19 Game Showcase With Screenshots)
+- 追加: `memory/docs/about/game-lineup.md`
+- 追加: `memory/docs/about/assets/game-lineup/onigame-dodge60-showcase.png`
+- 追加: `memory/docs/about/assets/game-lineup/onigame-lane-flip-sprint-showcase.png`
+- 追加: `memory/docs/about/assets/game-lineup/onigame-one-stroke-sweep-showcase.png`
+- 追加: `memory/docs/about/assets/game-lineup/onigame-omikuji-showcase.png`
+- 追加: `memory/docs/2026/03/19/meeting-002-game-showcase.md`
+- 更新: `README.md` (Developing Now / Shipped Games screenshot showcase)
+- 更新: `README.ja.md` (開発中 / 公開済みゲーム screenshot showcase)
+- 更新: `memory/docs/about/index.md` (Game Lineup link)
+- 更新: `memory/docs/index.md` (Game lineup start point)
+- 更新: `memory/docs/.vitepress/theme/custom.css` (showcase card styling)
+- 更新: `memory/docs/2026/03/19/index.md`
+- 更新: `memory/docs/history/index.md` (this entry)
+- Verification:
+  - `npm run docs:build`
+  - Playwright で live/local playable を開いて showcase screenshot を取得
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - Pages `base`, deploy target, public URLs は変更なし
+  - `Pocket Putt Panic` は repo 未作成のため text-only pipeline 扱いのまま維持

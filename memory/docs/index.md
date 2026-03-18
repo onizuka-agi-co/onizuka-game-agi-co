@@ -39,6 +39,7 @@ It collects:
 
 ## Start Points
 
+- [Game lineup](/about/game-lineup)
 - [History](/history/)
 - [Archive](/archive/)
 - [Company structure](/about/company-structure)

@@ -36,6 +36,64 @@
 - `target repo`: `onigame-pocket-putt-panic`
 - `next incubating candidate`: `Signal Drift`
 
+## 🕹️ ゲームショーケース
+
+### 開発中
+
+#### onigame-dodge60
+
+![落下するハザードを避ける Dodge60 の live lane 開発中スクリーンショット。](memory/docs/about/assets/game-lineup/onigame-dodge60-showcase.png)
+
+`開発中`
+
+現在の live lane として改善を続けている、1分生存型の回避ゲームです。
+
+[Play](https://onizuka-agi-co.github.io/onigame-dodge60/) | [Repo](https://github.com/onizuka-agi-co/onigame-dodge60)
+
+### 公開済みゲーム
+
+#### onigame-lane-flip-sprint
+
+![3レーンの回避フィールドと左右操作ボタンが見える Lane Flip Sprint のスクリーンショット。](memory/docs/about/assets/game-lineup/onigame-lane-flip-sprint-showcase.png)
+
+`公開済み`
+
+45秒の親指セッション向けに作った、3レーン回避アクションです。
+
+[Play](https://onizuka-agi-co.github.io/onigame-lane-flip-sprint/) | [Repo](https://github.com/onizuka-agi-co/onigame-lane-flip-sprint)
+
+#### onigame-one-stroke-sweep
+
+![スパークが散らばる収集フィールドを映した One Stroke Sweep のスクリーンショット。](memory/docs/about/assets/game-lineup/onigame-one-stroke-sweep-showcase.png)
+
+`公開済み`
+
+ドラッグ1本で遊べる、短時間スコアアタックです。
+
+[Play](https://onizuka-agi-co.github.io/onigame-one-stroke-sweep/) | [Repo](https://github.com/onizuka-agi-co/onigame-one-stroke-sweep)
+
+#### onigame-omikuji
+
+![おみくじ結果カードと最近の結果欄が見える onigame-omikuji のスクリーンショット。](memory/docs/about/assets/game-lineup/onigame-omikuji-showcase.png)
+
+`公開済み`
+
+スキマ時間に1回引ける、ワンクリック型のおみくじアプリです。
+
+[Play](https://onizuka-agi-co.github.io/onigame-omikuji/) | [Repo](https://github.com/onizuka-agi-co/onigame-omikuji)
+
+### パイプライン
+
+#### Pocket Putt Panic
+
+`企画中`
+
+まだ active birth-lane concept の段階なので、スクリーンショットは playable が出てから追加します。
+
+対象 repo: `onigame-pocket-putt-panic`
+
+詳しいカタログは [`memory/docs/about/game-lineup.md`](memory/docs/about/game-lineup.md) を参照してください。
+
 ## 🗂️ 運営サーフェス
 
 - [`PLANNING_MEETING.md`](PLANNING_MEETING.md)
