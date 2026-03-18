@@ -16,6 +16,7 @@
 - [x] `memory/docs/.vitepress/config.ts` の `theme-color` を `#101926` に統一
 - [x] `npm run docs:build` で build を再確認
 
+- [x] `docs/onizuka-game-agi-company-structure.ja.drawio` and companion PNG/SVG now use the header-logo 5-color map only (`#13b3ce / #ffcc4f / #101926 / #0f1f3a / #ffffff`)
 ## 実績: English Mission Copy Cleanup
 
 - [x] `README.md` の `Mission` を英語に統一
