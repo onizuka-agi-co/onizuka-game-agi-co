@@ -58,3 +58,9 @@
 - [x] widened `ceo-review` in `docs/onizuka-game-agi-company-structure.ja.drawio` so the dark card text has more horizontal breathing room
 - [x] moved the `arrow-memory-review` terminal so the top-edge terminals on `ceo-review` are no longer visually crowded
 - [x] extended `scripts/check-diagram-svg-overlaps.mjs` with `text-legibility` and `edge-terminal-spacing`, then regenerated the companion JA SVG/PNG and re-ran the checker to `OK`
+
+## Task: Diagram Text Visibility On Dark Surfaces
+
+- [x] judged the original `ceo-review` token colors as numerically high-contrast but visually weak as a compact dark card because the title and body shared one flat treatment
+- [x] added `text-contrast` and `text-emphasis` heuristics to `scripts/check-diagram-svg-overlaps.mjs` so low-contrast text and dark-card title/body blending can be detected separately
+- [x] refactored `ceo-review` into a dark surface with an amber title chip plus dedicated white body text, regenerated the companion JA SVG/PNG, and re-ran the checker to `OK`

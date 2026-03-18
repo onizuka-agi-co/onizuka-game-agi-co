@@ -76,8 +76,14 @@
         <mxCell id="field-meeting" value="&lt;b&gt;現場ミーティング自動化&lt;/b&gt;&lt;br&gt;主実行スライス&lt;br&gt;バース候補選定" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#13b3ce;strokeWidth=1.8;fontSize=15;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="585" y="462" width="250" height="92" as="geometry"/>
         </mxCell>
-        <mxCell id="ceo-review" value="&lt;b&gt;CEO レビュー自動化&lt;/b&gt;&lt;br&gt;方向修正、ガードレール、&lt;br&gt;次の一手" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f1f3a;strokeColor=#ffcc4f;strokeWidth=1.8;fontSize=15;fontFamily=Noto Sans JP;fontColor=#ffffff;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="ceo-review" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f1f3a;strokeColor=#ffcc4f;strokeWidth=1.8;fontSize=15;fontFamily=Noto Sans JP;fontColor=#ffffff;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="905" y="462" width="280" height="92" as="geometry"/>
+        </mxCell>
+        <mxCell id="ceo-review-title" value="CEO レビュー自動化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc4f;strokeColor=#ffcc4f;strokeWidth=1.2;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="960" y="478" width="170" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="ceo-review-body" value="方向修正、ガードレール、&lt;br&gt;次の一手" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=17;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="930" y="506" width="230" height="40" as="geometry"/>
         </mxCell>
         <mxCell id="cto-chip" value="CTO フロー" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#13b3ce;strokeColor=#0f1f3a;strokeWidth=1.4;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
           <mxGeometry x="840" y="490" width="74" height="28" as="geometry"/>

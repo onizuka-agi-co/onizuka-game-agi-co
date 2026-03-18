@@ -24,6 +24,13 @@ const COMPACT_TEXT_MAX_FONT_SIZE = 15;
 const COMPACT_TEXT_MIN_LINES = 3;
 const COMPACT_TEXT_WIDTH_RATIO_THRESHOLD = 0.68;
 const COMPACT_TEXT_HEIGHT_RATIO_THRESHOLD = 0.72;
+const MIN_TEXT_CONTRAST_RATIO = 4.5;
+const LARGE_TEXT_CONTRAST_RATIO = 3;
+const EMPHASIS_DARK_CARD_MAX_WIDTH = 320;
+const EMPHASIS_DARK_CARD_MAX_HEIGHT = 120;
+const EMPHASIS_DARK_CARD_MIN_LINES = 3;
+const EMPHASIS_DARK_CARD_MAX_FONT_SIZE = 15;
+const EMPHASIS_DARK_CARD_WIDTH_RATIO_THRESHOLD = 0.6;
 const FRAME_CELL_ID_PATTERN = /(?:^|[-_])frame(?:[-_]|$)/i;
 
 function parseAttributes(source) {
@@ -118,11 +125,11 @@ function parseHexColor(value) {
   return null;
 }
 
-function isDarkPaint(value) {
+function relativeLuminance(value) {
   const color = parseHexColor(value);
 
   if (!color) {
-    return false;
+    return null;
   }
 
   const toLinear = (channel) => {
@@ -132,11 +139,32 @@ function isDarkPaint(value) {
       : ((normalized + 0.055) / 1.055) ** 2.4;
   };
 
-  const luminance = (
+  return (
     (0.2126 * toLinear(color.r))
     + (0.7152 * toLinear(color.g))
     + (0.0722 * toLinear(color.b))
   );
+}
+
+function contrastRatio(foreground, background) {
+  const foregroundLuminance = relativeLuminance(foreground);
+  const backgroundLuminance = relativeLuminance(background);
+
+  if (foregroundLuminance === null || backgroundLuminance === null) {
+    return null;
+  }
+
+  const lighter = Math.max(foregroundLuminance, backgroundLuminance);
+  const darker = Math.min(foregroundLuminance, backgroundLuminance);
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
+function isDarkPaint(value) {
+  const luminance = relativeLuminance(value);
+
+  if (luminance === null) {
+    return false;
+  }
 
   return luminance <= 0.2;
 }
@@ -726,6 +754,7 @@ function parseDrawioTextLayouts(drawioText) {
     }
 
     const style = parseStyle(rawStyle);
+    const decodedValue = decodeXmlEntities(attributes.value);
     const fontSize = parseStyleNumber(style, 'fontSize', 17);
     const spacingDefault = isTextCell ? 0 : DEFAULT_TEXT_PADDING;
     const spacing = parseStyleNumber(style, 'spacing', spacingDefault);
@@ -764,15 +793,23 @@ function parseDrawioTextLayouts(drawioText) {
     const paddedHeight = clamp(contentHeight + (LABEL_BOX_PADDING * 2), 0, height);
     const labelBoxX = clamp(contentX - LABEL_BOX_PADDING, x, x + width - paddedWidth);
     const labelBoxY = clamp(contentY - LABEL_BOX_PADDING, y, y + height - paddedHeight);
+    const topInset = Math.max(0, contentY - y);
+    const leftInset = Math.max(0, contentX - x);
+    const rightInset = Math.max(0, (x + width) - (contentX + contentWidth));
+    const bottomInset = Math.max(0, (y + height) - (contentY + contentHeight));
 
     layouts.push({
       cellId: attributes.id ?? 'unknown-cell',
-      value: decodeXmlEntities(attributes.value).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
+      rawValue: decodedValue,
+      value: decodedValue.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
       isTextCell,
       fontSize,
       lineCount: lines.length,
       fillColor: style.fillColor,
       fontColor: style.fontColor,
+      startsWithBoldLine: /^\s*<b\b/i.test(decodedValue),
+      hasInlineFontMarkup: /<font\b/i.test(decodedValue),
+      hasInlineColorMarkup: /<font\b[^>]*(?:color=|style=\"[^\"]*color\s*:)/i.test(decodedValue),
       x,
       y,
       width,
@@ -781,6 +818,14 @@ function parseDrawioTextLayouts(drawioText) {
       availableHeight,
       estimatedWidth,
       estimatedHeight,
+      contentX,
+      contentY,
+      contentWidth,
+      contentHeight,
+      topInset,
+      leftInset,
+      rightInset,
+      bottomInset,
       labelBox: {
         cellId: attributes.id ?? 'unknown-cell',
         x: labelBoxX,
@@ -904,6 +949,35 @@ function findTextOverflowIssues(textBlocks) {
   return issues;
 }
 
+function findTextContrastIssues(textBlocks) {
+  const issues = [];
+
+  for (const block of textBlocks) {
+    const ratio = contrastRatio(block.fontColor, block.fillColor);
+
+    if (ratio === null) {
+      continue;
+    }
+
+    const threshold = block.fontSize >= 18 ? LARGE_TEXT_CONTRAST_RATIO : MIN_TEXT_CONTRAST_RATIO;
+    if (ratio + EPSILON >= threshold) {
+      continue;
+    }
+
+    issues.push({
+      type: 'text-contrast',
+      cellId: block.cellId,
+      label: block.value,
+      contrastRatio: ratio,
+      threshold,
+      fontColor: block.fontColor,
+      fillColor: block.fillColor,
+    });
+  }
+
+  return issues;
+}
+
 function findTextLegibilityIssues(textBlocks) {
   const issues = [];
 
@@ -942,6 +1016,45 @@ function findTextLegibilityIssues(textBlocks) {
       heightRatio,
       width: block.width,
       height: block.height,
+    });
+  }
+
+  return issues;
+}
+
+function findTextEmphasisIssues(textBlocks) {
+  const issues = [];
+
+  for (const block of textBlocks) {
+    if (
+      block.isTextCell
+      || !isDarkPaint(block.fillColor)
+      || block.lineCount < EMPHASIS_DARK_CARD_MIN_LINES
+      || block.fontSize > EMPHASIS_DARK_CARD_MAX_FONT_SIZE
+      || block.width > EMPHASIS_DARK_CARD_MAX_WIDTH
+      || block.height > EMPHASIS_DARK_CARD_MAX_HEIGHT
+      || !block.startsWithBoldLine
+      || block.hasInlineFontMarkup
+      || block.hasInlineColorMarkup
+    ) {
+      continue;
+    }
+
+    const widthRatio = block.availableWidth > 0 ? block.estimatedWidth / block.availableWidth : Infinity;
+    if (widthRatio + EPSILON < EMPHASIS_DARK_CARD_WIDTH_RATIO_THRESHOLD) {
+      continue;
+    }
+
+    issues.push({
+      type: 'text-emphasis',
+      cellId: block.cellId,
+      label: block.value,
+      lineCount: block.lineCount,
+      fontSize: block.fontSize,
+      widthRatio,
+      topInset: block.topInset,
+      fillColor: block.fillColor,
+      fontColor: block.fontColor,
     });
   }
 
@@ -1571,6 +1684,20 @@ function summarizeIssues(issues) {
       continue;
     }
 
+    if (issue.type === 'text-contrast') {
+      const key = `${issue.cellId}::text-contrast`;
+
+      if (!summaries.has(key)) {
+        summaries.set(key, { ...issue });
+      } else {
+        const summary = summaries.get(key);
+        summary.contrastRatio = Math.min(summary.contrastRatio, issue.contrastRatio);
+        summary.threshold = Math.max(summary.threshold, issue.threshold);
+      }
+
+      continue;
+    }
+
     if (issue.type === 'text-legibility') {
       const key = `${issue.cellId}::text-legibility`;
 
@@ -1582,6 +1709,20 @@ function summarizeIssues(issues) {
         summary.heightRatio = Math.max(summary.heightRatio, issue.heightRatio);
         summary.lineCount = Math.max(summary.lineCount, issue.lineCount);
         summary.fontSize = Math.max(summary.fontSize, issue.fontSize);
+      }
+
+      continue;
+    }
+
+    if (issue.type === 'text-emphasis') {
+      const key = `${issue.cellId}::text-emphasis`;
+
+      if (!summaries.has(key)) {
+        summaries.set(key, { ...issue });
+      } else {
+        const summary = summaries.get(key);
+        summary.widthRatio = Math.max(summary.widthRatio, issue.widthRatio);
+        summary.topInset = Math.min(summary.topInset, issue.topInset);
       }
 
       continue;
@@ -1732,8 +1873,16 @@ function formatIssue(issue) {
     return `- text-overflow(${issue.axis}): ${issue.cellId} requires ${issue.estimated.toFixed(1)}px but only ${issue.available.toFixed(1)}px is available [${issue.label}]`;
   }
 
+  if (issue.type === 'text-contrast') {
+    return `- text-contrast: ${issue.cellId} uses ${issue.fontColor} on ${issue.fillColor} at ${issue.contrastRatio.toFixed(2)}:1; keep at least ${issue.threshold.toFixed(1)}:1 [${issue.label}]`;
+  }
+
   if (issue.type === 'text-legibility') {
     return `- text-legibility: ${issue.cellId} is visually dense (${issue.lineCount} lines at ${issue.fontSize.toFixed(1)}px inside ${issue.width.toFixed(1)}px x ${issue.height.toFixed(1)}px; width ${(issue.widthRatio * 100).toFixed(1)}%, height ${(issue.heightRatio * 100).toFixed(1)}%) [${issue.label}]`;
+  }
+
+  if (issue.type === 'text-emphasis') {
+    return `- text-emphasis: ${issue.cellId} is a compact dark card with flat title/body treatment (${issue.lineCount} lines, width ${(issue.widthRatio * 100).toFixed(1)}%, top inset ${issue.topInset.toFixed(1)}px); give the title a stronger surface or split it into a dedicated chip [${issue.label}]`;
   }
 
   if (issue.type === 'edge-terminal') {
@@ -1780,7 +1929,9 @@ async function main() {
     .filter((layout) => layout.isTextCell && layout.labelBox.width > 0 && layout.labelBox.height > 0)
     .map((layout) => layout.labelBox);
   const textIssues = findTextOverflowIssues(textBlocks);
+  const textContrastIssues = findTextContrastIssues(textBlocks);
   const textLegibilityIssues = findTextLegibilityIssues(textBlocks);
+  const textEmphasisIssues = findTextEmphasisIssues(textBlocks);
   const labelIssues = findEdgeLabelCollisions(edges, labelBoxes);
   const drawioRects = companionDrawio ? parseDrawioRectLayouts(companionDrawio.text) : [];
   const labelRectIssues = findLabelRectOverlaps(labelBoxes, drawioRects);
@@ -1794,7 +1945,9 @@ async function main() {
     ...labelIssues,
     ...labelRectIssues,
     ...textIssues,
+    ...textContrastIssues,
     ...textLegibilityIssues,
+    ...textEmphasisIssues,
   ]);
 
   console.log(`[diagram:check] ${path.relative(process.cwd(), targetPath)}`);
@@ -1804,7 +1957,7 @@ async function main() {
   }
 
   if (issues.length === 0) {
-    console.log('[diagram:check] OK: no overlaps, border rides, crowded terminals, label intrusions, label-box collisions, text density, or text overflows detected by the current heuristics');
+    console.log('[diagram:check] OK: no overlaps, border rides, crowded terminals, label intrusions, label-box collisions, text contrast problems, text emphasis problems, text density, or text overflows detected by the current heuristics');
     return;
   }
 
