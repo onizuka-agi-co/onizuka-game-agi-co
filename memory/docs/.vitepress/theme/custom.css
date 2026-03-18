@@ -1,3 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --vp-font-family-base: 'Manrope', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+  --vp-font-family-heading: 'Space Grotesk', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+  --memory-accent: #13b3ce;
+  --memory-chip: #f8f5ee;
+  --memory-ink: #101926;
+  --memory-ink-soft: #5a6476;
+  --memory-border: #d7e2f2;
+  --memory-panel: #ffffff;
+}
+
+.VPNav,
+.VPHome {
+  animation: memory-fade-in 0.36s ease both;
+}
+
+.VPNavBar .content,
+.VPNavBar .content .container {
+  background: linear-gradient(90deg, rgba(19, 179, 206, 0.09), rgba(255, 220, 120, 0.1));
+  border-bottom: 1px solid var(--memory-border);
+}
+
+.VPNavBar .title .VPNavBarTitle {
+  font-family: var(--vp-font-family-heading);
+  letter-spacing: 0.02em;
+}
+
+.VPNav .links .VPLink:hover {
+  color: var(--memory-accent);
+}
+
+.VPNavBarExtra {
+  margin-inline-end: 0.5rem;
+}
+
+.VPHome .VPHero {
+  position: relative;
+  overflow: hidden;
+}
+
+.VPHome .VPHero::before {
+  content: "";
+  position: absolute;
+  inset: -26% -28% auto;
+  height: 70%;
+  border-radius: 46%;
+  background:
+    radial-gradient(circle at 18% 36%, rgba(19, 179, 206, 0.22), transparent 32%),
+    radial-gradient(circle at 78% 60%, rgba(255, 204, 77, 0.22), transparent 38%);
+  filter: blur(30px);
+  z-index: -1;
+}
+
+.VPHome .VPHero .name {
+  font-family: var(--vp-font-family-heading);
+  letter-spacing: 0.01em;
+  color: #0f1b34;
+  font-weight: 700;
+}
+
+.VPHome .VPHero .tagline {
+  color: var(--memory-ink-soft);
+  max-width: 42ch;
+}
+
+.VPHome .image .vp-doc img {
+  filter: drop-shadow(0 16px 30px rgba(10, 20, 43, 0.12));
+}
+
+.VPHome .image-src {
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(246, 250, 255, 0.96));
+  border: 1px solid rgba(19, 179, 206, 0.18);
+  padding: 1rem;
+  box-shadow: 0 18px 36px rgba(16, 30, 61, 0.14);
+}
+
+.VPHome .VPHero .actions .action .VPButton {
+  min-width: 150px;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.VPHome .VPHero .actions .action .VPButton:hover,
+.VPHome .VPHero .actions .action .VPButton:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(16, 30, 61, 0.18);
+  border-color: transparent;
+}
+
+.vp-doc h2 {
+  position: relative;
+  padding-inline-start: 0.8rem;
+}
+
+.vp-doc h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 4px;
+  height: 0.95em;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--memory-accent) 0%, #ffcc4f 100%);
+}
+
+.vp-doc img {
+  border: 1px solid var(--memory-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 22px rgba(15, 25, 45, 0.08);
+}
+
+.VPFooter {
+  border-top: 1px solid var(--memory-border);
+  background: linear-gradient(180deg, rgba(15, 25, 45, 0.02), rgba(15, 25, 45, 0.06));
+}
+
+.sidebar .outline-link,
+.VPDoc .outline-link {
+  color: var(--vp-c-text-2);
+}
+
+.sidebar-link,
+.VPMenuLink {
+  transition: color 120ms ease;
+}
+
+.sidebar-link:hover,
+.VPMenuLink:hover,
+.VPMenuLink:hover .menu-text {
+  color: var(--memory-accent);
+}
+
+@keyframes memory-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .VPNav,
+  .VPHome,
+  .VPHome .VPHero .actions .action .VPButton,
+  .VPNavBar .content,
+  .VPNavBar .content .container {
+    animation: none;
+    transition: none;
+    transform: none;
+  }
+}
+
 .author-demo {
   display: grid;
   gap: 1.5rem;

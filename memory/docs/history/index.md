@@ -1414,3 +1414,23 @@ _譖ｴ譁ｰ譌･: 2026-03-13_
 - Run boundary:
   - workdir `D:\Prj\onizuka-game-agi-co`
   - no game-repo code commit in this run (execution-forced continuation slice)
+
+### 変更履歴更新 (2026-03-19 Repository Polish)
+- 追加: `README.ja.md`
+- 追加: `LICENSE`
+- 追加: `memory/docs/.vitepress/public/memory-brand.svg`
+- 追加: `memory/docs/2026/03/19/index.md`
+- 追加: `memory/docs/2026/03/19/meeting-001-repository-polish.md`
+- 更新: `README.md` (hero / language switch / quick actions / relative links)
+- 更新: `memory/docs/.vitepress/config.ts` (brand title / logo / favicon wiring)
+- 更新: `memory/docs/.vitepress/theme/custom.css` (docs branding polish)
+- 更新: `memory/docs/index.md` (hero actions / start-here guidance / archive link)
+- 更新: `.gitignore` (ignore `memory/docs/.vitepress/.temp/`)
+- 更新: `memory/docs/2026/03/index.md`
+- 更新: `memory/docs/history/index.md` (this entry)
+- Verification:
+  - `npm run docs:build`
+  - `gh repo edit ...` for description and topics
+- Run boundary:
+  - workdir `D:\Prj\onizuka-game-agi-co`
+  - kept existing Pages `base`, deploy target, and public URLs unchanged

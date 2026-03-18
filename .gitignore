@@ -3,6 +3,7 @@ docs/.vitepress/dist/
 docs/.vitepress/cache/
 memory/docs/.vitepress/dist/
 memory/docs/.vitepress/cache/
+memory/docs/.vitepress/.temp/
 games/onigame-*/
 !games/README.md
 
