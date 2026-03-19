@@ -8,14 +8,14 @@ const yearNav = yearDirectories.map((year) => ({
 
 export default defineConfig({
   title: "ONIZUKA Memory",
-  description: "Operating records, daily reports, and company memory for ONIZUKA Game AGI Co.",
+  description: "Aurora-toned operating records, daily reports, and company memory for ONIZUKA Game AGI Co.",
   base: "/onizuka-game-agi-co/",
   head: [
     ['link', { rel: 'icon', href: '/memory-brand.svg', type: 'image/svg+xml' }],
     ['link', { rel: 'apple-touch-icon', href: '/memory-brand.svg' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['meta', { name: 'theme-color', content: '#101926' }],
+    ['meta', { name: 'theme-color', content: '#060E12' }],
   ],
   themeConfig: {
     logo: '/memory-brand.svg',

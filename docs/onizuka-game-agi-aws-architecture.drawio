@@ -1,142 +1,142 @@
-<mxfile host="app.diagrams.net" modified="2026-03-17T03:20:00.000Z" agent="Codex GPT-5" version="27.0.5">
+<mxfile host="app.diagrams.net" modified="2026-03-19T12:06:29.000Z" agent="Codex GPT-5" version="27.0.5">
   <diagram id="onizuka-aws-architecture" name="AWS Reference Icons">
-    <mxGraphModel dx="1900" dy="1240" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1240" math="0" shadow="0" background="#F7F9FC" defaultFontFamily="Noto Sans JP">
+    <mxGraphModel dx="1900" dy="1240" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1240" math="0" shadow="0" background="#F2FAFC" defaultFontFamily="Noto Sans JP">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
 
-        <mxCell id="canvas" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F7F9FC;strokeColor=none;" vertex="1" parent="1">
+        <mxCell id="canvas" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2FAFC;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="0" y="0" width="1900" height="1240" as="geometry"/>
         </mxCell>
 
-        <mxCell id="title-bar" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#180D40;strokeColor=none;" vertex="1" parent="1">
+        <mxCell id="title-bar" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0C1E24;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="0" y="0" width="1900" height="92" as="geometry"/>
         </mxCell>
-        <mxCell id="title-rule" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#05DBF2;strokeColor=none;" vertex="1" parent="1">
+        <mxCell id="title-rule" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#13B3CE;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="0" y="92" width="1900" height="6" as="geometry"/>
         </mxCell>
-        <mxCell id="title" value="ONIZUKA Game AGI Co. | AWS Reference-Style Icon View" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=28;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#FFFFFF;" vertex="1" parent="1">
+        <mxCell id="title" value="ONIZUKA Game AGI Co. | AWS Reference-Style Icon View" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=28;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#F2FAFC;" vertex="1" parent="1">
           <mxGeometry x="280" y="24" width="1340" height="34" as="geometry"/>
         </mxCell>
-        <mxCell id="subtitle" value="AWS icon language as a visual reference only. No AWS services are deployed here; runtime stays local workspace + GitHub + GitHub Pages." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontFamily=Noto Sans JP;fontColor=#D9F7FF;" vertex="1" parent="1">
+        <mxCell id="subtitle" value="AWS icon language as a visual reference only. No AWS services are deployed here; runtime stays local workspace + GitHub + GitHub Pages." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontFamily=Noto Sans JP;fontColor=#BDD8E0;" vertex="1" parent="1">
           <mxGeometry x="220" y="58" width="1460" height="22" as="geometry"/>
         </mxCell>
 
-        <mxCell id="actors-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D7E2;strokeWidth=1.5;shadow=0;" vertex="1" parent="1">
+        <mxCell id="actors-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F2FAFC;strokeColor=#8AAFBA;strokeWidth=1.5;shadow=0;" vertex="1" parent="1">
           <mxGeometry x="40" y="170" width="240" height="930" as="geometry"/>
         </mxCell>
-        <mxCell id="actors-title-chip" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#180D40;strokeColor=#180D40;" vertex="1" parent="1">
+        <mxCell id="actors-title-chip" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0C1E24;strokeColor=#1A3038;" vertex="1" parent="1">
           <mxGeometry x="58" y="188" width="154" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="actors-title" value="Builders / Reviewers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#FFFFFF;" vertex="1" parent="1">
+        <mxCell id="actors-title" value="Builders / Reviewers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#F2FAFC;" vertex="1" parent="1">
           <mxGeometry x="58" y="194" width="154" height="18" as="geometry"/>
         </mxCell>
 
         <mxCell id="human-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.user;html=1;" vertex="1" parent="1">
           <mxGeometry x="132" y="280" width="56" height="56" as="geometry"/>
         </mxCell>
-        <mxCell id="human-label" value="Human reviewer" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="human-label" value="Human reviewer" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#633F00;" vertex="1" parent="1">
           <mxGeometry x="72" y="344" width="176" height="20" as="geometry"/>
         </mxCell>
-        <mxCell id="human-meta" value="approve medium / large calls" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
+        <mxCell id="human-meta" value="approve medium / large calls" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#925F00;" vertex="1" parent="1">
           <mxGeometry x="56" y="366" width="208" height="18" as="geometry"/>
         </mxCell>
 
         <mxCell id="agent-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.users;html=1;" vertex="1" parent="1">
           <mxGeometry x="132" y="432" width="56" height="56" as="geometry"/>
         </mxCell>
-        <mxCell id="agent-label" value="Codex + agent team" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="agent-label" value="Codex + agent team" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#084D62;" vertex="1" parent="1">
           <mxGeometry x="62" y="496" width="196" height="20" as="geometry"/>
         </mxCell>
-        <mxCell id="agent-meta" value="plan / build / verify" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
+        <mxCell id="agent-meta" value="plan / build / verify" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#0B8FA8;" vertex="1" parent="1">
           <mxGeometry x="62" y="518" width="196" height="18" as="geometry"/>
         </mxCell>
 
         <mxCell id="workspace-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.tools_and_sdks;html=1;" vertex="1" parent="1">
           <mxGeometry x="132" y="592" width="56" height="56" as="geometry"/>
         </mxCell>
-        <mxCell id="workspace-label" value="Local workspace" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="workspace-label" value="Local workspace" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#2E525C;" vertex="1" parent="1">
           <mxGeometry x="68" y="656" width="184" height="20" as="geometry"/>
         </mxCell>
-        <mxCell id="workspace-meta" value="README / AGENTS / memory / games" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
+        <mxCell id="workspace-meta" value="README / AGENTS / memory / games" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#567E8A;" vertex="1" parent="1">
           <mxGeometry x="46" y="678" width="228" height="18" as="geometry"/>
         </mxCell>
 
-        <mxCell id="actors-note" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8FB;strokeColor=#F205B3;strokeWidth=1.5;" vertex="1" parent="1">
+        <mxCell id="actors-note" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAEACB;strokeColor=#F0A800;strokeWidth=1.5;" vertex="1" parent="1">
           <mxGeometry x="58" y="760" width="204" height="260" as="geometry"/>
         </mxCell>
-        <mxCell id="actors-note-title" value="Reading note" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#180D40;" vertex="1" parent="1">
+        <mxCell id="actors-note-title" value="Reading note" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#633F00;" vertex="1" parent="1">
           <mxGeometry x="76" y="780" width="160" height="20" as="geometry"/>
         </mxCell>
-        <mxCell id="actors-note-text" value="This view borrows the&lt;br&gt;look of common AWS-style&lt;br&gt;architecture diagrams:&lt;br&gt;- official icons lead&lt;br&gt;the layout&lt;br&gt;- labels name real repo&lt;br&gt;and workflow roles&lt;br&gt;- cyberpunk colors stay&lt;br&gt;only in accents" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;fontFamily=Noto Sans JP;fontColor=#364152;" vertex="1" parent="1">
+        <mxCell id="actors-note-text" value="This view borrows the&lt;br&gt;look of common AWS-style&lt;br&gt;architecture diagrams:&lt;br&gt;- official icons lead&lt;br&gt;the layout&lt;br&gt;- labels name real repo&lt;br&gt;and workflow roles&lt;br&gt;- Aurora neutrals, cyan,&lt;br&gt;and amber stay in the accents" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;fontFamily=Noto Sans JP;fontColor=#2E525C;" vertex="1" parent="1">
           <mxGeometry x="76" y="812" width="168" height="186" as="geometry"/>
         </mxCell>
 
-        <mxCell id="aws-boundary" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#AAB7C4;strokeWidth=2;dashed=1;dashPattern=8 6;" vertex="1" parent="1">
+        <mxCell id="aws-boundary" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F2FAFC;strokeColor=#567E8A;strokeWidth=2;dashed=1;dashPattern=8 6;" vertex="1" parent="1">
           <mxGeometry x="320" y="170" width="1500" height="930" as="geometry"/>
         </mxCell>
         <mxCell id="aws-cloud-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.group_aws_cloud;html=1;" vertex="1" parent="1">
           <mxGeometry x="340" y="188" width="24" height="24" as="geometry"/>
         </mxCell>
-        <mxCell id="aws-boundary-title" value="Cloud-style boundary" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="aws-boundary-title" value="Cloud-style boundary" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#1A3038;" vertex="1" parent="1">
           <mxGeometry x="372" y="190" width="260" height="20" as="geometry"/>
         </mxCell>
-        <mxCell id="aws-boundary-note" value="AWS icons are visual references only.&lt;br&gt;Labels map to the real local workflow.&lt;br&gt;No AWS services are deployed here." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
+        <mxCell id="aws-boundary-note" value="AWS icons are visual references only.&lt;br&gt;Labels map to the real local workflow.&lt;br&gt;No AWS services are deployed here." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12;fontFamily=Noto Sans JP;fontColor=#567E8A;" vertex="1" parent="1">
           <mxGeometry x="1240" y="118" width="280" height="52" as="geometry"/>
         </mxCell>
 
-        <mxCell id="control-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCFDFE;strokeColor=#D0D7E2;strokeWidth=1.5;" vertex="1" parent="1">
+        <mxCell id="control-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF9FC;strokeColor=#0B8FA8;strokeWidth=1.5;" vertex="1" parent="1">
           <mxGeometry x="360" y="250" width="1420" height="190" as="geometry"/>
         </mxCell>
-        <mxCell id="control-chip" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E7F8FD;strokeColor=#05DBF2;strokeWidth=1.2;" vertex="1" parent="1">
+        <mxCell id="control-chip" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B8EEFA;strokeColor=#13B3CE;strokeWidth=1.2;" vertex="1" parent="1">
           <mxGeometry x="382" y="266" width="156" height="26" as="geometry"/>
         </mxCell>
-        <mxCell id="control-title" value="Control / review" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#0F2A43;" vertex="1" parent="1">
+        <mxCell id="control-title" value="Control / review" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#084D62;" vertex="1" parent="1">
           <mxGeometry x="382" y="271" width="156" height="16" as="geometry"/>
         </mxCell>
 
         <mxCell id="config-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.config;html=1;" vertex="1" parent="1">
           <mxGeometry x="430" y="312" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="config-label" value="Policy / rules&lt;br&gt;README + AGENTS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="config-label" value="Policy / rules&lt;br&gt;README + AGENTS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#084D62;" vertex="1" parent="1">
           <mxGeometry x="390" y="384" width="144" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="step-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.step_functions;html=1;" vertex="1" parent="1">
           <mxGeometry x="700" y="312" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="step-label" value="CEO review&lt;br&gt;decision loop" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="step-label" value="CEO review&lt;br&gt;decision loop" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#084D62;" vertex="1" parent="1">
           <mxGeometry x="650" y="384" width="164" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="watch-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudwatch;html=1;" vertex="1" parent="1">
           <mxGeometry x="970" y="312" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="watch-label" value="Verification&lt;br&gt;evidence log" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="watch-label" value="Verification&lt;br&gt;evidence log" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#084D62;" vertex="1" parent="1">
           <mxGeometry x="918" y="384" width="168" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="pipe-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codepipeline;html=1;" vertex="1" parent="1">
           <mxGeometry x="1240" y="312" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="pipe-label" value="Board / issues&lt;br&gt;project flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="pipe-label" value="Board / issues&lt;br&gt;project flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#084D62;" vertex="1" parent="1">
           <mxGeometry x="1180" y="384" width="184" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="build-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codebuild;html=1;" vertex="1" parent="1">
           <mxGeometry x="1510" y="312" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="build-label" value="Docs publish&lt;br&gt;workflow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="build-label" value="Docs publish&lt;br&gt;workflow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#633F00;" vertex="1" parent="1">
           <mxGeometry x="1450" y="384" width="184" height="34" as="geometry"/>
         </mxCell>
 
-        <mxCell id="source-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCFDFE;strokeColor=#D0D7E2;strokeWidth=1.5;" vertex="1" parent="1">
+        <mxCell id="source-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F2FAFC;strokeColor=#567E8A;strokeWidth=1.5;" vertex="1" parent="1">
           <mxGeometry x="360" y="470" width="1420" height="230" as="geometry"/>
         </mxCell>
-        <mxCell id="source-chip" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF2FF;strokeColor=#2B1C8C;strokeWidth=1.2;" vertex="1" parent="1">
+        <mxCell id="source-chip" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCF0F5;strokeColor=#567E8A;strokeWidth=1.2;" vertex="1" parent="1">
           <mxGeometry x="382" y="486" width="164" height="26" as="geometry"/>
         </mxCell>
-        <mxCell id="source-title" value="Repo / source" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#1D2A4D;" vertex="1" parent="1">
+        <mxCell id="source-title" value="Repo / source" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#2E525C;" vertex="1" parent="1">
           <mxGeometry x="382" y="491" width="164" height="16" as="geometry"/>
         </mxCell>
         <mxCell id="source-private-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.group_private_subnet;html=1;" vertex="1" parent="1">
@@ -146,45 +146,45 @@
         <mxCell id="company-repo-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codecommit;html=1;" vertex="1" parent="1">
           <mxGeometry x="450" y="548" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="company-repo-label" value="Company repo&lt;br&gt;docs + memory" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="company-repo-label" value="Company repo&lt;br&gt;docs + memory" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#084D62;" vertex="1" parent="1">
           <mxGeometry x="394" y="620" width="176" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="dodge-repo-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codecommit;html=1;" vertex="1" parent="1">
           <mxGeometry x="770" y="548" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="dodge-repo-label" value="Game repo&lt;br&gt;onigame-dodge60" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="dodge-repo-label" value="Game repo&lt;br&gt;onigame-dodge60" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#084D62;" vertex="1" parent="1">
           <mxGeometry x="704" y="620" width="196" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="lane-repo-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codecommit;html=1;" vertex="1" parent="1">
           <mxGeometry x="1090" y="548" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="lane-repo-label" value="Game repo&lt;br&gt;onigame-lane-flip-sprint" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="lane-repo-label" value="Game repo&lt;br&gt;onigame-lane-flip-sprint" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#084D62;" vertex="1" parent="1">
           <mxGeometry x="1006" y="620" width="232" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="sweep-repo-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codecommit;html=1;" vertex="1" parent="1">
           <mxGeometry x="1410" y="548" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="sweep-repo-label" value="Game repo&lt;br&gt;onigame-one-stroke-sweep" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="sweep-repo-label" value="Game repo&lt;br&gt;onigame-one-stroke-sweep" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#084D62;" vertex="1" parent="1">
           <mxGeometry x="1322" y="620" width="240" height="34" as="geometry"/>
         </mxCell>
 
-        <mxCell id="source-note" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#D0D7E2;strokeWidth=1;" vertex="1" parent="1">
+        <mxCell id="source-note" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF9FC;strokeColor=#13B3CE;strokeWidth=1;" vertex="1" parent="1">
           <mxGeometry x="392" y="658" width="300" height="42" as="geometry"/>
         </mxCell>
-        <mxCell id="source-note-text" value="Current local snapshot keeps game repos&lt;br&gt;under /games. Sibling repos are also allowed." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
+        <mxCell id="source-note-text" value="Current local snapshot keeps game repos&lt;br&gt;under /games. Sibling repos are also allowed." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontFamily=Noto Sans JP;fontColor=#2E525C;" vertex="1" parent="1">
           <mxGeometry x="408" y="666" width="268" height="26" as="geometry"/>
         </mxCell>
 
-        <mxCell id="delivery-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCFDFE;strokeColor=#D0D7E2;strokeWidth=1.5;" vertex="1" parent="1">
+        <mxCell id="delivery-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8EC;strokeColor=#C07E00;strokeWidth=1.5;" vertex="1" parent="1">
           <mxGeometry x="360" y="730" width="1420" height="280" as="geometry"/>
         </mxCell>
-        <mxCell id="delivery-chip" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF0F8;strokeColor=#F205B3;strokeWidth=1.2;" vertex="1" parent="1">
+        <mxCell id="delivery-chip" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDD984;strokeColor=#925F00;strokeWidth=1.2;" vertex="1" parent="1">
           <mxGeometry x="382" y="746" width="190" height="26" as="geometry"/>
         </mxCell>
-        <mxCell id="delivery-title" value="Static publish" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#4A153C;" vertex="1" parent="1">
+        <mxCell id="delivery-title" value="Static publish" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#633F00;" vertex="1" parent="1">
           <mxGeometry x="382" y="751" width="190" height="16" as="geometry"/>
         </mxCell>
         <mxCell id="delivery-public-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.group_public_subnet;html=1;" vertex="1" parent="1">
@@ -194,39 +194,39 @@
         <mxCell id="docs-edge-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;html=1;" vertex="1" parent="1">
           <mxGeometry x="450" y="812" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="docs-edge-label" value="Docs page&lt;br&gt;company site" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="docs-edge-label" value="Docs page&lt;br&gt;company site" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#633F00;" vertex="1" parent="1">
           <mxGeometry x="388" y="884" width="188" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="dodge-edge-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;html=1;" vertex="1" parent="1">
           <mxGeometry x="770" y="812" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="dodge-edge-label" value="Game page&lt;br&gt;Dodge60" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="dodge-edge-label" value="Game page&lt;br&gt;Dodge60" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#633F00;" vertex="1" parent="1">
           <mxGeometry x="708" y="884" width="188" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="lane-edge-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;html=1;" vertex="1" parent="1">
           <mxGeometry x="1090" y="812" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="lane-edge-label" value="Game page&lt;br&gt;Lane Flip" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="lane-edge-label" value="Game page&lt;br&gt;Lane Flip" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#633F00;" vertex="1" parent="1">
           <mxGeometry x="1028" y="884" width="188" height="34" as="geometry"/>
         </mxCell>
 
         <mxCell id="sweep-edge-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;html=1;" vertex="1" parent="1">
           <mxGeometry x="1410" y="812" width="64" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="sweep-edge-label" value="Game page&lt;br&gt;One Stroke" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#17202A;" vertex="1" parent="1">
+        <mxCell id="sweep-edge-label" value="Game page&lt;br&gt;One Stroke" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#633F00;" vertex="1" parent="1">
           <mxGeometry x="1348" y="884" width="188" height="34" as="geometry"/>
         </mxCell>
 
-        <mxCell id="static-note" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8FB;strokeColor=#F205B3;strokeWidth=1.2;" vertex="1" parent="1">
+        <mxCell id="static-note" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAEACB;strokeColor=#C07E00;strokeWidth=1.2;" vertex="1" parent="1">
           <mxGeometry x="450" y="944" width="1024" height="42" as="geometry"/>
         </mxCell>
-        <mxCell id="static-note-text" value="Actual runtime is GitHub Pages-style static delivery, not AWS hosting. The docs flow is company-only; each game publishes its own page." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#4A153C;" vertex="1" parent="1">
+        <mxCell id="static-note-text" value="Actual runtime is GitHub Pages-style static delivery, not AWS hosting. The docs flow is company-only; each game publishes its own page." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#633F00;" vertex="1" parent="1">
           <mxGeometry x="464" y="956" width="996" height="18" as="geometry"/>
         </mxCell>
 
-        <mxCell id="human-to-config" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8AA2B2;strokeWidth=1.8;endArrow=block;endFill=1;" edge="1" parent="1" source="human-icon" target="config-icon">
+        <mxCell id="human-to-config" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#567E8A;strokeWidth=1.8;endArrow=block;endFill=1;" edge="1" parent="1" source="human-icon" target="config-icon">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="250" y="308"/>
@@ -235,15 +235,15 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="agent-to-step" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#8AA2B2;strokeWidth=1.8;endArrow=block;endFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.35;entryDx=0;entryDy=0;" edge="1" parent="1" source="agent-icon" target="step-icon">
+        <mxCell id="agent-to-step" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#567E8A;strokeWidth=1.8;endArrow=block;endFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.35;entryDx=0;entryDy=0;" edge="1" parent="1" source="agent-icon" target="step-icon">
             <mxGeometry relative="1" as="geometry">
               <Array as="points">
-                <mxPoint x="820" y="446"/>
+                <mxPoint x="820" y="460"/>
                 <mxPoint x="820" y="334"/>
               </Array>
             </mxGeometry>
           </mxCell>
-        <mxCell id="workspace-to-company" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="workspace-icon" target="company-repo-icon">
+        <mxCell id="workspace-to-company" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0B8FA8;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="workspace-icon" target="company-repo-icon">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="300" y="620"/>
@@ -251,13 +251,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="config-to-step" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0597F2;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="config-icon" target="step-icon">
+        <mxCell id="config-to-step" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#13B3CE;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="config-icon" target="step-icon">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="step-to-watch" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#0597F2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=0.2;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-icon" target="watch-icon">
+        <mxCell id="step-to-watch" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#13B3CE;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=0.2;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-icon" target="watch-icon">
             <mxGeometry relative="1" as="geometry"/>
           </mxCell>
-        <mxCell id="step-to-pipe" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#0597F2;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-icon" target="pipe-icon">
+        <mxCell id="step-to-pipe" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#13B3CE;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-icon" target="pipe-icon">
             <mxGeometry relative="1" as="geometry">
                 <Array as="points">
                     <mxPoint x="732" y="206"/>
@@ -266,10 +266,10 @@
                 </Array>
                 </mxGeometry>
             </mxCell>
-        <mxCell id="pipe-to-build" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#0597F2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipe-icon" target="build-icon">
+        <mxCell id="pipe-to-build" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#C07E00;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipe-icon" target="build-icon">
             <mxGeometry relative="1" as="geometry"/>
           </mxCell>
-        <mxCell id="company-to-pipe" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.82;entryDx=0;entryDy=0;" edge="1" parent="1" source="company-repo-icon" target="pipe-icon">
+        <mxCell id="company-to-pipe" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=0;html=1;strokeColor=#0B8FA8;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.82;entryDx=0;entryDy=0;" edge="1" parent="1" source="company-repo-icon" target="pipe-icon">
             <mxGeometry relative="1" as="geometry">
               <Array as="points">
                 <mxPoint x="570" y="580"/>
@@ -279,17 +279,17 @@
               </Array>
             </mxGeometry>
           </mxCell>
-        <mxCell id="build-to-docs" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F205B3;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="build-icon" target="docs-edge-icon">
+        <mxCell id="build-to-docs" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#C07E00;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="build-icon" target="docs-edge-icon">
             <mxGeometry relative="1" as="geometry">
               <Array as="points">
                 <mxPoint x="1660" y="344"/>
-                <mxPoint x="1660" y="940"/>
-                <mxPoint x="340" y="940"/>
+                <mxPoint x="1660" y="914"/>
+                <mxPoint x="340" y="914"/>
                 <mxPoint x="340" y="844"/>
               </Array>
             </mxGeometry>
           </mxCell>
-        <mxCell id="dodge-to-edge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="dodge-repo-icon" target="dodge-edge-icon">
+        <mxCell id="dodge-to-edge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#13B3CE;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="dodge-repo-icon" target="dodge-edge-icon">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="880" y="580"/>
@@ -298,7 +298,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="lane-to-edge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lane-repo-icon" target="lane-edge-icon">
+        <mxCell id="lane-to-edge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0B8FA8;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lane-repo-icon" target="lane-edge-icon">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1260" y="580"/>
@@ -307,7 +307,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="sweep-to-edge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#05DBF2;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="sweep-repo-icon" target="sweep-edge-icon">
+        <mxCell id="sweep-to-edge" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#5CC8DC;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="sweep-repo-icon" target="sweep-edge-icon">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1590" y="580"/>
@@ -317,7 +317,7 @@
           </mxGeometry>
         </mxCell>
 
-        <mxCell id="footer" value="Updated: 2026-03-17 JST | AWS-style visual metaphor | Source: docs/onizuka-game-agi-aws-architecture.drawio" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#5B6470;" vertex="1" parent="1">
+        <mxCell id="footer" value="Updated: 2026-03-17 JST | AWS-style visual metaphor | Source: docs/onizuka-game-agi-aws-architecture.drawio" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontFamily=Noto Sans JP;fontColor=#567E8A;" vertex="1" parent="1">
           <mxGeometry x="1040" y="1124" width="760" height="18" as="geometry"/>
         </mxCell>
       </root>

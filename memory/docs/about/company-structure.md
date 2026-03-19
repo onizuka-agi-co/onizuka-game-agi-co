@@ -1,6 +1,6 @@
 # Company Structure
 
-This page shows the current ONIZUKA Game AGI Co. operating structure.
+This page shows the current ONIZUKA Game AGI Co. operating structure, framed by the full Aurora docs palette with warm governance tones, cool execution tones, and layered neutral surfaces.
 
 ## Diagram
 
@@ -12,6 +12,8 @@ This page shows the current ONIZUKA Game AGI Co. operating structure.
 - The functional roles agents take on inside the company
 - The operating loop between execution and strategic review
 - The outputs, memory, and decision records that accumulate over time
+- Warm chips and frames call out governance, decisions, and launch rules
+- Cool chips and routes call out execution, publishing, and memory flow
 
 ## Source
 

@@ -128,8 +128,6 @@
 - [`docs/onizuka-game-agi-aws-architecture.drawio`](docs/onizuka-game-agi-aws-architecture.drawio)
 - [`docs/onizuka-game-agi-aws-architecture.drawio.svg`](docs/onizuka-game-agi-aws-architecture.drawio.svg)
 - [`docs/onizuka-game-agi-company-structure.drawio`](docs/onizuka-game-agi-company-structure.drawio)
-- [`docs/onizuka-game-agi-company-layers.drawio`](docs/onizuka-game-agi-company-layers.drawio)
-- [`docs/onizuka-game-agi-company-layers.drawio.svg`](docs/onizuka-game-agi-company-layers.drawio.svg)
 
 ![ONIZUKA Game AGI Co. の運営構造とリポジトリレーンを示す図](docs/onizuka-game-agi-company-structure.drawio.png)
 

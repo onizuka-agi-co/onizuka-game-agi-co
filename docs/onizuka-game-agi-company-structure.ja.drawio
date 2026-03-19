@@ -1,133 +1,133 @@
-<mxfile host="app.diagrams.net" modified="2026-03-19T06:30:00.000Z" agent="Codex GPT-5" version="27.0.5">
+<mxfile host="app.diagrams.net" modified="2026-03-19T12:06:29.000Z" agent="Codex GPT-5" version="27.0.5">
   <diagram id="company-structure-ja" name="運営地図">
     <mxGraphModel dx="1800" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="820" background="none" math="0" shadow="0" defaultFontFamily="Noto Sans JP">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
-        <mxCell id="canvas" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=none;" vertex="1" parent="1">
+        <mxCell id="canvas" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2FAFC;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="0" y="0" width="1800" height="820" as="geometry"/>
         </mxCell>
-        <mxCell id="hero-shell" value="" style="rounded=1;arcSize=3;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#13b3ce;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="hero-shell" value="" style="rounded=1;arcSize=3;whiteSpace=wrap;html=1;fillColor=#EBF9FC;strokeColor=#0B8FA8;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="40" y="30" width="1720" height="720" as="geometry"/>
         </mxCell>
-        <mxCell id="title-bar" value="" style="rounded=1;arcSize=3;whiteSpace=wrap;html=1;fillColor=#101926;gradientColor=#0f1f3a;gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+        <mxCell id="title-bar" value="" style="rounded=1;arcSize=3;whiteSpace=wrap;html=1;fillColor=#0C1E24;gradientColor=#1A3038;gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="40" y="30" width="1720" height="96" as="geometry"/>
         </mxCell>
-        <mxCell id="title-rule" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#13b3ce;strokeColor=none;" vertex="1" parent="1">
+        <mxCell id="title-rule" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#13B3CE;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="40" y="126" width="1720" height="6" as="geometry"/>
         </mxCell>
-        <mxCell id="brand-orb" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#13b3ce;gradientColor=#ffcc4f;gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
+        <mxCell id="brand-orb" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#13B3CE;gradientColor=#FFCC4F;gradientDirection=east;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="86" y="50" width="40" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="brand-dot" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc4f;strokeColor=none;" vertex="1" parent="1">
+        <mxCell id="brand-dot" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFCC4F;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="116" y="78" width="10" height="10" as="geometry"/>
         </mxCell>
-        <mxCell id="title" value="ONIZUKA Game AGI Co. 運営地図" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxCell id="title" value="ONIZUKA Game AGI Co. 運営地図" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#F2FAFC;" vertex="1" parent="1">
           <mxGeometry x="150" y="48" width="780" height="34" as="geometry"/>
         </mxCell>
-        <mxCell id="subtitle" value="README のヘッダー向けに再構成した、ガバナンス・実行・成果・記録のカラーマップ構成図" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontFamily=Noto Sans JP;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxCell id="subtitle" value="補色ベースの4色ルールで、ガバナンス・実行・成果・記録の流れを整理した構成図" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontFamily=Noto Sans JP;fontColor=#F2FAFC;" vertex="1" parent="1">
           <mxGeometry x="150" y="84" width="980" height="20" as="geometry"/>
         </mxCell>
-        <mxCell id="title-chip" value="README ヘッダー / カラーマップ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc4f;strokeColor=#13b3ce;strokeWidth=1.5;fontSize=14;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=6;" vertex="1" parent="1">
+        <mxCell id="title-chip" value="4色補色ルール" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDD984;strokeColor=#925F00;strokeWidth=1.5;fontSize=14;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#633F00;align=center;verticalAlign=middle;spacing=6;" vertex="1" parent="1">
           <mxGeometry x="1390" y="55" width="270" height="34" as="geometry"/>
         </mxCell>
-        <mxCell id="parent-company" value="親会社&lt;br&gt;&lt;b&gt;ONIZUKA AGI Co.&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#13b3ce;strokeWidth=2;fontSize=18;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=6;" vertex="1" parent="1">
+        <mxCell id="parent-company" value="親会社&lt;br&gt;&lt;b&gt;ONIZUKA AGI Co.&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF9FC;strokeColor=#0B8FA8;strokeWidth=2;fontSize=18;fontFamily=Noto Sans JP;fontColor=#084D62;align=center;verticalAlign=middle;spacing=6;" vertex="1" parent="1">
           <mxGeometry x="80" y="160" width="300" height="62" as="geometry"/>
         </mxCell>
-        <mxCell id="company-card" value="&lt;b&gt;ONIZUKA Game AGI Co.&lt;/b&gt;&lt;br&gt;ミッション: 隙間時間をわくわくで埋める&lt;br&gt;静的ブラウザゲームを素早く届け、&lt;br&gt;証跡を会社メモリに残す" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ffcc4f;strokeWidth=2.5;fontSize=18;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="company-card" value="&lt;b&gt;ONIZUKA Game AGI Co.&lt;/b&gt;&lt;br&gt;ミッション: 隙間時間をわくわくで埋める&lt;br&gt;静的ブラウザゲームを素早く届け、&lt;br&gt;証跡を会社メモリに残す" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCF0F5;strokeColor=#FFCC4F;strokeWidth=2.5;fontSize=18;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#0C1E24;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="410" y="138" width="980" height="108" as="geometry"/>
         </mxCell>
-        <mxCell id="ops-rule" value="運営ルール&lt;br&gt;&lt;b&gt;1ゲーム = 1リポジトリ&lt;br&gt;1リポジトリ = 1 Pages アプリ&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc4f;strokeColor=#101926;strokeWidth=2;fontSize=14;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=6;" vertex="1" parent="1">
+        <mxCell id="ops-rule" value="運営ルール&lt;br&gt;&lt;b&gt;1ゲーム = 1リポジトリ&lt;br&gt;1リポジトリ = 1 Pages アプリ&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAEACB;strokeColor=#925F00;strokeWidth=2;fontSize=15;fontFamily=Noto Sans JP;fontColor=#633F00;align=center;verticalAlign=middle;spacing=6;" vertex="1" parent="1">
           <mxGeometry x="1420" y="154" width="280" height="74" as="geometry"/>
         </mxCell>
-        <mxCell id="org-frame" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ffcc4f;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="org-frame" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8EC;strokeColor=#C07E00;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="80" y="276" width="450" height="396" as="geometry"/>
         </mxCell>
-        <mxCell id="loop-frame" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#13b3ce;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="loop-frame" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF9FC;strokeColor=#0B8FA8;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="560" y="276" width="640" height="396" as="geometry"/>
         </mxCell>
-        <mxCell id="outputs-frame" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0f1f3a;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="outputs-frame" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCF0F5;strokeColor=#567E8A;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="1230" y="276" width="470" height="396" as="geometry"/>
         </mxCell>
-        <mxCell id="org-title" value="1) 組織機能" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=24;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;" vertex="1" parent="1">
+        <mxCell id="org-title" value="1) 組織機能" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=23;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#925F00;" vertex="1" parent="1">
           <mxGeometry x="110" y="304" width="220" height="28" as="geometry"/>
         </mxCell>
-        <mxCell id="loop-title" value="2) 自律運営ループ" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=24;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#0f1f3a;" vertex="1" parent="1">
+        <mxCell id="loop-title" value="2) 自律運営ループ" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=23;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#084D62;" vertex="1" parent="1">
           <mxGeometry x="590" y="304" width="300" height="28" as="geometry"/>
         </mxCell>
-        <mxCell id="outputs-title" value="3) 成果・公開・記録" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=24;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;" vertex="1" parent="1">
+        <mxCell id="outputs-title" value="3) 成果・公開・記録" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=23;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#2E525C;" vertex="1" parent="1">
           <mxGeometry x="1260" y="304" width="320" height="28" as="geometry"/>
         </mxCell>
-        <mxCell id="planning" value="&lt;b&gt;企画&lt;/b&gt;&lt;br&gt;アイデア、市場確認、スコープ固定" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ffcc4f;strokeWidth=1.8;fontSize=17;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="planning" value="&lt;b&gt;企画&lt;/b&gt;&lt;br&gt;アイデア、市場確認、スコープ固定" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAEACB;strokeColor=#F0A800;strokeWidth=1.8;fontSize=17;fontFamily=Noto Sans JP;fontColor=#633F00;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="110" y="340" width="390" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="development" value="&lt;b&gt;開発マネジメント&lt;/b&gt;&lt;br&gt;タスク設計、進捗確認、QA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ffcc4f;strokeWidth=1.8;fontSize=17;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="development" value="&lt;b&gt;開発マネジメント&lt;/b&gt;&lt;br&gt;タスク設計、進捗確認、QA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAEACB;strokeColor=#F0A800;strokeWidth=1.8;fontSize=17;fontFamily=Noto Sans JP;fontColor=#633F00;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="110" y="418" width="390" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="records" value="&lt;b&gt;記録管理&lt;/b&gt;&lt;br&gt;日報、会議、変更履歴" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ffcc4f;strokeWidth=1.8;fontSize=17;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="records" value="&lt;b&gt;記録管理&lt;/b&gt;&lt;br&gt;日報、会議、変更履歴" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAEACB;strokeColor=#F0A800;strokeWidth=1.8;fontSize=17;fontFamily=Noto Sans JP;fontColor=#633F00;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="110" y="496" width="390" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="communication" value="&lt;b&gt;コミュニケーション&lt;/b&gt;&lt;br&gt;フィードバック対応、方針共有" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ffcc4f;strokeWidth=1.8;fontSize=17;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="communication" value="&lt;b&gt;コミュニケーション&lt;/b&gt;&lt;br&gt;フィードバック対応、方針共有" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAEACB;strokeColor=#F0A800;strokeWidth=1.8;fontSize=17;fontFamily=Noto Sans JP;fontColor=#633F00;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="110" y="574" width="390" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="governance-docs" value="&lt;b&gt;ガバナンス文書&lt;/b&gt;&lt;br&gt;README / PROJECTS / IDEAS / DECISIONS / ROADMAP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc4f;strokeColor=#101926;strokeWidth=1.8;fontSize=17;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="governance-docs" value="&lt;b&gt;ガバナンス文書&lt;/b&gt;&lt;br&gt;README / PROJECTS / IDEAS / DECISIONS / ROADMAP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDD984;strokeColor=#925F00;strokeWidth=1.8;fontSize=17;fontFamily=Noto Sans JP;fontColor=#633F00;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="600" y="340" width="560" height="72" as="geometry"/>
         </mxCell>
-        <mxCell id="field-meeting" value="&lt;b&gt;現場ミーティング自動化&lt;/b&gt;&lt;br&gt;主実行スライス&lt;br&gt;バース候補選定" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#13b3ce;strokeWidth=1.8;fontSize=15;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="field-meeting" value="&lt;b&gt;現場ミーティング自動化&lt;/b&gt;&lt;br&gt;主実行スライス&lt;br&gt;バース候補選定" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B8EEFA;strokeColor=#0B8FA8;strokeWidth=1.8;fontSize=15;fontFamily=Noto Sans JP;fontColor=#021820;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="585" y="462" width="250" height="92" as="geometry"/>
         </mxCell>
-        <mxCell id="ceo-review" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f1f3a;strokeColor=#ffcc4f;strokeWidth=1.8;fontSize=15;fontFamily=Noto Sans JP;fontColor=#ffffff;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="ceo-review" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0C1E24;strokeColor=#F0A800;strokeWidth=1.8;fontSize=15;fontFamily=Noto Sans JP;fontColor=#F2FAFC;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="905" y="462" width="280" height="92" as="geometry"/>
         </mxCell>
-        <mxCell id="ceo-review-title" value="CEO レビュー自動化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc4f;strokeColor=#ffcc4f;strokeWidth=1.2;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
+        <mxCell id="ceo-review-title" value="CEO レビュー自動化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDD984;strokeColor=#925F00;strokeWidth=1.2;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#633F00;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
           <mxGeometry x="960" y="478" width="170" height="24" as="geometry"/>
         </mxCell>
-        <mxCell id="ceo-review-body" value="方向修正、ガードレール、&lt;br&gt;次の一手" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=17;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxCell id="ceo-review-body" value="方向修正、ガードレール、&lt;br&gt;次の一手" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=17;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#F2FAFC;" vertex="1" parent="1">
           <mxGeometry x="930" y="506" width="230" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="cto-chip" value="CTO フロー" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#13b3ce;strokeColor=#0f1f3a;strokeWidth=1.4;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
+        <mxCell id="cto-chip" value="CTO フロー" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5CC8DC;strokeColor=#0B8FA8;strokeWidth=1.4;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#021820;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
           <mxGeometry x="840" y="490" width="74" height="28" as="geometry"/>
         </mxCell>
-        <mxCell id="loop-note" value="24/7 のエビデンス循環&lt;br&gt;現場が進め、記録が証跡を残し、&lt;br&gt;CEO レビューが次の更新へ戻す" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=15;fontFamily=Noto Sans JP;fontColor=#0f1f3a;" vertex="1" parent="1">
+        <mxCell id="loop-note" value="24/7 のエビデンス循環&lt;br&gt;現場が進め、記録が証跡を残し、&lt;br&gt;CEO レビューが次の更新へ戻す" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=15;fontFamily=Noto Sans JP;fontColor=#2E525C;" vertex="1" parent="1">
           <mxGeometry x="620" y="580" width="520" height="54" as="geometry"/>
         </mxCell>
-        <mxCell id="live-lane" value="&lt;b&gt;ライブレーン&lt;/b&gt;&lt;br&gt;公開中タイトルの改善" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#13b3ce;strokeWidth=1.8;fontSize=16;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="live-lane" value="&lt;b&gt;ライブレーン&lt;/b&gt;&lt;br&gt;公開中タイトルの改善" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF9FC;strokeColor=#0B8FA8;strokeWidth=1.8;fontSize=16;fontFamily=Noto Sans JP;fontColor=#084D62;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="1260" y="340" width="185" height="72" as="geometry"/>
         </mxCell>
-        <mxCell id="birth-lane" value="&lt;b&gt;バースレーン&lt;/b&gt;&lt;br&gt;次の静的新作を&lt;br&gt;立ち上げる" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc4f;strokeColor=#0f1f3a;strokeWidth=1.8;fontSize=15;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="birth-lane" value="&lt;b&gt;バースレーン&lt;/b&gt;&lt;br&gt;次の静的新作を&lt;br&gt;立ち上げる" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDD984;strokeColor=#925F00;strokeWidth=1.8;fontSize=15;fontFamily=Noto Sans JP;fontColor=#633F00;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="1465" y="340" width="185" height="72" as="geometry"/>
         </mxCell>
-        <mxCell id="memory-site" value="&lt;b&gt;Memory Site&lt;/b&gt;&lt;br&gt;公開メモリの入口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#13b3ce;strokeWidth=1.8;fontSize=16;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="memory-site" value="&lt;b&gt;Memory Site&lt;/b&gt;&lt;br&gt;公開メモリの入口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCF0F5;strokeColor=#13B3CE;strokeWidth=1.8;fontSize=16;fontFamily=Noto Sans JP;fontColor=#084D62;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="1260" y="434" width="390" height="52" as="geometry"/>
         </mxCell>
-        <mxCell id="memory-docs" value="&lt;b&gt;memory/docs&lt;/b&gt;&lt;br&gt;日報、会議、プロジェクト記録" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0f1f3a;strokeWidth=1.8;fontSize=17;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="memory-docs" value="&lt;b&gt;memory/docs&lt;/b&gt;&lt;br&gt;日報、会議、プロジェクト記録" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F2FAFC;strokeColor=#567E8A;strokeWidth=1.8;fontSize=17;fontFamily=Noto Sans JP;fontColor=#1A3038;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="1260" y="504" width="390" height="64" as="geometry"/>
         </mxCell>
-        <mxCell id="decisions" value="&lt;b&gt;決定ログ・履歴&lt;/b&gt;&lt;br&gt;DECISIONS、変更履歴、次の一手の証跡" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc4f;strokeColor=#0f1f3a;strokeWidth=1.8;fontSize=16;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="decisions" value="&lt;b&gt;決定ログ・履歴&lt;/b&gt;&lt;br&gt;DECISIONS、変更履歴、次の一手の証跡" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAEACB;strokeColor=#C07E00;strokeWidth=1.8;fontSize=16;fontFamily=Noto Sans JP;fontColor=#633F00;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="1260" y="586" width="390" height="56" as="geometry"/>
         </mxCell>
-        <mxCell id="legend-brand" value="ブランド核" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#101926;gradientColor=#0f1f3a;strokeColor=#101926;strokeWidth=1.2;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#ffffff;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
+        <mxCell id="legend-brand" value="ブランド核" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0C1E24;gradientColor=#1A3038;strokeColor=#0C1E24;strokeWidth=1.2;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#F2FAFC;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
           <mxGeometry x="100" y="694" width="160" height="32" as="geometry"/>
         </mxCell>
-        <mxCell id="legend-governance" value="ガバナンス" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc4f;strokeColor=#101926;strokeWidth=1.2;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
+        <mxCell id="legend-governance" value="ガバナンス" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDD984;strokeColor=#925F00;strokeWidth=1.2;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#633F00;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
           <mxGeometry x="280" y="694" width="160" height="32" as="geometry"/>
         </mxCell>
-        <mxCell id="legend-execution" value="実行ループ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#13b3ce;strokeColor=#0f1f3a;strokeWidth=1.2;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
+        <mxCell id="legend-execution" value="実行ループ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5CC8DC;strokeColor=#0B8FA8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#021820;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
           <mxGeometry x="460" y="694" width="160" height="32" as="geometry"/>
         </mxCell>
-        <mxCell id="legend-delivery" value="配信レーン" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0f1f3a;strokeWidth=1.2;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
+        <mxCell id="legend-delivery" value="配信レーン" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCF0F5;strokeColor=#567E8A;strokeWidth=1.2;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#2E525C;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
           <mxGeometry x="640" y="694" width="160" height="32" as="geometry"/>
         </mxCell>
-        <mxCell id="legend-memory" value="記録・証跡" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#13b3ce;strokeWidth=1.2;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#101926;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
+        <mxCell id="legend-memory" value="記録・証跡" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF9FC;strokeColor=#0B8FA8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontFamily=Noto Sans JP;fontColor=#084D62;align=center;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
           <mxGeometry x="820" y="694" width="180" height="32" as="geometry"/>
         </mxCell>
-        <mxCell id="legend-note" value="カラーマップ凡例: 色ごとに責務と運営リズムを分け、&lt;br&gt;証跡がたまる場所を示す" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontFamily=Noto Sans JP;fontColor=#101926;" vertex="1" parent="1">
+        <mxCell id="legend-note" value="補色ルール凡例: 紺と琥珀を軸に、&lt;br&gt;青で流れを示し、白で面を整える" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontFamily=Noto Sans JP;fontColor=#2E525C;" vertex="1" parent="1">
           <mxGeometry x="1030" y="692" width="590" height="32" as="geometry"/>
         </mxCell>
-        <mxCell id="metadata" value="更新日: 2026-03-19 JST | Source: draw.io | Version: 2.0" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=13;fontFamily=Noto Sans JP;fontColor=#101926;" vertex="1" parent="1">
+        <mxCell id="metadata" value="更新日: 2026-03-19 JST | Source: draw.io | Version: 2.1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=13;fontFamily=Noto Sans JP;fontColor=#567E8A;" vertex="1" parent="1">
           <mxGeometry x="1160" y="730" width="520" height="18" as="geometry"/>
         </mxCell>
-        <mxCell id="arrow-company-loop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#0f1f3a;endArrow=block;endFill=1;" edge="1" parent="1" source="company-card" target="governance-docs">
+        <mxCell id="arrow-company-loop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#567E8A;endArrow=block;endFill=1;" edge="1" parent="1" source="company-card" target="governance-docs">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1100" y="300"/>
@@ -135,7 +135,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="arrow-docs-field" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#13b3ce;endArrow=block;endFill=1;" edge="1" parent="1" source="governance-docs" target="field-meeting">
+        <mxCell id="arrow-docs-field" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#0B8FA8;endArrow=block;endFill=1;" edge="1" parent="1" source="governance-docs" target="field-meeting">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="880" y="430"/>
@@ -143,7 +143,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="arrow-field-memory" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#13b3ce;endArrow=block;endFill=1;" edge="1" parent="1" source="field-meeting" target="memory-docs">
+        <mxCell id="arrow-field-memory" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#0B8FA8;endArrow=block;endFill=1;" edge="1" parent="1" source="field-meeting" target="memory-docs">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="860" y="568"/>
@@ -151,7 +151,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="arrow-memory-review" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#0f1f3a;endArrow=block;endFill=1;" edge="1" parent="1" source="memory-docs" target="ceo-review">
+        <mxCell id="arrow-memory-review" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#925F00;endArrow=block;endFill=1;" edge="1" parent="1" source="memory-docs" target="ceo-review">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1210" y="494"/>
@@ -160,7 +160,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="arrow-review-docs" value="ガバナンスへ戻す" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#0f1f3a;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="ceo-review" target="governance-docs">
+        <mxCell id="arrow-review-docs" value="ガバナンスへ戻す" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2.5;strokeColor=#925F00;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;labelBackgroundColor=#FFF8EC;" edge="1" parent="1" source="ceo-review" target="governance-docs">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="56" y="-10" as="offset"/>
             <Array as="points">

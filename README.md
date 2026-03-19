@@ -128,8 +128,6 @@ See the fuller catalog in [`memory/docs/about/game-lineup.md`](memory/docs/about
 - [`docs/onizuka-game-agi-aws-architecture.drawio`](docs/onizuka-game-agi-aws-architecture.drawio)
 - [`docs/onizuka-game-agi-aws-architecture.drawio.svg`](docs/onizuka-game-agi-aws-architecture.drawio.svg)
 - [`docs/onizuka-game-agi-company-structure.drawio`](docs/onizuka-game-agi-company-structure.drawio)
-- [`docs/onizuka-game-agi-company-layers.drawio`](docs/onizuka-game-agi-company-layers.drawio)
-- [`docs/onizuka-game-agi-company-layers.drawio.svg`](docs/onizuka-game-agi-company-layers.drawio.svg)
 
 ![Diagram of ONIZUKA Game AGI Co. operating structure and repository lanes](docs/onizuka-game-agi-company-structure.drawio.png)
 

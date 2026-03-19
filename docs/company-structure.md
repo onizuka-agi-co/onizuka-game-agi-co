@@ -1,6 +1,6 @@
 # ONIZUKA Game AGI Co. Company Structure
 
-This page is the canonical explanation for the current company structure diagram.
+This page is the canonical explanation for the current company structure diagram. It now follows the full Aurora palette: cool cyan ramps for execution, warm amber ramps for governance, and layered neutral tones for structure, memory, and background surfaces.
 
 ## Overview
 
@@ -22,24 +22,6 @@ For the canonical end-to-end operating loop and PDCA explanation, read:
 
 - [Editable draw.io source](./onizuka-game-agi-company-structure.drawio)
 - [Exported PNG](./onizuka-game-agi-company-structure.drawio.png)
-
-## CEO / CTO Layer Variant
-
-This variant emphasizes the operating relationship between strategy and execution:
-
-- CEO layer: reviews the company direction and gives feedback
-- CTO layer: runs the meeting loop and turns feedback into execution
-- Execution / memory layer: accumulates project work, meeting outputs, and company records
-
-### SVG Diagram
-
-![ONIZUKA Game AGI CEO CTO layered structure](./onizuka-game-agi-company-layers.drawio.svg)
-
-### Layer Variant Source Files
-
-- [Editable draw.io source](./onizuka-game-agi-company-layers.drawio)
-- [Exported SVG](./onizuka-game-agi-company-layers.drawio.svg)
-- [Exported PNG](./onizuka-game-agi-company-layers.drawio.png)
 
 ## AWS Reference-Style Icon Variant
 
@@ -64,3 +46,5 @@ No AWS service is actually used in this project.
 - The left column summarizes the functional responsibilities the agents take on.
 - The center column shows the 24/7 operating loop between execution and strategic review.
 - The right column shows where outputs, memory, and decision records accumulate.
+- Warm surfaces and chips mark governance and decision-heavy areas.
+- Cool surfaces and arrows mark execution, publishing, and memory flow.

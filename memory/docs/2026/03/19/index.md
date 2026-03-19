@@ -64,3 +64,24 @@
 - [x] judged the original `ceo-review` token colors as numerically high-contrast but visually weak as a compact dark card because the title and body shared one flat treatment
 - [x] added `text-contrast` and `text-emphasis` heuristics to `scripts/check-diagram-svg-overlaps.mjs` so low-contrast text and dark-card title/body blending can be detected separately
 - [x] refactored `ceo-review` into a dark surface with an amber title chip plus dedicated white body text, regenerated the companion JA SVG/PNG, and re-ran the checker to `OK`
+
+## Task: Color Theory Research
+
+- [x] 配色理論の基礎用語、配色調和、同時対比、色彩心理の限界を調査
+- [x] UI / ブラウザゲーム向けに、コントラスト、色だけに頼らない情報設計、semantic color roles の要点を整理
+- [x] `Codex Spark Eclipse Legion` 構成で producer 2席 + peer verification + Material review + Devil audit を実施
+- [x] 調査ノート [`topic-color-theory-research`](./topic-color-theory-research.md) を追加
+
+## Task: Aurora Palette Refresh
+
+- [x] `memory/docs/.vitepress/public/aurora-palette.html` から Aurora の cyan / amber / neutral ramps と support colors を抽出し、`memory/docs/.vitepress/theme/custom.css` の docs token をフルパレット基準へ更新
+- [x] `docs/onizuka-game-agi-company-structure.drawio` / `docs/onizuka-game-agi-company-structure.ja.drawio` / `docs/onizuka-game-agi-company-layers.drawio` / `docs/onizuka-game-agi-aws-architecture.drawio` を Aurora 配色へ刷新し、対応 PNG / SVG を再生成
+- [x] `docs/company-structure.md` / `docs/onizuka-game-agi-aws-architecture.md` / `memory/docs/about/company-structure.md` の palette 説明を Aurora 基準へ更新
+- [x] 4 枚の diagram SVG で overlap checker を通し、`npm run docs:build` を再実行
+
+
+## Task: Remove Company Layers Variant
+
+- [x] `docs/onizuka-game-agi-company-layers.drawio` / `.png` / `.svg` をリポジトリから削除
+- [x] `docs/company-structure.md` から CEO / CTO layer variant セクションを削除
+- [x] `README.md` / `README.ja.md` の Company References から `company-layers` 参照を削除

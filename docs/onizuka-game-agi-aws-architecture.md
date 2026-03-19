@@ -10,11 +10,11 @@ This diagram is a visual metaphor, not a literal deployed AWS architecture.
 - No AWS service is actually deployed for this project
 - Official AWS icons are used only as visual references
 - Diagram labels describe the real repo, review, and publishing roles
-- The color system keeps the user palette as an accent layer only:
-  - title / headers = `#180D40`
-  - control accents = `#0597F2`, `#05DBF2`
-  - caution / note accents = `#F205B3`
-  - deep support accent = `#2B1C8C`
+- The color system follows the full Aurora palette while keeping the accent layer restrained:
+  - dark structure surfaces = `#060E12`, `#0C1E24`, `#1A3038`
+  - cool section surfaces and execution accents = `#EBF9FC`, `#DCF0F5`, `#13B3CE`, `#0B8FA8`, `#084D62`
+  - warm note and publish accents = `#FFF8EC`, `#FAEACB`, `#FDD984`, `#FFCC4F`, `#925F00`
+  - neutral connectors and support text = `#8AAFBA`, `#567E8A`, `#2E525C`
 
 ## Diagram
 
@@ -27,6 +27,7 @@ This diagram is a visual metaphor, not a literal deployed AWS architecture.
 - Labels sit under the official AWS icons to mimic the usual AWS reference-diagram reading order
 - The labels are role names, not deployed AWS product names
 - Accent colors are limited to headers, notes, and selected routing so the icon system stays dominant
+- Lighter ramp steps are used for section grouping so the AWS icons stay readable without a flat white canvas
 
 ## Notes
 
