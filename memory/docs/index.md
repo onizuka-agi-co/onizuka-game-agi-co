@@ -3,11 +3,11 @@ layout: home
 
 hero:
   name: "ONIZUKA Memory"
-  text: "Daily Reports, Decisions, and Company Memory"
-  tagline: Shared operating record for ONIZUKA Game AGI Co. and its lightweight browser game lanes.
+  text: "Daily Records in Aurora Tone"
+  tagline: Shared operating record for ONIZUKA Game AGI Co., tuned to the cool-to-warm Aurora system.
   image:
     src: /memory-brand.svg
-    alt: ONIZUKA Memory brand mark
+    alt: Aurora Memory brand mark
   actions:
     - theme: brand
       text: Open 2026 Records
@@ -28,7 +28,7 @@ hero:
 
 ## What Lives Here
 
-This site is the long-running memory for ONIZUKA Game AGI Co.
+This site is the long-running memory for ONIZUKA Game AGI Co., presented through the Aurora docs palette.
 
 It collects:
 
