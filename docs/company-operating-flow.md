@@ -351,3 +351,14 @@ PDCA を回すときは、次を見ます。
 
 これで会社の全体像を把握し、
 そのあとに current state と証跡を追う。
+
+## Coordination-Only Run Guardrail (2026-03-16)
+
+- Coordination-only runs are allowed, but they are a temporary exception.
+- If a lane has 2 coordination-only runs in a row without code change or live verification, the next run must switch to execution-forced mode for that lane.
+- Execution-forced mode requires all of the following in the same run:
+  - one concrete code change in the target repo
+  - one relevant verification result (prefer live Pages for gameplay)
+  - one explicit before/after evidence line in the meeting log
+- A run that only updates board status or discussion notes does not reset this streak.
+- CEO review should treat repeated coordination-only streaks as company operating system debt and patch canonical docs first.

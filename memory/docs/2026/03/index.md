@@ -73,3 +73,4 @@ ONIZUKA Game AGI Co. の 2026年3月の記録。
 - [2026-03-17](./17/) - Meeting 014 で `Pocket Putt Panic` primary / `onigame-dodge60#25` secondary を再確認し、board 変更なしのまま no-overclaim boundary と child-repo-first next hand を再固定
 - [2026-03-19](./19/) - repository polish を実施し、README 英日化・Memory brand mark・LICENSE 追加・GitHub metadata 更新を完了
 - [2026-03-19](./19/) - README / docs に game showcase を追加し、開発中 1 本 + 公開済み 3 本をスクリーンショット付きで可視化
+- [2026-03-21](./21/) - `2026-03-08` から `2026-03-21` までの活動報告を再構成し、Activity Pulse グラフと showcase screenshots で可視化
