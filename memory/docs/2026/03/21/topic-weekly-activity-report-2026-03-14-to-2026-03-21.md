@@ -17,6 +17,48 @@
 
 `2026-03-19` は gameplay delivery ではなく docs / brand / showcase の polish が中心だった。README 英日整備、`LICENSE` 追加、Memory brand mark の導入、game showcase screenshots、diagram readability / palette refresh を行い、対外的な見え方を一段引き上げた。
 
+## Screenshot Gallery
+
+この週の report で触れている app / project surface は、既存の showcase asset を使ってそのまま見返せるようにした。
+
+### Live Lane Snapshot: `onigame-dodge60`
+
+![onigame-dodge60 showcase screenshot](../../../about/assets/game-lineup/onigame-dodge60-showcase.png)
+
+`Developing`
+
+この週の主力 live lane。`2026-03-14` から `2026-03-16` にかけて、READY / LIVE cue、retry clarity、input-lock feedback、first spawn timing を細かく改善した。
+
+### Birth Lane Snapshot: `onigame-lane-flip-sprint`
+
+![onigame-lane-flip-sprint showcase screenshot](../../../about/assets/game-lineup/onigame-lane-flip-sprint-showcase.png)
+
+`Shipped`
+
+`2026-03-15` に bootstrap され、`2026-03-16` までに blocked feedback、LIVE transition cue、READY queue、early hazard timing を詰めた title。
+
+### Fresh Birth Completion: `onigame-one-stroke-sweep`
+
+![onigame-one-stroke-sweep showcase screenshot](../../../about/assets/game-lineup/onigame-one-stroke-sweep-showcase.png)
+
+`Shipped`
+
+`2026-03-16` の same-day birth lane 完了 artifact。repo bootstrap から Pages verify まで一気に通した週の象徴的な1本。
+
+### Existing Shipped Surface: `onigame-omikuji`
+
+![onigame-omikuji showcase screenshot](../../../about/assets/game-lineup/onigame-omikuji-showcase.png)
+
+`Shipped`
+
+この週の主対象ではないが、`2026-03-19` の showcase refresh で lineup の一部として再整理した既存 shipped app。
+
+### Pending Visual: `Pocket Putt Panic`
+
+`Planning`
+
+この週は concept / first playable scope / repo plan までで止まっており、まだ screenshot にできる playable surface は存在していない。repo と first playable が立った時点で、ここに visual を追加するのが次の自然な手。
+
 ## 集計方針
 
 - 一次ソースは日付付き daily record と `memory/docs/history/index.md`

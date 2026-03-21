@@ -4,6 +4,7 @@
 
 - [x] `2026-03-14` から `2026-03-21` までの週次活動報告を Memory topic として作成
 - [x] 会社repo と gameplay child repo の活動量を同じ画面で読める `Activity Pulse` グラフを追加
+- [x] 既存 showcase asset を使って app screenshots を週報 topic に埋め込み
 - [x] 月次インデックスと変更履歴に導線を追加
 - [x] `npm run docs:build` で Memory site build を確認
 
@@ -19,3 +20,4 @@
 ## 記録リンク
 
 - [topic-weekly-activity-report-2026-03-14-to-2026-03-21](./topic-weekly-activity-report-2026-03-14-to-2026-03-21.md) - 週次活動報告の詳細版
+  Dodge60 / Lane Flip Sprint / One Stroke Sweep / Omikuji の showcase screenshots を含む
