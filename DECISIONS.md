@@ -6,6 +6,13 @@
 
 ## 2026-03
 
+### 2026-03-21: Initialized Git Flow baseline with `develop` as the integration branch
+- **決定:** company repo の branch model を `main` only から `main` + `develop` へ拡張し、以後の通常開発は `develop` 起点、`main` は production / release line として扱う。
+- **理由:** 直前まで repo には `develop` が存在せず、agent work を `main` へ直接寄せたことで、ユーザーが期待する Git Flow の integration branch が欠けていたため。次回以降の feature work を `develop` へ安全に集約できる基盤が必要だった。
+- **検証:** Git Flow 初期化直前の snapshot では `git status --short --branch` が clean working tree を返し、`git branch --all --verbose --no-abbrev` で `main` と `develop` が同一 commit `b8109e183c97b491ecedc545cb610f393d3abd5a` を指すことを確認した。続けて `git push -u origin develop` で `origin/develop` を公開し、`git config --get-regexp "gitflow\\..*"` 相当の設定として `gitflow.branch.master=main`, `gitflow.branch.develop=develop`, `gitflow.prefix.feature=feature/`, `gitflow.prefix.release=release/`, `gitflow.prefix.hotfix=hotfix/`, `gitflow.prefix.bugfix=bugfix/`, `gitflow.prefix.support=support/` を再確認した。現在の working tree に見えている差分は、この決定ログと Memory 記録の追記による docs 更新分のみ。`D:\Prj\\git-flow-skill\\scripts\\init-git-flow.ps1 -Push -ConfigureGitFlow` は `develop` 作成後の upstream 未設定判定で途中停止したため、push と config は手動で完了した。
+- **決定オーナー:** エージェント（ユーザー指示による Git Flow 初期化 run）
+- **次手:** 次の agent-authored change からは `develop` を integration branch とし、通常変更は `develop` から切った `codex/feature/...` を `develop` へ戻す。`main` は release / hotfix を除いて直接更新しない。
+
 ### 2026-03-17: Meeting 014 kept Pocket Putt Panic primary and tightened the no-overclaim boundary
 - **決定:** `birth lane` `onizuka-game-agi-co#12` を primary のまま維持し、`live lane` `onigame-dodge60#25` は `Ready / P1 / S` の secondary として据え置いた。Project #2 field 変更は行わず、今回も `Done` 主張は行わない。
 - **理由:** 2026-03-17 の fresh app birth は依然として child repo / initial scaffold / first local commit / GitHub Pages verify に到達しておらず、最も遅れている lane は引き続き `birth lane` のため。Meeting 013 までに固定した child-repo-first launch path も未着手で、今回必要だったのは board 変更ではなく `repo created` や `first local commit exists` のような過剰主張を避ける表現境界の再確認だった。
